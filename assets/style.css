@@ -141,6 +141,16 @@
     .col-card { background: var(--surface); border: 1px solid var(--line); padding: 22px; display: flex; flex-direction: column; gap: 20px; }
     .col-section { background: var(--surface-alt); border: 1px solid var(--line); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
     .col-title { font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); }
+
+    .stat-summary { background: var(--surface); border: 1px solid var(--line-strong); padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 10px; }
+    .stat-table { display: flex; flex-direction: column; gap: 0; }
+    .stat-row { display: grid; grid-template-columns: 1.4fr 0.7fr 0.7fr 0.7fr; gap: 6px; padding: 7px 0; border-top: 1px solid var(--line); align-items: baseline; }
+    .stat-row:first-child { border-top: none; }
+    .stat-row.stat-head { border-top: none; padding-top: 0; padding-bottom: 6px; }
+    .stat-row.stat-head span { font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); font-weight: 700; }
+    .stat-row span:first-child { font-size: 12px; font-weight: 700; color: var(--text); }
+    .stat-row span:not(:first-child) { font-size: 12.5px; font-variant-numeric: tabular-nums; color: var(--text-dim); }
+    .stat-row .stat-avg { color: var(--red); font-weight: 800; }
     .wordmark-badge { display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; border: 1px solid var(--line-strong); padding: 9px 15px; font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; }
     .wordmark-badge.cl { color: var(--gold); border-color: var(--gold); }
     .wordmark-badge.nor { color: var(--text); }

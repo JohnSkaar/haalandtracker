@@ -154,6 +154,16 @@
     .col-card { background: var(--surface); border: 1px solid var(--line); padding: 22px; display: flex; flex-direction: column; gap: 20px; }
     .col-section { background: var(--surface-alt); border: 1px solid var(--line); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
     .col-title { font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); }
+
+    .stat-summary { background: var(--surface); border: 1px solid var(--line-strong); padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 10px; }
+    .stat-table { display: flex; flex-direction: column; gap: 0; }
+    .stat-row { display: grid; grid-template-columns: 1.4fr 0.7fr 0.7fr 0.7fr; gap: 6px; padding: 7px 0; border-top: 1px solid var(--line); align-items: baseline; }
+    .stat-row:first-child { border-top: none; }
+    .stat-row.stat-head { border-top: none; padding-top: 0; padding-bottom: 6px; }
+    .stat-row.stat-head span { font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); font-weight: 700; }
+    .stat-row span:first-child { font-size: 12px; font-weight: 700; color: var(--text); }
+    .stat-row span:not(:first-child) { font-size: 12.5px; font-variant-numeric: tabular-nums; color: var(--text-dim); }
+    .stat-row .stat-avg { color: var(--red); font-weight: 800; }
     .wordmark-badge { display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; border: 1px solid var(--line-strong); padding: 9px 15px; font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; }
     .wordmark-badge.cl { color: var(--gold); border-color: var(--gold); }
     .wordmark-badge.nor { color: var(--text); }
@@ -923,6 +933,17 @@
             <div class="merit-text"><b>Raskest til 50 PL-m&aring;l</b><span class="sub">48 kamper, forbedret Andy Coles rekord med 17 kamper (kilde: ESPN)</span></div>
           </div>
         </div>
+      </div>
+
+      <div class="stat-summary">
+        <span class="col-title">Manchester City &mdash; n&oslash;kkeltall</span>
+        <div class="stat-table">
+          <div class="stat-row stat-head"><span>Kategori</span><span>Kamper</span><span>M&aring;l</span><span>Snitt</span></div>
+          <div class="stat-row"><span>Klubb (alle turneringer)</span><span>199</span><span>162</span><span class="stat-avg">0,81</span></div>
+          <div class="stat-row"><span>Champions League</span><span>ca. 43</span><span>34</span><span class="stat-avg">0,79</span></div>
+          <div class="stat-row"><span>Landslag (Norge)</span><span>55</span><span>62</span><span class="stat-avg">1,13</span></div>
+        </div>
+        <span class="chart-caption">Klubbtall t.o.m. 200. City-kamp, 23. aug. 2026 (kilde: mancity.com, Yahoo Sports). CL-m&aring;l for City er utledet fra sesongtall 2022/23&ndash;2025/26 (12+6+8+8) og kryssjekket mot karriere-totalen; kamptall for CL-perioden er et estimat &mdash; ikke funnet som &eacute;n kildesatt sum. Landslagstall er hele karrieren (05.09.2019&ndash;11.07.2026), ikke bare City-perioden.</span>
       </div>
 
       <div class="col-section">

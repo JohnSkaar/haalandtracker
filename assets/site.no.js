@@ -1125,6 +1125,17 @@ function render(vals) {
         </div>
       </div>
 
+      <div class="stat-summary">
+        <span class="col-title">Manchester City &mdash; n&oslash;kkeltall</span>
+        <div class="stat-table">
+          <div class="stat-row stat-head"><span>Kategori</span><span>Kamper</span><span>M&aring;l</span><span>Snitt</span></div>
+          <div class="stat-row"><span>Klubb (alle turneringer)</span><span>199</span><span>162</span><span class="stat-avg">0,81</span></div>
+          <div class="stat-row"><span>Champions League</span><span>ca. 43</span><span>34</span><span class="stat-avg">0,79</span></div>
+          <div class="stat-row"><span>Landslag (Norge)</span><span>55</span><span>62</span><span class="stat-avg">1,13</span></div>
+        </div>
+        <span class="chart-caption">Klubbtall t.o.m. 200. City-kamp, 23. aug. 2026 (kilde: mancity.com, Yahoo Sports). CL-m&aring;l for City er utledet fra sesongtall 2022/23&ndash;2025/26 (12+6+8+8) og kryssjekket mot karriere-totalen; kamptall for CL-perioden er et estimat &mdash; ikke funnet som &eacute;n kildesatt sum. Landslagstall er hele karrieren (05.09.2019&ndash;11.07.2026), ikke bare City-perioden.</span>
+      </div>
+
       <div class="col-section">
       <div class="toggle-row">
         <button class="${vals.club.historyClass}" data-bind="club.toggleHistory">Historikk</button>
