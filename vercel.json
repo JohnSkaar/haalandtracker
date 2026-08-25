@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/", "has": [{ "type": "host", "value": "haalandtracker.no" }], "destination": "/no/index.html" },
+    { "source": "/((?!assets/|no/).*)", "has": [{ "type": "host", "value": "haalandtracker.no" }], "destination": "/no/$1" }
+  ]
+}
