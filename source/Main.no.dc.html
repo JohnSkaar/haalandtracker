@@ -155,15 +155,19 @@
     .col-section { background: var(--surface-alt); border: 1px solid var(--line); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
     .col-title { font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); }
 
-    .stat-summary { background: var(--surface); border: 1px solid var(--line-strong); padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 10px; }
-    .stat-table { display: flex; flex-direction: column; gap: 0; }
-    .stat-row { display: grid; grid-template-columns: 1.4fr 0.7fr 0.7fr 0.7fr; gap: 6px; padding: 7px 0; border-top: 1px solid var(--line); align-items: baseline; }
-    .stat-row:first-child { border-top: none; }
-    .stat-row.stat-head { border-top: none; padding-top: 0; padding-bottom: 6px; }
-    .stat-row.stat-head span { font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); font-weight: 700; }
-    .stat-row span:first-child { font-size: 12px; font-weight: 700; color: var(--text); }
-    .stat-row span:not(:first-child) { font-size: 12.5px; font-variant-numeric: tabular-nums; color: var(--text-dim); }
-    .stat-row .stat-avg { color: var(--red); font-weight: 800; }
+    .stat-mini { background: var(--surface); border: 1px solid var(--line-strong); padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 8px; }
+    .stat-mini-title { font-size: 11px; font-weight: 700; color: var(--text); }
+    .stat-mini-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .stat-mini-item { display: flex; flex-direction: column; gap: 2px; }
+    .stat-mini-label { font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-faint); font-weight: 700; }
+    .stat-mini-value { font-size: 15px; font-weight: 800; color: var(--text); font-variant-numeric: tabular-nums; }
+    .stat-mini-value.stat-avg { color: var(--red); }
+    .stat-mini-note { font-size: 10.5px; color: var(--text-faint); line-height: 1.5; }
+    @media (max-width: 900px) {
+      .stat-mini-row { grid-template-columns: 1fr; gap: 6px; }
+      .stat-mini-item { flex-direction: row; align-items: baseline; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 5px; }
+      .stat-mini-item:first-child { border-top: none; padding-top: 0; }
+    }
     .wordmark-badge { display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; border: 1px solid var(--line-strong); padding: 9px 15px; font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; }
     .wordmark-badge.cl { color: var(--gold); border-color: var(--gold); }
     .wordmark-badge.nor { color: var(--text); }
@@ -935,15 +939,14 @@
         </div>
       </div>
 
-      <div class="stat-summary">
-        <span class="col-title">Manchester City &mdash; n&oslash;kkeltall</span>
-        <div class="stat-table">
-          <div class="stat-row stat-head"><span>Kategori</span><span>Kamper</span><span>M&aring;l</span><span>Snitt</span></div>
-          <div class="stat-row"><span>Klubb (alle turneringer)</span><span>199</span><span>162</span><span class="stat-avg">0,81</span></div>
-          <div class="stat-row"><span>Champions League</span><span>ca. 43</span><span>34</span><span class="stat-avg">0,79</span></div>
-          <div class="stat-row"><span>Landslag (Norge)</span><span>55</span><span>62</span><span class="stat-avg">1,13</span></div>
+      <div class="stat-mini">
+        <span class="stat-mini-title">Manchester City &mdash; n&oslash;kkeltall (klubb)</span>
+        <div class="stat-mini-row">
+          <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">199</span></div>
+          <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">162</span></div>
+          <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,81</span></div>
         </div>
-        <span class="chart-caption">Klubbtall t.o.m. 200. City-kamp, 23. aug. 2026 (kilde: mancity.com, Yahoo Sports). CL-m&aring;l for City er utledet fra sesongtall 2022/23&ndash;2025/26 (12+6+8+8) og kryssjekket mot karriere-totalen; kamptall for CL-perioden er et estimat &mdash; ikke funnet som &eacute;n kildesatt sum. Landslagstall er hele karrieren (05.09.2019&ndash;11.07.2026), ikke bare City-perioden.</span>
+        <span class="stat-mini-note">Alle turneringer, t.o.m. 200. City-kamp, 23. aug. 2026 (kilde: mancity.com, Yahoo Sports).</span>
       </div>
 
       <div class="col-section">
@@ -1128,6 +1131,16 @@
         </div>
       </div>
 
+      <div class="stat-mini">
+        <span class="stat-mini-title">Manchester City &mdash; n&oslash;kkeltall (CL)</span>
+        <div class="stat-mini-row">
+          <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">ca. 43</span></div>
+          <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">34</span></div>
+          <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,79</span></div>
+        </div>
+        <span class="stat-mini-note">Utledet fra sesongtall 2022/23&ndash;2025/26 (12+6+8+8), kryssjekket mot karriere-totalen. Kamptall er et estimat.</span>
+      </div>
+
       <div class="col-section">
       <div class="toggle-row">
         <button class="{{cl.historyClass}}" onClick="{{cl.toggleHistory}}">Historikk</button>
@@ -1310,6 +1323,16 @@
             <div class="merit-text"><b>Flest m&aring;l i &eacute;n landskamp for Norge</b><span class="sub">5 m&aring;l, mot Moldova (kilde: Wikipedia)</span></div>
           </div>
         </div>
+      </div>
+
+      <div class="stat-mini">
+        <span class="stat-mini-title">Landslaget &mdash; n&oslash;kkeltall</span>
+        <div class="stat-mini-row">
+          <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">55</span></div>
+          <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">62</span></div>
+          <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">1,13</span></div>
+        </div>
+        <span class="stat-mini-note">Hele landslagskarrieren, 05.09.2019&ndash;11.07.2026 (kilde: offisiell spillerstatistikk).</span>
       </div>
 
       <div class="col-section">

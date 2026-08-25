@@ -1125,15 +1125,14 @@ function render(vals) {
         </div>
       </div>
 
-      <div class="stat-summary">
-        <span class="col-title">Manchester City &mdash; n&oslash;kkeltall</span>
-        <div class="stat-table">
-          <div class="stat-row stat-head"><span>Kategori</span><span>Kamper</span><span>M&aring;l</span><span>Snitt</span></div>
-          <div class="stat-row"><span>Klubb (alle turneringer)</span><span>199</span><span>162</span><span class="stat-avg">0,81</span></div>
-          <div class="stat-row"><span>Champions League</span><span>ca. 43</span><span>34</span><span class="stat-avg">0,79</span></div>
-          <div class="stat-row"><span>Landslag (Norge)</span><span>55</span><span>62</span><span class="stat-avg">1,13</span></div>
+      <div class="stat-mini">
+        <span class="stat-mini-title">Manchester City &mdash; n&oslash;kkeltall (klubb)</span>
+        <div class="stat-mini-row">
+          <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">199</span></div>
+          <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">162</span></div>
+          <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,81</span></div>
         </div>
-        <span class="chart-caption">Klubbtall t.o.m. 200. City-kamp, 23. aug. 2026 (kilde: mancity.com, Yahoo Sports). CL-m&aring;l for City er utledet fra sesongtall 2022/23&ndash;2025/26 (12+6+8+8) og kryssjekket mot karriere-totalen; kamptall for CL-perioden er et estimat &mdash; ikke funnet som &eacute;n kildesatt sum. Landslagstall er hele karrieren (05.09.2019&ndash;11.07.2026), ikke bare City-perioden.</span>
+        <span class="stat-mini-note">Alle turneringer, t.o.m. 200. City-kamp, 23. aug. 2026 (kilde: mancity.com, Yahoo Sports).</span>
       </div>
 
       <div class="col-section">
@@ -1318,6 +1317,16 @@ function render(vals) {
         </div>
       </div>
 
+      <div class="stat-mini">
+        <span class="stat-mini-title">Manchester City &mdash; n&oslash;kkeltall (CL)</span>
+        <div class="stat-mini-row">
+          <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">ca. 43</span></div>
+          <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">34</span></div>
+          <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,79</span></div>
+        </div>
+        <span class="stat-mini-note">Utledet fra sesongtall 2022/23&ndash;2025/26 (12+6+8+8), kryssjekket mot karriere-totalen. Kamptall er et estimat.</span>
+      </div>
+
       <div class="col-section">
       <div class="toggle-row">
         <button class="${vals.cl.historyClass}" data-bind="cl.toggleHistory">Historikk</button>
@@ -1500,6 +1509,16 @@ function render(vals) {
             <div class="merit-text"><b>Flest m&aring;l i &eacute;n landskamp for Norge</b><span class="sub">5 m&aring;l, mot Moldova (kilde: Wikipedia)</span></div>
           </div>
         </div>
+      </div>
+
+      <div class="stat-mini">
+        <span class="stat-mini-title">Landslaget &mdash; n&oslash;kkeltall</span>
+        <div class="stat-mini-row">
+          <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">55</span></div>
+          <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">62</span></div>
+          <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">1,13</span></div>
+        </div>
+        <span class="stat-mini-note">Hele landslagskarrieren, 05.09.2019&ndash;11.07.2026 (kilde: offisiell spillerstatistikk).</span>
       </div>
 
       <div class="col-section">
