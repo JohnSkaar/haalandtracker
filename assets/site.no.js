@@ -635,7 +635,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l (poeng reddet etter 0&ndash;2) (kilde: ESPN, Sky Sports)</div>
       </div>
 
-      <div class="match-card season-2223 comp-pl">
+      <div class="match-card is-record season-2223 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">27. aug. 2022</div>
         <div class="match-badges">
@@ -649,10 +649,10 @@ function render(vals) {
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
         </div>
-        <div class="match-status played">Spilt &middot; hattrick (19 min., snudde 0&ndash;2 til seier) &mdash; f&oslash;rste City-hattrick (kilde: mancity.com)</div>
+        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick (19 min., snudde 0&ndash;2 til seier) &mdash; f&oslash;rste City-hattrick (kilde: mancity.com)</div>
       </div>
 
-      <div class="match-card season-2223 comp-pl">
+      <div class="match-card is-record season-2223 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">31. aug. 2022</div>
         <div class="match-badges">
@@ -666,7 +666,7 @@ function render(vals) {
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
         </div>
-        <div class="match-status played">Spilt &middot; hattrick p&aring; 38 min. &mdash; 9 m&aring;l p&aring; 5 kamper, PL-rekord for start p&aring; en klubbkarriere (kilde: Sky Sports, Premier League)</div>
+        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick p&aring; 38 min. &mdash; 9 m&aring;l p&aring; 5 kamper, PL-rekord for start p&aring; en klubbkarriere (kilde: Sky Sports, Premier League)</div>
       </div>
 
       <div class="match-card season-2223 comp-pl">
@@ -686,7 +686,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; hattrick i derbyet &mdash; f&oslash;rste PL-hattrick i Manchester-derby siden 1970 (kilde: CNN, Premier League)</div>
       </div>
 
-      <div class="match-card season-2223 comp-cl">
+      <div class="match-card is-record season-2223 comp-cl">
         <div class="match-comp cl">CL</div>
         <div class="match-date">14. mar. 2023</div>
         <div class="match-badges">
@@ -702,7 +702,7 @@ function render(vals) {
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
         </div>
-        <div class="match-status played">Spilt &middot; 5 m&aring;l (CL &aring;ttedelsfinale, 2. runde) &mdash; matcher Messis rekord for flest mål i en CL-kamp (kilde: Sky Sports, NBC Sports)</div>
+        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 5 m&aring;l (CL &aring;ttedelsfinale, 2. runde) &mdash; matcher Messis rekord for flest mål i en CL-kamp (kilde: Sky Sports, NBC Sports)</div>
       </div>
 
       <div class="match-card season-2223 comp-cup">
@@ -825,6 +825,84 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 4 m&aring;l (2 straffer + heading-hattrick f&oslash;r pause, 4. m&aring;l i 2. omgang) (kilde: mancity.com, LatestLY)</div>
       </div>
 
+      <div class="match-card season-2425 comp-friendly">
+        <div class="match-comp friendly">TRENING</div>
+        <div class="match-date">24. jul. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#018749;color:#fff">CEL</div>
+        </div>
+        <div class="match-opp">vs Celtic (N) &middot; 3&ndash;4</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. Sesongoppkj&oslash;ring.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-friendly">
+        <div class="match-comp friendly">TRENING</div>
+        <div class="match-date">27. jul. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#FB090B;color:#fff">MIL</div>
+        </div>
+        <div class="match-opp">vs AC Milan (N) &middot; 2&ndash;3</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. Sesongoppkj&oslash;ring.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-friendly">
+        <div class="match-comp friendly">TRENING</div>
+        <div class="match-date">31. jul. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#A50044;color:#fff">BAR</div>
+        </div>
+        <div class="match-opp">vs Barcelona (N) &middot; 2&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. City vant 4&ndash;1 p&aring; straffer, sesongoppkj&oslash;ring.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-friendly">
+        <div class="match-comp friendly">TRENING</div>
+        <div class="match-date">3. aug. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
+        </div>
+        <div class="match-opp">vs Chelsea (N) &middot; 1&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. Sesongoppkj&oslash;ring.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-shield">
+        <div class="match-comp shield">SHIELD</div>
+        <div class="match-date">10. aug. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+        </div>
+        <div class="match-opp">vs Man United (N) &middot; 1&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. City vant 7&ndash;6 p&aring; straffer, Community Shield.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">18. aug. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
+        </div>
+        <div class="match-opp">vs Chelsea (B) &middot; 2&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. Sesong&aring;pning.</div>
+      </div>
+
       <div class="match-card season-2425 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">24. aug. 2024</div>
@@ -842,7 +920,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; hattrick (kilde: Premier League, Sky Sports)</div>
       </div>
 
-      <div class="match-card season-2425 comp-pl">
+      <div class="match-card is-record season-2425 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">31. aug. 2024</div>
         <div class="match-badges">
@@ -856,7 +934,436 @@ function render(vals) {
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
         </div>
-        <div class="match-status played">Spilt &middot; hattrick &mdash; to strake trippel-kamper, 11. City-hattrick p&aring; 102 kamper (kilde: mancity.com, Sky Sports)</div>
+        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick &mdash; to strake trippel-kamper, 11. City-hattrick p&aring; 102 kamper (kilde: mancity.com, Sky Sports)</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">14. sep. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
+        </div>
+        <div class="match-opp">vs Brentford (H) &middot; 2&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">18. sep. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#010E80;color:#fff">INT</div>
+        </div>
+        <div class="match-opp">vs Inter (H) &middot; 0&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">22. sep. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
+        </div>
+        <div class="match-opp">vs Arsenal (H) &middot; 2&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-efl">
+        <div class="match-comp efl">LIGACUP</div>
+        <div class="match-date">24. sep. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#FBEE23;color:#14171c">WAT</div>
+        </div>
+        <div class="match-opp">vs Watford (H) &middot; 2&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">28. sep. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
+        </div>
+        <div class="match-opp">vs Newcastle (B) &middot; 1&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">1. okt. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#005BAC;color:#fff">SLO</div>
+        </div>
+        <div class="match-opp">vs Slovan Bratislava (B) &middot; 4&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">5. okt. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
+        </div>
+        <div class="match-opp">vs Fulham (H) &middot; 3&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">20. okt. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
+        </div>
+        <div class="match-opp">vs Wolves (B) &middot; 2&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">23. okt. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#A6192E;color:#fff">SPA</div>
+        </div>
+        <div class="match-opp">vs AC Sparta Prague (H) &middot; 5&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">26. okt. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#D71920;color:#fff">SOU</div>
+        </div>
+        <div class="match-opp">vs Southampton (H) &middot; 1&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-efl">
+        <div class="match-comp efl">LIGACUP</div>
+        <div class="match-date">30. okt. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
+        </div>
+        <div class="match-opp">vs Tottenham (B) &middot; 1&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">2. nov. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+        </div>
+        <div class="match-opp">vs Bournemouth (B) &middot; 1&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">5. nov. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#007A3D;color:#fff">SCP</div>
+        </div>
+        <div class="match-opp">vs Sporting CP (B) &middot; 1&ndash;4</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">9. nov. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
+        </div>
+        <div class="match-opp">vs Brighton (B) &middot; 1&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">23. nov. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
+        </div>
+        <div class="match-opp">vs Tottenham (H) &middot; 0&ndash;4</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">26. nov. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#E2000F;color:#fff">FEY</div>
+        </div>
+        <div class="match-opp">vs Feyenoord (H) &middot; 3&ndash;3</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">1. des. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
+        </div>
+        <div class="match-opp">vs Liverpool (B) &middot; 0&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">4. des. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
+        </div>
+        <div class="match-opp">vs Nottingham Forest (H) &middot; 3&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">7. des. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
+        </div>
+        <div class="match-opp">vs Crystal Palace (B) &middot; 2&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">11. des. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#000000;color:#fff">JUV</div>
+        </div>
+        <div class="match-opp">vs Juventus (B) &middot; 0&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">15. des. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+        </div>
+        <div class="match-opp">vs Man United (H) &middot; 1&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. Derby.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">21. des. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
+        </div>
+        <div class="match-opp">vs Aston Villa (B) &middot; 1&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">26. des. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#003399;color:#fff">EVE</div>
+        </div>
+        <div class="match-opp">vs Everton (H) &middot; 1&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">29. des. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#003090;color:#fff">LEI</div>
+        </div>
+        <div class="match-opp">vs Leicester City (B) &middot; 2&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">4. jan. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
+        </div>
+        <div class="match-opp">vs West Ham (H) &middot; 4&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cup">
+        <div class="match-comp cup">CUP</div>
+        <div class="match-date">11. jan. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#FF6900;color:#fff">SAL</div>
+        </div>
+        <div class="match-opp">vs Salford City (H) &middot; 1&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">14. jan. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
+        </div>
+        <div class="match-opp">vs Brentford (B) &middot; 2&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">19. jan. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#0044A9;color:#fff">IPS</div>
+        </div>
+        <div class="match-opp">vs Ipswich Town (B) &middot; 6&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">22. jan. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#004170;color:#fff">PSG</div>
+        </div>
+        <div class="match-opp">vs PSG (B) &middot; 2&ndash;4</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">25. jan. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
+        </div>
+        <div class="match-opp">vs Chelsea (H) &middot; 3&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">29. jan. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#0E3A6D;color:#fff">BRU</div>
+        </div>
+        <div class="match-opp">vs Club Brugge (H) &middot; 3&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">2. feb. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
+        </div>
+        <div class="match-opp">vs Arsenal (B) &middot; 1&ndash;5</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cup">
+        <div class="match-comp cup">CUP</div>
+        <div class="match-date">8. feb. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#D2122E;color:#fff">ORI</div>
+        </div>
+        <div class="match-opp">vs Leyton Orient (B) &middot; 2&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
       </div>
 
       <div class="match-card season-2425 comp-cl">
@@ -875,19 +1382,95 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 2 m&aring;l (knockout-playoff, 1. runde)</div>
       </div>
 
-      <div class="match-card season-2425 comp-cup">
-        <div class="match-comp cup">CUP</div>
-        <div class="match-date">30. mar. 2025</div>
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">15. feb. 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+          <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
         </div>
-        <div class="match-opp">vs Bournemouth (B) &middot; 2&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        <div class="match-opp">vs Newcastle (H) &middot; 4&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">19. feb. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
         </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (utligning, 49., bommet straffe f&oslash;r pause) &mdash; ankelskade, byttet ut 60. min., FA-cup kvartfinale (kilde: ESPN, Goal.com)</div>
+        <div class="match-opp">vs Real Madrid (B) &middot; 1&ndash;3</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. CL &aring;ttedelsfinale 2. runde, samlet 3&ndash;6.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">23. feb. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
+        </div>
+        <div class="match-opp">vs Liverpool (H) &middot; 0&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">26. feb. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
+        </div>
+        <div class="match-opp">vs Tottenham (B) &middot; 1&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cup">
+        <div class="match-comp cup">CUP</div>
+        <div class="match-date">1. mar. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#005C36;color:#fff">PLY</div>
+        </div>
+        <div class="match-opp">vs Plymouth Argyle (H) &middot; 3&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">8. mar. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
+        </div>
+        <div class="match-opp">vs Nottingham Forest (B) &middot; 0&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">15. mar. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
+        </div>
+        <div class="match-opp">vs Brighton (H) &middot; 2&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
       </div>
 
       <div class="match-card season-2425 comp-nor">
@@ -920,6 +1503,164 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l</div>
       </div>
 
+      <div class="match-card season-2425 comp-cup">
+        <div class="match-comp cup">CUP</div>
+        <div class="match-date">30. mar. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+        </div>
+        <div class="match-opp">vs Bournemouth (B) &middot; 2&ndash;1</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (utligning, 49., bommet straffe f&oslash;r pause) &mdash; ankelskade, byttet ut 60. min., FA-cup kvartfinale (kilde: ESPN, Goal.com)</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">2. apr. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#003090;color:#fff">LEI</div>
+        </div>
+        <div class="match-opp">vs Leicester City (H) &middot; 2&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">6. apr. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+        </div>
+        <div class="match-opp">vs Man United (B) &middot; 0&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. Derby.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">12. apr. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
+        </div>
+        <div class="match-opp">vs Crystal Palace (H) &middot; 5&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">19. apr. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#003399;color:#fff">EVE</div>
+        </div>
+        <div class="match-opp">vs Everton (B) &middot; 2&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">22. apr. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
+        </div>
+        <div class="match-opp">vs Aston Villa (H) &middot; 2&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">27. apr. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
+        </div>
+        <div class="match-opp">vs Nottingham Forest (B) &middot; 2&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">2. mai 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
+        </div>
+        <div class="match-opp">vs Wolves (H) &middot; 1&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">10. mai 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#D71920;color:#fff">SOU</div>
+        </div>
+        <div class="match-opp">vs Southampton (B) &middot; 0&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">17. mai 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
+        </div>
+        <div class="match-opp">vs Crystal Palace (B) &middot; 0&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">20. mai 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+        </div>
+        <div class="match-opp">vs Bournemouth (H) &middot; 3&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">25. mai 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
+        </div>
+        <div class="match-opp">vs Fulham (B) &middot; 2&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
       <div class="match-card season-2425 comp-nor">
         <div class="match-comp nor">LAND</div>
         <div class="match-date">6. juni 2025</div>
@@ -948,6 +1689,58 @@ function render(vals) {
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
         </div>
         <div class="match-status played">Spilt &middot; 1 m&aring;l (avgj&oslash;rende)</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cwc">
+        <div class="match-comp cwc">KLUBB-VM</div>
+        <div class="match-date">18. jun. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#EE1C25;color:#fff">WYD</div>
+        </div>
+        <div class="match-opp">vs Wydad AC (H) &middot; 2&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cwc">
+        <div class="match-comp cwc">KLUBB-VM</div>
+        <div class="match-date">23. jun. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#F7A81B;color:#14171c">ALA</div>
+        </div>
+        <div class="match-opp">vs Al Ain FC (H) &middot; 6&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cwc">
+        <div class="match-comp cwc">KLUBB-VM</div>
+        <div class="match-date">26. jun. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#000000;color:#fff">JUV</div>
+        </div>
+        <div class="match-opp">vs Juventus (B) &middot; 5&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cwc">
+        <div class="match-comp cwc">KLUBB-VM</div>
+        <div class="match-date">1. jul. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#003DA5;color:#fff">HIL</div>
+        </div>
+        <div class="match-opp">vs Al-Hilal (H) &middot; 3&ndash;4</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
       </div>
 
       <div class="match-card season-2526 comp-pl">
@@ -1029,7 +1822,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 2 m&aring;l (derby)</div>
       </div>
 
-      <div class="match-card season-2526 comp-cl">
+      <div class="match-card is-record season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
         <div class="match-date">18. sep. 2025</div>
         <div class="match-badges">
@@ -1041,7 +1834,7 @@ function render(vals) {
         <div class="match-icons">
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
         </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l &mdash; 50. CL-m&aring;l, i sin 49. kamp (rekord)</div>
+        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 1 m&aring;l &mdash; 50. CL-m&aring;l, i sin 49. kamp (rekord)</div>
       </div>
 
       <div class="match-card season-2526 comp-pl">
@@ -1119,7 +1912,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l (9. min.) &mdash; kampens eneste m&aring;l</div>
       </div>
 
-      <div class="match-card season-2526 comp-nor">
+      <div class="match-card is-record season-2526 comp-nor">
         <div class="match-comp nor">LAND</div>
         <div class="match-date">11. okt. 2025</div>
         <div class="match-badges">
@@ -1133,7 +1926,7 @@ function render(vals) {
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
         </div>
-        <div class="match-status played">Spilt &middot; hattrick (3 m&aring;l, 50. landsm&aring;l n&aring;dd)</div>
+        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick (3 m&aring;l, 50. landsm&aring;l n&aring;dd)</div>
       </div>
 
       <div class="match-card season-2526 comp-pl">
@@ -1310,7 +2103,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Foden (2) og Gvardiol scoret (kilde: mancity.com)</div>
       </div>
 
-      <div class="match-card season-2526 comp-pl">
+      <div class="match-card is-record season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">2. des. 2025</div>
         <div class="match-badges">
@@ -1322,7 +2115,7 @@ function render(vals) {
         <div class="match-icons">
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
         </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l &mdash; 100. PL-m&aring;l, i sin 111. kamp (GWR)</div>
+        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 1 m&aring;l &mdash; 100. PL-m&aring;l, i sin 111. kamp (GWR)</div>
       </div>
 
       <div class="match-card season-2526 comp-pl">
@@ -1382,7 +2175,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Cherki og Savinho scoret (kilde: mancity.com)</div>
       </div>
 
-      <div class="match-card season-2526 comp-pl">
+      <div class="match-card is-record season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">20. des. 2025</div>
         <div class="match-badges">
@@ -1396,7 +2189,7 @@ function render(vals) {
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="#f1e6cf" stroke="#14171c" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="#14171c"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#14171c" stroke-width="1.1" stroke-linecap="round"/></svg></span>
         </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l + 1 assist &mdash; passerte 200 m&aring;lpoeng i Europas topp 5-ligaer</div>
+        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 2 m&aring;l + 1 assist &mdash; passerte 200 m&aring;lpoeng i Europas topp 5-ligaer</div>
       </div>
 
       <div class="match-card season-2526 comp-pl">
@@ -1574,7 +2367,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l (90.+3, straffe, seiersm&aring;l) &mdash; Bernardo Silva scoret ogs&aring;</div>
       </div>
 
-      <div class="match-card season-2526 comp-pl">
+      <div class="match-card is-record season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">11. feb. 2026</div>
         <div class="match-badges">
@@ -1586,7 +2379,7 @@ function render(vals) {
         <div class="match-icons">
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
         </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (39. min.) &mdash; 153. klubbm&aring;l, p&aring; linje med Colin Bell &mdash; Semenyo og Nico O'Reilly scoret ogs&aring;</div>
+        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 1 m&aring;l (39. min.) &mdash; 153. klubbm&aring;l, p&aring; linje med Colin Bell &mdash; Semenyo og Nico O'Reilly scoret ogs&aring;</div>
       </div>
 
       <div class="match-card season-2526 comp-cup">

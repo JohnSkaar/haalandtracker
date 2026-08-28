@@ -86,6 +86,9 @@
       padding: 12px 12px 13px 12px; display: flex; flex-direction: column; gap: 9px;
     }
     .match-card.is-missed { opacity: 0.5; border-style: dashed; box-shadow: none; }
+    .match-card.is-record { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset, 0 1px 0 rgba(20,23,28,0.03); }
+    .match-card.is-record .match-status { color: var(--gold); font-weight: 700; }
+    .record-star { display: inline-block; vertical-align: -1px; margin-right: 3px; }
     .match-card.is-planned { background: transparent; border: 1.5px dashed var(--line-strong); box-shadow: none; }
     .match-comp { font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.08em; padding-bottom: 6px; border-bottom: 2px solid var(--line-strong); }
     .match-comp.pl { border-bottom-color: #7c8493; color: var(--text-dim); }
@@ -93,6 +96,9 @@
     .match-comp.nor { border-bottom-color: var(--red); color: var(--red); }
     .match-comp.cup { border-bottom-color: #5c1a33; color: #5c1a33; }
     .match-comp.efl { border-bottom-color: #1c2c5b; color: #1c2c5b; }
+    .match-comp.shield { border-bottom-color: #2f6b3a; color: #2f6b3a; }
+    .match-comp.cwc { border-bottom-color: #8a5a00; color: #8a5a00; }
+    .match-comp.friendly { border-bottom-color: var(--text-faint); color: var(--text-faint); }
     .match-date { font-size: 11px; color: var(--text-faint); }
 
     .match-badges { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 2px 0; }
