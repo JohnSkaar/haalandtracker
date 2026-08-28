@@ -193,9 +193,10 @@ class Site {
       { period: '2018', title: 'Molde FK, season 2', desc: '12 goals in 25 Eliteserien games (17 starts) (source: VAVEL, Britannica).', record: false },
       { period: '2019&ndash;2020', title: 'RB Salzburg', desc: '17 goals in 16 games in the Austrian Bundesliga, league top scorer; 29 goals in 27 games across all competitions (source: BBC, football365).', record: true },
       { period: '18 Jan 2020', title: 'Dortmund debut with a hat-trick', desc: 'Came on as a substitute vs Augsburg, scored with his first touch and completed a hat-trick in 23 minutes, aged 19 (source: bundesliga.com, Bleacher Report).', record: true },
-      { period: '2019/20 (half-season)', title: 'Borussia Dortmund, first half-season', desc: '13 Bundesliga goals after his January 2020 transfer (source: Sporf, StatMuse).', record: false },
+      { period: '2019/20 (half-season)', title: 'Borussia Dortmund, first half-season', desc: '13 goals in 15 Bundesliga games after his January 2020 transfer (source: bundesliga.com, Sporf, StatMuse).', record: false },
       { period: '2020/21', title: 'Borussia Dortmund, breakout season', desc: '27 goals in 28 Bundesliga games, and Champions League top scorer with 10 goals in 8 games &mdash; 41 goals in 41 games across all competitions (source: Bundesliga.com, UEFA.com).', record: true },
       { period: '2021 (autumn)', title: 'Borussia Dortmund, injury-hit autumn', desc: '13 Bundesliga goals and 19 goals in 16 games across all competitions in the 2021 autumn half of the season, despite a hip injury that kept him out for several weeks (source: Bundesliga.com).', record: false },
+      { period: '2021/22', title: 'Borussia Dortmund, final season', desc: '22 goals in 24 Bundesliga games despite that same autumn injury setback &mdash; 29 goals across all competitions (source: bundesliga.com, Wikipedia).', record: false },
       { period: '2020&ndash;2022', title: 'Borussia Dortmund, total', desc: '62 goals in 67 Bundesliga games across his whole Dortmund spell. Youngest and fastest player ever to 50 Bundesliga goals (source: bundesliga.com, goal.com).', record: false },
       { period: '2023', title: 'Fastest to 50 PL goals', desc: '48 games &mdash; beat Andy Cole\&#39;s record by 17 games (source: ESPN).', record: true },
       { period: '2 Dec 2025', title: 'Fastest to 100 PL goals', desc: '111 games, vs Fulham, beating Alan Shearer\&#39;s record of 124 &mdash; Guinness World Record (source: ESPN, Sky Sports, Guinness World Records).', record: true },
@@ -3726,6 +3727,9 @@ ${(vals.modal.nat) ? `
 ` : ''}
 
 <footer class="foot">
+  <div class="foot-note">
+    <b>About this site:</b> HaalandTracker is a non-commercial, fan-made stats site and is not officially affiliated with Erling Haaland, Manchester City, or any other club or federation mentioned.
+  </div>
   <div class="foot-note">
     <b>About the sources:</b> figures and events are drawn from public sources (ESPN, Sky Sports, UEFA.com, Guinness World Records, bundesliga.com, mancity.com and others), cited alongside each point. Where an up-to-date total isn&#39;t confirmed, it is marked &laquo;Estimate&raquo;. Club and competition logos have deliberately been replaced with text to avoid trademark conflicts.
   </div>
