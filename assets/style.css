@@ -75,6 +75,11 @@
     .timeline-scroll.filter-2324 .match-card:not(.season-2324) { display: none; }
     .timeline-scroll.filter-2223 .match-card:not(.season-2223) { display: none; }
     .timeline-scroll.filter-early .match-card:not(.season-early) { display: none; }
+    .timeline-scroll.hide-nor .match-card.comp-nor { display: none; }
+    .timeline-scroll.hide-pl .match-card.comp-pl { display: none; }
+    .timeline-scroll.hide-cl .match-card.comp-cl { display: none; }
+    .timeline-scroll.hide-cup .match-card.comp-cup { display: none; }
+    .comp-toggle-row { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 10px; }
     .match-card {
       flex: 0 0 184px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 1px 0 rgba(20,23,28,0.03);
       padding: 12px 12px 13px 12px; display: flex; flex-direction: column; gap: 9px;
@@ -86,6 +91,7 @@
     .match-comp.cl { border-bottom-color: var(--gold); color: var(--gold); }
     .match-comp.nor { border-bottom-color: var(--red); color: var(--red); }
     .match-comp.cup { border-bottom-color: #5c1a33; color: #5c1a33; }
+    .match-comp.efl { border-bottom-color: #1c2c5b; color: #1c2c5b; }
     .match-date { font-size: 11px; color: var(--text-faint); }
 
     .match-badges { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 2px 0; }

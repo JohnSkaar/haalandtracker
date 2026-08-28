@@ -20,7 +20,8 @@ class Site {
         nat: { active: null }
       },
       modal: null,
-      timelineSeason: 'all'
+      timelineSeason: 'all',
+      timelineComp: { nor: true, pl: true, cl: true, cup: true }
     };
   }
 
@@ -28,6 +29,10 @@ class Site {
   closeModal() { this.setState({ modal: null }); }
 
   setTimelineSeason(v) { this.setState({ timelineSeason: v }); }
+  toggleTimelineComp(key) {
+    const cur = this.state.timelineComp[key];
+    this.setState({ timelineComp: { ...this.state.timelineComp, [key]: !cur } });
+  }
 
   toggleCat(col, cat) {
     const cur = this.state.col[col][cat];
@@ -500,9 +505,26 @@ class Site {
       cls: chipClass(s.timelineSeason === f.key),
       onClick: () => this.setTimelineSeason(f.key)
     }));
+
+    const compHideClass = ['nor', 'pl', 'cl', 'cup']
+      .filter((k) => !s.timelineComp[k])
+      .map((k) => 'hide-' + k)
+      .join(' ');
+    const compFilters = [
+      { key: 'nor', label: 'Landslag' },
+      { key: 'pl', label: 'Premier League' },
+      { key: 'cl', label: 'Champions League' },
+      { key: 'cup', label: 'FA Cup' }
+    ].map((f) => ({
+      label: f.label,
+      cls: chipClass(s.timelineComp[f.key]),
+      onClick: () => this.toggleTimelineComp(f.key)
+    }));
+
     const timeline = {
-      scrollClass: 'timeline-scroll ' + (timelineFilterCss[s.timelineSeason] || ''),
-      filters: timelineFilters
+      scrollClass: ['timeline-scroll', timelineFilterCss[s.timelineSeason] || '', compHideClass].filter(Boolean).join(' '),
+      filters: timelineFilters,
+      compFilters: compFilters
     };
 
     return {
@@ -546,9 +568,14 @@ function render(vals) {
         <button class="${f.cls}" data-bind="${'timeline.filters.' + __i0 + '.onClick'}">${f.label}</button>
       `).join('')}
     </div>
+    <div class="comp-toggle-row">
+      ${(vals.timeline.compFilters||[]).map((f,__i0) => `
+        <button class="${f.cls}" data-bind="${'timeline.compFilters.' + __i0 + '.onClick'}">${f.label}</button>
+      `).join('')}
+    </div>
 
     <div class="${vals.timeline.scrollClass}">
-      <div class="match-card season-early">
+      <div class="match-card season-early comp-nor">
         <div class="match-comp nor">LAND</div>
         <div class="match-date">5. sep. 2019</div>
         <div class="match-badges">
@@ -561,7 +588,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; A-landslagsdebut, ingen m&aring;l</div>
       </div>
 
-      <div class="match-card season-2223">
+      <div class="match-card season-2223 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">7. aug. 2022</div>
         <div class="match-badges">
@@ -577,7 +604,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 2 m&aring;l (straffe + fra spill) &mdash; City-debut (kilde: mancity.com, Sky Sports)</div>
       </div>
 
-      <div class="match-card season-2223">
+      <div class="match-card season-2223 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">13. aug. 2022</div>
         <div class="match-badges">
@@ -592,7 +619,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 assist, ingen m&aring;l (kilde: Sports Mole)</div>
       </div>
 
-      <div class="match-card season-2223">
+      <div class="match-card season-2223 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">21. aug. 2022</div>
         <div class="match-badges">
@@ -607,7 +634,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l (poeng reddet etter 0&ndash;2) (kilde: ESPN, Sky Sports)</div>
       </div>
 
-      <div class="match-card season-2223">
+      <div class="match-card season-2223 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">27. aug. 2022</div>
         <div class="match-badges">
@@ -624,7 +651,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; hattrick (19 min., snudde 0&ndash;2 til seier) &mdash; f&oslash;rste City-hattrick (kilde: mancity.com)</div>
       </div>
 
-      <div class="match-card season-2223">
+      <div class="match-card season-2223 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">31. aug. 2022</div>
         <div class="match-badges">
@@ -641,7 +668,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; hattrick p&aring; 38 min. &mdash; 9 m&aring;l p&aring; 5 kamper, PL-rekord for start p&aring; en klubbkarriere (kilde: Sky Sports, Premier League)</div>
       </div>
 
-      <div class="match-card season-2223">
+      <div class="match-card season-2223 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">2. okt. 2022</div>
         <div class="match-badges">
@@ -658,7 +685,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; hattrick i derbyet &mdash; f&oslash;rste PL-hattrick i Manchester-derby siden 1970 (kilde: CNN, Premier League)</div>
       </div>
 
-      <div class="match-card season-2223">
+      <div class="match-card season-2223 comp-cl">
         <div class="match-comp cl">CL</div>
         <div class="match-date">14. mar. 2023</div>
         <div class="match-badges">
@@ -677,7 +704,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 5 m&aring;l (CL &aring;ttedelsfinale, 2. runde) &mdash; matcher Messis rekord for flest mål i en CL-kamp (kilde: Sky Sports, NBC Sports)</div>
       </div>
 
-      <div class="match-card season-2223">
+      <div class="match-card season-2223 comp-cup">
         <div class="match-comp cup">CUP</div>
         <div class="match-date">3. jun. 2023</div>
         <div class="match-badges">
@@ -690,7 +717,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; FA-cupen vunnet p&aring; Wembley (kilde: The FA, Wikipedia)</div>
       </div>
 
-      <div class="match-card season-2223">
+      <div class="match-card season-2223 comp-cl">
         <div class="match-comp cl">CL</div>
         <div class="match-date">10. jun. 2023</div>
         <div class="match-badges">
@@ -703,7 +730,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Champions League vunnet i Istanbul (Rodri avgjorde), trippelen fullf&oslash;rt &mdash; sesongens toppscorer med 12 CL-m&aring;l (kilde: ESPN, UEFA.com)</div>
       </div>
 
-      <div class="match-card season-2324">
+      <div class="match-card season-2324 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">11. aug. 2023</div>
         <div class="match-badges">
@@ -719,7 +746,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 2 m&aring;l (4. og 36. min.) &mdash; sesong&aring;pning (kilde: ESPN, Sky Sports)</div>
       </div>
 
-      <div class="match-card season-2324">
+      <div class="match-card season-2324 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">2. sep. 2023</div>
         <div class="match-badges">
@@ -736,7 +763,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; hattrick i 2. omgang (kilde: mancity.com, Sky Sports)</div>
       </div>
 
-      <div class="match-card season-2324">
+      <div class="match-card season-2324 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">29. okt. 2023</div>
         <div class="match-badges">
@@ -753,7 +780,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 2 m&aring;l (straffe + heading) + 1 assist &mdash; derbyseier p&aring; Old Trafford (kilde: Sky Sports, Al Jazeera)</div>
       </div>
 
-      <div class="match-card season-2324">
+      <div class="match-card season-2324 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">31. jan. 2024</div>
         <div class="match-badges">
@@ -766,7 +793,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; comeback som innbytter (71.) etter 56 dager ute med fotskade, ingen m&aring;l (kilde: ESPN, SI.com)</div>
       </div>
 
-      <div class="match-card season-2324">
+      <div class="match-card season-2324 comp-cl">
         <div class="match-comp cl">CL</div>
         <div class="match-date">17. apr. 2024</div>
         <div class="match-badges">
@@ -779,7 +806,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; ingen m&aring;l (traff tverrligger) &mdash; City slo &aring;t p&aring; straffer (3&ndash;4) etter 4&ndash;4 samlet, CL &aring;ttedelsfinale (kilde: ESPN, Sky Sports)</div>
       </div>
 
-      <div class="match-card season-2324">
+      <div class="match-card season-2324 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">4. mai 2024</div>
         <div class="match-badges">
@@ -797,7 +824,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 4 m&aring;l (2 straffer + heading-hattrick f&oslash;r pause, 4. m&aring;l i 2. omgang) (kilde: mancity.com, LatestLY)</div>
       </div>
 
-      <div class="match-card season-2425">
+      <div class="match-card season-2425 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">24. aug. 2024</div>
         <div class="match-badges">
@@ -814,7 +841,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; hattrick (kilde: Premier League, Sky Sports)</div>
       </div>
 
-      <div class="match-card season-2425">
+      <div class="match-card season-2425 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">31. aug. 2024</div>
         <div class="match-badges">
@@ -831,7 +858,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; hattrick &mdash; to strake trippel-kamper, 11. City-hattrick p&aring; 102 kamper (kilde: mancity.com, Sky Sports)</div>
       </div>
 
-      <div class="match-card season-2425">
+      <div class="match-card season-2425 comp-cl">
         <div class="match-comp cl">CL</div>
         <div class="match-date">11. feb. 2025</div>
         <div class="match-badges">
@@ -847,7 +874,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 2 m&aring;l (knockout-playoff, 1. runde)</div>
       </div>
 
-      <div class="match-card season-2425">
+      <div class="match-card season-2425 comp-cup">
         <div class="match-comp cup">CUP</div>
         <div class="match-date">30. mar. 2025</div>
         <div class="match-badges">
@@ -862,7 +889,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l (utligning, 49., bommet straffe f&oslash;r pause) &mdash; ankelskade, byttet ut 60. min., FA-cup kvartfinale (kilde: ESPN, Goal.com)</div>
       </div>
 
-      <div class="match-card season-2425">
+      <div class="match-card season-2425 comp-nor">
         <div class="match-comp nor">LAND</div>
         <div class="match-date">22. mars 2025</div>
         <div class="match-badges">
@@ -877,7 +904,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l (VM-kvalik-start)</div>
       </div>
 
-      <div class="match-card season-2425">
+      <div class="match-card season-2425 comp-nor">
         <div class="match-comp nor">LAND</div>
         <div class="match-date">25. mars 2025</div>
         <div class="match-badges">
@@ -892,7 +919,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l</div>
       </div>
 
-      <div class="match-card season-2425">
+      <div class="match-card season-2425 comp-nor">
         <div class="match-comp nor">LAND</div>
         <div class="match-date">6. juni 2025</div>
         <div class="match-badges">
@@ -907,7 +934,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l (f&oslash;rste seier over Italia p&aring; 25 &aring;r)</div>
       </div>
 
-      <div class="match-card season-2425">
+      <div class="match-card season-2425 comp-nor">
         <div class="match-comp nor">LAND</div>
         <div class="match-date">9. juni 2025</div>
         <div class="match-badges">
@@ -922,7 +949,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l (avgj&oslash;rende)</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">16. aug. 2025</div>
         <div class="match-badges">
@@ -938,7 +965,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 2 m&aring;l (sesong&aring;pning, Molineux)</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">23. aug. 2025</div>
         <div class="match-badges">
@@ -951,7 +978,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; sesongens f&oslash;rste tap</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">LAND</div>
         <div class="match-date">9. sep. 2025</div>
         <div class="match-badges">
@@ -970,7 +997,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 5 m&aring;l (hattrick f&oslash;r pause + 2)</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">14. sep. 2025</div>
         <div class="match-badges">
@@ -986,7 +1013,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 2 m&aring;l (derby)</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
         <div class="match-date">18. sep. 2025</div>
         <div class="match-badges">
@@ -1001,7 +1028,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l &mdash; 50. CL-m&aring;l, i sin 49. kamp (rekord)</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">27. sep. 2025</div>
         <div class="match-badges">
@@ -1017,7 +1044,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 2 m&aring;l</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
         <div class="match-date">1. okt. 2025</div>
         <div class="match-badges">
@@ -1033,7 +1060,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 2 m&aring;l</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">LAND</div>
         <div class="match-date">11. okt. 2025</div>
         <div class="match-badges">
@@ -1050,7 +1077,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; hattrick (3 m&aring;l, 50. landsm&aring;l n&aring;dd)</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
         <div class="match-date">21. okt. 2025</div>
         <div class="match-badges">
@@ -1065,7 +1092,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
         <div class="match-date">5. nov. 2025</div>
         <div class="match-badges">
@@ -1080,7 +1107,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l (mot tidligere klubb)</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">LAND</div>
         <div class="match-date">13. nov. 2025</div>
         <div class="match-badges">
@@ -1096,7 +1123,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 2 m&aring;l</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">LAND</div>
         <div class="match-date">16. nov. 2025</div>
         <div class="match-badges">
@@ -1112,7 +1139,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 2 m&aring;l &mdash; VM-plassen sikret p&aring; San Siro</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
         <div class="match-date">25. nov. 2025</div>
         <div class="match-badges">
@@ -1125,7 +1152,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; ingen m&aring;l (innbytter, City's f&oslash;rste CL-tap i sesongen)</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">2. des. 2025</div>
         <div class="match-badges">
@@ -1140,7 +1167,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l &mdash; 100. PL-m&aring;l, i sin 111. kamp (GWR)</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">14. des. 2025</div>
         <div class="match-badges">
@@ -1156,7 +1183,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 2 m&aring;l (nikk + straffe)</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">20. des. 2025</div>
         <div class="match-badges">
@@ -1173,7 +1200,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 2 m&aring;l + 1 assist &mdash; passerte 200 m&aring;lpoeng i Europas topp 5-ligaer</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
         <div class="match-date">29. jan. 2026</div>
         <div class="match-badges">
@@ -1188,7 +1215,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">11. feb. 2026</div>
         <div class="match-badges">
@@ -1203,7 +1230,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l &mdash; 153. klubbm&aring;l, p&aring; linje med Colin Bell</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
         <div class="match-date">11. mar. 2026</div>
         <div class="match-badges">
@@ -1216,7 +1243,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; ingen m&aring;l (Valverde-hattrick, CL &aring;ttedelsfinale 1. runde)</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
         <div class="match-date">17. mar. 2026</div>
         <div class="match-badges">
@@ -1231,8 +1258,8 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l &mdash; City slo &uring;t 1&ndash;5 samlet (CL &aring;ttedelsfinale 2. runde)</div>
       </div>
 
-      <div class="match-card season-2526">
-        <div class="match-comp cup">CUP</div>
+      <div class="match-card season-2526 comp-efl">
+        <div class="match-comp efl">LIGACUP</div>
         <div class="match-date">22. mar. 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
@@ -1244,7 +1271,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Ligacupen vunnet p&aring; Wembley (m&aring;l av Nico O'Reilly x2)</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-cup">
         <div class="match-comp cup">CUP</div>
         <div class="match-date">4. apr. 2026</div>
         <div class="match-badges">
@@ -1261,7 +1288,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; hattrick (FA-cup kvartfinale)</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-cup">
         <div class="match-comp cup">CUP</div>
         <div class="match-date">25. apr. 2026</div>
         <div class="match-badges">
@@ -1274,7 +1301,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; ingen m&aring;l (FA-cup semifinale)</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-cup">
         <div class="match-comp cup">CUP</div>
         <div class="match-date">16. mai 2026</div>
         <div class="match-badges">
@@ -1286,7 +1313,7 @@ function render(vals) {
         <div class="match-icons"></div>
         <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; FA-cupen vunnet</div>
       </div>
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">VM</div>
         <div class="match-date">17. jun. 2026</div>
         <div class="match-badges">
@@ -1302,7 +1329,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 2 m&aring;l &mdash; VM-debut, Norges f&oslash;rste VM-kamp siden 1998</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">VM</div>
         <div class="match-date">23. jun. 2026</div>
         <div class="match-badges">
@@ -1318,7 +1345,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 2 m&aring;l &mdash; sluttspillplass sikret med en kamp til gode</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">VM</div>
         <div class="match-date">26. jun. 2026</div>
         <div class="match-badges">
@@ -1331,7 +1358,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Norge nr. 2 i gruppe I</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">VM</div>
         <div class="match-date">30. jun. 2026</div>
         <div class="match-badges">
@@ -1346,7 +1373,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 1 m&aring;l (86. min., vinnerm&aring;l) &mdash; Norges f&oslash;rste VM-sluttspillseier noensinne</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">VM</div>
         <div class="match-date">5. jul. 2026</div>
         <div class="match-badges">
@@ -1362,7 +1389,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; 2 m&aring;l (79. min. + langskudd) &mdash; Norge til kvartfinale for f&oslash;rste gang</div>
       </div>
 
-      <div class="match-card season-2526">
+      <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">VM</div>
         <div class="match-date">11. jul. 2026</div>
         <div class="match-badges">
@@ -1375,7 +1402,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; VM-eventyret endte i kvartfinalen</div>
       </div>
 
-      <div class="match-card season-2627">
+      <div class="match-card season-2627 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">23. aug. 2026</div>
         <div class="match-badges">
@@ -1388,7 +1415,7 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; sesong&aring;pning, Gvardiol avgjorde i overtiden (kilde: ESPN, mancity.com)</div>
       </div>
 
-      <div class="match-card is-planned season-2627">
+      <div class="match-card is-planned season-2627 comp-pl">
         <div class="match-comp pl">PL</div>
         <div class="match-date">28. aug. 2026</div>
         <div class="match-badges">
