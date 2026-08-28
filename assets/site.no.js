@@ -12,7 +12,7 @@ class Site {
       chart: {
         club: {
           league: null, view: 'totalt', milestone: 100, season: '2022/23',
-          rivalsPL: { shearer: true, kane: true, aguero: true, henry: true, salah: true, rooney: false, cole: false, lampard: false, fowler: false, defoe: false },
+          rivalsPL: { shearer: true, kane: true, aguero: true, henry: true, salah: true, rooney: false, cole: false, lampard: false, fowler: false, defoe: false, wright: false, ferdinand: false, owen: false },
           rivalsOther: { a: true, b: true },
           seasonRivals: { salah: true, shearer: true, cole: true }
         },
@@ -266,13 +266,18 @@ class Site {
     const cc = s.chart.club, ccl = s.chart.cl, cnat = s.chart.nat;
 
     const PL_100 = {
-      maxGames: 175, maxGoals: 100,
+      maxGames: 200, maxGoals: 100,
       haaland: [[0,0],[5,3],[15,12],[30,25],[45,38],[60,52],[75,65],[90,80],[100,91],[111,100]],
       rivals: [
         { key: 'shearer', name: 'A. Shearer', short: 'Shearer', color: '#2f5aa8', points: [[0,0],[8,3],[20,11],[35,22],[50,35],[65,48],[80,62],[95,75],[110,88],[124,100]] },
         { key: 'kane', name: 'H. Kane', short: 'Kane', color: '#6a3fa0', points: [[0,0],[10,2],[25,9],[45,20],[65,33],[85,47],[105,62],[125,80],[141,100]] },
         { key: 'aguero', name: 'S. Agüero', short: 'Agüero', color: '#a8791a', points: [[0,0],[10,3],[25,10],[45,22],[65,35],[85,50],[105,65],[125,82],[147,100]] },
-        { key: 'henry', name: 'T. Henry', short: 'Henry', color: '#1f2937', points: [[0,0],[10,2],[25,8],[45,18],[65,30],[85,42],[105,56],[125,70],[145,86],[160,100]] }
+        { key: 'henry', name: 'T. Henry', short: 'Henry', color: '#1f2937', points: [[0,0],[10,2],[25,8],[45,18],[65,30],[85,42],[105,56],[125,70],[145,86],[160,100]] },
+        { key: 'salah', name: 'M. Salah', short: 'Salah', color: '#0e6b3a', points: [[0,0],[162,100]] },
+        { key: 'wright', name: 'I. Wright', short: 'Wright', color: '#c1352b', points: [[0,0],[173,100]] },
+        { key: 'fowler', name: 'R. Fowler', short: 'Fowler', color: '#b5484f', points: [[0,0],[175,100]] },
+        { key: 'ferdinand', name: 'L. Ferdinand', short: 'Ferdinand', color: '#7c3f8f', points: [[0,0],[178,100]] },
+        { key: 'owen', name: 'M. Owen', short: 'Owen', color: '#5a5f73', points: [[0,0],[185,100]] }
       ]
     };
     const PL_HAALAND_SOLID = [[0,0],[4,3],[8,7],[12,13],[16,18],[20,22],[25,27],[30,32],[35,36],[39,38],[43,42],[47,46],[51,49],[55,52],[59,55],[63,59],[66,63],[70,65],[74,68],[78,71],[82,74],[86,77],[90,80],[94,83],[97,85],[101,87],[105,91],[109,95],[111,100],[117,103],[122,106],[127,109],[132,112]];
@@ -318,6 +323,12 @@ class Site {
       '2023/24': { xg: 29.3, xa: 2.22, minutes: 2556, penalties: '8 (7)', dribbles: '28 (43%)', duelsWon: 88, aerialDuelsWon: 39, tackles: 6, interceptions: 2, yellowCards: 1, redCards: 0, fouls: 18 },
       '2024/25': { xg: 22.01, xa: 2.02, minutes: 2741, penalties: '4 (3)', dribbles: '33 (39%)', duelsWon: 94, aerialDuelsWon: 57, tackles: 11, interceptions: 5, yellowCards: 2, redCards: 0, fouls: 24 },
       '2025/26': { xg: 25.74, xa: 2.81, minutes: 2958, penalties: '4 (3)', dribbles: '32 (53%)', duelsWon: 130, aerialDuelsWon: 73, tackles: 15, interceptions: 5, yellowCards: 2, redCards: 0, fouls: 24 }
+    };
+    const PL_SEASON_RANK = {
+      '2022/23': '1. i toppscorerligaen (Golden Boot): Haaland 36, Kane 30, Toney 20 (kilde: Premier League, offisiell statistikk).',
+      '2023/24': '1. i toppscorerligaen (Golden Boot) med 27 mål (kilde: Premier League, offisiell statistikk).',
+      '2024/25': '3. i toppscorerligaen: Salah 29, Isak 23, Haaland 22 &mdash; eneste sesong uten Golden Boot av de fire (kilde: Premier League, offisiell statistikk).',
+      '2025/26': '1. i toppscorerligaen (Golden Boot) med 27 mål (kilde: Premier League, offisiell statistikk).'
     };
     const PL_SEASON_RIVALS = [
       { key: 'salah', name: 'M. Salah 17/18', short: 'Salah', color: '#2f5aa8', points: [[0,0],[5,4],[10,9],[15,14],[20,18],[25,22],[30,27],[38,32]] },
@@ -366,6 +377,7 @@ class Site {
         };
         clubDetail = this.buildRace(cfg);
         clubDetail.caption = 'Haalands sesong ' + cc.season + (hs.done ? ' (fullført)' : ' (pågår)') + ' mot historiske rekordsesonger (sample). Sesongtall er offisiell PL-statistikk.';
+        clubDetail.seasonRank = PL_SEASON_RANK[cc.season] || null;
         clubDetail.seasonStats = ss ? {
           apps: hs.apps, goals: hs.total, assists: hs.assists,
           xg: ss.xg, xa: ss.xa, minutes: ss.minutes.toLocaleString('nb-NO'),
@@ -381,7 +393,7 @@ class Site {
       clubDetail = this.buildRace(cfg);
       clubDetail.caption = 'Haalands l&oslash;p til ' + ld.milestone + ' m&aring;l i ' + leagueLabel[cc.league] + '. ' + ld.rivalNote;
     }
-    const emptyDetail = { yTicks: [], xTicks: [], rivals: [], haalandPoints: '', haalandDashedPoints: '', haalandAreaPoints: '', haalandDotX: '0', haalandDotY: '0', showProjection: false, haalandLabelX: '0', haalandLabelY: '0', milestoneLineY: '0', plotBottom: '0', caption: '', seasonStats: null };
+    const emptyDetail = { yTicks: [], xTicks: [], rivals: [], haalandPoints: '', haalandDashedPoints: '', haalandAreaPoints: '', haalandDotX: '0', haalandDotY: '0', showProjection: false, haalandLabelX: '0', haalandLabelY: '0', milestoneLineY: '0', plotBottom: '0', caption: '', seasonStats: null, seasonRank: null };
 
     const chartClub = {
       entryBars: [
@@ -3075,6 +3087,9 @@ function render(vals) {
                 <div class="season-stat"><span class="season-stat-label">Frispark beg&aring;tt</span><span class="season-stat-value">${vals.chart.club.seasonStats.fouls}</span></div>
               </div>
             ` : ''}
+            ${(vals.chart.club.seasonRank) ? `
+              <p class="season-rank-note">${vals.chart.club.seasonRank}</p>
+            ` : ''}
             <span class="chart-caption">${vals.chart.club.caption}</span>
             <button class="expand-btn" data-bind="chart.club.openModal">Utvid graf &#8599;</button>
           </div>
@@ -3549,6 +3564,9 @@ ${(vals.modal.club) ? `
           <div class="season-stat"><span class="season-stat-label">R&oslash;de kort</span><span class="season-stat-value">${vals.chart.club.seasonStats.redCards}</span></div>
           <div class="season-stat"><span class="season-stat-label">Frispark beg&aring;tt</span><span class="season-stat-value">${vals.chart.club.seasonStats.fouls}</span></div>
         </div>
+      ` : ''}
+      ${(vals.chart.club.seasonRank) ? `
+        <p class="season-rank-note">${vals.chart.club.seasonRank}</p>
       ` : ''}
       <span class="chart-caption">${vals.chart.club.caption}</span>
     </div>

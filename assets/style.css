@@ -239,6 +239,7 @@
     .season-stat-value { font-size: 13px; font-weight: 800; color: var(--text); font-variant-numeric: tabular-nums; }
     .chart-svg-large + .season-stats-grid, .season-stats-grid + .chart-caption { margin-top: 2px; }
     .modal-panel .season-stats-grid { grid-template-columns: repeat(5, 1fr); gap: 12px; padding: 16px; }
+    .season-rank-note { font-size: 11.5px; font-weight: 600; color: var(--text-dim); margin: 6px 0 0 0; }
     .modal-panel .season-stat-label { font-size: 10.5px; }
     .modal-panel .season-stat-value { font-size: 16px; }
 
