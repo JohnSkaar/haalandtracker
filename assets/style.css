@@ -77,9 +77,9 @@
     .timeline-scroll.filter-early .match-card:not(.season-early) { display: none; }
     .timeline-scroll.hide-nor .match-card.comp-nor { display: none; }
     .timeline-scroll.hide-pl .match-card.comp-pl { display: none; }
-    .timeline-scroll.hide-pl .match-card.comp-efl { display: none; }
     .timeline-scroll.hide-cl .match-card.comp-cl { display: none; }
     .timeline-scroll.hide-cup .match-card.comp-cup { display: none; }
+    .timeline-scroll.hide-efl .match-card.comp-efl { display: none; }
     .comp-toggle-row { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 10px; }
     .match-card {
       flex: 0 0 184px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 1px 0 rgba(20,23,28,0.03);
