@@ -158,6 +158,11 @@
     .col-section { background: var(--surface-alt); border: 1px solid var(--line); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
     .col-title { font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); }
 
+    .bio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line-strong); border: 1px solid var(--line-strong); margin: 0 0 22px 0; max-width: 480px; }
+    .bio-item { background: var(--surface); padding: 10px 14px; display: flex; flex-direction: column; gap: 2px; }
+    .bio-label { font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-faint); font-weight: 700; }
+    .bio-value { font-size: 14px; font-weight: 800; color: var(--text); }
+    @media (max-width: 600px) { .bio-grid { max-width: 100%; } }
     .stat-mini { background: var(--surface); border: 1px solid var(--line-strong); padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 8px; }
     .stat-mini-title { font-size: 11px; font-weight: 700; color: var(--text); }
     .stat-mini-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }

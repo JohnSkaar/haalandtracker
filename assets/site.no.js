@@ -619,6 +619,17 @@ function render(vals) {
     <h1 class="hero-title display">Erling Braut Haalands kampprogram &mdash; klubb, Champions League og landslag</h1>
     <p class="chart-caption" style="margin: -14px 0 22px 0; max-width: 760px;">Fem klubber s&aring; langt: Bryne FK, Molde FK, RB Salzburg, Borussia Dortmund og n&aring;v&aelig;rende klubb Manchester City. Har deltatt i Champions League nesten hver sesong siden 2019/20 (Salzburg, Dortmund, Man City), og har spilt for Norges A-landslag siden debuten mot Malta i 2019 &mdash; fra kvalik-nedturer til VM-debut i 2026. Under vises et utvalg m&aring;lkamper og milep&aring;ler; m&aring;let er etter hvert &aring; f&aring; med alle kamper.</p>
 
+    <div class="bio-grid">
+      <div class="bio-item"><span class="bio-label">F&oslash;dselsdato</span><span class="bio-value">21. juli 2000</span></div>
+      <div class="bio-item"><span class="bio-label">Posisjon</span><span class="bio-value">Spiss</span></div>
+      <div class="bio-item"><span class="bio-label">F&oslash;dested</span><span class="bio-value">Leeds, England</span></div>
+      <div class="bio-item"><span class="bio-label">Nasjonalitet</span><span class="bio-value">Norsk</span></div>
+      <div class="bio-item"><span class="bio-label">H&oslash;yde</span><span class="bio-value">195 cm</span></div>
+      <div class="bio-item"><span class="bio-label">Foretrukket fot</span><span class="bio-value">Venstre</span></div>
+      <div class="bio-item"><span class="bio-label">Draktnummer</span><span class="bio-value">9</span></div>
+      <div class="bio-item"><span class="bio-label">Kom til Manchester City</span><span class="bio-value">2022/23</span></div>
+    </div>
+
     <div class="chip-select" style="padding-bottom: 10px;">
       ${(vals.timeline.filters||[]).map((f,__i0) => `
         <button class="${f.cls}" data-bind="${'timeline.filters.' + __i0 + '.onClick'}">${f.label}</button>

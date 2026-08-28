@@ -171,6 +171,11 @@
     .col-section { background: var(--surface-alt); border: 1px solid var(--line); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
     .col-title { font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); }
 
+    .bio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line-strong); border: 1px solid var(--line-strong); margin: 0 0 22px 0; max-width: 480px; }
+    .bio-item { background: var(--surface); padding: 10px 14px; display: flex; flex-direction: column; gap: 2px; }
+    .bio-label { font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-faint); font-weight: 700; }
+    .bio-value { font-size: 14px; font-weight: 800; color: var(--text); }
+    @media (max-width: 600px) { .bio-grid { max-width: 100%; } }
     .stat-mini { background: var(--surface); border: 1px solid var(--line-strong); padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 8px; }
     .stat-mini-title { font-size: 11px; font-weight: 700; color: var(--text); }
     .stat-mini-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
@@ -337,6 +342,17 @@
     <p class="eyebrow">Kamptidslinje</p>
     <h1 class="hero-title display">Erling Braut Haalands kampprogram &mdash; klubb, Champions League og landslag</h1>
     <p class="chart-caption" style="margin: -14px 0 22px 0; max-width: 760px;">Fem klubber s&aring; langt: Bryne FK, Molde FK, RB Salzburg, Borussia Dortmund og n&aring;v&aelig;rende klubb Manchester City. Har deltatt i Champions League nesten hver sesong siden 2019/20 (Salzburg, Dortmund, Man City), og har spilt for Norges A-landslag siden debuten mot Malta i 2019 &mdash; fra kvalik-nedturer til VM-debut i 2026. Under vises et utvalg m&aring;lkamper og milep&aring;ler; m&aring;let er etter hvert &aring; f&aring; med alle kamper.</p>
+
+    <div class="bio-grid">
+      <div class="bio-item"><span class="bio-label">F&oslash;dselsdato</span><span class="bio-value">21. juli 2000</span></div>
+      <div class="bio-item"><span class="bio-label">Posisjon</span><span class="bio-value">Spiss</span></div>
+      <div class="bio-item"><span class="bio-label">F&oslash;dested</span><span class="bio-value">Leeds, England</span></div>
+      <div class="bio-item"><span class="bio-label">Nasjonalitet</span><span class="bio-value">Norsk</span></div>
+      <div class="bio-item"><span class="bio-label">H&oslash;yde</span><span class="bio-value">195 cm</span></div>
+      <div class="bio-item"><span class="bio-label">Foretrukket fot</span><span class="bio-value">Venstre</span></div>
+      <div class="bio-item"><span class="bio-label">Draktnummer</span><span class="bio-value">9</span></div>
+      <div class="bio-item"><span class="bio-label">Kom til Manchester City</span><span class="bio-value">2022/23</span></div>
+    </div>
 
     <div class="chip-select" style="padding-bottom: 10px;">
       <sc-for list="{{timeline.filters}}" as="f" hint-placeholder-count="4">
