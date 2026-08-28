@@ -1306,7 +1306,7 @@ function render(vals) {
         </div>
         <div class="match-opp">vs Leeds (H) &middot; 3&ndash;2</div>
         <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Foden (2) og Gvardiol scoret (kilde: mancity.com)</div>
       </div>
 
       <div class="match-card season-2526 comp-pl">
@@ -1334,7 +1334,7 @@ function render(vals) {
         </div>
         <div class="match-opp">vs Sunderland (H) &middot; 3&ndash;0</div>
         <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Dias, Gvardiol og Foden scoret (kilde: mancity.com)</div>
       </div>
 
       <div class="match-card season-2526 comp-cl">
