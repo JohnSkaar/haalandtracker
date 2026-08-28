@@ -215,15 +215,16 @@ class Site {
       { period: '2020/21', title: 'Yngste til 20 CL-mål', desc: '20 år 231 dager, i 14 kamper — forbedret Mbappés rekord (kilde: UEFA.com).', record: true },
       { period: '2023/24', title: 'Yngste til 40 CL-mål', desc: '23 år 130 dager (kilde: UEFA.com).', record: true },
       { period: '2022/23', title: 'Toppscorer og CL-vinner', desc: 'Toppscorer i turneringen med 12 mål; Champions League-vinner med Manchester City (kilde: UEFA.com, Wikipedia).', record: false },
-      { period: 'Mars 2023', title: '5 mål mot RB Leipzig', desc: 'Matcher rekorden for flest mål i én CL-kamp (delt med Messi og Luiz Adriano). Samtidig raskest til 30 CL-mål — 25 kamper, forbi Van Nistelrooys rekord på 34 (kilde: UEFA.com, Guinness World Records).', record: true },
+      { period: 'Mars 2023', title: '5 mål mot RB Leipzig', desc: 'Matcher rekorden for flest mål i én CL-kamp (delt med Messi og Luiz Adriano, UEFA.coms offisielle rekordliste). Samtidig hans eneste CL-hattrick så langt, og raskest til 30 CL-mål — 25 kamper, forbi Van Nistelrooys rekord på 34 (kilde: UEFA.com, Guinness World Records).', record: true },
       { period: '2025', title: 'Raskest til 50 CL-mål', desc: '49 kamper — 2. yngste noensinne, kun bak Messi (kilde: beIN Sports, UEFA.com).', record: true }
     ];
     const clMissed = [
       { title: 'Scoret ikke i CL-finalen 2022/23', desc: 'Manchester City vant 1–0 over Inter (Rodri avgjorde), til tross for at Haaland var turneringens toppscorer den sesongen.' }
     ];
     const clAchievable = withWidth([
-      { title: 'Forbigå Robert Lewandowski (99 CL-mål)', desc: 'Passerte 50 CL-mål i sin 49. kamp. Nøyaktig oppdatert totalsum er ikke bekreftet i kildene brukt her. Estimat.', progress: 55 },
-      { title: 'Ronaldos og Messis alltid-rekorder', desc: 'Langt fram til historiens to øverste (hhv. rundt 140 og 129 CL-mål ifølge offentlig statistikk). Estimat.', progress: 30 }
+      { title: 'Forbig&aring; Robert Lewandowski (101 CL-m&aring;l)', desc: 'St&aring;r p&aring; 57 CL-m&aring;l s&aring; langt, allerede forbi Raúl, van Nistelrooy og Mbapp&eacute; p&aring; totallisten (kilde: UEFA.com, ESPN, StatMuse).', progress: 56 },
+      { title: 'Ronaldos og Messis alltid-rekorder', desc: 'Langt fram til historiens to &oslash;verste (140 og 129 CL-m&aring;l). St&aring;r p&aring; 57 s&aring; langt (kilde: UEFA.com).', progress: 41 },
+      { title: 'Flest hattrick i Champions League (8)', desc: 'Rekorden deles av Messi og Ronaldo med 8 hattrick hver. Haaland har &eacute;n hittil &mdash; 5-m&aring;lskampen mot RB Leipzig, mars 2023 (kilde: UEFA.com).', progress: 13 }
     ]);
 
     const natHistory = [
