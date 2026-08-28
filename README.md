@@ -15,21 +15,31 @@ Kamptidslinje, meritter, historikk og interaktive rekordgrafer for Erling Braut 
 
 ## Klar for publisering på haalandtracker.no — gjenstår kun hos deg
 
-Alt kode- og innholdsarbeid for den norske siden er gjort og pushet til `main`. Det som gjenstår er
-utelukkende ting jeg ikke har tilgang til å gjøre fra denne sesjonen:
+Alt kode- og innholdsarbeid for den norske siden er gjort og pushet til `main`. Hosting-valget landet
+på **Cloudflare Workers** (static assets) — Cloudflare har lagt "Pages" i vedlikeholdsmodus og anbefaler
+nå Workers med statiske filer for nye prosjekter, som er det `wrangler.jsonc`/`src/router.js` er satt opp for.
+Det som gjenstår er ting jeg ikke har tilgang til å gjøre fra denne sesjonen:
 
-1. **Koble repoet til Vercel eller Netlify.** Logg inn med GitHub-kontoen din, importer
-   `JohnSkaar/haalandtracker` som et nytt prosjekt. Ingen build-kommando trengs (ren statisk HTML/CSS/JS) —
-   sett "Output Directory" til repo-roten (`.`).
-2. **Legg til `haalandtracker.no` som egendefinert domene** på Vercel/Netlify-prosjektet.
-   `vercel.json` ruter automatisk alle forespørsler med `Host: haalandtracker.no` til `/no/`-innholdet
-   (untatt `/assets/`, `/robots.txt`, `/sitemap.xml`, favicon — disse serveres direkte fra roten).
-3. **DNS hos domeneregistraren din** (der du kjøpte haalandtracker.no): pek domenet til
-   Vercel/Netlify sine oppgitte nameservere eller A/CNAME-oppføringer — vises i deres dashboard
-   når du legger til domenet i steg 2.
+1. **Koble repoet til Cloudflare** (Build → Compute → Create → Import a repository), velg
+   `JohnSkaar/haalandtracker`. Cloudflare finner `wrangler.jsonc` automatisk og bruker
+   `npx wrangler deploy` som deploy-kommando — det er riktig, ingen endring nødvendig der.
+   La "Protect with Cloudflare Access" stå AV (det ville passordbeskyttet hele siden).
+2. **Legg til `haalandtracker.no` som egendefinert domene** på Cloudflare Workers-prosjektet
+   (i prosjektets innstillinger, under domener/triggers). `src/router.js` ruter automatisk alle
+   forespørsler med `Host: haalandtracker.no` til `/no/`-innholdet (untatt `/assets/`, `/robots.txt`,
+   `/sitemap.xml`, favicon — disse serveres direkte fra roten). Ren `haalandtracker.com`-trafikk
+   (og standard `.workers.dev`-domenet) serveres uendret fra rot, dvs. den engelske plassholderen
+   inntil videre.
+3. **DNS hos domeneregistraren din** (Domeneshop): Cloudflare viser nøyaktig hvilken DNS-post som
+   trengs når du legger til domenet i steg 2 — legg den til under "DNS-pekere" i Domeneshop
+   (ikke "WWW-videresending", og ingen oppgradering/webhosting-kjøp er nødvendig der).
 4. **Verifiser etter at DNS har propagert** (kan ta fra minutter til noen timer): åpne
    `https://haalandtracker.no/` og sjekk at den norske siden vises (ikke plassholderen), og at
    `https://haalandtracker.no/robots.txt` og `/sitemap.xml` svarer riktig.
+
+`vercel.json` ligger fortsatt i repoet i tilfelle du senere heller vil bruke Vercel/Netlify i stedet —
+den gjør akkurat det samme som `src/router.js`, bare i Vercels rewrite-format. Bruk kun én av de to
+hosting-løpene, ikke begge samtidig.
 
 ## Struktur
 
@@ -41,7 +51,9 @@ assets/site.no.js    generert render-motor + data for norsk (se "Bygge på nytt"
 assets/main.no.js     liten runtime som monterer siden og håndterer klikk
 source/Main.no.dc.html  kilde: opprinnelig Claude Design-canvas-format (Norwegian)
 build/transform.mjs  bygg-script som konverterer .dc.html-kilden til assets/site.<locale>.js
-vercel.json          domene-basert routing (haalandtracker.no -> /no/, haalandtracker.com -> rot)
+vercel.json          domene-basert routing for Vercel/Netlify (alternativ til Cloudflare-oppsettet)
+wrangler.jsonc        Cloudflare Workers-konfig (static assets + Worker-script for domene-routing)
+src/router.js         Worker-script: ruter haalandtracker.no til /no/, alt annet uendret
 robots.txt           tillater indeksering, peker til sitemap.xml
 sitemap.xml           lister https://haalandtracker.no/
 ```
