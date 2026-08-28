@@ -220,6 +220,15 @@
     .dot-haaland { fill: #c1352b; stroke: #fff; stroke-width: 1.5; }
     .dot-rival { stroke: #fff; stroke-width: 1.5; }
 
+    .season-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 10px; background: var(--surface-alt); border: 1px solid var(--line); }
+    .season-stat { display: flex; flex-direction: column; gap: 1px; }
+    .season-stat-label { font-size: 9px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-faint); font-weight: 700; }
+    .season-stat-value { font-size: 13px; font-weight: 800; color: var(--text); font-variant-numeric: tabular-nums; }
+    .chart-svg-large + .season-stats-grid, .season-stats-grid + .chart-caption { margin-top: 2px; }
+    .modal-panel .season-stats-grid { grid-template-columns: repeat(5, 1fr); gap: 12px; padding: 16px; }
+    .modal-panel .season-stat-label { font-size: 10.5px; }
+    .modal-panel .season-stat-value { font-size: 16px; }
+
     .rival-chips { display: flex; flex-wrap: wrap; gap: 6px; }
     .swatch { width: 8px; height: 8px; border-radius: 50%; display: inline-block; background: #c1352b; flex: none; }
     .rival-chip { display: inline-flex; align-items: center; gap: 6px; font: 600 10.5px 'Manrope', sans-serif; padding: 5px 9px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--text-dim); cursor: pointer; }

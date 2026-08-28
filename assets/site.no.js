@@ -281,11 +281,20 @@ class Site {
         { key: 'henry', name: 'T. Henry', short: 'Henry', color: '#1f2937', points: [[0,0],[15,4],[35,12],[60,25],[85,40],[110,55],[135,72],[160,90],[190,112],[215,132],[235,150]] }
       ]
     };
+    // Apps/goals/assists confirmed from official Premier League player-stats pages
+    // (user-supplied screenshots, 2026): 2022/23 35(2) apps/36 g/8 a; 2023/24 31(2)/27/5;
+    // 2024/25 31/22/3; 2025/26 35(1)/27/8. Curve interior points remain modelled/interpolated.
     const PL_SEASONS = {
-      '2022/23': { total: 36, done: true, points: [[0,0],[4,3],[8,7],[12,13],[16,18],[20,22],[25,27],[30,32],[35,36],[38,36]] },
-      '2023/24': { total: 27, done: true, points: [[0,0],[5,3],[10,8],[15,13],[20,17],[25,21],[30,24],[35,27],[38,27]] },
-      '2024/25': { total: 31, done: true, points: [[0,0],[5,4],[10,9],[15,14],[20,19],[25,23],[30,27],[35,30],[38,31]] },
-      '2025/26': { total: 27, done: true, points: [[0,0],[4,2],[8,6],[12,10],[16,13],[20,16],[25,19],[30,22],[35,25],[38,27]] }
+      '2022/23': { total: 36, apps: 35, assists: 8, done: true, points: [[0,0],[4,3],[8,7],[12,13],[16,18],[20,22],[25,27],[30,32],[35,36],[38,36]] },
+      '2023/24': { total: 27, apps: 31, assists: 5, done: true, points: [[0,0],[4,2],[8,6],[12,10],[16,13],[20,16],[24,19],[28,23],[31,27],[38,27]] },
+      '2024/25': { total: 22, apps: 31, assists: 3, done: true, points: [[0,0],[4,2],[8,5],[12,8],[16,11],[20,14],[24,17],[28,20],[31,22],[38,22]] },
+      '2025/26': { total: 27, apps: 35, assists: 8, done: true, points: [[0,0],[4,2],[8,6],[12,10],[16,13],[20,16],[25,19],[30,22],[35,27],[38,27]] }
+    };
+    const PL_SEASON_STATS = {
+      '2022/23': { xg: 28.5, xa: 3.13, minutes: 2776, penalties: '7 (7)', dribbles: '29 (38%)', duelsWon: 88, aerialDuelsWon: 50, tackles: 3, interceptions: 3, yellowCards: 5, redCards: 0, fouls: 31 },
+      '2023/24': { xg: 29.3, xa: 2.22, minutes: 2556, penalties: '8 (7)', dribbles: '28 (43%)', duelsWon: 88, aerialDuelsWon: 39, tackles: 6, interceptions: 2, yellowCards: 1, redCards: 0, fouls: 18 },
+      '2024/25': { xg: 22.01, xa: 2.02, minutes: 2741, penalties: '4 (3)', dribbles: '33 (39%)', duelsWon: 94, aerialDuelsWon: 57, tackles: 11, interceptions: 5, yellowCards: 2, redCards: 0, fouls: 24 },
+      '2025/26': { xg: 25.74, xa: 2.81, minutes: 2958, penalties: '4 (3)', dribbles: '32 (53%)', duelsWon: 130, aerialDuelsWon: 73, tackles: 15, interceptions: 5, yellowCards: 2, redCards: 0, fouls: 24 }
     };
     const PL_SEASON_RIVALS = [
       { key: 'salah', name: 'M. Salah 17/18', short: 'Salah', color: '#2f5aa8', points: [[0,0],[5,4],[10,9],[15,14],[20,18],[25,22],[30,27],[38,32]] },
@@ -321,6 +330,7 @@ class Site {
           : '150-mål-nivået er ikke nådd ennå. Haalands stiplede linje er en modellert fremskrivning, og motstandernes tall for akkurat denne milepælen er ikke bekreftet kildesatt — se dem som estimater.';
       } else {
         const hs = PL_SEASONS[cc.season];
+        const ss = PL_SEASON_STATS[cc.season];
         const cfg = {
           maxGames: 42, maxGoals: 40,
           haaland: hs.done ? hs.points : hs.solid,
@@ -328,7 +338,15 @@ class Site {
           rivals: PL_SEASON_RIVALS.map((r) => ({ ...r, on: cc.seasonRivals[r.key], toggle: () => this.toggleSeasonRival(r.key) }))
         };
         clubDetail = this.buildRace(cfg);
-        clubDetail.caption = 'Haalands sesong ' + cc.season + ' (' + hs.total + ' mål så langt) mot historiske rekordsesonger (sample).';
+        clubDetail.caption = 'Haalands sesong ' + cc.season + (hs.done ? ' (fullført)' : ' (pågår)') + ' mot historiske rekordsesonger (sample). Sesongtall er offisiell PL-statistikk.';
+        clubDetail.seasonStats = ss ? {
+          apps: hs.apps, goals: hs.total, assists: hs.assists,
+          xg: ss.xg, xa: ss.xa, minutes: ss.minutes.toLocaleString('nb-NO'),
+          penalties: ss.penalties, dribbles: ss.dribbles,
+          duelsWon: ss.duelsWon, aerialDuelsWon: ss.aerialDuelsWon,
+          tackles: ss.tackles, interceptions: ss.interceptions,
+          yellowCards: ss.yellowCards, redCards: ss.redCards, fouls: ss.fouls
+        } : null;
       }
     } else if (cc.league) {
       const ld = OTHER_LEAGUES[cc.league];
@@ -336,7 +354,7 @@ class Site {
       clubDetail = this.buildRace(cfg);
       clubDetail.caption = 'Haalands l&oslash;p til ' + ld.milestone + ' m&aring;l i ' + leagueLabel[cc.league] + '. ' + ld.rivalNote;
     }
-    const emptyDetail = { yTicks: [], xTicks: [], rivals: [], haalandPoints: '', haalandDashedPoints: '', haalandAreaPoints: '', haalandDotX: '0', haalandDotY: '0', showProjection: false, haalandLabelX: '0', haalandLabelY: '0', milestoneLineY: '0', plotBottom: '0', caption: '' };
+    const emptyDetail = { yTicks: [], xTicks: [], rivals: [], haalandPoints: '', haalandDashedPoints: '', haalandAreaPoints: '', haalandDotX: '0', haalandDotY: '0', showProjection: false, haalandLabelX: '0', haalandLabelY: '0', milestoneLineY: '0', plotBottom: '0', caption: '', seasonStats: null };
 
     const chartClub = {
       entryBars: [
@@ -1474,6 +1492,16 @@ function render(vals) {
         <span class="stat-mini-note">Alle turneringer, t.o.m. 200. City-kamp, 23. aug. 2026 (kilde: mancity.com, Yahoo Sports).</span>
       </div>
 
+      <div class="stat-mini">
+        <span class="stat-mini-title">Mot Manchester United</span>
+        <div class="stat-mini-row">
+          <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">10</span></div>
+          <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">8</span></div>
+          <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,80</span></div>
+        </div>
+        <span class="stat-mini-note">Alle turneringer for Manchester City, 6 seire&ndash;4 tap. 3 assists i tillegg &mdash; 11 m&aring;lpoeng i Manchester-derbyer, bak kun Ryan Giggs (13) gjennom historien (kilde: Sports Mole, Premier League).</span>
+      </div>
+
       <div class="col-section">
       <div class="toggle-row">
         <button class="${vals.club.historyClass}" data-bind="club.toggleHistory">Historikk</button>
@@ -1620,6 +1648,25 @@ function render(vals) {
                 </button>
               `).join('')}
             </div>
+            ${(vals.chart.club.seasonStats) ? `
+              <div class="season-stats-grid">
+                <div class="season-stat"><span class="season-stat-label">Kamper</span><span class="season-stat-value">${vals.chart.club.seasonStats.apps}</span></div>
+                <div class="season-stat"><span class="season-stat-label">M&aring;l</span><span class="season-stat-value">${vals.chart.club.seasonStats.goals}</span></div>
+                <div class="season-stat"><span class="season-stat-label">Assists</span><span class="season-stat-value">${vals.chart.club.seasonStats.assists}</span></div>
+                <div class="season-stat"><span class="season-stat-label">xG</span><span class="season-stat-value">${vals.chart.club.seasonStats.xg}</span></div>
+                <div class="season-stat"><span class="season-stat-label">xA</span><span class="season-stat-value">${vals.chart.club.seasonStats.xa}</span></div>
+                <div class="season-stat"><span class="season-stat-label">Minutter</span><span class="season-stat-value">${vals.chart.club.seasonStats.minutes}</span></div>
+                <div class="season-stat"><span class="season-stat-label">Straffer</span><span class="season-stat-value">${vals.chart.club.seasonStats.penalties}</span></div>
+                <div class="season-stat"><span class="season-stat-label">Driblinger</span><span class="season-stat-value">${vals.chart.club.seasonStats.dribbles}</span></div>
+                <div class="season-stat"><span class="season-stat-label">Vunnet dueller</span><span class="season-stat-value">${vals.chart.club.seasonStats.duelsWon}</span></div>
+                <div class="season-stat"><span class="season-stat-label">Vunnet luftdueller</span><span class="season-stat-value">${vals.chart.club.seasonStats.aerialDuelsWon}</span></div>
+                <div class="season-stat"><span class="season-stat-label">Taklinger</span><span class="season-stat-value">${vals.chart.club.seasonStats.tackles}</span></div>
+                <div class="season-stat"><span class="season-stat-label">Avskj&aelig;ringer</span><span class="season-stat-value">${vals.chart.club.seasonStats.interceptions}</span></div>
+                <div class="season-stat"><span class="season-stat-label">Gule kort</span><span class="season-stat-value">${vals.chart.club.seasonStats.yellowCards}</span></div>
+                <div class="season-stat"><span class="season-stat-label">R&oslash;de kort</span><span class="season-stat-value">${vals.chart.club.seasonStats.redCards}</span></div>
+                <div class="season-stat"><span class="season-stat-label">Frispark beg&aring;tt</span><span class="season-stat-value">${vals.chart.club.seasonStats.fouls}</span></div>
+              </div>
+            ` : ''}
             <span class="chart-caption">${vals.chart.club.caption}</span>
             <button class="expand-btn" data-bind="chart.club.openModal">Utvid graf &#8599;</button>
           </div>
@@ -2075,6 +2122,25 @@ ${(vals.modal.club) ? `
           </button>
         `).join('')}
       </div>
+      ${(vals.chart.club.seasonStats) ? `
+        <div class="season-stats-grid">
+          <div class="season-stat"><span class="season-stat-label">Kamper</span><span class="season-stat-value">${vals.chart.club.seasonStats.apps}</span></div>
+          <div class="season-stat"><span class="season-stat-label">M&aring;l</span><span class="season-stat-value">${vals.chart.club.seasonStats.goals}</span></div>
+          <div class="season-stat"><span class="season-stat-label">Assists</span><span class="season-stat-value">${vals.chart.club.seasonStats.assists}</span></div>
+          <div class="season-stat"><span class="season-stat-label">xG</span><span class="season-stat-value">${vals.chart.club.seasonStats.xg}</span></div>
+          <div class="season-stat"><span class="season-stat-label">xA</span><span class="season-stat-value">${vals.chart.club.seasonStats.xa}</span></div>
+          <div class="season-stat"><span class="season-stat-label">Minutter</span><span class="season-stat-value">${vals.chart.club.seasonStats.minutes}</span></div>
+          <div class="season-stat"><span class="season-stat-label">Straffer</span><span class="season-stat-value">${vals.chart.club.seasonStats.penalties}</span></div>
+          <div class="season-stat"><span class="season-stat-label">Driblinger</span><span class="season-stat-value">${vals.chart.club.seasonStats.dribbles}</span></div>
+          <div class="season-stat"><span class="season-stat-label">Vunnet dueller</span><span class="season-stat-value">${vals.chart.club.seasonStats.duelsWon}</span></div>
+          <div class="season-stat"><span class="season-stat-label">Vunnet luftdueller</span><span class="season-stat-value">${vals.chart.club.seasonStats.aerialDuelsWon}</span></div>
+          <div class="season-stat"><span class="season-stat-label">Taklinger</span><span class="season-stat-value">${vals.chart.club.seasonStats.tackles}</span></div>
+          <div class="season-stat"><span class="season-stat-label">Avskj&aelig;ringer</span><span class="season-stat-value">${vals.chart.club.seasonStats.interceptions}</span></div>
+          <div class="season-stat"><span class="season-stat-label">Gule kort</span><span class="season-stat-value">${vals.chart.club.seasonStats.yellowCards}</span></div>
+          <div class="season-stat"><span class="season-stat-label">R&oslash;de kort</span><span class="season-stat-value">${vals.chart.club.seasonStats.redCards}</span></div>
+          <div class="season-stat"><span class="season-stat-label">Frispark beg&aring;tt</span><span class="season-stat-value">${vals.chart.club.seasonStats.fouls}</span></div>
+        </div>
+      ` : ''}
       <span class="chart-caption">${vals.chart.club.caption}</span>
     </div>
   </div>
