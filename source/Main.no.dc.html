@@ -171,6 +171,8 @@
     .col-section { background: var(--surface-alt); border: 1px solid var(--line); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
     .col-title { font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); }
 
+    .bio-toggle-btn { font: 700 10.5px 'Barlow Condensed', sans-serif; letter-spacing: 0.03em; padding: 6px 10px; background: var(--surface); color: var(--text-dim); border: 1px solid var(--line-strong); cursor: pointer; margin-bottom: 12px; }
+    .bio-toggle-btn:hover { color: var(--text); }
     .bio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line-strong); border: 1px solid var(--line-strong); margin: 0 0 22px 0; max-width: 480px; }
     .bio-item { background: var(--surface); padding: 10px 14px; display: flex; flex-direction: column; gap: 2px; }
     .bio-label { font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-faint); font-weight: 700; }
@@ -343,16 +345,19 @@
     <h1 class="hero-title display">Erling Braut Haalands kampprogram &mdash; klubb, Champions League og landslag</h1>
     <p class="chart-caption" style="margin: -14px 0 22px 0; max-width: 760px;">Fem klubber s&aring; langt: Bryne FK, Molde FK, RB Salzburg, Borussia Dortmund og n&aring;v&aelig;rende klubb Manchester City. Har deltatt i Champions League nesten hver sesong siden 2019/20 (Salzburg, Dortmund, Man City), og har spilt for Norges A-landslag siden debuten mot Malta i 2019 &mdash; fra kvalik-nedturer til VM-debut i 2026. Under vises et utvalg m&aring;lkamper og milep&aring;ler; m&aring;let er etter hvert &aring; f&aring; med alle kamper.</p>
 
-    <div class="bio-grid">
-      <div class="bio-item"><span class="bio-label">F&oslash;dselsdato</span><span class="bio-value">21. juli 2000</span></div>
-      <div class="bio-item"><span class="bio-label">Posisjon</span><span class="bio-value">Spiss</span></div>
-      <div class="bio-item"><span class="bio-label">F&oslash;dested</span><span class="bio-value">Leeds, England</span></div>
-      <div class="bio-item"><span class="bio-label">Nasjonalitet</span><span class="bio-value">Norsk</span></div>
-      <div class="bio-item"><span class="bio-label">H&oslash;yde</span><span class="bio-value">195 cm</span></div>
-      <div class="bio-item"><span class="bio-label">Foretrukket fot</span><span class="bio-value">Venstre</span></div>
-      <div class="bio-item"><span class="bio-label">Draktnummer</span><span class="bio-value">9</span></div>
-      <div class="bio-item"><span class="bio-label">Kom til Manchester City</span><span class="bio-value">2022/23</span></div>
-    </div>
+    <button class="bio-toggle-btn" onClick="{{bio.toggle}}">{{bio.buttonLabel}}</button>
+    <sc-if value="{{bio.show}}" hint-placeholder-val="{{false}}">
+      <div class="bio-grid">
+        <div class="bio-item"><span class="bio-label">F&oslash;dselsdato</span><span class="bio-value">21. juli 2000</span></div>
+        <div class="bio-item"><span class="bio-label">Posisjon</span><span class="bio-value">Spiss</span></div>
+        <div class="bio-item"><span class="bio-label">F&oslash;dested</span><span class="bio-value">Leeds, England</span></div>
+        <div class="bio-item"><span class="bio-label">Nasjonalitet</span><span class="bio-value">Norsk</span></div>
+        <div class="bio-item"><span class="bio-label">H&oslash;yde</span><span class="bio-value">195 cm</span></div>
+        <div class="bio-item"><span class="bio-label">Foretrukket fot</span><span class="bio-value">Venstre</span></div>
+        <div class="bio-item"><span class="bio-label">Draktnummer</span><span class="bio-value">9</span></div>
+        <div class="bio-item"><span class="bio-label">Kom til Manchester City</span><span class="bio-value">2022/23</span></div>
+      </div>
+    </sc-if>
 
     <div class="chip-select" style="padding-bottom: 10px;">
       <sc-for list="{{timeline.filters}}" as="f" hint-placeholder-count="4">
@@ -1447,8 +1452,10 @@
           <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
         </div>
         <div class="match-opp">vs Fulham (B) &middot; 2&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (72. min., straffe) &mdash; G&uuml;ndogan scoret det f&oslash;rste</div>
       </div>
 
       <div class="match-card season-2425 comp-nor">
@@ -1491,7 +1498,7 @@
         </div>
         <div class="match-opp">vs Wydad AC (H) &middot; 2&ndash;0</div>
         <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Foden og Doku scoret (kilde: mancity.com)</div>
       </div>
 
       <div class="match-card season-2425 comp-cwc">
@@ -1503,8 +1510,10 @@
           <div class="badge badge-opp" style="background:#F7A81B;color:#14171c">ALA</div>
         </div>
         <div class="match-opp">vs Al Ain FC (H) &middot; 6&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (45.+5, straffe) &mdash; G&uuml;ndogan (2), Echeverri, Bobb og Cherki scoret ogs&aring;</div>
       </div>
 
       <div class="match-card season-2425 comp-cwc">
@@ -1516,8 +1525,10 @@
           <div class="badge badge-opp" style="background:#000000;color:#fff">JUV</div>
         </div>
         <div class="match-opp">vs Juventus (B) &middot; 5&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (52. min.) &mdash; Doku, Foden og Savinho scoret ogs&aring;, i tillegg til et selvm&aring;l av Kalulu</div>
       </div>
 
       <div class="match-card season-2425 comp-cwc">
@@ -1529,8 +1540,10 @@
           <div class="badge badge-opp" style="background:#003DA5;color:#fff">HIL</div>
         </div>
         <div class="match-opp">vs Al-Hilal (H) &middot; 3&ndash;4</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (55. min.) &mdash; Bernardo Silva og Foden scoret ogs&aring;, tapte etter ekstraomganger</div>
       </div>
 
       <div class="match-card season-2526 comp-pl">
@@ -3447,6 +3460,7 @@ class Component extends DCLogic {
   constructor(props) {
     super(props);
     this.state = {
+      showBio: false,
       col: {
         club: { history: true, missed: true, achievable: true, recordsOnly: false },
         cl: { history: true, missed: true, achievable: true, recordsOnly: false },
@@ -3497,6 +3511,7 @@ class Component extends DCLogic {
   }
   setClubView(v) { this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, view: v } } }); }
   setClubMilestone(m) { this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, milestone: m } } }); }
+  toggleBio() { this.setState({ showBio: !this.state.showBio }); }
   setClubSeason(s) { this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, season: s } } }); }
   toggleClubRivalPL(k) {
     const cur = this.state.chart.club.rivalsPL[k];
@@ -4026,8 +4041,15 @@ class Component extends DCLogic {
       compFilters: compFilters
     };
 
+    const bio = {
+      show: s.showBio,
+      buttonLabel: s.showBio ? 'Skjul full bio &#8722;' : 'Vis full bio &#8595;',
+      toggle: () => this.toggleBio()
+    };
+
     return {
       timeline,
+      bio,
       club: mkCol('club'), clubHistory: filterRecords(clubHistory, s.col.club.recordsOnly), clubMissed, clubAchievable,
       cl: mkCol('cl'), clHistory: filterRecords(clHistory, s.col.cl.recordsOnly), clMissed, clAchievable,
       nat: mkCol('nat'), natHistory: filterRecords(natHistory, s.col.nat.recordsOnly), natMissed, natAchievable,
