@@ -1627,6 +1627,19 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
+        <div class="match-date">4. mar. 2026</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
+        </div>
+        <div class="match-opp">vs Nottingham Forest (H) &middot; 2&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo og Rodrigo scoret (kilde: mancity.com)</div>
+      </div>
+
+      <div class="match-card season-2526 comp-pl">
+        <div class="match-comp pl">PL</div>
         <div class="match-date">7. mar. 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
@@ -1659,9 +1672,9 @@ function render(vals) {
           <span class="badge-vs">&ndash;</span>
           <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
         </div>
-        <div class="match-opp">vs West Ham (H) &middot; 1&ndash;1</div>
+        <div class="match-opp">vs West Ham (B) &middot; 1&ndash;1</div>
         <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Bernardo Silva scoret City-m&aring;let (kilde: mancity.com)</div>
       </div>
 
       <div class="match-card season-2526 comp-cl">
@@ -1719,7 +1732,7 @@ function render(vals) {
         </div>
         <div class="match-opp">vs Chelsea (B) &middot; 3&ndash;0</div>
         <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Nico O'Reilly og Doku scoret, i tillegg til et selvm&aring;l av Marc Gu&eacute;hi (kilde: mancity.com)</div>
       </div>
 
       <div class="match-card season-2526 comp-pl">
@@ -1731,8 +1744,10 @@ function render(vals) {
           <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
         </div>
         <div class="match-opp">vs Arsenal (H) &middot; 2&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (66. min.) &mdash; Cherki scoret det f&oslash;rste</div>
       </div>
 
       <div class="match-card season-2526 comp-pl">
@@ -1744,8 +1759,10 @@ function render(vals) {
           <div class="badge badge-opp" style="background:#6C1D45;color:#fff">BUR</div>
         </div>
         <div class="match-opp">vs Burnley (B) &middot; 1&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (6. min.) &mdash; kampens eneste m&aring;l</div>
       </div>
 
       <div class="match-card season-2526 comp-cup">
