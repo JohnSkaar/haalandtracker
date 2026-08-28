@@ -626,7 +626,7 @@ function render(vals) {
   <div class="hero-inner">
     <p class="eyebrow">Match timeline</p>
     <h1 class="hero-title display">Erling Braut Haaland's match record &mdash; club, Champions League and national team</h1>
-    <p class="chart-caption" style="margin: -14px 0 22px 0; max-width: 760px;">Five clubs so far: Bryne FK, Molde FK, RB Salzburg, Borussia Dortmund and current club Manchester City. Has played in the Champions League almost every season since 2019/20 (Salzburg, Dortmund, Man City), and has played for Norway's senior national team since his debut against Malta in 2019 &mdash; from qualifying heartbreaks to a World Cup debut in 2026. Below is a selection of goal-scoring matches and milestones; the goal is to eventually cover every match. <em>This English version currently covers the 2025/26 and 2026/27 seasons plus record-breaking moments &mdash; the full match-by-match archive back to 2022/23 is available on the <a href="https://haalandtracker.no/">Norwegian site</a> and will be added here over time.</em></p>
+    <p class="chart-caption" style="margin: -14px 0 22px 0; max-width: 760px;">Five clubs so far: Bryne FK, Molde FK, RB Salzburg, Borussia Dortmund and current club Manchester City. Has played in the Champions League almost every season since 2019/20 (Salzburg, Dortmund, Man City), and has played for Norway's senior national team since his debut against Malta in 2019 &mdash; from qualifying heartbreaks to a World Cup debut in 2026. Below is a selection of goal-scoring matches and milestones; the goal is to eventually cover every match.</p>
 
     <button class="bio-toggle-btn" data-bind="bio.toggle">${vals.bio.buttonLabel}</button>
     ${(vals.bio.show) ? `
@@ -656,7 +656,7 @@ function render(vals) {
     <div class="${vals.timeline.scrollClass}">
       <div class="match-card season-early comp-nor">
         <div class="match-comp nor">NT</div>
-        <div class="match-date">5. sep. 2019</div>
+        <div class="match-date">5 Sep 2019</div>
         <div class="match-badges">
           <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
           <span class="badge-vs">&ndash;</span>
@@ -667,9 +667,55 @@ function render(vals) {
         <div class="match-status played">Played &middot; senior national team debut, no goal</div>
       </div>
 
+      <div class="match-card season-2223 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">7 Aug 2022</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
+        </div>
+        <div class="match-opp">vs West Ham (A) &middot; 0&ndash;2</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; 2 goals (penalty + from open play) &mdash; City debut (source: mancity.com, Sky Sports)</div>
+      </div>
+
+      <div class="match-card season-2223 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">13 Aug 2022</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+        </div>
+        <div class="match-opp">vs Bournemouth (H) &middot; 4&ndash;0</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="#f1e6cf" stroke="#14171c" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="#14171c"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#14171c" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; 1 assist, no goal (source: Sports Mole)</div>
+      </div>
+
+      <div class="match-card season-2223 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">21 Aug 2022</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
+        </div>
+        <div class="match-opp">vs Newcastle (A) &middot; 3&ndash;3</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; 1 goal (rescued a point after going 0&ndash;2 down) (source: ESPN, Sky Sports)</div>
+      </div>
+
       <div class="match-card is-record season-2223 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">27. aug. 2022</div>
+        <div class="match-date">27 Aug 2022</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -686,7 +732,7 @@ function render(vals) {
 
       <div class="match-card is-record season-2223 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">31. aug. 2022</div>
+        <div class="match-date">31 Aug 2022</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -701,9 +747,26 @@ function render(vals) {
         <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Played &middot; hat-trick in 38 min. &mdash; 9 goals in 5 games, PL record for the start of a club career (source: Sky Sports, Premier League)</div>
       </div>
 
+      <div class="match-card season-2223 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">2 Oct 2022</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+        </div>
+        <div class="match-opp">vs Man United (H) &middot; 6&ndash;3</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; hat-trick in the derby &mdash; the first PL hat-trick in a Manchester derby since 1970 (source: CNN, Premier League)</div>
+      </div>
+
       <div class="match-card is-record season-2223 comp-cl">
         <div class="match-comp cl">CL</div>
-        <div class="match-date">14. mar. 2023</div>
+        <div class="match-date">14 Mar 2023</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -720,9 +783,224 @@ function render(vals) {
         <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Played &middot; 5 goals (CL round of 16, 2nd leg) &mdash; matches Messi's record for most goals in a single CL match (source: Sky Sports, NBC Sports)</div>
       </div>
 
+      <div class="match-card season-2223 comp-cup">
+        <div class="match-comp cup">CUP</div>
+        <div class="match-date">3 Jun 2023</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+        </div>
+        <div class="match-opp">vs Man United (N) &middot; 2&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; no goal &mdash; the FA Cup won at Wembley, the second leg of the 2022/23 treble (source: The FA, Wikipedia)</div>
+      </div>
+
+      <div class="match-card season-2223 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">10 Jun 2023</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#010E80;color:#fff">INT</div>
+        </div>
+        <div class="match-opp">vs Inter Milan (N) &middot; 1&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; no goal &mdash; Champions League won in Istanbul (Rodri settled it), the treble completed &mdash; season&#39;s top scorer with 12 CL goals (source: ESPN, UEFA.com)</div>
+      </div>
+
+      <div class="match-card season-2324 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">11 Aug 2023</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#6C1D45;color:#fff">BUR</div>
+        </div>
+        <div class="match-opp">vs Burnley (A) &middot; 3&ndash;0</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; 2 goals (4&#39; and 36&#39;) &mdash; season opener (source: ESPN, Sky Sports)</div>
+      </div>
+
+      <div class="match-card season-2324 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">2 Sep 2023</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
+        </div>
+        <div class="match-opp">vs Fulham (H) &middot; 5&ndash;1</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; hat-trick in the 2nd half (source: mancity.com, Sky Sports)</div>
+      </div>
+
+      <div class="match-card season-2324 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">29 Oct 2023</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+        </div>
+        <div class="match-opp">vs Man United (A) &middot; 3&ndash;0</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="#f1e6cf" stroke="#14171c" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="#14171c"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#14171c" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; 2 goals (penalty + header) + 1 assist &mdash; derby win at Old Trafford (source: Sky Sports, Al Jazeera)</div>
+      </div>
+
+      <div class="match-card season-2324 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">31 Jan 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#6C1D45;color:#fff">BUR</div>
+        </div>
+        <div class="match-opp">vs Burnley (H) &middot; 3&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; comeback as a substitute (71&#39;) after 56 days out with a foot injury, no goal (source: ESPN, SI.com)</div>
+      </div>
+
+      <div class="match-card season-2324 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">17 Apr 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
+        </div>
+        <div class="match-opp">vs Real Madrid (H) &middot; 1&ndash;1 AET</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; no goal (hit the crossbar) &mdash; City were knocked out on penalties (3&ndash;4) after 4&ndash;4 on aggregate, CL round of 16 (source: ESPN, Sky Sports)</div>
+      </div>
+
+      <div class="match-card season-2324 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">4 May 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
+        </div>
+        <div class="match-opp">vs Wolves (H) &middot; 5&ndash;1</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; 4 goals (2 penalties + a header hat-trick before the break, 4th goal in the 2nd half) (source: mancity.com, LatestLY)</div>
+      </div>
+
+      <div class="match-card season-2425 comp-friendly">
+        <div class="match-comp friendly">FRIENDLY</div>
+        <div class="match-date">24 Jul 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#018749;color:#fff">CEL</div>
+        </div>
+        <div class="match-opp">vs Celtic (N) &middot; 3&ndash;4</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed. Pre-season.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-friendly">
+        <div class="match-comp friendly">FRIENDLY</div>
+        <div class="match-date">27 Jul 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#FB090B;color:#fff">MIL</div>
+        </div>
+        <div class="match-opp">vs AC Milan (N) &middot; 2&ndash;3</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed. Pre-season.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-friendly">
+        <div class="match-comp friendly">FRIENDLY</div>
+        <div class="match-date">31 Jul 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#A50044;color:#fff">BAR</div>
+        </div>
+        <div class="match-opp">vs Barcelona (N) &middot; 2&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed. City won 4&ndash;1 on penalties, pre-season.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-friendly">
+        <div class="match-comp friendly">FRIENDLY</div>
+        <div class="match-date">3 Aug 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
+        </div>
+        <div class="match-opp">vs Chelsea (N) &middot; 1&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed. Pre-season.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-shield">
+        <div class="match-comp shield">SHIELD</div>
+        <div class="match-date">10 Aug 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+        </div>
+        <div class="match-opp">vs Man United (N) &middot; 1&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed. City won 7&ndash;6 on penalties, Community Shield.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">18 Aug 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
+        </div>
+        <div class="match-opp">vs Chelsea (A) &middot; 2&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed. Season opener.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">24 Aug 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#0044A9;color:#fff">IPS</div>
+        </div>
+        <div class="match-opp">vs Ipswich (H) &middot; 4&ndash;1</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; hat-trick (source: Premier League, Sky Sports)</div>
+      </div>
+
       <div class="match-card is-record season-2425 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">31. aug. 2024</div>
+        <div class="match-date">31 Aug 2024</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -737,9 +1015,823 @@ function render(vals) {
         <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Played &middot; hat-trick &mdash; two straight trebles, 11th City hat-trick in 102 games (source: mancity.com, Sky Sports)</div>
       </div>
 
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">14 Sep 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
+        </div>
+        <div class="match-opp">vs Brentford (H) &middot; 2&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">18 Sep 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#010E80;color:#fff">INT</div>
+        </div>
+        <div class="match-opp">vs Inter (H) &middot; 0&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">22 Sep 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
+        </div>
+        <div class="match-opp">vs Arsenal (H) &middot; 2&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-efl">
+        <div class="match-comp efl">EFL CUP</div>
+        <div class="match-date">24 Sep 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#FBEE23;color:#14171c">WAT</div>
+        </div>
+        <div class="match-opp">vs Watford (H) &middot; 2&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">28 Sep 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
+        </div>
+        <div class="match-opp">vs Newcastle (A) &middot; 1&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">1 Oct 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#005BAC;color:#fff">SLO</div>
+        </div>
+        <div class="match-opp">vs Slovan Bratislava (A) &middot; 4&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">5 Oct 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
+        </div>
+        <div class="match-opp">vs Fulham (H) &middot; 3&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">20 Oct 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
+        </div>
+        <div class="match-opp">vs Wolves (A) &middot; 2&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">23 Oct 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#A6192E;color:#fff">SPA</div>
+        </div>
+        <div class="match-opp">vs AC Sparta Prague (H) &middot; 5&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">26 Oct 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#D71920;color:#fff">SOU</div>
+        </div>
+        <div class="match-opp">vs Southampton (H) &middot; 1&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-efl">
+        <div class="match-comp efl">EFL CUP</div>
+        <div class="match-date">30 Oct 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
+        </div>
+        <div class="match-opp">vs Tottenham (A) &middot; 1&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">2 Nov 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+        </div>
+        <div class="match-opp">vs Bournemouth (A) &middot; 1&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">5 Nov 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#007A3D;color:#fff">SCP</div>
+        </div>
+        <div class="match-opp">vs Sporting CP (A) &middot; 1&ndash;4</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">9 Nov 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
+        </div>
+        <div class="match-opp">vs Brighton (A) &middot; 1&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">23 Nov 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
+        </div>
+        <div class="match-opp">vs Tottenham (H) &middot; 0&ndash;4</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">26 Nov 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#E2000F;color:#fff">FEY</div>
+        </div>
+        <div class="match-opp">vs Feyenoord (H) &middot; 3&ndash;3</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">1 Dec 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
+        </div>
+        <div class="match-opp">vs Liverpool (A) &middot; 0&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">4 Dec 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
+        </div>
+        <div class="match-opp">vs Nottingham Forest (H) &middot; 3&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">7 Dec 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
+        </div>
+        <div class="match-opp">vs Crystal Palace (A) &middot; 2&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">11 Dec 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#000000;color:#fff">JUV</div>
+        </div>
+        <div class="match-opp">vs Juventus (A) &middot; 0&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">15 Dec 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+        </div>
+        <div class="match-opp">vs Man United (H) &middot; 1&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed. Derby.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">21 Dec 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
+        </div>
+        <div class="match-opp">vs Aston Villa (A) &middot; 1&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">26 Dec 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#003399;color:#fff">EVE</div>
+        </div>
+        <div class="match-opp">vs Everton (H) &middot; 1&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">29 Dec 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#003090;color:#fff">LEI</div>
+        </div>
+        <div class="match-opp">vs Leicester City (A) &middot; 2&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">4 Jan 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
+        </div>
+        <div class="match-opp">vs West Ham (H) &middot; 4&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cup">
+        <div class="match-comp cup">CUP</div>
+        <div class="match-date">11 Jan 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#FF6900;color:#fff">SAL</div>
+        </div>
+        <div class="match-opp">vs Salford City (H) &middot; 1&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">14 Jan 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
+        </div>
+        <div class="match-opp">vs Brentford (A) &middot; 2&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">19 Jan 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#0044A9;color:#fff">IPS</div>
+        </div>
+        <div class="match-opp">vs Ipswich Town (A) &middot; 6&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">22 Jan 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#004170;color:#fff">PSG</div>
+        </div>
+        <div class="match-opp">vs PSG (A) &middot; 2&ndash;4</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">25 Jan 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
+        </div>
+        <div class="match-opp">vs Chelsea (H) &middot; 3&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">29 Jan 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#0E3A6D;color:#fff">BRU</div>
+        </div>
+        <div class="match-opp">vs Club Brugge (H) &middot; 3&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">2 Feb 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
+        </div>
+        <div class="match-opp">vs Arsenal (A) &middot; 1&ndash;5</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cup">
+        <div class="match-comp cup">CUP</div>
+        <div class="match-date">8 Feb 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#D2122E;color:#fff">ORI</div>
+        </div>
+        <div class="match-opp">vs Leyton Orient (A) &middot; 2&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">11 Feb 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
+        </div>
+        <div class="match-opp">vs Real Madrid (H) &middot; 2&ndash;3</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; 2 goals (knockout play-off, 1st round)</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">15 Feb 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
+        </div>
+        <div class="match-opp">vs Newcastle (H) &middot; 4&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cl">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">19 Feb 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
+        </div>
+        <div class="match-opp">vs Real Madrid (A) &middot; 1&ndash;3</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed. CL round of 16, 2nd leg, 3&ndash;6 on aggregate.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">23 Feb 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
+        </div>
+        <div class="match-opp">vs Liverpool (H) &middot; 0&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">26 Feb 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
+        </div>
+        <div class="match-opp">vs Tottenham (A) &middot; 1&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cup">
+        <div class="match-comp cup">CUP</div>
+        <div class="match-date">1 Mar 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#005C36;color:#fff">PLY</div>
+        </div>
+        <div class="match-opp">vs Plymouth Argyle (H) &middot; 3&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">8 Mar 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
+        </div>
+        <div class="match-opp">vs Nottingham Forest (A) &middot; 0&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">15 Mar 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
+        </div>
+        <div class="match-opp">vs Brighton (H) &middot; 2&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-nor">
+        <div class="match-comp nor">NT</div>
+        <div class="match-date">22 Mar 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="6" height="12" fill="#0033A0"/><rect x="6" width="6" height="12" fill="#FFD200"/><rect x="12" width="6" height="12" fill="#CC092F"/></svg></div>
+        </div>
+        <div class="match-opp">vs Moldova (A) &middot; 0&ndash;5</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; 1 goal (World Cup qualifying opener)</div>
+      </div>
+
+      <div class="match-card season-2425 comp-nor">
+        <div class="match-comp nor">NT</div>
+        <div class="match-date">25 Mar 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 22 16" width="36" height="26"><rect width="22" height="16" fill="#fff"/><rect y="2" width="22" height="2" fill="#0038b8"/><rect y="12" width="22" height="2" fill="#0038b8"/><polygon points="11,5 13.3,9 8.7,9" fill="none" stroke="#0038b8" stroke-width="0.6"/><polygon points="11,10.5 8.7,6.5 13.3,6.5" fill="none" stroke="#0038b8" stroke-width="0.6"/></svg></div>
+        </div>
+        <div class="match-opp">vs Israel (A) &middot; 2&ndash;4</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; 1 goal</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cup">
+        <div class="match-comp cup">CUP</div>
+        <div class="match-date">30 Mar 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+        </div>
+        <div class="match-opp">vs Bournemouth (A) &middot; 2&ndash;1</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; 1 goal (equalizer, 49&#39;, missed a penalty before the break) &mdash; ankle injury, substituted 60&#39;, FA Cup quarter-final (source: ESPN, Goal.com)</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">2 Apr 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#003090;color:#fff">LEI</div>
+        </div>
+        <div class="match-opp">vs Leicester City (H) &middot; 2&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">6 Apr 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+        </div>
+        <div class="match-opp">vs Man United (A) &middot; 0&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed. Derby.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">12 Apr 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
+        </div>
+        <div class="match-opp">vs Crystal Palace (H) &middot; 5&ndash;2</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">19 Apr 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#003399;color:#fff">EVE</div>
+        </div>
+        <div class="match-opp">vs Everton (A) &middot; 2&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">22 Apr 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
+        </div>
+        <div class="match-opp">vs Aston Villa (H) &middot; 2&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">27 Apr 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
+        </div>
+        <div class="match-opp">vs Nottingham Forest (A) &middot; 2&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">2 May 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
+        </div>
+        <div class="match-opp">vs Wolves (H) &middot; 1&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">10 May 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#D71920;color:#fff">SOU</div>
+        </div>
+        <div class="match-opp">vs Southampton (A) &middot; 0&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">17 May 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
+        </div>
+        <div class="match-opp">vs Crystal Palace (A) &middot; 0&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">20 May 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+        </div>
+        <div class="match-opp">vs Bournemouth (H) &middot; 3&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; result confirmed (source: mancity.com); goalscorer for Haaland not yet confirmed.</div>
+      </div>
+
+      <div class="match-card season-2425 comp-pl">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">25 May 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
+        </div>
+        <div class="match-opp">vs Fulham (A) &middot; 2&ndash;0</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; 1 goal (72&#39;, penalty) &mdash; G&uuml;ndogan scored the first</div>
+      </div>
+
+      <div class="match-card season-2425 comp-nor">
+        <div class="match-comp nor">NT</div>
+        <div class="match-date">6 Jun 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="6" height="12" fill="#009246"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#CE2B37"/></svg></div>
+        </div>
+        <div class="match-opp">vs Italy (H) &middot; 3&ndash;0</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; 1 goal (first win over Italy in 25 years)</div>
+      </div>
+
+      <div class="match-card season-2425 comp-nor">
+        <div class="match-comp nor">NT</div>
+        <div class="match-date">9 Jun 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 11" width="36" height="22"><rect width="18" height="11" fill="#4891D9"/><rect y="3.67" width="18" height="3.66" fill="#000"/><rect y="7.33" width="18" height="3.67" fill="#fff"/></svg></div>
+        </div>
+        <div class="match-opp">vs Estonia (A) &middot; 0&ndash;1</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; 1 goal (match-winner)</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cwc">
+        <div class="match-comp cwc">CWC</div>
+        <div class="match-date">18 Jun 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#EE1C25;color:#fff">WYD</div>
+        </div>
+        <div class="match-opp">vs Wydad AC (H) &middot; 2&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Played &middot; no goal &mdash; Foden and Doku scored (source: mancity.com)</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cwc">
+        <div class="match-comp cwc">CWC</div>
+        <div class="match-date">23 Jun 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#F7A81B;color:#14171c">ALA</div>
+        </div>
+        <div class="match-opp">vs Al Ain FC (H) &middot; 6&ndash;0</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; 1 goal (45&#39;+5, penalty) &mdash; G&uuml;ndogan (2), Echeverri, Bobb and Cherki also scored</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cwc">
+        <div class="match-comp cwc">CWC</div>
+        <div class="match-date">26 Jun 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#000000;color:#fff">JUV</div>
+        </div>
+        <div class="match-opp">vs Juventus (A) &middot; 5&ndash;2</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; 1 goal (52&#39;) &mdash; Doku, Foden and Savinho also scored, plus an own goal by Kalulu</div>
+      </div>
+
+      <div class="match-card season-2425 comp-cwc">
+        <div class="match-comp cwc">CWC</div>
+        <div class="match-date">1 Jul 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#003DA5;color:#fff">HIL</div>
+        </div>
+        <div class="match-opp">vs Al-Hilal (H) &middot; 3&ndash;4</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Played &middot; 1 goal (55&#39;) &mdash; Bernardo Silva and Foden also scored, lost after extra time</div>
+      </div>
+
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">16. aug. 2025</div>
+        <div class="match-date">16 Aug 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -755,7 +1847,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">23. aug. 2025</div>
+        <div class="match-date">23 Aug 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -768,7 +1860,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">31. aug. 2025</div>
+        <div class="match-date">31 Aug 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -783,7 +1875,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">NT</div>
-        <div class="match-date">9. sep. 2025</div>
+        <div class="match-date">9 Sep 2025</div>
         <div class="match-badges">
           <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
           <span class="badge-vs">&ndash;</span>
@@ -802,7 +1894,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">14. sep. 2025</div>
+        <div class="match-date">14 Sep 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -818,7 +1910,7 @@ function render(vals) {
 
       <div class="match-card is-record season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
-        <div class="match-date">18. sep. 2025</div>
+        <div class="match-date">18 Sep 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -833,7 +1925,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">21. sep. 2025</div>
+        <div class="match-date">21 Sep 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -848,7 +1940,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-efl">
         <div class="match-comp efl">EFL CUP</div>
-        <div class="match-date">24. sep. 2025</div>
+        <div class="match-date">24 Sep 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -861,7 +1953,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">27. sep. 2025</div>
+        <div class="match-date">27 Sep 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -877,7 +1969,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
-        <div class="match-date">1. okt. 2025</div>
+        <div class="match-date">1 Oct 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -893,7 +1985,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">5. okt. 2025</div>
+        <div class="match-date">5 Oct 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -908,7 +2000,7 @@ function render(vals) {
 
       <div class="match-card is-record season-2526 comp-nor">
         <div class="match-comp nor">NT</div>
-        <div class="match-date">11. okt. 2025</div>
+        <div class="match-date">11 Oct 2025</div>
         <div class="match-badges">
           <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
           <span class="badge-vs">&ndash;</span>
@@ -925,7 +2017,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">18. okt. 2025</div>
+        <div class="match-date">18 Oct 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -941,7 +2033,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
-        <div class="match-date">21. okt. 2025</div>
+        <div class="match-date">21 Oct 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -956,7 +2048,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">26. okt. 2025</div>
+        <div class="match-date">26 Oct 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -969,7 +2061,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-efl">
         <div class="match-comp efl">EFL CUP</div>
-        <div class="match-date">29. okt. 2025</div>
+        <div class="match-date">29 Oct 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -982,7 +2074,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">2. nov. 2025</div>
+        <div class="match-date">2 Nov 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -998,7 +2090,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
-        <div class="match-date">5. nov. 2025</div>
+        <div class="match-date">5 Nov 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1013,7 +2105,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">9. nov. 2025</div>
+        <div class="match-date">9 Nov 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1028,7 +2120,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">NT</div>
-        <div class="match-date">13. nov. 2025</div>
+        <div class="match-date">13 Nov 2025</div>
         <div class="match-badges">
           <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
           <span class="badge-vs">&ndash;</span>
@@ -1044,7 +2136,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">NT</div>
-        <div class="match-date">16. nov. 2025</div>
+        <div class="match-date">16 Nov 2025</div>
         <div class="match-badges">
           <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
           <span class="badge-vs">&ndash;</span>
@@ -1060,7 +2152,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">22. nov. 2025</div>
+        <div class="match-date">22 Nov 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1073,7 +2165,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
-        <div class="match-date">25. nov. 2025</div>
+        <div class="match-date">25 Nov 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1086,7 +2178,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">29. nov. 2025</div>
+        <div class="match-date">29 Nov 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1099,7 +2191,7 @@ function render(vals) {
 
       <div class="match-card is-record season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">2. des. 2025</div>
+        <div class="match-date">2 Dec 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1114,7 +2206,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">6. des. 2025</div>
+        <div class="match-date">6 Dec 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1127,7 +2219,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
-        <div class="match-date">10. des. 2025</div>
+        <div class="match-date">10 Dec 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1142,7 +2234,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">14. des. 2025</div>
+        <div class="match-date">14 Dec 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1158,7 +2250,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-efl">
         <div class="match-comp efl">EFL CUP</div>
-        <div class="match-date">17. des. 2025</div>
+        <div class="match-date">17 Dec 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1171,7 +2263,7 @@ function render(vals) {
 
       <div class="match-card is-record season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">20. des. 2025</div>
+        <div class="match-date">20 Dec 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1188,7 +2280,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">27. des. 2025</div>
+        <div class="match-date">27 Dec 2025</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1201,7 +2293,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">1. jan. 2026</div>
+        <div class="match-date">1 Jan 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1214,7 +2306,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">4. jan. 2026</div>
+        <div class="match-date">4 Jan 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1227,7 +2319,7 @@ function render(vals) {
 
       <div class="match-card is-record season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">7. jan. 2026</div>
+        <div class="match-date">7 Jan 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1242,7 +2334,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-cup">
         <div class="match-comp cup">CUP</div>
-        <div class="match-date">10. jan. 2026</div>
+        <div class="match-date">10 Jan 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1255,7 +2347,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-efl">
         <div class="match-comp efl">EFL CUP</div>
-        <div class="match-date">13. jan. 2026</div>
+        <div class="match-date">13 Jan 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1268,7 +2360,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">17. jan. 2026</div>
+        <div class="match-date">17 Jan 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1281,7 +2373,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
-        <div class="match-date">20. jan. 2026</div>
+        <div class="match-date">20 Jan 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1294,7 +2386,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">24. jan. 2026</div>
+        <div class="match-date">24 Jan 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1307,7 +2399,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
-        <div class="match-date">28. jan. 2026</div>
+        <div class="match-date">28 Jan 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1322,7 +2414,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">1. feb. 2026</div>
+        <div class="match-date">1 Feb 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1335,7 +2427,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-efl">
         <div class="match-comp efl">EFL CUP</div>
-        <div class="match-date">4. feb. 2026</div>
+        <div class="match-date">4 Feb 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1348,7 +2440,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">8. feb. 2026</div>
+        <div class="match-date">8 Feb 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1363,7 +2455,7 @@ function render(vals) {
 
       <div class="match-card is-record season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">11. feb. 2026</div>
+        <div class="match-date">11 Feb 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1378,7 +2470,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-cup">
         <div class="match-comp cup">CUP</div>
-        <div class="match-date">14. feb. 2026</div>
+        <div class="match-date">14 Feb 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1391,7 +2483,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">21. feb. 2026</div>
+        <div class="match-date">21 Feb 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1404,7 +2496,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">28. feb. 2026</div>
+        <div class="match-date">28 Feb 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1417,7 +2509,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">4. mar. 2026</div>
+        <div class="match-date">4 Mar 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1430,7 +2522,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-cup">
         <div class="match-comp cup">CUP</div>
-        <div class="match-date">7. mar. 2026</div>
+        <div class="match-date">7 Mar 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1443,7 +2535,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
-        <div class="match-date">11. mar. 2026</div>
+        <div class="match-date">11 Mar 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1456,7 +2548,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">14. mar. 2026</div>
+        <div class="match-date">14 Mar 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1469,7 +2561,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-cl">
         <div class="match-comp cl">CL</div>
-        <div class="match-date">17. mar. 2026</div>
+        <div class="match-date">17 Mar 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1484,7 +2576,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-efl">
         <div class="match-comp efl">EFL CUP</div>
-        <div class="match-date">22. mar. 2026</div>
+        <div class="match-date">22 Mar 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1497,7 +2589,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-cup">
         <div class="match-comp cup">CUP</div>
-        <div class="match-date">4. apr. 2026</div>
+        <div class="match-date">4 Apr 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1514,7 +2606,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">12. apr. 2026</div>
+        <div class="match-date">12 Apr 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1527,7 +2619,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">19. apr. 2026</div>
+        <div class="match-date">19 Apr 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1542,7 +2634,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">22. apr. 2026</div>
+        <div class="match-date">22 Apr 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1557,7 +2649,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-cup">
         <div class="match-comp cup">CUP</div>
-        <div class="match-date">25. apr. 2026</div>
+        <div class="match-date">25 Apr 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1570,7 +2662,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">4. mai 2026</div>
+        <div class="match-date">4 May 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1585,7 +2677,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">9. mai 2026</div>
+        <div class="match-date">9 May 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1600,7 +2692,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">13. mai 2026</div>
+        <div class="match-date">13 May 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1613,7 +2705,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-cup">
         <div class="match-comp cup">CUP</div>
-        <div class="match-date">16. mai 2026</div>
+        <div class="match-date">16 May 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1625,7 +2717,7 @@ function render(vals) {
       </div>
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">19. mai 2026</div>
+        <div class="match-date">19 May 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1640,7 +2732,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">24. mai 2026</div>
+        <div class="match-date">24 May 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1653,7 +2745,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">WC</div>
-        <div class="match-date">17. jun. 2026</div>
+        <div class="match-date">17 Jun 2026</div>
         <div class="match-badges">
           <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
           <span class="badge-vs">&ndash;</span>
@@ -1669,7 +2761,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">WC</div>
-        <div class="match-date">23. jun. 2026</div>
+        <div class="match-date">23 Jun 2026</div>
         <div class="match-badges">
           <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
           <span class="badge-vs">&ndash;</span>
@@ -1685,7 +2777,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">WC</div>
-        <div class="match-date">26. jun. 2026</div>
+        <div class="match-date">26 Jun 2026</div>
         <div class="match-badges">
           <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
           <span class="badge-vs">&ndash;</span>
@@ -1698,7 +2790,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">WC</div>
-        <div class="match-date">30. jun. 2026</div>
+        <div class="match-date">30 Jun 2026</div>
         <div class="match-badges">
           <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
           <span class="badge-vs">&ndash;</span>
@@ -1713,7 +2805,7 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">WC</div>
-        <div class="match-date">5. jul. 2026</div>
+        <div class="match-date">5 Jul 2026</div>
         <div class="match-badges">
           <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
           <span class="badge-vs">&ndash;</span>
@@ -1729,20 +2821,20 @@ function render(vals) {
 
       <div class="match-card season-2526 comp-nor">
         <div class="match-comp nor">WC</div>
-        <div class="match-date">11. jul. 2026</div>
+        <div class="match-date">11 Jul 2026</div>
         <div class="match-badges">
           <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
           <span class="badge-vs">&ndash;</span>
           <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="18" height="12" fill="#fff"/><rect x="7" width="4" height="12" fill="#CE1124"/><rect y="4" width="18" height="4" fill="#CE1124"/></svg></div>
         </div>
-        <div class="match-opp">vs England (N) &middot; 1&ndash;2 e.o.</div>
+        <div class="match-opp">vs England (N) &middot; 1&ndash;2 AET</div>
         <div class="match-icons"></div>
         <div class="match-status played">Played &middot; no goal &mdash; World Cup run ended in the quarter-final</div>
       </div>
 
       <div class="match-card season-2627 comp-shield">
         <div class="match-comp shield">SHIELD</div>
-        <div class="match-date">16. aug. 2026</div>
+        <div class="match-date">16 Aug 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1755,7 +2847,7 @@ function render(vals) {
 
       <div class="match-card season-2627 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">23. aug. 2026</div>
+        <div class="match-date">23 Aug 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
@@ -1768,13 +2860,13 @@ function render(vals) {
 
       <div class="match-card is-planned season-2627 comp-pl">
         <div class="match-comp pl">PL</div>
-        <div class="match-date">28. aug. 2026</div>
+        <div class="match-date">28 Aug 2026</div>
         <div class="match-badges">
           <div class="badge badge-own">MCI</div>
           <span class="badge-vs">&ndash;</span>
           <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
         </div>
-        <div class="match-opp">vs Crystal Palace (A) &middot; kl. 20:00</div>
+        <div class="match-opp">vs Crystal Palace (A) &middot; 20:00 kickoff</div>
         <div class="match-icons"></div>
         <div class="match-status planned">Scheduled &middot; Selhurst Park (source: mancity.com)</div>
       </div>
