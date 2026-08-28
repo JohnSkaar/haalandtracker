@@ -2650,16 +2650,6 @@
         <span class="stat-mini-note">Alle turneringer, t.o.m. 200. City-kamp, 23. aug. 2026 (kilde: mancity.com, Yahoo Sports).</span>
       </div>
 
-      <div class="stat-mini">
-        <span class="stat-mini-title">Mot Manchester United</span>
-        <div class="stat-mini-row">
-          <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">10</span></div>
-          <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">8</span></div>
-          <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,80</span></div>
-        </div>
-        <span class="stat-mini-note">Alle turneringer for Manchester City, 6 seire&ndash;4 tap. 3 assists i tillegg &mdash; 11 m&aring;lpoeng i Manchester-derbyer, bak kun Ryan Giggs (13) gjennom historien (kilde: Sports Mole, Premier League).</span>
-      </div>
-
       <div class="col-section">
       <div class="toggle-row">
         <button class="{{club.historyClass}}" onClick="{{club.toggleHistory}}">Historikk</button>
@@ -2880,6 +2870,16 @@
           <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,79</span></div>
         </div>
         <span class="stat-mini-note">Utledet fra sesongtall 2022/23&ndash;2025/26 (12+6+8+8), kryssjekket mot karriere-totalen. Kamptall er et estimat.</span>
+      </div>
+
+      <div class="stat-mini">
+        <span class="stat-mini-title">Champions League &mdash; m&aring;l per klubb</span>
+        <div class="stat-mini-row">
+          <div class="stat-mini-item"><span class="stat-mini-label">Salzburg</span><span class="stat-mini-value">8</span></div>
+          <div class="stat-mini-item"><span class="stat-mini-label">Dortmund</span><span class="stat-mini-value">15</span></div>
+          <div class="stat-mini-item"><span class="stat-mini-label">Man City</span><span class="stat-mini-value">34</span></div>
+        </div>
+        <span class="stat-mini-note">57 CL-m&aring;l totalt s&aring; langt &mdash; topp 10 gjennom tidene, blant kun ti spillere med 50+ CL-m&aring;l (kilde: UEFA.com, ESPN, StatMuse).</span>
       </div>
 
       <div class="col-section">
@@ -3876,11 +3876,26 @@ class Component extends DCLogic {
     const CL_TOP = [
       { name: 'C. Ronaldo', value: 140, color: '#2f5aa8', isH: false, active: false },
       { name: 'L. Messi', value: 129, color: '#6a3fa0', isH: false, active: false },
-      { name: 'R. Lewandowski', value: 99, color: '#a8791a', isH: false, active: true },
+      { name: 'R. Lewandowski', value: 101, color: '#a8791a', isH: false, active: true },
       { name: 'K. Benzema', value: 90, color: '#1f2937', isH: false, active: false },
-      { name: 'E. Haaland', value: 64, color: '#c1352b', isH: true, active: true },
-      { name: 'K. Mbappé', value: 46, color: '#2f8f5f', isH: false, active: true },
-      { name: 'Neymar', value: 43, color: '#8a1538', isH: false, active: false }
+      { name: 'Raúl', value: 71, color: '#7c3f8f', isH: false, active: false },
+      { name: 'K. Mbappé', value: 68, color: '#2f8f5f', isH: false, active: true },
+      { name: 'E. Haaland', value: 57, color: '#c1352b', isH: true, active: true },
+      { name: 'R. van Nistelrooy', value: 56, color: '#5a5f73', isH: false, active: false },
+      { name: 'T. Müller', value: 53, color: '#1f6f78', isH: false, active: false },
+      { name: 'T. Henry', value: 50, color: '#8a1538', isH: false, active: false },
+      { name: 'M. Salah', value: 50, color: '#0e6b3a', isH: false, active: true },
+      { name: 'Z. Ibrahimović', value: 48, color: '#b5484f', isH: false, active: false },
+      { name: 'A. Shevchenko', value: 48, color: '#c1352b', isH: false, active: false },
+      { name: 'F. Inzaghi', value: 46, color: '#2f5aa8', isH: false, active: false },
+      { name: 'D. Drogba', value: 44, color: '#6a3fa0', isH: false, active: false },
+      { name: 'Neymar', value: 44, color: '#a8791a', isH: false, active: false },
+      { name: 'A. Del Piero', value: 42, color: '#1f2937', isH: false, active: false },
+      { name: 'S. Agüero', value: 41, color: '#7c3f8f', isH: false, active: false },
+      { name: 'E. Cavani', value: 40, color: '#2f8f5f', isH: false, active: false },
+      { name: 'F. Morientes', value: 33, color: '#5a5f73', isH: false, active: false },
+      { name: 'A. Robben', value: 31, color: '#1f6f78', isH: false, active: false },
+      { name: 'S. Eto\'o', value: 30, color: '#8a1538', isH: false, active: false }
     ];
 
     let clDetail = null;
@@ -3894,7 +3909,7 @@ class Component extends DCLogic {
 
     const chartCl = {
       entryBars: [
-        bar('E. Haaland', 64, 70, '#c1352b', true),
+        bar('E. Haaland', 57, 70, '#c1352b', true),
         bar('C. Ronaldo*', 42, 70, '#2f5aa8', false),
         bar('L. Messi*', 28, 70, '#6a3fa0', false)
       ],
@@ -3910,7 +3925,7 @@ class Component extends DCLogic {
       topFilterAllClass: flag(ccl.topFilter === 'all'), setTopFilterAll: () => this.setClTopFilter('all'),
       topFilterActiveClass: flag(ccl.topFilter === 'active'), setTopFilterActive: () => this.setClTopFilter('active'),
       topFilterInactiveClass: flag(ccl.topFilter === 'inactive'), setTopFilterInactive: () => this.setClTopFilter('inactive'),
-      topRankLabel: 'Haalands plassering: #' + (CL_TOP.findIndex((t) => t.isH) + 1) + ' av ' + CL_TOP.length + ' i utvalget (sample)',
+      topRankLabel: 'Haalands plassering: #' + (CL_TOP.findIndex((t) => t.isH) + 1) + ' blant Champions League-toppscorere gjennom tidene, med 57 mål (kilde: UEFA.com, ESPN, StatMuse).',
       openModal: () => this.openModal('cl'),
       ...(clDetail || emptyDetail)
     };
