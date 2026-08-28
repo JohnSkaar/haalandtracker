@@ -12,7 +12,7 @@ class Site {
       chart: {
         club: {
           league: null, view: 'totalt', milestone: 100, season: '2022/23',
-          rivalsPL: { shearer: true, kane: true, aguero: true, henry: true },
+          rivalsPL: { shearer: true, kane: true, aguero: true, henry: true, salah: true, rooney: false, cole: false, lampard: false, fowler: false, defoe: false },
           rivalsOther: { a: true, b: true },
           seasonRivals: { salah: true, shearer: true, cole: true }
         },
@@ -204,8 +204,8 @@ class Site {
       { title: 'PFA Young Player of the Year', desc: 'Ikke funnet kilder på at Haaland har vunnet denne kategorien — han vant i stedet den overordnede PFA Player of the Year i 2023.' }
     ];
     const clubAchievable = withWidth([
-      { title: '150 Premier League-mål', desc: 'Neste nivå etter 100-rekorden. Stod på 107 mål på 126 kamper ved siste kildesjekk (kilde: mancity.com). Estimat.', progress: 71 },
-      { title: 'Alan Shearers alltid-rekord: 260 PL-mål', desc: 'Premier Leagues toppscorer gjennom tidene — langsiktig mål. Estimat basert på 107 mål så langt.', progress: 41 },
+      { title: '150 Premier League-mål', desc: 'Neste nivå etter 100-rekorden. Står på 112 mål på 132 kamper ved siste sesongslutt (kilde: offisiell PL-statistikk).', progress: 75 },
+      { title: 'Alan Shearers alltid-rekord: 260 PL-mål', desc: 'Premier Leagues toppscorer gjennom tidene — langsiktig mål. Står på 112 mål så langt, bak hele topp ti: Shearer (260), Kane (213, avsluttet i PL), Rooney (208), Salah (193), Cole (187), Agüero (184), Lampard (177), Henry (175), Fowler (163) og Defoe (162). Salah er den eneste av de ti øverste som fortsatt er aktiv og kan legge på flere mål.', progress: 43 },
       { title: '4. Premier League Golden Boot', desc: 'Ville matchet rekorden til Thierry Henry og Mohamed Salah på fire Golden Boots. Har 3 av 4 så langt.', progress: 75 }
     ]);
 
@@ -275,15 +275,33 @@ class Site {
         { key: 'henry', name: 'T. Henry', short: 'Henry', color: '#1f2937', points: [[0,0],[10,2],[25,8],[45,18],[65,30],[85,42],[105,56],[125,70],[145,86],[160,100]] }
       ]
     };
+    const PL_HAALAND_SOLID = [[0,0],[4,3],[8,7],[12,13],[16,18],[20,22],[25,27],[30,32],[35,36],[39,38],[43,42],[47,46],[51,49],[55,52],[59,55],[63,59],[66,63],[70,65],[74,68],[78,71],[82,74],[86,77],[90,80],[94,83],[97,85],[101,87],[105,91],[109,95],[111,100],[117,103],[122,106],[127,109],[132,112]];
     const PL_150 = {
-      maxGames: 250, maxGoals: 150,
-      haalandSolid: [[0,0],[10,7],[25,20],[45,38],[65,55],[85,75],[100,92],[111,100],[120,112],[132,137]],
-      haalandDashed: [[132,137],[148,150]],
+      maxGames: 260, maxGoals: 150,
+      haalandSolid: PL_HAALAND_SOLID,
+      haalandDashed: [[132,112],[178,150]],
       rivals: [
         { key: 'shearer', name: 'A. Shearer', short: 'Shearer', color: '#2f5aa8', points: [[0,0],[10,4],[25,14],[45,28],[65,44],[85,60],[105,78],[125,95],[145,112],[165,128],[191,150]] },
         { key: 'kane', name: 'H. Kane', short: 'Kane', color: '#6a3fa0', points: [[0,0],[15,5],[35,16],[60,32],[85,50],[110,68],[135,88],[160,108],[190,132],[214,150]] },
         { key: 'aguero', name: 'S. Agüero', short: 'Agüero', color: '#a8791a', points: [[0,0],[15,5],[35,15],[60,30],[85,48],[110,66],[135,86],[160,106],[190,130],[220,150]] },
         { key: 'henry', name: 'T. Henry', short: 'Henry', color: '#1f2937', points: [[0,0],[15,4],[35,12],[60,25],[85,40],[110,55],[135,72],[160,90],[190,112],[215,132],[235,150]] }
+      ]
+    };
+    const PL_260 = {
+      maxGames: 620, maxGoals: 260,
+      haalandSolid: PL_HAALAND_SOLID,
+      haalandDashed: [[132,112],[309,260]],
+      rivals: [
+        { key: 'shearer', name: 'A. Shearer', short: 'Shearer', color: '#2f5aa8', points: [[0,0],[441,260]] },
+        { key: 'kane', name: 'H. Kane', short: 'Kane', color: '#6a3fa0', points: [[0,0],[320,213]] },
+        { key: 'rooney', name: 'W. Rooney', short: 'Rooney', color: '#c1352b', points: [[0,0],[491,208]] },
+        { key: 'salah', name: 'M. Salah', short: 'Salah', color: '#0e6b3a', points: [[0,0],[328,193]] },
+        { key: 'cole', name: 'A. Cole', short: 'Cole', color: '#a8791a', points: [[0,0],[414,187]] },
+        { key: 'aguero', name: 'S. Agüero', short: 'Agüero', color: '#7c3f8f', points: [[0,0],[275,184]] },
+        { key: 'lampard', name: 'F. Lampard', short: 'Lampard', color: '#1f6f78', points: [[0,0],[609,177]] },
+        { key: 'henry', name: 'T. Henry', short: 'Henry', color: '#1f2937', points: [[0,0],[258,175]] },
+        { key: 'fowler', name: 'R. Fowler', short: 'Fowler', color: '#b5484f', points: [[0,0],[379,163]] },
+        { key: 'defoe', name: 'J. Defoe', short: 'Defoe', color: '#5a5f73', points: [[0,0],[496,162]] }
       ]
     };
     // Apps/goals/assists confirmed from official Premier League player-stats pages
@@ -327,12 +345,16 @@ class Site {
     let clubDetail = null;
     if (cc.league === 'pl') {
       if (cc.view === 'totalt') {
-        const base = cc.milestone === 150 ? PL_150 : PL_100;
+        const base = cc.milestone === 260 ? PL_260 : (cc.milestone === 150 ? PL_150 : PL_100);
         const cfg = { ...base, rivals: base.rivals.map((r) => ({ ...r, on: cc.rivalsPL[r.key], toggle: () => this.toggleClubRivalPL(r.key) })) };
         clubDetail = this.buildRace(cfg);
-        clubDetail.caption = cc.milestone === 100
-          ? 'Bekreftet rekord: 111 kamper, 2. des. 2025 (kilde: ESPN, Guinness World Records). Motstandertallene er hentet fra samme sammenligning.'
-          : '150-mål-nivået er ikke nådd ennå. Haalands stiplede linje er en modellert fremskrivning, og motstandernes tall for akkurat denne milepælen er ikke bekreftet kildesatt — se dem som estimater.';
+        if (cc.milestone === 100) {
+          clubDetail.caption = 'Bekreftet rekord: 111 kamper, 2. des. 2025 (kilde: ESPN, Guinness World Records). Motstandertallene er hentet fra samme sammenligning.';
+        } else if (cc.milestone === 150) {
+          clubDetail.caption = 'Solid linje er bekreftet PL-statistikk (112 mål på 132 kamper, sesongene 2022/23–2025/26). Stiplet linje er en modellert fremskrivning mot 150 basert på snittet så langt — ikke en offisiell prognose.';
+        } else {
+          clubDetail.caption = 'Alan Shearers rekord på 260 PL-mål (441 kamper) er Premier Leagues fjerneste individuelle målrekord. Alle ti er hentet fra offisiell PL-statistikk over tid; kun Mohamed Salah er fortsatt aktiv og kan øke sitt tall. Haalands stiplede linje er en grovt modellert fremskrivning ved uendret snittscoring — ikke en prognose.';
+        }
       } else {
         const hs = PL_SEASONS[cc.season];
         const ss = PL_SEASON_STATS[cc.season];
@@ -379,6 +401,7 @@ class Site {
       viewSeasonClass: flag(cc.view === 'season'), setViewSeason: () => this.setClubView('season'),
       m100Class: flag(cc.milestone === 100), setM100: () => this.setClubMilestone(100),
       m150Class: flag(cc.milestone === 150), setM150: () => this.setClubMilestone(150),
+      m260Class: flag(cc.milestone === 260), setM260: () => this.setClubMilestone(260),
       seasonOptions: Object.keys(PL_SEASONS).map((sk) => ({ label: sk, cls: flag(cc.season === sk), pick: () => this.setClubSeason(sk) })),
       openModal: () => this.openModal('club'),
       ...(clubDetail || emptyDetail)
@@ -2983,6 +3006,7 @@ function render(vals) {
               <div class="chip-select">
                 <button class="${vals.chart.club.m100Class}" data-bind="chart.club.setM100">100 m&aring;l</button>
                 <button class="${vals.chart.club.m150Class}" data-bind="chart.club.setM150">150 m&aring;l</button>
+                <button class="${vals.chart.club.m260Class}" data-bind="chart.club.setM260">260 (alltidsrekord)</button>
               </div>
             ` : ''}
 
@@ -3460,6 +3484,7 @@ ${(vals.modal.club) ? `
         <div class="chip-select">
           <button class="${vals.chart.club.m100Class}" data-bind="chart.club.setM100">100 m&aring;l</button>
           <button class="${vals.chart.club.m150Class}" data-bind="chart.club.setM150">150 m&aring;l</button>
+          <button class="${vals.chart.club.m260Class}" data-bind="chart.club.setM260">260 (alltidsrekord)</button>
         </div>
       ` : ''}
       ${(vals.chart.club.showSeasonPicker) ? `
