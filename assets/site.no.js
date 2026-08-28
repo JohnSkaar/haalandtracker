@@ -22,7 +22,7 @@ class Site {
       },
       modal: null,
       timelineSeason: 'all',
-      timelineComp: { nor: true, pl: true, cl: true, cup: true, efl: true }
+      timelineComp: { nor: true, pl: true, cl: true, cup: true, efl: true, bundesliga: true }
     };
   }
 
@@ -564,7 +564,7 @@ class Site {
       onClick: () => this.setTimelineSeason(f.key)
     }));
 
-    const compHideClass = ['nor', 'pl', 'cl', 'cup', 'efl']
+    const compHideClass = ['nor', 'pl', 'cl', 'cup', 'efl', 'bundesliga']
       .filter((k) => !s.timelineComp[k])
       .map((k) => 'hide-' + k)
       .join(' ');
@@ -573,7 +573,8 @@ class Site {
       { key: 'pl', label: 'Premier League' },
       { key: 'cl', label: 'Champions League' },
       { key: 'cup', label: 'FA Cup' },
-      { key: 'efl', label: 'EFL Cup' }
+      { key: 'efl', label: 'EFL Cup' },
+      { key: 'bundesliga', label: 'Bundesliga' }
     ].map((f) => ({
       label: f.label,
       cls: chipClass(s.timelineComp[f.key]),
@@ -666,6 +667,531 @@ function render(vals) {
         <div class="match-opp">vs Malta (H) &middot; 2&ndash;0</div>
         <div class="match-icons"></div>
         <div class="match-status played">Spilt &middot; A-landslagsdebut, ingen m&aring;l</div>
+      </div>
+
+      <div class="match-card is-record season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">18. jan. 2020</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#BA3733;color:#fff">FCA</div>
+        </div>
+        <div class="match-opp">vs Augsburg (B) &middot; 3&ndash;5</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick p&aring; 23 minutter (59., 71. og 79. min.) &mdash; Dortmund-debut som innbytter, raskeste Bundesliga-hattrick p&aring; debut (kilde: bundesliga.com, Guinness World Records)</div>
+      </div>
+
+      <div class="match-card is-record season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">24. jan. 2020</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#E2001A;color:#fff">KOE</div>
+        </div>
+        <div class="match-opp">vs K&ouml;ln (H) &middot; 5&ndash;1</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 2 m&aring;l (77. og 87. min.) &mdash; f&oslash;rste spiller noensinne med 5 m&aring;l i sine to f&oslash;rste Bundesliga-kamper (kilde: bundesliga.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">1. feb. 2020</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#FFD100;color:#14171c">FCU</div>
+        </div>
+        <div class="match-opp">vs Union Berlin (H) &middot; 5&ndash;0</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (18. og 71. min.) (kilde: The National, SI.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">14. feb. 2020</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#E1000F;color:#fff">SGE</div>
+        </div>
+        <div class="match-opp">vs Eintracht Frankfurt (H) &middot; 4&ndash;0</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (54. min.) (kilde: bundesliga.com, SI.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">22. feb. 2020</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#009036;color:#fff">SVW</div>
+        </div>
+        <div class="match-opp">vs Werder Bremen (B) &middot; 0&ndash;2</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (66. min.) (kilde: bundesliga.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">16. mai 2020</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#004D9D;color:#fff">S04</div>
+        </div>
+        <div class="match-opp">vs Schalke 04 (H) &middot; 4&ndash;0</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (29. min.) &mdash; Ruhr-derby (kilde: bundesliga.com, SI.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">13. jun. 2020</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#C8102E;color:#fff">F95</div>
+        </div>
+        <div class="match-opp">vs Fortuna D&uuml;sseldorf (B) &middot; 0&ndash;1</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (90.+5, hodest&oslash;t i sluttminuttene) (kilde: bundesliga.com, Washington Post)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">20. jun. 2020</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DD0741;color:#fff">RBL</div>
+        </div>
+        <div class="match-opp">vs RB Leipzig (H) &middot; 2&ndash;0</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (30. og 90.+3 min.) (kilde: Goal.com, SPORTbible)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">19. sep. 2020</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#1D1D1B;color:#fff">BMG</div>
+        </div>
+        <div class="match-opp">vs Gladbach (H) &middot; 3&ndash;0</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (54. min., straffe, og 77. min.) &mdash; sesong&aring;pning (kilde: bundesliga.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">3. okt. 2020</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#000000;color:#fff">SCF</div>
+        </div>
+        <div class="match-opp">vs Freiburg (H) &middot; 4&ndash;0</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (31. og 66. min.) (kilde: bundesliga.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">24. okt. 2020</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#004D9D;color:#fff">S04</div>
+        </div>
+        <div class="match-opp">vs Schalke 04 (H) &middot; 3&ndash;0</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (61. min.) &mdash; Ruhr-derby (kilde: bundesliga.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">7. nov. 2020</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DC052D;color:#fff">FCB</div>
+        </div>
+        <div class="match-opp">vs Bayern M&uuml;nchen (H) &middot; 2&ndash;3</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (83. min.) (kilde: ESPN, Goal.com)</div>
+      </div>
+
+      <div class="match-card is-record season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">21. nov. 2020</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#005CA9;color:#fff">BSC</div>
+        </div>
+        <div class="match-opp">vs Hertha Berlin (B) &middot; 2&ndash;5</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 4 m&aring;l (47., 49., 62. og 79. min.) (kilde: bundesliga.com, ESPN)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">9. jan. 2021</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DD0741;color:#fff">RBL</div>
+        </div>
+        <div class="match-opp">vs RB Leipzig (B) &middot; 1&ndash;3</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (72. og 84. min.) (kilde: ESPN, bundesliga.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">22. jan. 2021</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#1D1D1B;color:#fff">BMG</div>
+        </div>
+        <div class="match-opp">vs Gladbach (B) &middot; 4&ndash;2</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (23. og 29. min.) (kilde: bundesliga.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">13. feb. 2021</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#1961B5;color:#fff">TSG</div>
+        </div>
+        <div class="match-opp">vs Hoffenheim (H) &middot; 2&ndash;2</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (81. min., reddet uavgjort) (kilde: Seattle Times, bundesliga.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">20. feb. 2021</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#004D9D;color:#fff">S04</div>
+        </div>
+        <div class="match-opp">vs Schalke 04 (B) &middot; 0&ndash;4</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (45. og 78. min.) &mdash; Ruhr-derby (kilde: ESPN, MyKhel)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">6. mar. 2021</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DC052D;color:#fff">FCB</div>
+        </div>
+        <div class="match-opp">vs Bayern M&uuml;nchen (B) &middot; 4&ndash;2</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (2. og 9. min.) &mdash; Der Klassiker (kilde: CBS Sports, ESPN)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">20. mar. 2021</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#E2001A;color:#fff">KOE</div>
+        </div>
+        <div class="match-opp">vs K&ouml;ln (B) &middot; 2&ndash;2</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (3. og 90. min.) (kilde: ESPN, Sky Sports)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">18. apr. 2021</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#009036;color:#fff">SVW</div>
+        </div>
+        <div class="match-opp">vs Werder Bremen (H) &middot; 4&ndash;1</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (34. min., straffe, og 38. min.) (kilde: SI.com, AllFootball)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">24. apr. 2021</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#65B32E;color:#14171c">WOB</div>
+        </div>
+        <div class="match-opp">vs Wolfsburg (B) &middot; 0&ndash;2</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (12. og 68. min.) (kilde: ESPN, bundesliga.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">22. mai 2021</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#E32221;color:#fff">B04</div>
+        </div>
+        <div class="match-opp">vs Bayer Leverkusen (H) &middot; 3&ndash;1</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (5. og 84. min.) (kilde: bundesliga.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">14. aug. 2021</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#E1000F;color:#fff">SGE</div>
+        </div>
+        <div class="match-opp">vs Eintracht Frankfurt (H) &middot; 5&ndash;2</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (34. og 70. min.) &mdash; sesong&aring;pning (kilde: LatestLY)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">28. aug. 2021</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#1961B5;color:#fff">TSG</div>
+        </div>
+        <div class="match-opp">vs Hoffenheim (H) &middot; 3&ndash;2</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (90.+1, seiersm&aring;l i sluttminuttene) (kilde: Eurosport)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">11. sep. 2021</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#E32221;color:#fff">B04</div>
+        </div>
+        <div class="match-opp">vs Bayer Leverkusen (B) &middot; 3&ndash;4</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (37. min., hodest&oslash;t, og 77. min., straffe) &mdash; snudde 0&ndash;3 til seier (kilde: ESPN, SI.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">19. sep. 2021</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#FFD100;color:#14171c">FCU</div>
+        </div>
+        <div class="match-opp">vs Union Berlin (H) &middot; 4&ndash;2</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (24. min., hodest&oslash;t, og 83. min.) (kilde: Scroll.in, GiveMeSport)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">16. okt. 2021</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#C4122E;color:#fff">M05</div>
+        </div>
+        <div class="match-opp">vs Mainz 05 (H) &middot; 3&ndash;1</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (54. min., straffe, og 90.+4 min.) (kilde: bvbbuzz.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">27. nov. 2021</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#65B32E;color:#14171c">WOB</div>
+        </div>
+        <div class="match-opp">vs Wolfsburg (B) &middot; 1&ndash;3</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (80. min.) &mdash; comeback etter skade (kilde: bvbbuzz.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">4. des. 2021</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DC052D;color:#fff">FCB</div>
+        </div>
+        <div class="match-opp">vs Bayern M&uuml;nchen (H) &middot; 2&ndash;3</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (48. min.) (kilde: ESPN, fcbayern.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">15. des. 2021</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#00643C;color:#fff">SGF</div>
+        </div>
+        <div class="match-opp">vs Greuther F&uuml;rth (H) &middot; 3&ndash;0</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (33. min., straffe, og 82. min.) (kilde: bvbbuzz.com)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">14. jan. 2022</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#000000;color:#fff">SCF</div>
+        </div>
+        <div class="match-opp">vs Freiburg (H) &middot; 5&ndash;1</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (45.+1 og 75. min.) (kilde: Sky Sports)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">22. jan. 2022</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#1961B5;color:#fff">TSG</div>
+        </div>
+        <div class="match-opp">vs Hoffenheim (B) &middot; 2&ndash;3</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (6. min.) (kilde: bundesliga.com, AllFootball)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">16. apr. 2022</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#65B32E;color:#14171c">WOB</div>
+        </div>
+        <div class="match-opp">vs Wolfsburg (H) &middot; 6&ndash;1</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (38. og 54. min.) &mdash; f&oslash;rste m&aring;l siden januar (kilde: OneFootball)</div>
+      </div>
+
+      <div class="match-card is-record season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">30. apr. 2022</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#1C3F94;color:#fff">BOC</div>
+        </div>
+        <div class="match-opp">vs Bochum (B) &middot; 4&ndash;3</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick (18. og 30. min. p&aring; straffe, 62. min. fra spill) (kilde: ESPN)</div>
+      </div>
+
+      <div class="match-card season-early comp-bundesliga">
+        <div class="match-comp bundesliga">BL</div>
+        <div class="match-date">14. mai 2022</div>
+        <div class="match-badges">
+          <div class="badge badge-own">BVB</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#005CA9;color:#fff">BSC</div>
+        </div>
+        <div class="match-opp">vs Hertha Berlin (H) &middot; 2&ndash;1</div>
+        <div class="match-icons">
+<span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (68. min., straffe) &mdash; siste kamp for Dortmund (kilde: Sky Sports)</div>
       </div>
 
       <div class="match-card season-2223 comp-pl">
