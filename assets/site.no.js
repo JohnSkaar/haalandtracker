@@ -1150,7 +1150,7 @@ function render(vals) {
           <span class="badge-vs">&ndash;</span>
           <div class="badge badge-opp" style="background:#FFE667;color:#14171c">VIL</div>
         </div>
-        <div class="match-opp">vs Villarreal (B) &middot; 0&ndash;2</div>
+        <div class="match-opp">vs Villarreal (B) &middot; 2&ndash;0</div>
         <div class="match-icons">
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
         </div>
