@@ -69,8 +69,11 @@
     .hero-title { font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 700; font-size: 32px; margin: 0 0 24px 0; color: var(--text); }
 
     .timeline-scroll { display: flex; align-items: stretch; gap: 10px; overflow-x: auto; padding: 4px 4px 14px 4px; }
+    .timeline-scroll.filter-2627 .match-card:not(.season-2627) { display: none; }
     .timeline-scroll.filter-2526 .match-card:not(.season-2526) { display: none; }
     .timeline-scroll.filter-2425 .match-card:not(.season-2425) { display: none; }
+    .timeline-scroll.filter-2324 .match-card:not(.season-2324) { display: none; }
+    .timeline-scroll.filter-2223 .match-card:not(.season-2223) { display: none; }
     .timeline-scroll.filter-early .match-card:not(.season-early) { display: none; }
     .match-card {
       flex: 0 0 184px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 1px 0 rgba(20,23,28,0.03);
@@ -205,14 +208,17 @@
 
     .chart-svg { width: 100%; height: auto; display: block; }
     .grid-line { stroke: #dcdfe3; stroke-width: 1; }
-    .grid-line-strong { stroke: #14171c; stroke-width: 1.2; }
-    .axis-label-y { font-size: 9px; fill: #565f6b; text-anchor: end; }
-    .axis-label-x { font-size: 9px; fill: #565f6b; text-anchor: middle; }
-    .line-haaland { stroke: #c1352b; stroke-width: 2.2; fill: none; }
-    .line-haaland-projected { stroke: #c1352b; stroke-width: 1.8; fill: none; stroke-dasharray: 5 4; }
-    .line-rival { stroke-width: 1.6; fill: none; }
-    .line-label { font-size: 9px; font-weight: 700; text-anchor: middle; }
+    .grid-line-strong { stroke: #14171c; stroke-width: 1.2; stroke-dasharray: 3 3; }
+    .axis-label-y { font-size: 9.5px; fill: #565f6b; text-anchor: end; font-weight: 600; }
+    .axis-label-x { font-size: 9.5px; fill: #565f6b; text-anchor: middle; font-weight: 600; }
+    .area-haaland { fill: #c1352b; opacity: 0.08; stroke: none; }
+    .line-haaland { stroke: #c1352b; stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .line-haaland-projected { stroke: #c1352b; stroke-width: 2.4; fill: none; stroke-dasharray: 5 4; stroke-linecap: round; }
+    .line-rival { stroke-width: 2.2; fill: none; opacity: 0.9; stroke-linecap: round; stroke-linejoin: round; }
+    .line-label { font-size: 10.5px; font-weight: 800; text-anchor: start; }
     .line-label-haaland { fill: #c1352b; }
+    .dot-haaland { fill: #c1352b; stroke: #fff; stroke-width: 1.5; }
+    .dot-rival { stroke: #fff; stroke-width: 1.5; }
 
     .rival-chips { display: flex; flex-wrap: wrap; gap: 6px; }
     .swatch { width: 8px; height: 8px; border-radius: 50%; display: inline-block; background: #c1352b; flex: none; }
@@ -227,8 +233,10 @@
     .modal-close { position: absolute; top: 18px; right: 18px; width: 34px; height: 34px; border-radius: 50%; background: var(--surface-alt); border: 1px solid var(--line-strong); color: var(--text); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
     .modal-title { font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 700; font-size: 22px; margin: 0; padding-right: 40px; }
     .chart-svg-large { width: 100%; max-width: 860px; margin: 0 auto; display: block; }
-    .chart-svg-large .axis-label-y, .chart-svg-large .axis-label-x { font-size: 12px; }
-    .chart-svg-large .line-label { font-size: 13px; }
+    .chart-svg-large .axis-label-y, .chart-svg-large .axis-label-x { font-size: 13px; }
+    .chart-svg-large .line-label { font-size: 14px; }
+    .chart-svg-large .line-haaland { stroke-width: 4; }
+    .chart-svg-large .line-rival { stroke-width: 3; }
 
     /* ---------- footer ---------- */
     .foot { border-top: 1px solid var(--line); padding: 26px 0 44px 0; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }

@@ -87,32 +87,57 @@ class Site {
   }
 
   buildRace(cfg) {
-    const W = 280, H = 170, padL = 34, padT = 18;
+    const W = 280, H = 164, padL = 34, padT = 24;
     const plotBottom = padT + H;
     const proj = (pts) => this.project(pts, cfg.maxGames, cfg.maxGoals, W, H, padL, padT);
     const xAt = (g) => (padL + (g / cfg.maxGames) * W).toFixed(1);
     const yAt = (v) => (padT + H - (v / cfg.maxGoals) * H).toFixed(1);
 
-    const rivals = cfg.rivals.map((r, i) => {
+    const hPts = cfg.haaland || cfg.haalandSolid;
+    const fullHPts = cfg.haalandDashed ? hPts.concat(cfg.haalandDashed) : hPts;
+    const hFinal = fullHPts[fullHPts.length - 1];
+    const hEndX = padL + (hFinal[0] / cfg.maxGames) * W;
+    const hEndY = padT + H - (hFinal[1] / cfg.maxGoals) * H;
+
+    const rivalEnds = cfg.rivals.map((r) => {
       const last = r.points[r.points.length - 1];
-      const lx = padL + (last[0] / cfg.maxGames) * W;
-      const ly = padT + H - (last[1] / cfg.maxGoals) * H - 8 - i * 11;
+      return {
+        key: r.key,
+        x: padL + (last[0] / cfg.maxGames) * W,
+        y: padT + H - (last[1] / cfg.maxGoals) * H
+      };
+    });
+
+    // de-collide label Y positions among Haaland + currently-toggled-on rivals,
+    // so labels with close final values don't render on top of each other.
+    const seeds = [{ key: '__haaland', y: hEndY }].concat(
+      rivalEnds.filter((_, i) => cfg.rivals[i].on).map((e) => ({ key: e.key, y: e.y }))
+    );
+    seeds.sort((a, b) => a.y - b.y);
+    const minGap = 34;
+    for (let i = 1; i < seeds.length; i++) {
+      if (seeds[i].y - seeds[i - 1].y < minGap) seeds[i].y = seeds[i - 1].y + minGap;
+    }
+    const labelY = {};
+    seeds.forEach((s) => { labelY[s.key] = s.y; });
+
+    const rivals = cfg.rivals.map((r, i) => {
+      const e = rivalEnds[i];
       return {
         key: r.key, name: r.short || r.name, color: r.color,
         points: proj(r.points), on: r.on,
         chipClass: 'rival-chip ' + (r.on ? 'on' : 'off'),
-        labelX: lx.toFixed(1), labelY: ly.toFixed(1),
+        dotX: e.x.toFixed(1), dotY: e.y.toFixed(1),
+        labelX: (e.x + 7).toFixed(1),
+        labelY: (r.on ? labelY[r.key] : e.y).toFixed(1),
         toggle: r.toggle
       };
     });
 
-    const hPts = cfg.haaland || cfg.haalandSolid;
-    const hFinal = cfg.haalandDashed ? cfg.haalandDashed[cfg.haalandDashed.length - 1] : hPts[hPts.length - 1];
-    const hlx = padL + (hFinal[0] / cfg.maxGames) * W;
-    const hly = padT + H - (hFinal[1] / cfg.maxGoals) * H - 8;
-
     const xTickVals = [0, Math.round(cfg.maxGames / 2), cfg.maxGames];
     const yTickVals = [0, Math.round(cfg.maxGoals / 2), cfg.maxGoals];
+
+    const areaPoints = proj(fullHPts) + ' ' + hEndX.toFixed(1) + ',' + plotBottom.toFixed(1) + ' ' + xAt(fullHPts[0][0]) + ',' + plotBottom.toFixed(1);
 
     return {
       yTicks: yTickVals.map((v) => ({ v, y: yAt(v) })),
@@ -121,8 +146,10 @@ class Site {
       plotBottom: plotBottom.toFixed(1),
       haalandPoints: proj(hPts),
       haalandDashedPoints: cfg.haalandDashed ? proj(cfg.haalandDashed) : '',
+      haalandAreaPoints: areaPoints,
       showProjection: !!cfg.haalandDashed,
-      haalandLabelX: hlx.toFixed(1), haalandLabelY: hly.toFixed(1),
+      haalandDotX: hEndX.toFixed(1), haalandDotY: hEndY.toFixed(1),
+      haalandLabelX: (hEndX + 7).toFixed(1), haalandLabelY: labelY['__haaland'].toFixed(1),
       rivals: rivals
     };
   }
@@ -258,7 +285,7 @@ class Site {
       '2022/23': { total: 36, done: true, points: [[0,0],[4,3],[8,7],[12,13],[16,18],[20,22],[25,27],[30,32],[35,36],[38,36]] },
       '2023/24': { total: 27, done: true, points: [[0,0],[5,3],[10,8],[15,13],[20,17],[25,21],[30,24],[35,27],[38,27]] },
       '2024/25': { total: 31, done: true, points: [[0,0],[5,4],[10,9],[15,14],[20,19],[25,23],[30,27],[35,30],[38,31]] },
-      '2025/26': { total: 4, done: false, solid: [[0,0],[2,2],[4,4]], dashed: [[4,4],[38,34]] }
+      '2025/26': { total: 27, done: true, points: [[0,0],[4,2],[8,6],[12,10],[16,13],[20,16],[25,19],[30,22],[35,25],[38,27]] }
     };
     const PL_SEASON_RIVALS = [
       { key: 'salah', name: 'M. Salah 17/18', short: 'Salah', color: '#2f5aa8', points: [[0,0],[5,4],[10,9],[15,14],[20,18],[25,22],[30,27],[38,32]] },
@@ -309,7 +336,7 @@ class Site {
       clubDetail = this.buildRace(cfg);
       clubDetail.caption = 'Haalands l&oslash;p til ' + ld.milestone + ' m&aring;l i ' + leagueLabel[cc.league] + '. ' + ld.rivalNote;
     }
-    const emptyDetail = { yTicks: [], xTicks: [], rivals: [], haalandPoints: '', haalandDashedPoints: '', showProjection: false, haalandLabelX: '0', haalandLabelY: '0', milestoneLineY: '0', plotBottom: '0', caption: '' };
+    const emptyDetail = { yTicks: [], xTicks: [], rivals: [], haalandPoints: '', haalandDashedPoints: '', haalandAreaPoints: '', haalandDotX: '0', haalandDotY: '0', showProjection: false, haalandLabelX: '0', haalandLabelY: '0', milestoneLineY: '0', plotBottom: '0', caption: '' };
 
     const chartClub = {
       entryBars: [
@@ -441,11 +468,14 @@ class Site {
 
     const filterRecords = (list, recordsOnly) => recordsOnly ? list.filter((i) => i.record) : list;
 
-    const timelineFilterCss = { all: '', '2526': 'filter-2526', '2425': 'filter-2425', early: 'filter-early' };
+    const timelineFilterCss = { all: '', '2627': 'filter-2627', '2526': 'filter-2526', '2425': 'filter-2425', '2324': 'filter-2324', '2223': 'filter-2223', early: 'filter-early' };
     const timelineFilters = [
       { key: 'all', label: 'Alle sesonger' },
+      { key: '2627', label: '2026/27' },
       { key: '2526', label: '2025/26' },
       { key: '2425', label: '2024/25' },
+      { key: '2324', label: '2023/24' },
+      { key: '2223', label: '2022/23' },
       { key: 'early', label: 'Tidligere' }
     ].map((f) => ({
       label: f.label,
@@ -513,6 +543,276 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; A-landslagsdebut, ingen m&aring;l</div>
       </div>
 
+      <div class="match-card season-2223">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">7. aug. 2022</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
+        </div>
+        <div class="match-opp">vs West Ham (B) &middot; 0&ndash;2</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (straffe + fra spill) &mdash; City-debut (kilde: mancity.com, Sky Sports)</div>
+      </div>
+
+      <div class="match-card season-2223">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">13. aug. 2022</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+        </div>
+        <div class="match-opp">vs Bournemouth (H) &middot; 4&ndash;0</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="#f1e6cf" stroke="#14171c" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="#14171c"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#14171c" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 assist, ingen m&aring;l (kilde: Sports Mole)</div>
+      </div>
+
+      <div class="match-card season-2223">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">21. aug. 2022</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
+        </div>
+        <div class="match-opp">vs Newcastle (B) &middot; 3&ndash;3</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (poeng reddet etter 0&ndash;2) (kilde: ESPN, Sky Sports)</div>
+      </div>
+
+      <div class="match-card season-2223">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">27. aug. 2022</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
+        </div>
+        <div class="match-opp">vs Crystal Palace (H) &middot; 4&ndash;2</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; hattrick (19 min., snudde 0&ndash;2 til seier) &mdash; f&oslash;rste City-hattrick (kilde: mancity.com)</div>
+      </div>
+
+      <div class="match-card season-2223">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">31. aug. 2022</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
+        </div>
+        <div class="match-opp">vs Nottingham Forest (H) &middot; 6&ndash;0</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; hattrick p&aring; 38 min. &mdash; 9 m&aring;l p&aring; 5 kamper, PL-rekord for start p&aring; en klubbkarriere (kilde: Sky Sports, Premier League)</div>
+      </div>
+
+      <div class="match-card season-2223">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">2. okt. 2022</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+        </div>
+        <div class="match-opp">vs Man United (H) &middot; 6&ndash;3</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; hattrick i derbyet &mdash; f&oslash;rste PL-hattrick i Manchester-derby siden 1970 (kilde: CNN, Premier League)</div>
+      </div>
+
+      <div class="match-card season-2223">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">14. mar. 2023</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DD0741;color:#fff">RBL</div>
+        </div>
+        <div class="match-opp">vs RB Leipzig (H) &middot; 7&ndash;0</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 5 m&aring;l (CL &aring;ttedelsfinale, 2. runde) &mdash; matcher Messis rekord for flest mål i en CL-kamp (kilde: Sky Sports, NBC Sports)</div>
+      </div>
+
+      <div class="match-card season-2223">
+        <div class="match-comp cup">CUP</div>
+        <div class="match-date">3. jun. 2023</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+        </div>
+        <div class="match-opp">vs Man United (N) &middot; 2&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; FA-cupen vunnet p&aring; Wembley (kilde: The FA, Wikipedia)</div>
+      </div>
+
+      <div class="match-card season-2223">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">10. jun. 2023</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#010E80;color:#fff">INT</div>
+        </div>
+        <div class="match-opp">vs Inter Milan (N) &middot; 1&ndash;0</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Champions League vunnet i Istanbul (Rodri avgjorde), trippelen fullf&oslash;rt &mdash; sesongens toppscorer med 12 CL-m&aring;l (kilde: ESPN, UEFA.com)</div>
+      </div>
+
+      <div class="match-card season-2324">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">11. aug. 2023</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#6C1D45;color:#fff">BUR</div>
+        </div>
+        <div class="match-opp">vs Burnley (B) &middot; 3&ndash;0</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (4. og 36. min.) &mdash; sesong&aring;pning (kilde: ESPN, Sky Sports)</div>
+      </div>
+
+      <div class="match-card season-2324">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">2. sep. 2023</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
+        </div>
+        <div class="match-opp">vs Fulham (H) &middot; 5&ndash;1</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; hattrick i 2. omgang (kilde: mancity.com, Sky Sports)</div>
+      </div>
+
+      <div class="match-card season-2324">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">29. okt. 2023</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+        </div>
+        <div class="match-opp">vs Man United (B) &middot; 3&ndash;0</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="#f1e6cf" stroke="#14171c" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="#14171c"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#14171c" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 2 m&aring;l (straffe + heading) + 1 assist &mdash; derbyseier p&aring; Old Trafford (kilde: Sky Sports, Al Jazeera)</div>
+      </div>
+
+      <div class="match-card season-2324">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">31. jan. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#6C1D45;color:#fff">BUR</div>
+        </div>
+        <div class="match-opp">vs Burnley (H) &middot; 3&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; comeback som innbytter (71.) etter 56 dager ute med fotskade, ingen m&aring;l (kilde: ESPN, SI.com)</div>
+      </div>
+
+      <div class="match-card season-2324">
+        <div class="match-comp cl">CL</div>
+        <div class="match-date">17. apr. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
+        </div>
+        <div class="match-opp">vs Real Madrid (H) &middot; 1&ndash;1 e.o.</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; ingen m&aring;l (traff tverrligger) &mdash; City slo &aring;t p&aring; straffer (3&ndash;4) etter 4&ndash;4 samlet, CL &aring;ttedelsfinale (kilde: ESPN, Sky Sports)</div>
+      </div>
+
+      <div class="match-card season-2324">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">4. mai 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
+        </div>
+        <div class="match-opp">vs Wolves (H) &middot; 5&ndash;1</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 4 m&aring;l (2 straffer + heading-hattrick f&oslash;r pause, 4. m&aring;l i 2. omgang) (kilde: mancity.com, LatestLY)</div>
+      </div>
+
+      <div class="match-card season-2425">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">24. aug. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#0044A9;color:#fff">IPS</div>
+        </div>
+        <div class="match-opp">vs Ipswich (H) &middot; 4&ndash;1</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; hattrick (kilde: Premier League, Sky Sports)</div>
+      </div>
+
+      <div class="match-card season-2425">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">31. aug. 2024</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
+        </div>
+        <div class="match-opp">vs West Ham (B) &middot; 3&ndash;1</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; hattrick &mdash; to strake trippel-kamper, 11. City-hattrick p&aring; 102 kamper (kilde: mancity.com, Sky Sports)</div>
+      </div>
+
       <div class="match-card season-2425">
         <div class="match-comp cl">CL</div>
         <div class="match-date">11. feb. 2025</div>
@@ -527,6 +827,21 @@ function render(vals) {
           <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
         </div>
         <div class="match-status played">Spilt &middot; 2 m&aring;l (knockout-playoff, 1. runde)</div>
+      </div>
+
+      <div class="match-card season-2425">
+        <div class="match-comp cup">CUP</div>
+        <div class="match-date">30. mar. 2025</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+        </div>
+        <div class="match-opp">vs Bournemouth (B) &middot; 2&ndash;1</div>
+        <div class="match-icons">
+          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="match-status played">Spilt &middot; 1 m&aring;l (utligning, 49., bommet straffe f&oslash;r pause) &mdash; ankelskade, byttet ut 60. min., FA-cup kvartfinale (kilde: ESPN, Goal.com)</div>
       </div>
 
       <div class="match-card season-2425">
@@ -1042,7 +1357,31 @@ function render(vals) {
         <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; VM-eventyret endte i kvartfinalen</div>
       </div>
 
+      <div class="match-card season-2627">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">23. aug. 2026</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+        </div>
+        <div class="match-opp">vs Bournemouth (H) &middot; 2&ndash;1</div>
+        <div class="match-icons"></div>
+        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; sesong&aring;pning, Gvardiol avgjorde i overtiden (kilde: ESPN, mancity.com)</div>
+      </div>
 
+      <div class="match-card is-planned season-2627">
+        <div class="match-comp pl">PL</div>
+        <div class="match-date">28. aug. 2026</div>
+        <div class="match-badges">
+          <div class="badge badge-own">MCI</div>
+          <span class="badge-vs">&ndash;</span>
+          <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
+        </div>
+        <div class="match-opp">vs Crystal Palace (B) &middot; kl. 20:00</div>
+        <div class="match-icons"></div>
+        <div class="match-status planned">Planlagt &middot; Selhurst Park (kilde: mancity.com)</div>
+      </div>
 
       <div class="now-marker"><span>N&Aring;</span></div>
     </div>
@@ -1243,7 +1582,7 @@ function render(vals) {
               </div>
             ` : ''}
 
-            <svg viewBox="0 0 330 216" class="chart-svg">
+            <svg viewBox="0 0 400 216" class="chart-svg">
               ${(vals.chart.club.yTicks||[]).map((t,__i0) => `
                 <line x1="34" x2="314" y1="${t.y}" y2="${t.y}" class="grid-line" />
                 <text x="30" y="${t.y}" dy="3" class="axis-label-y">${t.v}</text>
@@ -1253,15 +1592,22 @@ function render(vals) {
                 <text x="${t.x}" y="${vals.chart.club.plotBottom}" dy="14" class="axis-label-x">${t.v}</text>
               `).join('')}
 
+              <polygon points="${vals.chart.club.haalandAreaPoints}" class="area-haaland" />
+              ${(vals.chart.club.rivals||[]).map((r,__i0) => `
+                ${(r.on) ? `
+                  <polyline points="${r.points}" style="stroke: ${r.color}" class="line-rival" />
+                ` : ''}
+              `).join('')}
               <polyline points="${vals.chart.club.haalandPoints}" class="line-haaland" />
               ${(vals.chart.club.showProjection) ? `
                 <polyline points="${vals.chart.club.haalandDashedPoints}" class="line-haaland-projected" />
               ` : ''}
+              <circle cx="${vals.chart.club.haalandDotX}" cy="${vals.chart.club.haalandDotY}" r="3.5" class="dot-haaland" />
               <text x="${vals.chart.club.haalandLabelX}" y="${vals.chart.club.haalandLabelY}" class="line-label line-label-haaland">Haaland</text>
 
               ${(vals.chart.club.rivals||[]).map((r,__i0) => `
                 ${(r.on) ? `
-                  <polyline points="${r.points}" style="stroke: ${r.color}" class="line-rival" />
+                  <circle cx="${r.dotX}" cy="${r.dotY}" r="3.5" style="fill: ${r.color}" class="dot-rival" />
                   <text x="${r.labelX}" y="${r.labelY}" style="fill: ${r.color}" class="line-label">${r.name}</text>
                 ` : ''}
               `).join('')}
@@ -1413,7 +1759,7 @@ function render(vals) {
 
         ${(vals.chart.cl.showRace) ? `
           <div class="chart-detail">
-            <svg viewBox="0 0 330 216" class="chart-svg">
+            <svg viewBox="0 0 400 216" class="chart-svg">
               ${(vals.chart.cl.yTicks||[]).map((t,__i0) => `
                 <line x1="34" x2="314" y1="${t.y}" y2="${t.y}" class="grid-line" />
                 <text x="30" y="${t.y}" dy="3" class="axis-label-y">${t.v}</text>
@@ -1423,15 +1769,22 @@ function render(vals) {
                 <text x="${t.x}" y="${vals.chart.cl.plotBottom}" dy="14" class="axis-label-x">${t.v}</text>
               `).join('')}
 
+              <polygon points="${vals.chart.cl.haalandAreaPoints}" class="area-haaland" />
+              ${(vals.chart.cl.rivals||[]).map((r,__i0) => `
+                ${(r.on) ? `
+                  <polyline points="${r.points}" style="stroke: ${r.color}" class="line-rival" />
+                ` : ''}
+              `).join('')}
               <polyline points="${vals.chart.cl.haalandPoints}" class="line-haaland" />
               ${(vals.chart.cl.showProjection) ? `
                 <polyline points="${vals.chart.cl.haalandDashedPoints}" class="line-haaland-projected" />
               ` : ''}
+              <circle cx="${vals.chart.cl.haalandDotX}" cy="${vals.chart.cl.haalandDotY}" r="3.5" class="dot-haaland" />
               <text x="${vals.chart.cl.haalandLabelX}" y="${vals.chart.cl.haalandLabelY}" class="line-label line-label-haaland">Haaland</text>
 
               ${(vals.chart.cl.rivals||[]).map((r,__i0) => `
                 ${(r.on) ? `
-                  <polyline points="${r.points}" style="stroke: ${r.color}" class="line-rival" />
+                  <circle cx="${r.dotX}" cy="${r.dotY}" r="3.5" style="fill: ${r.color}" class="dot-rival" />
                   <text x="${r.labelX}" y="${r.labelY}" style="fill: ${r.color}" class="line-label">${r.name}</text>
                 ` : ''}
               `).join('')}
@@ -1686,7 +2039,7 @@ ${(vals.modal.club) ? `
         </div>
       ` : ''}
 
-      <svg viewBox="0 0 330 216" class="chart-svg-large">
+      <svg viewBox="0 0 400 216" class="chart-svg-large">
         ${(vals.chart.club.yTicks||[]).map((t,__i0) => `
           <line x1="34" x2="314" y1="${t.y}" y2="${t.y}" class="grid-line" />
           <text x="30" y="${t.y}" dy="3" class="axis-label-y">${t.v}</text>
@@ -1695,14 +2048,21 @@ ${(vals.modal.club) ? `
         ${(vals.chart.club.xTicks||[]).map((t,__i0) => `
           <text x="${t.x}" y="${vals.chart.club.plotBottom}" dy="14" class="axis-label-x">${t.v}</text>
         `).join('')}
+        <polygon points="${vals.chart.club.haalandAreaPoints}" class="area-haaland" />
+        ${(vals.chart.club.rivals||[]).map((r,__i0) => `
+          ${(r.on) ? `
+            <polyline points="${r.points}" style="stroke: ${r.color}" class="line-rival" />
+          ` : ''}
+        `).join('')}
         <polyline points="${vals.chart.club.haalandPoints}" class="line-haaland" />
         ${(vals.chart.club.showProjection) ? `
           <polyline points="${vals.chart.club.haalandDashedPoints}" class="line-haaland-projected" />
         ` : ''}
+        <circle cx="${vals.chart.club.haalandDotX}" cy="${vals.chart.club.haalandDotY}" r="4.5" class="dot-haaland" />
         <text x="${vals.chart.club.haalandLabelX}" y="${vals.chart.club.haalandLabelY}" class="line-label line-label-haaland">Haaland</text>
         ${(vals.chart.club.rivals||[]).map((r,__i0) => `
           ${(r.on) ? `
-            <polyline points="${r.points}" style="stroke: ${r.color}" class="line-rival" />
+            <circle cx="${r.dotX}" cy="${r.dotY}" r="4.5" style="fill: ${r.color}" class="dot-rival" />
             <text x="${r.labelX}" y="${r.labelY}" style="fill: ${r.color}" class="line-label">${r.name}</text>
           ` : ''}
         `).join('')}
@@ -1734,7 +2094,7 @@ ${(vals.modal.cl) ? `
       </div>
 
       ${(vals.chart.cl.showRace) ? `
-        <svg viewBox="0 0 330 216" class="chart-svg-large">
+        <svg viewBox="0 0 400 216" class="chart-svg-large">
           ${(vals.chart.cl.yTicks||[]).map((t,__i0) => `
             <line x1="34" x2="314" y1="${t.y}" y2="${t.y}" class="grid-line" />
             <text x="30" y="${t.y}" dy="3" class="axis-label-y">${t.v}</text>
@@ -1743,14 +2103,21 @@ ${(vals.modal.cl) ? `
           ${(vals.chart.cl.xTicks||[]).map((t,__i0) => `
             <text x="${t.x}" y="${vals.chart.cl.plotBottom}" dy="14" class="axis-label-x">${t.v}</text>
           `).join('')}
+          <polygon points="${vals.chart.cl.haalandAreaPoints}" class="area-haaland" />
+          ${(vals.chart.cl.rivals||[]).map((r,__i0) => `
+            ${(r.on) ? `
+              <polyline points="${r.points}" style="stroke: ${r.color}" class="line-rival" />
+            ` : ''}
+          `).join('')}
           <polyline points="${vals.chart.cl.haalandPoints}" class="line-haaland" />
           ${(vals.chart.cl.showProjection) ? `
             <polyline points="${vals.chart.cl.haalandDashedPoints}" class="line-haaland-projected" />
           ` : ''}
+          <circle cx="${vals.chart.cl.haalandDotX}" cy="${vals.chart.cl.haalandDotY}" r="4.5" class="dot-haaland" />
           <text x="${vals.chart.cl.haalandLabelX}" y="${vals.chart.cl.haalandLabelY}" class="line-label line-label-haaland">Haaland</text>
           ${(vals.chart.cl.rivals||[]).map((r,__i0) => `
             ${(r.on) ? `
-              <polyline points="${r.points}" style="stroke: ${r.color}" class="line-rival" />
+              <circle cx="${r.dotX}" cy="${r.dotY}" r="4.5" style="fill: ${r.color}" class="dot-rival" />
               <text x="${r.labelX}" y="${r.labelY}" style="fill: ${r.color}" class="line-label">${r.name}</text>
             ` : ''}
           `).join('')}
