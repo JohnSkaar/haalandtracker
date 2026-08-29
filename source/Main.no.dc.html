@@ -4249,7 +4249,7 @@
  <b>Om tallene:</b> tall og hendelser er basert p&aring; offentlig tilgjengelig statistikk, oppdatert fortl&oslash;pende. Klubb- og turneringslogoer er bevisst byttet ut med tekst for &aring; unng&aring; varemerkekonflikt.
  </div>
  <div class="foot-note">
- <b>Interaksjon:</b> hver kolonne har egne av/p&aring;-brytere for historikk, tapte muligheter og fortsatt oppn&aring;elig. Rekordgrafen st&oslash;tter to milep&aelig;ler (100/150 m&aring;l), totalt/per sesong-visning, og av/p&aring;-bryter per konkurrent.
+ <b>Interaksjon:</b> hver kolonne har egne av/p&aring;-brytere for historikk, tapte muligheter og fortsatt oppn&aring;elig. Rekordgrafen st&oslash;tter to milep&aelig;ler (100/150 m&aring;l), totalt/per sesong-visning, og av/p&aring;-bryter per konkurrent eller per sesong.
  </div>
 </footer>
 
@@ -4273,7 +4273,7 @@ class Component extends DCLogic {
           league: null,
           view: 'totalt',
           milestone: 100,
-          season: '2022/23',
+          seasonsOn: { '2022/23': true, '2023/24': true, '2024/25': true, '2025/26': true },
           bundesligaView: 'race',
           bundesligaTopFilter: 'all',
           rivalsPL: {
@@ -4292,7 +4292,6 @@ class Component extends DCLogic {
             owen: false,
           },
           rivalsOther: { a: true, b: true },
-          seasonRivals: { salah: true, shearer: true, cole: true },
         },
         cl: { active: null, rivals: { ronaldo: true, messi: true, lewandowski: true, mbappe: true }, topFilter: 'all' },
         nat: { active: null },
@@ -4351,8 +4350,9 @@ class Component extends DCLogic {
   toggleBio() {
     this.setState({ showBio: !this.state.showBio });
   }
-  setClubSeason(s) {
-    this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, season: s } } });
+  toggleClubSeasonOn(s) {
+    const cur = this.state.chart.club.seasonsOn[s];
+    this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, seasonsOn: { ...this.state.chart.club.seasonsOn, [s]: !cur } } } });
   }
   toggleClubRivalPL(k) {
     const cur = this.state.chart.club.rivalsPL[k];
@@ -4361,10 +4361,6 @@ class Component extends DCLogic {
   toggleClubRivalOther(k) {
     const cur = this.state.chart.club.rivalsOther[k];
     this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, rivalsOther: { ...this.state.chart.club.rivalsOther, [k]: !cur } } } });
-  }
-  toggleSeasonRival(k) {
-    const cur = this.state.chart.club.seasonRivals[k];
-    this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, seasonRivals: { ...this.state.chart.club.seasonRivals, [k]: !cur } } } });
   }
 
   setClActive(v) {
@@ -4404,11 +4400,12 @@ class Component extends DCLogic {
     const xAt = (g) => (padL + (g / cfg.maxGames) * W).toFixed(1);
     const yAt = (v) => (padT + H - (v / cfg.maxGoals) * H).toFixed(1);
 
-    const hPts = cfg.haaland || cfg.haalandSolid;
-    const fullHPts = cfg.haalandDashed ? hPts.concat(cfg.haalandDashed) : hPts;
-    const hFinal = fullHPts[fullHPts.length - 1];
-    const hEndX = padL + (hFinal[0] / cfg.maxGames) * W;
-    const hEndY = padT + H - (hFinal[1] / cfg.maxGoals) * H;
+    const hasHaaland = !!(cfg.haaland || cfg.haalandSolid);
+    const hPts = hasHaaland ? cfg.haaland || cfg.haalandSolid : null;
+    const fullHPts = hasHaaland ? (cfg.haalandDashed ? hPts.concat(cfg.haalandDashed) : hPts) : null;
+    const hFinal = hasHaaland ? fullHPts[fullHPts.length - 1] : null;
+    const hEndX = hasHaaland ? padL + (hFinal[0] / cfg.maxGames) * W : -999;
+    const hEndY = hasHaaland ? padT + H - (hFinal[1] / cfg.maxGoals) * H : -999;
 
     const rivalEnds = cfg.rivals.map((r) => {
       const last = r.points[r.points.length - 1];
@@ -4419,9 +4416,9 @@ class Component extends DCLogic {
       };
     });
 
-    // de-collide label Y positions among Haaland + currently-toggled-on rivals,
+    // de-collide label Y positions among Haaland (if present) + currently-toggled-on rivals,
     // so labels with close final values don't render on top of each other.
-    const seeds = [{ key: '__haaland', y: hEndY }].concat(rivalEnds.filter((_, i) => cfg.rivals[i].on).map((e) => ({ key: e.key, y: e.y })));
+    const seeds = (hasHaaland ? [{ key: '__haaland', y: hEndY }] : []).concat(rivalEnds.filter((_, i) => cfg.rivals[i].on).map((e) => ({ key: e.key, y: e.y })));
     seeds.sort((a, b) => a.y - b.y);
     const minGap = 34;
     for (let i = 1; i < seeds.length; i++) {
@@ -4452,21 +4449,21 @@ class Component extends DCLogic {
     const xTickVals = [0, Math.round(cfg.maxGames / 2), cfg.maxGames];
     const yTickVals = [0, Math.round(cfg.maxGoals / 2), cfg.maxGoals];
 
-    const areaPoints = proj(fullHPts) + ' ' + hEndX.toFixed(1) + ',' + plotBottom.toFixed(1) + ' ' + xAt(fullHPts[0][0]) + ',' + plotBottom.toFixed(1);
+    const areaPoints = hasHaaland ? proj(fullHPts) + ' ' + hEndX.toFixed(1) + ',' + plotBottom.toFixed(1) + ' ' + xAt(fullHPts[0][0]) + ',' + plotBottom.toFixed(1) : '';
 
     return {
       yTicks: yTickVals.map((v) => ({ v, y: yAt(v) })),
       xTicks: xTickVals.map((v) => ({ v, x: xAt(v) })),
       milestoneLineY: yAt(cfg.maxGoals),
       plotBottom: plotBottom.toFixed(1),
-      haalandPoints: proj(hPts),
-      haalandDashedPoints: cfg.haalandDashed ? proj(cfg.haalandDashed) : '',
+      haalandPoints: hasHaaland ? proj(hPts) : '',
+      haalandDashedPoints: hasHaaland && cfg.haalandDashed ? proj(cfg.haalandDashed) : '',
       haalandAreaPoints: areaPoints,
-      showProjection: !!cfg.haalandDashed,
+      showProjection: hasHaaland && !!cfg.haalandDashed,
       haalandDotX: hEndX.toFixed(1),
       haalandDotY: hEndY.toFixed(1),
       haalandLabelX: (hEndX + 7).toFixed(1),
-      haalandLabelY: labelY['__haaland'].toFixed(1),
+      haalandLabelY: (hasHaaland ? labelY['__haaland'] : hEndY).toFixed(1),
       rivals: rivals,
     };
   }
@@ -5182,56 +5179,12 @@ class Component extends DCLogic {
       '2024/25': '3. i toppscorerligaen: Salah 29, Isak 23, Haaland 22 &mdash; eneste sesong uten Golden Boot av de fire.',
       '2025/26': '1. i toppscorerligaen (Golden Boot) med 27 mål.',
     };
-    const PL_SEASON_RIVALS = [
-      {
-        key: 'salah',
-        name: 'M. Salah 17/18',
-        short: 'Salah',
-        color: '#2f5aa8',
-        points: [
-          [0, 0],
-          [5, 4],
-          [10, 9],
-          [15, 14],
-          [20, 18],
-          [25, 22],
-          [30, 27],
-          [38, 32],
-        ],
-      },
-      {
-        key: 'shearer',
-        name: 'Shearer 94/95',
-        short: 'Shearer',
-        color: '#6a3fa0',
-        points: [
-          [0, 0],
-          [6, 5],
-          [12, 10],
-          [18, 15],
-          [24, 20],
-          [30, 25],
-          [36, 30],
-          [42, 34],
-        ],
-      },
-      {
-        key: 'cole',
-        name: 'A. Cole 93/94',
-        short: 'Cole',
-        color: '#a8791a',
-        points: [
-          [0, 0],
-          [6, 4],
-          [12, 9],
-          [18, 14],
-          [24, 19],
-          [30, 25],
-          [36, 30],
-          [42, 34],
-        ],
-      },
-    ];
+    const PL_SEASON_COLORS = {
+      '2022/23': '#c1352b',
+      '2023/24': '#1f6f78',
+      '2024/25': '#5a5f73',
+      '2025/26': '#0e6b3a',
+    };
     const OTHER_LEAGUES = {
       bundesliga: {
         milestone: 50,
@@ -5326,37 +5279,55 @@ class Component extends DCLogic {
             'Alan Shearers rekord på 260 PL-mål (441 kamper) er Premier Leagues fjerneste individuelle målrekord. Kun Mohamed Salah er fortsatt aktiv og kan øke sitt tall. Haalands stiplede linje: fremskrivning ved uendret snittscoring.';
         }
       } else {
-        const hs = PL_SEASONS[cc.season];
-        const ss = PL_SEASON_STATS[cc.season];
+        const seasonKeys = Object.keys(PL_SEASONS);
         const cfg = {
           maxGames: 42,
           maxGoals: 40,
-          haaland: hs.done ? hs.points : hs.solid,
-          haalandDashed: hs.done ? null : hs.dashed,
-          rivals: PL_SEASON_RIVALS.map((r) => ({ ...r, on: cc.seasonRivals[r.key], toggle: () => this.toggleSeasonRival(r.key) })),
+          haaland: null,
+          rivals: seasonKeys.map((sk) => {
+            const hs = PL_SEASONS[sk];
+            return {
+              key: sk,
+              name: sk,
+              short: sk,
+              color: PL_SEASON_COLORS[sk],
+              points: hs.done ? hs.points : hs.solid,
+              on: cc.seasonsOn[sk],
+              toggle: () => this.toggleClubSeasonOn(sk),
+            };
+          }),
         };
         clubDetail = this.buildRace(cfg);
-        clubDetail.caption = 'Haalands sesong ' + cc.season + (hs.done ? ' (fullført)' : ' (pågår)') + ' mot historiske rekordsesonger. Sesongtall er offisiell PL-statistikk.';
-        clubDetail.seasonRank = PL_SEASON_RANK[cc.season] || null;
-        clubDetail.seasonStats = ss
-          ? {
-              apps: hs.apps,
-              goals: hs.total,
-              assists: hs.assists,
-              xg: ss.xg,
-              xa: ss.xa,
-              minutes: ss.minutes.toLocaleString('nb-NO'),
-              penalties: ss.penalties,
-              dribbles: ss.dribbles,
-              duelsWon: ss.duelsWon,
-              aerialDuelsWon: ss.aerialDuelsWon,
-              tackles: ss.tackles,
-              interceptions: ss.interceptions,
-              yellowCards: ss.yellowCards,
-              redCards: ss.redCards,
-              fouls: ss.fouls,
-            }
-          : null;
+        clubDetail.caption = 'Haalands Premier League-sesonger sammenlignet per serierunde. Alle fire vises som standard &mdash; bruk bryterne under for å fjerne en sesong.';
+        const activeSeasons = seasonKeys.filter((sk) => cc.seasonsOn[sk]);
+        if (activeSeasons.length === 1) {
+          const sk = activeSeasons[0];
+          const hs = PL_SEASONS[sk];
+          const ss = PL_SEASON_STATS[sk];
+          clubDetail.seasonRank = PL_SEASON_RANK[sk] || null;
+          clubDetail.seasonStats = ss
+            ? {
+                apps: hs.apps,
+                goals: hs.total,
+                assists: hs.assists,
+                xg: ss.xg,
+                xa: ss.xa,
+                minutes: ss.minutes.toLocaleString('nb-NO'),
+                penalties: ss.penalties,
+                dribbles: ss.dribbles,
+                duelsWon: ss.duelsWon,
+                aerialDuelsWon: ss.aerialDuelsWon,
+                tackles: ss.tackles,
+                interceptions: ss.interceptions,
+                yellowCards: ss.yellowCards,
+                redCards: ss.redCards,
+                fouls: ss.fouls,
+              }
+            : null;
+        } else {
+          clubDetail.seasonRank = null;
+          clubDetail.seasonStats = null;
+        }
       }
     } else if (cc.league) {
       const ld = OTHER_LEAGUES[cc.league];
@@ -5408,7 +5379,7 @@ class Component extends DCLogic {
       showRaceDetail: !!cc.league && !(cc.league === 'bundesliga' && cc.bundesligaView === 'top'),
       showBundesligaTop: cc.league === 'bundesliga' && cc.bundesligaView === 'top',
       showMilestoneTabs: cc.league === 'pl' && cc.view === 'totalt',
-      showSeasonPicker: cc.league === 'pl' && cc.view === 'season',
+      showSeasonPicker: false,
       viewTotaltClass: flag(cc.view === 'totalt'),
       setViewTotalt: () => this.setClubView('totalt'),
       viewSeasonClass: flag(cc.view === 'season'),
@@ -5419,7 +5390,7 @@ class Component extends DCLogic {
       setM150: () => this.setClubMilestone(150),
       m260Class: flag(cc.milestone === 260),
       setM260: () => this.setClubMilestone(260),
-      seasonOptions: Object.keys(PL_SEASONS).map((sk) => ({ label: sk, cls: flag(cc.season === sk), pick: () => this.setClubSeason(sk) })),
+      seasonOptions: Object.keys(PL_SEASONS).map((sk) => ({ label: sk, cls: flag(cc.seasonsOn[sk]), pick: () => this.toggleClubSeasonOn(sk) })),
       bundesligaTopBars: BUNDESLIGA_TOP.filter((t) => (cc.bundesligaTopFilter === 'all' ? true : cc.bundesligaTopFilter === 'active' ? t.active : !t.active)).map((t) =>
         bar(t.name, t.value, 370, t.color, t.isH),
       ),
