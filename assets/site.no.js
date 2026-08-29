@@ -8,28 +8,53 @@ class Site {
       col: {
         club: { history: true, missed: true, achievable: true, recordsOnly: false },
         cl: { history: true, missed: true, achievable: true, recordsOnly: false },
-        nat: { history: true, missed: true, achievable: true, recordsOnly: false }
+        nat: { history: true, missed: true, achievable: true, recordsOnly: false },
       },
       chart: {
         club: {
-          league: null, view: 'totalt', milestone: 100, season: '2022/23',
-          rivalsPL: { shearer: true, kane: true, aguero: true, henry: true, salah: true, rooney: false, cole: false, lampard: false, fowler: false, defoe: false, wright: false, ferdinand: false, owen: false },
+          league: null,
+          view: 'totalt',
+          milestone: 100,
+          season: '2022/23',
+          bundesligaView: 'race',
+          bundesligaTopFilter: 'all',
+          rivalsPL: {
+            shearer: true,
+            kane: true,
+            aguero: true,
+            henry: true,
+            salah: true,
+            rooney: false,
+            cole: false,
+            lampard: false,
+            fowler: false,
+            defoe: false,
+            wright: false,
+            ferdinand: false,
+            owen: false,
+          },
           rivalsOther: { a: true, b: true },
-          seasonRivals: { salah: true, shearer: true, cole: true }
+          seasonRivals: { salah: true, shearer: true, cole: true },
         },
         cl: { active: null, rivals: { ronaldo: true, messi: true, lewandowski: true, mbappe: true }, topFilter: 'all' },
-        nat: { active: null }
+        nat: { active: null },
       },
       modal: null,
       timelineSeason: 'all',
-      timelineComp: { nor: true, pl: true, cl: true, cup: true, efl: true, bundesliga: true }
+      timelineComp: { nor: true, pl: true, cl: true, cup: true, efl: true, bundesliga: true },
     };
   }
 
-  openModal(which) { this.setState({ modal: which }); }
-  closeModal() { this.setState({ modal: null }); }
+  openModal(which) {
+    this.setState({ modal: which });
+  }
+  closeModal() {
+    this.setState({ modal: null });
+  }
 
-  setTimelineSeason(v) { this.setState({ timelineSeason: v }); }
+  setTimelineSeason(v) {
+    this.setState({ timelineSeason: v });
+  }
   toggleTimelineComp(key) {
     const cur = this.state.timelineComp[key];
     this.setState({ timelineComp: { ...this.state.timelineComp, [key]: !cur } });
@@ -51,12 +76,26 @@ class Site {
   pickLeague(lg) {
     const cur = this.state.chart.club.league;
     const next = cur === lg ? null : lg;
-    this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, league: next, view: 'totalt', milestone: 100 } } });
+    this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, league: next, view: 'totalt', milestone: 100, bundesligaView: 'race' } } });
   }
-  setClubView(v) { this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, view: v } } }); }
-  setClubMilestone(m) { this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, milestone: m } } }); }
-  toggleBio() { this.setState({ showBio: !this.state.showBio }); }
-  setClubSeason(s) { this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, season: s } } }); }
+  setClubView(v) {
+    this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, view: v } } });
+  }
+  setClubMilestone(m) {
+    this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, milestone: m } } });
+  }
+  setClubBundesligaView(v) {
+    this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, bundesligaView: v } } });
+  }
+  setClubBundesligaTopFilter(v) {
+    this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, bundesligaTopFilter: v } } });
+  }
+  toggleBio() {
+    this.setState({ showBio: !this.state.showBio });
+  }
+  setClubSeason(s) {
+    this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, season: s } } });
+  }
   toggleClubRivalPL(k) {
     const cur = this.state.chart.club.rivalsPL[k];
     this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, rivalsPL: { ...this.state.chart.club.rivalsPL, [k]: !cur } } } });
@@ -78,7 +117,9 @@ class Site {
     const cur = this.state.chart.cl.rivals[k];
     this.setState({ chart: { ...this.state.chart, cl: { ...this.state.chart.cl, rivals: { ...this.state.chart.cl.rivals, [k]: !cur } } } });
   }
-  setClTopFilter(v) { this.setState({ chart: { ...this.state.chart, cl: { ...this.state.chart.cl, topFilter: v } } }); }
+  setClTopFilter(v) {
+    this.setState({ chart: { ...this.state.chart, cl: { ...this.state.chart.cl, topFilter: v } } });
+  }
 
   setNatActive(v) {
     const cur = this.state.chart.nat.active;
@@ -86,15 +127,20 @@ class Site {
   }
 
   project(points, maxGames, maxGoals, w, h, padL, padT) {
-    return points.map(function (p) {
-      const x = padL + (p[0] / maxGames) * w;
-      const y = padT + h - (p[1] / maxGoals) * h;
-      return x.toFixed(1) + ',' + y.toFixed(1);
-    }).join(' ');
+    return points
+      .map(function (p) {
+        const x = padL + (p[0] / maxGames) * w;
+        const y = padT + h - (p[1] / maxGoals) * h;
+        return x.toFixed(1) + ',' + y.toFixed(1);
+      })
+      .join(' ');
   }
 
   buildRace(cfg) {
-    const W = 280, H = 164, padL = 34, padT = 24;
+    const W = 280,
+      H = 164,
+      padL = 34,
+      padT = 24;
     const plotBottom = padT + H;
     const proj = (pts) => this.project(pts, cfg.maxGames, cfg.maxGoals, W, H, padL, padT);
     const xAt = (g) => (padL + (g / cfg.maxGames) * W).toFixed(1);
@@ -111,33 +157,37 @@ class Site {
       return {
         key: r.key,
         x: padL + (last[0] / cfg.maxGames) * W,
-        y: padT + H - (last[1] / cfg.maxGoals) * H
+        y: padT + H - (last[1] / cfg.maxGoals) * H,
       };
     });
 
     // de-collide label Y positions among Haaland + currently-toggled-on rivals,
     // so labels with close final values don't render on top of each other.
-    const seeds = [{ key: '__haaland', y: hEndY }].concat(
-      rivalEnds.filter((_, i) => cfg.rivals[i].on).map((e) => ({ key: e.key, y: e.y }))
-    );
+    const seeds = [{ key: '__haaland', y: hEndY }].concat(rivalEnds.filter((_, i) => cfg.rivals[i].on).map((e) => ({ key: e.key, y: e.y })));
     seeds.sort((a, b) => a.y - b.y);
     const minGap = 34;
     for (let i = 1; i < seeds.length; i++) {
       if (seeds[i].y - seeds[i - 1].y < minGap) seeds[i].y = seeds[i - 1].y + minGap;
     }
     const labelY = {};
-    seeds.forEach((s) => { labelY[s.key] = s.y; });
+    seeds.forEach((s) => {
+      labelY[s.key] = s.y;
+    });
 
     const rivals = cfg.rivals.map((r, i) => {
       const e = rivalEnds[i];
       return {
-        key: r.key, name: r.short || r.name, color: r.color,
-        points: proj(r.points), on: r.on,
+        key: r.key,
+        name: r.short || r.name,
+        color: r.color,
+        points: proj(r.points),
+        on: r.on,
         chipClass: 'rival-chip ' + (r.on ? 'on' : 'off'),
-        dotX: e.x.toFixed(1), dotY: e.y.toFixed(1),
+        dotX: e.x.toFixed(1),
+        dotY: e.y.toFixed(1),
         labelX: (e.x + 7).toFixed(1),
         labelY: (r.on ? labelY[r.key] : e.y).toFixed(1),
-        toggle: r.toggle
+        toggle: r.toggle,
       };
     });
 
@@ -155,17 +205,19 @@ class Site {
       haalandDashedPoints: cfg.haalandDashed ? proj(cfg.haalandDashed) : '',
       haalandAreaPoints: areaPoints,
       showProjection: !!cfg.haalandDashed,
-      haalandDotX: hEndX.toFixed(1), haalandDotY: hEndY.toFixed(1),
-      haalandLabelX: (hEndX + 7).toFixed(1), haalandLabelY: labelY['__haaland'].toFixed(1),
-      rivals: rivals
+      haalandDotX: hEndX.toFixed(1),
+      haalandDotY: hEndY.toFixed(1),
+      haalandLabelX: (hEndX + 7).toFixed(1),
+      haalandLabelY: labelY['__haaland'].toFixed(1),
+      rivals: rivals,
     };
   }
 
   renderVals() {
     const s = this.state;
-    const chipClass = (active) => active ? 'toggle-chip active' : 'toggle-chip';
-    const tabClass = (active) => active ? 'tab active' : 'tab';
-    const segClass = (active) => active ? 'seg active' : 'seg';
+    const chipClass = (active) => (active ? 'toggle-chip active' : 'toggle-chip');
+    const tabClass = (active) => (active ? 'tab active' : 'tab');
+    const segClass = (active) => (active ? 'seg active' : 'seg');
 
     const mkCol = (key) => ({
       historyOn: s.col[key].history,
@@ -182,277 +234,1137 @@ class Site {
       toggleAchievable: () => this.toggleCat(key, 'achievable'),
       toggleRecordsOnly: () => this.toggleRecordsOnly(key),
       setAll: () => this.setColAll(key, true),
-      setNone: () => this.setColAll(key, false)
+      setNone: () => this.setColAll(key, false),
     });
 
     const withWidth = (arr) => arr.map((it) => ({ ...it, progressWidth: it.progress + '%' }));
 
     const clubHistory = [
-      { period: '2016', title: 'Bryne FK', desc: '16 seniorkamper, 0 mål. A-lagsdebut som 15-åring i 2. divisjon (kilde: haalandstats.com, VAVEL).', record: false },
-      { period: '2017', title: 'Molde FK, sesong 1', desc: '2 mål på 14 Eliteserien-kamper (11 innhopp), trent av Ole Gunnar Solskjær (kilde: VAVEL, Britannica).', record: false },
-      { period: '2018', title: 'Molde FK, sesong 2', desc: '12 mål på 25 Eliteserien-kamper (17 fra start) (kilde: VAVEL, Britannica).', record: false },
-      { period: '2019–2020', title: 'RB Salzburg', desc: '16 mål på 16 kamper i østerriksk Bundesliga, toppscorer i ligaen; 29 mål på 27 kamper i alle turneringer (kilde: BBC, football365; se også utfyllende research).', record: true },
-      { period: '18. jan. 2020', title: 'Dortmund-debut med hattrick', desc: 'Innhopp mot Augsburg, scoret med første touch og fullførte hattrick på 23 minutter, 19 år gammel (kilde: bundesliga.com, Bleacher Report).', record: true },
-      { period: '2019/20 (delsesong)', title: 'Borussia Dortmund, første halvsesong', desc: '13 mål på 15 Bundesliga-kamper etter overgangen i januar 2020 (kilde: bundesliga.com, Sporf, StatMuse).', record: false },
-      { period: '2020/21', title: 'Borussia Dortmund, gjennombruddssesong', desc: '27 mål på 28 Bundesliga-kamper, og toppscorer i Champions League med 10 mål på 8 kamper — 41 mål på 41 kamper i alle turneringer (kilde: Bundesliga.com, UEFA.com).', record: true },
-      { period: '2021 (høstsesongen)', title: 'Borussia Dortmund, skadeavbrutt høst', desc: '13 Bundesliga-mål og 19 mål på 16 kamper i alle turneringer i høstsesongen («hinrunde») 2021, til tross for en hofteskade som holdt ham borte i flere uker (kilde: Bundesliga.com).', record: false },
-      { period: '2021/22', title: 'Borussia Dortmund, siste sesong', desc: '22 mål på 24 Bundesliga-kamper til tross for skadeavbrekket samme høst — 29 mål i alle turneringer (kilde: bundesliga.com, Wikipedia).', record: false },
-      { period: '2020–2022', title: 'Borussia Dortmund, totalt', desc: '62 mål på 67 Bundesliga-kamper i hele Dortmund-perioden. Yngste og raskeste spiller noensinne til 50 Bundesliga-mål (kilde: bundesliga.com, goal.com).', record: false },
-      { period: '2023', title: 'Raskest til 50 PL-mål', desc: '48 kamper — forbedret Andy Coles rekord med 17 kamper (kilde: ESPN).', record: true },
-      { period: '2. des. 2025', title: 'Raskest til 100 PL-mål', desc: '111 kamper mot Fulham, forbi Alan Shearers rekord på 124 — Guinness World Record (kilde: ESPN, Sky Sports, Guinness World Records).', record: true },
-      { period: '2022–nå', title: 'Manchester City', desc: 'Nåværende klubb. Del av trippelvinnende lag 2022/23, inkl. Champions League (kilde: Wikipedia).', record: false }
+      { period: '2016', title: 'Bryne FK', desc: '16 seniorkamper, 0 mål. A-lagsdebut som 15-åring i 2. divisjon.', record: false },
+      { period: '2017', title: 'Molde FK, sesong 1', desc: '2 mål på 14 Eliteserien-kamper (11 innhopp), trent av Ole Gunnar Solskjær.', record: false },
+      { period: '2018', title: 'Molde FK, sesong 2', desc: '12 mål på 25 Eliteserien-kamper (17 fra start).', record: false },
+      { period: '2019–2020', title: 'RB Salzburg', desc: '16 mål på 16 kamper i østerriksk Bundesliga, toppscorer i ligaen; 29 mål på 27 kamper i alle turneringer.', record: true },
+      { period: '18. jan. 2020', title: 'Dortmund-debut med hattrick', desc: 'Innhopp mot Augsburg, scoret med første touch og fullførte hattrick på 23 minutter, 19 år gammel.', record: true },
+      { period: '2019/20 (delsesong)', title: 'Borussia Dortmund, første halvsesong', desc: '13 mål på 15 Bundesliga-kamper etter overgangen i januar 2020.', record: false },
+      {
+        period: '2020/21',
+        title: 'Borussia Dortmund, gjennombruddssesong',
+        desc: '27 mål på 28 Bundesliga-kamper, og toppscorer i Champions League med 10 mål på 8 kamper — 41 mål på 41 kamper i alle turneringer.',
+        record: true,
+      },
+      {
+        period: '2021 (høstsesongen)',
+        title: 'Borussia Dortmund, skadeavbrutt høst',
+        desc: '13 Bundesliga-mål og 19 mål på 16 kamper i alle turneringer i høstsesongen («hinrunde») 2021, til tross for en hofteskade som holdt ham borte i flere uker.',
+        record: false,
+      },
+      { period: '2021/22', title: 'Borussia Dortmund, siste sesong', desc: '22 mål på 24 Bundesliga-kamper til tross for skadeavbrekket samme høst — 29 mål i alle turneringer.', record: false },
+      {
+        period: '2020–2022',
+        title: 'Borussia Dortmund, totalt',
+        desc: '62 mål på 67 Bundesliga-kamper i hele Dortmund-perioden. Yngste og raskeste spiller noensinne til 50 Bundesliga-mål.',
+        record: false,
+      },
+      { period: '2023', title: 'Raskest til 50 PL-mål', desc: '48 kamper — forbedret Andy Coles rekord med 17 kamper.', record: true },
+      { period: '2. des. 2025', title: 'Raskest til 100 PL-mål', desc: '111 kamper mot Fulham, forbi Alan Shearers rekord på 124 — Guinness World Record.', record: true },
+      { period: '2022–nå', title: 'Manchester City', desc: 'Nåværende klubb. Del av trippelvinnende lag 2022/23, inkl. Champions League.', record: false },
     ];
     const clubMissed = [
-      { title: 'Golden Boot i alle fire sesonger', desc: 'Vant 3 av sine 4 første Premier League-sesonger (2022/23–2025/26). Thierry Henry og Mohamed Salah deler rekorden med fire Golden Boots hver (kilde: football365.com).' },
-      { title: 'PFA Young Player of the Year', desc: 'Ikke funnet kilder på at Haaland har vunnet denne kategorien — han vant i stedet den overordnede PFA Player of the Year i 2023.' }
+      {
+        title: 'Golden Boot i alle fire sesonger',
+        desc: 'Vant 3 av sine 4 første Premier League-sesonger (2022/23–2025/26). Thierry Henry og Mohamed Salah deler rekorden med fire Golden Boots hver.',
+      },
+      { title: 'PFA Young Player of the Year', desc: 'Ikke funnet kilder på at Haaland har vunnet denne kategorien — han vant i stedet den overordnede PFA Player of the Year i 2023.' },
     ];
     const clubAchievable = withWidth([
-      { title: '150 Premier League-mål', desc: 'Neste nivå etter 100-rekorden. Står på 112 mål på 132 kamper ved siste sesongslutt (kilde: offisiell PL-statistikk).', progress: 75 },
-      { title: 'Alan Shearers totalrekord: 260 PL-mål', desc: 'Premier Leagues toppscorer gjennom tidene — langsiktig mål. Står på 112 mål så langt, bak hele topp ti: Shearer (260), Kane (213, avsluttet i PL), Rooney (208), Salah (193), Cole (187), Agüero (184), Lampard (177), Henry (175), Fowler (163) og Defoe (162). Salah er den eneste av de ti øverste som fortsatt er aktiv og kan legge på flere mål.', progress: 43 },
-      { title: '4. Premier League Golden Boot', desc: 'Ville matchet rekorden til Thierry Henry og Mohamed Salah på fire Golden Boots. Har 3 av 4 så langt.', progress: 75 }
+      { title: '150 Premier League-mål', desc: 'Neste nivå etter 100-rekorden. Står på 112 mål på 132 kamper ved siste sesongslutt.', progress: 75 },
+      {
+        title: 'Alan Shearers totalrekord: 260 PL-mål',
+        desc: 'Premier Leagues toppscorer gjennom tidene — langsiktig mål. Står på 112 mål så langt, bak hele topp ti: Shearer (260), Kane (213, avsluttet i PL), Rooney (208), Salah (193), Cole (187), Agüero (184), Lampard (177), Henry (175), Fowler (163) og Defoe (162). Salah er den eneste av de ti øverste som fortsatt er aktiv og kan legge på flere mål.',
+        progress: 43,
+      },
+      { title: '4. Premier League Golden Boot', desc: 'Ville matchet rekorden til Thierry Henry og Mohamed Salah på fire Golden Boots. Har 3 av 4 så langt.', progress: 75 },
     ]);
 
     const clHistory = [
-      { period: '18. sep. 2019', title: 'CL-debut med hattrick', desc: 'Hattrick i første omgang for RB Salzburg mot Genk (6–2), første mål etter 2 minutter. 3. yngste til å score CL-hattrick, bak Raúl og Rooney (kilde: CNN, Goal.com).', record: true },
-      { period: '2019/20', title: 'Gruppespill med Salzburg', desc: '8 mål på 6 gruppespillkamper i Champions League (kilde: haalandstats.com).', record: false },
-      { period: '2020/21', title: 'Toppscorer i CL, yngste til 20 mål', desc: 'Toppscorer i turneringen med 10 mål for Borussia Dortmund. Samtidig yngste til 20 CL-mål — 20 år 231 dager, i 14 kamper — forbedret Mbappés rekord (kilde: UEFA.com).', record: true },
-      { period: '2023/24', title: 'Yngste til 40 CL-mål', desc: '23 år 130 dager (kilde: UEFA.com).', record: true },
-      { period: '2022/23', title: 'Toppscorer og CL-vinner', desc: 'Toppscorer i turneringen med 12 mål; Champions League-vinner med Manchester City (kilde: UEFA.com, Wikipedia).', record: false },
-      { period: 'Mars 2023', title: '5 mål mot RB Leipzig', desc: 'Matcher rekorden for flest mål i én CL-kamp (delt med Messi og Luiz Adriano, UEFA.coms offisielle rekordliste). Samtidig hans eneste CL-hattrick så langt, og raskest til 30 CL-mål — 25 kamper, forbi Van Nistelrooys rekord på 34 (kilde: UEFA.com, Guinness World Records).', record: true },
-      { period: '2025', title: 'Raskest til 50 CL-mål', desc: '49 kamper — 2. yngste noensinne, kun bak Messi (kilde: beIN Sports, UEFA.com).', record: true }
+      {
+        period: '18. sep. 2019',
+        title: 'CL-debut med hattrick',
+        desc: 'Hattrick i første omgang for RB Salzburg mot Genk (6–2), første mål etter 2 minutter. 3. yngste til å score CL-hattrick, bak Raúl og Rooney.',
+        record: true,
+      },
+      { period: '2019/20', title: 'Gruppespill med Salzburg', desc: '8 mål på 6 gruppespillkamper i Champions League.', record: false },
+      {
+        period: '2020/21',
+        title: 'Toppscorer i CL, yngste til 20 mål',
+        desc: 'Toppscorer i turneringen med 10 mål for Borussia Dortmund. Samtidig yngste til 20 CL-mål — 20 år 231 dager, i 14 kamper — forbedret Mbappés rekord.',
+        record: true,
+      },
+      { period: '2023/24', title: 'Yngste til 40 CL-mål', desc: '23 år 130 dager.', record: true },
+      { period: '2022/23', title: 'Toppscorer og CL-vinner', desc: 'Toppscorer i turneringen med 12 mål; Champions League-vinner med Manchester City.', record: false },
+      {
+        period: 'Mars 2023',
+        title: '5 mål mot RB Leipzig',
+        desc: 'Matcher rekorden for flest mål i én CL-kamp (delt med Messi og Luiz Adriano, UEFA.coms offisielle rekordliste). Samtidig hans eneste CL-hattrick så langt, og raskest til 30 CL-mål — 25 kamper, forbi Van Nistelrooys rekord på 34.',
+        record: true,
+      },
+      { period: '2025', title: 'Raskest til 50 CL-mål', desc: '49 kamper — 2. yngste noensinne, kun bak Messi.', record: true },
     ];
-    const clMissed = [
-      { title: 'Scoret ikke i CL-finalen 2022/23', desc: 'Manchester City vant 1–0 over Inter (Rodri avgjorde), til tross for at Haaland var turneringens toppscorer den sesongen.' }
-    ];
+    const clMissed = [{ title: 'Scoret ikke i CL-finalen 2022/23', desc: 'Manchester City vant 1–0 over Inter (Rodri avgjorde), til tross for at Haaland var turneringens toppscorer den sesongen.' }];
     const clAchievable = withWidth([
-      { title: 'Forbig&aring; Robert Lewandowski (101 CL-m&aring;l)', desc: 'St&aring;r p&aring; 57 CL-m&aring;l s&aring; langt, allerede forbi Raúl, van Nistelrooy og Mbapp&eacute; p&aring; totallisten (kilde: UEFA.com, ESPN, StatMuse).', progress: 56 },
-      { title: 'Ronaldos og Messis totalrekorder', desc: 'Langt fram til historiens to &oslash;verste (140 og 129 CL-m&aring;l). St&aring;r p&aring; 57 s&aring; langt (kilde: UEFA.com).', progress: 41 },
-      { title: 'Flest hattrick i Champions League (8)', desc: 'Rekorden deles av Messi og Ronaldo med 8 hattrick hver. Haaland har &eacute;n hittil &mdash; 5-m&aring;lskampen mot RB Leipzig, mars 2023 (kilde: UEFA.com).', progress: 13 },
-      { title: 'Flest straffem&aring;l i Champions League (19)', desc: 'Rekorden deles av Ronaldo og Lewandowski med 19 straffem&aring;l hver. Haaland st&aring;r p&aring; 9, delt 9.-plass med Mbapp&eacute; (kilde: UEFA.com).', progress: 47 },
-      { title: 'Flest assist i Champions League (42)', desc: 'Rekorden holdes av Ronaldo med 42. Haaland hadde 5 CL-assist per november 2024 og er ikke p&aring; topplisten (som krever 25+) &mdash; langt igjen, siden han prim&aelig;rt er m&aring;lscorer (kilde: mancity.com).', progress: 12 }
+      {
+        title: 'Forbig&aring; Robert Lewandowski (101 CL-m&aring;l)',
+        desc: 'St&aring;r p&aring; 57 CL-m&aring;l s&aring; langt, allerede forbi Raúl, van Nistelrooy og Mbapp&eacute; p&aring; totallisten.',
+        progress: 56,
+      },
+      { title: 'Ronaldos og Messis totalrekorder', desc: 'Langt fram til historiens to &oslash;verste (140 og 129 CL-m&aring;l). St&aring;r p&aring; 57 s&aring; langt.', progress: 41 },
+      {
+        title: 'Flest hattrick i Champions League (8)',
+        desc: 'Rekorden deles av Messi og Ronaldo med 8 hattrick hver. Haaland har &eacute;n hittil &mdash; 5-m&aring;lskampen mot RB Leipzig, mars 2023.',
+        progress: 13,
+      },
+      {
+        title: 'Flest straffem&aring;l i Champions League (19)',
+        desc: 'Rekorden deles av Ronaldo og Lewandowski med 19 straffem&aring;l hver. Haaland st&aring;r p&aring; 9, delt 9.-plass med Mbapp&eacute;.',
+        progress: 47,
+      },
+      {
+        title: 'Flest assist i Champions League (42)',
+        desc: 'Rekorden holdes av Ronaldo med 42. Haaland hadde 5 CL-assist per november 2024 og er ikke p&aring; topplisten (som krever 25+) &mdash; langt igjen, siden han prim&aelig;rt er m&aring;lscorer.',
+        progress: 12,
+      },
     ]);
 
     const natHistory = [
-      { period: '5. sep. 2019', title: 'A-landslagsdebut', desc: 'Startet mot Malta (2–0) i EM 2020-kvalifisering, uten mål i debutkampen (kilde: Britannica, ESPN).', record: false },
-      { period: '4. sep. 2020', title: 'Første landslagsmål', desc: 'Mot Østerrike i UEFA Nations League B — startpunktet for GWR-rekorden under (kilde: Guinness World Records).', record: true },
-      { period: '11. okt. 2020', title: 'Første landslagshattrick', desc: '4–0 mot Romania i UEFA Nations League B (kilde: UEFA.com).', record: false },
-      { period: '2020/21', title: 'Toppscorer i Nations League', desc: '6 mål — toppscorer i UEFA Nations League 2020/21-sesongen (kilde: UEFA.com).', record: true },
-      { period: 'Høsten 2021', title: 'VM 2022-kvalifisering i gang', desc: 'Norge startet kvalifiseringen til VM 2022 høsten 2021 — laget nådde til slutt ikke sluttspillet (kilde: NRK, UEFA.com).', record: false },
-      { period: '2020–2024', title: 'GWR: Nations League-rekord', desc: '19 mål i UEFA Nations League, 4. sep. 2020–17. nov. 2024 — Guinness World Record (kilde: Guinness World Records).', record: true },
-      { period: 'Nov. 2024', title: 'Norges toppscorer gjennom tidene', desc: 'Forbigikk Jørgen Juves gamle rekord på 33 mål (kilde: NBC Sports).', record: true },
-      { period: '2019–', title: 'Raskest til 50 landslagsmål', desc: '46 kamper (kilde: SI.com).', record: true },
-      { period: '2019–', title: 'Flest hattrick for Norge', desc: '6 stykker — landslagsrekord (kilde: Wikipedia).', record: true },
-      { period: '2019–', title: 'Flest mål i én landskamp for Norge', desc: '5 mål, mot Moldova (kilde: Wikipedia).', record: true },
-      { period: '2025', title: 'Rekord: mest scorende lag i VM-kvalifiseringen', desc: 'Norge var det mest målfarlige laget i hele UEFA sin VM-kvalifisering — 37 mål på 8 kamper (8 seire av 8), hvorav 16 fra Haaland. Plassen sikret med 4–1 over Italia i Milano (kilde: ESPN, FIFA.com, France24).', record: true },
-      { period: '17. jun. 2026', title: 'VM-debut med dobbel', desc: '2 mål i turneringsåpneren mot Irak (4–1) i Boston — Norges første VM-kamp siden 1998 (kilde: Al Jazeera, ESPN, FIFA.com).', record: false },
-      { period: '23. jun. 2026', title: 'To mål mot Senegal', desc: '3–2-seier i New York sikret avansement til sluttspillet med én kamp til gode (kilde: Al Jazeera).', record: false },
-      { period: '30. jun. 2026', title: 'Avgjørende mål mot Elfenbenskysten', desc: 'Scoret vinnermålet i det 86. minutt (2–1) i Dallas — Norges aller første seier i en VM-sluttspillskamp (kilde: ESPN, Sky Sports, NBC).', record: true },
-      { period: '5. jul. 2026', title: 'Dobbel felte Brasil', desc: '2 sene mål (79. min. og et langskudd) sendte Brasil ut 2–1 i åttedelsfinalen — Norge til kvartfinale for første gang noensinne (kilde: Al Jazeera, Sky Sports, NBC News).', record: true },
-      { period: '2026', title: '4. plass i VMs toppscorerliste (adidas Golden Boot)', desc: '7 mål på 6 kamper (537 minutter) — bak kun Mbappé (10), Messi (8) og Bellingham (7, foran på færre minutter). Høyest rangerte spiller blant alle som ikke nådde finalen (kilde: FIFA.com).', record: true },
-      { period: '11. jul. 2026', title: 'VM-eventyret endte i kvartfinalen', desc: 'Tapte 1–2 mot England etter ekstraomganger i Miami (Bellingham-dobbel). Haalands hodestøt ble reddet av Pickford, og et Norge-mål ble annullert etter en Haaland-takling. Lengste VM-løp i Norges historie (kilde: ESPN, Time, englandfootball.com).', record: false },
-      { period: '11. jul. 2026', title: 'Status: 62 landslagsmål', desc: '62 mål på 55 kamper siden debuten 05.09.2019 (kilde: offisiell spillerstatistikk).', record: true },
-      { period: 'Sommer 2026', title: 'St&oslash;rste klatrer i FIFA-rankingen', desc: 'Norge klatret 12 plasser til 19. plass i FIFA/Coca-Cola-rankingen etter VM-kvartfinalen &mdash; st&oslash;rst fremgang av alle nasjoner, mens Spania ble ny nr. 1 (kilde: FIFA.com, TSN).', record: true },
-      { period: '2026', title: 'Toppfart i VM: 36,52 km/t', desc: '5. raskeste spiller i hele turneringen, bak Mbapp&eacute; (37,61), Elanga (37,16), Van de Ven (36,77) og Bos (36,67). Ogs&aring; 375 m h&oslash;yintensitetsl&oslash;ping, 172 spurter og 49 468,92 m totaldistanse i turneringen (kilde: FIFA.com).', record: false }
+      { period: '5. sep. 2019', title: 'A-landslagsdebut', desc: 'Startet mot Malta (2–0) i EM 2020-kvalifisering, uten mål i debutkampen.', record: false },
+      { period: '4. sep. 2020', title: 'Første landslagsmål', desc: 'Mot Østerrike i UEFA Nations League B — startpunktet for GWR-rekorden under.', record: true },
+      { period: '11. okt. 2020', title: 'Første landslagshattrick', desc: '4–0 mot Romania i UEFA Nations League B.', record: false },
+      { period: '2020/21', title: 'Toppscorer i Nations League', desc: '6 mål — toppscorer i UEFA Nations League 2020/21-sesongen.', record: true },
+      { period: 'Høsten 2021', title: 'VM 2022-kvalifisering i gang', desc: 'Norge startet kvalifiseringen til VM 2022 høsten 2021 — laget nådde til slutt ikke sluttspillet.', record: false },
+      { period: '2020–2024', title: 'GWR: Nations League-rekord', desc: '19 mål i UEFA Nations League, 4. sep. 2020–17. nov. 2024 — Guinness World Record.', record: true },
+      { period: 'Nov. 2024', title: 'Norges toppscorer gjennom tidene', desc: 'Forbigikk Jørgen Juves gamle rekord på 33 mål.', record: true },
+      { period: '2019–', title: 'Raskest til 50 landslagsmål', desc: '46 kamper.', record: true },
+      { period: '2019–', title: 'Flest hattrick for Norge', desc: '6 stykker — landslagsrekord.', record: true },
+      { period: '2019–', title: 'Flest mål i én landskamp for Norge', desc: '5 mål, mot Moldova.', record: true },
+      {
+        period: '2025',
+        title: 'Rekord: mest scorende lag i VM-kvalifiseringen',
+        desc: 'Norge var det mest målfarlige laget i hele UEFA sin VM-kvalifisering — 37 mål på 8 kamper (8 seire av 8), hvorav 16 fra Haaland. Plassen sikret med 4–1 over Italia i Milano.',
+        record: true,
+      },
+      { period: '17. jun. 2026', title: 'VM-debut med dobbel', desc: '2 mål i turneringsåpneren mot Irak (4–1) i Boston — Norges første VM-kamp siden 1998.', record: false },
+      { period: '23. jun. 2026', title: 'To mål mot Senegal', desc: '3–2-seier i New York sikret avansement til sluttspillet med én kamp til gode.', record: false },
+      {
+        period: '30. jun. 2026',
+        title: 'Avgjørende mål mot Elfenbenskysten',
+        desc: 'Scoret vinnermålet i det 86. minutt (2–1) i Dallas — Norges aller første seier i en VM-sluttspillskamp.',
+        record: true,
+      },
+      {
+        period: '5. jul. 2026',
+        title: 'Dobbel felte Brasil',
+        desc: '2 sene mål (79. min. og et langskudd) sendte Brasil ut 2–1 i åttedelsfinalen — Norge til kvartfinale for første gang noensinne.',
+        record: true,
+      },
+      {
+        period: '2026',
+        title: '4. plass i VMs toppscorerliste (adidas Golden Boot)',
+        desc: '7 mål på 6 kamper (537 minutter) — bak kun Mbappé (10), Messi (8) og Bellingham (7, foran på færre minutter). Høyest rangerte spiller blant alle som ikke nådde finalen.',
+        record: true,
+      },
+      {
+        period: '11. jul. 2026',
+        title: 'VM-eventyret endte i kvartfinalen',
+        desc: 'Tapte 1–2 mot England etter ekstraomganger i Miami (Bellingham-dobbel). Haalands hodestøt ble reddet av Pickford, og et Norge-mål ble annullert etter en Haaland-takling. Lengste VM-løp i Norges historie.',
+        record: false,
+      },
+      { period: '11. jul. 2026', title: 'Status: 62 landslagsmål', desc: '62 mål på 55 kamper siden debuten 05.09.2019.', record: true },
+      {
+        period: 'Sommer 2026',
+        title: 'St&oslash;rste klatrer i FIFA-rankingen',
+        desc: 'Norge klatret 12 plasser til 19. plass i FIFA/Coca-Cola-rankingen etter VM-kvartfinalen &mdash; st&oslash;rst fremgang av alle nasjoner, mens Spania ble ny nr. 1.',
+        record: true,
+      },
+      {
+        period: '2026',
+        title: 'Toppfart i VM: 36,52 km/t',
+        desc: '5. raskeste spiller i hele turneringen, bak Mbapp&eacute; (37,61), Elanga (37,16), Van de Ven (36,77) og Bos (36,67). Ogs&aring; 375 m h&oslash;yintensitetsl&oslash;ping, 172 spurter og 49 468,92 m totaldistanse i turneringen.',
+        record: false,
+      },
     ];
     const natMissed = [
-      { title: 'EM 2024', desc: 'Norge kvalifiserte seg ikke. Ifølge Haaland selv var VM 2026 hans første store mesterskap i karrieren (kilde: ESPN-intervju).' },
-      { title: 'VM-semifinale 2026', desc: 'Tapte 1–2 for England i kvartfinalen etter ekstraomganger — én kamp unna sitt første VM-semifinale (kilde: ESPN).' }
+      { title: 'EM 2024', desc: 'Norge kvalifiserte seg ikke. Ifølge Haaland selv var VM 2026 hans første store mesterskap i karrieren.' },
+      { title: 'VM-semifinale 2026', desc: 'Tapte 1–2 for England i kvartfinalen etter ekstraomganger — én kamp unna sitt første VM-semifinale.' },
     ];
     const natAchievable = withWidth([
-      { title: '70 landslagsmål', desc: 'Stod på 62 mål per siste kildesjekk (11.07.2026). Estimat.', progress: 89 },
-      { title: '80 landslagsmål', desc: 'Lengre siktemål utover 70-grensen. Estimat.', progress: 78 }
+      { title: '70 landslagsmål', desc: 'Står på 62 mål per 11.07.2026.', progress: 89 },
+      { title: '80 landslagsmål', desc: 'Lengre siktemål utover 70-grensen.', progress: 78 },
     ]);
 
     // ---- chart data ----
     const bar = (name, value, max, color, isH) => ({
-      name, value,
+      name,
+      value,
       pct: Math.round((value / max) * 100) + '%',
       color,
-      labelClass: isH ? 'bar-label is-haaland' : 'bar-label'
+      labelClass: isH ? 'bar-label is-haaland' : 'bar-label',
     });
     const flag = (on) => (on ? 'active' : '');
-    const cc = s.chart.club, ccl = s.chart.cl, cnat = s.chart.nat;
+    const cc = s.chart.club,
+      ccl = s.chart.cl,
+      cnat = s.chart.nat;
 
     const PL_100 = {
-      maxGames: 200, maxGoals: 100,
-      haaland: [[0,0],[5,3],[15,12],[30,25],[45,38],[60,52],[75,65],[90,80],[100,91],[111,100]],
+      maxGames: 200,
+      maxGoals: 100,
+      haaland: [
+        [0, 0],
+        [5, 3],
+        [15, 12],
+        [30, 25],
+        [45, 38],
+        [60, 52],
+        [75, 65],
+        [90, 80],
+        [100, 91],
+        [111, 100],
+      ],
       rivals: [
-        { key: 'shearer', name: 'A. Shearer', short: 'Shearer', color: '#2f5aa8', points: [[0,0],[8,3],[20,11],[35,22],[50,35],[65,48],[80,62],[95,75],[110,88],[124,100]] },
-        { key: 'kane', name: 'H. Kane', short: 'Kane', color: '#6a3fa0', points: [[0,0],[10,2],[25,9],[45,20],[65,33],[85,47],[105,62],[125,80],[141,100]] },
-        { key: 'aguero', name: 'S. Agüero', short: 'Agüero', color: '#a8791a', points: [[0,0],[10,3],[25,10],[45,22],[65,35],[85,50],[105,65],[125,82],[147,100]] },
-        { key: 'henry', name: 'T. Henry', short: 'Henry', color: '#1f2937', points: [[0,0],[10,2],[25,8],[45,18],[65,30],[85,42],[105,56],[125,70],[145,86],[160,100]] },
-        { key: 'salah', name: 'M. Salah', short: 'Salah', color: '#0e6b3a', points: [[0,0],[162,100]] },
-        { key: 'wright', name: 'I. Wright', short: 'Wright', color: '#c1352b', points: [[0,0],[173,100]] },
-        { key: 'fowler', name: 'R. Fowler', short: 'Fowler', color: '#b5484f', points: [[0,0],[175,100]] },
-        { key: 'ferdinand', name: 'L. Ferdinand', short: 'Ferdinand', color: '#7c3f8f', points: [[0,0],[178,100]] },
-        { key: 'owen', name: 'M. Owen', short: 'Owen', color: '#5a5f73', points: [[0,0],[185,100]] }
-      ]
+        {
+          key: 'shearer',
+          name: 'A. Shearer',
+          short: 'Shearer',
+          color: '#2f5aa8',
+          points: [
+            [0, 0],
+            [8, 3],
+            [20, 11],
+            [35, 22],
+            [50, 35],
+            [65, 48],
+            [80, 62],
+            [95, 75],
+            [110, 88],
+            [124, 100],
+          ],
+        },
+        {
+          key: 'kane',
+          name: 'H. Kane',
+          short: 'Kane',
+          color: '#6a3fa0',
+          points: [
+            [0, 0],
+            [10, 2],
+            [25, 9],
+            [45, 20],
+            [65, 33],
+            [85, 47],
+            [105, 62],
+            [125, 80],
+            [141, 100],
+          ],
+        },
+        {
+          key: 'aguero',
+          name: 'S. Agüero',
+          short: 'Agüero',
+          color: '#a8791a',
+          points: [
+            [0, 0],
+            [10, 3],
+            [25, 10],
+            [45, 22],
+            [65, 35],
+            [85, 50],
+            [105, 65],
+            [125, 82],
+            [147, 100],
+          ],
+        },
+        {
+          key: 'henry',
+          name: 'T. Henry',
+          short: 'Henry',
+          color: '#1f2937',
+          points: [
+            [0, 0],
+            [10, 2],
+            [25, 8],
+            [45, 18],
+            [65, 30],
+            [85, 42],
+            [105, 56],
+            [125, 70],
+            [145, 86],
+            [160, 100],
+          ],
+        },
+        {
+          key: 'salah',
+          name: 'M. Salah',
+          short: 'Salah',
+          color: '#0e6b3a',
+          points: [
+            [0, 0],
+            [162, 100],
+          ],
+        },
+        {
+          key: 'wright',
+          name: 'I. Wright',
+          short: 'Wright',
+          color: '#c1352b',
+          points: [
+            [0, 0],
+            [173, 100],
+          ],
+        },
+        {
+          key: 'fowler',
+          name: 'R. Fowler',
+          short: 'Fowler',
+          color: '#b5484f',
+          points: [
+            [0, 0],
+            [175, 100],
+          ],
+        },
+        {
+          key: 'ferdinand',
+          name: 'L. Ferdinand',
+          short: 'Ferdinand',
+          color: '#7c3f8f',
+          points: [
+            [0, 0],
+            [178, 100],
+          ],
+        },
+        {
+          key: 'owen',
+          name: 'M. Owen',
+          short: 'Owen',
+          color: '#5a5f73',
+          points: [
+            [0, 0],
+            [185, 100],
+          ],
+        },
+      ],
     };
-    const PL_HAALAND_SOLID = [[0,0],[4,3],[8,7],[12,13],[16,18],[20,22],[25,27],[30,32],[35,36],[39,38],[43,42],[47,46],[51,49],[55,52],[59,55],[63,59],[66,63],[70,65],[74,68],[78,71],[82,74],[86,77],[90,80],[94,83],[97,85],[101,87],[105,91],[109,95],[111,100],[117,103],[122,106],[127,109],[132,112]];
+    const PL_HAALAND_SOLID = [
+      [0, 0],
+      [4, 3],
+      [8, 7],
+      [12, 13],
+      [16, 18],
+      [20, 22],
+      [25, 27],
+      [30, 32],
+      [35, 36],
+      [39, 38],
+      [43, 42],
+      [47, 46],
+      [51, 49],
+      [55, 52],
+      [59, 55],
+      [63, 59],
+      [66, 63],
+      [70, 65],
+      [74, 68],
+      [78, 71],
+      [82, 74],
+      [86, 77],
+      [90, 80],
+      [94, 83],
+      [97, 85],
+      [101, 87],
+      [105, 91],
+      [109, 95],
+      [111, 100],
+      [117, 103],
+      [122, 106],
+      [127, 109],
+      [132, 112],
+    ];
     const PL_150 = {
-      maxGames: 260, maxGoals: 150,
+      maxGames: 260,
+      maxGoals: 150,
       haalandSolid: PL_HAALAND_SOLID,
-      haalandDashed: [[132,112],[178,150]],
+      haalandDashed: [
+        [132, 112],
+        [178, 150],
+      ],
       rivals: [
-        { key: 'shearer', name: 'A. Shearer', short: 'Shearer', color: '#2f5aa8', points: [[0,0],[10,4],[25,14],[45,28],[65,44],[85,60],[105,78],[125,95],[145,112],[165,128],[191,150]] },
-        { key: 'kane', name: 'H. Kane', short: 'Kane', color: '#6a3fa0', points: [[0,0],[15,5],[35,16],[60,32],[85,50],[110,68],[135,88],[160,108],[190,132],[214,150]] },
-        { key: 'aguero', name: 'S. Agüero', short: 'Agüero', color: '#a8791a', points: [[0,0],[15,5],[35,15],[60,30],[85,48],[110,66],[135,86],[160,106],[190,130],[220,150]] },
-        { key: 'henry', name: 'T. Henry', short: 'Henry', color: '#1f2937', points: [[0,0],[15,4],[35,12],[60,25],[85,40],[110,55],[135,72],[160,90],[190,112],[215,132],[235,150]] }
-      ]
+        {
+          key: 'shearer',
+          name: 'A. Shearer',
+          short: 'Shearer',
+          color: '#2f5aa8',
+          points: [
+            [0, 0],
+            [10, 4],
+            [25, 14],
+            [45, 28],
+            [65, 44],
+            [85, 60],
+            [105, 78],
+            [125, 95],
+            [145, 112],
+            [165, 128],
+            [191, 150],
+          ],
+        },
+        {
+          key: 'kane',
+          name: 'H. Kane',
+          short: 'Kane',
+          color: '#6a3fa0',
+          points: [
+            [0, 0],
+            [15, 5],
+            [35, 16],
+            [60, 32],
+            [85, 50],
+            [110, 68],
+            [135, 88],
+            [160, 108],
+            [190, 132],
+            [214, 150],
+          ],
+        },
+        {
+          key: 'aguero',
+          name: 'S. Agüero',
+          short: 'Agüero',
+          color: '#a8791a',
+          points: [
+            [0, 0],
+            [15, 5],
+            [35, 15],
+            [60, 30],
+            [85, 48],
+            [110, 66],
+            [135, 86],
+            [160, 106],
+            [190, 130],
+            [220, 150],
+          ],
+        },
+        {
+          key: 'henry',
+          name: 'T. Henry',
+          short: 'Henry',
+          color: '#1f2937',
+          points: [
+            [0, 0],
+            [15, 4],
+            [35, 12],
+            [60, 25],
+            [85, 40],
+            [110, 55],
+            [135, 72],
+            [160, 90],
+            [190, 112],
+            [215, 132],
+            [235, 150],
+          ],
+        },
+      ],
     };
     const PL_260 = {
-      maxGames: 620, maxGoals: 260,
+      maxGames: 620,
+      maxGoals: 260,
       haalandSolid: PL_HAALAND_SOLID,
-      haalandDashed: [[132,112],[309,260]],
+      haalandDashed: [
+        [132, 112],
+        [309, 260],
+      ],
       rivals: [
-        { key: 'shearer', name: 'A. Shearer', short: 'Shearer', color: '#2f5aa8', points: [[0,0],[441,260]] },
-        { key: 'kane', name: 'H. Kane', short: 'Kane', color: '#6a3fa0', points: [[0,0],[320,213]] },
-        { key: 'rooney', name: 'W. Rooney', short: 'Rooney', color: '#c1352b', points: [[0,0],[491,208]] },
-        { key: 'salah', name: 'M. Salah', short: 'Salah', color: '#0e6b3a', points: [[0,0],[328,193]] },
-        { key: 'cole', name: 'A. Cole', short: 'Cole', color: '#a8791a', points: [[0,0],[414,187]] },
-        { key: 'aguero', name: 'S. Agüero', short: 'Agüero', color: '#7c3f8f', points: [[0,0],[275,184]] },
-        { key: 'lampard', name: 'F. Lampard', short: 'Lampard', color: '#1f6f78', points: [[0,0],[609,177]] },
-        { key: 'henry', name: 'T. Henry', short: 'Henry', color: '#1f2937', points: [[0,0],[258,175]] },
-        { key: 'fowler', name: 'R. Fowler', short: 'Fowler', color: '#b5484f', points: [[0,0],[379,163]] },
-        { key: 'defoe', name: 'J. Defoe', short: 'Defoe', color: '#5a5f73', points: [[0,0],[496,162]] }
-      ]
+        {
+          key: 'shearer',
+          name: 'A. Shearer',
+          short: 'Shearer',
+          color: '#2f5aa8',
+          points: [
+            [0, 0],
+            [441, 260],
+          ],
+        },
+        {
+          key: 'kane',
+          name: 'H. Kane',
+          short: 'Kane',
+          color: '#6a3fa0',
+          points: [
+            [0, 0],
+            [320, 213],
+          ],
+        },
+        {
+          key: 'rooney',
+          name: 'W. Rooney',
+          short: 'Rooney',
+          color: '#c1352b',
+          points: [
+            [0, 0],
+            [491, 208],
+          ],
+        },
+        {
+          key: 'salah',
+          name: 'M. Salah',
+          short: 'Salah',
+          color: '#0e6b3a',
+          points: [
+            [0, 0],
+            [328, 193],
+          ],
+        },
+        {
+          key: 'cole',
+          name: 'A. Cole',
+          short: 'Cole',
+          color: '#a8791a',
+          points: [
+            [0, 0],
+            [414, 187],
+          ],
+        },
+        {
+          key: 'aguero',
+          name: 'S. Agüero',
+          short: 'Agüero',
+          color: '#7c3f8f',
+          points: [
+            [0, 0],
+            [275, 184],
+          ],
+        },
+        {
+          key: 'lampard',
+          name: 'F. Lampard',
+          short: 'Lampard',
+          color: '#1f6f78',
+          points: [
+            [0, 0],
+            [609, 177],
+          ],
+        },
+        {
+          key: 'henry',
+          name: 'T. Henry',
+          short: 'Henry',
+          color: '#1f2937',
+          points: [
+            [0, 0],
+            [258, 175],
+          ],
+        },
+        {
+          key: 'fowler',
+          name: 'R. Fowler',
+          short: 'Fowler',
+          color: '#b5484f',
+          points: [
+            [0, 0],
+            [379, 163],
+          ],
+        },
+        {
+          key: 'defoe',
+          name: 'J. Defoe',
+          short: 'Defoe',
+          color: '#5a5f73',
+          points: [
+            [0, 0],
+            [496, 162],
+          ],
+        },
+      ],
     };
     // Apps/goals/assists confirmed from official Premier League player-stats pages
     // (user-supplied screenshots, 2026): 2022/23 35(2) apps/36 g/8 a; 2023/24 31(2)/27/5;
     // 2024/25 31/22/3; 2025/26 35(1)/27/8. Curve interior points remain modelled/interpolated.
     const PL_SEASONS = {
-      '2022/23': { total: 36, apps: 35, assists: 8, done: true, points: [[0,0],[4,3],[8,7],[12,13],[16,18],[20,22],[25,27],[30,32],[35,36],[38,36]] },
-      '2023/24': { total: 27, apps: 31, assists: 5, done: true, points: [[0,0],[4,2],[8,6],[12,10],[16,13],[20,16],[24,19],[28,23],[31,27],[38,27]] },
-      '2024/25': { total: 22, apps: 31, assists: 3, done: true, points: [[0,0],[4,2],[8,5],[12,8],[16,11],[20,14],[24,17],[28,20],[31,22],[38,22]] },
-      '2025/26': { total: 27, apps: 35, assists: 8, done: true, points: [[0,0],[4,2],[8,6],[12,10],[16,13],[20,16],[25,19],[30,22],[35,27],[38,27]] }
+      '2022/23': {
+        total: 36,
+        apps: 35,
+        assists: 8,
+        done: true,
+        points: [
+          [0, 0],
+          [4, 3],
+          [8, 7],
+          [12, 13],
+          [16, 18],
+          [20, 22],
+          [25, 27],
+          [30, 32],
+          [35, 36],
+          [38, 36],
+        ],
+      },
+      '2023/24': {
+        total: 27,
+        apps: 31,
+        assists: 5,
+        done: true,
+        points: [
+          [0, 0],
+          [4, 2],
+          [8, 6],
+          [12, 10],
+          [16, 13],
+          [20, 16],
+          [24, 19],
+          [28, 23],
+          [31, 27],
+          [38, 27],
+        ],
+      },
+      '2024/25': {
+        total: 22,
+        apps: 31,
+        assists: 3,
+        done: true,
+        points: [
+          [0, 0],
+          [4, 2],
+          [8, 5],
+          [12, 8],
+          [16, 11],
+          [20, 14],
+          [24, 17],
+          [28, 20],
+          [31, 22],
+          [38, 22],
+        ],
+      },
+      '2025/26': {
+        total: 27,
+        apps: 35,
+        assists: 8,
+        done: true,
+        points: [
+          [0, 0],
+          [4, 2],
+          [8, 6],
+          [12, 10],
+          [16, 13],
+          [20, 16],
+          [25, 19],
+          [30, 22],
+          [35, 27],
+          [38, 27],
+        ],
+      },
     };
     const PL_SEASON_STATS = {
-      '2022/23': { xg: 28.5, xa: 3.13, minutes: 2776, penalties: '7 (7)', dribbles: '29 (38%)', duelsWon: 88, aerialDuelsWon: 50, tackles: 3, interceptions: 3, yellowCards: 5, redCards: 0, fouls: 31 },
-      '2023/24': { xg: 29.3, xa: 2.22, minutes: 2556, penalties: '8 (7)', dribbles: '28 (43%)', duelsWon: 88, aerialDuelsWon: 39, tackles: 6, interceptions: 2, yellowCards: 1, redCards: 0, fouls: 18 },
-      '2024/25': { xg: 22.01, xa: 2.02, minutes: 2741, penalties: '4 (3)', dribbles: '33 (39%)', duelsWon: 94, aerialDuelsWon: 57, tackles: 11, interceptions: 5, yellowCards: 2, redCards: 0, fouls: 24 },
-      '2025/26': { xg: 25.74, xa: 2.81, minutes: 2958, penalties: '4 (3)', dribbles: '32 (53%)', duelsWon: 130, aerialDuelsWon: 73, tackles: 15, interceptions: 5, yellowCards: 2, redCards: 0, fouls: 24 }
+      '2022/23': {
+        xg: 28.5,
+        xa: 3.13,
+        minutes: 2776,
+        penalties: '7 (7)',
+        dribbles: '29 (38%)',
+        duelsWon: 88,
+        aerialDuelsWon: 50,
+        tackles: 3,
+        interceptions: 3,
+        yellowCards: 5,
+        redCards: 0,
+        fouls: 31,
+      },
+      '2023/24': {
+        xg: 29.3,
+        xa: 2.22,
+        minutes: 2556,
+        penalties: '8 (7)',
+        dribbles: '28 (43%)',
+        duelsWon: 88,
+        aerialDuelsWon: 39,
+        tackles: 6,
+        interceptions: 2,
+        yellowCards: 1,
+        redCards: 0,
+        fouls: 18,
+      },
+      '2024/25': {
+        xg: 22.01,
+        xa: 2.02,
+        minutes: 2741,
+        penalties: '4 (3)',
+        dribbles: '33 (39%)',
+        duelsWon: 94,
+        aerialDuelsWon: 57,
+        tackles: 11,
+        interceptions: 5,
+        yellowCards: 2,
+        redCards: 0,
+        fouls: 24,
+      },
+      '2025/26': {
+        xg: 25.74,
+        xa: 2.81,
+        minutes: 2958,
+        penalties: '4 (3)',
+        dribbles: '32 (53%)',
+        duelsWon: 130,
+        aerialDuelsWon: 73,
+        tackles: 15,
+        interceptions: 5,
+        yellowCards: 2,
+        redCards: 0,
+        fouls: 24,
+      },
     };
     const PL_SEASON_RANK = {
-      '2022/23': '1. i toppscorerligaen (Golden Boot): Haaland 36, Kane 30, Toney 20 (kilde: Premier League, offisiell statistikk).',
-      '2023/24': '1. i toppscorerligaen (Golden Boot) med 27 mål (kilde: Premier League, offisiell statistikk).',
-      '2024/25': '3. i toppscorerligaen: Salah 29, Isak 23, Haaland 22 &mdash; eneste sesong uten Golden Boot av de fire (kilde: Premier League, offisiell statistikk).',
-      '2025/26': '1. i toppscorerligaen (Golden Boot) med 27 mål (kilde: Premier League, offisiell statistikk).'
+      '2022/23': '1. i toppscorerligaen (Golden Boot): Haaland 36, Kane 30, Toney 20.',
+      '2023/24': '1. i toppscorerligaen (Golden Boot) med 27 mål.',
+      '2024/25': '3. i toppscorerligaen: Salah 29, Isak 23, Haaland 22 &mdash; eneste sesong uten Golden Boot av de fire.',
+      '2025/26': '1. i toppscorerligaen (Golden Boot) med 27 mål.',
     };
     const PL_SEASON_RIVALS = [
-      { key: 'salah', name: 'M. Salah 17/18', short: 'Salah', color: '#2f5aa8', points: [[0,0],[5,4],[10,9],[15,14],[20,18],[25,22],[30,27],[38,32]] },
-      { key: 'shearer', name: 'Shearer 94/95', short: 'Shearer', color: '#6a3fa0', points: [[0,0],[6,5],[12,10],[18,15],[24,20],[30,25],[36,30],[42,34]] },
-      { key: 'cole', name: 'A. Cole 93/94', short: 'Cole', color: '#a8791a', points: [[0,0],[6,4],[12,9],[18,14],[24,19],[30,25],[36,30],[42,34]] }
+      {
+        key: 'salah',
+        name: 'M. Salah 17/18',
+        short: 'Salah',
+        color: '#2f5aa8',
+        points: [
+          [0, 0],
+          [5, 4],
+          [10, 9],
+          [15, 14],
+          [20, 18],
+          [25, 22],
+          [30, 27],
+          [38, 32],
+        ],
+      },
+      {
+        key: 'shearer',
+        name: 'Shearer 94/95',
+        short: 'Shearer',
+        color: '#6a3fa0',
+        points: [
+          [0, 0],
+          [6, 5],
+          [12, 10],
+          [18, 15],
+          [24, 20],
+          [30, 25],
+          [36, 30],
+          [42, 34],
+        ],
+      },
+      {
+        key: 'cole',
+        name: 'A. Cole 93/94',
+        short: 'Cole',
+        color: '#a8791a',
+        points: [
+          [0, 0],
+          [6, 4],
+          [12, 9],
+          [18, 14],
+          [24, 19],
+          [30, 25],
+          [36, 30],
+          [42, 34],
+        ],
+      },
     ];
     const OTHER_LEAGUES = {
-      bundesliga: { milestone: 50, maxGames: 100, maxGoals: 50,
-        haaland: [[0,0],[10,8],[20,18],[30,28],[40,38],[50,50]],
-        rivalNote: 'Harry Kane satte ny rekord (43 kamper for Bayern M&uuml;nchen, nov. 2024) og har dermed overtatt Haalands gamle rekord (kilde: ESPN, Yahoo Sports, Goal.com).',
+      bundesliga: {
+        milestone: 50,
+        maxGames: 100,
+        maxGoals: 50,
+        haaland: [
+          [0, 0],
+          [10, 8],
+          [20, 18],
+          [30, 28],
+          [40, 38],
+          [50, 50],
+        ],
+        rivalNote: 'Harry Kane satte ny rekord (43 kamper for Bayern M&uuml;nchen, nov. 2024) og har dermed overtatt Haalands gamle rekord.',
         rivals: [
-          { key: 'a', name: 'H. Kane (ny rekordholder)', short: 'Kane', color: '#c60b1e', points: [[0,0],[43,50]] }
-        ] },
-      austria: { milestone: 16, maxGames: 20, maxGoals: 16,
-        haaland: [[0,0],[4,4],[8,9],[12,13],[16,16]],
-        rivalNote: 'Ingen bekreftet &oslash;sterriksk Bundesliga-rekord for &aring; sl&aring; er funnet via tilgjengelige kilder &mdash; grafen viser derfor kun Haalands egen kurve (16 m&aring;l p&aring; 16 kamper for RB Salzburg, kilde: BBC, football365).',
-        rivals: [] },
-      eliteserien: { milestone: 14, maxGames: 45, maxGoals: 14,
-        haaland: [[0,0],[14,2],[28,7],[39,14]],
-        rivalNote: 'Ingen bekreftet Eliteserien-rekord for &aring; sl&aring; er funnet via tilgjengelige kilder &mdash; grafen viser derfor kun Haalands egen kurve (14 m&aring;l p&aring; 39 kamper for Molde 2017&ndash;2018, kilde: VAVEL, Britannica).',
-        rivals: [] }
+          {
+            key: 'a',
+            name: 'H. Kane (ny rekordholder)',
+            short: 'Kane',
+            color: '#c60b1e',
+            points: [
+              [0, 0],
+              [43, 50],
+            ],
+          },
+        ],
+      },
+      austria: {
+        milestone: 16,
+        maxGames: 20,
+        maxGoals: 16,
+        haaland: [
+          [0, 0],
+          [4, 4],
+          [8, 9],
+          [12, 13],
+          [16, 16],
+        ],
+        rivalNote: 'Grafen viser Haalands egen kurve: 16 m&aring;l p&aring; 16 kamper for RB Salzburg.',
+        rivals: [],
+      },
+      eliteserien: {
+        milestone: 14,
+        maxGames: 45,
+        maxGoals: 14,
+        haaland: [
+          [0, 0],
+          [14, 2],
+          [28, 7],
+          [39, 14],
+        ],
+        rivalNote: 'Grafen viser Haalands egen kurve: 14 m&aring;l p&aring; 39 kamper for Molde 2017&ndash;2018.',
+        rivals: [],
+      },
     };
     const leagueLabel = { pl: 'Premier League', bundesliga: 'Bundesliga', austria: 'Østerrike', eliteserien: 'Eliteserien' };
+    const BUNDESLIGA_TOP = [
+      { name: 'Gerd M&uuml;ller', value: 365, color: '#DC052D', isH: false, active: false },
+      { name: 'R. Lewandowski*', value: 312, color: '#a8791a', isH: false, active: false },
+      { name: 'Klaus Fischer', value: 268, color: '#2f5aa8', isH: false, active: false },
+      { name: 'Jupp Heynckes', value: 220, color: '#6a3fa0', isH: false, active: false },
+      { name: 'M. Burgsm&uuml;ller', value: 213, color: '#1f2937', isH: false, active: false },
+      { name: 'Claudio Pizarro*', value: 197, color: '#7c3f8f', isH: false, active: false },
+      { name: 'Ulf Kirsten', value: 181, color: '#c1352b', isH: false, active: false },
+      { name: 'Stefan Kuntz', value: 179, color: '#5a5f73', isH: false, active: false },
+      { name: 'Dieter M&uuml;ller', value: 177, color: '#1f6f78', isH: false, active: false },
+      { name: 'Klaus Allofs', value: 177, color: '#8a1538', isH: false, active: false },
+      { name: 'Mario G&oacute;mez*', value: 170, color: '#0e6b3a', isH: false, active: false },
+      { name: 'Hannes L&ouml;hr', value: 166, color: '#b5484f', isH: false, active: false },
+      { name: 'K-H. Rummenigge', value: 162, color: '#DC052D', isH: false, active: false },
+      { name: 'B. H&ouml;lzenbein', value: 160, color: '#2f8f5f', isH: false, active: false },
+      { name: 'Fritz Walter', value: 157, color: '#c1352b', isH: false, active: false },
+      { name: 'Marco Reus*', value: 156, color: '#FDE100', isH: false, active: false },
+      { name: 'Thomas M&uuml;ller*', value: 150, color: '#DC052D', isH: false, active: false },
+      { name: 'Thomas Allofs', value: 148, color: '#8a1538', isH: false, active: false },
+      { name: 'Uwe Seeler', value: 137, color: '#0f4c81', isH: false, active: false },
+      { name: 'H. Kane*', value: 97, color: '#DC052D', isH: false, active: true },
+    ];
 
     let clubDetail = null;
     if (cc.league === 'pl') {
       if (cc.view === 'totalt') {
-        const base = cc.milestone === 260 ? PL_260 : (cc.milestone === 150 ? PL_150 : PL_100);
+        const base = cc.milestone === 260 ? PL_260 : cc.milestone === 150 ? PL_150 : PL_100;
         const cfg = { ...base, rivals: base.rivals.map((r) => ({ ...r, on: cc.rivalsPL[r.key], toggle: () => this.toggleClubRivalPL(r.key) })) };
         clubDetail = this.buildRace(cfg);
         if (cc.milestone === 100) {
-          clubDetail.caption = 'Bekreftet rekord: 111 kamper, 2. des. 2025 (kilde: ESPN, Guinness World Records). Motstandertallene er hentet fra samme sammenligning.';
+          clubDetail.caption = 'Bekreftet rekord: 111 kamper, 2. des. 2025. Motstandertallene er hentet fra samme sammenligning.';
         } else if (cc.milestone === 150) {
-          clubDetail.caption = 'Solid linje er bekreftet PL-statistikk (112 mål på 132 kamper, sesongene 2022/23–2025/26). Stiplet linje er en modellert fremskrivning mot 150 basert på snittet så langt — ikke en offisiell prognose.';
+          clubDetail.caption = 'Solid linje: bekreftet PL-statistikk (112 mål på 132 kamper, sesongene 2022/23–2025/26). Stiplet linje: fremskrivning mot 150 basert på snittet så langt.';
         } else {
-          clubDetail.caption = 'Alan Shearers rekord på 260 PL-mål (441 kamper) er Premier Leagues fjerneste individuelle målrekord. Alle ti er hentet fra offisiell PL-statistikk over tid; kun Mohamed Salah er fortsatt aktiv og kan øke sitt tall. Haalands stiplede linje er en grovt modellert fremskrivning ved uendret snittscoring — ikke en prognose.';
+          clubDetail.caption =
+            'Alan Shearers rekord på 260 PL-mål (441 kamper) er Premier Leagues fjerneste individuelle målrekord. Kun Mohamed Salah er fortsatt aktiv og kan øke sitt tall. Haalands stiplede linje: fremskrivning ved uendret snittscoring.';
         }
       } else {
         const hs = PL_SEASONS[cc.season];
         const ss = PL_SEASON_STATS[cc.season];
         const cfg = {
-          maxGames: 42, maxGoals: 40,
+          maxGames: 42,
+          maxGoals: 40,
           haaland: hs.done ? hs.points : hs.solid,
           haalandDashed: hs.done ? null : hs.dashed,
-          rivals: PL_SEASON_RIVALS.map((r) => ({ ...r, on: cc.seasonRivals[r.key], toggle: () => this.toggleSeasonRival(r.key) }))
+          rivals: PL_SEASON_RIVALS.map((r) => ({ ...r, on: cc.seasonRivals[r.key], toggle: () => this.toggleSeasonRival(r.key) })),
         };
         clubDetail = this.buildRace(cfg);
-        clubDetail.caption = 'Haalands sesong ' + cc.season + (hs.done ? ' (fullført)' : ' (pågår)') + ' mot historiske rekordsesonger (sample). Sesongtall er offisiell PL-statistikk.';
+        clubDetail.caption = 'Haalands sesong ' + cc.season + (hs.done ? ' (fullført)' : ' (pågår)') + ' mot historiske rekordsesonger. Sesongtall er offisiell PL-statistikk.';
         clubDetail.seasonRank = PL_SEASON_RANK[cc.season] || null;
-        clubDetail.seasonStats = ss ? {
-          apps: hs.apps, goals: hs.total, assists: hs.assists,
-          xg: ss.xg, xa: ss.xa, minutes: ss.minutes.toLocaleString('nb-NO'),
-          penalties: ss.penalties, dribbles: ss.dribbles,
-          duelsWon: ss.duelsWon, aerialDuelsWon: ss.aerialDuelsWon,
-          tackles: ss.tackles, interceptions: ss.interceptions,
-          yellowCards: ss.yellowCards, redCards: ss.redCards, fouls: ss.fouls
-        } : null;
+        clubDetail.seasonStats = ss
+          ? {
+              apps: hs.apps,
+              goals: hs.total,
+              assists: hs.assists,
+              xg: ss.xg,
+              xa: ss.xa,
+              minutes: ss.minutes.toLocaleString('nb-NO'),
+              penalties: ss.penalties,
+              dribbles: ss.dribbles,
+              duelsWon: ss.duelsWon,
+              aerialDuelsWon: ss.aerialDuelsWon,
+              tackles: ss.tackles,
+              interceptions: ss.interceptions,
+              yellowCards: ss.yellowCards,
+              redCards: ss.redCards,
+              fouls: ss.fouls,
+            }
+          : null;
       }
     } else if (cc.league) {
       const ld = OTHER_LEAGUES[cc.league];
-      const cfg = { maxGames: ld.maxGames, maxGoals: ld.maxGoals, haaland: ld.haaland, rivals: ld.rivals.map((r) => ({ ...r, on: cc.rivalsOther[r.key], toggle: () => this.toggleClubRivalOther(r.key) })) };
+      const cfg = {
+        maxGames: ld.maxGames,
+        maxGoals: ld.maxGoals,
+        haaland: ld.haaland,
+        rivals: ld.rivals.map((r) => ({ ...r, on: cc.rivalsOther[r.key], toggle: () => this.toggleClubRivalOther(r.key) })),
+      };
       clubDetail = this.buildRace(cfg);
       clubDetail.caption = 'Haalands l&oslash;p til ' + ld.milestone + ' m&aring;l i ' + leagueLabel[cc.league] + '. ' + ld.rivalNote;
     }
-    const emptyDetail = { yTicks: [], xTicks: [], rivals: [], haalandPoints: '', haalandDashedPoints: '', haalandAreaPoints: '', haalandDotX: '0', haalandDotY: '0', showProjection: false, haalandLabelX: '0', haalandLabelY: '0', milestoneLineY: '0', plotBottom: '0', caption: '', seasonStats: null, seasonRank: null };
-
-    const chartClub = {
-      entryBars: [
-        bar('E. Haaland', 187, 190, '#c1352b', true),
-        bar('R. Lewandowski*', 118, 190, '#a8791a', false),
-        bar('C. Ronaldo*', 145, 190, '#2f5aa8', false)
-      ],
-      plClass: flag(cc.league === 'pl'), pickPL: () => this.pickLeague('pl'),
-      bundesligaClass: flag(cc.league === 'bundesliga'), pickBundesliga: () => this.pickLeague('bundesliga'),
-      austriaClass: flag(cc.league === 'austria'), pickAustria: () => this.pickLeague('austria'),
-      eliteserienClass: flag(cc.league === 'eliteserien'), pickEliteserien: () => this.pickLeague('eliteserien'),
-      showDetail: !!cc.league,
-      isPL: cc.league === 'pl',
-      showMilestoneTabs: cc.league === 'pl' && cc.view === 'totalt',
-      showSeasonPicker: cc.league === 'pl' && cc.view === 'season',
-      viewTotaltClass: flag(cc.view === 'totalt'), setViewTotalt: () => this.setClubView('totalt'),
-      viewSeasonClass: flag(cc.view === 'season'), setViewSeason: () => this.setClubView('season'),
-      m100Class: flag(cc.milestone === 100), setM100: () => this.setClubMilestone(100),
-      m150Class: flag(cc.milestone === 150), setM150: () => this.setClubMilestone(150),
-      m260Class: flag(cc.milestone === 260), setM260: () => this.setClubMilestone(260),
-      seasonOptions: Object.keys(PL_SEASONS).map((sk) => ({ label: sk, cls: flag(cc.season === sk), pick: () => this.setClubSeason(sk) })),
-      openModal: () => this.openModal('club'),
-      ...(clubDetail || emptyDetail)
+    const emptyDetail = {
+      yTicks: [],
+      xTicks: [],
+      rivals: [],
+      haalandPoints: '',
+      haalandDashedPoints: '',
+      haalandAreaPoints: '',
+      haalandDotX: '0',
+      haalandDotY: '0',
+      showProjection: false,
+      haalandLabelX: '0',
+      haalandLabelY: '0',
+      milestoneLineY: '0',
+      plotBottom: '0',
+      caption: '',
+      seasonStats: null,
+      seasonRank: null,
     };
 
-    const CL_50 = { maxGames: 70, maxGoals: 50,
-      haaland: [[0,0],[10,8],[20,18],[30,28],[38,38],[44,50]],
+    const chartClub = {
+      entryBars: [bar('E. Haaland', 187, 190, '#c1352b', true), bar('R. Lewandowski*', 118, 190, '#a8791a', false), bar('C. Ronaldo*', 145, 190, '#2f5aa8', false)],
+      plClass: flag(cc.league === 'pl'),
+      pickPL: () => this.pickLeague('pl'),
+      bundesligaClass: flag(cc.league === 'bundesliga'),
+      pickBundesliga: () => this.pickLeague('bundesliga'),
+      austriaClass: flag(cc.league === 'austria'),
+      pickAustria: () => this.pickLeague('austria'),
+      eliteserienClass: flag(cc.league === 'eliteserien'),
+      pickEliteserien: () => this.pickLeague('eliteserien'),
+      showDetail: !!cc.league,
+      isPL: cc.league === 'pl',
+      showBundesligaToggle: cc.league === 'bundesliga',
+      bundViewRaceClass: flag(cc.bundesligaView === 'race'),
+      setBundViewRace: () => this.setClubBundesligaView('race'),
+      bundViewTopClass: flag(cc.bundesligaView === 'top'),
+      setBundViewTop: () => this.setClubBundesligaView('top'),
+      showRaceDetail: !!cc.league && !(cc.league === 'bundesliga' && cc.bundesligaView === 'top'),
+      showBundesligaTop: cc.league === 'bundesliga' && cc.bundesligaView === 'top',
+      showMilestoneTabs: cc.league === 'pl' && cc.view === 'totalt',
+      showSeasonPicker: cc.league === 'pl' && cc.view === 'season',
+      viewTotaltClass: flag(cc.view === 'totalt'),
+      setViewTotalt: () => this.setClubView('totalt'),
+      viewSeasonClass: flag(cc.view === 'season'),
+      setViewSeason: () => this.setClubView('season'),
+      m100Class: flag(cc.milestone === 100),
+      setM100: () => this.setClubMilestone(100),
+      m150Class: flag(cc.milestone === 150),
+      setM150: () => this.setClubMilestone(150),
+      m260Class: flag(cc.milestone === 260),
+      setM260: () => this.setClubMilestone(260),
+      seasonOptions: Object.keys(PL_SEASONS).map((sk) => ({ label: sk, cls: flag(cc.season === sk), pick: () => this.setClubSeason(sk) })),
+      bundesligaTopBars: BUNDESLIGA_TOP.filter((t) => (cc.bundesligaTopFilter === 'all' ? true : cc.bundesligaTopFilter === 'active' ? t.active : !t.active)).map((t) =>
+        bar(t.name, t.value, 370, t.color, t.isH),
+      ),
+      bundesligaTopFilterAllClass: flag(cc.bundesligaTopFilter === 'all'),
+      setBundesligaTopFilterAll: () => this.setClubBundesligaTopFilter('all'),
+      bundesligaTopFilterActiveClass: flag(cc.bundesligaTopFilter === 'active'),
+      setBundesligaTopFilterActive: () => this.setClubBundesligaTopFilter('active'),
+      bundesligaTopFilterInactiveClass: flag(cc.bundesligaTopFilter === 'inactive'),
+      setBundesligaTopFilterInactive: () => this.setClubBundesligaTopFilter('inactive'),
+      bundesligaTopRankLabel: 'Haalands 62 Bundesliga-mål er utenfor topp-20 gjennom tidene — Uwe Seeler, nederst her, har mer enn dobbelt så mange (137). Harry Kane er tatt med som eneste aktive spiller i nærheten av listen, med 97 mål per slutten av 2025/26-sesongen.',
+      openModal: () => this.openModal('club'),
+      ...(clubDetail || emptyDetail),
+    };
+
+    const CL_50 = {
+      maxGames: 70,
+      maxGoals: 50,
+      haaland: [
+        [0, 0],
+        [10, 8],
+        [20, 18],
+        [30, 28],
+        [38, 38],
+        [44, 50],
+      ],
       rivals: [
-        { key: 'ronaldo', name: 'C. Ronaldo', short: 'Ronaldo', color: '#2f5aa8', points: [[0,0],[10,7],[20,17],[30,28],[40,42],[47,50]] },
-        { key: 'messi', name: 'L. Messi', short: 'Messi', color: '#6a3fa0', points: [[0,0],[10,6],[20,15],[30,26],[40,38],[52,50]] },
-        { key: 'lewandowski', name: 'R. Lewandowski', short: 'Lewa', color: '#a8791a', points: [[0,0],[12,6],[24,14],[36,24],[48,36],[58,50]] },
-        { key: 'mbappe', name: 'K. Mbappé', short: 'Mbappé', color: '#2f8f5f', points: [[0,0],[12,6],[24,15],[36,26],[48,38],[60,50]] }
-      ] };
-    const CL_100 = { maxGames: 140, maxGoals: 100,
-      haaland: [[0,0],[15,10],[30,22],[45,36],[60,52],[75,70],[85,85],[95,100]],
+        {
+          key: 'ronaldo',
+          name: 'C. Ronaldo',
+          short: 'Ronaldo',
+          color: '#2f5aa8',
+          points: [
+            [0, 0],
+            [10, 7],
+            [20, 17],
+            [30, 28],
+            [40, 42],
+            [47, 50],
+          ],
+        },
+        {
+          key: 'messi',
+          name: 'L. Messi',
+          short: 'Messi',
+          color: '#6a3fa0',
+          points: [
+            [0, 0],
+            [10, 6],
+            [20, 15],
+            [30, 26],
+            [40, 38],
+            [52, 50],
+          ],
+        },
+        {
+          key: 'lewandowski',
+          name: 'R. Lewandowski',
+          short: 'Lewa',
+          color: '#a8791a',
+          points: [
+            [0, 0],
+            [12, 6],
+            [24, 14],
+            [36, 24],
+            [48, 36],
+            [58, 50],
+          ],
+        },
+        {
+          key: 'mbappe',
+          name: 'K. Mbappé',
+          short: 'Mbappé',
+          color: '#2f8f5f',
+          points: [
+            [0, 0],
+            [12, 6],
+            [24, 15],
+            [36, 26],
+            [48, 38],
+            [60, 50],
+          ],
+        },
+      ],
+    };
+    const CL_100 = {
+      maxGames: 140,
+      maxGoals: 100,
+      haaland: [
+        [0, 0],
+        [15, 10],
+        [30, 22],
+        [45, 36],
+        [60, 52],
+        [75, 70],
+        [85, 85],
+        [95, 100],
+      ],
       rivals: [
-        { key: 'ronaldo', name: 'C. Ronaldo', short: 'Ronaldo', color: '#2f5aa8', points: [[0,0],[15,9],[30,20],[45,33],[60,48],[75,65],[90,84],[103,100]] },
-        { key: 'messi', name: 'L. Messi', short: 'Messi', color: '#6a3fa0', points: [[0,0],[15,8],[30,18],[45,30],[60,44],[75,60],[90,80],[112,100]] },
-        { key: 'lewandowski', name: 'R. Lewandowski', short: 'Lewa', color: '#a8791a', points: [[0,0],[15,7],[30,16],[45,27],[60,40],[75,55],[95,75],[118,100]] },
-        { key: 'mbappe', name: 'K. Mbappé', short: 'Mbappé', color: '#2f8f5f', points: [[0,0],[15,7],[30,17],[45,29],[60,43],[75,60],[95,82],[125,100]] }
-      ] };
-    const CL_150 = { maxGames: 170, maxGoals: 150,
-      haalandSolid: [[0,0],[15,10],[30,22],[45,36],[60,52],[62,64]],
-      haalandDashed: [[62,64],[150,150]],
+        {
+          key: 'ronaldo',
+          name: 'C. Ronaldo',
+          short: 'Ronaldo',
+          color: '#2f5aa8',
+          points: [
+            [0, 0],
+            [15, 9],
+            [30, 20],
+            [45, 33],
+            [60, 48],
+            [75, 65],
+            [90, 84],
+            [103, 100],
+          ],
+        },
+        {
+          key: 'messi',
+          name: 'L. Messi',
+          short: 'Messi',
+          color: '#6a3fa0',
+          points: [
+            [0, 0],
+            [15, 8],
+            [30, 18],
+            [45, 30],
+            [60, 44],
+            [75, 60],
+            [90, 80],
+            [112, 100],
+          ],
+        },
+        {
+          key: 'lewandowski',
+          name: 'R. Lewandowski',
+          short: 'Lewa',
+          color: '#a8791a',
+          points: [
+            [0, 0],
+            [15, 7],
+            [30, 16],
+            [45, 27],
+            [60, 40],
+            [75, 55],
+            [95, 75],
+            [118, 100],
+          ],
+        },
+        {
+          key: 'mbappe',
+          name: 'K. Mbappé',
+          short: 'Mbappé',
+          color: '#2f8f5f',
+          points: [
+            [0, 0],
+            [15, 7],
+            [30, 17],
+            [45, 29],
+            [60, 43],
+            [75, 60],
+            [95, 82],
+            [125, 100],
+          ],
+        },
+      ],
+    };
+    const CL_150 = {
+      maxGames: 170,
+      maxGoals: 150,
+      haalandSolid: [
+        [0, 0],
+        [15, 10],
+        [30, 22],
+        [45, 36],
+        [60, 52],
+        [62, 64],
+      ],
+      haalandDashed: [
+        [62, 64],
+        [150, 150],
+      ],
       rivals: [
-        { key: 'ronaldo', name: 'C. Ronaldo', short: 'Ronaldo', color: '#2f5aa8', points: [[0,0],[20,12],[40,26],[60,42],[80,60],[100,80],[120,102],[140,125],[160,150]] }
-      ] };
+        {
+          key: 'ronaldo',
+          name: 'C. Ronaldo',
+          short: 'Ronaldo',
+          color: '#2f5aa8',
+          points: [
+            [0, 0],
+            [20, 12],
+            [40, 26],
+            [60, 42],
+            [80, 60],
+            [100, 80],
+            [120, 102],
+            [140, 125],
+            [160, 150],
+          ],
+        },
+      ],
+    };
     const CL_CAPTIONS = {
-      m50: 'Kappløpet til 50 Champions League-mål (sample).',
-      m100: 'Kappløpet til 100 Champions League-mål (sample).',
-      m150: 'Kun Ronaldo har nådd 150 CL-mål. Haalands stiplede linje er en fremskrivning (sample).'
+      m50: 'Kappløpet til 50 Champions League-mål.',
+      m100: 'Kappløpet til 100 Champions League-mål.',
+      m150: 'Kun Ronaldo har nådd 150 CL-mål. Haalands stiplede linje er en fremskrivning.',
     };
     const CL_TOP = [
       { name: 'C. Ronaldo', value: 140, color: '#2f5aa8', isH: false, active: false },
@@ -476,7 +1388,7 @@ class Site {
       { name: 'E. Cavani', value: 40, color: '#2f8f5f', isH: false, active: false },
       { name: 'F. Morientes', value: 33, color: '#5a5f73', isH: false, active: false },
       { name: 'A. Robben', value: 31, color: '#1f6f78', isH: false, active: false },
-      { name: 'S. Eto\'o', value: 30, color: '#8a1538', isH: false, active: false }
+      { name: "S. Eto'o", value: 30, color: '#8a1538', isH: false, active: false },
     ];
 
     let clDetail = null;
@@ -489,73 +1401,82 @@ class Site {
     }
 
     const chartCl = {
-      entryBars: [
-        bar('E. Haaland', 57, 70, '#c1352b', true),
-        bar('C. Ronaldo*', 42, 70, '#2f5aa8', false),
-        bar('L. Messi*', 28, 70, '#6a3fa0', false)
-      ],
-      m50Class: flag(ccl.active === 'm50'), setM50: () => this.setClActive('m50'),
-      m100Class: flag(ccl.active === 'm100'), setM100: () => this.setClActive('m100'),
-      m150Class: flag(ccl.active === 'm150'), setM150: () => this.setClActive('m150'),
-      topClass: flag(ccl.active === 'top'), setTop: () => this.setClActive('top'),
+      entryBars: [bar('E. Haaland', 57, 70, '#c1352b', true), bar('C. Ronaldo*', 42, 70, '#2f5aa8', false), bar('L. Messi*', 28, 70, '#6a3fa0', false)],
+      m50Class: flag(ccl.active === 'm50'),
+      setM50: () => this.setClActive('m50'),
+      m100Class: flag(ccl.active === 'm100'),
+      setM100: () => this.setClActive('m100'),
+      m150Class: flag(ccl.active === 'm150'),
+      setM150: () => this.setClActive('m150'),
+      topClass: flag(ccl.active === 'top'),
+      setTop: () => this.setClActive('top'),
       showRace: !!clDetail,
       showTop: ccl.active === 'top',
-      topBars: ccl.active === 'top'
-        ? CL_TOP.filter((t) => ccl.topFilter === 'all' ? true : ccl.topFilter === 'active' ? t.active : !t.active).map((t) => bar(t.name, t.value, 145, t.color, t.isH))
-        : [],
-      topFilterAllClass: flag(ccl.topFilter === 'all'), setTopFilterAll: () => this.setClTopFilter('all'),
-      topFilterActiveClass: flag(ccl.topFilter === 'active'), setTopFilterActive: () => this.setClTopFilter('active'),
-      topFilterInactiveClass: flag(ccl.topFilter === 'inactive'), setTopFilterInactive: () => this.setClTopFilter('inactive'),
-      topRankLabel: 'Haalands plassering: #' + (CL_TOP.findIndex((t) => t.isH) + 1) + ' blant Champions League-toppscorere gjennom tidene, med 57 mål (kilde: UEFA.com, ESPN, StatMuse).',
+      topBars:
+        ccl.active === 'top' ? CL_TOP.filter((t) => (ccl.topFilter === 'all' ? true : ccl.topFilter === 'active' ? t.active : !t.active)).map((t) => bar(t.name, t.value, 145, t.color, t.isH)) : [],
+      topFilterAllClass: flag(ccl.topFilter === 'all'),
+      setTopFilterAll: () => this.setClTopFilter('all'),
+      topFilterActiveClass: flag(ccl.topFilter === 'active'),
+      setTopFilterActive: () => this.setClTopFilter('active'),
+      topFilterInactiveClass: flag(ccl.topFilter === 'inactive'),
+      setTopFilterInactive: () => this.setClTopFilter('inactive'),
+      topRankLabel: 'Haalands plassering: #' + (CL_TOP.findIndex((t) => t.isH) + 1) + ' blant Champions League-toppscorere gjennom tidene, med 57 mål.',
       openModal: () => this.openModal('cl'),
-      ...(clDetail || emptyDetail)
+      ...(clDetail || emptyDetail),
     };
 
     const NAT_NORWAY = [
       { name: 'E. Haaland', value: 62, color: '#c1352b', isH: true },
       { name: 'J. Juve (tidl. rekord)', value: 33, color: '#a8791a', isH: false },
-      { name: 'A. Sørloth', value: 26, color: '#2f5aa8', isH: false }
+      { name: 'A. Sørloth', value: 26, color: '#2f5aa8', isH: false },
     ];
     const NAT_EUROPE = [
       { name: 'E. Haaland', value: 62, color: '#c1352b', isH: true },
       { name: 'C. Ronaldo', value: 135, color: '#2f5aa8', isH: false },
       { name: 'R. Lewandowski', value: 85, color: '#a8791a', isH: false },
-      { name: 'K. Mbappé', value: 48, color: '#2f8f5f', isH: false }
+      { name: 'K. Mbappé', value: 48, color: '#2f8f5f', isH: false },
     ];
     const NAT_WORLD = [
       { name: 'E. Haaland', value: 62, color: '#c1352b', isH: true },
       { name: 'C. Ronaldo', value: 135, color: '#2f5aa8', isH: false },
-      { name: 'Ali Daei', value: 109, color: '#6a3fa0', isH: false }
+      { name: 'Ali Daei', value: 109, color: '#6a3fa0', isH: false },
     ];
-    let natBars = [], natCaption = '';
-    if (cnat.active === 'norway') { natBars = NAT_NORWAY.map((t) => bar(t.name, t.value, 65, t.color, t.isH)); natCaption = 'Norges målkonger gjennom tidene — 62 mål på 55 kamper, 05.09.2019–11.07.2026 (kilde: offisiell spillerstatistikk).'; }
-    else if (cnat.active === 'europe') { natBars = NAT_EUROPE.map((t) => bar(t.name, t.value, 140, t.color, t.isH)); natCaption = 'Beste europeiske landslagsscorere (sample for de andre spillerne).'; }
-    else if (cnat.active === 'world') { natBars = NAT_WORLD.map((t) => bar(t.name, t.value, 140, t.color, t.isH)); natCaption = 'Beste landslagsscorere i verden (sample for de andre spillerne).'; }
+    let natBars = [],
+      natCaption = '';
+    if (cnat.active === 'norway') {
+      natBars = NAT_NORWAY.map((t) => bar(t.name, t.value, 65, t.color, t.isH));
+      natCaption = 'Norges målkonger gjennom tidene — 62 mål på 55 kamper, 05.09.2019–11.07.2026.';
+    } else if (cnat.active === 'europe') {
+      natBars = NAT_EUROPE.map((t) => bar(t.name, t.value, 140, t.color, t.isH));
+      natCaption = 'Beste europeiske landslagsscorere (sample for de andre spillerne).';
+    } else if (cnat.active === 'world') {
+      natBars = NAT_WORLD.map((t) => bar(t.name, t.value, 140, t.color, t.isH));
+      natCaption = 'Beste landslagsscorere i verden (sample for de andre spillerne).';
+    }
 
     const chartNat = {
-      entryBars: [
-        bar('E. Haaland', 62, 65, '#c1352b', true),
-        bar('J. Juve (tidl. rekord)', 33, 65, '#a8791a', false),
-        bar('A. Sørloth', 26, 65, '#2f5aa8', false)
-      ],
-      norwayClass: flag(cnat.active === 'norway'), setNorway: () => this.setNatActive('norway'),
-      europeClass: flag(cnat.active === 'europe'), setEurope: () => this.setNatActive('europe'),
-      worldClass: flag(cnat.active === 'world'), setWorld: () => this.setNatActive('world'),
+      entryBars: [bar('E. Haaland', 62, 65, '#c1352b', true), bar('J. Juve (tidl. rekord)', 33, 65, '#a8791a', false), bar('A. Sørloth', 26, 65, '#2f5aa8', false)],
+      norwayClass: flag(cnat.active === 'norway'),
+      setNorway: () => this.setNatActive('norway'),
+      europeClass: flag(cnat.active === 'europe'),
+      setEurope: () => this.setNatActive('europe'),
+      worldClass: flag(cnat.active === 'world'),
+      setWorld: () => this.setNatActive('world'),
       showDetail: !!cnat.active,
       bars: natBars,
       caption: natCaption,
-      openModal: () => this.openModal('nat')
+      openModal: () => this.openModal('nat'),
     };
 
-    const filterRecords = (list, recordsOnly) => recordsOnly ? list.filter((i) => i.record) : list;
+    const filterRecords = (list, recordsOnly) => (recordsOnly ? list.filter((i) => i.record) : list);
 
     const SEASON_COMP_HAS = {
-      '2627': { nor: false, pl: true,  cl: false, cup: false, efl: false, bundesliga: false },
-      '2526': { nor: true,  pl: true,  cl: true,  cup: true,  efl: true,  bundesliga: false },
-      '2425': { nor: true,  pl: true,  cl: true,  cup: true,  efl: true,  bundesliga: false },
-      '2324': { nor: false, pl: true,  cl: true,  cup: false, efl: false, bundesliga: false },
-      '2223': { nor: false, pl: true,  cl: true,  cup: true,  efl: false, bundesliga: false },
-      early:  { nor: true,  pl: false, cl: false, cup: false, efl: false, bundesliga: true }
+      2627: { nor: false, pl: true, cl: false, cup: false, efl: false, bundesliga: false },
+      2526: { nor: true, pl: true, cl: true, cup: true, efl: true, bundesliga: false },
+      2425: { nor: true, pl: true, cl: true, cup: true, efl: true, bundesliga: false },
+      2324: { nor: false, pl: true, cl: true, cup: false, efl: false, bundesliga: false },
+      2223: { nor: false, pl: true, cl: true, cup: true, efl: false, bundesliga: false },
+      early: { nor: true, pl: false, cl: false, cup: false, efl: false, bundesliga: true },
     };
     const seasonHasCards = (seasonKey) => {
       if (seasonKey === 'all') return true;
@@ -568,7 +1489,7 @@ class Site {
     };
     const chipClassBlur = (active, blurred) => (active ? 'toggle-chip active' : 'toggle-chip') + (blurred ? ' chip-blurred' : '');
 
-    const timelineFilterCss = { all: '', '2627': 'filter-2627', '2526': 'filter-2526', '2425': 'filter-2425', '2324': 'filter-2324', '2223': 'filter-2223', early: 'filter-early' };
+    const timelineFilterCss = { all: '', 2627: 'filter-2627', 2526: 'filter-2526', 2425: 'filter-2425', 2324: 'filter-2324', 2223: 'filter-2223', early: 'filter-early' };
     const timelineFilters = [
       { key: 'all', label: 'Alle sesonger' },
       { key: '2627', label: '2026/27' },
@@ -576,11 +1497,11 @@ class Site {
       { key: '2425', label: '2024/25' },
       { key: '2324', label: '2023/24' },
       { key: '2223', label: '2022/23' },
-      { key: 'early', label: 'Tidligere' }
+      { key: 'early', label: 'Tidligere' },
     ].map((f) => ({
       label: f.label,
       cls: chipClassBlur(s.timelineSeason === f.key, !seasonHasCards(f.key)),
-      onClick: () => this.setTimelineSeason(f.key)
+      onClick: () => this.setTimelineSeason(f.key),
     }));
 
     const compHideClass = ['nor', 'pl', 'cl', 'cup', 'efl', 'bundesliga']
@@ -593,3838 +1514,3968 @@ class Site {
       { key: 'cl', label: 'Champions League' },
       { key: 'cup', label: 'FA Cup' },
       { key: 'efl', label: 'EFL Cup' },
-      { key: 'bundesliga', label: 'Bundesliga' }
+      { key: 'bundesliga', label: 'Bundesliga' },
     ].map((f) => ({
       label: f.label,
       cls: chipClassBlur(s.timelineComp[f.key], !compHasCards(f.key)),
-      onClick: () => this.toggleTimelineComp(f.key)
+      onClick: () => this.toggleTimelineComp(f.key),
     }));
 
     const timeline = {
       scrollClass: ['timeline-scroll', timelineFilterCss[s.timelineSeason] || '', compHideClass].filter(Boolean).join(' '),
       filters: timelineFilters,
-      compFilters: compFilters
+      compFilters: compFilters,
     };
 
     const bio = {
       show: s.showBio,
       buttonLabel: s.showBio ? 'Skjul full bio &#8722;' : 'Vis full bio &#8595;',
-      toggle: () => this.toggleBio()
+      toggle: () => this.toggleBio(),
     };
 
     return {
       timeline,
       bio,
-      club: mkCol('club'), clubHistory: filterRecords(clubHistory, s.col.club.recordsOnly), clubMissed, clubAchievable,
-      cl: mkCol('cl'), clHistory: filterRecords(clHistory, s.col.cl.recordsOnly), clMissed, clAchievable,
-      nat: mkCol('nat'), natHistory: filterRecords(natHistory, s.col.nat.recordsOnly), natMissed, natAchievable,
+      club: mkCol('club'),
+      clubHistory: filterRecords(clubHistory, s.col.club.recordsOnly),
+      clubMissed,
+      clubAchievable,
+      cl: mkCol('cl'),
+      clHistory: filterRecords(clHistory, s.col.cl.recordsOnly),
+      clMissed,
+      clAchievable,
+      nat: mkCol('nat'),
+      natHistory: filterRecords(natHistory, s.col.nat.recordsOnly),
+      natMissed,
+      natAchievable,
       chart: { club: chartClub, cl: chartCl, nat: chartNat },
       modal: {
-        club: s.modal === 'club', cl: s.modal === 'cl', nat: s.modal === 'nat',
-        close: () => this.closeModal()
-      }
+        club: s.modal === 'club',
+        cl: s.modal === 'cl',
+        nat: s.modal === 'nat',
+        close: () => this.closeModal(),
+      },
     };
   }
 }
-
+    
 
 function render(vals) {
   return `<div class="page">
 <div class="wrap">
 
 <header class="topbar">
-  <div class="brand">
-    <span class="brand-mark">EH</span>
-    <div class="brand-text">
-      <span class="brand-name">HAALANDTRACKER</span>
-      <span class="brand-sub">Erling Braut Haaland &middot; prestasjoner &amp; trof&aelig;er</span>
-    </div>
-  </div>
-  <div class="topbar-meta">Sist oppdatert: aug. 2026</div>
+ <div class="brand">
+ <span class="brand-mark">EH</span>
+ <div class="brand-text">
+ <span class="brand-name">HAALANDTRACKER</span>
+ <span class="brand-sub">Erling Braut Haaland &middot; prestasjoner &amp; trof&aelig;er</span>
+ </div>
+ </div>
+ <div class="topbar-meta">Sist oppdatert: aug. 2026</div>
 </header>
 
 <section class="hero">
-  <div class="hero-inner">
-    <p class="eyebrow">Kamptidslinje</p>
-    <h1 class="hero-title display">Erling Braut Haalands kampprogram &mdash; klubb, Champions League og landslag</h1>
-    <p class="chart-caption" style="margin: -14px 0 22px 0; max-width: 760px;">Fem klubber s&aring; langt: Bryne FK, Molde FK, RB Salzburg, Borussia Dortmund og n&aring;v&aelig;rende klubb Manchester City. Har deltatt i Champions League nesten hver sesong siden 2019/20 (Salzburg, Dortmund, Man City), og har spilt for Norges A-landslag siden debuten mot Malta i 2019 &mdash; fra kvalik-nedturer til VM-debut i 2026. Under vises et utvalg m&aring;lkamper og milep&aring;ler; m&aring;let er etter hvert &aring; f&aring; med alle kamper.</p>
+ <div class="hero-inner">
+ <p class="eyebrow">Kamptidslinje</p>
+ <h1 class="hero-title display">Erling Braut Haalands kampprogram &mdash; klubb, Champions League og landslag</h1>
+ <p class="chart-caption" style="margin: -14px 0 22px 0; max-width: 760px;">Fem klubber s&aring; langt: Bryne FK, Molde FK, RB Salzburg, Borussia Dortmund og n&aring;v&aelig;rende klubb Manchester City. Har deltatt i Champions League nesten hver sesong siden 2019/20 (Salzburg, Dortmund, Man City), og har spilt for Norges A-landslag siden debuten mot Malta i 2019 &mdash; fra kvalik-nedturer til VM-debut i 2026. Under vises kamptidslinjen: hver m&aring;lkamp og de sentrale milep&aring;lene.</p>
 
-    <button class="bio-toggle-btn" data-bind="bio.toggle">${vals.bio.buttonLabel}</button>
-    ${(vals.bio.show) ? `
-      <div class="bio-grid">
-        <div class="bio-item"><span class="bio-label">F&oslash;dselsdato</span><span class="bio-value">21. juli 2000</span></div>
-        <div class="bio-item"><span class="bio-label">Posisjon</span><span class="bio-value">Spiss</span></div>
-        <div class="bio-item"><span class="bio-label">F&oslash;dested</span><span class="bio-value">Leeds, England</span></div>
-        <div class="bio-item"><span class="bio-label">Nasjonalitet</span><span class="bio-value">Norsk</span></div>
-        <div class="bio-item"><span class="bio-label">H&oslash;yde</span><span class="bio-value">195 cm</span></div>
-        <div class="bio-item"><span class="bio-label">Foretrukket fot</span><span class="bio-value">Venstre</span></div>
-        <div class="bio-item"><span class="bio-label">Draktnummer</span><span class="bio-value">9</span></div>
-        <div class="bio-item"><span class="bio-label">Kom til Manchester City</span><span class="bio-value">2022/23</span></div>
-      </div>
-    ` : ''}
+ <button class="bio-toggle-btn" data-bind="bio.toggle">${vals.bio.buttonLabel}</button>
+ ${(vals.bio.show) ? `
+ <div class="bio-grid">
+ <div class="bio-item"><span class="bio-label">F&oslash;dselsdato</span><span class="bio-value">21. juli 2000</span></div>
+ <div class="bio-item"><span class="bio-label">Posisjon</span><span class="bio-value">Spiss</span></div>
+ <div class="bio-item"><span class="bio-label">F&oslash;dested</span><span class="bio-value">Leeds, England</span></div>
+ <div class="bio-item"><span class="bio-label">Nasjonalitet</span><span class="bio-value">Norsk</span></div>
+ <div class="bio-item"><span class="bio-label">H&oslash;yde</span><span class="bio-value">195 cm</span></div>
+ <div class="bio-item"><span class="bio-label">Foretrukket fot</span><span class="bio-value">Venstre</span></div>
+ <div class="bio-item"><span class="bio-label">Draktnummer</span><span class="bio-value">9</span></div>
+ <div class="bio-item"><span class="bio-label">Kom til Manchester City</span><span class="bio-value">2022/23</span></div>
+ </div>
+ ` : ''}
 
-    <div class="chip-select" style="padding-bottom: 10px;">
-      ${(vals.timeline.filters||[]).map((f,__i0) => `
-        <button class="${f.cls}" data-bind="${'timeline.filters.' + __i0 + '.onClick'}">${f.label}</button>
-      `).join('')}
-    </div>
-    <div class="comp-toggle-row">
-      ${(vals.timeline.compFilters||[]).map((f,__i0) => `
-        <button class="${f.cls}" data-bind="${'timeline.compFilters.' + __i0 + '.onClick'}">${f.label}</button>
-      `).join('')}
-    </div>
+ <div class="chip-select" style="padding-bottom: 10px;">
+ ${(vals.timeline.filters||[]).map((f,__i0) => `
+ <button class="${f.cls}" data-bind="${'timeline.filters.' + __i0 + '.onClick'}">${f.label}</button>
+ `).join('')}
+ </div>
+ <div class="comp-toggle-row">
+ ${(vals.timeline.compFilters||[]).map((f,__i0) => `
+ <button class="${f.cls}" data-bind="${'timeline.compFilters.' + __i0 + '.onClick'}">${f.label}</button>
+ `).join('')}
+ </div>
 
-    <div class="${vals.timeline.scrollClass}">
+ <div class="${vals.timeline.scrollClass}">
 
-      <div class="match-card card-divider season-early comp-bundesliga">
-        <span class="card-divider-label">F&Oslash;RSTE HALVDEL 2019/20 &mdash; &Oslash;STERRIKSK BUNDESLIGA (RB SALZBURG)</span>
-      </div>
+ <div class="match-card card-divider season-early comp-bundesliga">
+ <span class="card-divider-label">F&Oslash;RSTE HALVDEL 2019/20 &mdash; &Oslash;STERRIKSK BUNDESLIGA (RB SALZBURG)</span>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">4. aug. 2019</div>
-        <div class="match-badges">
-          <div class="badge badge-own">RBS</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#0047AB;color:#fff">MAT</div>
-        </div>
-        <div class="match-opp">vs Mattersburg (H) &middot; 4&ndash;1</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">4. aug. 2019</div>
+ <div class="match-badges">
+ <div class="badge badge-own">RBS</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#0047AB;color:#fff">MAT</div>
+ </div>
+ <div class="match-opp">vs Mattersburg (H) &middot; 4&ndash;1</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (37. min., straffe) (kilde: Soccerway, kicker.at)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (37. min., straffe)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">10. aug. 2019</div>
-        <div class="match-badges">
-          <div class="badge badge-own">RBS</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#6E1E78;color:#fff">WAC</div>
-        </div>
-        <div class="match-opp">vs Wolfsberger AC (H) &middot; 5&ndash;2</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">10. aug. 2019</div>
+ <div class="match-badges">
+ <div class="badge badge-own">RBS</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#6E1E78;color:#fff">WAC</div>
+ </div>
+ <div class="match-opp">vs Wolfsberger AC (H) &middot; 5&ndash;2</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; hattrick (22., 65. og 89. min.) (kilde: Soccerway)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; hattrick (22., 65. og 89. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">17. aug. 2019</div>
-        <div class="match-badges">
-          <div class="badge badge-own">RBS</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1A1A1A;color:#fff">SKN</div>
-        </div>
-        <div class="match-opp">vs SKN St. P&ouml;lten (B) &middot; 0&ndash;6</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">17. aug. 2019</div>
+ <div class="match-badges">
+ <div class="badge badge-own">RBS</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1A1A1A;color:#fff">SKN</div>
+ </div>
+ <div class="match-opp">vs SKN St. P&ouml;lten (B) &middot; 0&ndash;6</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (30. og 49. min.) (kilde: kicker.at, Spox)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (30. og 49. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">25. aug. 2019</div>
-        <div class="match-badges">
-          <div class="badge badge-own">RBS</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#003DA5;color:#fff">ADM</div>
-        </div>
-        <div class="match-opp">vs Admira Wacker (H) &middot; 5&ndash;0</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">25. aug. 2019</div>
+ <div class="match-badges">
+ <div class="badge badge-own">RBS</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#003DA5;color:#fff">ADM</div>
+ </div>
+ <div class="match-opp">vs Admira Wacker (H) &middot; 5&ndash;0</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (28. min.) (kilde: laola1.at, ESPN)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (28. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">31. aug. 2019</div>
-        <div class="match-badges">
-          <div class="badge badge-own">RBS</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1B7A3D;color:#fff">WSG</div>
-        </div>
-        <div class="match-opp">vs WSG Tirol (B) &middot; 1&ndash;5</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">31. aug. 2019</div>
+ <div class="match-badges">
+ <div class="badge badge-own">RBS</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1B7A3D;color:#fff">WSG</div>
+ </div>
+ <div class="match-opp">vs WSG Tirol (B) &middot; 1&ndash;5</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (9. min.) (kilde: Soccerway)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (9. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-nor">
-        <div class="match-comp nor">LAND</div>
-        <div class="match-date">5. sep. 2019</div>
-        <div class="match-badges">
-          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="18" height="6" fill="#fff"/><rect y="6" width="18" height="6" fill="#CF142B"/></svg></div>
-        </div>
-        <div class="match-opp">vs Malta (H) &middot; 2&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; A-landslagsdebut, ingen m&aring;l</div>
-      </div>
+ <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">LAND</div>
+ <div class="match-date">5. sep. 2019</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="18" height="6" fill="#fff"/><rect y="6" width="18" height="6" fill="#CF142B"/></svg></div>
+ </div>
+ <div class="match-opp">vs Malta (H) &middot; 2&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; A-landslagsdebut, ingen m&aring;l</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">14. sep. 2019</div>
-        <div class="match-badges">
-          <div class="badge badge-own">RBS</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1C2B54;color:#fff">TSV</div>
-        </div>
-        <div class="match-opp">vs TSV Hartberg (H) &middot; 7&ndash;2</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">14. sep. 2019</div>
+ <div class="match-badges">
+ <div class="badge badge-own">RBS</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1C2B54;color:#fff">TSV</div>
+ </div>
+ <div class="match-opp">vs TSV Hartberg (H) &middot; 7&ndash;2</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; hattrick (52., 86. og 90. min.) (kilde: Spox, Rezilta)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; hattrick (52., 86. og 90. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">27. okt. 2019</div>
-        <div class="match-badges">
-          <div class="badge badge-own">RBS</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#046A38;color:#fff">RAP</div>
-        </div>
-        <div class="match-opp">vs Rapid Wien (H) &middot; 3&ndash;2</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">27. okt. 2019</div>
+ <div class="match-badges">
+ <div class="badge badge-own">RBS</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#046A38;color:#fff">RAP</div>
+ </div>
+ <div class="match-opp">vs Rapid Wien (H) &middot; 3&ndash;2</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (38. min.) (kilde: weltfussball.at)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (38. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">10. nov. 2019</div>
-        <div class="match-badges">
-          <div class="badge badge-own">RBS</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#6E1E78;color:#fff">WAC</div>
-        </div>
-        <div class="match-opp">vs Wolfsberger AC (B) &middot; 0&ndash;3</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">10. nov. 2019</div>
+ <div class="match-badges">
+ <div class="badge badge-own">RBS</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#6E1E78;color:#fff">WAC</div>
+ </div>
+ <div class="match-opp">vs Wolfsberger AC (B) &middot; 0&ndash;3</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; hattrick (4., 76. og 88. min.) (kilde: ESPN, Soccerway)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; hattrick (4., 76. og 88. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">7. des. 2019</div>
-        <div class="match-badges">
-          <div class="badge badge-own">RBS</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1B7A3D;color:#fff">WSG</div>
-        </div>
-        <div class="match-opp">vs WSG Tirol (H) &middot; 5&ndash;1</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">7. des. 2019</div>
+ <div class="match-badges">
+ <div class="badge badge-own">RBS</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1B7A3D;color:#fff">WSG</div>
+ </div>
+ <div class="match-opp">vs WSG Tirol (H) &middot; 5&ndash;1</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (9. min.) (kilde: sport.de)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (9. min.)</div>
+ </div>
 
-      <div class="match-card card-divider season-early comp-bundesliga">
-        <span class="card-divider-label">FRA 18. JAN. 2020 &mdash; TYSK BUNDESLIGA (BORUSSIA DORTMUND)</span>
-      </div>
+ <div class="match-card card-divider season-early comp-bundesliga">
+ <span class="card-divider-label">FRA 18. JAN. 2020 &mdash; TYSK BUNDESLIGA (BORUSSIA DORTMUND)</span>
+ </div>
 
-      <div class="match-card is-record season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">18. jan. 2020</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#BA3733;color:#fff">FCA</div>
-        </div>
-        <div class="match-opp">vs Augsburg (B) &middot; 3&ndash;5</div>
-        <div class="match-icons">
+ <div class="match-card is-record season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">18. jan. 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#BA3733;color:#fff">FCA</div>
+ </div>
+ <div class="match-opp">vs Augsburg (B) &middot; 3&ndash;5</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick p&aring; 23 minutter (59., 71. og 79. min.) &mdash; Dortmund-debut som innbytter, raskeste Bundesliga-hattrick p&aring; debut (kilde: bundesliga.com, Guinness World Records)</div>
-      </div>
+ </div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick p&aring; 23 minutter (59., 71. og 79. min.) &mdash; Dortmund-debut som innbytter, raskeste Bundesliga-hattrick p&aring; debut</div>
+ </div>
 
-      <div class="match-card is-record season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">24. jan. 2020</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#E2001A;color:#fff">KOE</div>
-        </div>
-        <div class="match-opp">vs K&ouml;ln (H) &middot; 5&ndash;1</div>
-        <div class="match-icons">
+ <div class="match-card is-record season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">24. jan. 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#E2001A;color:#fff">KOE</div>
+ </div>
+ <div class="match-opp">vs K&ouml;ln (H) &middot; 5&ndash;1</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 2 m&aring;l (77. og 87. min.) &mdash; f&oslash;rste spiller noensinne med 5 m&aring;l i sine to f&oslash;rste Bundesliga-kamper (kilde: bundesliga.com)</div>
-      </div>
+ </div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 2 m&aring;l (77. og 87. min.) &mdash; f&oslash;rste spiller noensinne med 5 m&aring;l i sine to f&oslash;rste Bundesliga-kamper</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">1. feb. 2020</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#FFD100;color:#14171c">FCU</div>
-        </div>
-        <div class="match-opp">vs Union Berlin (H) &middot; 5&ndash;0</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">1. feb. 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#FFD100;color:#14171c">FCU</div>
+ </div>
+ <div class="match-opp">vs Union Berlin (H) &middot; 5&ndash;0</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (18. og 71. min.) (kilde: The National, SI.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (18. og 71. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">14. feb. 2020</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#E1000F;color:#fff">SGE</div>
-        </div>
-        <div class="match-opp">vs Eintracht Frankfurt (H) &middot; 4&ndash;0</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">14. feb. 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#E1000F;color:#fff">SGE</div>
+ </div>
+ <div class="match-opp">vs Eintracht Frankfurt (H) &middot; 4&ndash;0</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (54. min.) (kilde: bundesliga.com, SI.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (54. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">22. feb. 2020</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#009036;color:#fff">SVW</div>
-        </div>
-        <div class="match-opp">vs Werder Bremen (B) &middot; 0&ndash;2</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">22. feb. 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#009036;color:#fff">SVW</div>
+ </div>
+ <div class="match-opp">vs Werder Bremen (B) &middot; 0&ndash;2</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (66. min.) (kilde: bundesliga.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (66. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">16. mai 2020</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#004D9D;color:#fff">S04</div>
-        </div>
-        <div class="match-opp">vs Schalke 04 (H) &middot; 4&ndash;0</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">16. mai 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#004D9D;color:#fff">S04</div>
+ </div>
+ <div class="match-opp">vs Schalke 04 (H) &middot; 4&ndash;0</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (29. min.) &mdash; Ruhr-derby (kilde: bundesliga.com, SI.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (29. min.) &mdash; Ruhr-derby</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">13. jun. 2020</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#C8102E;color:#fff">F95</div>
-        </div>
-        <div class="match-opp">vs Fortuna D&uuml;sseldorf (B) &middot; 0&ndash;1</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">13. jun. 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#C8102E;color:#fff">F95</div>
+ </div>
+ <div class="match-opp">vs Fortuna D&uuml;sseldorf (B) &middot; 0&ndash;1</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (90.+5, hodest&oslash;t i sluttminuttene) (kilde: bundesliga.com, Washington Post)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (90.+5, hodest&oslash;t i sluttminuttene)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">20. jun. 2020</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DD0741;color:#fff">RBL</div>
-        </div>
-        <div class="match-opp">vs RB Leipzig (H) &middot; 2&ndash;0</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">20. jun. 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DD0741;color:#fff">RBL</div>
+ </div>
+ <div class="match-opp">vs RB Leipzig (H) &middot; 2&ndash;0</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (30. og 90.+3 min.) (kilde: Goal.com, SPORTbible)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (30. og 90.+3 min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">19. sep. 2020</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1D1D1B;color:#fff">BMG</div>
-        </div>
-        <div class="match-opp">vs Gladbach (H) &middot; 3&ndash;0</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">19. sep. 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1D1D1B;color:#fff">BMG</div>
+ </div>
+ <div class="match-opp">vs Gladbach (H) &middot; 3&ndash;0</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (54. min., straffe, og 77. min.) &mdash; sesong&aring;pning (kilde: bundesliga.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (54. min., straffe, og 77. min.) &mdash; sesong&aring;pning</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">3. okt. 2020</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#000000;color:#fff">SCF</div>
-        </div>
-        <div class="match-opp">vs Freiburg (H) &middot; 4&ndash;0</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">3. okt. 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#000000;color:#fff">SCF</div>
+ </div>
+ <div class="match-opp">vs Freiburg (H) &middot; 4&ndash;0</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (31. og 66. min.) (kilde: bundesliga.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (31. og 66. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">24. okt. 2020</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#004D9D;color:#fff">S04</div>
-        </div>
-        <div class="match-opp">vs Schalke 04 (H) &middot; 3&ndash;0</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">24. okt. 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#004D9D;color:#fff">S04</div>
+ </div>
+ <div class="match-opp">vs Schalke 04 (H) &middot; 3&ndash;0</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (61. min.) &mdash; Ruhr-derby (kilde: bundesliga.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (61. min.) &mdash; Ruhr-derby</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">7. nov. 2020</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DC052D;color:#fff">FCB</div>
-        </div>
-        <div class="match-opp">vs Bayern M&uuml;nchen (H) &middot; 2&ndash;3</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">7. nov. 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DC052D;color:#fff">FCB</div>
+ </div>
+ <div class="match-opp">vs Bayern M&uuml;nchen (H) &middot; 2&ndash;3</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (83. min.) (kilde: ESPN, Goal.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (83. min.)</div>
+ </div>
 
-      <div class="match-card is-record season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">21. nov. 2020</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#005CA9;color:#fff">BSC</div>
-        </div>
-        <div class="match-opp">vs Hertha Berlin (B) &middot; 2&ndash;5</div>
-        <div class="match-icons">
+ <div class="match-card is-record season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">21. nov. 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#005CA9;color:#fff">BSC</div>
+ </div>
+ <div class="match-opp">vs Hertha Berlin (B) &middot; 2&ndash;5</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 4 m&aring;l (47., 49., 62. og 79. min.) (kilde: bundesliga.com, ESPN)</div>
-      </div>
+ </div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 4 m&aring;l (47., 49., 62. og 79. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">9. jan. 2021</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DD0741;color:#fff">RBL</div>
-        </div>
-        <div class="match-opp">vs RB Leipzig (B) &middot; 1&ndash;3</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">9. jan. 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DD0741;color:#fff">RBL</div>
+ </div>
+ <div class="match-opp">vs RB Leipzig (B) &middot; 1&ndash;3</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (72. og 84. min.) (kilde: ESPN, bundesliga.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (72. og 84. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">22. jan. 2021</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1D1D1B;color:#fff">BMG</div>
-        </div>
-        <div class="match-opp">vs Gladbach (B) &middot; 4&ndash;2</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">22. jan. 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1D1D1B;color:#fff">BMG</div>
+ </div>
+ <div class="match-opp">vs Gladbach (B) &middot; 4&ndash;2</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (23. og 29. min.) (kilde: bundesliga.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (23. og 29. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">13. feb. 2021</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1961B5;color:#fff">TSG</div>
-        </div>
-        <div class="match-opp">vs Hoffenheim (H) &middot; 2&ndash;2</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">13. feb. 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1961B5;color:#fff">TSG</div>
+ </div>
+ <div class="match-opp">vs Hoffenheim (H) &middot; 2&ndash;2</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (81. min., reddet uavgjort) (kilde: Seattle Times, bundesliga.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (81. min., reddet uavgjort)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">20. feb. 2021</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#004D9D;color:#fff">S04</div>
-        </div>
-        <div class="match-opp">vs Schalke 04 (B) &middot; 0&ndash;4</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">20. feb. 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#004D9D;color:#fff">S04</div>
+ </div>
+ <div class="match-opp">vs Schalke 04 (B) &middot; 0&ndash;4</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (45. og 78. min.) &mdash; Ruhr-derby (kilde: ESPN, MyKhel)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (45. og 78. min.) &mdash; Ruhr-derby</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">6. mar. 2021</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DC052D;color:#fff">FCB</div>
-        </div>
-        <div class="match-opp">vs Bayern M&uuml;nchen (B) &middot; 4&ndash;2</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">6. mar. 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DC052D;color:#fff">FCB</div>
+ </div>
+ <div class="match-opp">vs Bayern M&uuml;nchen (B) &middot; 4&ndash;2</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (2. og 9. min.) &mdash; Der Klassiker (kilde: CBS Sports, ESPN)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (2. og 9. min.) &mdash; Der Klassiker</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">20. mar. 2021</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#E2001A;color:#fff">KOE</div>
-        </div>
-        <div class="match-opp">vs K&ouml;ln (B) &middot; 2&ndash;2</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">20. mar. 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#E2001A;color:#fff">KOE</div>
+ </div>
+ <div class="match-opp">vs K&ouml;ln (B) &middot; 2&ndash;2</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (3. og 90. min.) (kilde: ESPN, Sky Sports)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (3. og 90. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">18. apr. 2021</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#009036;color:#fff">SVW</div>
-        </div>
-        <div class="match-opp">vs Werder Bremen (H) &middot; 4&ndash;1</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">18. apr. 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#009036;color:#fff">SVW</div>
+ </div>
+ <div class="match-opp">vs Werder Bremen (H) &middot; 4&ndash;1</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (34. min., straffe, og 38. min.) (kilde: SI.com, AllFootball)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (34. min., straffe, og 38. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">24. apr. 2021</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#65B32E;color:#14171c">WOB</div>
-        </div>
-        <div class="match-opp">vs Wolfsburg (B) &middot; 0&ndash;2</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">24. apr. 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#65B32E;color:#14171c">WOB</div>
+ </div>
+ <div class="match-opp">vs Wolfsburg (B) &middot; 0&ndash;2</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (12. og 68. min.) (kilde: ESPN, bundesliga.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (12. og 68. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">22. mai 2021</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#E32221;color:#fff">B04</div>
-        </div>
-        <div class="match-opp">vs Bayer Leverkusen (H) &middot; 3&ndash;1</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">22. mai 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#E32221;color:#fff">B04</div>
+ </div>
+ <div class="match-opp">vs Bayer Leverkusen (H) &middot; 3&ndash;1</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (5. og 84. min.) (kilde: bundesliga.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (5. og 84. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">14. aug. 2021</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#E1000F;color:#fff">SGE</div>
-        </div>
-        <div class="match-opp">vs Eintracht Frankfurt (H) &middot; 5&ndash;2</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">14. aug. 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#E1000F;color:#fff">SGE</div>
+ </div>
+ <div class="match-opp">vs Eintracht Frankfurt (H) &middot; 5&ndash;2</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (34. og 70. min.) &mdash; sesong&aring;pning (kilde: LatestLY)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (34. og 70. min.) &mdash; sesong&aring;pning</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">28. aug. 2021</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1961B5;color:#fff">TSG</div>
-        </div>
-        <div class="match-opp">vs Hoffenheim (H) &middot; 3&ndash;2</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">28. aug. 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1961B5;color:#fff">TSG</div>
+ </div>
+ <div class="match-opp">vs Hoffenheim (H) &middot; 3&ndash;2</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (90.+1, seiersm&aring;l i sluttminuttene) (kilde: Eurosport)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (90.+1, seiersm&aring;l i sluttminuttene)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">11. sep. 2021</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#E32221;color:#fff">B04</div>
-        </div>
-        <div class="match-opp">vs Bayer Leverkusen (B) &middot; 3&ndash;4</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">11. sep. 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#E32221;color:#fff">B04</div>
+ </div>
+ <div class="match-opp">vs Bayer Leverkusen (B) &middot; 3&ndash;4</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (37. min., hodest&oslash;t, og 77. min., straffe) &mdash; snudde 0&ndash;3 til seier (kilde: ESPN, SI.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (37. min., hodest&oslash;t, og 77. min., straffe) &mdash; snudde 0&ndash;3 til seier</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">19. sep. 2021</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#FFD100;color:#14171c">FCU</div>
-        </div>
-        <div class="match-opp">vs Union Berlin (H) &middot; 4&ndash;2</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">19. sep. 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#FFD100;color:#14171c">FCU</div>
+ </div>
+ <div class="match-opp">vs Union Berlin (H) &middot; 4&ndash;2</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (24. min., hodest&oslash;t, og 83. min.) (kilde: Scroll.in, GiveMeSport)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (24. min., hodest&oslash;t, og 83. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">16. okt. 2021</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#C4122E;color:#fff">M05</div>
-        </div>
-        <div class="match-opp">vs Mainz 05 (H) &middot; 3&ndash;1</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">16. okt. 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#C4122E;color:#fff">M05</div>
+ </div>
+ <div class="match-opp">vs Mainz 05 (H) &middot; 3&ndash;1</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (54. min., straffe, og 90.+4 min.) (kilde: bvbbuzz.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (54. min., straffe, og 90.+4 min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">27. nov. 2021</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#65B32E;color:#14171c">WOB</div>
-        </div>
-        <div class="match-opp">vs Wolfsburg (B) &middot; 1&ndash;3</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">27. nov. 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#65B32E;color:#14171c">WOB</div>
+ </div>
+ <div class="match-opp">vs Wolfsburg (B) &middot; 1&ndash;3</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (80. min.) &mdash; comeback etter skade (kilde: bvbbuzz.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (80. min.) &mdash; comeback etter skade</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">4. des. 2021</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DC052D;color:#fff">FCB</div>
-        </div>
-        <div class="match-opp">vs Bayern M&uuml;nchen (H) &middot; 2&ndash;3</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">4. des. 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DC052D;color:#fff">FCB</div>
+ </div>
+ <div class="match-opp">vs Bayern M&uuml;nchen (H) &middot; 2&ndash;3</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (48. min.) (kilde: ESPN, fcbayern.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (48. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">15. des. 2021</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#00643C;color:#fff">SGF</div>
-        </div>
-        <div class="match-opp">vs Greuther F&uuml;rth (H) &middot; 3&ndash;0</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">15. des. 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#00643C;color:#fff">SGF</div>
+ </div>
+ <div class="match-opp">vs Greuther F&uuml;rth (H) &middot; 3&ndash;0</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (33. min., straffe, og 82. min.) (kilde: bvbbuzz.com)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (33. min., straffe, og 82. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">14. jan. 2022</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#000000;color:#fff">SCF</div>
-        </div>
-        <div class="match-opp">vs Freiburg (H) &middot; 5&ndash;1</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">14. jan. 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#000000;color:#fff">SCF</div>
+ </div>
+ <div class="match-opp">vs Freiburg (H) &middot; 5&ndash;1</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (45.+1 og 75. min.) (kilde: Sky Sports)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (45.+1 og 75. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">22. jan. 2022</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1961B5;color:#fff">TSG</div>
-        </div>
-        <div class="match-opp">vs Hoffenheim (B) &middot; 2&ndash;3</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">22. jan. 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1961B5;color:#fff">TSG</div>
+ </div>
+ <div class="match-opp">vs Hoffenheim (B) &middot; 2&ndash;3</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (6. min.) (kilde: bundesliga.com, AllFootball)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (6. min.)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">16. apr. 2022</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#65B32E;color:#14171c">WOB</div>
-        </div>
-        <div class="match-opp">vs Wolfsburg (H) &middot; 6&ndash;1</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">16. apr. 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#65B32E;color:#14171c">WOB</div>
+ </div>
+ <div class="match-opp">vs Wolfsburg (H) &middot; 6&ndash;1</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (38. og 54. min.) &mdash; f&oslash;rste m&aring;l siden januar (kilde: OneFootball)</div>
-      </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (38. og 54. min.) &mdash; f&oslash;rste m&aring;l siden januar</div>
+ </div>
 
-      <div class="match-card is-record season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">30. apr. 2022</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1C3F94;color:#fff">BOC</div>
-        </div>
-        <div class="match-opp">vs Bochum (B) &middot; 4&ndash;3</div>
-        <div class="match-icons">
+ <div class="match-card is-record season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">30. apr. 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1C3F94;color:#fff">BOC</div>
+ </div>
+ <div class="match-opp">vs Bochum (B) &middot; 4&ndash;3</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick (18. og 30. min. p&aring; straffe, 62. min. fra spill) (kilde: ESPN)</div>
-      </div>
+ </div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick (18. og 30. min. p&aring; straffe, 62. min. fra spill)</div>
+ </div>
 
-      <div class="match-card season-early comp-bundesliga">
-        <div class="match-comp bundesliga">BL</div>
-        <div class="match-date">14. mai 2022</div>
-        <div class="match-badges">
-          <div class="badge badge-own">BVB</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#005CA9;color:#fff">BSC</div>
-        </div>
-        <div class="match-opp">vs Hertha Berlin (H) &middot; 2&ndash;1</div>
-        <div class="match-icons">
+ <div class="match-card season-early comp-bundesliga">
+ <div class="match-comp bundesliga">BL</div>
+ <div class="match-date">14. mai 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own">BVB</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#005CA9;color:#fff">BSC</div>
+ </div>
+ <div class="match-opp">vs Hertha Berlin (H) &middot; 2&ndash;1</div>
+ <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (68. min., straffe) &mdash; siste kamp for Dortmund (kilde: Sky Sports)</div>
-      </div>
-
-      <div class="match-card season-2223 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">7. aug. 2022</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
-        </div>
-        <div class="match-opp">vs West Ham (B) &middot; 0&ndash;2</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (straffe + fra spill) &mdash; City-debut (kilde: mancity.com, Sky Sports)</div>
-      </div>
-
-      <div class="match-card season-2223 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">13. aug. 2022</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
-        </div>
-        <div class="match-opp">vs Bournemouth (H) &middot; 4&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="#f1e6cf" stroke="#14171c" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="#14171c"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#14171c" stroke-width="1.1" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 assist, ingen m&aring;l (kilde: Sports Mole)</div>
-      </div>
-
-      <div class="match-card season-2223 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">21. aug. 2022</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
-        </div>
-        <div class="match-opp">vs Newcastle (B) &middot; 3&ndash;3</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (poeng reddet etter 0&ndash;2) (kilde: ESPN, Sky Sports)</div>
-      </div>
-
-      <div class="match-card is-record season-2223 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">27. aug. 2022</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
-        </div>
-        <div class="match-opp">vs Crystal Palace (H) &middot; 4&ndash;2</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick (19 min., snudde 0&ndash;2 til seier) &mdash; f&oslash;rste City-hattrick (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card is-record season-2223 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">31. aug. 2022</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
-        </div>
-        <div class="match-opp">vs Nottingham Forest (H) &middot; 6&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick p&aring; 38 min. &mdash; 9 m&aring;l p&aring; 5 kamper, PL-rekord for start p&aring; en klubbkarriere (kilde: Sky Sports, Premier League)</div>
-      </div>
-
-      <div class="match-card season-2223 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">2. okt. 2022</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
-        </div>
-        <div class="match-opp">vs Man United (H) &middot; 6&ndash;3</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; hattrick i derbyet &mdash; f&oslash;rste PL-hattrick i Manchester-derby siden 1970 (kilde: CNN, Premier League)</div>
-      </div>
-
-      <div class="match-card is-record season-2223 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">14. mar. 2023</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DD0741;color:#fff">RBL</div>
-        </div>
-        <div class="match-opp">vs RB Leipzig (H) &middot; 7&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 5 m&aring;l (CL &aring;ttedelsfinale, 2. runde) &mdash; matcher Messis rekord for flest mål i en CL-kamp (kilde: Sky Sports, NBC Sports)</div>
-      </div>
-
-      <div class="match-card season-2223 comp-cup">
-        <div class="match-comp cup">CUP</div>
-        <div class="match-date">3. jun. 2023</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
-        </div>
-        <div class="match-opp">vs Man United (N) &middot; 2&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; FA-cupen vunnet p&aring; Wembley, andre del av trippelen i 2022/23 (kilde: The FA, Wikipedia)</div>
-      </div>
-
-      <div class="match-card season-2223 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">10. jun. 2023</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#010E80;color:#fff">INT</div>
-        </div>
-        <div class="match-opp">vs Inter Milan (N) &middot; 1&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Champions League vunnet i Istanbul (Rodri avgjorde), trippelen fullf&oslash;rt &mdash; sesongens toppscorer med 12 CL-m&aring;l (kilde: ESPN, UEFA.com)</div>
-      </div>
-
-      <div class="match-card season-2324 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">11. aug. 2023</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#6C1D45;color:#fff">BUR</div>
-        </div>
-        <div class="match-opp">vs Burnley (B) &middot; 3&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (4. og 36. min.) &mdash; sesong&aring;pning (kilde: ESPN, Sky Sports)</div>
-      </div>
-
-      <div class="match-card season-2324 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">2. sep. 2023</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
-        </div>
-        <div class="match-opp">vs Fulham (H) &middot; 5&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; hattrick i 2. omgang (kilde: mancity.com, Sky Sports)</div>
-      </div>
-
-      <div class="match-card season-2324 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">29. okt. 2023</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
-        </div>
-        <div class="match-opp">vs Man United (B) &middot; 3&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="#f1e6cf" stroke="#14171c" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="#14171c"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#14171c" stroke-width="1.1" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (straffe + heading) + 1 assist &mdash; derbyseier p&aring; Old Trafford (kilde: Sky Sports, Al Jazeera)</div>
-      </div>
-
-      <div class="match-card season-2324 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">31. jan. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#6C1D45;color:#fff">BUR</div>
-        </div>
-        <div class="match-opp">vs Burnley (H) &middot; 3&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; comeback som innbytter (71.) etter 56 dager ute med fotskade, ingen m&aring;l (kilde: ESPN, SI.com)</div>
-      </div>
-
-      <div class="match-card season-2324 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">17. apr. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
-        </div>
-        <div class="match-opp">vs Real Madrid (H) &middot; 1&ndash;1 e.o.</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l (traff tverrligger) &mdash; City slo &aring;t p&aring; straffer (3&ndash;4) etter 4&ndash;4 samlet, CL &aring;ttedelsfinale (kilde: ESPN, Sky Sports)</div>
-      </div>
-
-      <div class="match-card season-2324 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">4. mai 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
-        </div>
-        <div class="match-opp">vs Wolves (H) &middot; 5&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 4 m&aring;l (2 straffer + heading-hattrick f&oslash;r pause, 4. m&aring;l i 2. omgang) (kilde: mancity.com, LatestLY)</div>
-      </div>
-
-      <div class="match-card season-2425 comp-friendly">
-        <div class="match-comp friendly">TRENING</div>
-        <div class="match-date">24. jul. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#018749;color:#fff">CEL</div>
-        </div>
-        <div class="match-opp">vs Celtic (N) &middot; 3&ndash;4</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. Sesongoppkj&oslash;ring.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-friendly">
-        <div class="match-comp friendly">TRENING</div>
-        <div class="match-date">27. jul. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#FB090B;color:#fff">MIL</div>
-        </div>
-        <div class="match-opp">vs AC Milan (N) &middot; 2&ndash;3</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. Sesongoppkj&oslash;ring.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-friendly">
-        <div class="match-comp friendly">TRENING</div>
-        <div class="match-date">31. jul. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#A50044;color:#fff">BAR</div>
-        </div>
-        <div class="match-opp">vs Barcelona (N) &middot; 2&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. City vant 4&ndash;1 p&aring; straffer, sesongoppkj&oslash;ring.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-friendly">
-        <div class="match-comp friendly">TRENING</div>
-        <div class="match-date">3. aug. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
-        </div>
-        <div class="match-opp">vs Chelsea (N) &middot; 1&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. Sesongoppkj&oslash;ring.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-shield">
-        <div class="match-comp shield">SHIELD</div>
-        <div class="match-date">10. aug. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
-        </div>
-        <div class="match-opp">vs Man United (N) &middot; 1&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. City vant 7&ndash;6 p&aring; straffer, Community Shield.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">18. aug. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
-        </div>
-        <div class="match-opp">vs Chelsea (B) &middot; 2&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. Sesong&aring;pning.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">24. aug. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#0044A9;color:#fff">IPS</div>
-        </div>
-        <div class="match-opp">vs Ipswich (H) &middot; 4&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; hattrick (kilde: Premier League, Sky Sports)</div>
-      </div>
-
-      <div class="match-card is-record season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">31. aug. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
-        </div>
-        <div class="match-opp">vs West Ham (B) &middot; 3&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick &mdash; to strake trippel-kamper, 11. City-hattrick p&aring; 102 kamper (kilde: mancity.com, Sky Sports)</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">14. sep. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
-        </div>
-        <div class="match-opp">vs Brentford (H) &middot; 2&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">18. sep. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#010E80;color:#fff">INT</div>
-        </div>
-        <div class="match-opp">vs Inter (H) &middot; 0&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">22. sep. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
-        </div>
-        <div class="match-opp">vs Arsenal (H) &middot; 2&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-efl">
-        <div class="match-comp efl">LIGACUP</div>
-        <div class="match-date">24. sep. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#FBEE23;color:#14171c">WAT</div>
-        </div>
-        <div class="match-opp">vs Watford (H) &middot; 2&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">28. sep. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
-        </div>
-        <div class="match-opp">vs Newcastle (B) &middot; 1&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">1. okt. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#005BAC;color:#fff">SLO</div>
-        </div>
-        <div class="match-opp">vs Slovan Bratislava (B) &middot; 4&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">5. okt. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
-        </div>
-        <div class="match-opp">vs Fulham (H) &middot; 3&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">20. okt. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
-        </div>
-        <div class="match-opp">vs Wolves (B) &middot; 2&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">23. okt. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#A6192E;color:#fff">SPA</div>
-        </div>
-        <div class="match-opp">vs AC Sparta Prague (H) &middot; 5&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">26. okt. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#D71920;color:#fff">SOU</div>
-        </div>
-        <div class="match-opp">vs Southampton (H) &middot; 1&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-efl">
-        <div class="match-comp efl">LIGACUP</div>
-        <div class="match-date">30. okt. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
-        </div>
-        <div class="match-opp">vs Tottenham (B) &middot; 1&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">2. nov. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
-        </div>
-        <div class="match-opp">vs Bournemouth (B) &middot; 1&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">5. nov. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#007A3D;color:#fff">SCP</div>
-        </div>
-        <div class="match-opp">vs Sporting CP (B) &middot; 1&ndash;4</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">9. nov. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
-        </div>
-        <div class="match-opp">vs Brighton (B) &middot; 1&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">23. nov. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
-        </div>
-        <div class="match-opp">vs Tottenham (H) &middot; 0&ndash;4</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">26. nov. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#E2000F;color:#fff">FEY</div>
-        </div>
-        <div class="match-opp">vs Feyenoord (H) &middot; 3&ndash;3</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">1. des. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
-        </div>
-        <div class="match-opp">vs Liverpool (B) &middot; 0&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">4. des. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
-        </div>
-        <div class="match-opp">vs Nottingham Forest (H) &middot; 3&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">7. des. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
-        </div>
-        <div class="match-opp">vs Crystal Palace (B) &middot; 2&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">11. des. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#000000;color:#fff">JUV</div>
-        </div>
-        <div class="match-opp">vs Juventus (B) &middot; 0&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">15. des. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
-        </div>
-        <div class="match-opp">vs Man United (H) &middot; 1&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. Derby.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">21. des. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
-        </div>
-        <div class="match-opp">vs Aston Villa (B) &middot; 1&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">26. des. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#003399;color:#fff">EVE</div>
-        </div>
-        <div class="match-opp">vs Everton (H) &middot; 1&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">29. des. 2024</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#003090;color:#fff">LEI</div>
-        </div>
-        <div class="match-opp">vs Leicester City (B) &middot; 2&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">4. jan. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
-        </div>
-        <div class="match-opp">vs West Ham (H) &middot; 4&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cup">
-        <div class="match-comp cup">CUP</div>
-        <div class="match-date">11. jan. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#FF6900;color:#fff">SAL</div>
-        </div>
-        <div class="match-opp">vs Salford City (H) &middot; 1&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">14. jan. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
-        </div>
-        <div class="match-opp">vs Brentford (B) &middot; 2&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">19. jan. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#0044A9;color:#fff">IPS</div>
-        </div>
-        <div class="match-opp">vs Ipswich Town (B) &middot; 6&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">22. jan. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#004170;color:#fff">PSG</div>
-        </div>
-        <div class="match-opp">vs PSG (B) &middot; 2&ndash;4</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">25. jan. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
-        </div>
-        <div class="match-opp">vs Chelsea (H) &middot; 3&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">29. jan. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#0E3A6D;color:#fff">BRU</div>
-        </div>
-        <div class="match-opp">vs Club Brugge (H) &middot; 3&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">2. feb. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
-        </div>
-        <div class="match-opp">vs Arsenal (B) &middot; 1&ndash;5</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cup">
-        <div class="match-comp cup">CUP</div>
-        <div class="match-date">8. feb. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#D2122E;color:#fff">ORI</div>
-        </div>
-        <div class="match-opp">vs Leyton Orient (B) &middot; 2&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">11. feb. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
-        </div>
-        <div class="match-opp">vs Real Madrid (H) &middot; 2&ndash;3</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (knockout-playoff, 1. runde)</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">15. feb. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
-        </div>
-        <div class="match-opp">vs Newcastle (H) &middot; 4&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">19. feb. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
-        </div>
-        <div class="match-opp">vs Real Madrid (B) &middot; 1&ndash;3</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. CL &aring;ttedelsfinale 2. runde, samlet 3&ndash;6.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">23. feb. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
-        </div>
-        <div class="match-opp">vs Liverpool (H) &middot; 0&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">26. feb. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
-        </div>
-        <div class="match-opp">vs Tottenham (B) &middot; 1&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cup">
-        <div class="match-comp cup">CUP</div>
-        <div class="match-date">1. mar. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#005C36;color:#fff">PLY</div>
-        </div>
-        <div class="match-opp">vs Plymouth Argyle (H) &middot; 3&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">8. mar. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
-        </div>
-        <div class="match-opp">vs Nottingham Forest (B) &middot; 0&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">15. mar. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
-        </div>
-        <div class="match-opp">vs Brighton (H) &middot; 2&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-nor">
-        <div class="match-comp nor">LAND</div>
-        <div class="match-date">22. mars 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="6" height="12" fill="#0033A0"/><rect x="6" width="6" height="12" fill="#FFD200"/><rect x="12" width="6" height="12" fill="#CC092F"/></svg></div>
-        </div>
-        <div class="match-opp">vs Moldova (B) &middot; 0&ndash;5</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (VM-kvalik-start)</div>
-      </div>
-
-      <div class="match-card season-2425 comp-nor">
-        <div class="match-comp nor">LAND</div>
-        <div class="match-date">25. mars 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 22 16" width="36" height="26"><rect width="22" height="16" fill="#fff"/><rect y="2" width="22" height="2" fill="#0038b8"/><rect y="12" width="22" height="2" fill="#0038b8"/><polygon points="11,5 13.3,9 8.7,9" fill="none" stroke="#0038b8" stroke-width="0.6"/><polygon points="11,10.5 8.7,6.5 13.3,6.5" fill="none" stroke="#0038b8" stroke-width="0.6"/></svg></div>
-        </div>
-        <div class="match-opp">vs Israel (B) &middot; 2&ndash;4</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cup">
-        <div class="match-comp cup">CUP</div>
-        <div class="match-date">30. mar. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
-        </div>
-        <div class="match-opp">vs Bournemouth (B) &middot; 2&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (utligning, 49., bommet straffe f&oslash;r pause) &mdash; ankelskade, byttet ut 60. min., FA-cup kvartfinale (kilde: ESPN, Goal.com)</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">2. apr. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#003090;color:#fff">LEI</div>
-        </div>
-        <div class="match-opp">vs Leicester City (H) &middot; 2&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">6. apr. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
-        </div>
-        <div class="match-opp">vs Man United (B) &middot; 0&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;. Derby.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">12. apr. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
-        </div>
-        <div class="match-opp">vs Crystal Palace (H) &middot; 5&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">19. apr. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#003399;color:#fff">EVE</div>
-        </div>
-        <div class="match-opp">vs Everton (B) &middot; 2&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">22. apr. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
-        </div>
-        <div class="match-opp">vs Aston Villa (H) &middot; 2&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">27. apr. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
-        </div>
-        <div class="match-opp">vs Nottingham Forest (B) &middot; 2&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">2. mai 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
-        </div>
-        <div class="match-opp">vs Wolves (H) &middot; 1&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">10. mai 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#D71920;color:#fff">SOU</div>
-        </div>
-        <div class="match-opp">vs Southampton (B) &middot; 0&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">17. mai 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
-        </div>
-        <div class="match-opp">vs Crystal Palace (B) &middot; 0&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">20. mai 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
-        </div>
-        <div class="match-opp">vs Bournemouth (H) &middot; 3&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; resultat bekreftet (kilde: mancity.com); m&aring;lscorer for Haaland ikke bekreftet enn&aring;.</div>
-      </div>
-
-      <div class="match-card season-2425 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">25. mai 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
-        </div>
-        <div class="match-opp">vs Fulham (B) &middot; 2&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (72. min., straffe) &mdash; G&uuml;ndogan scoret det f&oslash;rste</div>
-      </div>
-
-      <div class="match-card season-2425 comp-nor">
-        <div class="match-comp nor">LAND</div>
-        <div class="match-date">6. juni 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="6" height="12" fill="#009246"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#CE2B37"/></svg></div>
-        </div>
-        <div class="match-opp">vs Italia (H) &middot; 3&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (f&oslash;rste seier over Italia p&aring; 25 &aring;r)</div>
-      </div>
-
-      <div class="match-card season-2425 comp-nor">
-        <div class="match-comp nor">LAND</div>
-        <div class="match-date">9. juni 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 11" width="36" height="22"><rect width="18" height="11" fill="#4891D9"/><rect y="3.67" width="18" height="3.66" fill="#000"/><rect y="7.33" width="18" height="3.67" fill="#fff"/></svg></div>
-        </div>
-        <div class="match-opp">vs Estland (B) &middot; 0&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (avgj&oslash;rende)</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cwc">
-        <div class="match-comp cwc">KLUBB-VM</div>
-        <div class="match-date">18. jun. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#EE1C25;color:#fff">WYD</div>
-        </div>
-        <div class="match-opp">vs Wydad AC (H) &middot; 2&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Foden og Doku scoret (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cwc">
-        <div class="match-comp cwc">KLUBB-VM</div>
-        <div class="match-date">23. jun. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#F7A81B;color:#14171c">ALA</div>
-        </div>
-        <div class="match-opp">vs Al Ain FC (H) &middot; 6&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (45.+5, straffe) &mdash; G&uuml;ndogan (2), Echeverri, Bobb og Cherki scoret ogs&aring;</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cwc">
-        <div class="match-comp cwc">KLUBB-VM</div>
-        <div class="match-date">26. jun. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#000000;color:#fff">JUV</div>
-        </div>
-        <div class="match-opp">vs Juventus (B) &middot; 5&ndash;2</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (52. min.) &mdash; Doku, Foden og Savinho scoret ogs&aring;, i tillegg til et selvm&aring;l av Kalulu</div>
-      </div>
-
-      <div class="match-card season-2425 comp-cwc">
-        <div class="match-comp cwc">KLUBB-VM</div>
-        <div class="match-date">1. jul. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#003DA5;color:#fff">HIL</div>
-        </div>
-        <div class="match-opp">vs Al-Hilal (H) &middot; 3&ndash;4</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (55. min.) &mdash; Bernardo Silva og Foden scoret ogs&aring;, tapte etter ekstraomganger</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">16. aug. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
-        </div>
-        <div class="match-opp">vs Wolves (B) &middot; 4&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (sesong&aring;pning, Molineux)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">23. aug. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
-        </div>
-        <div class="match-opp">vs Tottenham (H) &middot; 0&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; sesongens f&oslash;rste tap</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">31. aug. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
-        </div>
-        <div class="match-opp">vs Brighton (B) &middot; 1&ndash;2</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (34. min.)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-nor">
-        <div class="match-comp nor">LAND</div>
-        <div class="match-date">9. sep. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="6" height="12" fill="#0033A0"/><rect x="6" width="6" height="12" fill="#FFD200"/><rect x="12" width="6" height="12" fill="#CC092F"/></svg></div>
-        </div>
-        <div class="match-opp">vs Moldova (H) &middot; 11&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 5 m&aring;l (hattrick f&oslash;r pause + 2)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">14. sep. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
-        </div>
-        <div class="match-opp">vs Man United (H) &middot; 3&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (derby)</div>
-      </div>
-
-      <div class="match-card is-record season-2526 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">18. sep. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#087bd1;color:#fff">NAP</div>
-        </div>
-        <div class="match-opp">vs Napoli (H) &middot; 2&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 1 m&aring;l &mdash; 50. CL-m&aring;l, i sin 49. kamp (rekord)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">21. sep. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
-        </div>
-        <div class="match-opp">vs Arsenal (B) &middot; 1&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (9. min.)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-efl">
-        <div class="match-comp efl">LIGACUP</div>
-        <div class="match-date">24. sep. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#0E63AD;color:#fff">HUD</div>
-        </div>
-        <div class="match-opp">vs Huddersfield Town (B) &middot; 2&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Foden og Savinho scoret (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">27. sep. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#6C1D45;color:#fff">BUR</div>
-        </div>
-        <div class="match-opp">vs Burnley (H) &middot; 5&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l</div>
-      </div>
-
-      <div class="match-card season-2526 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">1. okt. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#CE1126;color:#fff">MON</div>
-        </div>
-        <div class="match-opp">vs Monaco (B) &middot; 2&ndash;2</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">5. okt. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
-        </div>
-        <div class="match-opp">vs Brentford (B) &middot; 1&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (9. min.) &mdash; kampens eneste m&aring;l</div>
-      </div>
-
-      <div class="match-card is-record season-2526 comp-nor">
-        <div class="match-comp nor">LAND</div>
-        <div class="match-date">11. okt. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 22 16" width="36" height="26"><rect width="22" height="16" fill="#fff"/><rect y="2" width="22" height="2" fill="#0038b8"/><rect y="12" width="22" height="2" fill="#0038b8"/><polygon points="11,5 13.3,9 8.7,9" fill="none" stroke="#0038b8" stroke-width="0.6"/><polygon points="11,10.5 8.7,6.5 13.3,6.5" fill="none" stroke="#0038b8" stroke-width="0.6"/></svg></div>
-        </div>
-        <div class="match-opp">vs Israel (H) &middot; 5&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick (3 m&aring;l, 50. landsm&aring;l n&aring;dd)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">18. okt. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#003399;color:#fff">EVE</div>
-        </div>
-        <div class="match-opp">vs Everton (H) &middot; 2&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (58. og 63. min.) &mdash; begge City-m&aring;lene</div>
-      </div>
-
-      <div class="match-card season-2526 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">21. okt. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#FFE667;color:#14171c">VIL</div>
-        </div>
-        <div class="match-opp">vs Villarreal (B) &middot; 2&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">26. okt. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
-        </div>
-        <div class="match-opp">vs Aston Villa (B) &middot; 0&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l (laget scoret ikke) (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-efl">
-        <div class="match-comp efl">LIGACUP</div>
-        <div class="match-date">29. okt. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#000000;color:#fff">SWA</div>
-        </div>
-        <div class="match-opp">vs Swansea City (B) &middot; 1&ndash;3</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Doku, Marmoush og Cherki scoret (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">2. nov. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
-        </div>
-        <div class="match-opp">vs Bournemouth (H) &middot; 3&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (17. og 33. min.) &mdash; Nico O'Reilly scoret ogs&aring;</div>
-      </div>
-
-      <div class="match-card season-2526 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">5. nov. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#FDE100;color:#14171c">BVB</div>
-        </div>
-        <div class="match-opp">vs Dortmund (H) &middot; 4&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (mot tidligere klubb)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">9. nov. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
-        </div>
-        <div class="match-opp">vs Liverpool (H) &middot; 3&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (29. min.) &mdash; Nico O'Reilly og Doku scoret ogs&aring;</div>
-      </div>
-
-      <div class="match-card season-2526 comp-nor">
-        <div class="match-comp nor">LAND</div>
-        <div class="match-date">13. nov. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 11" width="36" height="22"><rect width="18" height="11" fill="#4891D9"/><rect y="3.67" width="18" height="3.66" fill="#000"/><rect y="7.33" width="18" height="3.67" fill="#fff"/></svg></div>
-        </div>
-        <div class="match-opp">vs Estland (H) &middot; 4&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l</div>
-      </div>
-
-      <div class="match-card season-2526 comp-nor">
-        <div class="match-comp nor">LAND</div>
-        <div class="match-date">16. nov. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="6" height="12" fill="#009246"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#CE2B37"/></svg></div>
-        </div>
-        <div class="match-opp">vs Italia (B) &middot; 1&ndash;4</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l &mdash; VM-plassen sikret p&aring; San Siro</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">22. nov. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
-        </div>
-        <div class="match-opp">vs Newcastle (B) &middot; 1&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; R&uacute;ben Dias scoret City-m&aring;let (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">25. nov. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#E32219;color:#fff">B04</div>
-        </div>
-        <div class="match-opp">vs Bayer Leverkusen (H) &middot; 0&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l (innbytter, City's f&oslash;rste CL-tap i sesongen)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">29. nov. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1D428A;color:#fff">LEE</div>
-        </div>
-        <div class="match-opp">vs Leeds (H) &middot; 3&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Foden (2) og Gvardiol scoret (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card is-record season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">2. des. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
-        </div>
-        <div class="match-opp">vs Fulham (B) &middot; 5&ndash;4</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 1 m&aring;l &mdash; 100. PL-m&aring;l, i sin 111. kamp (GWR)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">6. des. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#EB172B;color:#fff">SUN</div>
-        </div>
-        <div class="match-opp">vs Sunderland (H) &middot; 3&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Dias, Gvardiol og Foden scoret (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">10. des. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
-        </div>
-        <div class="match-opp">vs Real Madrid (B) &middot; 2&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (43. min., straffe) &mdash; Nico O'Reilly scoret det f&oslash;rste, borteseier mot Real Madrid</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">14. des. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
-        </div>
-        <div class="match-opp">vs Crystal Palace (B) &middot; 3&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (nikk + straffe)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-efl">
-        <div class="match-comp efl">LIGACUP</div>
-        <div class="match-date">17. des. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
-        </div>
-        <div class="match-opp">vs Brentford (H) &middot; 2&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Cherki og Savinho scoret (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card is-record season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">20. des. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
-        </div>
-        <div class="match-opp">vs West Ham (H) &middot; 3&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="#f1e6cf" stroke="#14171c" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="#14171c"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#14171c" stroke-width="1.1" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 2 m&aring;l + 1 assist &mdash; passerte 200 m&aring;lpoeng i Europas topp 5-ligaer</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">27. des. 2025</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
-        </div>
-        <div class="match-opp">vs Nottingham Forest (B) &middot; 2&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Reijnders og Cherki scoret (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">1. jan. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#EB172B;color:#fff">SUN</div>
-        </div>
-        <div class="match-opp">vs Sunderland (B) &middot; 0&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l (laget scoret ikke) (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">4. jan. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
-        </div>
-        <div class="match-opp">vs Chelsea (H) &middot; 1&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Reijnders scoret City-m&aring;let (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card is-record season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">7. jan. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
-        </div>
-        <div class="match-opp">vs Brighton (H) &middot; 1&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 1 m&aring;l (41. min., straffe) &mdash; 150. klubbm&aring;l for City, i sin 173. kamp &mdash; kun to bak felles femteplass (Joe Hayes/Billy Meredith, 152), Colin Bell topper med 153 (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-cup">
-        <div class="match-comp cup">CUP</div>
-        <div class="match-date">10. jan. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DA291C;color:#fff">EXE</div>
-        </div>
-        <div class="match-opp">vs Exeter City (H) &middot; 10&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; rotasjonslag, m&aring;l fordelt p&aring; 8 ulike scorere, Haaland ikke blant dem (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-efl">
-        <div class="match-comp efl">LIGACUP</div>
-        <div class="match-date">13. jan. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
-        </div>
-        <div class="match-opp">vs Newcastle (B) &middot; 2&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo og Cherki scoret (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">17. jan. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
-        </div>
-        <div class="match-opp">vs Man United (B) &middot; 0&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l (laget scoret ikke) (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">20. jan. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#FFF200;color:#14171c">BOD</div>
-        </div>
-        <div class="match-opp">vs Bod&oslash;/Glimt (B) &middot; 1&ndash;3</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Cherki scoret City-m&aring;let, tap mot Bod&oslash;/Glimt (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">24. jan. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
-        </div>
-        <div class="match-opp">vs Wolves (H) &middot; 2&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Marmoush scoret, i tillegg til et selvm&aring;l (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">28. jan. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#A90432;color:#fff">GAL</div>
-        </div>
-        <div class="match-opp">vs Galatasaray (H) &middot; 2&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">1. feb. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
-        </div>
-        <div class="match-opp">vs Tottenham (B) &middot; 2&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Cherki og Semenyo scoret (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-efl">
-        <div class="match-comp efl">LIGACUP</div>
-        <div class="match-date">4. feb. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
-        </div>
-        <div class="match-opp">vs Newcastle (H) &middot; 3&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Marmoush (2) og Reijnders scoret (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">8. feb. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
-        </div>
-        <div class="match-opp">vs Liverpool (B) &middot; 2&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (90.+3, straffe, seiersm&aring;l) &mdash; Bernardo Silva scoret ogs&aring;</div>
-      </div>
-
-      <div class="match-card is-record season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">11. feb. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
-        </div>
-        <div class="match-opp">vs Fulham (H) &middot; 3&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 1 m&aring;l (39. min.) &mdash; 153. klubbm&aring;l, p&aring; linje med Colin Bell &mdash; Semenyo og Nico O'Reilly scoret ogs&aring;</div>
-      </div>
-
-      <div class="match-card season-2526 comp-cup">
-        <div class="match-comp cup">CUP</div>
-        <div class="match-date">14. feb. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#FF6900;color:#fff">SAL</div>
-        </div>
-        <div class="match-opp">vs Salford City (H) &middot; 2&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; selvm&aring;l av Alfie Dorrington og m&aring;l av Marc Gu&eacute;hi (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">21. feb. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
-        </div>
-        <div class="match-opp">vs Newcastle (H) &middot; 2&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Nico O'Reilly scoret begge (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">28. feb. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1D428A;color:#fff">LEE</div>
-        </div>
-        <div class="match-opp">vs Leeds (B) &middot; 1&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo scoret kampens eneste m&aring;l (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">4. mar. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
-        </div>
-        <div class="match-opp">vs Nottingham Forest (H) &middot; 2&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo og Rodrigo scoret (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-cup">
-        <div class="match-comp cup">CUP</div>
-        <div class="match-date">7. mar. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
-        </div>
-        <div class="match-opp">vs Newcastle (B) &middot; 3&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Savinho og Marmoush (2) scoret, FA-cup (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">11. mar. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
-        </div>
-        <div class="match-opp">vs Real Madrid (B) &middot; 0&ndash;3</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l (Valverde-hattrick, CL &aring;ttedelsfinale 1. runde)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">14. mar. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
-        </div>
-        <div class="match-opp">vs West Ham (B) &middot; 1&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Bernardo Silva scoret City-m&aring;let (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-cl">
-        <div class="match-comp cl">CL</div>
-        <div class="match-date">17. mar. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
-        </div>
-        <div class="match-opp">vs Real Madrid (H) &middot; 1&ndash;2</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l &mdash; City slo &uring;t 1&ndash;5 samlet (CL &aring;ttedelsfinale 2. runde)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-efl">
-        <div class="match-comp efl">LIGACUP</div>
-        <div class="match-date">22. mar. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
-        </div>
-        <div class="match-opp">vs Arsenal (N) &middot; 2&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Ligacupen vunnet p&aring; Wembley (m&aring;l av Nico O'Reilly x2)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-cup">
-        <div class="match-comp cup">CUP</div>
-        <div class="match-date">4. apr. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
-        </div>
-        <div class="match-opp">vs Liverpool (H) &middot; 4&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; hattrick (FA-cup kvartfinale)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">12. apr. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
-        </div>
-        <div class="match-opp">vs Chelsea (B) &middot; 3&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Nico O'Reilly og Doku scoret, i tillegg til et selvm&aring;l av Marc Gu&eacute;hi (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">19. apr. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
-        </div>
-        <div class="match-opp">vs Arsenal (H) &middot; 2&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (66. min.) &mdash; Cherki scoret det f&oslash;rste</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">22. apr. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#6C1D45;color:#fff">BUR</div>
-        </div>
-        <div class="match-opp">vs Burnley (B) &middot; 1&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (6. min.) &mdash; kampens eneste m&aring;l</div>
-      </div>
-
-      <div class="match-card season-2526 comp-cup">
-        <div class="match-comp cup">CUP</div>
-        <div class="match-date">25. apr. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#D71920;color:#fff">SOU</div>
-        </div>
-        <div class="match-opp">vs Southampton (H) &middot; 2&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l (FA-cup semifinale)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">4. mai 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#003399;color:#fff">EVE</div>
-        </div>
-        <div class="match-opp">vs Everton (B) &middot; 3&ndash;3</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (83. min., utligning) &mdash; Doku scoret to (43., 90.+7)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">9. mai 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
-        </div>
-        <div class="match-opp">vs Brentford (H) &middot; 3&ndash;0</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (76. min.) &mdash; Doku og Marmoush scoret ogs&aring;</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">13. mai 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
-        </div>
-        <div class="match-opp">vs Crystal Palace (H) &middot; 3&ndash;0</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo, Marmoush og Savinho scoret (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-cup">
-        <div class="match-comp cup">CUP</div>
-        <div class="match-date">16. mai 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
-        </div>
-        <div class="match-opp">vs Chelsea (B) &middot; 0&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo avgjorde (72. min.), FA-cupen vunnet</div>
-      </div>
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">19. mai 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
-        </div>
-        <div class="match-opp">vs Bournemouth (B) &middot; 1&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (90.+5, sen utligning)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">24. mai 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
-        </div>
-        <div class="match-opp">vs Aston Villa (H) &middot; 1&ndash;2</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo scoret City-m&aring;let, Watkins avgjorde med to (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2526 comp-nor">
-        <div class="match-comp nor">VM</div>
-        <div class="match-date">17. jun. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="18" height="4" fill="#CE1126"/><rect y="4" width="18" height="4" fill="#fff"/><rect y="8" width="18" height="4" fill="#000"/></svg></div>
-        </div>
-        <div class="match-opp">vs Irak (N) &middot; 4&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l &mdash; VM-debut, Norges f&oslash;rste VM-kamp siden 1998</div>
-      </div>
-
-      <div class="match-card season-2526 comp-nor">
-        <div class="match-comp nor">VM</div>
-        <div class="match-date">23. jun. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="6" height="12" fill="#00853F"/><rect x="6" width="6" height="12" fill="#FDEF42"/><rect x="12" width="6" height="12" fill="#E31B23"/></svg></div>
-        </div>
-        <div class="match-opp">vs Senegal (N) &middot; 3&ndash;2</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l &mdash; sluttspillplass sikret med en kamp til gode</div>
-      </div>
-
-      <div class="match-card season-2526 comp-nor">
-        <div class="match-comp nor">VM</div>
-        <div class="match-date">26. jun. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="6" height="12" fill="#0055A4"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#EF4135"/></svg></div>
-        </div>
-        <div class="match-opp">vs Frankrike (N) &middot; 1&ndash;4</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Norge nr. 2 i gruppe I</div>
-      </div>
-
-      <div class="match-card season-2526 comp-nor">
-        <div class="match-comp nor">VM</div>
-        <div class="match-date">30. jun. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="6" height="12" fill="#F77F00"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#009E60"/></svg></div>
-        </div>
-        <div class="match-opp">vs Elfenbenskysten (N) &middot; 2&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 1 m&aring;l (86. min., vinnerm&aring;l) &mdash; Norges f&oslash;rste VM-sluttspillseier noensinne</div>
-      </div>
-
-      <div class="match-card season-2526 comp-nor">
-        <div class="match-comp nor">VM</div>
-        <div class="match-date">5. jul. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="18" height="12" fill="#009C3B"/><polygon points="9,1.5 16.5,6 9,10.5 1.5,6" fill="#FFDF00"/><circle cx="9" cy="6" r="2.6" fill="#002776"/></svg></div>
-        </div>
-        <div class="match-opp">vs Brasil (N) &middot; 2&ndash;1</div>
-        <div class="match-icons">
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-          <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
-        </div>
-        <div class="match-status played">Spilt &middot; 2 m&aring;l (79. min. + langskudd) &mdash; Norge til kvartfinale for f&oslash;rste gang</div>
-      </div>
-
-      <div class="match-card season-2526 comp-nor">
-        <div class="match-comp nor">VM</div>
-        <div class="match-date">11. jul. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="18" height="12" fill="#fff"/><rect x="7" width="4" height="12" fill="#CE1124"/><rect y="4" width="18" height="4" fill="#CE1124"/></svg></div>
-        </div>
-        <div class="match-opp">vs England (N) &middot; 1&ndash;2 e.o.</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; VM-eventyret endte i kvartfinalen</div>
-      </div>
-
-      <div class="match-card season-2627 comp-shield">
-        <div class="match-comp shield">SHIELD</div>
-        <div class="match-date">16. aug. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
-        </div>
-        <div class="match-opp">vs Arsenal (N) &middot; 0&ndash;3</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l (laget scoret ikke) &mdash; Community Shield (kilde: mancity.com)</div>
-      </div>
-
-      <div class="match-card season-2627 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">23. aug. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
-        </div>
-        <div class="match-opp">vs Bournemouth (H) &middot; 2&ndash;1</div>
-        <div class="match-icons"></div>
-        <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; sesong&aring;pning, Gvardiol avgjorde i overtiden (kilde: ESPN, mancity.com)</div>
-      </div>
-
-      <div class="match-card is-planned season-2627 comp-pl">
-        <div class="match-comp pl">PL</div>
-        <div class="match-date">28. aug. 2026</div>
-        <div class="match-badges">
-          <div class="badge badge-own">MCI</div>
-          <span class="badge-vs">&ndash;</span>
-          <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
-        </div>
-        <div class="match-opp">vs Crystal Palace (B) &middot; kl. 20:00</div>
-        <div class="match-icons"></div>
-        <div class="match-status planned">Planlagt &middot; Selhurst Park (kilde: mancity.com)</div>
-      </div>
-
-      <div class="now-marker"><span>N&Aring;</span></div>
-    </div>
-
-    <div class="timeline-legend">
-      <span class="legend-item"><i class="dot dot--played"></i>Spilt</span>
-      <span class="legend-item"><i class="dot dot--missed"></i>Stod over</span>
-      <span class="legend-item">
-        <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg>
-        M&aring;l
-      </span>
-      <span class="legend-item">
-        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="#f1e6cf" stroke="#14171c" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="#14171c"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#14171c" stroke-width="1.1" stroke-linecap="round"/></svg>
-        Assist
-      </span>
-      <span class="legend-item"><i class="dot dot--planned"></i>Planlagt</span>
-    </div>
-  </div>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (68. min., straffe) &mdash; siste kamp for Dortmund</div>
+ </div>
+
+ <div class="match-card season-2223 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">7. aug. 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
+ </div>
+ <div class="match-opp">vs West Ham (B) &middot; 0&ndash;2</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (straffe + fra spill) &mdash; City-debut</div>
+ </div>
+
+ <div class="match-card season-2223 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">13. aug. 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+ </div>
+ <div class="match-opp">vs Bournemouth (H) &middot; 4&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="#f1e6cf" stroke="#14171c" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="#14171c"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#14171c" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 assist, ingen m&aring;l</div>
+ </div>
+
+ <div class="match-card season-2223 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">21. aug. 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
+ </div>
+ <div class="match-opp">vs Newcastle (B) &middot; 3&ndash;3</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (poeng reddet etter 0&ndash;2)</div>
+ </div>
+
+ <div class="match-card is-record season-2223 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">27. aug. 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
+ </div>
+ <div class="match-opp">vs Crystal Palace (H) &middot; 4&ndash;2</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick (19 min., snudde 0&ndash;2 til seier) &mdash; f&oslash;rste City-hattrick</div>
+ </div>
+
+ <div class="match-card is-record season-2223 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">31. aug. 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
+ </div>
+ <div class="match-opp">vs Nottingham Forest (H) &middot; 6&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick p&aring; 38 min. &mdash; 9 m&aring;l p&aring; 5 kamper, PL-rekord for start p&aring; en klubbkarriere</div>
+ </div>
+
+ <div class="match-card season-2223 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">2. okt. 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+ </div>
+ <div class="match-opp">vs Man United (H) &middot; 6&ndash;3</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; hattrick i derbyet &mdash; f&oslash;rste PL-hattrick i Manchester-derby siden 1970</div>
+ </div>
+
+ <div class="match-card is-record season-2223 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">14. mar. 2023</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DD0741;color:#fff">RBL</div>
+ </div>
+ <div class="match-opp">vs RB Leipzig (H) &middot; 7&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 5 m&aring;l (CL &aring;ttedelsfinale, 2. runde) &mdash; matcher Messis rekord for flest mål i en CL-kamp</div>
+ </div>
+
+ <div class="match-card season-2223 comp-cup">
+ <div class="match-comp cup">CUP</div>
+ <div class="match-date">3. jun. 2023</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+ </div>
+ <div class="match-opp">vs Man United (N) &middot; 2&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; FA-cupen vunnet p&aring; Wembley, andre del av trippelen i 2022/23</div>
+ </div>
+
+ <div class="match-card season-2223 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">10. jun. 2023</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#010E80;color:#fff">INT</div>
+ </div>
+ <div class="match-opp">vs Inter Milan (N) &middot; 1&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Champions League vunnet i Istanbul (Rodri avgjorde), trippelen fullf&oslash;rt &mdash; sesongens toppscorer med 12 CL-m&aring;l</div>
+ </div>
+
+ <div class="match-card season-2324 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">11. aug. 2023</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#6C1D45;color:#fff">BUR</div>
+ </div>
+ <div class="match-opp">vs Burnley (B) &middot; 3&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (4. og 36. min.) &mdash; sesong&aring;pning</div>
+ </div>
+
+ <div class="match-card season-2324 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">2. sep. 2023</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
+ </div>
+ <div class="match-opp">vs Fulham (H) &middot; 5&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; hattrick i 2. omgang</div>
+ </div>
+
+ <div class="match-card season-2324 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">29. okt. 2023</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+ </div>
+ <div class="match-opp">vs Man United (B) &middot; 3&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="#f1e6cf" stroke="#14171c" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="#14171c"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#14171c" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (straffe + heading) + 1 assist &mdash; derbyseier p&aring; Old Trafford</div>
+ </div>
+
+ <div class="match-card season-2324 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">31. jan. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#6C1D45;color:#fff">BUR</div>
+ </div>
+ <div class="match-opp">vs Burnley (H) &middot; 3&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; comeback som innbytter (71.) etter 56 dager ute med fotskade, ingen m&aring;l</div>
+ </div>
+
+ <div class="match-card season-2324 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">17. apr. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
+ </div>
+ <div class="match-opp">vs Real Madrid (H) &middot; 1&ndash;1 e.o.</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l (traff tverrligger) &mdash; City slo &aring;t p&aring; straffer (3&ndash;4) etter 4&ndash;4 samlet, CL &aring;ttedelsfinale</div>
+ </div>
+
+ <div class="match-card season-2324 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">4. mai 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
+ </div>
+ <div class="match-opp">vs Wolves (H) &middot; 5&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 4 m&aring;l (2 straffer + heading-hattrick f&oslash;r pause, 4. m&aring;l i 2. omgang)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-friendly">
+ <div class="match-comp friendly">TRENING</div>
+ <div class="match-date">24. jul. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#018749;color:#fff">CEL</div>
+ </div>
+ <div class="match-opp">vs Celtic (N) &middot; 3&ndash;4</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 mål (57. min., hodestøt)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-friendly">
+ <div class="match-comp friendly">TRENING</div>
+ <div class="match-date">27. jul. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#FB090B;color:#fff">MIL</div>
+ </div>
+ <div class="match-opp">vs AC Milan (N) &middot; 2&ndash;3</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 mål (19. min.)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-friendly">
+ <div class="match-comp friendly">TRENING</div>
+ <div class="match-date">31. jul. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#A50044;color:#fff">BAR</div>
+ </div>
+ <div class="match-opp">vs Barcelona (N) &middot; 2&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — byttet ut ved pause</div>
+ </div>
+
+ <div class="match-card season-2425 comp-friendly">
+ <div class="match-comp friendly">TRENING</div>
+ <div class="match-date">3. aug. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
+ </div>
+ <div class="match-opp">vs Chelsea (N) &middot; 4&ndash;2</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; hattrick (4. min., straffe, 5. og 56. min.)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-shield">
+ <div class="match-comp shield">SHIELD</div>
+ <div class="match-date">10. aug. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+ </div>
+ <div class="match-opp">vs Man United (N) &middot; 1&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — City vant på straffer, Community Shield</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">18. aug. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
+ </div>
+ <div class="match-opp">vs Chelsea (B) &middot; 2&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 mål (18. min.) — sesongåpning</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">24. aug. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#0044A9;color:#fff">IPS</div>
+ </div>
+ <div class="match-opp">vs Ipswich (H) &middot; 4&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; hattrick</div>
+ </div>
+
+ <div class="match-card is-record season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">31. aug. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
+ </div>
+ <div class="match-opp">vs West Ham (B) &middot; 3&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick &mdash; to strake trippel-kamper, 11. City-hattrick p&aring; 102 kamper</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">14. sep. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
+ </div>
+ <div class="match-opp">vs Brentford (H) &middot; 2&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 mål (19. og 32. min.)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">18. sep. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#010E80;color:#fff">INT</div>
+ </div>
+ <div class="match-opp">vs Inter (H) &middot; 0&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">22. sep. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
+ </div>
+ <div class="match-opp">vs Arsenal (H) &middot; 2&ndash;2</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 mål (9. min.)</div>
+ </div>
+
+ <div class="match-card is-missed season-2425 comp-efl">
+ <div class="match-comp efl">LIGACUP</div>
+ <div class="match-date">24. sep. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#FBEE23;color:#14171c">WAT</div>
+ </div>
+ <div class="match-opp">vs Watford (H) &middot; 2&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Ikke i troppen &middot; rotert ut</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">28. sep. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
+ </div>
+ <div class="match-opp">vs Newcastle (B) &middot; 1&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — traff ikke mål med hodestøt</div>
+ </div>
+
+ <div class="match-card season-2425 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">1. okt. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#005BAC;color:#fff">SLO</div>
+ </div>
+ <div class="match-opp">vs Slovan Bratislava (B) &middot; 4&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 mål (58. min.)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">5. okt. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
+ </div>
+ <div class="match-opp">vs Fulham (H) &middot; 3&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — Kovacic (2) og Doku scoret</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">20. okt. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
+ </div>
+ <div class="match-opp">vs Wolves (B) &middot; 2&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — Gvardiol og Stones scoret</div>
+ </div>
+
+ <div class="match-card season-2425 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">23. okt. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#A6192E;color:#fff">SPA</div>
+ </div>
+ <div class="match-opp">vs AC Sparta Prague (H) &middot; 5&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 mål (58. min., hælflikk, og 68. min.)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">26. okt. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#D71920;color:#fff">SOU</div>
+ </div>
+ <div class="match-opp">vs Southampton (H) &middot; 1&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 mål (5. min.)</div>
+ </div>
+
+ <div class="match-card is-missed season-2425 comp-efl">
+ <div class="match-comp efl">LIGACUP</div>
+ <div class="match-date">30. okt. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
+ </div>
+ <div class="match-opp">vs Tottenham (B) &middot; 1&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Ikke i troppen &middot; ikke benyttet — satt på benken hele kampen</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">2. nov. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+ </div>
+ <div class="match-opp">vs Bournemouth (B) &middot; 1&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål</div>
+ </div>
+
+ <div class="match-card season-2425 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">5. nov. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#007A3D;color:#fff">SCP</div>
+ </div>
+ <div class="match-opp">vs Sporting CP (B) &middot; 1&ndash;4</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — bommet på straffe (69. min.), traff tverrligger</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">9. nov. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
+ </div>
+ <div class="match-opp">vs Brighton (B) &middot; 1&ndash;2</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 mål (23. min.)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">23. nov. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
+ </div>
+ <div class="match-opp">vs Tottenham (H) &middot; 0&ndash;4</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — Maddison (2), Porro og Johnson scoret</div>
+ </div>
+
+ <div class="match-card season-2425 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">26. nov. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#E2000F;color:#fff">FEY</div>
+ </div>
+ <div class="match-opp">vs Feyenoord (H) &middot; 3&ndash;3</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 mål (45. min., straffe, og 48. min.)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">1. des. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
+ </div>
+ <div class="match-opp">vs Liverpool (B) &middot; 0&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">4. des. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
+ </div>
+ <div class="match-opp">vs Nottingham Forest (H) &middot; 3&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — involvert i opptakten til Dokus scoring</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">7. des. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
+ </div>
+ <div class="match-opp">vs Crystal Palace (B) &middot; 2&ndash;2</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 mål (30. min., hodestøt)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">11. des. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#000000;color:#fff">JUV</div>
+ </div>
+ <div class="match-opp">vs Juventus (B) &middot; 0&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — Vlahovic og McKennie scoret</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">15. des. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+ </div>
+ <div class="match-opp">vs Man United (H) &middot; 1&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — Gvardiol scoret</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">21. des. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
+ </div>
+ <div class="match-opp">vs Aston Villa (B) &middot; 1&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">26. des. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#003399;color:#fff">EVE</div>
+ </div>
+ <div class="match-opp">vs Everton (H) &middot; 1&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — straffe reddet</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">29. des. 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#003090;color:#fff">LEI</div>
+ </div>
+ <div class="match-opp">vs Leicester City (B) &middot; 2&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 mål (74. min., hodestøt, målgivende Savinho)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">4. jan. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
+ </div>
+ <div class="match-opp">vs West Ham (H) &middot; 4&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 mål (42. og 55. min., begge målgivende Savinho)</div>
+ </div>
+
+ <div class="match-card is-missed season-2425 comp-cup">
+ <div class="match-comp cup">CUP</div>
+ <div class="match-date">11. jan. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#FF6900;color:#fff">SAL</div>
+ </div>
+ <div class="match-opp">vs Salford City (H) &middot; 8&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Ikke i troppen &middot; ikke benyttet</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">14. jan. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
+ </div>
+ <div class="match-opp">vs Brentford (B) &middot; 2&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — Foden med to mål</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">19. jan. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#0044A9;color:#fff">IPS</div>
+ </div>
+ <div class="match-opp">vs Ipswich Town (B) &middot; 6&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 mål (57. min.)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">22. jan. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#004170;color:#fff">PSG</div>
+ </div>
+ <div class="match-opp">vs PSG (B) &middot; 2&ndash;4</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 mål (53. min.)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">25. jan. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
+ </div>
+ <div class="match-opp">vs Chelsea (H) &middot; 3&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 mål (68. min., heving) — målgivende på Fodens 87.-minuttsmål</div>
+ </div>
+
+ <div class="match-card season-2425 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">29. jan. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#0E3A6D;color:#fff">BRU</div>
+ </div>
+ <div class="match-opp">vs Club Brugge (H) &middot; 3&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — forsøk reddet</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">2. feb. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
+ </div>
+ <div class="match-opp">vs Arsenal (B) &middot; 1&ndash;5</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 mål (55. min., hodestøt) — karrierens 250. mål</div>
+ </div>
+
+ <div class="match-card is-missed season-2425 comp-cup">
+ <div class="match-comp cup">CUP</div>
+ <div class="match-date">8. feb. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#D2122E;color:#fff">ORI</div>
+ </div>
+ <div class="match-opp">vs Leyton Orient (B) &middot; 2&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Ikke i troppen</div>
+ </div>
+
+ <div class="match-card season-2425 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">11. feb. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
+ </div>
+ <div class="match-opp">vs Real Madrid (H) &middot; 2&ndash;3</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (knockout-playoff, 1. runde)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">15. feb. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
+ </div>
+ <div class="match-opp">vs Newcastle (H) &middot; 4&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — byttet ut i 87. min. med en støtskade, Marmoush med hattrick</div>
+ </div>
+
+ <div class="match-card is-missed season-2425 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">19. feb. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
+ </div>
+ <div class="match-opp">vs Real Madrid (B) &middot; 1&ndash;3</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Ikke i troppen &middot; kneskade</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">23. feb. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
+ </div>
+ <div class="match-opp">vs Liverpool (H) &middot; 0&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">26. feb. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
+ </div>
+ <div class="match-opp">vs Tottenham (B) &middot; 1&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 mål (12. min.)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-cup">
+ <div class="match-comp cup">CUP</div>
+ <div class="match-date">1. mar. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#005C36;color:#fff">PLY</div>
+ </div>
+ <div class="match-opp">vs Plymouth Argyle (H) &middot; 3&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — målgivende på De Bruynes scoring i 90. min.</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">8. mar. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
+ </div>
+ <div class="match-opp">vs Nottingham Forest (B) &middot; 0&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — Hudson-Odoi med kampens eneste scoring</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">15. mar. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
+ </div>
+ <div class="match-opp">vs Brighton (H) &middot; 2&ndash;2</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 mål (11. min., straffe)</div>
+ </div>
+ <div class="match-card season-2425 comp-cup">
+ <div class="match-comp cup">CUP</div>
+ <div class="match-date">30. mar. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+ </div>
+ <div class="match-opp">vs Bournemouth (B) &middot; 1&ndash;2</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 mål (49. min., utligning) — bommet på straffe (14. min.), skadet og byttet ut etter scoringen, FA-cupens kvartfinale</div>
+ </div>
+
+ <div class="match-card season-2425 comp-nor">
+ <div class="match-comp nor">LAND</div>
+ <div class="match-date">22. mars 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="6" height="12" fill="#0033A0"/><rect x="6" width="6" height="12" fill="#FFD200"/><rect x="12" width="6" height="12" fill="#CC092F"/></svg></div>
+ </div>
+ <div class="match-opp">vs Moldova (B) &middot; 0&ndash;5</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (VM-kvalik-start)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-nor">
+ <div class="match-comp nor">LAND</div>
+ <div class="match-date">25. mars 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 22 16" width="36" height="26"><rect width="22" height="16" fill="#fff"/><rect y="2" width="22" height="2" fill="#0038b8"/><rect y="12" width="22" height="2" fill="#0038b8"/><polygon points="11,5 13.3,9 8.7,9" fill="none" stroke="#0038b8" stroke-width="0.6"/><polygon points="11,10.5 8.7,6.5 13.3,6.5" fill="none" stroke="#0038b8" stroke-width="0.6"/></svg></div>
+ </div>
+ <div class="match-opp">vs Israel (B) &middot; 2&ndash;4</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l</div>
+ </div>
+
+ <div class="match-card season-2425 comp-cup">
+ <div class="match-comp cup">CUP</div>
+ <div class="match-date">30. mar. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+ </div>
+ <div class="match-opp">vs Bournemouth (B) &middot; 2&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (utligning, 49., bommet straffe f&oslash;r pause) &mdash; ankelskade, byttet ut 60. min., FA-cup kvartfinale</div>
+ </div>
+
+ <div class="match-card is-missed season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">2. apr. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#003090;color:#fff">LEI</div>
+ </div>
+ <div class="match-opp">vs Leicester City (H) &middot; 2&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Ikke i troppen &middot; ankelskade fra FA-cupen</div>
+ </div>
+
+ <div class="match-card is-missed season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">6. apr. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+ </div>
+ <div class="match-opp">vs Man United (B) &middot; 0&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Ikke i troppen &middot; skadet, derby</div>
+ </div>
+
+ <div class="match-card is-missed season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">12. apr. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
+ </div>
+ <div class="match-opp">vs Crystal Palace (H) &middot; 5&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Ikke i troppen &middot; skadet</div>
+ </div>
+
+ <div class="match-card is-missed season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">19. apr. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#003399;color:#fff">EVE</div>
+ </div>
+ <div class="match-opp">vs Everton (B) &middot; 2&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Ikke i troppen &middot; skadet</div>
+ </div>
+
+ <div class="match-card is-missed season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">22. apr. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
+ </div>
+ <div class="match-opp">vs Aston Villa (H) &middot; 2&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Ikke i troppen &middot; skadet</div>
+ </div>
+
+ <div class="match-card is-missed season-2425 comp-cup">
+ <div class="match-comp cup">CUP</div>
+ <div class="match-date">27. apr. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
+ </div>
+ <div class="match-opp">vs Nottingham Forest (N) &middot; 2&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Ikke i troppen &middot; skadet, FA-cupens semifinale</div>
+ </div>
+
+ <div class="match-card is-missed season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">2. mai 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
+ </div>
+ <div class="match-opp">vs Wolves (H) &middot; 1&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Ikke i troppen &middot; ikke benyttet — første kamp tilbake i troppen etter skade</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">10. mai 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#D71920;color:#fff">SOU</div>
+ </div>
+ <div class="match-opp">vs Southampton (B) &middot; 0&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — første kamp fra start etter skadepause, hodestøt reddet</div>
+ </div>
+
+ <div class="match-card season-2425 comp-cup">
+ <div class="match-comp cup">CUP</div>
+ <div class="match-date">17. mai 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
+ </div>
+ <div class="match-opp">vs Crystal Palace (N) &middot; 0&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — traff stolpen og fikk skudd blokkert p&aring; streken to ganger, FA-cupfinalen</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">20. mai 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+ </div>
+ <div class="match-opp">vs Bournemouth (H) &middot; 3&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen mål — Marmoush, Bernardo Silva og Nico González scoret</div>
+ </div>
+
+ <div class="match-card season-2425 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">25. mai 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
+ </div>
+ <div class="match-opp">vs Fulham (B) &middot; 2&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (72. min., straffe) &mdash; G&uuml;ndogan scoret det f&oslash;rste</div>
+ </div>
+
+ <div class="match-card season-2425 comp-nor">
+ <div class="match-comp nor">LAND</div>
+ <div class="match-date">6. juni 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="6" height="12" fill="#009246"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#CE2B37"/></svg></div>
+ </div>
+ <div class="match-opp">vs Italia (H) &middot; 3&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (f&oslash;rste seier over Italia p&aring; 25 &aring;r)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-nor">
+ <div class="match-comp nor">LAND</div>
+ <div class="match-date">9. juni 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 11" width="36" height="22"><rect width="18" height="11" fill="#4891D9"/><rect y="3.67" width="18" height="3.66" fill="#000"/><rect y="7.33" width="18" height="3.67" fill="#fff"/></svg></div>
+ </div>
+ <div class="match-opp">vs Estland (B) &middot; 0&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (avgj&oslash;rende)</div>
+ </div>
+
+ <div class="match-card season-2425 comp-cwc">
+ <div class="match-comp cwc">KLUBB-VM</div>
+ <div class="match-date">18. jun. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#EE1C25;color:#fff">WYD</div>
+ </div>
+ <div class="match-opp">vs Wydad AC (H) &middot; 2&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Foden og Doku scoret</div>
+ </div>
+
+ <div class="match-card season-2425 comp-cwc">
+ <div class="match-comp cwc">KLUBB-VM</div>
+ <div class="match-date">23. jun. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#F7A81B;color:#14171c">ALA</div>
+ </div>
+ <div class="match-opp">vs Al Ain FC (H) &middot; 6&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (45.+5, straffe) &mdash; G&uuml;ndogan (2), Echeverri, Bobb og Cherki scoret ogs&aring;</div>
+ </div>
+
+ <div class="match-card season-2425 comp-cwc">
+ <div class="match-comp cwc">KLUBB-VM</div>
+ <div class="match-date">26. jun. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#000000;color:#fff">JUV</div>
+ </div>
+ <div class="match-opp">vs Juventus (B) &middot; 5&ndash;2</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (52. min.) &mdash; Doku, Foden og Savinho scoret ogs&aring;, i tillegg til et selvm&aring;l av Kalulu</div>
+ </div>
+
+ <div class="match-card season-2425 comp-cwc">
+ <div class="match-comp cwc">KLUBB-VM</div>
+ <div class="match-date">1. jul. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#003DA5;color:#fff">HIL</div>
+ </div>
+ <div class="match-opp">vs Al-Hilal (H) &middot; 3&ndash;4</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (55. min.) &mdash; Bernardo Silva og Foden scoret ogs&aring;, tapte etter ekstraomganger</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">16. aug. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
+ </div>
+ <div class="match-opp">vs Wolves (B) &middot; 4&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (sesong&aring;pning, Molineux)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">23. aug. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
+ </div>
+ <div class="match-opp">vs Tottenham (H) &middot; 0&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; sesongens f&oslash;rste tap</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">31. aug. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
+ </div>
+ <div class="match-opp">vs Brighton (B) &middot; 1&ndash;2</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (34. min.)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-nor">
+ <div class="match-comp nor">LAND</div>
+ <div class="match-date">9. sep. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="6" height="12" fill="#0033A0"/><rect x="6" width="6" height="12" fill="#FFD200"/><rect x="12" width="6" height="12" fill="#CC092F"/></svg></div>
+ </div>
+ <div class="match-opp">vs Moldova (H) &middot; 11&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 5 m&aring;l (hattrick f&oslash;r pause + 2)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">14. sep. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+ </div>
+ <div class="match-opp">vs Man United (H) &middot; 3&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (derby)</div>
+ </div>
+
+ <div class="match-card is-record season-2526 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">18. sep. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#087bd1;color:#fff">NAP</div>
+ </div>
+ <div class="match-opp">vs Napoli (H) &middot; 2&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 1 m&aring;l &mdash; 50. CL-m&aring;l, i sin 49. kamp (rekord)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">21. sep. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
+ </div>
+ <div class="match-opp">vs Arsenal (B) &middot; 1&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (9. min.)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-efl">
+ <div class="match-comp efl">LIGACUP</div>
+ <div class="match-date">24. sep. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#0E63AD;color:#fff">HUD</div>
+ </div>
+ <div class="match-opp">vs Huddersfield Town (B) &middot; 2&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Foden og Savinho scoret</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">27. sep. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#6C1D45;color:#fff">BUR</div>
+ </div>
+ <div class="match-opp">vs Burnley (H) &middot; 5&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l</div>
+ </div>
+
+ <div class="match-card season-2526 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">1. okt. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#CE1126;color:#fff">MON</div>
+ </div>
+ <div class="match-opp">vs Monaco (B) &middot; 2&ndash;2</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">5. okt. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
+ </div>
+ <div class="match-opp">vs Brentford (B) &middot; 1&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (9. min.) &mdash; kampens eneste m&aring;l</div>
+ </div>
+
+ <div class="match-card is-record season-2526 comp-nor">
+ <div class="match-comp nor">LAND</div>
+ <div class="match-date">11. okt. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 22 16" width="36" height="26"><rect width="22" height="16" fill="#fff"/><rect y="2" width="22" height="2" fill="#0038b8"/><rect y="12" width="22" height="2" fill="#0038b8"/><polygon points="11,5 13.3,9 8.7,9" fill="none" stroke="#0038b8" stroke-width="0.6"/><polygon points="11,10.5 8.7,6.5 13.3,6.5" fill="none" stroke="#0038b8" stroke-width="0.6"/></svg></div>
+ </div>
+ <div class="match-opp">vs Israel (H) &middot; 5&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick (3 m&aring;l, 50. landsm&aring;l n&aring;dd)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">18. okt. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#003399;color:#fff">EVE</div>
+ </div>
+ <div class="match-opp">vs Everton (H) &middot; 2&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (58. og 63. min.) &mdash; begge City-m&aring;lene</div>
+ </div>
+
+ <div class="match-card season-2526 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">21. okt. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#FFE667;color:#14171c">VIL</div>
+ </div>
+ <div class="match-opp">vs Villarreal (B) &middot; 2&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">26. okt. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
+ </div>
+ <div class="match-opp">vs Aston Villa (B) &middot; 0&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l (laget scoret ikke)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-efl">
+ <div class="match-comp efl">LIGACUP</div>
+ <div class="match-date">29. okt. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#000000;color:#fff">SWA</div>
+ </div>
+ <div class="match-opp">vs Swansea City (B) &middot; 1&ndash;3</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Doku, Marmoush og Cherki scoret</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">2. nov. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+ </div>
+ <div class="match-opp">vs Bournemouth (H) &middot; 3&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (17. og 33. min.) &mdash; Nico O'Reilly scoret ogs&aring;</div>
+ </div>
+
+ <div class="match-card season-2526 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">5. nov. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#FDE100;color:#14171c">BVB</div>
+ </div>
+ <div class="match-opp">vs Dortmund (H) &middot; 4&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (mot tidligere klubb)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">9. nov. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
+ </div>
+ <div class="match-opp">vs Liverpool (H) &middot; 3&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (29. min.) &mdash; Nico O'Reilly og Doku scoret ogs&aring;</div>
+ </div>
+
+ <div class="match-card season-2526 comp-nor">
+ <div class="match-comp nor">LAND</div>
+ <div class="match-date">13. nov. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 11" width="36" height="22"><rect width="18" height="11" fill="#4891D9"/><rect y="3.67" width="18" height="3.66" fill="#000"/><rect y="7.33" width="18" height="3.67" fill="#fff"/></svg></div>
+ </div>
+ <div class="match-opp">vs Estland (H) &middot; 4&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l</div>
+ </div>
+
+ <div class="match-card season-2526 comp-nor">
+ <div class="match-comp nor">LAND</div>
+ <div class="match-date">16. nov. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="6" height="12" fill="#009246"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#CE2B37"/></svg></div>
+ </div>
+ <div class="match-opp">vs Italia (B) &middot; 1&ndash;4</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l &mdash; VM-plassen sikret p&aring; San Siro</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">22. nov. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
+ </div>
+ <div class="match-opp">vs Newcastle (B) &middot; 1&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; R&uacute;ben Dias scoret City-m&aring;let</div>
+ </div>
+
+ <div class="match-card season-2526 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">25. nov. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#E32219;color:#fff">B04</div>
+ </div>
+ <div class="match-opp">vs Bayer Leverkusen (H) &middot; 0&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l (innbytter, City's f&oslash;rste CL-tap i sesongen)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">29. nov. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1D428A;color:#fff">LEE</div>
+ </div>
+ <div class="match-opp">vs Leeds (H) &middot; 3&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Foden (2) og Gvardiol scoret</div>
+ </div>
+
+ <div class="match-card is-record season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">2. des. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
+ </div>
+ <div class="match-opp">vs Fulham (B) &middot; 5&ndash;4</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 1 m&aring;l &mdash; 100. PL-m&aring;l, i sin 111. kamp (GWR)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">6. des. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#EB172B;color:#fff">SUN</div>
+ </div>
+ <div class="match-opp">vs Sunderland (H) &middot; 3&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Dias, Gvardiol og Foden scoret</div>
+ </div>
+
+ <div class="match-card season-2526 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">10. des. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
+ </div>
+ <div class="match-opp">vs Real Madrid (B) &middot; 2&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (43. min., straffe) &mdash; Nico O'Reilly scoret det f&oslash;rste, borteseier mot Real Madrid</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">14. des. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
+ </div>
+ <div class="match-opp">vs Crystal Palace (B) &middot; 3&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (nikk + straffe)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-efl">
+ <div class="match-comp efl">LIGACUP</div>
+ <div class="match-date">17. des. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
+ </div>
+ <div class="match-opp">vs Brentford (H) &middot; 2&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Cherki og Savinho scoret</div>
+ </div>
+
+ <div class="match-card is-record season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">20. des. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
+ </div>
+ <div class="match-opp">vs West Ham (H) &middot; 3&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="#f1e6cf" stroke="#14171c" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="#14171c"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#14171c" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 2 m&aring;l + 1 assist &mdash; passerte 200 m&aring;lpoeng i Europas topp 5-ligaer</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">27. des. 2025</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
+ </div>
+ <div class="match-opp">vs Nottingham Forest (B) &middot; 2&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Reijnders og Cherki scoret</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">1. jan. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#EB172B;color:#fff">SUN</div>
+ </div>
+ <div class="match-opp">vs Sunderland (B) &middot; 0&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l (laget scoret ikke)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">4. jan. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
+ </div>
+ <div class="match-opp">vs Chelsea (H) &middot; 1&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Reijnders scoret City-m&aring;let</div>
+ </div>
+
+ <div class="match-card is-record season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">7. jan. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
+ </div>
+ <div class="match-opp">vs Brighton (H) &middot; 1&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 1 m&aring;l (41. min., straffe) &mdash; 150. klubbm&aring;l for City, i sin 173. kamp &mdash; kun to bak felles femteplass (Joe Hayes/Billy Meredith, 152), Colin Bell topper med 153</div>
+ </div>
+
+ <div class="match-card season-2526 comp-cup">
+ <div class="match-comp cup">CUP</div>
+ <div class="match-date">10. jan. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DA291C;color:#fff">EXE</div>
+ </div>
+ <div class="match-opp">vs Exeter City (H) &middot; 10&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; rotasjonslag, m&aring;l fordelt p&aring; 8 ulike scorere, Haaland ikke blant dem</div>
+ </div>
+
+ <div class="match-card season-2526 comp-efl">
+ <div class="match-comp efl">LIGACUP</div>
+ <div class="match-date">13. jan. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
+ </div>
+ <div class="match-opp">vs Newcastle (B) &middot; 2&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo og Cherki scoret</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">17. jan. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+ </div>
+ <div class="match-opp">vs Man United (B) &middot; 0&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l (laget scoret ikke)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">20. jan. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#FFF200;color:#14171c">BOD</div>
+ </div>
+ <div class="match-opp">vs Bod&oslash;/Glimt (B) &middot; 1&ndash;3</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Cherki scoret City-m&aring;let, tap mot Bod&oslash;/Glimt</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">24. jan. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
+ </div>
+ <div class="match-opp">vs Wolves (H) &middot; 2&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Marmoush scoret, i tillegg til et selvm&aring;l</div>
+ </div>
+
+ <div class="match-card season-2526 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">28. jan. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#A90432;color:#fff">GAL</div>
+ </div>
+ <div class="match-opp">vs Galatasaray (H) &middot; 2&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">1. feb. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
+ </div>
+ <div class="match-opp">vs Tottenham (B) &middot; 2&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Cherki og Semenyo scoret</div>
+ </div>
+
+ <div class="match-card season-2526 comp-efl">
+ <div class="match-comp efl">LIGACUP</div>
+ <div class="match-date">4. feb. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
+ </div>
+ <div class="match-opp">vs Newcastle (H) &middot; 3&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Marmoush (2) og Reijnders scoret</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">8. feb. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
+ </div>
+ <div class="match-opp">vs Liverpool (B) &middot; 2&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (90.+3, straffe, seiersm&aring;l) &mdash; Bernardo Silva scoret ogs&aring;</div>
+ </div>
+
+ <div class="match-card is-record season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">11. feb. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
+ </div>
+ <div class="match-opp">vs Fulham (H) &middot; 3&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 1 m&aring;l (39. min.) &mdash; 153. klubbm&aring;l, p&aring; linje med Colin Bell &mdash; Semenyo og Nico O'Reilly scoret ogs&aring;</div>
+ </div>
+
+ <div class="match-card season-2526 comp-cup">
+ <div class="match-comp cup">CUP</div>
+ <div class="match-date">14. feb. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#FF6900;color:#fff">SAL</div>
+ </div>
+ <div class="match-opp">vs Salford City (H) &middot; 2&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; selvm&aring;l av Alfie Dorrington og m&aring;l av Marc Gu&eacute;hi</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">21. feb. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
+ </div>
+ <div class="match-opp">vs Newcastle (H) &middot; 2&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Nico O'Reilly scoret begge</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">28. feb. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1D428A;color:#fff">LEE</div>
+ </div>
+ <div class="match-opp">vs Leeds (B) &middot; 1&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo scoret kampens eneste m&aring;l</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">4. mar. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
+ </div>
+ <div class="match-opp">vs Nottingham Forest (H) &middot; 2&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo og Rodrigo scoret</div>
+ </div>
+
+ <div class="match-card season-2526 comp-cup">
+ <div class="match-comp cup">CUP</div>
+ <div class="match-date">7. mar. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
+ </div>
+ <div class="match-opp">vs Newcastle (B) &middot; 3&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Savinho og Marmoush (2) scoret, FA-cup</div>
+ </div>
+
+ <div class="match-card season-2526 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">11. mar. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
+ </div>
+ <div class="match-opp">vs Real Madrid (B) &middot; 0&ndash;3</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l (Valverde-hattrick, CL &aring;ttedelsfinale 1. runde)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">14. mar. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
+ </div>
+ <div class="match-opp">vs West Ham (B) &middot; 1&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Bernardo Silva scoret City-m&aring;let</div>
+ </div>
+
+ <div class="match-card season-2526 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">17. mar. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
+ </div>
+ <div class="match-opp">vs Real Madrid (H) &middot; 1&ndash;2</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l &mdash; City slo &uring;t 1&ndash;5 samlet (CL &aring;ttedelsfinale 2. runde)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-efl">
+ <div class="match-comp efl">LIGACUP</div>
+ <div class="match-date">22. mar. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
+ </div>
+ <div class="match-opp">vs Arsenal (N) &middot; 2&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Ligacupen vunnet p&aring; Wembley (m&aring;l av Nico O'Reilly x2)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-cup">
+ <div class="match-comp cup">CUP</div>
+ <div class="match-date">4. apr. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
+ </div>
+ <div class="match-opp">vs Liverpool (H) &middot; 4&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; hattrick (FA-cup kvartfinale)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">12. apr. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
+ </div>
+ <div class="match-opp">vs Chelsea (B) &middot; 3&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Nico O'Reilly og Doku scoret, i tillegg til et selvm&aring;l av Marc Gu&eacute;hi</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">19. apr. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
+ </div>
+ <div class="match-opp">vs Arsenal (H) &middot; 2&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (66. min.) &mdash; Cherki scoret det f&oslash;rste</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">22. apr. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#6C1D45;color:#fff">BUR</div>
+ </div>
+ <div class="match-opp">vs Burnley (B) &middot; 1&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (6. min.) &mdash; kampens eneste m&aring;l</div>
+ </div>
+
+ <div class="match-card season-2526 comp-cup">
+ <div class="match-comp cup">CUP</div>
+ <div class="match-date">25. apr. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#D71920;color:#fff">SOU</div>
+ </div>
+ <div class="match-opp">vs Southampton (H) &middot; 2&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l (FA-cup semifinale)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">4. mai 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#003399;color:#fff">EVE</div>
+ </div>
+ <div class="match-opp">vs Everton (B) &middot; 3&ndash;3</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (83. min., utligning) &mdash; Doku scoret to (43., 90.+7)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">9. mai 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
+ </div>
+ <div class="match-opp">vs Brentford (H) &middot; 3&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (76. min.) &mdash; Doku og Marmoush scoret ogs&aring;</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">13. mai 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
+ </div>
+ <div class="match-opp">vs Crystal Palace (H) &middot; 3&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo, Marmoush og Savinho scoret</div>
+ </div>
+
+ <div class="match-card season-2526 comp-cup">
+ <div class="match-comp cup">CUP</div>
+ <div class="match-date">16. mai 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
+ </div>
+ <div class="match-opp">vs Chelsea (B) &middot; 0&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo avgjorde (72. min.), FA-cupen vunnet</div>
+ </div>
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">19. mai 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+ </div>
+ <div class="match-opp">vs Bournemouth (B) &middot; 1&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (90.+5, sen utligning)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">24. mai 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
+ </div>
+ <div class="match-opp">vs Aston Villa (H) &middot; 1&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo scoret City-m&aring;let, Watkins avgjorde med to</div>
+ </div>
+
+ <div class="match-card season-2526 comp-nor">
+ <div class="match-comp nor">VM</div>
+ <div class="match-date">17. jun. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="18" height="4" fill="#CE1126"/><rect y="4" width="18" height="4" fill="#fff"/><rect y="8" width="18" height="4" fill="#000"/></svg></div>
+ </div>
+ <div class="match-opp">vs Irak (N) &middot; 4&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l &mdash; VM-debut, Norges f&oslash;rste VM-kamp siden 1998</div>
+ </div>
+
+ <div class="match-card season-2526 comp-nor">
+ <div class="match-comp nor">VM</div>
+ <div class="match-date">23. jun. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="6" height="12" fill="#00853F"/><rect x="6" width="6" height="12" fill="#FDEF42"/><rect x="12" width="6" height="12" fill="#E31B23"/></svg></div>
+ </div>
+ <div class="match-opp">vs Senegal (N) &middot; 3&ndash;2</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l &mdash; sluttspillplass sikret med en kamp til gode</div>
+ </div>
+
+ <div class="match-card season-2526 comp-nor">
+ <div class="match-comp nor">VM</div>
+ <div class="match-date">26. jun. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="6" height="12" fill="#0055A4"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#EF4135"/></svg></div>
+ </div>
+ <div class="match-opp">vs Frankrike (N) &middot; 1&ndash;4</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Norge nr. 2 i gruppe I</div>
+ </div>
+
+ <div class="match-card season-2526 comp-nor">
+ <div class="match-comp nor">VM</div>
+ <div class="match-date">30. jun. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="6" height="12" fill="#F77F00"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#009E60"/></svg></div>
+ </div>
+ <div class="match-opp">vs Elfenbenskysten (N) &middot; 2&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 1 m&aring;l (86. min., vinnerm&aring;l) &mdash; Norges f&oslash;rste VM-sluttspillseier noensinne</div>
+ </div>
+
+ <div class="match-card season-2526 comp-nor">
+ <div class="match-comp nor">VM</div>
+ <div class="match-date">5. jul. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="18" height="12" fill="#009C3B"/><polygon points="9,1.5 16.5,6 9,10.5 1.5,6" fill="#FFDF00"/><circle cx="9" cy="6" r="2.6" fill="#002776"/></svg></div>
+ </div>
+ <div class="match-opp">vs Brasil (N) &middot; 2&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (79. min. + langskudd) &mdash; Norge til kvartfinale for f&oslash;rste gang</div>
+ </div>
+
+ <div class="match-card season-2526 comp-nor">
+ <div class="match-comp nor">VM</div>
+ <div class="match-date">11. jul. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="40" height="40" style="margin-left:-9px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="36" height="24"><rect width="18" height="12" fill="#fff"/><rect x="7" width="4" height="12" fill="#CE1124"/><rect y="4" width="18" height="4" fill="#CE1124"/></svg></div>
+ </div>
+ <div class="match-opp">vs England (N) &middot; 1&ndash;2 e.o.</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; VM-eventyret endte i kvartfinalen</div>
+ </div>
+
+ <div class="match-card season-2627 comp-shield">
+ <div class="match-comp shield">SHIELD</div>
+ <div class="match-date">16. aug. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
+ </div>
+ <div class="match-opp">vs Arsenal (N) &middot; 0&ndash;3</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l (laget scoret ikke) &mdash; Community Shield</div>
+ </div>
+
+ <div class="match-card season-2627 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">23. aug. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
+ </div>
+ <div class="match-opp">vs Bournemouth (H) &middot; 2&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; sesong&aring;pning, Gvardiol avgjorde i overtiden</div>
+ </div>
+
+ <div class="match-card is-planned season-2627 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">28. aug. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
+ </div>
+ <div class="match-opp">vs Crystal Palace (B) &middot; kl. 20:00</div>
+ <div class="match-icons"></div>
+ <div class="match-status planned">Planlagt &middot; Selhurst Park</div>
+ </div>
+
+ <div class="now-marker"><span>N&Aring;</span></div>
+ </div>
+
+ <div class="timeline-legend">
+ <span class="legend-item"><i class="dot dot--played"></i>Spilt</span>
+ <span class="legend-item"><i class="dot dot--missed"></i>Stod over</span>
+ <span class="legend-item">
+ <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg>
+ M&aring;l
+ </span>
+ <span class="legend-item">
+ <svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="#f1e6cf" stroke="#14171c" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="#14171c"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#14171c" stroke-width="1.1" stroke-linecap="round"/></svg>
+ Assist
+ </span>
+ <span class="legend-item"><i class="dot dot--planned"></i>Planlagt</span>
+ </div>
+ </div>
 </section>
 
 <section class="merits">
-  <p class="section-label">Overall meritter</p>
-  <div class="merits-row">
-    <div class="merit-chip">
-      <span class="merit-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none"><circle cx="12" cy="14" r="6" stroke="#fff" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="#fff"/><path d="M9 8.5 7 4M15 8.5l2-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-      <div class="merit-text"><b>4 Guinness World Records</b><span class="sub">tildelt ved Etihad Stadium f&oslash;r 2026/27-sesongen (kilde: Guinness World Records)</span></div>
-    </div>
-    <div class="merit-chip">
-      <span class="merit-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
-      <div class="merit-text"><b>PFA Players&rsquo; Player of the Year</b><span class="sub">2023 (kilde: PFA / ESPN)</span></div>
-    </div>
-    <div class="merit-chip">
-      <span class="merit-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none"><path d="M12 2.5l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6-.8z" fill="#fff"/></svg></span>
-      <div class="merit-text"><b>Ballon d&rsquo;Or &mdash; 2. plass</b><span class="sub">2023, bak Messi (kilde: mancity.com)</span></div>
-    </div>
-    <div class="merit-chip">
-      <span class="merit-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="#fff" stroke="#fff" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="#7a5c0f"/></svg></span>
-      <div class="merit-text"><b>European Golden Shoe</b><span class="sub">2022/23-sesongen (kilde: mancity.com)</span></div>
-    </div>
-  </div>
+ <p class="section-label">Overall meritter</p>
+ <div class="merits-row">
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none"><circle cx="12" cy="14" r="6" stroke="#fff" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="#fff"/><path d="M9 8.5 7 4M15 8.5l2-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+ <div class="merit-text"><b>4 Guinness World Records</b><span class="sub">tildelt ved Etihad Stadium f&oslash;r 2026/27-sesongen</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+ <div class="merit-text"><b>PFA Players&rsquo; Player of the Year</b><span class="sub">2023</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none"><path d="M12 2.5l2.6 5.5 6.8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6-.8z" fill="#fff"/></svg></span>
+ <div class="merit-text"><b>Ballon d&rsquo;Or &mdash; 2. plass</b><span class="sub">2023, bak Messi</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="#fff" stroke="#fff" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="#7a5c0f"/></svg></span>
+ <div class="merit-text"><b>European Golden Shoe</b><span class="sub">2022/23-sesongen</span></div>
+ </div>
+ </div>
 </section>
 
 <section class="lanes">
-  <p class="section-label">Klubb &middot; Champions League &middot; Landslag</p>
-  <div class="lane-grid">
+ <p class="section-label">Klubb &middot; Champions League &middot; Landslag</p>
+ <div class="lane-grid">
 
-    <div class="col-card">
-      <div class="col-header">
-      <span class="col-title">Klubbniv&aring;</span>
-      <span class="wordmark-badge">Premier League</span>
-      <div class="lane-fact">
-        <span class="lane-fact-label">Siste prestasjon</span>
-        <span class="lane-fact-value">Raskeste spiller noensinne til 100 Premier League-m&aring;l &mdash; 111 kamper, 2. des. 2025 mot Fulham (kilde: ESPN, Sky Sports).</span>
-      </div>
-      <div class="lane-fact">
-        <span class="lane-fact-label">Offisiell rekord</span>
-        <span class="lane-fact-value">Flest m&aring;l i &eacute;n Premier League-sesong: 36 (2022/23) &mdash; Guinness World Record.</span>
-      </div>
-      </div>
+ <div class="col-card">
+ <div class="col-header">
+ <span class="col-title">Klubbniv&aring;</span>
+ <span class="wordmark-badge">Premier League</span>
+ <div class="lane-fact">
+ <span class="lane-fact-label">Siste prestasjon</span>
+ <span class="lane-fact-value">Raskeste spiller noensinne til 100 Premier League-m&aring;l &mdash; 111 kamper, 2. des. 2025 mot Fulham.</span>
+ </div>
+ <div class="lane-fact">
+ <span class="lane-fact-label">Offisiell rekord</span>
+ <span class="lane-fact-value">Flest m&aring;l i &eacute;n Premier League-sesong: 36 (2022/23) &mdash; Guinness World Record.</span>
+ </div>
+ </div>
 
-      <div class="col-section merit-scroll">
-        <span class="sub-label">Meritter &mdash; klubb</span>
-        <div class="merit-list">
-          <div class="merit-chip">
-            <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="14" r="6" stroke="#fff" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="#fff"/><path d="M9 8.5 7 4M15 8.5l2-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-            <div class="merit-text"><b>GWR: raskest til 100 PL-m&aring;l</b><span class="sub">111 kamper, 2. des. 2025 (kilde: Guinness World Records)</span></div>
-          </div>
-          <div class="merit-chip">
-            <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="14" r="6" stroke="#fff" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="#fff"/><path d="M9 8.5 7 4M15 8.5l2-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-            <div class="merit-text"><b>GWR: flest m&aring;l i &eacute;n PL-sesong</b><span class="sub">36 m&aring;l, 2022/23 (kilde: Guinness World Records)</span></div>
-          </div>
-          <div class="merit-chip">
-            <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="#fff" stroke="#fff" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="#7a5c0f"/></svg></span>
-            <div class="merit-text"><b>Premier League Golden Boot</b><span class="sub">&times;3, per 2025/26-sesongen (kilde: football365.com)</span></div>
-          </div>
-          <div class="merit-chip">
-            <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
-            <div class="merit-text"><b>Raskest til 50 PL-m&aring;l</b><span class="sub">48 kamper, forbedret Andy Coles rekord med 17 kamper (kilde: ESPN)</span></div>
-          </div>
-        </div>
-      </div>
+ <div class="col-section merit-scroll">
+ <span class="sub-label">Meritter &mdash; klubb</span>
+ <div class="merit-list">
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="14" r="6" stroke="#fff" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="#fff"/><path d="M9 8.5 7 4M15 8.5l2-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+ <div class="merit-text"><b>GWR: raskest til 100 PL-m&aring;l</b><span class="sub">111 kamper, 2. des. 2025</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="14" r="6" stroke="#fff" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="#fff"/><path d="M9 8.5 7 4M15 8.5l2-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+ <div class="merit-text"><b>GWR: flest m&aring;l i &eacute;n PL-sesong</b><span class="sub">36 m&aring;l, 2022/23</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="#fff" stroke="#fff" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="#7a5c0f"/></svg></span>
+ <div class="merit-text"><b>Premier League Golden Boot</b><span class="sub">&times;3, per 2025/26-sesongen</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+ <div class="merit-text"><b>Raskest til 50 PL-m&aring;l</b><span class="sub">48 kamper, forbedret Andy Coles rekord med 17 kamper</span></div>
+ </div>
+ </div>
+ </div>
 
-      <div class="stat-mini">
-        <span class="stat-mini-title">Manchester City &mdash; n&oslash;kkeltall (klubb)</span>
-        <div class="stat-mini-row">
-          <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">199</span></div>
-          <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">162</span></div>
-          <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,81</span></div>
-        </div>
-        <span class="stat-mini-note">Alle turneringer, t.o.m. 200. City-kamp, 23. aug. 2026 (kilde: mancity.com, Yahoo Sports).</span>
-      </div>
+ <div class="stat-mini">
+ <span class="stat-mini-title">Manchester City &mdash; n&oslash;kkeltall (klubb)</span>
+ <div class="stat-mini-row">
+ <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">199</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">162</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,81</span></div>
+ </div>
+ <span class="stat-mini-note">Alle turneringer, t.o.m. 200. City-kamp, 23. aug. 2026.</span>
+ </div>
 
-      <div class="col-section">
-      <div class="toggle-row">
-        <button class="${vals.club.historyClass}" data-bind="club.toggleHistory">Historikk</button>
-        <button class="${vals.club.missedClass}" data-bind="club.toggleMissed">Tapte muligheter</button>
-        <button class="${vals.club.achievableClass}" data-bind="club.toggleAchievable">Fortsatt oppn&aring;elig</button>
-        <button class="${vals.club.recordsOnlyClass}" data-bind="club.toggleRecordsOnly">Kun rekorder</button>
-      </div>
-      <div class="toggle-allnone">
-        <button class="link-btn" data-bind="club.setAll">Vis alle</button>
-        <button class="link-btn" data-bind="club.setNone">Skjul alle</button>
-      </div>
+ <div class="col-section">
+ <div class="toggle-row">
+ <button class="${vals.club.historyClass}" data-bind="club.toggleHistory">Historikk</button>
+ <button class="${vals.club.missedClass}" data-bind="club.toggleMissed">Tapte muligheter</button>
+ <button class="${vals.club.achievableClass}" data-bind="club.toggleAchievable">Fortsatt oppn&aring;elig</button>
+ <button class="${vals.club.recordsOnlyClass}" data-bind="club.toggleRecordsOnly">Kun rekorder</button>
+ </div>
+ <div class="toggle-allnone">
+ <button class="link-btn" data-bind="club.setAll">Vis alle</button>
+ <button class="link-btn" data-bind="club.setNone">Skjul alle</button>
+ </div>
 
-      <div class="col-scroll">
-        ${(vals.club.historyOn) ? `
-          <div class="sub-block">
-            <span class="sub-label">Historikk</span>
-            ${(vals.clubHistory||[]).map((item,__i0) => `
-              <div class="item-card">
-                ${(item.record) ? `
-                  <span class="item-badge">
-                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none"><circle cx="12" cy="14" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="currentColor"/></svg>
-                    Rekord
-                  </span>
-                ` : ''}
-                <span class="item-period">${item.period}</span>
-                <span class="item-title">${item.title}</span>
-                <span class="item-desc">${item.desc}</span>
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
+ <div class="col-scroll">
+ ${(vals.club.historyOn) ? `
+ <div class="sub-block">
+ <span class="sub-label">Historikk</span>
+ ${(vals.clubHistory||[]).map((item,__i0) => `
+ <div class="item-card">
+ ${(item.record) ? `
+ <span class="item-badge">
+ <svg viewBox="0 0 24 24" width="12" height="12" fill="none"><circle cx="12" cy="14" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="currentColor"/></svg>
+ Rekord
+ </span>
+ ` : ''}
+ <span class="item-period">${item.period}</span>
+ <span class="item-title">${item.title}</span>
+ <span class="item-desc">${item.desc}</span>
+ </div>
+ `).join('')}
+ </div>
+ ` : ''}
 
-        ${(vals.club.missedOn) ? `
-          <div class="sub-block">
-            <span class="sub-label">Tapte muligheter</span>
-            ${(vals.clubMissed||[]).map((item,__i0) => `
-              <div class="item-card is-missed">
-                <span class="item-badge muted">Tapt mulighet</span>
-                <span class="item-title">${item.title}</span>
-                <span class="item-desc">${item.desc}</span>
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
+ ${(vals.club.missedOn) ? `
+ <div class="sub-block">
+ <span class="sub-label">Tapte muligheter</span>
+ ${(vals.clubMissed||[]).map((item,__i0) => `
+ <div class="item-card is-missed">
+ <span class="item-badge muted">Tapt mulighet</span>
+ <span class="item-title">${item.title}</span>
+ <span class="item-desc">${item.desc}</span>
+ </div>
+ `).join('')}
+ </div>
+ ` : ''}
 
-        ${(vals.club.achievableOn) ? `
-          <div class="sub-block">
-            <span class="sub-label">Fortsatt oppn&aring;elig</span>
-            ${(vals.clubAchievable||[]).map((item,__i0) => `
-              <div class="item-card is-future">
-                <span class="item-title">${item.title}</span>
-                <span class="item-desc">${item.desc}</span>
-                <div class="progress-track"><div class="progress-fill" style="width: ${item.progressWidth}"></div></div>
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
+ ${(vals.club.achievableOn) ? `
+ <div class="sub-block">
+ <span class="sub-label">Fortsatt oppn&aring;elig</span>
+ ${(vals.clubAchievable||[]).map((item,__i0) => `
+ <div class="item-card is-future">
+ <span class="item-title">${item.title}</span>
+ <span class="item-desc">${item.desc}</span>
+ <div class="progress-track"><div class="progress-fill" style="width: ${item.progressWidth}"></div></div>
+ </div>
+ `).join('')}
+ </div>
+ ` : ''}
 
-        ${(vals.club.allOff) ? `
-          <div class="empty-state">Ingen kategorier valgt.</div>
-        ` : ''}
-      </div>
-      </div>
+ ${(vals.club.allOff) ? `
+ <div class="empty-state">Ingen kategorier valgt.</div>
+ ` : ''}
+ </div>
+ </div>
 
-      <div class="chart-module col-section">
-        <span class="chart-module-title">Rekordgraf</span>
-        <div class="entry-bars">
-          ${(vals.chart.club.entryBars||[]).map((b,__i0) => `
-            <div class="bar-row">
-              <span class="${b.labelClass}">${b.name}</span>
-              <div class="bar-track"><div class="bar-fill" style="width: ${b.pct}; background: ${b.color}"></div></div>
-              <span class="bar-value">${b.value}</span>
-            </div>
-          `).join('')}
-        </div>
-        <span class="chart-caption">Totalt antall klubbm&aring;l s&aring; langt (E. Haaland), sammenlignet ved samme alder (sample).</span>
+ <div class="chart-module col-section">
+ <span class="chart-module-title">Rekordgraf</span>
+ <div class="entry-bars">
+ ${(vals.chart.club.entryBars||[]).map((b,__i0) => `
+ <div class="bar-row">
+ <span class="${b.labelClass}">${b.name}</span>
+ <div class="bar-track"><div class="bar-fill" style="width: ${b.pct}; background: ${b.color}"></div></div>
+ <span class="bar-value">${b.value}</span>
+ </div>
+ `).join('')}
+ </div>
+ <span class="chart-caption">Totalt antall klubbm&aring;l s&aring; langt (E. Haaland), sammenlignet ved samme alder.</span>
 
-        <div class="chip-select">
-          <button class="${vals.chart.club.plClass}" data-bind="chart.club.pickPL">Premier League</button>
-          <button class="${vals.chart.club.bundesligaClass}" data-bind="chart.club.pickBundesliga">Bundesliga</button>
-          <button class="${vals.chart.club.austriaClass}" data-bind="chart.club.pickAustria">&Oslash;sterrike</button>
-          <button class="${vals.chart.club.eliteserienClass}" data-bind="chart.club.pickEliteserien">Eliteserien</button>
-        </div>
+ <div class="chip-select">
+ <button class="${vals.chart.club.plClass}" data-bind="chart.club.pickPL">Premier League</button>
+ <button class="${vals.chart.club.bundesligaClass}" data-bind="chart.club.pickBundesliga">Bundesliga</button>
+ <button class="${vals.chart.club.austriaClass}" data-bind="chart.club.pickAustria">&Oslash;sterrike</button>
+ <button class="${vals.chart.club.eliteserienClass}" data-bind="chart.club.pickEliteserien">Eliteserien</button>
+ </div>
 
-        ${(vals.chart.club.showDetail) ? `
-          <div class="chart-detail">
-            ${(vals.chart.club.isPL) ? `
-              <div class="chip-select seg-row">
-                <button class="${vals.chart.club.viewTotaltClass}" data-bind="chart.club.setViewTotalt">Totalt</button>
-                <button class="${vals.chart.club.viewSeasonClass}" data-bind="chart.club.setViewSeason">Per sesong</button>
-              </div>
-            ` : ''}
+ ${(vals.chart.club.showDetail) ? `
+ <div class="chart-detail">
+ ${(vals.chart.club.isPL) ? `
+ <div class="chip-select seg-row">
+ <button class="${vals.chart.club.viewTotaltClass}" data-bind="chart.club.setViewTotalt">Totalt</button>
+ <button class="${vals.chart.club.viewSeasonClass}" data-bind="chart.club.setViewSeason">Per sesong</button>
+ </div>
+ ` : ''}
 
-            ${(vals.chart.club.showMilestoneTabs) ? `
-              <div class="chip-select">
-                <button class="${vals.chart.club.m100Class}" data-bind="chart.club.setM100">100 m&aring;l</button>
-                <button class="${vals.chart.club.m150Class}" data-bind="chart.club.setM150">150 m&aring;l</button>
-                <button class="${vals.chart.club.m260Class}" data-bind="chart.club.setM260">260 (alltidsrekord)</button>
-              </div>
-            ` : ''}
+ ${(vals.chart.club.showMilestoneTabs) ? `
+ <div class="chip-select">
+ <button class="${vals.chart.club.m100Class}" data-bind="chart.club.setM100">100 m&aring;l</button>
+ <button class="${vals.chart.club.m150Class}" data-bind="chart.club.setM150">150 m&aring;l</button>
+ <button class="${vals.chart.club.m260Class}" data-bind="chart.club.setM260">260 (alltidsrekord)</button>
+ </div>
+ ` : ''}
 
-            ${(vals.chart.club.showSeasonPicker) ? `
-              <div class="chip-select">
-                ${(vals.chart.club.seasonOptions||[]).map((so,__i0) => `
-                  <button class="${so.cls}" data-bind="${'chart.club.seasonOptions.' + __i0 + '.pick'}">${so.label}</button>
-                `).join('')}
-              </div>
-            ` : ''}
+ ${(vals.chart.club.showSeasonPicker) ? `
+ <div class="chip-select">
+ ${(vals.chart.club.seasonOptions||[]).map((so,__i0) => `
+ <button class="${so.cls}" data-bind="${'chart.club.seasonOptions.' + __i0 + '.pick'}">${so.label}</button>
+ `).join('')}
+ </div>
+ ` : ''}
 
-            <svg viewBox="0 0 400 216" class="chart-svg">
-              ${(vals.chart.club.yTicks||[]).map((t,__i0) => `
-                <line x1="34" x2="314" y1="${t.y}" y2="${t.y}" class="grid-line" />
-                <text x="30" y="${t.y}" dy="3" class="axis-label-y">${t.v}</text>
-              `).join('')}
-              <line x1="34" x2="314" y1="${vals.chart.club.milestoneLineY}" y2="${vals.chart.club.milestoneLineY}" class="grid-line-strong" />
-              ${(vals.chart.club.xTicks||[]).map((t,__i0) => `
-                <text x="${t.x}" y="${vals.chart.club.plotBottom}" dy="14" class="axis-label-x">${t.v}</text>
-              `).join('')}
+ ${(vals.chart.club.showBundesligaToggle) ? `
+ <div class="chip-select seg-row">
+ <button class="${vals.chart.club.bundViewRaceClass}" data-bind="chart.club.setBundViewRace">Kappl&oslash;p</button>
+ <button class="${vals.chart.club.bundViewTopClass}" data-bind="chart.club.setBundViewTop">Mestscorende</button>
+ </div>
+ ` : ''}
 
-              <polygon points="${vals.chart.club.haalandAreaPoints}" class="area-haaland" />
-              ${(vals.chart.club.rivals||[]).map((r,__i0) => `
-                ${(r.on) ? `
-                  <polyline points="${r.points}" style="stroke: ${r.color}" class="line-rival" />
-                ` : ''}
-              `).join('')}
-              <polyline points="${vals.chart.club.haalandPoints}" class="line-haaland" />
-              ${(vals.chart.club.showProjection) ? `
-                <polyline points="${vals.chart.club.haalandDashedPoints}" class="line-haaland-projected" />
-              ` : ''}
-              <circle cx="${vals.chart.club.haalandDotX}" cy="${vals.chart.club.haalandDotY}" r="3.5" class="dot-haaland" />
-              <text x="${vals.chart.club.haalandLabelX}" y="${vals.chart.club.haalandLabelY}" class="line-label line-label-haaland">Haaland</text>
+ </div>
+ ` : ''}
 
-              ${(vals.chart.club.rivals||[]).map((r,__i0) => `
-                ${(r.on) ? `
-                  <circle cx="${r.dotX}" cy="${r.dotY}" r="3.5" style="fill: ${r.color}" class="dot-rival" />
-                  <text x="${r.labelX}" y="${r.labelY}" style="fill: ${r.color}" class="line-label">${r.name}</text>
-                ` : ''}
-              `).join('')}
-            </svg>
+ ${(vals.chart.club.showRaceDetail) ? `
+ <div class="chart-detail">
+ <svg viewBox="0 0 400 216" class="chart-svg">
+ ${(vals.chart.club.yTicks||[]).map((t,__i0) => `
+ <line x1="34" x2="314" y1="${t.y}" y2="${t.y}" class="grid-line" />
+ <text x="30" y="${t.y}" dy="3" class="axis-label-y">${t.v}</text>
+ `).join('')}
+ <line x1="34" x2="314" y1="${vals.chart.club.milestoneLineY}" y2="${vals.chart.club.milestoneLineY}" class="grid-line-strong" />
+ ${(vals.chart.club.xTicks||[]).map((t,__i0) => `
+ <text x="${t.x}" y="${vals.chart.club.plotBottom}" dy="14" class="axis-label-x">${t.v}</text>
+ `).join('')}
 
-            <div class="rival-chips">
-              ${(vals.chart.club.rivals||[]).map((r,__i0) => `
-                <button class="${r.chipClass}" data-bind="${'chart.club.rivals.' + __i0 + '.toggle'}" style="border-color: ${r.color}">
-                  <span class="swatch" style="background: ${r.color}"></span>${r.name}
-                </button>
-              `).join('')}
-            </div>
-            ${(vals.chart.club.seasonStats) ? `
-              <div class="season-stats-grid">
-                <div class="season-stat"><span class="season-stat-label">Kamper</span><span class="season-stat-value">${vals.chart.club.seasonStats.apps}</span></div>
-                <div class="season-stat"><span class="season-stat-label">M&aring;l</span><span class="season-stat-value">${vals.chart.club.seasonStats.goals}</span></div>
-                <div class="season-stat"><span class="season-stat-label">Assists</span><span class="season-stat-value">${vals.chart.club.seasonStats.assists}</span></div>
-                <div class="season-stat"><span class="season-stat-label">xG</span><span class="season-stat-value">${vals.chart.club.seasonStats.xg}</span></div>
-                <div class="season-stat"><span class="season-stat-label">xA</span><span class="season-stat-value">${vals.chart.club.seasonStats.xa}</span></div>
-                <div class="season-stat"><span class="season-stat-label">Minutter</span><span class="season-stat-value">${vals.chart.club.seasonStats.minutes}</span></div>
-                <div class="season-stat"><span class="season-stat-label">Straffer</span><span class="season-stat-value">${vals.chart.club.seasonStats.penalties}</span></div>
-                <div class="season-stat"><span class="season-stat-label">Driblinger</span><span class="season-stat-value">${vals.chart.club.seasonStats.dribbles}</span></div>
-                <div class="season-stat"><span class="season-stat-label">Vunnet dueller</span><span class="season-stat-value">${vals.chart.club.seasonStats.duelsWon}</span></div>
-                <div class="season-stat"><span class="season-stat-label">Vunnet luftdueller</span><span class="season-stat-value">${vals.chart.club.seasonStats.aerialDuelsWon}</span></div>
-                <div class="season-stat"><span class="season-stat-label">Taklinger</span><span class="season-stat-value">${vals.chart.club.seasonStats.tackles}</span></div>
-                <div class="season-stat"><span class="season-stat-label">Avskj&aelig;ringer</span><span class="season-stat-value">${vals.chart.club.seasonStats.interceptions}</span></div>
-                <div class="season-stat"><span class="season-stat-label">Gule kort</span><span class="season-stat-value">${vals.chart.club.seasonStats.yellowCards}</span></div>
-                <div class="season-stat"><span class="season-stat-label">R&oslash;de kort</span><span class="season-stat-value">${vals.chart.club.seasonStats.redCards}</span></div>
-                <div class="season-stat"><span class="season-stat-label">Frispark beg&aring;tt</span><span class="season-stat-value">${vals.chart.club.seasonStats.fouls}</span></div>
-              </div>
-            ` : ''}
-            ${(vals.chart.club.seasonRank) ? `
-              <p class="season-rank-note">${vals.chart.club.seasonRank}</p>
-            ` : ''}
-            <span class="chart-caption">${vals.chart.club.caption}</span>
-            <button class="expand-btn" data-bind="chart.club.openModal">Utvid graf &#8599;</button>
-          </div>
-        ` : ''}
-      </div>
-    </div>
+ <polygon points="${vals.chart.club.haalandAreaPoints}" class="area-haaland" />
+ ${(vals.chart.club.rivals||[]).map((r,__i0) => `
+ ${(r.on) ? `
+ <polyline points="${r.points}" style="stroke: ${r.color}" class="line-rival" />
+ ` : ''}
+ `).join('')}
+ <polyline points="${vals.chart.club.haalandPoints}" class="line-haaland" />
+ ${(vals.chart.club.showProjection) ? `
+ <polyline points="${vals.chart.club.haalandDashedPoints}" class="line-haaland-projected" />
+ ` : ''}
+ <circle cx="${vals.chart.club.haalandDotX}" cy="${vals.chart.club.haalandDotY}" r="3.5" class="dot-haaland" />
+ <text x="${vals.chart.club.haalandLabelX}" y="${vals.chart.club.haalandLabelY}" class="line-label line-label-haaland">Haaland</text>
 
-    <div class="col-card">
-      <div class="col-header">
-      <span class="col-title">Champions League</span>
-      <span class="wordmark-badge cl">Champions League</span>
-      <div class="lane-fact">
-        <span class="lane-fact-label">Siste prestasjon</span>
-        <span class="lane-fact-value">Toppscorer i Champions League 2022/23 med 12 m&aring;l, 4 mer enn nummer to Salah &mdash; men scoret ikke selv i finalen (Rodri avgjorde 1&ndash;0 mot Inter).</span>
-      </div>
-      <div class="lane-fact">
-        <span class="lane-fact-label">Offisiell rekord</span>
-        <span class="lane-fact-value">GWR: flest m&aring;l i &eacute;n Champions League-kamp &mdash; 5, mot RB Leipzig, mars 2023 (delt rekord med Messi og Luiz Adriano).</span>
-      </div>
-      </div>
+ ${(vals.chart.club.rivals||[]).map((r,__i0) => `
+ ${(r.on) ? `
+ <circle cx="${r.dotX}" cy="${r.dotY}" r="3.5" style="fill: ${r.color}" class="dot-rival" />
+ <text x="${r.labelX}" y="${r.labelY}" style="fill: ${r.color}" class="line-label">${r.name}</text>
+ ` : ''}
+ `).join('')}
+ </svg>
 
-      <div class="col-section merit-scroll">
-        <span class="sub-label">Meritter &mdash; Champions League</span>
-        <div class="merit-list">
-          <div class="merit-chip">
-            <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="14" r="6" stroke="#fff" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="#fff"/><path d="M9 8.5 7 4M15 8.5l2-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-            <div class="merit-text"><b>GWR: flest m&aring;l i &eacute;n CL-kamp</b><span class="sub">5 mot RB Leipzig, mars 2023 (kilde: Guinness World Records)</span></div>
-          </div>
-          <div class="merit-chip">
-            <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
-            <div class="merit-text"><b>Champions League-vinner</b><span class="sub">2022/23, med Manchester City (kilde: Wikipedia, UEFA)</span></div>
-          </div>
-          <div class="merit-chip">
-            <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="14" r="6" stroke="#fff" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="#fff"/><path d="M9 8.5 7 4M15 8.5l2-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-            <div class="merit-text"><b>Toppscorer, Champions League</b><span class="sub">2022/23-sesongen, 12 m&aring;l (kilde: UEFA.com)</span></div>
-          </div>
-          <div class="merit-chip">
-            <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M12 2.5l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6-.8z" fill="#fff"/></svg></span>
-            <div class="merit-text"><b>Yngste til 20 CL-m&aring;l</b><span class="sub">20 &aring;r 231 dager, 14 kamper (kilde: UEFA.com)</span></div>
-          </div>
-        </div>
-      </div>
+ <div class="rival-chips">
+ ${(vals.chart.club.rivals||[]).map((r,__i0) => `
+ <button class="${r.chipClass}" data-bind="${'chart.club.rivals.' + __i0 + '.toggle'}" style="border-color: ${r.color}">
+ <span class="swatch" style="background: ${r.color}"></span>${r.name}
+ </button>
+ `).join('')}
+ </div>
+ ${(vals.chart.club.seasonStats) ? `
+ <div class="season-stats-grid">
+ <div class="season-stat"><span class="season-stat-label">Kamper</span><span class="season-stat-value">${vals.chart.club.seasonStats.apps}</span></div>
+ <div class="season-stat"><span class="season-stat-label">M&aring;l</span><span class="season-stat-value">${vals.chart.club.seasonStats.goals}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Assists</span><span class="season-stat-value">${vals.chart.club.seasonStats.assists}</span></div>
+ <div class="season-stat"><span class="season-stat-label">xG</span><span class="season-stat-value">${vals.chart.club.seasonStats.xg}</span></div>
+ <div class="season-stat"><span class="season-stat-label">xA</span><span class="season-stat-value">${vals.chart.club.seasonStats.xa}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Minutter</span><span class="season-stat-value">${vals.chart.club.seasonStats.minutes}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Straffer</span><span class="season-stat-value">${vals.chart.club.seasonStats.penalties}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Driblinger</span><span class="season-stat-value">${vals.chart.club.seasonStats.dribbles}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Vunnet dueller</span><span class="season-stat-value">${vals.chart.club.seasonStats.duelsWon}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Vunnet luftdueller</span><span class="season-stat-value">${vals.chart.club.seasonStats.aerialDuelsWon}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Taklinger</span><span class="season-stat-value">${vals.chart.club.seasonStats.tackles}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Avskj&aelig;ringer</span><span class="season-stat-value">${vals.chart.club.seasonStats.interceptions}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Gule kort</span><span class="season-stat-value">${vals.chart.club.seasonStats.yellowCards}</span></div>
+ <div class="season-stat"><span class="season-stat-label">R&oslash;de kort</span><span class="season-stat-value">${vals.chart.club.seasonStats.redCards}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Frispark beg&aring;tt</span><span class="season-stat-value">${vals.chart.club.seasonStats.fouls}</span></div>
+ </div>
+ ` : ''}
+ ${(vals.chart.club.seasonRank) ? `
+ <p class="season-rank-note">${vals.chart.club.seasonRank}</p>
+ ` : ''}
+ <span class="chart-caption">${vals.chart.club.caption}</span>
+ <button class="expand-btn" data-bind="chart.club.openModal">Utvid graf &#8599;</button>
+ </div>
+ ` : ''}
 
-      <div class="stat-mini">
-        <span class="stat-mini-title">Manchester City &mdash; n&oslash;kkeltall (CL)</span>
-        <div class="stat-mini-row">
-          <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">ca. 43</span></div>
-          <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">34</span></div>
-          <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,79</span></div>
-        </div>
-        <span class="stat-mini-note">Utledet fra sesongtall 2022/23&ndash;2025/26 (12+6+8+8), kryssjekket mot karriere-totalen. Kamptall er et estimat.</span>
-      </div>
+ ${(vals.chart.club.showBundesligaTop) ? `
+ <div class="chart-detail">
+ <div class="chip-select">
+ <button class="${vals.chart.club.bundesligaTopFilterAllClass}" data-bind="chart.club.setBundesligaTopFilterAll">Alle</button>
+ <button class="${vals.chart.club.bundesligaTopFilterActiveClass}" data-bind="chart.club.setBundesligaTopFilterActive">Aktive</button>
+ <button class="${vals.chart.club.bundesligaTopFilterInactiveClass}" data-bind="chart.club.setBundesligaTopFilterInactive">Ikke aktive</button>
+ </div>
+ <div class="entry-bars">
+ ${(vals.chart.club.bundesligaTopBars||[]).map((b,__i0) => `
+ <div class="bar-row">
+ <span class="${b.labelClass}">${b.name}</span>
+ <div class="bar-track"><div class="bar-fill" style="width: ${b.pct}; background: ${b.color}"></div></div>
+ <span class="bar-value">${b.value}</span>
+ </div>
+ `).join('')}
+ </div>
+ <span class="chart-caption">Mestscorende gjennom tidene i Bundesliga. ${vals.chart.club.bundesligaTopRankLabel}</span>
+ <button class="expand-btn" data-bind="chart.club.openModal">Utvid graf &#8599;</button>
+ </div>
+ ` : ''}
+ </div>
+ </div>
 
-      <div class="stat-mini">
-        <span class="stat-mini-title">Champions League &mdash; m&aring;l per klubb</span>
-        <div class="stat-mini-row">
-          <div class="stat-mini-item"><span class="stat-mini-label">Salzburg</span><span class="stat-mini-value">8</span></div>
-          <div class="stat-mini-item"><span class="stat-mini-label">Dortmund</span><span class="stat-mini-value">15</span></div>
-          <div class="stat-mini-item"><span class="stat-mini-label">Man City</span><span class="stat-mini-value">34</span></div>
-        </div>
-        <span class="stat-mini-note">57 CL-m&aring;l totalt s&aring; langt &mdash; topp 10 gjennom tidene, blant kun ti spillere med 50+ CL-m&aring;l (kilde: UEFA.com, ESPN, StatMuse).</span>
-      </div>
+ <div class="col-card">
+ <div class="col-header">
+ <span class="col-title">Champions League</span>
+ <span class="wordmark-badge cl">Champions League</span>
+ <div class="lane-fact">
+ <span class="lane-fact-label">Siste prestasjon</span>
+ <span class="lane-fact-value">Toppscorer i Champions League 2022/23 med 12 m&aring;l, 4 mer enn nummer to Salah &mdash; men scoret ikke selv i finalen (Rodri avgjorde 1&ndash;0 mot Inter).</span>
+ </div>
+ <div class="lane-fact">
+ <span class="lane-fact-label">Offisiell rekord</span>
+ <span class="lane-fact-value">GWR: flest m&aring;l i &eacute;n Champions League-kamp &mdash; 5, mot RB Leipzig, mars 2023 (delt rekord med Messi og Luiz Adriano).</span>
+ </div>
+ </div>
 
-      <div class="col-section">
-      <div class="toggle-row">
-        <button class="${vals.cl.historyClass}" data-bind="cl.toggleHistory">Historikk</button>
-        <button class="${vals.cl.missedClass}" data-bind="cl.toggleMissed">Tapte muligheter</button>
-        <button class="${vals.cl.achievableClass}" data-bind="cl.toggleAchievable">Fortsatt oppn&aring;elig</button>
-        <button class="${vals.cl.recordsOnlyClass}" data-bind="cl.toggleRecordsOnly">Kun rekorder</button>
-      </div>
-      <div class="toggle-allnone">
-        <button class="link-btn" data-bind="cl.setAll">Vis alle</button>
-        <button class="link-btn" data-bind="cl.setNone">Skjul alle</button>
-      </div>
+ <div class="col-section merit-scroll">
+ <span class="sub-label">Meritter &mdash; Champions League</span>
+ <div class="merit-list">
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="14" r="6" stroke="#fff" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="#fff"/><path d="M9 8.5 7 4M15 8.5l2-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+ <div class="merit-text"><b>GWR: flest m&aring;l i &eacute;n CL-kamp</b><span class="sub">5 mot RB Leipzig, mars 2023</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+ <div class="merit-text"><b>Champions League-vinner</b><span class="sub">2022/23, med Manchester City</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="14" r="6" stroke="#fff" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="#fff"/><path d="M9 8.5 7 4M15 8.5l2-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+ <div class="merit-text"><b>Toppscorer, Champions League</b><span class="sub">2022/23-sesongen, 12 m&aring;l</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M12 2.5l2.6 5.5 6.8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6-.8z" fill="#fff"/></svg></span>
+ <div class="merit-text"><b>Yngste til 20 CL-m&aring;l</b><span class="sub">20 &aring;r 231 dager, 14 kamper</span></div>
+ </div>
+ </div>
+ </div>
 
-      <div class="col-scroll">
-        ${(vals.cl.historyOn) ? `
-          <div class="sub-block">
-            <span class="sub-label">Historikk</span>
-            ${(vals.clHistory||[]).map((item,__i0) => `
-              <div class="item-card">
-                ${(item.record) ? `
-                  <span class="item-badge">
-                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none"><circle cx="12" cy="14" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="currentColor"/></svg>
-                    Rekord
-                  </span>
-                ` : ''}
-                <span class="item-period">${item.period}</span>
-                <span class="item-title">${item.title}</span>
-                <span class="item-desc">${item.desc}</span>
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
+ <div class="stat-mini">
+ <span class="stat-mini-title">Manchester City &mdash; n&oslash;kkeltall (CL)</span>
+ <div class="stat-mini-row">
+ <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">39</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">34</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,87</span></div>
+ </div>
+ <span class="stat-mini-note">Alle Champions League-kamper for Manchester City.</span>
+ </div>
 
-        ${(vals.cl.missedOn) ? `
-          <div class="sub-block">
-            <span class="sub-label">Tapte muligheter</span>
-            ${(vals.clMissed||[]).map((item,__i0) => `
-              <div class="item-card is-missed">
-                <span class="item-badge muted">Tapt mulighet</span>
-                <span class="item-title">${item.title}</span>
-                <span class="item-desc">${item.desc}</span>
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
+ <div class="stat-mini">
+ <span class="stat-mini-title">Champions League &mdash; m&aring;l per klubb</span>
+ <div class="stat-mini-row">
+ <div class="stat-mini-item"><span class="stat-mini-label">Salzburg</span><span class="stat-mini-value">8</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Dortmund</span><span class="stat-mini-value">15</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Man City</span><span class="stat-mini-value">34</span></div>
+ </div>
+ <span class="stat-mini-note">57 CL-m&aring;l totalt s&aring; langt &mdash; topp 10 gjennom tidene, blant kun ti spillere med 50+ CL-m&aring;l.</span>
+ </div>
 
-        ${(vals.cl.achievableOn) ? `
-          <div class="sub-block">
-            <span class="sub-label">Fortsatt oppn&aring;elig</span>
-            ${(vals.clAchievable||[]).map((item,__i0) => `
-              <div class="item-card is-future">
-                <span class="item-title">${item.title}</span>
-                <span class="item-desc">${item.desc}</span>
-                <div class="progress-track"><div class="progress-fill" style="width: ${item.progressWidth}"></div></div>
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
+ <div class="col-section">
+ <div class="toggle-row">
+ <button class="${vals.cl.historyClass}" data-bind="cl.toggleHistory">Historikk</button>
+ <button class="${vals.cl.missedClass}" data-bind="cl.toggleMissed">Tapte muligheter</button>
+ <button class="${vals.cl.achievableClass}" data-bind="cl.toggleAchievable">Fortsatt oppn&aring;elig</button>
+ <button class="${vals.cl.recordsOnlyClass}" data-bind="cl.toggleRecordsOnly">Kun rekorder</button>
+ </div>
+ <div class="toggle-allnone">
+ <button class="link-btn" data-bind="cl.setAll">Vis alle</button>
+ <button class="link-btn" data-bind="cl.setNone">Skjul alle</button>
+ </div>
 
-        ${(vals.cl.allOff) ? `
-          <div class="empty-state">Ingen kategorier valgt.</div>
-        ` : ''}
-      </div>
-      </div>
+ <div class="col-scroll">
+ ${(vals.cl.historyOn) ? `
+ <div class="sub-block">
+ <span class="sub-label">Historikk</span>
+ ${(vals.clHistory||[]).map((item,__i0) => `
+ <div class="item-card">
+ ${(item.record) ? `
+ <span class="item-badge">
+ <svg viewBox="0 0 24 24" width="12" height="12" fill="none"><circle cx="12" cy="14" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="currentColor"/></svg>
+ Rekord
+ </span>
+ ` : ''}
+ <span class="item-period">${item.period}</span>
+ <span class="item-title">${item.title}</span>
+ <span class="item-desc">${item.desc}</span>
+ </div>
+ `).join('')}
+ </div>
+ ` : ''}
 
-      <div class="chart-module col-section">
-        <span class="chart-module-title">Rekordgraf</span>
-        <div class="entry-bars">
-          ${(vals.chart.cl.entryBars||[]).map((b,__i0) => `
-            <div class="bar-row">
-              <span class="${b.labelClass}">${b.name}</span>
-              <div class="bar-track"><div class="bar-fill" style="width: ${b.pct}; background: ${b.color}"></div></div>
-              <span class="bar-value">${b.value}</span>
-            </div>
-          `).join('')}
-        </div>
-        <span class="chart-caption">Totalt antall CL-m&aring;l s&aring; langt, sammenlignet ved samme alder (sample).</span>
+ ${(vals.cl.missedOn) ? `
+ <div class="sub-block">
+ <span class="sub-label">Tapte muligheter</span>
+ ${(vals.clMissed||[]).map((item,__i0) => `
+ <div class="item-card is-missed">
+ <span class="item-badge muted">Tapt mulighet</span>
+ <span class="item-title">${item.title}</span>
+ <span class="item-desc">${item.desc}</span>
+ </div>
+ `).join('')}
+ </div>
+ ` : ''}
 
-        <div class="chip-select">
-          <button class="${vals.chart.cl.m50Class}" data-bind="chart.cl.setM50">F&oslash;rst til 50</button>
-          <button class="${vals.chart.cl.m100Class}" data-bind="chart.cl.setM100">F&oslash;rst til 100</button>
-          <button class="${vals.chart.cl.m150Class}" data-bind="chart.cl.setM150">F&oslash;rst til 150</button>
-          <button class="${vals.chart.cl.topClass}" data-bind="chart.cl.setTop">Mestscorende</button>
-        </div>
+ ${(vals.cl.achievableOn) ? `
+ <div class="sub-block">
+ <span class="sub-label">Fortsatt oppn&aring;elig</span>
+ ${(vals.clAchievable||[]).map((item,__i0) => `
+ <div class="item-card is-future">
+ <span class="item-title">${item.title}</span>
+ <span class="item-desc">${item.desc}</span>
+ <div class="progress-track"><div class="progress-fill" style="width: ${item.progressWidth}"></div></div>
+ </div>
+ `).join('')}
+ </div>
+ ` : ''}
 
-        ${(vals.chart.cl.showRace) ? `
-          <div class="chart-detail">
-            <svg viewBox="0 0 400 216" class="chart-svg">
-              ${(vals.chart.cl.yTicks||[]).map((t,__i0) => `
-                <line x1="34" x2="314" y1="${t.y}" y2="${t.y}" class="grid-line" />
-                <text x="30" y="${t.y}" dy="3" class="axis-label-y">${t.v}</text>
-              `).join('')}
-              <line x1="34" x2="314" y1="${vals.chart.cl.milestoneLineY}" y2="${vals.chart.cl.milestoneLineY}" class="grid-line-strong" />
-              ${(vals.chart.cl.xTicks||[]).map((t,__i0) => `
-                <text x="${t.x}" y="${vals.chart.cl.plotBottom}" dy="14" class="axis-label-x">${t.v}</text>
-              `).join('')}
+ ${(vals.cl.allOff) ? `
+ <div class="empty-state">Ingen kategorier valgt.</div>
+ ` : ''}
+ </div>
+ </div>
 
-              <polygon points="${vals.chart.cl.haalandAreaPoints}" class="area-haaland" />
-              ${(vals.chart.cl.rivals||[]).map((r,__i0) => `
-                ${(r.on) ? `
-                  <polyline points="${r.points}" style="stroke: ${r.color}" class="line-rival" />
-                ` : ''}
-              `).join('')}
-              <polyline points="${vals.chart.cl.haalandPoints}" class="line-haaland" />
-              ${(vals.chart.cl.showProjection) ? `
-                <polyline points="${vals.chart.cl.haalandDashedPoints}" class="line-haaland-projected" />
-              ` : ''}
-              <circle cx="${vals.chart.cl.haalandDotX}" cy="${vals.chart.cl.haalandDotY}" r="3.5" class="dot-haaland" />
-              <text x="${vals.chart.cl.haalandLabelX}" y="${vals.chart.cl.haalandLabelY}" class="line-label line-label-haaland">Haaland</text>
+ <div class="chart-module col-section">
+ <span class="chart-module-title">Rekordgraf</span>
+ <div class="entry-bars">
+ ${(vals.chart.cl.entryBars||[]).map((b,__i0) => `
+ <div class="bar-row">
+ <span class="${b.labelClass}">${b.name}</span>
+ <div class="bar-track"><div class="bar-fill" style="width: ${b.pct}; background: ${b.color}"></div></div>
+ <span class="bar-value">${b.value}</span>
+ </div>
+ `).join('')}
+ </div>
+ <span class="chart-caption">Totalt antall CL-m&aring;l s&aring; langt, sammenlignet ved samme alder.</span>
 
-              ${(vals.chart.cl.rivals||[]).map((r,__i0) => `
-                ${(r.on) ? `
-                  <circle cx="${r.dotX}" cy="${r.dotY}" r="3.5" style="fill: ${r.color}" class="dot-rival" />
-                  <text x="${r.labelX}" y="${r.labelY}" style="fill: ${r.color}" class="line-label">${r.name}</text>
-                ` : ''}
-              `).join('')}
-            </svg>
+ <div class="chip-select">
+ <button class="${vals.chart.cl.m50Class}" data-bind="chart.cl.setM50">F&oslash;rst til 50</button>
+ <button class="${vals.chart.cl.m100Class}" data-bind="chart.cl.setM100">F&oslash;rst til 100</button>
+ <button class="${vals.chart.cl.m150Class}" data-bind="chart.cl.setM150">F&oslash;rst til 150</button>
+ <button class="${vals.chart.cl.topClass}" data-bind="chart.cl.setTop">Mestscorende</button>
+ </div>
 
-            <div class="rival-chips">
-              ${(vals.chart.cl.rivals||[]).map((r,__i0) => `
-                <button class="${r.chipClass}" data-bind="${'chart.cl.rivals.' + __i0 + '.toggle'}" style="border-color: ${r.color}">
-                  <span class="swatch" style="background: ${r.color}"></span>${r.name}
-                </button>
-              `).join('')}
-            </div>
-            <span class="chart-caption">${vals.chart.cl.caption}</span>
-            <button class="expand-btn" data-bind="chart.cl.openModal">Utvid graf &#8599;</button>
-          </div>
-        ` : ''}
+ ${(vals.chart.cl.showRace) ? `
+ <div class="chart-detail">
+ <svg viewBox="0 0 400 216" class="chart-svg">
+ ${(vals.chart.cl.yTicks||[]).map((t,__i0) => `
+ <line x1="34" x2="314" y1="${t.y}" y2="${t.y}" class="grid-line" />
+ <text x="30" y="${t.y}" dy="3" class="axis-label-y">${t.v}</text>
+ `).join('')}
+ <line x1="34" x2="314" y1="${vals.chart.cl.milestoneLineY}" y2="${vals.chart.cl.milestoneLineY}" class="grid-line-strong" />
+ ${(vals.chart.cl.xTicks||[]).map((t,__i0) => `
+ <text x="${t.x}" y="${vals.chart.cl.plotBottom}" dy="14" class="axis-label-x">${t.v}</text>
+ `).join('')}
 
-        ${(vals.chart.cl.showTop) ? `
-          <div class="chart-detail">
-            <div class="chip-select">
-              <button class="${vals.chart.cl.topFilterAllClass}" data-bind="chart.cl.setTopFilterAll">Alle</button>
-              <button class="${vals.chart.cl.topFilterActiveClass}" data-bind="chart.cl.setTopFilterActive">Aktive</button>
-              <button class="${vals.chart.cl.topFilterInactiveClass}" data-bind="chart.cl.setTopFilterInactive">Ikke aktive</button>
-            </div>
-            <div class="entry-bars">
-              ${(vals.chart.cl.topBars||[]).map((b,__i0) => `
-                <div class="bar-row">
-                  <span class="${b.labelClass}">${b.name}</span>
-                  <div class="bar-track"><div class="bar-fill" style="width: ${b.pct}; background: ${b.color}"></div></div>
-                  <span class="bar-value">${b.value}</span>
-                </div>
-              `).join('')}
-            </div>
-            <span class="chart-caption">Mestscorende gjennom tidene i Champions League (sample). ${vals.chart.cl.topRankLabel}</span>
-            <button class="expand-btn" data-bind="chart.cl.openModal">Utvid graf &#8599;</button>
-          </div>
-        ` : ''}
-      </div>
-    </div>
+ <polygon points="${vals.chart.cl.haalandAreaPoints}" class="area-haaland" />
+ ${(vals.chart.cl.rivals||[]).map((r,__i0) => `
+ ${(r.on) ? `
+ <polyline points="${r.points}" style="stroke: ${r.color}" class="line-rival" />
+ ` : ''}
+ `).join('')}
+ <polyline points="${vals.chart.cl.haalandPoints}" class="line-haaland" />
+ ${(vals.chart.cl.showProjection) ? `
+ <polyline points="${vals.chart.cl.haalandDashedPoints}" class="line-haaland-projected" />
+ ` : ''}
+ <circle cx="${vals.chart.cl.haalandDotX}" cy="${vals.chart.cl.haalandDotY}" r="3.5" class="dot-haaland" />
+ <text x="${vals.chart.cl.haalandLabelX}" y="${vals.chart.cl.haalandLabelY}" class="line-label line-label-haaland">Haaland</text>
 
-    <div class="col-card">
-      <div class="col-header">
-      <span class="col-title">Landslag</span>
-      <span class="wordmark-badge nor">
-        <svg class="flag-nor" viewBox="0 0 22 16" width="24" height="17"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg>
-        Norge
-      </span>
-      <div class="lane-fact">
-        <span class="lane-fact-label">Siste prestasjon</span>
-        <span class="lane-fact-value">Ledet Norge til VM 2026 &mdash; landets f&oslash;rste VM siden 1998, etter en plettfri kvalifisering: 8 seire av 8 kamper, 37 m&aring;l totalt, 16 av dem Haalands (kilde: FIFA.com, France24).</span>
-      </div>
-      <div class="lane-fact">
-        <span class="lane-fact-label">Offisiell rekord</span>
-        <span class="lane-fact-value">Norges toppscorer gjennom tidene &mdash; 62 m&aring;l p&aring; 55 landskamper, periode 05.09.2019&ndash;11.07.2026 (kilde: offisiell spillerstatistikk).</span>
-      </div>
-      </div>
+ ${(vals.chart.cl.rivals||[]).map((r,__i0) => `
+ ${(r.on) ? `
+ <circle cx="${r.dotX}" cy="${r.dotY}" r="3.5" style="fill: ${r.color}" class="dot-rival" />
+ <text x="${r.labelX}" y="${r.labelY}" style="fill: ${r.color}" class="line-label">${r.name}</text>
+ ` : ''}
+ `).join('')}
+ </svg>
 
-      <div class="col-section merit-scroll">
-        <span class="sub-label">Meritter &mdash; landslag</span>
-        <div class="merit-list">
-          <div class="merit-chip">
-            <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="14" r="6" stroke="#fff" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="#fff"/><path d="M9 8.5 7 4M15 8.5l2-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-            <div class="merit-text"><b>GWR: flest m&aring;l i UEFA Nations League</b><span class="sub">19 m&aring;l, 4. sep. 2020&ndash;17. nov. 2024 (kilde: Guinness World Records)</span></div>
-          </div>
-          <div class="merit-chip">
-            <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M12 2.5l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6-.8z" fill="#fff"/></svg></span>
-            <div class="merit-text"><b>Norges toppscorer gjennom tidene</b><span class="sub">62 m&aring;l p&aring; 55 kamper, 05.09.2019&ndash;11.07.2026 (kilde: offisiell spillerstatistikk)</span></div>
-          </div>
-          <div class="merit-chip">
-            <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#fff"/></svg></span>
-            <div class="merit-text"><b>Flest hattrick for Norge</b><span class="sub">6 stykker &mdash; landslagsrekord (kilde: Wikipedia: List of Norway hat-tricks)</span></div>
-          </div>
-          <div class="merit-chip">
-            <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#fff"/></svg></span>
-            <div class="merit-text"><b>Flest m&aring;l i &eacute;n landskamp for Norge</b><span class="sub">5 m&aring;l, mot Moldova (kilde: Wikipedia)</span></div>
-          </div>
-        </div>
-      </div>
+ <div class="rival-chips">
+ ${(vals.chart.cl.rivals||[]).map((r,__i0) => `
+ <button class="${r.chipClass}" data-bind="${'chart.cl.rivals.' + __i0 + '.toggle'}" style="border-color: ${r.color}">
+ <span class="swatch" style="background: ${r.color}"></span>${r.name}
+ </button>
+ `).join('')}
+ </div>
+ <span class="chart-caption">${vals.chart.cl.caption}</span>
+ <button class="expand-btn" data-bind="chart.cl.openModal">Utvid graf &#8599;</button>
+ </div>
+ ` : ''}
 
-      <div class="stat-mini">
-        <span class="stat-mini-title">Landslaget &mdash; n&oslash;kkeltall</span>
-        <div class="stat-mini-row">
-          <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">55</span></div>
-          <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">62</span></div>
-          <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">1,13</span></div>
-        </div>
-        <span class="stat-mini-note">Hele landslagskarrieren, 05.09.2019&ndash;11.07.2026 (kilde: offisiell spillerstatistikk).</span>
-      </div>
+ ${(vals.chart.cl.showTop) ? `
+ <div class="chart-detail">
+ <div class="chip-select">
+ <button class="${vals.chart.cl.topFilterAllClass}" data-bind="chart.cl.setTopFilterAll">Alle</button>
+ <button class="${vals.chart.cl.topFilterActiveClass}" data-bind="chart.cl.setTopFilterActive">Aktive</button>
+ <button class="${vals.chart.cl.topFilterInactiveClass}" data-bind="chart.cl.setTopFilterInactive">Ikke aktive</button>
+ </div>
+ <div class="entry-bars">
+ ${(vals.chart.cl.topBars||[]).map((b,__i0) => `
+ <div class="bar-row">
+ <span class="${b.labelClass}">${b.name}</span>
+ <div class="bar-track"><div class="bar-fill" style="width: ${b.pct}; background: ${b.color}"></div></div>
+ <span class="bar-value">${b.value}</span>
+ </div>
+ `).join('')}
+ </div>
+ <span class="chart-caption">Mestscorende gjennom tidene i Champions League. ${vals.chart.cl.topRankLabel}</span>
+ <button class="expand-btn" data-bind="chart.cl.openModal">Utvid graf &#8599;</button>
+ </div>
+ ` : ''}
+ </div>
+ </div>
 
-      <div class="col-section">
-      <div class="toggle-row">
-        <button class="${vals.nat.historyClass}" data-bind="nat.toggleHistory">Historikk</button>
-        <button class="${vals.nat.missedClass}" data-bind="nat.toggleMissed">Tapte muligheter</button>
-        <button class="${vals.nat.achievableClass}" data-bind="nat.toggleAchievable">Fortsatt oppn&aring;elig</button>
-        <button class="${vals.nat.recordsOnlyClass}" data-bind="nat.toggleRecordsOnly">Kun rekorder</button>
-      </div>
-      <div class="toggle-allnone">
-        <button class="link-btn" data-bind="nat.setAll">Vis alle</button>
-        <button class="link-btn" data-bind="nat.setNone">Skjul alle</button>
-      </div>
+ <div class="col-card">
+ <div class="col-header">
+ <span class="col-title">Landslag</span>
+ <span class="wordmark-badge nor">
+ <svg class="flag-nor" viewBox="0 0 22 16" width="24" height="17"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg>
+ Norge
+ </span>
+ <div class="lane-fact">
+ <span class="lane-fact-label">Siste prestasjon</span>
+ <span class="lane-fact-value">Ledet Norge til VM 2026 &mdash; landets f&oslash;rste VM siden 1998, etter en plettfri kvalifisering: 8 seire av 8 kamper, 37 m&aring;l totalt, 16 av dem Haalands.</span>
+ </div>
+ <div class="lane-fact">
+ <span class="lane-fact-label">Offisiell rekord</span>
+ <span class="lane-fact-value">Norges toppscorer gjennom tidene &mdash; 62 m&aring;l p&aring; 55 landskamper, periode 05.09.2019&ndash;11.07.2026.</span>
+ </div>
+ </div>
 
-      <div class="col-scroll">
-        ${(vals.nat.historyOn) ? `
-          <div class="sub-block">
-            <span class="sub-label">Historikk</span>
-            ${(vals.natHistory||[]).map((item,__i0) => `
-              <div class="item-card">
-                ${(item.record) ? `
-                  <span class="item-badge">
-                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none"><circle cx="12" cy="14" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="currentColor"/></svg>
-                    Rekord
-                  </span>
-                ` : ''}
-                <span class="item-period">${item.period}</span>
-                <span class="item-title">${item.title}</span>
-                <span class="item-desc">${item.desc}</span>
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
+ <div class="col-section merit-scroll">
+ <span class="sub-label">Meritter &mdash; landslag</span>
+ <div class="merit-list">
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="14" r="6" stroke="#fff" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="#fff"/><path d="M9 8.5 7 4M15 8.5l2-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+ <div class="merit-text"><b>GWR: flest m&aring;l i UEFA Nations League</b><span class="sub">19 m&aring;l, 4. sep. 2020&ndash;17. nov. 2024</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M12 2.5l2.6 5.5 6.8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6-.8z" fill="#fff"/></svg></span>
+ <div class="merit-text"><b>Norges toppscorer gjennom tidene</b><span class="sub">62 m&aring;l p&aring; 55 kamper, 05.09.2019&ndash;11.07.2026</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#fff"/></svg></span>
+ <div class="merit-text"><b>Flest hattrick for Norge</b><span class="sub">6 stykker &mdash; landslagsrekord</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#fff"/></svg></span>
+ <div class="merit-text"><b>Flest m&aring;l i &eacute;n landskamp for Norge</b><span class="sub">5 m&aring;l, mot Moldova</span></div>
+ </div>
+ </div>
+ </div>
 
-        ${(vals.nat.missedOn) ? `
-          <div class="sub-block">
-            <span class="sub-label">Tapte muligheter</span>
-            ${(vals.natMissed||[]).map((item,__i0) => `
-              <div class="item-card is-missed">
-                <span class="item-badge muted">Tapt mulighet</span>
-                <span class="item-title">${item.title}</span>
-                <span class="item-desc">${item.desc}</span>
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
+ <div class="stat-mini">
+ <span class="stat-mini-title">Landslaget &mdash; n&oslash;kkeltall</span>
+ <div class="stat-mini-row">
+ <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">55</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">62</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">1,13</span></div>
+ </div>
+ <span class="stat-mini-note">Hele landslagskarrieren, 05.09.2019&ndash;11.07.2026.</span>
+ </div>
 
-        ${(vals.nat.achievableOn) ? `
-          <div class="sub-block">
-            <span class="sub-label">Fortsatt oppn&aring;elig</span>
-            ${(vals.natAchievable||[]).map((item,__i0) => `
-              <div class="item-card is-future">
-                <span class="item-title">${item.title}</span>
-                <span class="item-desc">${item.desc}</span>
-                <div class="progress-track"><div class="progress-fill" style="width: ${item.progressWidth}"></div></div>
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
+ <div class="col-section">
+ <div class="toggle-row">
+ <button class="${vals.nat.historyClass}" data-bind="nat.toggleHistory">Historikk</button>
+ <button class="${vals.nat.missedClass}" data-bind="nat.toggleMissed">Tapte muligheter</button>
+ <button class="${vals.nat.achievableClass}" data-bind="nat.toggleAchievable">Fortsatt oppn&aring;elig</button>
+ <button class="${vals.nat.recordsOnlyClass}" data-bind="nat.toggleRecordsOnly">Kun rekorder</button>
+ </div>
+ <div class="toggle-allnone">
+ <button class="link-btn" data-bind="nat.setAll">Vis alle</button>
+ <button class="link-btn" data-bind="nat.setNone">Skjul alle</button>
+ </div>
 
-        ${(vals.nat.allOff) ? `
-          <div class="empty-state">Ingen kategorier valgt.</div>
-        ` : ''}
-      </div>
-      </div>
+ <div class="col-scroll">
+ ${(vals.nat.historyOn) ? `
+ <div class="sub-block">
+ <span class="sub-label">Historikk</span>
+ ${(vals.natHistory||[]).map((item,__i0) => `
+ <div class="item-card">
+ ${(item.record) ? `
+ <span class="item-badge">
+ <svg viewBox="0 0 24 24" width="12" height="12" fill="none"><circle cx="12" cy="14" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="currentColor"/></svg>
+ Rekord
+ </span>
+ ` : ''}
+ <span class="item-period">${item.period}</span>
+ <span class="item-title">${item.title}</span>
+ <span class="item-desc">${item.desc}</span>
+ </div>
+ `).join('')}
+ </div>
+ ` : ''}
 
-      <div class="chart-module col-section">
-        <span class="chart-module-title">Rekordgraf</span>
-        <div class="entry-bars">
-          ${(vals.chart.nat.entryBars||[]).map((b,__i0) => `
-            <div class="bar-row">
-              <span class="${b.labelClass}">${b.name}</span>
-              <div class="bar-track"><div class="bar-fill" style="width: ${b.pct}; background: ${b.color}"></div></div>
-              <span class="bar-value">${b.value}</span>
-            </div>
-          `).join('')}
-        </div>
-        <span class="chart-caption">62 landslagsm&aring;l p&aring; 55 kamper (05.09.2019&ndash;11.07.2026) &mdash; Norges toppscorer gjennom tidene, foran J&oslash;rgen Juve og Alexander S&oslash;rloth (kilde: offisiell spillerstatistikk).</span>
+ ${(vals.nat.missedOn) ? `
+ <div class="sub-block">
+ <span class="sub-label">Tapte muligheter</span>
+ ${(vals.natMissed||[]).map((item,__i0) => `
+ <div class="item-card is-missed">
+ <span class="item-badge muted">Tapt mulighet</span>
+ <span class="item-title">${item.title}</span>
+ <span class="item-desc">${item.desc}</span>
+ </div>
+ `).join('')}
+ </div>
+ ` : ''}
 
-        <div class="chip-select">
-          <button class="${vals.chart.nat.norwayClass}" data-bind="chart.nat.setNorway">Best i Norge</button>
-          <button class="${vals.chart.nat.europeClass}" data-bind="chart.nat.setEurope">Best i Europa</button>
-          <button class="${vals.chart.nat.worldClass}" data-bind="chart.nat.setWorld">Best i verden</button>
-        </div>
+ ${(vals.nat.achievableOn) ? `
+ <div class="sub-block">
+ <span class="sub-label">Fortsatt oppn&aring;elig</span>
+ ${(vals.natAchievable||[]).map((item,__i0) => `
+ <div class="item-card is-future">
+ <span class="item-title">${item.title}</span>
+ <span class="item-desc">${item.desc}</span>
+ <div class="progress-track"><div class="progress-fill" style="width: ${item.progressWidth}"></div></div>
+ </div>
+ `).join('')}
+ </div>
+ ` : ''}
 
-        ${(vals.chart.nat.showDetail) ? `
-          <div class="chart-detail">
-            <div class="entry-bars">
-              ${(vals.chart.nat.bars||[]).map((b,__i0) => `
-                <div class="bar-row">
-                  <span class="${b.labelClass}">${b.name}</span>
-                  <div class="bar-track"><div class="bar-fill" style="width: ${b.pct}; background: ${b.color}"></div></div>
-                  <span class="bar-value">${b.value}</span>
-                </div>
-              `).join('')}
-            </div>
-            <span class="chart-caption">${vals.chart.nat.caption}</span>
-            <button class="expand-btn" data-bind="chart.nat.openModal">Utvid graf &#8599;</button>
-          </div>
-        ` : ''}
-      </div>
-    </div>
+ ${(vals.nat.allOff) ? `
+ <div class="empty-state">Ingen kategorier valgt.</div>
+ ` : ''}
+ </div>
+ </div>
 
-    <div class="col-card">
-      <span class="col-title">Fun facts</span>
-      <div class="fun-card">
-        <div class="fun-item">
-          <span class="fun-item-label">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>
-            Instagram
-          </span>
-          <span class="fun-item-desc">@erling &mdash; rundt 76,7 millioner f&oslash;lgere, blant de st&oslash;rste kontoene i verdensfotballen (kilde: HypeAuditor).</span>
-        </div>
-        <div class="fun-item">
-          <span class="fun-item-label">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><rect x="3" y="6" width="18" height="12" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor"/></svg>
-            YouTube
-          </span>
-          <span class="fun-item-desc">Lanserte egen offisiell kanal (@erling) med innhold fra livet og treningen (kilde: goal.com).</span>
-        </div>
-        <div class="fun-item">
-          <span class="fun-item-label">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M9 18a2.5 2.5 0 1 1-2.5-2.5A2.5 2.5 0 0 1 9 18Z" stroke="currentColor" stroke-width="1.5"/><path d="M9 18V6l9-2v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.5 14.5a2.5 2.5 0 1 1-2.5-2.5 2.5 2.5 0 0 1 2.5 2.5Z" stroke="currentColor" stroke-width="1.5"/></svg>
-            Musikk &mdash; &laquo;Kygo Jo&raquo;
-          </span>
-          <span class="fun-item-desc">Opprinnelig et rap-spor fra 2016 med Norges U17-lagkamerater Erik Botheim og Erik Tobias Sandberg (trioen &laquo;Flow Kingz&raquo;) &mdash; Haaland selv rapper under artistnavnet &laquo;Lyng&raquo;.</span>
-          <span class="fun-item-desc">Kygo lovet en remix hvis Haaland scoret mot Brasil &mdash; han gjorde det (2&ndash;1, 5. juli), og remixen ble sluppet 7. juli. Gikk til nr. 1 p&aring; Spotify Norge og satte rekord som mest spilte l&aring;t p&aring; en l&oslash;rdag i Norge (449 000 avspillinger).</span>
-          <span class="fun-item-sub">Nominert til &laquo;&Aring;rets l&aring;t&raquo; ved Spellemannprisen 2026, som juli-m&aring;nedens vinner (kilde: VG, NordiskPost, DJ Mag).</span>
-        </div>
-      </div>
-    </div>
+ <div class="chart-module col-section">
+ <span class="chart-module-title">Rekordgraf</span>
+ <div class="entry-bars">
+ ${(vals.chart.nat.entryBars||[]).map((b,__i0) => `
+ <div class="bar-row">
+ <span class="${b.labelClass}">${b.name}</span>
+ <div class="bar-track"><div class="bar-fill" style="width: ${b.pct}; background: ${b.color}"></div></div>
+ <span class="bar-value">${b.value}</span>
+ </div>
+ `).join('')}
+ </div>
+ <span class="chart-caption">62 landslagsm&aring;l p&aring; 55 kamper (05.09.2019&ndash;11.07.2026) &mdash; Norges toppscorer gjennom tidene, foran J&oslash;rgen Juve og Alexander S&oslash;rloth.</span>
 
-  </div>
+ <div class="chip-select">
+ <button class="${vals.chart.nat.norwayClass}" data-bind="chart.nat.setNorway">Best i Norge</button>
+ <button class="${vals.chart.nat.europeClass}" data-bind="chart.nat.setEurope">Best i Europa</button>
+ <button class="${vals.chart.nat.worldClass}" data-bind="chart.nat.setWorld">Best i verden</button>
+ </div>
+
+ ${(vals.chart.nat.showDetail) ? `
+ <div class="chart-detail">
+ <div class="entry-bars">
+ ${(vals.chart.nat.bars||[]).map((b,__i0) => `
+ <div class="bar-row">
+ <span class="${b.labelClass}">${b.name}</span>
+ <div class="bar-track"><div class="bar-fill" style="width: ${b.pct}; background: ${b.color}"></div></div>
+ <span class="bar-value">${b.value}</span>
+ </div>
+ `).join('')}
+ </div>
+ <span class="chart-caption">${vals.chart.nat.caption}</span>
+ <button class="expand-btn" data-bind="chart.nat.openModal">Utvid graf &#8599;</button>
+ </div>
+ ` : ''}
+ </div>
+ </div>
+
+ <div class="col-card">
+ <span class="col-title">Fun facts</span>
+ <div class="fun-card">
+ <div class="fun-item">
+ <span class="fun-item-label">
+ <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>
+ Instagram
+ </span>
+ <span class="fun-item-desc">@erling &mdash; rundt 76,7 millioner f&oslash;lgere, blant de st&oslash;rste kontoene i verdensfotballen.</span>
+ </div>
+ <div class="fun-item">
+ <span class="fun-item-label">
+ <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><rect x="3" y="6" width="18" height="12" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor"/></svg>
+ YouTube
+ </span>
+ <span class="fun-item-desc">Lanserte egen offisiell kanal (@erling) med innhold fra livet og treningen.</span>
+ </div>
+ <div class="fun-item">
+ <span class="fun-item-label">
+ <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M9 18a2.5 2.5 0 1 1-2.5-2.5A2.5 2.5 0 0 1 9 18Z" stroke="currentColor" stroke-width="1.5"/><path d="M9 18V6l9-2v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.5 14.5a2.5 2.5 0 1 1-2.5-2.5 2.5 2.5 0 0 1 2.5 2.5Z" stroke="currentColor" stroke-width="1.5"/></svg>
+ Musikk &mdash; &laquo;Kygo Jo&raquo;
+ </span>
+ <span class="fun-item-desc">Opprinnelig et rap-spor fra 2016 med Norges U17-lagkamerater Erik Botheim og Erik Tobias Sandberg (trioen &laquo;Flow Kingz&raquo;) &mdash; Haaland selv rapper under artistnavnet &laquo;Lyng&raquo;.</span>
+ <span class="fun-item-desc">Kygo lovet en remix hvis Haaland scoret mot Brasil &mdash; han gjorde det (2&ndash;1, 5. juli), og remixen ble sluppet 7. juli. Gikk til nr. 1 p&aring; Spotify Norge og satte rekord som mest spilte l&aring;t p&aring; en l&oslash;rdag i Norge (449 000 avspillinger).</span>
+ <span class="fun-item-sub">Nominert til &laquo;&Aring;rets l&aring;t&raquo; ved Spellemannprisen 2026, som juli-m&aring;nedens vinner.</span>
+ </div>
+ </div>
+ </div>
+
+ </div>
 </section>
 
 ${(vals.modal.club) ? `
-  <div class="modal-overlay">
-    <div class="modal-panel">
-      <button class="modal-close" data-bind="modal.close">&times;</button>
-      <h3 class="modal-title">Rekordgraf &mdash; klubbniv&aring;</h3>
+ <div class="modal-overlay">
+ <div class="modal-panel">
+ <button class="modal-close" data-bind="modal.close">&times;</button>
+ <h3 class="modal-title">Rekordgraf &mdash; klubbniv&aring;</h3>
 
-      <div class="chip-select">
-        <button class="${vals.chart.club.plClass}" data-bind="chart.club.pickPL">Premier League</button>
-        <button class="${vals.chart.club.bundesligaClass}" data-bind="chart.club.pickBundesliga">Bundesliga</button>
-        <button class="${vals.chart.club.austriaClass}" data-bind="chart.club.pickAustria">&Oslash;sterrike</button>
-        <button class="${vals.chart.club.eliteserienClass}" data-bind="chart.club.pickEliteserien">Eliteserien</button>
-      </div>
-      ${(vals.chart.club.isPL) ? `
-        <div class="chip-select seg-row">
-          <button class="${vals.chart.club.viewTotaltClass}" data-bind="chart.club.setViewTotalt">Totalt</button>
-          <button class="${vals.chart.club.viewSeasonClass}" data-bind="chart.club.setViewSeason">Per sesong</button>
-        </div>
-      ` : ''}
-      ${(vals.chart.club.showMilestoneTabs) ? `
-        <div class="chip-select">
-          <button class="${vals.chart.club.m100Class}" data-bind="chart.club.setM100">100 m&aring;l</button>
-          <button class="${vals.chart.club.m150Class}" data-bind="chart.club.setM150">150 m&aring;l</button>
-          <button class="${vals.chart.club.m260Class}" data-bind="chart.club.setM260">260 (alltidsrekord)</button>
-        </div>
-      ` : ''}
-      ${(vals.chart.club.showSeasonPicker) ? `
-        <div class="chip-select">
-          ${(vals.chart.club.seasonOptions||[]).map((so,__i0) => `
-            <button class="${so.cls}" data-bind="${'chart.club.seasonOptions.' + __i0 + '.pick'}">${so.label}</button>
-          `).join('')}
-        </div>
-      ` : ''}
+ <div class="chip-select">
+ <button class="${vals.chart.club.plClass}" data-bind="chart.club.pickPL">Premier League</button>
+ <button class="${vals.chart.club.bundesligaClass}" data-bind="chart.club.pickBundesliga">Bundesliga</button>
+ <button class="${vals.chart.club.austriaClass}" data-bind="chart.club.pickAustria">&Oslash;sterrike</button>
+ <button class="${vals.chart.club.eliteserienClass}" data-bind="chart.club.pickEliteserien">Eliteserien</button>
+ </div>
+ ${(vals.chart.club.isPL) ? `
+ <div class="chip-select seg-row">
+ <button class="${vals.chart.club.viewTotaltClass}" data-bind="chart.club.setViewTotalt">Totalt</button>
+ <button class="${vals.chart.club.viewSeasonClass}" data-bind="chart.club.setViewSeason">Per sesong</button>
+ </div>
+ ` : ''}
+ ${(vals.chart.club.showMilestoneTabs) ? `
+ <div class="chip-select">
+ <button class="${vals.chart.club.m100Class}" data-bind="chart.club.setM100">100 m&aring;l</button>
+ <button class="${vals.chart.club.m150Class}" data-bind="chart.club.setM150">150 m&aring;l</button>
+ <button class="${vals.chart.club.m260Class}" data-bind="chart.club.setM260">260 (alltidsrekord)</button>
+ </div>
+ ` : ''}
+ ${(vals.chart.club.showSeasonPicker) ? `
+ <div class="chip-select">
+ ${(vals.chart.club.seasonOptions||[]).map((so,__i0) => `
+ <button class="${so.cls}" data-bind="${'chart.club.seasonOptions.' + __i0 + '.pick'}">${so.label}</button>
+ `).join('')}
+ </div>
+ ` : ''}
+ ${(vals.chart.club.showBundesligaToggle) ? `
+ <div class="chip-select seg-row">
+ <button class="${vals.chart.club.bundViewRaceClass}" data-bind="chart.club.setBundViewRace">Kappl&oslash;p</button>
+ <button class="${vals.chart.club.bundViewTopClass}" data-bind="chart.club.setBundViewTop">Mestscorende</button>
+ </div>
+ ` : ''}
 
-      <svg viewBox="0 0 400 216" class="chart-svg-large">
-        ${(vals.chart.club.yTicks||[]).map((t,__i0) => `
-          <line x1="34" x2="314" y1="${t.y}" y2="${t.y}" class="grid-line" />
-          <text x="30" y="${t.y}" dy="3" class="axis-label-y">${t.v}</text>
-        `).join('')}
-        <line x1="34" x2="314" y1="${vals.chart.club.milestoneLineY}" y2="${vals.chart.club.milestoneLineY}" class="grid-line-strong" />
-        ${(vals.chart.club.xTicks||[]).map((t,__i0) => `
-          <text x="${t.x}" y="${vals.chart.club.plotBottom}" dy="14" class="axis-label-x">${t.v}</text>
-        `).join('')}
-        <polygon points="${vals.chart.club.haalandAreaPoints}" class="area-haaland" />
-        ${(vals.chart.club.rivals||[]).map((r,__i0) => `
-          ${(r.on) ? `
-            <polyline points="${r.points}" style="stroke: ${r.color}" class="line-rival" />
-          ` : ''}
-        `).join('')}
-        <polyline points="${vals.chart.club.haalandPoints}" class="line-haaland" />
-        ${(vals.chart.club.showProjection) ? `
-          <polyline points="${vals.chart.club.haalandDashedPoints}" class="line-haaland-projected" />
-        ` : ''}
-        <circle cx="${vals.chart.club.haalandDotX}" cy="${vals.chart.club.haalandDotY}" r="4.5" class="dot-haaland" />
-        <text x="${vals.chart.club.haalandLabelX}" y="${vals.chart.club.haalandLabelY}" class="line-label line-label-haaland">Haaland</text>
-        ${(vals.chart.club.rivals||[]).map((r,__i0) => `
-          ${(r.on) ? `
-            <circle cx="${r.dotX}" cy="${r.dotY}" r="4.5" style="fill: ${r.color}" class="dot-rival" />
-            <text x="${r.labelX}" y="${r.labelY}" style="fill: ${r.color}" class="line-label">${r.name}</text>
-          ` : ''}
-        `).join('')}
-      </svg>
+ ${(vals.chart.club.showRaceDetail) ? `
+ <svg viewBox="0 0 400 216" class="chart-svg-large">
+ ${(vals.chart.club.yTicks||[]).map((t,__i0) => `
+ <line x1="34" x2="314" y1="${t.y}" y2="${t.y}" class="grid-line" />
+ <text x="30" y="${t.y}" dy="3" class="axis-label-y">${t.v}</text>
+ `).join('')}
+ <line x1="34" x2="314" y1="${vals.chart.club.milestoneLineY}" y2="${vals.chart.club.milestoneLineY}" class="grid-line-strong" />
+ ${(vals.chart.club.xTicks||[]).map((t,__i0) => `
+ <text x="${t.x}" y="${vals.chart.club.plotBottom}" dy="14" class="axis-label-x">${t.v}</text>
+ `).join('')}
+ <polygon points="${vals.chart.club.haalandAreaPoints}" class="area-haaland" />
+ ${(vals.chart.club.rivals||[]).map((r,__i0) => `
+ ${(r.on) ? `
+ <polyline points="${r.points}" style="stroke: ${r.color}" class="line-rival" />
+ ` : ''}
+ `).join('')}
+ <polyline points="${vals.chart.club.haalandPoints}" class="line-haaland" />
+ ${(vals.chart.club.showProjection) ? `
+ <polyline points="${vals.chart.club.haalandDashedPoints}" class="line-haaland-projected" />
+ ` : ''}
+ <circle cx="${vals.chart.club.haalandDotX}" cy="${vals.chart.club.haalandDotY}" r="4.5" class="dot-haaland" />
+ <text x="${vals.chart.club.haalandLabelX}" y="${vals.chart.club.haalandLabelY}" class="line-label line-label-haaland">Haaland</text>
+ ${(vals.chart.club.rivals||[]).map((r,__i0) => `
+ ${(r.on) ? `
+ <circle cx="${r.dotX}" cy="${r.dotY}" r="4.5" style="fill: ${r.color}" class="dot-rival" />
+ <text x="${r.labelX}" y="${r.labelY}" style="fill: ${r.color}" class="line-label">${r.name}</text>
+ ` : ''}
+ `).join('')}
+ </svg>
 
-      <div class="rival-chips">
-        ${(vals.chart.club.rivals||[]).map((r,__i0) => `
-          <button class="${r.chipClass}" data-bind="${'chart.club.rivals.' + __i0 + '.toggle'}" style="border-color: ${r.color}">
-            <span class="swatch" style="background: ${r.color}"></span>${r.name}
-          </button>
-        `).join('')}
-      </div>
-      ${(vals.chart.club.seasonStats) ? `
-        <div class="season-stats-grid">
-          <div class="season-stat"><span class="season-stat-label">Kamper</span><span class="season-stat-value">${vals.chart.club.seasonStats.apps}</span></div>
-          <div class="season-stat"><span class="season-stat-label">M&aring;l</span><span class="season-stat-value">${vals.chart.club.seasonStats.goals}</span></div>
-          <div class="season-stat"><span class="season-stat-label">Assists</span><span class="season-stat-value">${vals.chart.club.seasonStats.assists}</span></div>
-          <div class="season-stat"><span class="season-stat-label">xG</span><span class="season-stat-value">${vals.chart.club.seasonStats.xg}</span></div>
-          <div class="season-stat"><span class="season-stat-label">xA</span><span class="season-stat-value">${vals.chart.club.seasonStats.xa}</span></div>
-          <div class="season-stat"><span class="season-stat-label">Minutter</span><span class="season-stat-value">${vals.chart.club.seasonStats.minutes}</span></div>
-          <div class="season-stat"><span class="season-stat-label">Straffer</span><span class="season-stat-value">${vals.chart.club.seasonStats.penalties}</span></div>
-          <div class="season-stat"><span class="season-stat-label">Driblinger</span><span class="season-stat-value">${vals.chart.club.seasonStats.dribbles}</span></div>
-          <div class="season-stat"><span class="season-stat-label">Vunnet dueller</span><span class="season-stat-value">${vals.chart.club.seasonStats.duelsWon}</span></div>
-          <div class="season-stat"><span class="season-stat-label">Vunnet luftdueller</span><span class="season-stat-value">${vals.chart.club.seasonStats.aerialDuelsWon}</span></div>
-          <div class="season-stat"><span class="season-stat-label">Taklinger</span><span class="season-stat-value">${vals.chart.club.seasonStats.tackles}</span></div>
-          <div class="season-stat"><span class="season-stat-label">Avskj&aelig;ringer</span><span class="season-stat-value">${vals.chart.club.seasonStats.interceptions}</span></div>
-          <div class="season-stat"><span class="season-stat-label">Gule kort</span><span class="season-stat-value">${vals.chart.club.seasonStats.yellowCards}</span></div>
-          <div class="season-stat"><span class="season-stat-label">R&oslash;de kort</span><span class="season-stat-value">${vals.chart.club.seasonStats.redCards}</span></div>
-          <div class="season-stat"><span class="season-stat-label">Frispark beg&aring;tt</span><span class="season-stat-value">${vals.chart.club.seasonStats.fouls}</span></div>
-        </div>
-      ` : ''}
-      ${(vals.chart.club.seasonRank) ? `
-        <p class="season-rank-note">${vals.chart.club.seasonRank}</p>
-      ` : ''}
-      <span class="chart-caption">${vals.chart.club.caption}</span>
-    </div>
-  </div>
+ <div class="rival-chips">
+ ${(vals.chart.club.rivals||[]).map((r,__i0) => `
+ <button class="${r.chipClass}" data-bind="${'chart.club.rivals.' + __i0 + '.toggle'}" style="border-color: ${r.color}">
+ <span class="swatch" style="background: ${r.color}"></span>${r.name}
+ </button>
+ `).join('')}
+ </div>
+ ${(vals.chart.club.seasonStats) ? `
+ <div class="season-stats-grid">
+ <div class="season-stat"><span class="season-stat-label">Kamper</span><span class="season-stat-value">${vals.chart.club.seasonStats.apps}</span></div>
+ <div class="season-stat"><span class="season-stat-label">M&aring;l</span><span class="season-stat-value">${vals.chart.club.seasonStats.goals}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Assists</span><span class="season-stat-value">${vals.chart.club.seasonStats.assists}</span></div>
+ <div class="season-stat"><span class="season-stat-label">xG</span><span class="season-stat-value">${vals.chart.club.seasonStats.xg}</span></div>
+ <div class="season-stat"><span class="season-stat-label">xA</span><span class="season-stat-value">${vals.chart.club.seasonStats.xa}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Minutter</span><span class="season-stat-value">${vals.chart.club.seasonStats.minutes}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Straffer</span><span class="season-stat-value">${vals.chart.club.seasonStats.penalties}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Driblinger</span><span class="season-stat-value">${vals.chart.club.seasonStats.dribbles}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Vunnet dueller</span><span class="season-stat-value">${vals.chart.club.seasonStats.duelsWon}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Vunnet luftdueller</span><span class="season-stat-value">${vals.chart.club.seasonStats.aerialDuelsWon}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Taklinger</span><span class="season-stat-value">${vals.chart.club.seasonStats.tackles}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Avskj&aelig;ringer</span><span class="season-stat-value">${vals.chart.club.seasonStats.interceptions}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Gule kort</span><span class="season-stat-value">${vals.chart.club.seasonStats.yellowCards}</span></div>
+ <div class="season-stat"><span class="season-stat-label">R&oslash;de kort</span><span class="season-stat-value">${vals.chart.club.seasonStats.redCards}</span></div>
+ <div class="season-stat"><span class="season-stat-label">Frispark beg&aring;tt</span><span class="season-stat-value">${vals.chart.club.seasonStats.fouls}</span></div>
+ </div>
+ ` : ''}
+ ${(vals.chart.club.seasonRank) ? `
+ <p class="season-rank-note">${vals.chart.club.seasonRank}</p>
+ ` : ''}
+ <span class="chart-caption">${vals.chart.club.caption}</span>
+ ` : ''}
+
+ ${(vals.chart.club.showBundesligaTop) ? `
+ <div class="chip-select">
+ <button class="${vals.chart.club.bundesligaTopFilterAllClass}" data-bind="chart.club.setBundesligaTopFilterAll">Alle</button>
+ <button class="${vals.chart.club.bundesligaTopFilterActiveClass}" data-bind="chart.club.setBundesligaTopFilterActive">Aktive</button>
+ <button class="${vals.chart.club.bundesligaTopFilterInactiveClass}" data-bind="chart.club.setBundesligaTopFilterInactive">Ikke aktive</button>
+ </div>
+ <div class="entry-bars">
+ ${(vals.chart.club.bundesligaTopBars||[]).map((b,__i0) => `
+ <div class="bar-row">
+ <span class="${b.labelClass}">${b.name}</span>
+ <div class="bar-track"><div class="bar-fill" style="width: ${b.pct}; background: ${b.color}"></div></div>
+ <span class="bar-value">${b.value}</span>
+ </div>
+ `).join('')}
+ </div>
+ <span class="chart-caption">Mestscorende gjennom tidene i Bundesliga. ${vals.chart.club.bundesligaTopRankLabel}</span>
+ ` : ''}
+ </div>
+ </div>
 ` : ''}
 
 ${(vals.modal.cl) ? `
-  <div class="modal-overlay">
-    <div class="modal-panel">
-      <button class="modal-close" data-bind="modal.close">&times;</button>
-      <h3 class="modal-title">Rekordgraf &mdash; Champions League</h3>
+ <div class="modal-overlay">
+ <div class="modal-panel">
+ <button class="modal-close" data-bind="modal.close">&times;</button>
+ <h3 class="modal-title">Rekordgraf &mdash; Champions League</h3>
 
-      <div class="chip-select">
-        <button class="${vals.chart.cl.m50Class}" data-bind="chart.cl.setM50">F&oslash;rst til 50</button>
-        <button class="${vals.chart.cl.m100Class}" data-bind="chart.cl.setM100">F&oslash;rst til 100</button>
-        <button class="${vals.chart.cl.m150Class}" data-bind="chart.cl.setM150">F&oslash;rst til 150</button>
-        <button class="${vals.chart.cl.topClass}" data-bind="chart.cl.setTop">Mestscorende</button>
-      </div>
+ <div class="chip-select">
+ <button class="${vals.chart.cl.m50Class}" data-bind="chart.cl.setM50">F&oslash;rst til 50</button>
+ <button class="${vals.chart.cl.m100Class}" data-bind="chart.cl.setM100">F&oslash;rst til 100</button>
+ <button class="${vals.chart.cl.m150Class}" data-bind="chart.cl.setM150">F&oslash;rst til 150</button>
+ <button class="${vals.chart.cl.topClass}" data-bind="chart.cl.setTop">Mestscorende</button>
+ </div>
 
-      ${(vals.chart.cl.showRace) ? `
-        <svg viewBox="0 0 400 216" class="chart-svg-large">
-          ${(vals.chart.cl.yTicks||[]).map((t,__i0) => `
-            <line x1="34" x2="314" y1="${t.y}" y2="${t.y}" class="grid-line" />
-            <text x="30" y="${t.y}" dy="3" class="axis-label-y">${t.v}</text>
-          `).join('')}
-          <line x1="34" x2="314" y1="${vals.chart.cl.milestoneLineY}" y2="${vals.chart.cl.milestoneLineY}" class="grid-line-strong" />
-          ${(vals.chart.cl.xTicks||[]).map((t,__i0) => `
-            <text x="${t.x}" y="${vals.chart.cl.plotBottom}" dy="14" class="axis-label-x">${t.v}</text>
-          `).join('')}
-          <polygon points="${vals.chart.cl.haalandAreaPoints}" class="area-haaland" />
-          ${(vals.chart.cl.rivals||[]).map((r,__i0) => `
-            ${(r.on) ? `
-              <polyline points="${r.points}" style="stroke: ${r.color}" class="line-rival" />
-            ` : ''}
-          `).join('')}
-          <polyline points="${vals.chart.cl.haalandPoints}" class="line-haaland" />
-          ${(vals.chart.cl.showProjection) ? `
-            <polyline points="${vals.chart.cl.haalandDashedPoints}" class="line-haaland-projected" />
-          ` : ''}
-          <circle cx="${vals.chart.cl.haalandDotX}" cy="${vals.chart.cl.haalandDotY}" r="4.5" class="dot-haaland" />
-          <text x="${vals.chart.cl.haalandLabelX}" y="${vals.chart.cl.haalandLabelY}" class="line-label line-label-haaland">Haaland</text>
-          ${(vals.chart.cl.rivals||[]).map((r,__i0) => `
-            ${(r.on) ? `
-              <circle cx="${r.dotX}" cy="${r.dotY}" r="4.5" style="fill: ${r.color}" class="dot-rival" />
-              <text x="${r.labelX}" y="${r.labelY}" style="fill: ${r.color}" class="line-label">${r.name}</text>
-            ` : ''}
-          `).join('')}
-        </svg>
-        <div class="rival-chips">
-          ${(vals.chart.cl.rivals||[]).map((r,__i0) => `
-            <button class="${r.chipClass}" data-bind="${'chart.cl.rivals.' + __i0 + '.toggle'}" style="border-color: ${r.color}">
-              <span class="swatch" style="background: ${r.color}"></span>${r.name}
-            </button>
-          `).join('')}
-        </div>
-        <span class="chart-caption">${vals.chart.cl.caption}</span>
-      ` : ''}
+ ${(vals.chart.cl.showRace) ? `
+ <svg viewBox="0 0 400 216" class="chart-svg-large">
+ ${(vals.chart.cl.yTicks||[]).map((t,__i0) => `
+ <line x1="34" x2="314" y1="${t.y}" y2="${t.y}" class="grid-line" />
+ <text x="30" y="${t.y}" dy="3" class="axis-label-y">${t.v}</text>
+ `).join('')}
+ <line x1="34" x2="314" y1="${vals.chart.cl.milestoneLineY}" y2="${vals.chart.cl.milestoneLineY}" class="grid-line-strong" />
+ ${(vals.chart.cl.xTicks||[]).map((t,__i0) => `
+ <text x="${t.x}" y="${vals.chart.cl.plotBottom}" dy="14" class="axis-label-x">${t.v}</text>
+ `).join('')}
+ <polygon points="${vals.chart.cl.haalandAreaPoints}" class="area-haaland" />
+ ${(vals.chart.cl.rivals||[]).map((r,__i0) => `
+ ${(r.on) ? `
+ <polyline points="${r.points}" style="stroke: ${r.color}" class="line-rival" />
+ ` : ''}
+ `).join('')}
+ <polyline points="${vals.chart.cl.haalandPoints}" class="line-haaland" />
+ ${(vals.chart.cl.showProjection) ? `
+ <polyline points="${vals.chart.cl.haalandDashedPoints}" class="line-haaland-projected" />
+ ` : ''}
+ <circle cx="${vals.chart.cl.haalandDotX}" cy="${vals.chart.cl.haalandDotY}" r="4.5" class="dot-haaland" />
+ <text x="${vals.chart.cl.haalandLabelX}" y="${vals.chart.cl.haalandLabelY}" class="line-label line-label-haaland">Haaland</text>
+ ${(vals.chart.cl.rivals||[]).map((r,__i0) => `
+ ${(r.on) ? `
+ <circle cx="${r.dotX}" cy="${r.dotY}" r="4.5" style="fill: ${r.color}" class="dot-rival" />
+ <text x="${r.labelX}" y="${r.labelY}" style="fill: ${r.color}" class="line-label">${r.name}</text>
+ ` : ''}
+ `).join('')}
+ </svg>
+ <div class="rival-chips">
+ ${(vals.chart.cl.rivals||[]).map((r,__i0) => `
+ <button class="${r.chipClass}" data-bind="${'chart.cl.rivals.' + __i0 + '.toggle'}" style="border-color: ${r.color}">
+ <span class="swatch" style="background: ${r.color}"></span>${r.name}
+ </button>
+ `).join('')}
+ </div>
+ <span class="chart-caption">${vals.chart.cl.caption}</span>
+ ` : ''}
 
-      ${(vals.chart.cl.showTop) ? `
-        <div class="chip-select">
-          <button class="${vals.chart.cl.topFilterAllClass}" data-bind="chart.cl.setTopFilterAll">Alle</button>
-          <button class="${vals.chart.cl.topFilterActiveClass}" data-bind="chart.cl.setTopFilterActive">Aktive</button>
-          <button class="${vals.chart.cl.topFilterInactiveClass}" data-bind="chart.cl.setTopFilterInactive">Ikke aktive</button>
-        </div>
-        <div class="entry-bars">
-          ${(vals.chart.cl.topBars||[]).map((b,__i0) => `
-            <div class="bar-row">
-              <span class="${b.labelClass}">${b.name}</span>
-              <div class="bar-track"><div class="bar-fill" style="width: ${b.pct}; background: ${b.color}"></div></div>
-              <span class="bar-value">${b.value}</span>
-            </div>
-          `).join('')}
-        </div>
-        <span class="chart-caption">Mestscorende gjennom tidene i Champions League (sample). ${vals.chart.cl.topRankLabel}</span>
-      ` : ''}
-    </div>
-  </div>
+ ${(vals.chart.cl.showTop) ? `
+ <div class="chip-select">
+ <button class="${vals.chart.cl.topFilterAllClass}" data-bind="chart.cl.setTopFilterAll">Alle</button>
+ <button class="${vals.chart.cl.topFilterActiveClass}" data-bind="chart.cl.setTopFilterActive">Aktive</button>
+ <button class="${vals.chart.cl.topFilterInactiveClass}" data-bind="chart.cl.setTopFilterInactive">Ikke aktive</button>
+ </div>
+ <div class="entry-bars">
+ ${(vals.chart.cl.topBars||[]).map((b,__i0) => `
+ <div class="bar-row">
+ <span class="${b.labelClass}">${b.name}</span>
+ <div class="bar-track"><div class="bar-fill" style="width: ${b.pct}; background: ${b.color}"></div></div>
+ <span class="bar-value">${b.value}</span>
+ </div>
+ `).join('')}
+ </div>
+ <span class="chart-caption">Mestscorende gjennom tidene i Champions League. ${vals.chart.cl.topRankLabel}</span>
+ ` : ''}
+ </div>
+ </div>
 ` : ''}
 
 ${(vals.modal.nat) ? `
-  <div class="modal-overlay">
-    <div class="modal-panel">
-      <button class="modal-close" data-bind="modal.close">&times;</button>
-      <h3 class="modal-title">Rekordgraf &mdash; landslag</h3>
+ <div class="modal-overlay">
+ <div class="modal-panel">
+ <button class="modal-close" data-bind="modal.close">&times;</button>
+ <h3 class="modal-title">Rekordgraf &mdash; landslag</h3>
 
-      <div class="chip-select">
-        <button class="${vals.chart.nat.norwayClass}" data-bind="chart.nat.setNorway">Best i Norge</button>
-        <button class="${vals.chart.nat.europeClass}" data-bind="chart.nat.setEurope">Best i Europa</button>
-        <button class="${vals.chart.nat.worldClass}" data-bind="chart.nat.setWorld">Best i verden</button>
-      </div>
+ <div class="chip-select">
+ <button class="${vals.chart.nat.norwayClass}" data-bind="chart.nat.setNorway">Best i Norge</button>
+ <button class="${vals.chart.nat.europeClass}" data-bind="chart.nat.setEurope">Best i Europa</button>
+ <button class="${vals.chart.nat.worldClass}" data-bind="chart.nat.setWorld">Best i verden</button>
+ </div>
 
-      ${(vals.chart.nat.showDetail) ? `
-        <div class="entry-bars">
-          ${(vals.chart.nat.bars||[]).map((b,__i0) => `
-            <div class="bar-row">
-              <span class="${b.labelClass}">${b.name}</span>
-              <div class="bar-track"><div class="bar-fill" style="width: ${b.pct}; background: ${b.color}"></div></div>
-              <span class="bar-value">${b.value}</span>
-            </div>
-          `).join('')}
-        </div>
-        <span class="chart-caption">${vals.chart.nat.caption}</span>
-      ` : ''}
-    </div>
-  </div>
+ ${(vals.chart.nat.showDetail) ? `
+ <div class="entry-bars">
+ ${(vals.chart.nat.bars||[]).map((b,__i0) => `
+ <div class="bar-row">
+ <span class="${b.labelClass}">${b.name}</span>
+ <div class="bar-track"><div class="bar-fill" style="width: ${b.pct}; background: ${b.color}"></div></div>
+ <span class="bar-value">${b.value}</span>
+ </div>
+ `).join('')}
+ </div>
+ <span class="chart-caption">${vals.chart.nat.caption}</span>
+ ` : ''}
+ </div>
+ </div>
 ` : ''}
 
 <footer class="foot">
-  <div class="foot-note">
-    <b>Om denne siden:</b> HaalandTracker er en ikke-kommersiell, fan-laget statistikkside og er ikke offisielt tilknyttet Erling Haaland, Manchester City eller andre klubber/forbund som er omtalt.
-  </div>
-  <div class="foot-note">
-    <b>Om kildene:</b> tall og hendelser er hentet fra offentlige kilder (ESPN, Sky Sports, UEFA.com, Guinness World Records, bundesliga.com, mancity.com m.fl.), sitert fortl&oslash;pende under hvert punkt. Der en oppdatert totalsum ikke er bekreftet, er det merket &laquo;Estimat&raquo;. Klubb- og turneringslogoer er bevisst byttet ut med tekst for &aring; unng&aring; varemerkekonflikt.
-  </div>
-  <div class="foot-note">
-    <b>Interaksjon:</b> hver kolonne har egne av/p&aring;-brytere for historikk, tapte muligheter og fortsatt oppn&aring;elig. Rekordgrafen st&oslash;tter to milep&aelig;ler (100/150 m&aring;l), totalt/per sesong-visning, og av/p&aring;-bryter per konkurrent.
-  </div>
+ <div class="foot-note">
+ <b>Om denne siden:</b> HaalandTracker er en ikke-kommersiell, fan-laget statistikkside og er ikke offisielt tilknyttet Erling Haaland, Manchester City eller andre klubber/forbund som er omtalt.
+ </div>
+ <div class="foot-note">
+ <b>Om tallene:</b> tall og hendelser er basert p&aring; offentlig tilgjengelig statistikk, oppdatert fortl&oslash;pende. Klubb- og turneringslogoer er bevisst byttet ut med tekst for &aring; unng&aring; varemerkekonflikt.
+ </div>
+ <div class="foot-note">
+ <b>Interaksjon:</b> hver kolonne har egne av/p&aring;-brytere for historikk, tapte muligheter og fortsatt oppn&aring;elig. Rekordgrafen st&oslash;tter to milep&aelig;ler (100/150 m&aring;l), totalt/per sesong-visning, og av/p&aring;-bryter per konkurrent.
+ </div>
 </footer>
 
 </div>
