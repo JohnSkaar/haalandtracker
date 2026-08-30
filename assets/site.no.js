@@ -248,7 +248,12 @@ class Site {
       { period: '2016', title: 'Bryne FK', desc: '16 seniorkamper, 0 mål. A-lagsdebut som 15-åring i 2. divisjon.', record: false },
       { period: '2017', title: 'Molde FK, sesong 1', desc: '2 mål på 14 Eliteserien-kamper (11 innhopp), trent av Ole Gunnar Solskjær.', record: false },
       { period: '2018', title: 'Molde FK, sesong 2', desc: '12 mål på 25 Eliteserien-kamper (17 fra start).', record: false },
-      { period: '2019–2020', title: 'RB Salzburg', desc: '16 mål på 16 kamper i østerriksk Bundesliga, toppscorer i ligaen; 29 mål på 27 kamper i alle turneringer.', record: true },
+      {
+        period: '2019–2020',
+        title: 'RB Salzburg',
+        desc: '16 mål på 14 kamper i østerriksk Bundesliga (1,14 per kamp), toppscorer i ligaen; 29 mål på 27 kamper i alle turneringer. Vant det østerrikske seriemesterskapet og cupen i 2018/19.',
+        record: true,
+      },
       { period: '18. jan. 2020', title: 'Dortmund-debut med hattrick', desc: 'Innhopp mot Augsburg, scoret med første touch og fullførte hattrick på 23 minutter, 19 år gammel.', record: true },
       { period: '2019/20 (delsesong)', title: 'Borussia Dortmund, første halvsesong', desc: '13 mål på 15 Bundesliga-kamper etter overgangen i januar 2020.', record: false },
       {
@@ -272,7 +277,12 @@ class Site {
       },
       { period: '2023', title: 'Raskest til 50 PL-mål', desc: '48 kamper — forbedret Andy Coles rekord med 17 kamper.', record: true },
       { period: '2. des. 2025', title: 'Raskest til 100 PL-mål', desc: '111 kamper mot Fulham, forbi Alan Shearers rekord på 124 — Guinness World Record.', record: true },
-      { period: '2022–nå', title: 'Manchester City', desc: 'Nåværende klubb. Del av trippelvinnende lag 2022/23, inkl. Champions League.', record: false },
+      {
+        period: '2022–nå',
+        title: 'Manchester City',
+        desc: 'Nåværende klubb. Trippel i 2022/23 (Premier League, FA-cupen, Champions League), pluss Klubb-VM og UEFA Super Cup i 2023, Premier League-tittel to sesonger på rad (2022/23–2023/24), dobbel i FA-cupen og ligacupen i 2025/26, og Community Shield i 2024.',
+        record: false,
+      },
     ];
     const clubMissed = [
       {
@@ -1014,16 +1024,16 @@ class Site {
       },
       austria: {
         milestone: 16,
-        maxGames: 20,
+        maxGames: 16,
         maxGoals: 16,
         haaland: [
           [0, 0],
           [4, 4],
           [8, 9],
           [12, 13],
-          [16, 16],
+          [14, 16],
         ],
-        rivalNote: 'Grafen viser Haalands egen kurve: 16 m&aring;l p&aring; 16 kamper for RB Salzburg.',
+        rivalNote: 'Grafen viser Haalands egen kurve: 16 m&aring;l p&aring; 14 kamper (1,14 per kamp) for RB Salzburg &mdash; offisiell toppscorerliste for &oslash;sterriksk Bundesliga 2019/20, plass 3.',
         rivals: [],
       },
       eliteserien: {
@@ -1667,8 +1677,41 @@ function render(vals) {
 
  <div class="${vals.timeline.scrollClass}">
 
+ <div class="match-card season-early">
+ <div class="match-comp">SAMMENDRAG</div>
+ <div class="match-date">2016</div>
+ <div class="match-badges">
+ <div class="badge badge-own" style="background:#1c3f94;color:#fff">BRY</div>
+ </div>
+ <div class="match-opp">Bryne FK</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">16 seniorkamper, 0 m&aring;l &mdash; A-lagsdebut som 15-&aring;ring i Norges 2. divisjon</div>
+ </div>
+
+ <div class="match-card season-early">
+ <div class="match-comp">SAMMENDRAG</div>
+ <div class="match-date">2017&ndash;2018</div>
+ <div class="match-badges">
+ <div class="badge badge-own" style="background:#00205b;color:#fff">MOL</div>
+ </div>
+ <div class="match-opp">Molde FK</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">14 m&aring;l p&aring; 39 Eliteserien-kamper over to sesonger (0,36 per kamp) &mdash; trent av Ole Gunnar Solskj&aelig;r</div>
+ </div>
+
  <div class="match-card card-divider season-early comp-bundesliga">
  <span class="card-divider-label">F&Oslash;RSTE HALVDEL 2019/20 &mdash; &Oslash;STERRIKSK BUNDESLIGA (RB SALZBURG)</span>
+ </div>
+
+ <div class="match-card season-early">
+ <div class="match-comp">SAMMENDRAG</div>
+ <div class="match-date">2019&ndash;2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own" style="background:#dd0731;color:#fff">RBS</div>
+ </div>
+ <div class="match-opp">RB Salzburg</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">16 m&aring;l p&aring; 14 &oslash;sterrikske bundesligakamper (1,14 per kamp), ligaens toppscorer &mdash; 29 m&aring;l p&aring; 27 kamper i alle turneringer</div>
  </div>
 
  <div class="match-card season-early comp-bundesliga">
@@ -1821,6 +1864,17 @@ function render(vals) {
 
  <div class="match-card card-divider season-early comp-bundesliga">
  <span class="card-divider-label">FRA 18. JAN. 2020 &mdash; TYSK BUNDESLIGA (BORUSSIA DORTMUND)</span>
+ </div>
+
+ <div class="match-card is-record season-early">
+ <div class="match-comp">SAMMENDRAG</div>
+ <div class="match-date">2020&ndash;2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own" style="background:#FDE100;color:#000">BVB</div>
+ </div>
+ <div class="match-opp">Borussia Dortmund</div>
+ <div class="match-icons"></div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>62 m&aring;l p&aring; 67 bundesligakamper (0,93 per kamp) gjennom hele oppholdet &mdash; vant DFB-Pokal 2021, yngste og raskeste spiller noensinne til 50 bundesligam&aring;l</div>
  </div>
 
  <div class="match-card is-record season-early comp-bundesliga">
@@ -4643,6 +4697,10 @@ function render(vals) {
  </div>
  <div class="merit-chip">
  <span class="merit-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+ <div class="merit-text"><b>UEFA &aring;rets mannlige spiller</b><span class="sub">2022/23-sesongen</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
  <div class="merit-text"><b>PFA Players&rsquo; Player of the Year</b><span class="sub">2023</span></div>
  </div>
  <div class="merit-chip">
@@ -4692,6 +4750,18 @@ function render(vals) {
  <div class="merit-chip">
  <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
  <div class="merit-text"><b>Raskest til 50 PL-m&aring;l</b><span class="sub">48 kamper, forbedret Andy Coles rekord med 17 kamper</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+ <div class="merit-text"><b>Premier League-mester</b><span class="sub">&times;2, 2022/23 &amp; 2023/24</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+ <div class="merit-text"><b>Klubb-VM-vinner</b><span class="sub">2023, slo Fluminense 4&ndash;0 i finalen</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+ <div class="merit-text"><b>UEFA Super Cup-vinner</b><span class="sub">2023, slo Sevilla p&aring; straffer</span></div>
  </div>
  </div>
  </div>
@@ -4945,6 +5015,10 @@ function render(vals) {
  <div class="merit-text"><b>Toppscorer, Champions League</b><span class="sub">2022/23-sesongen, 12 m&aring;l</span></div>
  </div>
  <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="14" r="6" stroke="#fff" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="#fff"/><path d="M9 8.5 7 4M15 8.5l2-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+ <div class="merit-text"><b>Toppscorer, Champions League</b><span class="sub">2020/21-sesongen, 10 m&aring;l, for Borussia Dortmund</span></div>
+ </div>
+ <div class="merit-chip">
  <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M12 2.5l2.6 5.5 6.8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6-.8z" fill="#fff"/></svg></span>
  <div class="merit-text"><b>Yngste til 20 CL-m&aring;l</b><span class="sub">20 &aring;r 231 dager, 14 kamper</span></div>
  </div>
@@ -5158,6 +5232,14 @@ function render(vals) {
  <div class="merit-chip">
  <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#fff"/></svg></span>
  <div class="merit-text"><b>Flest m&aring;l i &eacute;n landskamp for Norge</b><span class="sub">5 m&aring;l, mot Moldova</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#fff"/></svg></span>
+ <div class="merit-text"><b>Toppscorer, U20-VM</b><span class="sub">2019 &mdash; inkl. 9 m&aring;l mot Honduras, en verdensrekord i &eacute;n kamp</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="14" r="6" stroke="#fff" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="#fff"/><path d="M9 8.5 7 4M15 8.5l2-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+ <div class="merit-text"><b>Gullballen (&aring;rets spiller i Norge)</b><span class="sub">&times;6, 2020&ndash;2025 &mdash; hvert eneste &aring;r</span></div>
  </div>
  </div>
  </div>

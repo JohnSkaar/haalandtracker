@@ -248,7 +248,12 @@ class Site {
       { period: '2016', title: 'Bryne FK', desc: '16 senior appearances, 0 goals. First-team debut aged 15 in Norway\&#39;s 2nd division.', record: false },
       { period: '2017', title: 'Molde FK, season 1', desc: '2 goals in 14 Eliteserien games (11 as substitute), coached by Ole Gunnar Solskj&aelig;r.', record: false },
       { period: '2018', title: 'Molde FK, season 2', desc: '12 goals in 25 Eliteserien games (17 starts).', record: false },
-      { period: '2019&ndash;2020', title: 'RB Salzburg', desc: '16 goals in 16 games in the Austrian Bundesliga, league top scorer; 29 goals in 27 games across all competitions.', record: true },
+      {
+        period: '2019&ndash;2020',
+        title: 'RB Salzburg',
+        desc: '16 goals in 14 Austrian Bundesliga games (1.14 per game), league top scorer; 29 goals in 27 games across all competitions. Won the Austrian Bundesliga title and Austrian Cup in 2018/19.',
+        record: true,
+      },
       {
         period: '18 Jan 2020',
         title: 'Dortmund debut with a hat-trick',
@@ -282,7 +287,12 @@ class Site {
       },
       { period: '2023', title: 'Fastest to 50 PL goals', desc: '48 games &mdash; beat Andy Cole\&#39;s record by 17 games.', record: true },
       { period: '2 Dec 2025', title: 'Fastest to 100 PL goals', desc: '111 games, vs Fulham, beating Alan Shearer\&#39;s record of 124 &mdash; Guinness World Record.', record: true },
-      { period: '2022&ndash;present', title: 'Manchester City', desc: 'Current club. Part of the treble-winning squad of 2022/23, including the Champions League.', record: false },
+      {
+        period: '2022&ndash;present',
+        title: 'Manchester City',
+        desc: 'Current club. Treble in 2022/23 (Premier League, FA Cup, Champions League), plus the Club World Cup and UEFA Super Cup in 2023, back-to-back Premier League titles (2022/23&ndash;2023/24), the FA Cup and League Cup double in 2025/26, and the 2024 Community Shield.',
+        record: false,
+      },
     ];
     const clubMissed = [
       {
@@ -1035,16 +1045,16 @@ class Site {
       },
       austria: {
         milestone: 16,
-        maxGames: 20,
+        maxGames: 16,
         maxGoals: 16,
         haaland: [
           [0, 0],
           [4, 4],
           [8, 9],
           [12, 13],
-          [16, 16],
+          [14, 16],
         ],
-        rivalNote: 'The chart shows Haaland&#39;s own curve: 16 goals in 16 games for RB Salzburg.',
+        rivalNote: 'The chart shows Haaland&#39;s own curve: 16 goals in 14 games (1.14 per game) for RB Salzburg &mdash; official 2019/20 Austrian Bundesliga topscorer table, rank 3.',
         rivals: [],
       },
       eliteserien: {
@@ -1688,8 +1698,41 @@ function render(vals) {
 
  <div class="${vals.timeline.scrollClass}">
 
+ <div class="match-card season-early">
+ <div class="match-comp">SUMMARY</div>
+ <div class="match-date">2016</div>
+ <div class="match-badges">
+ <div class="badge badge-own" style="background:#1c3f94;color:#fff">BRY</div>
+ </div>
+ <div class="match-opp">Bryne FK</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">16 senior appearances, 0 goals &mdash; first-team debut aged 15 in Norway&#39;s 2nd division (1. divisjon)</div>
+ </div>
+
+ <div class="match-card season-early">
+ <div class="match-comp">SUMMARY</div>
+ <div class="match-date">2017&ndash;2018</div>
+ <div class="match-badges">
+ <div class="badge badge-own" style="background:#00205b;color:#fff">MOL</div>
+ </div>
+ <div class="match-opp">Molde FK</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">14 goals in 39 Eliteserien games across two seasons (0.36 per game) &mdash; coached by Ole Gunnar Solskj&aelig;r</div>
+ </div>
+
  <div class="match-card card-divider season-early comp-bundesliga">
  <span class="card-divider-label">FIRST HALF 2019/20 &mdash; AUSTRIAN BUNDESLIGA (RB SALZBURG)</span>
+ </div>
+
+ <div class="match-card season-early">
+ <div class="match-comp">SUMMARY</div>
+ <div class="match-date">2019&ndash;2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own" style="background:#dd0731;color:#fff">RBS</div>
+ </div>
+ <div class="match-opp">RB Salzburg</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">16 goals in 14 Austrian Bundesliga games (1.14 per game), league top scorer &mdash; 29 goals in 27 games across all competitions</div>
  </div>
 
  <div class="match-card season-early comp-bundesliga">
@@ -1842,6 +1885,17 @@ function render(vals) {
 
  <div class="match-card card-divider season-early comp-bundesliga">
  <span class="card-divider-label">FROM 18 JAN 2020 &mdash; GERMAN BUNDESLIGA (BORUSSIA DORTMUND)</span>
+ </div>
+
+ <div class="match-card is-record season-early">
+ <div class="match-comp">SUMMARY</div>
+ <div class="match-date">2020&ndash;2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own" style="background:#FDE100;color:#000">BVB</div>
+ </div>
+ <div class="match-opp">Borussia Dortmund</div>
+ <div class="match-icons"></div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>62 goals in 67 Bundesliga games (0.93 per game) across his whole spell &mdash; DFB-Pokal winner 2021, youngest and fastest player ever to 50 Bundesliga goals</div>
  </div>
 
  <div class="match-card is-record season-early comp-bundesliga">
@@ -4664,6 +4718,10 @@ function render(vals) {
  </div>
  <div class="merit-chip">
  <span class="merit-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+ <div class="merit-text"><b>UEFA Men&rsquo;s Player of the Year</b><span class="sub">2022/23 season</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
  <div class="merit-text"><b>PFA Players&rsquo; Player of the Year</b><span class="sub">2023</span></div>
  </div>
  <div class="merit-chip">
@@ -4713,6 +4771,18 @@ function render(vals) {
  <div class="merit-chip">
  <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
  <div class="merit-text"><b>Fastest to 50 PL goals</b><span class="sub">48 games, beat Andy Cole&rsquo;s record by 17 games</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+ <div class="merit-text"><b>Premier League champion</b><span class="sub">&times;2, 2022/23 &amp; 2023/24</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+ <div class="merit-text"><b>Club World Cup winner</b><span class="sub">2023, beat Fluminense 4&ndash;0 in the final</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#fff" stroke-width="1.6"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13v3M9 20h6M10 17h4v3h-4z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+ <div class="merit-text"><b>UEFA Super Cup winner</b><span class="sub">2023, beat Sevilla on penalties</span></div>
  </div>
  </div>
  </div>
@@ -4966,6 +5036,10 @@ function render(vals) {
  <div class="merit-text"><b>Champions League top scorer</b><span class="sub">2022/23 season, 12 goals</span></div>
  </div>
  <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="14" r="6" stroke="#fff" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="#fff"/><path d="M9 8.5 7 4M15 8.5l2-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+ <div class="merit-text"><b>Champions League top scorer</b><span class="sub">2020/21 season, 10 goals, with Borussia Dortmund</span></div>
+ </div>
+ <div class="merit-chip">
  <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M12 2.5l2.6 5.5 6.8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6-.8z" fill="#fff"/></svg></span>
  <div class="merit-text"><b>Youngest to 20 CL goals</b><span class="sub">20 years 231 days, 14 games</span></div>
  </div>
@@ -5179,6 +5253,14 @@ function render(vals) {
  <div class="merit-chip">
  <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#fff"/></svg></span>
  <div class="merit-text"><b>Most goals in a single game for Norway</b><span class="sub">5 goals, vs Moldova</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#fff"/></svg></span>
+ <div class="merit-text"><b>U20 World Cup Golden Boot</b><span class="sub">2019 &mdash; incl. 9 goals vs Honduras, a single-match world record</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="14" r="6" stroke="#fff" stroke-width="1.6"/><path d="M12 10.5l1.1 2.3 2.5.3-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.3z" fill="#fff"/><path d="M9 8.5 7 4M15 8.5l2-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+ <div class="merit-text"><b>Norway&rsquo;s Gullballen (Player of the Year)</b><span class="sub">&times;6, 2020&ndash;2025 &mdash; every year running</span></div>
  </div>
  </div>
  </div>
