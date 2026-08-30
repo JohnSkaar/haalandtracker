@@ -1492,20 +1492,25 @@ class Site {
     ];
     const NAT_WORLD = [
       { name: 'C. Ronaldo', value: 146, color: '#2f5aa8', isH: false, active: true },
-      { name: 'R. Lukaku', value: 93, color: '#6a3fa0', isH: false, active: true },
-      { name: 'R. Lewandowski', value: 89, color: '#a8791a', isH: false, active: true },
-      { name: 'H. Kane', value: 85, color: '#1f2937', isH: false, active: true },
-      { name: 'F. Puskás', value: 84, color: '#7c3f8f', isH: false, active: false },
-      { name: 'S. Kocsis', value: 75, color: '#2f8f5f', isH: false, active: false },
-      { name: 'E. Džeko', value: 73, color: '#5a5f73', isH: false, active: true },
-      { name: 'M. Klose', value: 71, color: '#1f6f78', isH: false, active: false },
-      { name: 'G. Müller', value: 68, color: '#8a1538', isH: false, active: false },
-      { name: 'R. Keane', value: 68, color: '#b5484f', isH: false, active: false },
-      { name: 'K. Mbappé', value: 66, color: '#0e6b3a', isH: false, active: true },
-      { name: 'A. Mitrović', value: 64, color: '#DC052D', isH: false, active: true },
+      { name: 'L. Messi', value: 125, color: '#6a3fa0', isH: false, active: true },
+      { name: 'Ali Daei', value: 108, color: '#a8791a', isH: false, active: false },
+      { name: 'S. Chhetri', value: 95, color: '#1f2937', isH: false, active: true },
+      { name: 'R. Lukaku', value: 93, color: '#7c3f8f', isH: false, active: true },
+      { name: 'M. Dahari', value: 89, color: '#2f8f5f', isH: false, active: false },
+      { name: 'R. Lewandowski', value: 89, color: '#5a5f73', isH: false, active: true },
+      { name: 'A. Mabkhout', value: 85, color: '#1f6f78', isH: false, active: true },
+      { name: 'H. Kane', value: 85, color: '#8a1538', isH: false, active: true },
+      { name: 'F. Puskás', value: 84, color: '#b5484f', isH: false, active: false },
+      { name: 'S. Kocsis', value: 75, color: '#0e6b3a', isH: false, active: false },
+      { name: 'E. Džeko', value: 73, color: '#DC052D', isH: false, active: true },
+      { name: 'M. Klose', value: 71, color: '#0f4c81', isH: false, active: false },
+      { name: 'G. Müller', value: 68, color: '#7c5a3f', isH: false, active: false },
+      { name: 'R. Keane', value: 68, color: '#2f5aa8', isH: false, active: false },
+      { name: 'K. Mbappé', value: 66, color: '#6a3fa0', isH: false, active: true },
+      { name: 'A. Mitrović', value: 64, color: '#a8791a', isH: false, active: true },
       { name: 'E. Haaland', value: 62, color: '#c1352b', isH: true, active: true },
-      { name: 'Z. Ibrahimović', value: 62, color: '#0f4c81', isH: false, active: false },
-      { name: 'I. Schlosser', value: 59, color: '#7c5a3f', isH: false, active: false },
+      { name: 'Z. Ibrahimović', value: 62, color: '#1f2937', isH: false, active: false },
+      { name: 'I. Schlosser', value: 59, color: '#7c3f8f', isH: false, active: false },
     ];
     let natBars = [],
       natCaption = '';
@@ -1517,7 +1522,7 @@ class Site {
       natCaption = 'Top European national-team scorers (sample for the other players).';
     } else if (cnat.active === 'world') {
       natBars = NAT_WORLD.map((t, i) => bar(i + 1 + '. ' + t.name + (t.active ? '*' : ''), t.value, 150, t.color, t.isH));
-      natCaption = "All-time top scorers for men&#39;s national teams. Haaland&#39;s ranking: #13, with 62 goals in 55 games.";
+      natCaption = "All-time top scorers for men&#39;s national teams. Haaland&#39;s ranking: #18, with 62 goals in 55 games.";
     }
 
     const chartNat = {
