@@ -1466,12 +1466,6 @@ class Site {
       { name: 'J. Juve (tidl. rekord)', value: 33, color: '#a8791a', isH: false },
       { name: 'A. Sørloth', value: 26, color: '#2f5aa8', isH: false },
     ];
-    const NAT_EUROPE = [
-      { name: 'E. Haaland', value: 62, color: '#c1352b', isH: true },
-      { name: 'C. Ronaldo', value: 135, color: '#2f5aa8', isH: false },
-      { name: 'R. Lewandowski', value: 85, color: '#a8791a', isH: false },
-      { name: 'K. Mbappé', value: 48, color: '#2f8f5f', isH: false },
-    ];
     const NAT_WORLD = [
       { name: 'C. Ronaldo', value: 146, color: '#2f5aa8', isH: false, active: true, europe: true },
       { name: 'L. Messi', value: 125, color: '#6a3fa0', isH: false, active: true, europe: false },
@@ -1494,21 +1488,23 @@ class Site {
       { name: 'Z. Ibrahimović', value: 62, color: '#1f2937', isH: false, active: false, europe: true },
       { name: 'I. Schlosser', value: 59, color: '#7c3f8f', isH: false, active: false, europe: true },
     ];
+    const europeOnly = NAT_WORLD.filter((t) => t.europe);
+    const europeCaption = (rank) => 'Offisiell liste over europeiske toppscorere for herrelandslag gjennom tidene. Haalands plassering: #' + rank + ', med 62 mål på 55 kamper.';
     let natBars = [],
       natCaption = '';
     if (cnat.active === 'norway') {
       natBars = NAT_NORWAY.map((t) => bar(t.name, t.value, 65, t.color, t.isH));
       natCaption = 'Norges målkonger gjennom tidene — 62 mål på 55 kamper, 05.09.2019–11.07.2026.';
     } else if (cnat.active === 'europe') {
-      natBars = NAT_EUROPE.map((t) => bar(t.name, t.value, 140, t.color, t.isH));
-      natCaption = 'Beste europeiske landslagsscorere (sample for de andre spillerne).';
+      natBars = europeOnly.map((t, i) => bar(i + 1 + '. ' + t.name + (t.active ? '*' : ''), t.value, 150, t.color, t.isH));
+      natCaption = europeCaption(europeOnly.findIndex((t) => t.isH) + 1);
     } else if (cnat.active === 'world') {
       const isEuropeFilter = cnat.worldFilter === 'europe';
-      const worldFiltered = isEuropeFilter ? NAT_WORLD.filter((t) => t.europe) : NAT_WORLD;
+      const worldFiltered = isEuropeFilter ? europeOnly : NAT_WORLD;
       natBars = worldFiltered.map((t, i) => bar(i + 1 + '. ' + t.name + (t.active ? '*' : ''), t.value, 150, t.color, t.isH));
       const haalandRank = worldFiltered.findIndex((t) => t.isH) + 1;
       natCaption = isEuropeFilter
-        ? 'Offisiell liste over europeiske toppscorere for herrelandslag gjennom tidene. Haalands plassering: #' + haalandRank + ', med 62 mål på 55 kamper.'
+        ? europeCaption(haalandRank)
         : 'Toppscorere for herrelandslag gjennom tidene, i verden. Haalands plassering: #' + haalandRank + ', med 62 mål på 55 kamper.';
     }
 
