@@ -4511,7 +4511,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; sesong&aring;pning, Gvardiol avgjorde i overtiden</div>
  </div>
 
- <div class="match-card is-planned season-2627 comp-pl">
+ <div class="match-card season-2627 comp-pl">
  <div class="match-comp pl">PL</div>
  <div class="match-date">28. aug. 2026</div>
  <div class="match-badges">
@@ -4519,9 +4519,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
  </div>
- <div class="match-opp">vs Crystal Palace (B) &middot; kl. 20:00</div>
- <div class="match-icons"></div>
- <div class="match-status planned">Planlagt &middot; Selhurst Park</div>
+ <div class="match-opp">vs Crystal Palace (B) &middot; 4&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#14171c" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#14171c"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#14171c" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Spilt &middot; 2 m&aring;l (17. og 84. min.) &mdash; sesongens f&oslash;rste m&aring;l</div>
  </div>
 
  <div class="now-marker"><span>N&Aring;</span></div>
@@ -4608,11 +4611,11 @@ function render(vals) {
  <div class="stat-mini">
  <span class="stat-mini-title">Manchester City &mdash; n&oslash;kkeltall (klubb)</span>
  <div class="stat-mini-row">
- <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">199</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">162</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,81</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">200</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">164</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,82</span></div>
  </div>
- <span class="stat-mini-note">Alle turneringer, t.o.m. 200. City-kamp, 23. aug. 2026.</span>
+ <span class="stat-mini-note">Alle turneringer, t.o.m. 201. City-kamp, 28. aug. 2026.</span>
  </div>
 
  <div class="col-section">
