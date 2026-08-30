@@ -37,7 +37,7 @@ class Site {
           rivalsOther: { a: true, b: true },
         },
         cl: { active: null, rivals: { ronaldo: true, messi: true, lewandowski: true, mbappe: true }, topFilter: 'all' },
-        nat: { active: null },
+        nat: { active: null, worldFilter: 'all' },
       },
       modal: null,
       timelineSeason: 'all',
@@ -125,6 +125,9 @@ class Site {
   setNatActive(v) {
     const cur = this.state.chart.nat.active;
     this.setState({ chart: { ...this.state.chart, nat: { ...this.state.chart.nat, active: cur === v ? null : v } } });
+  }
+  setNatWorldFilter(v) {
+    this.setState({ chart: { ...this.state.chart, nat: { ...this.state.chart.nat, worldFilter: v } } });
   }
 
   project(points, maxGames, maxGoals, w, h, padL, padT) {
@@ -1470,26 +1473,26 @@ class Site {
       { name: 'K. Mbappé', value: 48, color: '#2f8f5f', isH: false },
     ];
     const NAT_WORLD = [
-      { name: 'C. Ronaldo', value: 146, color: '#2f5aa8', isH: false, active: true },
-      { name: 'L. Messi', value: 125, color: '#6a3fa0', isH: false, active: true },
-      { name: 'Ali Daei', value: 108, color: '#a8791a', isH: false, active: false },
-      { name: 'S. Chhetri', value: 95, color: '#1f2937', isH: false, active: true },
-      { name: 'R. Lukaku', value: 93, color: '#7c3f8f', isH: false, active: true },
-      { name: 'M. Dahari', value: 89, color: '#2f8f5f', isH: false, active: false },
-      { name: 'R. Lewandowski', value: 89, color: '#5a5f73', isH: false, active: true },
-      { name: 'A. Mabkhout', value: 85, color: '#1f6f78', isH: false, active: true },
-      { name: 'H. Kane', value: 85, color: '#8a1538', isH: false, active: true },
-      { name: 'F. Puskás', value: 84, color: '#b5484f', isH: false, active: false },
-      { name: 'S. Kocsis', value: 75, color: '#0e6b3a', isH: false, active: false },
-      { name: 'E. Džeko', value: 73, color: '#DC052D', isH: false, active: true },
-      { name: 'M. Klose', value: 71, color: '#0f4c81', isH: false, active: false },
-      { name: 'G. Müller', value: 68, color: '#7c5a3f', isH: false, active: false },
-      { name: 'R. Keane', value: 68, color: '#2f5aa8', isH: false, active: false },
-      { name: 'K. Mbappé', value: 66, color: '#6a3fa0', isH: false, active: true },
-      { name: 'A. Mitrović', value: 64, color: '#a8791a', isH: false, active: true },
-      { name: 'E. Haaland', value: 62, color: '#c1352b', isH: true, active: true },
-      { name: 'Z. Ibrahimović', value: 62, color: '#1f2937', isH: false, active: false },
-      { name: 'I. Schlosser', value: 59, color: '#7c3f8f', isH: false, active: false },
+      { name: 'C. Ronaldo', value: 146, color: '#2f5aa8', isH: false, active: true, europe: true },
+      { name: 'L. Messi', value: 125, color: '#6a3fa0', isH: false, active: true, europe: false },
+      { name: 'Ali Daei', value: 108, color: '#a8791a', isH: false, active: false, europe: false },
+      { name: 'S. Chhetri', value: 95, color: '#1f2937', isH: false, active: true, europe: false },
+      { name: 'R. Lukaku', value: 93, color: '#7c3f8f', isH: false, active: true, europe: true },
+      { name: 'M. Dahari', value: 89, color: '#2f8f5f', isH: false, active: false, europe: false },
+      { name: 'R. Lewandowski', value: 89, color: '#5a5f73', isH: false, active: true, europe: true },
+      { name: 'A. Mabkhout', value: 85, color: '#1f6f78', isH: false, active: true, europe: false },
+      { name: 'H. Kane', value: 85, color: '#8a1538', isH: false, active: true, europe: true },
+      { name: 'F. Puskás', value: 84, color: '#b5484f', isH: false, active: false, europe: true },
+      { name: 'S. Kocsis', value: 75, color: '#0e6b3a', isH: false, active: false, europe: true },
+      { name: 'E. Džeko', value: 73, color: '#DC052D', isH: false, active: true, europe: true },
+      { name: 'M. Klose', value: 71, color: '#0f4c81', isH: false, active: false, europe: true },
+      { name: 'G. Müller', value: 68, color: '#7c5a3f', isH: false, active: false, europe: true },
+      { name: 'R. Keane', value: 68, color: '#2f5aa8', isH: false, active: false, europe: true },
+      { name: 'K. Mbappé', value: 66, color: '#6a3fa0', isH: false, active: true, europe: true },
+      { name: 'A. Mitrović', value: 64, color: '#a8791a', isH: false, active: true, europe: true },
+      { name: 'E. Haaland', value: 62, color: '#c1352b', isH: true, active: true, europe: true },
+      { name: 'Z. Ibrahimović', value: 62, color: '#1f2937', isH: false, active: false, europe: true },
+      { name: 'I. Schlosser', value: 59, color: '#7c3f8f', isH: false, active: false, europe: true },
     ];
     let natBars = [],
       natCaption = '';
@@ -1500,8 +1503,13 @@ class Site {
       natBars = NAT_EUROPE.map((t) => bar(t.name, t.value, 140, t.color, t.isH));
       natCaption = 'Beste europeiske landslagsscorere (sample for de andre spillerne).';
     } else if (cnat.active === 'world') {
-      natBars = NAT_WORLD.map((t, i) => bar(i + 1 + '. ' + t.name + (t.active ? '*' : ''), t.value, 150, t.color, t.isH));
-      natCaption = 'Toppscorere for herrelandslag gjennom tidene. Haalands plassering: #18, med 62 mål på 55 kamper.';
+      const isEuropeFilter = cnat.worldFilter === 'europe';
+      const worldFiltered = isEuropeFilter ? NAT_WORLD.filter((t) => t.europe) : NAT_WORLD;
+      natBars = worldFiltered.map((t, i) => bar(i + 1 + '. ' + t.name + (t.active ? '*' : ''), t.value, 150, t.color, t.isH));
+      const haalandRank = worldFiltered.findIndex((t) => t.isH) + 1;
+      natCaption = isEuropeFilter
+        ? 'Offisiell liste over europeiske toppscorere for herrelandslag gjennom tidene. Haalands plassering: #' + haalandRank + ', med 62 mål på 55 kamper.'
+        : 'Toppscorere for herrelandslag gjennom tidene, i verden. Haalands plassering: #' + haalandRank + ', med 62 mål på 55 kamper.';
     }
 
     const chartNat = {
@@ -1513,6 +1521,11 @@ class Site {
       worldClass: flag(cnat.active === 'world'),
       setWorld: () => this.setNatActive('world'),
       showDetail: !!cnat.active,
+      showWorldFilter: cnat.active === 'world',
+      worldFilterAllClass: flag(cnat.worldFilter === 'all'),
+      setWorldFilterAll: () => this.setNatWorldFilter('all'),
+      worldFilterEuropeClass: flag(cnat.worldFilter === 'europe'),
+      setWorldFilterEurope: () => this.setNatWorldFilter('europe'),
       bars: natBars,
       caption: natCaption,
       openModal: () => this.openModal('nat'),
@@ -5248,6 +5261,12 @@ function render(vals) {
 
  ${(vals.chart.nat.showDetail) ? `
  <div class="chart-detail">
+ ${(vals.chart.nat.showWorldFilter) ? `
+ <div class="chip-select">
+ <button class="${vals.chart.nat.worldFilterAllClass}" data-bind="chart.nat.setWorldFilterAll">Alle</button>
+ <button class="${vals.chart.nat.worldFilterEuropeClass}" data-bind="chart.nat.setWorldFilterEurope">Europa</button>
+ </div>
+ ` : ''}
  <div class="entry-bars">
  ${(vals.chart.nat.bars||[]).map((b,__i0) => `
  <div class="bar-row">
@@ -5504,6 +5523,12 @@ ${(vals.modal.nat) ? `
  </div>
 
  ${(vals.chart.nat.showDetail) ? `
+ ${(vals.chart.nat.showWorldFilter) ? `
+ <div class="chip-select">
+ <button class="${vals.chart.nat.worldFilterAllClass}" data-bind="chart.nat.setWorldFilterAll">Alle</button>
+ <button class="${vals.chart.nat.worldFilterEuropeClass}" data-bind="chart.nat.setWorldFilterEurope">Europa</button>
+ </div>
+ ` : ''}
  <div class="entry-bars">
  ${(vals.chart.nat.bars||[]).map((b,__i0) => `
  <div class="bar-row">
