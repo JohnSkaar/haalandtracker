@@ -16,6 +16,7 @@ class Site {
           view: 'totalt',
           milestone: 100,
           seasonsOn: { '2022/23': true, '2023/24': true, '2024/25': true, '2025/26': true },
+          seasonRivals: { salah: true, shearer: true, cole: true },
           bundesligaView: 'race',
           bundesligaTopFilter: 'all',
           rivalsPL: {
@@ -95,6 +96,10 @@ class Site {
   toggleClubSeasonOn(s) {
     const cur = this.state.chart.club.seasonsOn[s];
     this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, seasonsOn: { ...this.state.chart.club.seasonsOn, [s]: !cur } } } });
+  }
+  toggleSeasonRival(k) {
+    const cur = this.state.chart.club.seasonRivals[k];
+    this.setState({ chart: { ...this.state.chart, club: { ...this.state.chart.club, seasonRivals: { ...this.state.chart.club.seasonRivals, [k]: !cur } } } });
   }
   toggleClubRivalPL(k) {
     const cur = this.state.chart.club.rivalsPL[k];
@@ -948,6 +953,56 @@ class Site {
       '2024/25': '#5a5f73',
       '2025/26': '#0e6b3a',
     };
+    const PL_SEASON_RIVALS = [
+      {
+        key: 'salah',
+        name: 'M. Salah 17/18',
+        short: 'Salah',
+        color: '#2f5aa8',
+        points: [
+          [0, 0],
+          [5, 4],
+          [10, 9],
+          [15, 14],
+          [20, 18],
+          [25, 22],
+          [30, 27],
+          [38, 32],
+        ],
+      },
+      {
+        key: 'shearer',
+        name: 'Shearer 94/95',
+        short: 'Shearer',
+        color: '#6a3fa0',
+        points: [
+          [0, 0],
+          [6, 5],
+          [12, 10],
+          [18, 15],
+          [24, 20],
+          [30, 25],
+          [36, 30],
+          [42, 34],
+        ],
+      },
+      {
+        key: 'cole',
+        name: 'A. Cole 93/94',
+        short: 'Cole',
+        color: '#a8791a',
+        points: [
+          [0, 0],
+          [6, 4],
+          [12, 9],
+          [18, 14],
+          [24, 19],
+          [30, 25],
+          [36, 30],
+          [42, 34],
+        ],
+      },
+    ];
     const OTHER_LEAGUES = {
       bundesliga: {
         milestone: 50,
@@ -1047,21 +1102,24 @@ class Site {
           maxGames: 42,
           maxGoals: 40,
           haaland: null,
-          rivals: seasonKeys.map((sk) => {
-            const hs = PL_SEASONS[sk];
-            return {
-              key: sk,
-              name: sk,
-              short: sk,
-              color: PL_SEASON_COLORS[sk],
-              points: hs.done ? hs.points : hs.solid,
-              on: cc.seasonsOn[sk],
-              toggle: () => this.toggleClubSeasonOn(sk),
-            };
-          }),
+          rivals: seasonKeys
+            .map((sk) => {
+              const hs = PL_SEASONS[sk];
+              return {
+                key: sk,
+                name: sk,
+                short: sk,
+                color: PL_SEASON_COLORS[sk],
+                points: hs.done ? hs.points : hs.solid,
+                on: cc.seasonsOn[sk],
+                toggle: () => this.toggleClubSeasonOn(sk),
+              };
+            })
+            .concat(PL_SEASON_RIVALS.map((r) => ({ ...r, on: cc.seasonRivals[r.key], toggle: () => this.toggleSeasonRival(r.key) }))),
         };
         clubDetail = this.buildRace(cfg);
-        clubDetail.caption = 'Haaland&#39;s Premier League seasons compared by matchweek. All four are shown by default &mdash; use the toggles below to remove a season.';
+        clubDetail.caption =
+          'Haaland&#39;s Premier League seasons compared by matchweek, alongside the biggest single-season scoring records in PL history. All shown by default &mdash; use the toggles below to remove a line.';
         const activeSeasons = seasonKeys.filter((sk) => cc.seasonsOn[sk]);
         if (activeSeasons.length === 1) {
           const sk = activeSeasons[0];
