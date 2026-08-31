@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://haalandtracker.com/sitemap.xml
 Sitemap: https://haalandtracker.no/sitemap.xml
