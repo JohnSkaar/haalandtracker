@@ -1677,7 +1677,7 @@ function render(vals) {
 
  <div class="${vals.timeline.scrollClass}">
 
- <div class="match-card season-early">
+ <div class="match-card season-early" style="--own-c1:#1c3f94; --own-c2:#1c3f94">
  <div class="match-comp">SAMMENDRAG</div>
  <div class="match-date">2016</div>
  <div class="match-badges">
@@ -1688,7 +1688,7 @@ function render(vals) {
  <div class="match-status played">16 seniorkamper, 0 m&aring;l &mdash; A-lagsdebut som 15-&aring;ring i Norges 2. divisjon</div>
  </div>
 
- <div class="match-card season-early">
+ <div class="match-card season-early" style="--own-c1:#00205b; --own-c2:#00205b">
  <div class="match-comp">SAMMENDRAG</div>
  <div class="match-date">2017&ndash;2018</div>
  <div class="match-badges">
@@ -1703,7 +1703,7 @@ function render(vals) {
  <span class="card-divider-label">F&Oslash;RSTE HALVDEL 2019/20 &mdash; &Oslash;STERRIKSK BUNDESLIGA (RB SALZBURG)</span>
  </div>
 
- <div class="match-card season-early">
+ <div class="match-card season-early" style="--own-c1:#dd0731; --own-c2:#dd0731">
  <div class="match-comp">SAMMENDRAG</div>
  <div class="match-date">2019&ndash;2020</div>
  <div class="match-badges">
@@ -1714,7 +1714,7 @@ function render(vals) {
  <div class="match-status played">16 m&aring;l p&aring; 14 &oslash;sterrikske bundesligakamper (1,14 per kamp), ligaens toppscorer &mdash; 29 m&aring;l p&aring; 27 kamper i alle turneringer</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#0047AB">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">4. aug. 2019</div>
  <div class="match-badges">
@@ -1729,7 +1729,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (37. min., straffe)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#6E1E78">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">10. aug. 2019</div>
  <div class="match-badges">
@@ -1744,7 +1744,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; hattrick (22., 65. og 89. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1A1A1A">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">17. aug. 2019</div>
  <div class="match-badges">
@@ -1759,7 +1759,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (30. og 49. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#003DA5">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">25. aug. 2019</div>
  <div class="match-badges">
@@ -1774,7 +1774,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (28. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1B7A3D">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">31. aug. 2019</div>
  <div class="match-badges">
@@ -1802,7 +1802,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; A-landslagsdebut, ingen m&aring;l</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1C2B54">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">14. sep. 2019</div>
  <div class="match-badges">
@@ -1817,7 +1817,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; hattrick (52., 86. og 90. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#046A38">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">27. okt. 2019</div>
  <div class="match-badges">
@@ -1832,7 +1832,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (38. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#6E1E78">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">10. nov. 2019</div>
  <div class="match-badges">
@@ -1847,7 +1847,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; hattrick (4., 76. og 88. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1B7A3D">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">7. des. 2019</div>
  <div class="match-badges">
@@ -1866,7 +1866,7 @@ function render(vals) {
  <span class="card-divider-label">FRA 18. JAN. 2020 &mdash; TYSK BUNDESLIGA (BORUSSIA DORTMUND)</span>
  </div>
 
- <div class="match-card is-record season-early">
+ <div class="match-card is-record season-early" style="--own-c1:#FDE100; --own-c2:#FDE100">
  <div class="match-comp">SAMMENDRAG</div>
  <div class="match-date">2020&ndash;2022</div>
  <div class="match-badges">
@@ -1877,7 +1877,7 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>62 m&aring;l p&aring; 67 bundesligakamper (0,93 per kamp) gjennom hele oppholdet &mdash; vant DFB-Pokal 2021, yngste og raskeste spiller noensinne til 50 bundesligam&aring;l</div>
  </div>
 
- <div class="match-card is-record season-early comp-bundesliga">
+ <div class="match-card is-record season-early comp-bundesliga" style="--opp-c1:#BA3733">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">18. jan. 2020</div>
  <div class="match-badges">
@@ -1892,7 +1892,7 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick p&aring; 23 minutter (59., 71. og 79. min.) &mdash; Dortmund-debut som innbytter, raskeste Bundesliga-hattrick p&aring; debut</div>
  </div>
 
- <div class="match-card is-record season-early comp-bundesliga">
+ <div class="match-card is-record season-early comp-bundesliga" style="--opp-c1:#E2001A">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">24. jan. 2020</div>
  <div class="match-badges">
@@ -1907,7 +1907,7 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 2 m&aring;l (77. og 87. min.) &mdash; f&oslash;rste spiller noensinne med 5 m&aring;l i sine to f&oslash;rste Bundesliga-kamper</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#FFD100">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">1. feb. 2020</div>
  <div class="match-badges">
@@ -1922,7 +1922,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (18. og 71. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#E1000F">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">14. feb. 2020</div>
  <div class="match-badges">
@@ -1937,7 +1937,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (54. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#009036">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">22. feb. 2020</div>
  <div class="match-badges">
@@ -1952,7 +1952,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (66. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#004D9D">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">16. mai 2020</div>
  <div class="match-badges">
@@ -1967,7 +1967,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (29. min.) &mdash; Ruhr-derby</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#C8102E">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">13. jun. 2020</div>
  <div class="match-badges">
@@ -1982,7 +1982,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (90.+5, hodest&oslash;t i sluttminuttene)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#DD0741">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">20. jun. 2020</div>
  <div class="match-badges">
@@ -1997,7 +1997,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (30. og 90.+3 min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1D1D1B">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">19. sep. 2020</div>
  <div class="match-badges">
@@ -2012,7 +2012,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (54. min., straffe, og 77. min.) &mdash; sesong&aring;pning</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#000000">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">3. okt. 2020</div>
  <div class="match-badges">
@@ -2027,7 +2027,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (31. og 66. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#004D9D">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">24. okt. 2020</div>
  <div class="match-badges">
@@ -2042,7 +2042,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (61. min.) &mdash; Ruhr-derby</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#DC052D">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">7. nov. 2020</div>
  <div class="match-badges">
@@ -2057,7 +2057,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (83. min.)</div>
  </div>
 
- <div class="match-card is-record season-early comp-bundesliga">
+ <div class="match-card is-record season-early comp-bundesliga" style="--opp-c1:#005CA9">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">21. nov. 2020</div>
  <div class="match-badges">
@@ -2072,7 +2072,7 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 4 m&aring;l (47., 49., 62. og 79. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#DD0741">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">9. jan. 2021</div>
  <div class="match-badges">
@@ -2087,7 +2087,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (72. og 84. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1D1D1B">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">22. jan. 2021</div>
  <div class="match-badges">
@@ -2102,7 +2102,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (23. og 29. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1961B5">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">13. feb. 2021</div>
  <div class="match-badges">
@@ -2117,7 +2117,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (81. min., reddet uavgjort)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#004D9D">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">20. feb. 2021</div>
  <div class="match-badges">
@@ -2132,7 +2132,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (45. og 78. min.) &mdash; Ruhr-derby</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#DC052D">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">6. mar. 2021</div>
  <div class="match-badges">
@@ -2147,7 +2147,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (2. og 9. min.) &mdash; Der Klassiker</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#E2001A">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">20. mar. 2021</div>
  <div class="match-badges">
@@ -2162,7 +2162,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (3. og 90. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#009036">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">18. apr. 2021</div>
  <div class="match-badges">
@@ -2177,7 +2177,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (34. min., straffe, og 38. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#65B32E">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">24. apr. 2021</div>
  <div class="match-badges">
@@ -2192,7 +2192,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (12. og 68. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#E32221">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">22. mai 2021</div>
  <div class="match-badges">
@@ -2207,7 +2207,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (5. og 84. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#E1000F">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">14. aug. 2021</div>
  <div class="match-badges">
@@ -2222,7 +2222,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (34. og 70. min.) &mdash; sesong&aring;pning</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1961B5">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">28. aug. 2021</div>
  <div class="match-badges">
@@ -2237,7 +2237,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (90.+1, seiersm&aring;l i sluttminuttene)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#E32221">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">11. sep. 2021</div>
  <div class="match-badges">
@@ -2252,7 +2252,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (37. min., hodest&oslash;t, og 77. min., straffe) &mdash; snudde 0&ndash;3 til seier</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#FFD100">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">19. sep. 2021</div>
  <div class="match-badges">
@@ -2267,7 +2267,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (24. min., hodest&oslash;t, og 83. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#C4122E">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">16. okt. 2021</div>
  <div class="match-badges">
@@ -2282,7 +2282,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (54. min., straffe, og 90.+4 min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#65B32E">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">27. nov. 2021</div>
  <div class="match-badges">
@@ -2297,7 +2297,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (80. min.) &mdash; comeback etter skade</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#DC052D">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">4. des. 2021</div>
  <div class="match-badges">
@@ -2312,7 +2312,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (48. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#00643C">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">15. des. 2021</div>
  <div class="match-badges">
@@ -2327,7 +2327,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (33. min., straffe, og 82. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#000000">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">14. jan. 2022</div>
  <div class="match-badges">
@@ -2342,7 +2342,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (45.+1 og 75. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1961B5">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">22. jan. 2022</div>
  <div class="match-badges">
@@ -2357,7 +2357,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (6. min.)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#65B32E">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">16. apr. 2022</div>
  <div class="match-badges">
@@ -2372,7 +2372,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (38. og 54. min.) &mdash; f&oslash;rste m&aring;l siden januar</div>
  </div>
 
- <div class="match-card is-record season-early comp-bundesliga">
+ <div class="match-card is-record season-early comp-bundesliga" style="--opp-c1:#1C3F94">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">30. apr. 2022</div>
  <div class="match-badges">
@@ -2387,7 +2387,7 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick (18. og 30. min. p&aring; straffe, 62. min. fra spill)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga">
+ <div class="match-card season-early comp-bundesliga" style="--opp-c1:#005CA9">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">14. mai 2022</div>
  <div class="match-badges">
@@ -2402,7 +2402,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (68. min., straffe) &mdash; siste kamp for Dortmund</div>
  </div>
 
- <div class="match-card season-2223 comp-pl">
+ <div class="match-card season-2223 comp-pl" style="--opp-c1:#7A263A">
  <div class="match-comp pl">PL</div>
  <div class="match-date">7. aug. 2022</div>
  <div class="match-badges">
@@ -2418,7 +2418,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (straffe + fra spill) &mdash; City-debut</div>
  </div>
 
- <div class="match-card season-2223 comp-pl">
+ <div class="match-card season-2223 comp-pl" style="--opp-c1:#B50E12">
  <div class="match-comp pl">PL</div>
  <div class="match-date">13. aug. 2022</div>
  <div class="match-badges">
@@ -2433,7 +2433,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 assist, ingen m&aring;l</div>
  </div>
 
- <div class="match-card season-2223 comp-pl">
+ <div class="match-card season-2223 comp-pl" style="--opp-c1:#241F20">
  <div class="match-comp pl">PL</div>
  <div class="match-date">21. aug. 2022</div>
  <div class="match-badges">
@@ -2448,7 +2448,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (poeng reddet etter 0&ndash;2)</div>
  </div>
 
- <div class="match-card is-record season-2223 comp-pl">
+ <div class="match-card is-record season-2223 comp-pl" style="--opp-c1:#1B458F">
  <div class="match-comp pl">PL</div>
  <div class="match-date">27. aug. 2022</div>
  <div class="match-badges">
@@ -2465,7 +2465,7 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick (19 min., snudde 0&ndash;2 til seier) &mdash; f&oslash;rste City-hattrick</div>
  </div>
 
- <div class="match-card is-record season-2223 comp-pl">
+ <div class="match-card is-record season-2223 comp-pl" style="--opp-c1:#DD0000">
  <div class="match-comp pl">PL</div>
  <div class="match-date">31. aug. 2022</div>
  <div class="match-badges">
@@ -2482,7 +2482,7 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick p&aring; 38 min. &mdash; 9 m&aring;l p&aring; 5 kamper, PL-rekord for start p&aring; en klubbkarriere</div>
  </div>
 
- <div class="match-card season-2223 comp-pl">
+ <div class="match-card season-2223 comp-pl" style="--opp-c1:#DA020E">
  <div class="match-comp pl">PL</div>
  <div class="match-date">2. okt. 2022</div>
  <div class="match-badges">
@@ -2499,7 +2499,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; hattrick i derbyet &mdash; f&oslash;rste PL-hattrick i Manchester-derby siden 1970</div>
  </div>
 
- <div class="match-card is-record season-2223 comp-cl">
+ <div class="match-card is-record season-2223 comp-cl" style="--opp-c1:#DD0741">
  <div class="match-comp cl">CL</div>
  <div class="match-date">14. mar. 2023</div>
  <div class="match-badges">
@@ -2518,7 +2518,7 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 5 m&aring;l (CL &aring;ttedelsfinale, 2. runde) &mdash; matcher Messis rekord for flest mål i en CL-kamp</div>
  </div>
 
- <div class="match-card season-2223 comp-cup">
+ <div class="match-card season-2223 comp-cup" style="--opp-c1:#DA020E">
  <div class="match-comp cup">CUP</div>
  <div class="match-date">3. jun. 2023</div>
  <div class="match-badges">
@@ -2531,7 +2531,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; FA-cupen vunnet p&aring; Wembley, andre del av trippelen i 2022/23</div>
  </div>
 
- <div class="match-card season-2223 comp-cl">
+ <div class="match-card season-2223 comp-cl" style="--opp-c1:#010E80">
  <div class="match-comp cl">CL</div>
  <div class="match-date">10. jun. 2023</div>
  <div class="match-badges">
@@ -2544,7 +2544,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Champions League vunnet i Istanbul (Rodri avgjorde), trippelen fullf&oslash;rt &mdash; sesongens toppscorer med 12 CL-m&aring;l</div>
  </div>
 
- <div class="match-card season-2324 comp-pl">
+ <div class="match-card season-2324 comp-pl" style="--opp-c1:#6C1D45">
  <div class="match-comp pl">PL</div>
  <div class="match-date">11. aug. 2023</div>
  <div class="match-badges">
@@ -2560,7 +2560,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (4. og 36. min.) &mdash; sesong&aring;pning</div>
  </div>
 
- <div class="match-card season-2324 comp-pl">
+ <div class="match-card season-2324 comp-pl" style="--opp-c1:#2b2f36">
  <div class="match-comp pl">PL</div>
  <div class="match-date">2. sep. 2023</div>
  <div class="match-badges">
@@ -2577,7 +2577,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; hattrick i 2. omgang</div>
  </div>
 
- <div class="match-card season-2324 comp-pl">
+ <div class="match-card season-2324 comp-pl" style="--opp-c1:#DA020E">
  <div class="match-comp pl">PL</div>
  <div class="match-date">29. okt. 2023</div>
  <div class="match-badges">
@@ -2594,7 +2594,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (straffe + heading) + 1 assist &mdash; derbyseier p&aring; Old Trafford</div>
  </div>
 
- <div class="match-card season-2324 comp-pl">
+ <div class="match-card season-2324 comp-pl" style="--opp-c1:#6C1D45">
  <div class="match-comp pl">PL</div>
  <div class="match-date">31. jan. 2024</div>
  <div class="match-badges">
@@ -2607,7 +2607,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; comeback som innbytter (71.) etter 56 dager ute med fotskade, ingen m&aring;l</div>
  </div>
 
- <div class="match-card season-2324 comp-cl">
+ <div class="match-card season-2324 comp-cl" style="--opp-c1:#2c2c54">
  <div class="match-comp cl">CL</div>
  <div class="match-date">17. apr. 2024</div>
  <div class="match-badges">
@@ -2620,7 +2620,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l (traff tverrligger) &mdash; City slo &aring;t p&aring; straffer (3&ndash;4) etter 4&ndash;4 samlet, CL &aring;ttedelsfinale</div>
  </div>
 
- <div class="match-card season-2324 comp-pl">
+ <div class="match-card season-2324 comp-pl" style="--opp-c1:#FDB913">
  <div class="match-comp pl">PL</div>
  <div class="match-date">4. mai 2024</div>
  <div class="match-badges">
@@ -2638,7 +2638,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 4 m&aring;l (2 straffer + heading-hattrick f&oslash;r pause, 4. m&aring;l i 2. omgang)</div>
  </div>
 
- <div class="match-card season-2425 comp-friendly">
+ <div class="match-card season-2425 comp-friendly" style="--opp-c1:#018749">
  <div class="match-comp friendly">TRENING</div>
  <div class="match-date">24. jul. 2024</div>
  <div class="match-badges">
@@ -2653,7 +2653,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 mål (57. min., hodestøt)</div>
  </div>
 
- <div class="match-card season-2425 comp-friendly">
+ <div class="match-card season-2425 comp-friendly" style="--opp-c1:#FB090B">
  <div class="match-comp friendly">TRENING</div>
  <div class="match-date">27. jul. 2024</div>
  <div class="match-badges">
@@ -2668,7 +2668,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 mål (19. min.)</div>
  </div>
 
- <div class="match-card season-2425 comp-friendly">
+ <div class="match-card season-2425 comp-friendly" style="--opp-c1:#A50044">
  <div class="match-comp friendly">TRENING</div>
  <div class="match-date">31. jul. 2024</div>
  <div class="match-badges">
@@ -2681,7 +2681,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — byttet ut ved pause</div>
  </div>
 
- <div class="match-card season-2425 comp-friendly">
+ <div class="match-card season-2425 comp-friendly" style="--opp-c1:#034694">
  <div class="match-comp friendly">TRENING</div>
  <div class="match-date">3. aug. 2024</div>
  <div class="match-badges">
@@ -2698,7 +2698,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; hattrick (4. min., straffe, 5. og 56. min.)</div>
  </div>
 
- <div class="match-card season-2425 comp-shield">
+ <div class="match-card season-2425 comp-shield" style="--opp-c1:#DA020E">
  <div class="match-comp shield">SHIELD</div>
  <div class="match-date">10. aug. 2024</div>
  <div class="match-badges">
@@ -2711,7 +2711,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — City vant på straffer, Community Shield</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#034694">
  <div class="match-comp pl">PL</div>
  <div class="match-date">18. aug. 2024</div>
  <div class="match-badges">
@@ -2726,7 +2726,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 mål (18. min.) — sesongåpning</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#0044A9">
  <div class="match-comp pl">PL</div>
  <div class="match-date">24. aug. 2024</div>
  <div class="match-badges">
@@ -2743,7 +2743,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; hattrick</div>
  </div>
 
- <div class="match-card is-record season-2425 comp-pl">
+ <div class="match-card is-record season-2425 comp-pl" style="--opp-c1:#7A263A">
  <div class="match-comp pl">PL</div>
  <div class="match-date">31. aug. 2024</div>
  <div class="match-badges">
@@ -2760,7 +2760,7 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick &mdash; to strake trippel-kamper, 11. City-hattrick p&aring; 102 kamper</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#E30613">
  <div class="match-comp pl">PL</div>
  <div class="match-date">14. sep. 2024</div>
  <div class="match-badges">
@@ -2776,7 +2776,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 mål (19. og 32. min.)</div>
  </div>
 
- <div class="match-card season-2425 comp-cl">
+ <div class="match-card season-2425 comp-cl" style="--opp-c1:#010E80">
  <div class="match-comp cl">CL</div>
  <div class="match-date">18. sep. 2024</div>
  <div class="match-badges">
@@ -2789,7 +2789,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#EF0107">
  <div class="match-comp pl">PL</div>
  <div class="match-date">22. sep. 2024</div>
  <div class="match-badges">
@@ -2804,7 +2804,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 mål (9. min.)</div>
  </div>
 
- <div class="match-card is-missed season-2425 comp-efl">
+ <div class="match-card is-missed season-2425 comp-efl" style="--opp-c1:#FBEE23">
  <div class="match-comp efl">LIGACUP</div>
  <div class="match-date">24. sep. 2024</div>
  <div class="match-badges">
@@ -2817,7 +2817,7 @@ function render(vals) {
  <div class="match-status missed">Ikke i troppen &middot; rotert ut</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#241F20">
  <div class="match-comp pl">PL</div>
  <div class="match-date">28. sep. 2024</div>
  <div class="match-badges">
@@ -2830,7 +2830,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — traff ikke mål med hodestøt</div>
  </div>
 
- <div class="match-card season-2425 comp-cl">
+ <div class="match-card season-2425 comp-cl" style="--opp-c1:#005BAC">
  <div class="match-comp cl">CL</div>
  <div class="match-date">1. okt. 2024</div>
  <div class="match-badges">
@@ -2845,7 +2845,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 mål (58. min.)</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#2b2f36">
  <div class="match-comp pl">PL</div>
  <div class="match-date">5. okt. 2024</div>
  <div class="match-badges">
@@ -2858,7 +2858,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — Kovacic (2) og Doku scoret</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#FDB913">
  <div class="match-comp pl">PL</div>
  <div class="match-date">20. okt. 2024</div>
  <div class="match-badges">
@@ -2871,7 +2871,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — Gvardiol og Stones scoret</div>
  </div>
 
- <div class="match-card season-2425 comp-cl">
+ <div class="match-card season-2425 comp-cl" style="--opp-c1:#A6192E">
  <div class="match-comp cl">CL</div>
  <div class="match-date">23. okt. 2024</div>
  <div class="match-badges">
@@ -2887,7 +2887,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 mål (58. min., hælflikk, og 68. min.)</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#D71920">
  <div class="match-comp pl">PL</div>
  <div class="match-date">26. okt. 2024</div>
  <div class="match-badges">
@@ -2902,7 +2902,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 mål (5. min.)</div>
  </div>
 
- <div class="match-card is-missed season-2425 comp-efl">
+ <div class="match-card is-missed season-2425 comp-efl" style="--opp-c1:#132257">
  <div class="match-comp efl">LIGACUP</div>
  <div class="match-date">30. okt. 2024</div>
  <div class="match-badges">
@@ -2915,7 +2915,7 @@ function render(vals) {
  <div class="match-status missed">Ikke i troppen &middot; ikke benyttet — satt på benken hele kampen</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#B50E12">
  <div class="match-comp pl">PL</div>
  <div class="match-date">2. nov. 2024</div>
  <div class="match-badges">
@@ -2928,7 +2928,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål</div>
  </div>
 
- <div class="match-card season-2425 comp-cl">
+ <div class="match-card season-2425 comp-cl" style="--opp-c1:#007A3D">
  <div class="match-comp cl">CL</div>
  <div class="match-date">5. nov. 2024</div>
  <div class="match-badges">
@@ -2941,7 +2941,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — bommet på straffe (69. min.), traff tverrligger</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#0057B8">
  <div class="match-comp pl">PL</div>
  <div class="match-date">9. nov. 2024</div>
  <div class="match-badges">
@@ -2956,7 +2956,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 mål (23. min.)</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#132257">
  <div class="match-comp pl">PL</div>
  <div class="match-date">23. nov. 2024</div>
  <div class="match-badges">
@@ -2969,7 +2969,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — Maddison (2), Porro og Johnson scoret</div>
  </div>
 
- <div class="match-card season-2425 comp-cl">
+ <div class="match-card season-2425 comp-cl" style="--opp-c1:#E2000F">
  <div class="match-comp cl">CL</div>
  <div class="match-date">26. nov. 2024</div>
  <div class="match-badges">
@@ -2985,7 +2985,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 mål (45. min., straffe, og 48. min.)</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#C8102E">
  <div class="match-comp pl">PL</div>
  <div class="match-date">1. des. 2024</div>
  <div class="match-badges">
@@ -2998,7 +2998,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#DD0000">
  <div class="match-comp pl">PL</div>
  <div class="match-date">4. des. 2024</div>
  <div class="match-badges">
@@ -3011,7 +3011,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — involvert i opptakten til Dokus scoring</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#1B458F">
  <div class="match-comp pl">PL</div>
  <div class="match-date">7. des. 2024</div>
  <div class="match-badges">
@@ -3026,7 +3026,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 mål (30. min., hodestøt)</div>
  </div>
 
- <div class="match-card season-2425 comp-cl">
+ <div class="match-card season-2425 comp-cl" style="--opp-c1:#000000">
  <div class="match-comp cl">CL</div>
  <div class="match-date">11. des. 2024</div>
  <div class="match-badges">
@@ -3039,7 +3039,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — Vlahovic og McKennie scoret</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#DA020E">
  <div class="match-comp pl">PL</div>
  <div class="match-date">15. des. 2024</div>
  <div class="match-badges">
@@ -3052,7 +3052,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — Gvardiol scoret</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#670E36">
  <div class="match-comp pl">PL</div>
  <div class="match-date">21. des. 2024</div>
  <div class="match-badges">
@@ -3065,7 +3065,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#003399">
  <div class="match-comp pl">PL</div>
  <div class="match-date">26. des. 2024</div>
  <div class="match-badges">
@@ -3078,7 +3078,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — straffe reddet</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#003090">
  <div class="match-comp pl">PL</div>
  <div class="match-date">29. des. 2024</div>
  <div class="match-badges">
@@ -3093,7 +3093,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 mål (74. min., hodestøt, målgivende Savinho)</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#7A263A">
  <div class="match-comp pl">PL</div>
  <div class="match-date">4. jan. 2025</div>
  <div class="match-badges">
@@ -3109,7 +3109,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 mål (42. og 55. min., begge målgivende Savinho)</div>
  </div>
 
- <div class="match-card is-missed season-2425 comp-cup">
+ <div class="match-card is-missed season-2425 comp-cup" style="--opp-c1:#FF6900">
  <div class="match-comp cup">CUP</div>
  <div class="match-date">11. jan. 2025</div>
  <div class="match-badges">
@@ -3122,7 +3122,7 @@ function render(vals) {
  <div class="match-status missed">Ikke i troppen &middot; ikke benyttet</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#E30613">
  <div class="match-comp pl">PL</div>
  <div class="match-date">14. jan. 2025</div>
  <div class="match-badges">
@@ -3135,7 +3135,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — Foden med to mål</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#0044A9">
  <div class="match-comp pl">PL</div>
  <div class="match-date">19. jan. 2025</div>
  <div class="match-badges">
@@ -3150,7 +3150,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 mål (57. min.)</div>
  </div>
 
- <div class="match-card season-2425 comp-cl">
+ <div class="match-card season-2425 comp-cl" style="--opp-c1:#004170">
  <div class="match-comp cl">CL</div>
  <div class="match-date">22. jan. 2025</div>
  <div class="match-badges">
@@ -3165,7 +3165,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 mål (53. min.)</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#034694">
  <div class="match-comp pl">PL</div>
  <div class="match-date">25. jan. 2025</div>
  <div class="match-badges">
@@ -3180,7 +3180,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 mål (68. min., heving) — målgivende på Fodens 87.-minuttsmål</div>
  </div>
 
- <div class="match-card season-2425 comp-cl">
+ <div class="match-card season-2425 comp-cl" style="--opp-c1:#0E3A6D">
  <div class="match-comp cl">CL</div>
  <div class="match-date">29. jan. 2025</div>
  <div class="match-badges">
@@ -3193,7 +3193,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — forsøk reddet</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#EF0107">
  <div class="match-comp pl">PL</div>
  <div class="match-date">2. feb. 2025</div>
  <div class="match-badges">
@@ -3208,7 +3208,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 mål (55. min., hodestøt) — karrierens 250. mål</div>
  </div>
 
- <div class="match-card is-missed season-2425 comp-cup">
+ <div class="match-card is-missed season-2425 comp-cup" style="--opp-c1:#D2122E">
  <div class="match-comp cup">CUP</div>
  <div class="match-date">8. feb. 2025</div>
  <div class="match-badges">
@@ -3221,7 +3221,7 @@ function render(vals) {
  <div class="match-status missed">Ikke i troppen</div>
  </div>
 
- <div class="match-card season-2425 comp-cl">
+ <div class="match-card season-2425 comp-cl" style="--opp-c1:#2c2c54">
  <div class="match-comp cl">CL</div>
  <div class="match-date">11. feb. 2025</div>
  <div class="match-badges">
@@ -3237,7 +3237,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (knockout-playoff, 1. runde)</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#241F20">
  <div class="match-comp pl">PL</div>
  <div class="match-date">15. feb. 2025</div>
  <div class="match-badges">
@@ -3250,7 +3250,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — byttet ut i 87. min. med en støtskade, Marmoush med hattrick</div>
  </div>
 
- <div class="match-card is-missed season-2425 comp-cl">
+ <div class="match-card is-missed season-2425 comp-cl" style="--opp-c1:#2c2c54">
  <div class="match-comp cl">CL</div>
  <div class="match-date">19. feb. 2025</div>
  <div class="match-badges">
@@ -3263,7 +3263,7 @@ function render(vals) {
  <div class="match-status missed">Ikke i troppen &middot; kneskade</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#C8102E">
  <div class="match-comp pl">PL</div>
  <div class="match-date">23. feb. 2025</div>
  <div class="match-badges">
@@ -3276,7 +3276,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#132257">
  <div class="match-comp pl">PL</div>
  <div class="match-date">26. feb. 2025</div>
  <div class="match-badges">
@@ -3291,7 +3291,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 mål (12. min.)</div>
  </div>
 
- <div class="match-card season-2425 comp-cup">
+ <div class="match-card season-2425 comp-cup" style="--opp-c1:#005C36">
  <div class="match-comp cup">CUP</div>
  <div class="match-date">1. mar. 2025</div>
  <div class="match-badges">
@@ -3304,7 +3304,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — målgivende på De Bruynes scoring i 90. min.</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#DD0000">
  <div class="match-comp pl">PL</div>
  <div class="match-date">8. mar. 2025</div>
  <div class="match-badges">
@@ -3317,7 +3317,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — Hudson-Odoi med kampens eneste scoring</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#0057B8">
  <div class="match-comp pl">PL</div>
  <div class="match-date">15. mar. 2025</div>
  <div class="match-badges">
@@ -3331,7 +3331,7 @@ function render(vals) {
  </div>
  <div class="match-status played">Spilt &middot; 1 mål (11. min., straffe)</div>
  </div>
- <div class="match-card season-2425 comp-cup">
+ <div class="match-card season-2425 comp-cup" style="--opp-c1:#B50E12">
  <div class="match-comp cup">CUP</div>
  <div class="match-date">30. mar. 2025</div>
  <div class="match-badges">
@@ -3376,7 +3376,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l</div>
  </div>
 
- <div class="match-card season-2425 comp-cup">
+ <div class="match-card season-2425 comp-cup" style="--opp-c1:#B50E12">
  <div class="match-comp cup">CUP</div>
  <div class="match-date">30. mar. 2025</div>
  <div class="match-badges">
@@ -3391,7 +3391,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (utligning, 49., bommet straffe f&oslash;r pause) &mdash; ankelskade, byttet ut 60. min., FA-cup kvartfinale</div>
  </div>
 
- <div class="match-card is-missed season-2425 comp-pl">
+ <div class="match-card is-missed season-2425 comp-pl" style="--opp-c1:#003090">
  <div class="match-comp pl">PL</div>
  <div class="match-date">2. apr. 2025</div>
  <div class="match-badges">
@@ -3404,7 +3404,7 @@ function render(vals) {
  <div class="match-status missed">Ikke i troppen &middot; ankelskade fra FA-cupen</div>
  </div>
 
- <div class="match-card is-missed season-2425 comp-pl">
+ <div class="match-card is-missed season-2425 comp-pl" style="--opp-c1:#DA020E">
  <div class="match-comp pl">PL</div>
  <div class="match-date">6. apr. 2025</div>
  <div class="match-badges">
@@ -3417,7 +3417,7 @@ function render(vals) {
  <div class="match-status missed">Ikke i troppen &middot; skadet, derby</div>
  </div>
 
- <div class="match-card is-missed season-2425 comp-pl">
+ <div class="match-card is-missed season-2425 comp-pl" style="--opp-c1:#1B458F">
  <div class="match-comp pl">PL</div>
  <div class="match-date">12. apr. 2025</div>
  <div class="match-badges">
@@ -3430,7 +3430,7 @@ function render(vals) {
  <div class="match-status missed">Ikke i troppen &middot; skadet</div>
  </div>
 
- <div class="match-card is-missed season-2425 comp-pl">
+ <div class="match-card is-missed season-2425 comp-pl" style="--opp-c1:#003399">
  <div class="match-comp pl">PL</div>
  <div class="match-date">19. apr. 2025</div>
  <div class="match-badges">
@@ -3443,7 +3443,7 @@ function render(vals) {
  <div class="match-status missed">Ikke i troppen &middot; skadet</div>
  </div>
 
- <div class="match-card is-missed season-2425 comp-pl">
+ <div class="match-card is-missed season-2425 comp-pl" style="--opp-c1:#670E36">
  <div class="match-comp pl">PL</div>
  <div class="match-date">22. apr. 2025</div>
  <div class="match-badges">
@@ -3456,7 +3456,7 @@ function render(vals) {
  <div class="match-status missed">Ikke i troppen &middot; skadet</div>
  </div>
 
- <div class="match-card is-missed season-2425 comp-cup">
+ <div class="match-card is-missed season-2425 comp-cup" style="--opp-c1:#DD0000">
  <div class="match-comp cup">CUP</div>
  <div class="match-date">27. apr. 2025</div>
  <div class="match-badges">
@@ -3469,7 +3469,7 @@ function render(vals) {
  <div class="match-status missed">Ikke i troppen &middot; skadet, FA-cupens semifinale</div>
  </div>
 
- <div class="match-card is-missed season-2425 comp-pl">
+ <div class="match-card is-missed season-2425 comp-pl" style="--opp-c1:#FDB913">
  <div class="match-comp pl">PL</div>
  <div class="match-date">2. mai 2025</div>
  <div class="match-badges">
@@ -3482,7 +3482,7 @@ function render(vals) {
  <div class="match-status missed">Ikke i troppen &middot; ikke benyttet — første kamp tilbake i troppen etter skade</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#D71920">
  <div class="match-comp pl">PL</div>
  <div class="match-date">10. mai 2025</div>
  <div class="match-badges">
@@ -3495,7 +3495,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — første kamp fra start etter skadepause, hodestøt reddet</div>
  </div>
 
- <div class="match-card season-2425 comp-cup">
+ <div class="match-card season-2425 comp-cup" style="--opp-c1:#1B458F">
  <div class="match-comp cup">CUP</div>
  <div class="match-date">17. mai 2025</div>
  <div class="match-badges">
@@ -3508,7 +3508,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — traff stolpen og fikk skudd blokkert p&aring; streken to ganger, FA-cupfinalen</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#B50E12">
  <div class="match-comp pl">PL</div>
  <div class="match-date">20. mai 2025</div>
  <div class="match-badges">
@@ -3521,7 +3521,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen mål — Marmoush, Bernardo Silva og Nico González scoret</div>
  </div>
 
- <div class="match-card season-2425 comp-pl">
+ <div class="match-card season-2425 comp-pl" style="--opp-c1:#2b2f36">
  <div class="match-comp pl">PL</div>
  <div class="match-date">25. mai 2025</div>
  <div class="match-badges">
@@ -3566,7 +3566,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (avgj&oslash;rende)</div>
  </div>
 
- <div class="match-card season-2425 comp-cwc">
+ <div class="match-card season-2425 comp-cwc" style="--opp-c1:#EE1C25">
  <div class="match-comp cwc">KLUBB-VM</div>
  <div class="match-date">18. jun. 2025</div>
  <div class="match-badges">
@@ -3579,7 +3579,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Foden og Doku scoret</div>
  </div>
 
- <div class="match-card season-2425 comp-cwc">
+ <div class="match-card season-2425 comp-cwc" style="--opp-c1:#F7A81B">
  <div class="match-comp cwc">KLUBB-VM</div>
  <div class="match-date">23. jun. 2025</div>
  <div class="match-badges">
@@ -3594,7 +3594,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (45.+5, straffe) &mdash; G&uuml;ndogan (2), Echeverri, Bobb og Cherki scoret ogs&aring;</div>
  </div>
 
- <div class="match-card season-2425 comp-cwc">
+ <div class="match-card season-2425 comp-cwc" style="--opp-c1:#000000">
  <div class="match-comp cwc">KLUBB-VM</div>
  <div class="match-date">26. jun. 2025</div>
  <div class="match-badges">
@@ -3609,7 +3609,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (52. min.) &mdash; Doku, Foden og Savinho scoret ogs&aring;, i tillegg til et selvm&aring;l av Kalulu</div>
  </div>
 
- <div class="match-card season-2425 comp-cwc">
+ <div class="match-card season-2425 comp-cwc" style="--opp-c1:#003DA5">
  <div class="match-comp cwc">KLUBB-VM</div>
  <div class="match-date">1. jul. 2025</div>
  <div class="match-badges">
@@ -3624,7 +3624,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (55. min.) &mdash; Bernardo Silva og Foden scoret ogs&aring;, tapte etter ekstraomganger</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#FDB913">
  <div class="match-comp pl">PL</div>
  <div class="match-date">16. aug. 2025</div>
  <div class="match-badges">
@@ -3640,7 +3640,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (sesong&aring;pning, Molineux)</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#132257">
  <div class="match-comp pl">PL</div>
  <div class="match-date">23. aug. 2025</div>
  <div class="match-badges">
@@ -3653,7 +3653,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; sesongens f&oslash;rste tap</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#0057B8">
  <div class="match-comp pl">PL</div>
  <div class="match-date">31. aug. 2025</div>
  <div class="match-badges">
@@ -3687,7 +3687,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 5 m&aring;l (hattrick f&oslash;r pause + 2)</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#DA020E">
  <div class="match-comp pl">PL</div>
  <div class="match-date">14. sep. 2025</div>
  <div class="match-badges">
@@ -3703,7 +3703,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (derby)</div>
  </div>
 
- <div class="match-card is-record season-2526 comp-cl">
+ <div class="match-card is-record season-2526 comp-cl" style="--opp-c1:#087bd1">
  <div class="match-comp cl">CL</div>
  <div class="match-date">18. sep. 2025</div>
  <div class="match-badges">
@@ -3718,7 +3718,7 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 1 m&aring;l &mdash; 50. CL-m&aring;l, i sin 49. kamp (rekord)</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#EF0107">
  <div class="match-comp pl">PL</div>
  <div class="match-date">21. sep. 2025</div>
  <div class="match-badges">
@@ -3733,7 +3733,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (9. min.)</div>
  </div>
 
- <div class="match-card season-2526 comp-efl">
+ <div class="match-card season-2526 comp-efl" style="--opp-c1:#0E63AD">
  <div class="match-comp efl">LIGACUP</div>
  <div class="match-date">24. sep. 2025</div>
  <div class="match-badges">
@@ -3746,7 +3746,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Foden og Savinho scoret</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#6C1D45">
  <div class="match-comp pl">PL</div>
  <div class="match-date">27. sep. 2025</div>
  <div class="match-badges">
@@ -3762,7 +3762,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l</div>
  </div>
 
- <div class="match-card season-2526 comp-cl">
+ <div class="match-card season-2526 comp-cl" style="--opp-c1:#CE1126">
  <div class="match-comp cl">CL</div>
  <div class="match-date">1. okt. 2025</div>
  <div class="match-badges">
@@ -3778,7 +3778,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#E30613">
  <div class="match-comp pl">PL</div>
  <div class="match-date">5. okt. 2025</div>
  <div class="match-badges">
@@ -3810,7 +3810,7 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; hattrick (3 m&aring;l, 50. landsm&aring;l n&aring;dd)</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#003399">
  <div class="match-comp pl">PL</div>
  <div class="match-date">18. okt. 2025</div>
  <div class="match-badges">
@@ -3826,7 +3826,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (58. og 63. min.) &mdash; begge City-m&aring;lene</div>
  </div>
 
- <div class="match-card season-2526 comp-cl">
+ <div class="match-card season-2526 comp-cl" style="--opp-c1:#FFE667">
  <div class="match-comp cl">CL</div>
  <div class="match-date">21. okt. 2025</div>
  <div class="match-badges">
@@ -3841,7 +3841,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#670E36">
  <div class="match-comp pl">PL</div>
  <div class="match-date">26. okt. 2025</div>
  <div class="match-badges">
@@ -3854,7 +3854,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l (laget scoret ikke)</div>
  </div>
 
- <div class="match-card season-2526 comp-efl">
+ <div class="match-card season-2526 comp-efl" style="--opp-c1:#000000">
  <div class="match-comp efl">LIGACUP</div>
  <div class="match-date">29. okt. 2025</div>
  <div class="match-badges">
@@ -3867,7 +3867,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Doku, Marmoush og Cherki scoret</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#B50E12">
  <div class="match-comp pl">PL</div>
  <div class="match-date">2. nov. 2025</div>
  <div class="match-badges">
@@ -3883,7 +3883,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (17. og 33. min.) &mdash; Nico O'Reilly scoret ogs&aring;</div>
  </div>
 
- <div class="match-card season-2526 comp-cl">
+ <div class="match-card season-2526 comp-cl" style="--opp-c1:#FDE100">
  <div class="match-comp cl">CL</div>
  <div class="match-date">5. nov. 2025</div>
  <div class="match-badges">
@@ -3898,7 +3898,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (mot tidligere klubb)</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#C8102E">
  <div class="match-comp pl">PL</div>
  <div class="match-date">9. nov. 2025</div>
  <div class="match-badges">
@@ -3945,7 +3945,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l &mdash; VM-plassen sikret p&aring; San Siro</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#241F20">
  <div class="match-comp pl">PL</div>
  <div class="match-date">22. nov. 2025</div>
  <div class="match-badges">
@@ -3958,7 +3958,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; R&uacute;ben Dias scoret City-m&aring;let</div>
  </div>
 
- <div class="match-card season-2526 comp-cl">
+ <div class="match-card season-2526 comp-cl" style="--opp-c1:#E32219">
  <div class="match-comp cl">CL</div>
  <div class="match-date">25. nov. 2025</div>
  <div class="match-badges">
@@ -3971,7 +3971,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l (innbytter, City's f&oslash;rste CL-tap i sesongen)</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#1D428A">
  <div class="match-comp pl">PL</div>
  <div class="match-date">29. nov. 2025</div>
  <div class="match-badges">
@@ -3984,7 +3984,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Foden (2) og Gvardiol scoret</div>
  </div>
 
- <div class="match-card is-record season-2526 comp-pl">
+ <div class="match-card is-record season-2526 comp-pl" style="--opp-c1:#2b2f36">
  <div class="match-comp pl">PL</div>
  <div class="match-date">2. des. 2025</div>
  <div class="match-badges">
@@ -3999,7 +3999,7 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 1 m&aring;l &mdash; 100. PL-m&aring;l, i sin 111. kamp (GWR)</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#EB172B">
  <div class="match-comp pl">PL</div>
  <div class="match-date">6. des. 2025</div>
  <div class="match-badges">
@@ -4012,7 +4012,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Dias, Gvardiol og Foden scoret</div>
  </div>
 
- <div class="match-card season-2526 comp-cl">
+ <div class="match-card season-2526 comp-cl" style="--opp-c1:#2c2c54">
  <div class="match-comp cl">CL</div>
  <div class="match-date">10. des. 2025</div>
  <div class="match-badges">
@@ -4027,7 +4027,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (43. min., straffe) &mdash; Nico O'Reilly scoret det f&oslash;rste, borteseier mot Real Madrid</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#1B458F">
  <div class="match-comp pl">PL</div>
  <div class="match-date">14. des. 2025</div>
  <div class="match-badges">
@@ -4043,7 +4043,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 2 m&aring;l (nikk + straffe)</div>
  </div>
 
- <div class="match-card season-2526 comp-efl">
+ <div class="match-card season-2526 comp-efl" style="--opp-c1:#E30613">
  <div class="match-comp efl">LIGACUP</div>
  <div class="match-date">17. des. 2025</div>
  <div class="match-badges">
@@ -4056,7 +4056,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Cherki og Savinho scoret</div>
  </div>
 
- <div class="match-card is-record season-2526 comp-pl">
+ <div class="match-card is-record season-2526 comp-pl" style="--opp-c1:#7A263A">
  <div class="match-comp pl">PL</div>
  <div class="match-date">20. des. 2025</div>
  <div class="match-badges">
@@ -4073,7 +4073,7 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 2 m&aring;l + 1 assist &mdash; passerte 200 m&aring;lpoeng i Europas topp 5-ligaer</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#DD0000">
  <div class="match-comp pl">PL</div>
  <div class="match-date">27. des. 2025</div>
  <div class="match-badges">
@@ -4086,7 +4086,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Reijnders og Cherki scoret</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#EB172B">
  <div class="match-comp pl">PL</div>
  <div class="match-date">1. jan. 2026</div>
  <div class="match-badges">
@@ -4099,7 +4099,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l (laget scoret ikke)</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#034694">
  <div class="match-comp pl">PL</div>
  <div class="match-date">4. jan. 2026</div>
  <div class="match-badges">
@@ -4112,7 +4112,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Reijnders scoret City-m&aring;let</div>
  </div>
 
- <div class="match-card is-record season-2526 comp-pl">
+ <div class="match-card is-record season-2526 comp-pl" style="--opp-c1:#0057B8">
  <div class="match-comp pl">PL</div>
  <div class="match-date">7. jan. 2026</div>
  <div class="match-badges">
@@ -4127,7 +4127,7 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 1 m&aring;l (41. min., straffe) &mdash; 150. klubbm&aring;l for City, i sin 173. kamp &mdash; kun to bak felles femteplass (Joe Hayes/Billy Meredith, 152), Colin Bell topper med 153</div>
  </div>
 
- <div class="match-card season-2526 comp-cup">
+ <div class="match-card season-2526 comp-cup" style="--opp-c1:#DA291C">
  <div class="match-comp cup">CUP</div>
  <div class="match-date">10. jan. 2026</div>
  <div class="match-badges">
@@ -4140,7 +4140,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; rotasjonslag, m&aring;l fordelt p&aring; 8 ulike scorere, Haaland ikke blant dem</div>
  </div>
 
- <div class="match-card season-2526 comp-efl">
+ <div class="match-card season-2526 comp-efl" style="--opp-c1:#241F20">
  <div class="match-comp efl">LIGACUP</div>
  <div class="match-date">13. jan. 2026</div>
  <div class="match-badges">
@@ -4153,7 +4153,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo og Cherki scoret</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#DA020E">
  <div class="match-comp pl">PL</div>
  <div class="match-date">17. jan. 2026</div>
  <div class="match-badges">
@@ -4166,7 +4166,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l (laget scoret ikke)</div>
  </div>
 
- <div class="match-card season-2526 comp-cl">
+ <div class="match-card season-2526 comp-cl" style="--opp-c1:#FFF200">
  <div class="match-comp cl">CL</div>
  <div class="match-date">20. jan. 2026</div>
  <div class="match-badges">
@@ -4179,7 +4179,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Cherki scoret City-m&aring;let, tap mot Bod&oslash;/Glimt</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#FDB913">
  <div class="match-comp pl">PL</div>
  <div class="match-date">24. jan. 2026</div>
  <div class="match-badges">
@@ -4192,7 +4192,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Marmoush scoret, i tillegg til et selvm&aring;l</div>
  </div>
 
- <div class="match-card season-2526 comp-cl">
+ <div class="match-card season-2526 comp-cl" style="--opp-c1:#A90432">
  <div class="match-comp cl">CL</div>
  <div class="match-date">28. jan. 2026</div>
  <div class="match-badges">
@@ -4207,7 +4207,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#132257">
  <div class="match-comp pl">PL</div>
  <div class="match-date">1. feb. 2026</div>
  <div class="match-badges">
@@ -4220,7 +4220,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Cherki og Semenyo scoret</div>
  </div>
 
- <div class="match-card season-2526 comp-efl">
+ <div class="match-card season-2526 comp-efl" style="--opp-c1:#241F20">
  <div class="match-comp efl">LIGACUP</div>
  <div class="match-date">4. feb. 2026</div>
  <div class="match-badges">
@@ -4233,7 +4233,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Marmoush (2) og Reijnders scoret</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#C8102E">
  <div class="match-comp pl">PL</div>
  <div class="match-date">8. feb. 2026</div>
  <div class="match-badges">
@@ -4248,7 +4248,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (90.+3, straffe, seiersm&aring;l) &mdash; Bernardo Silva scoret ogs&aring;</div>
  </div>
 
- <div class="match-card is-record season-2526 comp-pl">
+ <div class="match-card is-record season-2526 comp-pl" style="--opp-c1:#2b2f36">
  <div class="match-comp pl">PL</div>
  <div class="match-date">11. feb. 2026</div>
  <div class="match-badges">
@@ -4263,7 +4263,7 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#c5a03c" stroke="#8a6414" stroke-width="0.6"/></svg>Spilt &middot; 1 m&aring;l (39. min.) &mdash; 153. klubbm&aring;l, p&aring; linje med Colin Bell &mdash; Semenyo og Nico O'Reilly scoret ogs&aring;</div>
  </div>
 
- <div class="match-card season-2526 comp-cup">
+ <div class="match-card season-2526 comp-cup" style="--opp-c1:#FF6900">
  <div class="match-comp cup">CUP</div>
  <div class="match-date">14. feb. 2026</div>
  <div class="match-badges">
@@ -4276,7 +4276,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; selvm&aring;l av Alfie Dorrington og m&aring;l av Marc Gu&eacute;hi</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#241F20">
  <div class="match-comp pl">PL</div>
  <div class="match-date">21. feb. 2026</div>
  <div class="match-badges">
@@ -4289,7 +4289,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Nico O'Reilly scoret begge</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#1D428A">
  <div class="match-comp pl">PL</div>
  <div class="match-date">28. feb. 2026</div>
  <div class="match-badges">
@@ -4302,7 +4302,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo scoret kampens eneste m&aring;l</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#DD0000">
  <div class="match-comp pl">PL</div>
  <div class="match-date">4. mar. 2026</div>
  <div class="match-badges">
@@ -4315,7 +4315,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo og Rodrigo scoret</div>
  </div>
 
- <div class="match-card season-2526 comp-cup">
+ <div class="match-card season-2526 comp-cup" style="--opp-c1:#241F20">
  <div class="match-comp cup">CUP</div>
  <div class="match-date">7. mar. 2026</div>
  <div class="match-badges">
@@ -4328,7 +4328,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Savinho og Marmoush (2) scoret, FA-cup</div>
  </div>
 
- <div class="match-card season-2526 comp-cl">
+ <div class="match-card season-2526 comp-cl" style="--opp-c1:#2c2c54">
  <div class="match-comp cl">CL</div>
  <div class="match-date">11. mar. 2026</div>
  <div class="match-badges">
@@ -4341,7 +4341,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l (Valverde-hattrick, CL &aring;ttedelsfinale 1. runde)</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#7A263A">
  <div class="match-comp pl">PL</div>
  <div class="match-date">14. mar. 2026</div>
  <div class="match-badges">
@@ -4354,7 +4354,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Bernardo Silva scoret City-m&aring;let</div>
  </div>
 
- <div class="match-card season-2526 comp-cl">
+ <div class="match-card season-2526 comp-cl" style="--opp-c1:#2c2c54">
  <div class="match-comp cl">CL</div>
  <div class="match-date">17. mar. 2026</div>
  <div class="match-badges">
@@ -4369,7 +4369,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l &mdash; City slo &uring;t 1&ndash;5 samlet (CL &aring;ttedelsfinale 2. runde)</div>
  </div>
 
- <div class="match-card season-2526 comp-efl">
+ <div class="match-card season-2526 comp-efl" style="--opp-c1:#EF0107">
  <div class="match-comp efl">LIGACUP</div>
  <div class="match-date">22. mar. 2026</div>
  <div class="match-badges">
@@ -4382,7 +4382,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Ligacupen vunnet p&aring; Wembley (m&aring;l av Nico O'Reilly x2)</div>
  </div>
 
- <div class="match-card season-2526 comp-cup">
+ <div class="match-card season-2526 comp-cup" style="--opp-c1:#C8102E">
  <div class="match-comp cup">CUP</div>
  <div class="match-date">4. apr. 2026</div>
  <div class="match-badges">
@@ -4399,7 +4399,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; hattrick (FA-cup kvartfinale)</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#034694">
  <div class="match-comp pl">PL</div>
  <div class="match-date">12. apr. 2026</div>
  <div class="match-badges">
@@ -4412,7 +4412,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Nico O'Reilly og Doku scoret, i tillegg til et selvm&aring;l av Marc Gu&eacute;hi</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#EF0107">
  <div class="match-comp pl">PL</div>
  <div class="match-date">19. apr. 2026</div>
  <div class="match-badges">
@@ -4427,7 +4427,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (66. min.) &mdash; Cherki scoret det f&oslash;rste</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#6C1D45">
  <div class="match-comp pl">PL</div>
  <div class="match-date">22. apr. 2026</div>
  <div class="match-badges">
@@ -4442,7 +4442,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (6. min.) &mdash; kampens eneste m&aring;l</div>
  </div>
 
- <div class="match-card season-2526 comp-cup">
+ <div class="match-card season-2526 comp-cup" style="--opp-c1:#D71920">
  <div class="match-comp cup">CUP</div>
  <div class="match-date">25. apr. 2026</div>
  <div class="match-badges">
@@ -4455,7 +4455,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l (FA-cup semifinale)</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#003399">
  <div class="match-comp pl">PL</div>
  <div class="match-date">4. mai 2026</div>
  <div class="match-badges">
@@ -4470,7 +4470,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (83. min., utligning) &mdash; Doku scoret to (43., 90.+7)</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#E30613">
  <div class="match-comp pl">PL</div>
  <div class="match-date">9. mai 2026</div>
  <div class="match-badges">
@@ -4485,7 +4485,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (76. min.) &mdash; Doku og Marmoush scoret ogs&aring;</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#1B458F">
  <div class="match-comp pl">PL</div>
  <div class="match-date">13. mai 2026</div>
  <div class="match-badges">
@@ -4498,7 +4498,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo, Marmoush og Savinho scoret</div>
  </div>
 
- <div class="match-card season-2526 comp-cup">
+ <div class="match-card season-2526 comp-cup" style="--opp-c1:#034694">
  <div class="match-comp cup">CUP</div>
  <div class="match-date">16. mai 2026</div>
  <div class="match-badges">
@@ -4510,7 +4510,7 @@ function render(vals) {
  <div class="match-icons"></div>
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; Semenyo avgjorde (72. min.), FA-cupen vunnet</div>
  </div>
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#B50E12">
  <div class="match-comp pl">PL</div>
  <div class="match-date">19. mai 2026</div>
  <div class="match-badges">
@@ -4525,7 +4525,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; 1 m&aring;l (90.+5, sen utligning)</div>
  </div>
 
- <div class="match-card season-2526 comp-pl">
+ <div class="match-card season-2526 comp-pl" style="--opp-c1:#670E36">
  <div class="match-comp pl">PL</div>
  <div class="match-date">24. mai 2026</div>
  <div class="match-badges">
@@ -4627,7 +4627,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; VM-eventyret endte i kvartfinalen</div>
  </div>
 
- <div class="match-card season-2627 comp-shield">
+ <div class="match-card season-2627 comp-shield" style="--opp-c1:#EF0107">
  <div class="match-comp shield">SHIELD</div>
  <div class="match-date">16. aug. 2026</div>
  <div class="match-badges">
@@ -4640,7 +4640,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l (laget scoret ikke) &mdash; Community Shield</div>
  </div>
 
- <div class="match-card season-2627 comp-pl">
+ <div class="match-card season-2627 comp-pl" style="--opp-c1:#B50E12">
  <div class="match-comp pl">PL</div>
  <div class="match-date">23. aug. 2026</div>
  <div class="match-badges">
@@ -4653,7 +4653,7 @@ function render(vals) {
  <div class="match-status played">Spilt &middot; ingen m&aring;l &mdash; sesong&aring;pning, Gvardiol avgjorde i overtiden</div>
  </div>
 
- <div class="match-card season-2627 comp-pl">
+ <div class="match-card season-2627 comp-pl" style="--opp-c1:#1B458F">
  <div class="match-comp pl">PL</div>
  <div class="match-date">28. aug. 2026</div>
  <div class="match-badges">
