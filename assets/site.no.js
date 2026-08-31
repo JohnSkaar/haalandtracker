@@ -1577,6 +1577,10 @@ class Site {
       .filter((k) => !s.timelineComp[k])
       .map((k) => 'hide-' + k)
       .join(' ');
+    const norOnlyClass =
+      s.timelineComp.nor && !s.timelineComp.pl && !s.timelineComp.cl && !s.timelineComp.cup && !s.timelineComp.efl && !s.timelineComp.bundesliga
+        ? 'nor-solo'
+        : '';
     const compFilters = [
       { key: 'nor', label: 'Landslag' },
       { key: 'pl', label: 'Premier League' },
@@ -1591,7 +1595,7 @@ class Site {
     }));
 
     const timeline = {
-      scrollClass: ['timeline-scroll', timelineFilterCss[s.timelineSeason] || '', compHideClass].filter(Boolean).join(' '),
+      scrollClass: ['timeline-scroll', timelineFilterCss[s.timelineSeason] || '', compHideClass, norOnlyClass].filter(Boolean).join(' '),
       filters: timelineFilters,
       compFilters: compFilters,
     };
@@ -1703,7 +1707,7 @@ function render(vals) {
  <span class="card-divider-label">F&Oslash;RSTE HALVDEL 2019/20 &mdash; &Oslash;STERRIKSK BUNDESLIGA (RB SALZBURG)</span>
  </div>
 
- <div class="match-card season-early" style="--own-c1:#dd0731; --own-c2:#dd0731">
+ <div class="match-card season-early comp-bundesliga" style="--own-c1:#dd0731; --own-c2:#dd0731">
  <div class="match-comp">SAMMENDRAG</div>
  <div class="match-date">2019&ndash;2020</div>
  <div class="match-badges">
@@ -1890,7 +1894,7 @@ function render(vals) {
  <span class="card-divider-label">FRA 18. JAN. 2020 &mdash; TYSK BUNDESLIGA (BORUSSIA DORTMUND)</span>
  </div>
 
- <div class="match-card is-record season-early" style="--own-c1:#FDE100; --own-c2:#FDE100">
+ <div class="match-card is-record season-early comp-bundesliga" style="--own-c1:#FDE100; --own-c2:#FDE100">
  <div class="match-comp">SAMMENDRAG</div>
  <div class="match-date">2020&ndash;2022</div>
  <div class="match-badges">
