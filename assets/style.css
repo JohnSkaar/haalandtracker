@@ -93,8 +93,8 @@
     }
     .match-card:not(.comp-nor):not(.comp-bundesliga) { --own-c1: #6cabdd; --own-c2: #1c2c5b; }
     .match-card.comp-nor { --own-c1: #ba0c2f; --own-c2: #00205b; }
-    .match-card:not(.is-planned):not(.card-divider)::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: linear-gradient(180deg, var(--own-c1) 50%, var(--own-c2) 50%); }
-    .match-card:not(.is-planned):not(.card-divider)::after { content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: 5px; background: var(--opp-c1); }
+    .match-card:not(.is-planned):not(.card-divider)::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 12px; background: linear-gradient(180deg, var(--own-c1) 50%, var(--own-c2) 50%); }
+    .match-card:not(.is-planned):not(.card-divider)::after { content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: 12px; background: var(--opp-c1); }
     .match-card:not(.is-missed):not(.is-planned):not(.card-divider):hover { border-color: var(--line-strong); box-shadow: 0 4px 10px rgba(20,23,28,0.08); transform: translateY(-1px); }
     .match-card.is-missed { opacity: 0.5; border-style: dashed; box-shadow: none; }
     .match-card.is-record { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset, 0 1px 0 rgba(20,23,28,0.03); }
@@ -121,13 +121,9 @@
     .badge-vs { font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 700; font-size: 11px; color: var(--text-faint); }
     .match-opp { font-size: 12.5px; font-weight: 600; text-align: center; }
 
-    .match-icons { display: flex; flex-wrap: wrap; gap: 6px; min-height: 34px; align-items: center; justify-content: center; }
-    .icon-chip { width: 30px; height: 30px; border-radius: 50%; background: var(--surface); border: 1.5px solid var(--line-strong); display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(20,23,28,0.06); }
+    .match-icons { display: flex; flex-wrap: wrap; gap: 6px; min-height: 38px; align-items: center; justify-content: center; }
+    .icon-chip { width: 34px; height: 34px; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #fff6d8 0%, #f3d372 24%, #d9a92f 55%, #a3771a 82%, #7a5a12 100%); border: 1px solid #6b4d0f; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(20,23,28,0.18), inset 0 1px 2px rgba(255,255,255,0.55); }
     .icon-chip svg { display: block; }
-    .icon-chip svg path[fill="#14171c"] { fill: #c5a03c; }
-    .icon-chip svg path[fill="#f1e6cf"] { fill: #e8cf7a; }
-    .icon-chip svg path[stroke="#14171c"] { stroke: #8a6414; }
-    .icon-chip svg circle[stroke="#14171c"] { stroke: #8a6414; }
     .match-status { font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; color: var(--text-faint); text-align: center; }
     .match-status.played { color: #2f6b3c; }
     .match-status.planned { color: var(--text-dim); }
@@ -324,8 +320,10 @@
       .brand-mark { width: 30px; height: 30px; font-size: 12px; }
       .topbar-meta { font-size: 10.5px; padding: 5px 9px; }
       .match-card { flex-basis: 136px; padding: 9px 9px 10px 9px; }
+      .match-card::before, .match-card::after { width: 8px; }
       .badge { width: 28px; height: 28px; font-size: 9.5px; }
-      .icon-chip { width: 26px; height: 26px; }
+      .icon-chip { width: 28px; height: 28px; }
+      .icon-chip svg { width: 22px; height: 22px; }
       .chip-select button { font-size: 10px; padding: 6px 8px; }
       .bar-row { grid-template-columns: 56px 1fr 26px; }
       .modal-panel { padding: 20px 14px 22px; }
