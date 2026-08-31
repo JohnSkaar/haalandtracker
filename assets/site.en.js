@@ -373,8 +373,8 @@ class Site {
         record: false,
       },
       { period: '2020&ndash;2024', title: 'GWR: Nations League record', desc: '19 goals in the UEFA Nations League, 4 Sep 2020&ndash;17 Nov 2024 &mdash; Guinness World Record.', record: true },
-      { period: 'Nov 2024', title: 'Norway&#39;s all-time top scorer', desc: 'Passed J&oslash;rgen Juve&#39;s old record of 33 goals.', record: true },
-      { period: '2019&ndash;', title: 'Fastest to 50 international goals', desc: '46 caps.', record: true },
+      { period: 'Oct 2024', title: 'Norway&#39;s all-time top scorer', desc: 'Passed J&oslash;rgen Juve&#39;s old record of 33 goals.', record: true },
+      { period: '2019&ndash;', title: 'Fastest to 50 international goals', desc: '45 caps.', record: true },
       { period: '2019&ndash;', title: 'Most hat-tricks for Norway', desc: '6 of them &mdash; the national team record.', record: true },
       { period: '2019&ndash;', title: 'Most goals in a single game for Norway', desc: '5 goals, vs Moldova.', record: true },
       {
@@ -414,7 +414,7 @@ class Site {
         desc: 'Lost 1&ndash;2 to England after extra time in Miami (a Bellingham brace). Haaland&#39;s header was saved by Pickford, and a Norway goal was ruled out after a Haaland challenge. Norway&#39;s longest-ever World Cup run.',
         record: false,
       },
-      { period: '11 Jul 2026', title: 'Status: 62 international goals', desc: '62 goals in 55 caps since his debut on 05.09.2019.', record: true },
+      { period: '11 Jul 2026', title: 'Status: 61 international goals', desc: '61 goals in 52 caps since his debut on 05.09.2019.', record: true },
       {
         period: 'Summer 2026',
         title: 'Biggest climber in the FIFA rankings',
@@ -433,8 +433,8 @@ class Site {
       { title: '2026 World Cup semi-final', desc: 'Lost 1&ndash;2 to England in the quarter-final after extra time &mdash; one game away from his first World Cup semi-final.' },
     ];
     const natAchievable = withWidth([
-      { title: '70 international goals', desc: 'Stands at 62 goals as of 11.07.2026.', progress: 89 },
-      { title: '80 international goals', desc: 'A longer-term target beyond the 70 mark.', progress: 78 },
+      { title: '70 international goals', desc: 'Stands at 61 goals as of 11.07.2026.', progress: 87 },
+      { title: '80 international goals', desc: 'A longer-term target beyond the 70 mark.', progress: 76 },
     ]);
 
     // ---- chart data ----
@@ -1493,7 +1493,7 @@ class Site {
     };
 
     const NAT_NORWAY = [
-      { name: 'E. Haaland', value: 62, color: '#c1352b', isH: true },
+      { name: 'E. Haaland', value: 61, color: '#c1352b', isH: true },
       { name: 'J. Juve (former record)', value: 33, color: '#a8791a', isH: false },
       { name: 'A. Sørloth', value: 26, color: '#2f5aa8', isH: false },
     ];
@@ -1515,17 +1515,17 @@ class Site {
       { name: 'R. Keane', value: 68, color: '#2f5aa8', isH: false, active: false, europe: true },
       { name: 'K. Mbappé', value: 66, color: '#6a3fa0', isH: false, active: true, europe: true },
       { name: 'A. Mitrović', value: 64, color: '#a8791a', isH: false, active: true, europe: true },
-      { name: 'E. Haaland', value: 62, color: '#c1352b', isH: true, active: true, europe: true },
       { name: 'Z. Ibrahimović', value: 62, color: '#1f2937', isH: false, active: false, europe: true },
+      { name: 'E. Haaland', value: 61, color: '#c1352b', isH: true, active: true, europe: true },
       { name: 'I. Schlosser', value: 59, color: '#7c3f8f', isH: false, active: false, europe: true },
     ];
     const europeOnly = NAT_WORLD.filter((t) => t.europe);
-    const europeCaption = (rank) => 'Official list of all-time top European scorers for men&#39;s national teams. Haaland&#39;s ranking: #' + rank + ', with 62 goals in 55 games.';
+    const europeCaption = (rank) => 'Official list of all-time top European scorers for men&#39;s national teams. Haaland&#39;s ranking: #' + rank + ', with 61 goals in 52 games.';
     let natBars = [],
       natCaption = '';
     if (cnat.active === 'norway') {
       natBars = NAT_NORWAY.map((t) => bar(t.name, t.value, 65, t.color, t.isH));
-      natCaption = 'Norway&#39;s all-time top scorers &mdash; 62 goals in 55 games, 05.09.2019&ndash;11.07.2026.';
+      natCaption = 'Norway&#39;s all-time top scorers &mdash; 61 goals in 52 games, 05.09.2019&ndash;11.07.2026.';
     } else if (cnat.active === 'europe') {
       natBars = europeOnly.map((t, i) => bar(i + 1 + '. ' + t.name + (t.active ? '*' : ''), t.value, 150, t.color, t.isH));
       natCaption = europeCaption(europeOnly.findIndex((t) => t.isH) + 1);
@@ -1536,11 +1536,11 @@ class Site {
       const haalandRank = worldFiltered.findIndex((t) => t.isH) + 1;
       natCaption = isEuropeFilter
         ? europeCaption(haalandRank)
-        : 'All-time top scorers for men&#39;s national teams, worldwide. Haaland&#39;s ranking: #' + haalandRank + ', with 62 goals in 55 games.';
+        : 'All-time top scorers for men&#39;s national teams, worldwide. Haaland&#39;s ranking: #' + haalandRank + ', with 61 goals in 52 games.';
     }
 
     const chartNat = {
-      entryBars: [bar('E. Haaland', 62, 65, '#c1352b', true), bar('J. Juve (former record)', 33, 65, '#a8791a', false), bar('A. Sørloth', 26, 65, '#2f5aa8', false)],
+      entryBars: [bar('E. Haaland', 61, 65, '#c1352b', true), bar('J. Juve (former record)', 33, 65, '#a8791a', false), bar('A. Sørloth', 26, 65, '#2f5aa8', false)],
       norwayClass: flag(cnat.active === 'norway'),
       setNorway: () => this.setNatActive('norway'),
       europeClass: flag(cnat.active === 'europe'),
@@ -1838,7 +1838,31 @@ function render(vals) {
  <div class="match-status played">Played &middot; hat-trick (52', 86' and 90')</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga" style="--opp-c1:#046A38">
+  <div class="match-card is-missed season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">12 Oct 2019</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#AA151B"/><rect y="3" width="18" height="6" fill="#F1BF00"/></svg></div>
+ </div>
+ <div class="match-opp">vs Spain (H) &middot; 1&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Not in the squad &middot; injury</div>
+ </div>
+ <div class="match-card is-missed season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">15 Oct 2019</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="6" height="12" fill="#002B7F"/><rect x="6" width="6" height="12" fill="#FCD116"/><rect x="12" width="6" height="12" fill="#CE1126"/></svg></div>
+ </div>
+ <div class="match-opp">vs Romania (A) &middot; 1&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Not in the squad &middot; injury</div>
+ </div>
+<div class="match-card season-early comp-bundesliga" style="--opp-c1:#046A38">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">27 Oct 2019</div>
  <div class="match-badges">
@@ -2018,7 +2042,36 @@ function render(vals) {
  <div class="match-status played">Played &middot; 2 goals (30' and 90+3')</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1D1D1B">
+  <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">4 Sep 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#ED2939"/><rect y="4" width="18" height="4" fill="#fff"/></svg></div>
+ </div>
+ <div class="match-opp">vs Austria (H) &middot; 1&ndash;2</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 1 goal (66&prime;) &mdash; his first international goal</div>
+ </div>
+ <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">7 Sep 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><rect x="8" width="2" height="12" fill="#D00C27"/><rect y="5" width="18" height="2" fill="#D00C27"/></svg></div>
+ </div>
+ <div class="match-opp">vs Northern Ireland (A) &middot; 5&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 2 goals</div>
+ </div>
+<div class="match-card season-early comp-bundesliga" style="--opp-c1:#1D1D1B">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">19 Sep 2020</div>
  <div class="match-badges">
@@ -2048,7 +2101,47 @@ function render(vals) {
  <div class="match-status played">Played &middot; 2 goals (31' and 66')</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga" style="--opp-c1:#004D9D">
+  <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">8 Oct 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#C6363C"/><rect y="4" width="18" height="4" fill="#0C4076"/><rect y="8" width="18" height="4" fill="#fff"/></svg></div>
+ </div>
+ <div class="match-opp">vs Serbia (H) &middot; 1&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Played &middot; no goal &mdash; lost in extra time, eliminated from Euro 2020 play-offs</div>
+ </div>
+ <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">11 Oct 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="6" height="12" fill="#002B7F"/><rect x="6" width="6" height="12" fill="#FCD116"/><rect x="12" width="6" height="12" fill="#CE1126"/></svg></div>
+ </div>
+ <div class="match-opp">vs Romania (H) &middot; 4&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; hat-trick (13&prime;, 64&prime; and 74&prime;) &mdash; his first senior hat-trick, both assisted by &Oslash;degaard</div>
+ </div>
+ <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">14 Oct 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><rect x="8" width="2" height="12" fill="#D00C27"/><rect y="5" width="18" height="2" fill="#D00C27"/></svg></div>
+ </div>
+ <div class="match-opp">vs Northern Ireland (H) &middot; 1&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Played &middot; no goal</div>
+ </div>
+<div class="match-card season-early comp-bundesliga" style="--opp-c1:#004D9D">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">24 Oct 2020</div>
  <div class="match-badges">
@@ -2078,7 +2171,19 @@ function render(vals) {
  <div class="match-status played">Played &middot; 1 goal (83')</div>
  </div>
 
- <div class="match-card is-record season-early comp-bundesliga" style="--opp-c1:#005CA9">
+  <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">18 Nov 2020</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#ED2939"/><rect y="4" width="18" height="4" fill="#fff"/></svg></div>
+ </div>
+ <div class="match-opp">vs Austria (A) &middot; 1&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Played &middot; no goal &mdash; finished as the Nations League B top scorer with 6 goals</div>
+ </div>
+<div class="match-card is-record season-early comp-bundesliga" style="--opp-c1:#005CA9">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">21 Nov 2020</div>
  <div class="match-badges">
@@ -2183,7 +2288,43 @@ function render(vals) {
  <div class="match-status played">Played &middot; 2 goals (3' and 90')</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga" style="--opp-c1:#009036">
+  <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">24 Mar 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="8" fill="#fff"/><rect y="8" width="18" height="4" fill="#D00C27"/></svg></div>
+ </div>
+ <div class="match-opp">vs Gibraltar (A) &middot; 3&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Played &middot; no goal</div>
+ </div>
+ <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">27 Mar 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#E30A17"/><circle cx="8" cy="6" r="2.4" fill="#fff"/><circle cx="8.8" cy="6" r="2" fill="#E30A17"/><polygon points="10.8,6 9.6,5.6 9.9,6.6 9.3,5.8 10.2,5.5" fill="#fff"/></svg></div>
+ </div>
+ <div class="match-opp">vs Turkey (H) &middot; 0&ndash;3</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Played &middot; no goal &mdash; had one ruled out for offside</div>
+ </div>
+ <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">30 Mar 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#C40308"/><rect x="0.6" y="0.6" width="16.8" height="10.8" fill="none" stroke="#D4AF37" stroke-width="0.6"/></svg></div>
+ </div>
+ <div class="match-opp">vs Montenegro (A) &middot; 1&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Played &middot; no goal</div>
+ </div>
+<div class="match-card season-early comp-bundesliga" style="--opp-c1:#009036">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">18 Apr 2021</div>
  <div class="match-badges">
@@ -2228,7 +2369,33 @@ function render(vals) {
  <div class="match-status played">Played &middot; 2 goals (5' and 84')</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga" style="--opp-c1:#E1000F">
+  <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">2 Jun 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#ED2939"/><rect y="4" width="18" height="4" fill="#fff"/><rect y="8" width="18" height="4" fill="#00A1DE"/></svg></div>
+ </div>
+ <div class="match-opp">vs Luxembourg (N) &middot; 1&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 1 goal (90&plus;2&prime;)</div>
+ </div>
+ <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">6 Jun 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><rect y="0" width="18" height="1.5" fill="#0D5EAF"/><rect y="3" width="18" height="1.5" fill="#0D5EAF"/><rect y="6" width="18" height="1.5" fill="#0D5EAF"/><rect y="9" width="18" height="1.5" fill="#0D5EAF"/><rect width="7" height="7" fill="#0D5EAF"/><rect x="2.5" width="2" height="7" fill="#fff"/><rect y="2.5" width="7" height="2" fill="#fff"/></svg></div>
+ </div>
+ <div class="match-opp">vs Greece (N) &middot; 1&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Played &middot; no goal</div>
+ </div>
+<div class="match-card season-early comp-bundesliga" style="--opp-c1:#E1000F">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">14 Aug 2021</div>
  <div class="match-badges">
@@ -2258,7 +2425,51 @@ function render(vals) {
  <div class="match-status played">Played &middot; 1 goal (90+1', match-winner in stoppage time)</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga" style="--opp-c1:#E32221">
+  <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">1 Sep 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#AE1C28"/><rect y="4" width="18" height="4" fill="#fff"/><rect y="8" width="18" height="4" fill="#21468B"/></svg></div>
+ </div>
+ <div class="match-opp">vs Netherlands (H) &middot; 1&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 1 goal (20&prime;)</div>
+ </div>
+ <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">4 Sep 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#9E3039"/><rect y="5" width="18" height="2" fill="#fff"/></svg></div>
+ </div>
+ <div class="match-opp">vs Latvia (A) &middot; 2&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 1 goal (20&prime;, penalty)</div>
+ </div>
+ <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">7 Sep 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="8" fill="#fff"/><rect y="8" width="18" height="4" fill="#D00C27"/></svg></div>
+ </div>
+ <div class="match-opp">vs Gibraltar (H) &middot; 5&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; hat-trick (27&prime;, 39&prime; and 90&plus;1&prime;)</div>
+ </div>
+<div class="match-card season-early comp-bundesliga" style="--opp-c1:#E32221">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">11 Sep 2021</div>
  <div class="match-badges">
@@ -2288,7 +2499,31 @@ function render(vals) {
  <div class="match-status played">Played &middot; 2 goals (24', header, and 83')</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga" style="--opp-c1:#C4122E">
+  <div class="match-card is-missed season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">8 Oct 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#E30A17"/><circle cx="8" cy="6" r="2.4" fill="#fff"/><circle cx="8.8" cy="6" r="2" fill="#E30A17"/><polygon points="10.8,6 9.6,5.6 9.9,6.6 9.3,5.8 10.2,5.5" fill="#fff"/></svg></div>
+ </div>
+ <div class="match-opp">vs Turkey (A) &middot; 1&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Not in the squad &middot; injury</div>
+ </div>
+ <div class="match-card is-missed season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">11 Oct 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#C40308"/><rect x="0.6" y="0.6" width="16.8" height="10.8" fill="none" stroke="#D4AF37" stroke-width="0.6"/></svg></div>
+ </div>
+ <div class="match-opp">vs Montenegro (H) &middot; 2&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Not in the squad &middot; injury</div>
+ </div>
+<div class="match-card season-early comp-bundesliga" style="--opp-c1:#C4122E">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">16 Oct 2021</div>
  <div class="match-badges">
@@ -2303,7 +2538,31 @@ function render(vals) {
  <div class="match-status played">Played &middot; 2 goals (54', penalty, and 90+4')</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga" style="--opp-c1:#65B32E">
+  <div class="match-card is-missed season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">13 Nov 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#9E3039"/><rect y="5" width="18" height="2" fill="#fff"/></svg></div>
+ </div>
+ <div class="match-opp">vs Latvia (H) &middot; 0&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Not in the squad &middot; injury</div>
+ </div>
+ <div class="match-card is-missed season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">16 Nov 2021</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#AE1C28"/><rect y="4" width="18" height="4" fill="#fff"/><rect y="8" width="18" height="4" fill="#21468B"/></svg></div>
+ </div>
+ <div class="match-opp">vs Netherlands (A) &middot; 2&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Not in the squad &middot; injury &mdash; Norway finished 3rd in the group, eliminated from the 2022 World Cup</div>
+ </div>
+<div class="match-card season-early comp-bundesliga" style="--opp-c1:#65B32E">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">27 Nov 2021</div>
  <div class="match-badges">
@@ -2378,7 +2637,36 @@ function render(vals) {
  <div class="match-status played">Played &middot; 1 goal (6')</div>
  </div>
 
- <div class="match-card season-early comp-bundesliga" style="--opp-c1:#65B32E">
+  <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">25 Mar 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#fff"/><rect y="4" width="18" height="4" fill="#0B4EA2"/><rect y="8" width="18" height="4" fill="#EE1C25"/></svg></div>
+ </div>
+ <div class="match-opp">vs Slovakia (H) &middot; 2&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 1 goal (77&prime;)</div>
+ </div>
+ <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">29 Mar 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#D90012"/><rect y="4" width="18" height="4" fill="#0033A0"/><rect y="8" width="18" height="4" fill="#F2A800"/></svg></div>
+ </div>
+ <div class="match-opp">vs Armenia (H) &middot; 9&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 2 goals (24&prime; and 45&plus;1&prime;)</div>
+ </div>
+<div class="match-card season-early comp-bundesliga" style="--opp-c1:#65B32E">
  <div class="match-comp bundesliga">BL</div>
  <div class="match-date">16 Apr 2022</div>
  <div class="match-badges">
@@ -2423,7 +2711,64 @@ function render(vals) {
  <div class="match-status played">Played &middot; 1 goal (68', penalty) &mdash; final game for Dortmund</div>
  </div>
 
- <div class="match-card season-2223 comp-pl" style="--opp-c1:#7A263A">
+  <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">2 Jun 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#C6363C"/><rect y="4" width="18" height="4" fill="#0C4076"/><rect y="8" width="18" height="4" fill="#fff"/></svg></div>
+ </div>
+ <div class="match-opp">vs Serbia (A) &middot; 1&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 1 goal (26&prime;)</div>
+ </div>
+ <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">5 Jun 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#006AA7"/><rect x="6" width="2" height="12" fill="#FECC00"/><rect y="5" width="18" height="2" fill="#FECC00"/></svg></div>
+ </div>
+ <div class="match-opp">vs Sweden (A) &middot; 2&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 2 goals (20&prime;, penalty, and 69&prime;)</div>
+ </div>
+ <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">9 Jun 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#fff"/><rect y="4" width="18" height="4" fill="#005DA4"/><rect y="8" width="18" height="4" fill="#ED1C24"/></svg></div>
+ </div>
+ <div class="match-opp">vs Slovenia (H) &middot; 0&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Played &middot; no goal</div>
+ </div>
+ <div class="match-card season-early comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">12 Jun 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#006AA7"/><rect x="6" width="2" height="12" fill="#FECC00"/><rect y="5" width="18" height="2" fill="#FECC00"/></svg></div>
+ </div>
+ <div class="match-opp">vs Sweden (H) &middot; 3&ndash;2</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ <span class="icon-chip icon-boot"><svg viewBox="0 0 24 24" width="39" height="39"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="url(#bootGold)" stroke="#6b4d0f" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="url(#bootGold)" stroke="#6b4d0f" stroke-width="0.6"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#6b4d0f" stroke-width="1" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 2 goals (10&prime;, header, and 54&prime;, penalty) + 1 assist (77&prime;)</div>
+ </div>
+<div class="match-card season-2223 comp-pl" style="--opp-c1:#7A263A">
  <div class="match-comp pl">PL</div>
  <div class="match-date">7 Aug 2022</div>
  <div class="match-badges">
@@ -2503,7 +2848,33 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played &middot; hat-trick in 38 min. &mdash; 9 goals in 5 games, PL record for the start of a club career</div>
  </div>
 
- <div class="match-card season-2223 comp-pl" style="--opp-c1:#DA020E">
+  <div class="match-card season-2223 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">24 Sep 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#fff"/><rect y="4" width="18" height="4" fill="#005DA4"/><rect y="8" width="18" height="4" fill="#ED1C24"/></svg></div>
+ </div>
+ <div class="match-opp">vs Slovenia (A) &middot; 2&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 1 goal (47&prime;)</div>
+ </div>
+ <div class="match-card season-2223 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">27 Sep 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#C6363C"/><rect y="4" width="18" height="4" fill="#0C4076"/><rect y="8" width="18" height="4" fill="#fff"/></svg></div>
+ </div>
+ <div class="match-opp">vs Serbia (H) &middot; 0&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Played &middot; no goal</div>
+ </div>
+<div class="match-card season-2223 comp-pl" style="--opp-c1:#DA020E">
  <div class="match-comp pl">PL</div>
  <div class="match-date">2 Oct 2022</div>
  <div class="match-badges">
@@ -2520,7 +2891,19 @@ function render(vals) {
  <div class="match-status played">Played &middot; hat-trick in the derby &mdash; the first PL hat-trick in a Manchester derby since 1970</div>
  </div>
 
- <div class="match-card is-record season-2223 comp-cl" style="--opp-c1:#DD0741">
+  <div class="match-card is-missed season-2223 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">17 Nov 2022</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="6" height="12" fill="#169B62"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#FF883E"/></svg></div>
+ </div>
+ <div class="match-opp">vs Republic of Ireland (A) &middot; 1&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Not in the squad &middot; injury</div>
+ </div>
+<div class="match-card is-record season-2223 comp-cl" style="--opp-c1:#DD0741">
  <div class="match-comp cl">CL</div>
  <div class="match-date">14 Mar 2023</div>
  <div class="match-badges">
@@ -2539,7 +2922,31 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played &middot; 5 goals (CL round of 16, 2nd leg) &mdash; matches Messi's record for most goals in a single CL match</div>
  </div>
 
- <div class="match-card season-2223 comp-cup" style="--opp-c1:#DA020E">
+  <div class="match-card is-missed season-2223 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">25 Mar 2023</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#AA151B"/><rect y="3" width="18" height="6" fill="#F1BF00"/></svg></div>
+ </div>
+ <div class="match-opp">vs Spain (A) &middot; 0&ndash;3</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Not in the squad &middot; injury</div>
+ </div>
+ <div class="match-card is-missed season-2223 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">28 Mar 2023</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><rect x="7.5" width="3" height="12" fill="#FF0000"/><rect y="5" width="18" height="2" fill="#FF0000"/></svg></div>
+ </div>
+ <div class="match-opp">vs Georgia (A) &middot; 1&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Not in the squad &middot; injury</div>
+ </div>
+<div class="match-card season-2223 comp-cup" style="--opp-c1:#DA020E">
  <div class="match-comp cup">CUP</div>
  <div class="match-date">3 Jun 2023</div>
  <div class="match-badges">
@@ -2565,7 +2972,36 @@ function render(vals) {
  <div class="match-status played">Played &middot; no goal &mdash; Champions League won in Istanbul (Rodri settled it), the treble completed &mdash; season&#39;s top scorer with 12 CL goals</div>
  </div>
 
- <div class="match-card season-2324 comp-pl" style="--opp-c1:#6C1D45">
+  <div class="match-card season-2223 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">17 Jun 2023</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#0065BD"/><line x1="0" y1="0" x2="18" y2="12" stroke="#fff" stroke-width="2.4"/><line x1="18" y1="0" x2="0" y2="12" stroke="#fff" stroke-width="2.4"/></svg></div>
+ </div>
+ <div class="match-opp">vs Scotland (H) &middot; 1&ndash;2</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 1 goal (61&prime;, penalty)</div>
+ </div>
+ <div class="match-card season-2223 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">20 Jun 2023</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><ellipse cx="9" cy="6.5" rx="4" ry="1.8" fill="#D57800"/></svg></div>
+ </div>
+ <div class="match-opp">vs Cyprus (H) &middot; 3&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 2 goals (56&prime; and 60&prime;, both penalties)</div>
+ </div>
+<div class="match-card season-2324 comp-pl" style="--opp-c1:#6C1D45">
  <div class="match-comp pl">PL</div>
  <div class="match-date">11 Aug 2023</div>
  <div class="match-badges">
@@ -2598,7 +3034,48 @@ function render(vals) {
  <div class="match-status played">Played &middot; hat-trick in the 2nd half</div>
  </div>
 
- <div class="match-card season-2324 comp-pl" style="--opp-c1:#DA020E">
+  <div class="match-card season-2324 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">12 Sep 2023</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><rect x="7.5" width="3" height="12" fill="#FF0000"/><rect y="5" width="18" height="2" fill="#FF0000"/></svg></div>
+ </div>
+ <div class="match-opp">vs Georgia (H) &middot; 2&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 1 goal (25&prime;)</div>
+ </div>
+ <div class="match-card season-2324 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">12 Oct 2023</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><ellipse cx="9" cy="6.5" rx="4" ry="1.8" fill="#D57800"/></svg></div>
+ </div>
+ <div class="match-opp">vs Cyprus (A) &middot; 0&ndash;4</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 2 goals (65&prime; and 72&prime;, header) &mdash; his 27th international goal, on his 27th cap</div>
+ </div>
+ <div class="match-card season-2324 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">15 Oct 2023</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#AA151B"/><rect y="3" width="18" height="6" fill="#F1BF00"/></svg></div>
+ </div>
+ <div class="match-opp">vs Spain (H) &middot; 0&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Played &middot; no goal</div>
+ </div>
+<div class="match-card season-2324 comp-pl" style="--opp-c1:#DA020E">
  <div class="match-comp pl">PL</div>
  <div class="match-date">29 Oct 2023</div>
  <div class="match-badges">
@@ -2615,7 +3092,31 @@ function render(vals) {
  <div class="match-status played">Played &middot; 2 goals (penalty + header) + 1 assist &mdash; derby win at Old Trafford</div>
  </div>
 
- <div class="match-card season-2324 comp-pl" style="--opp-c1:#6C1D45">
+  <div class="match-card season-2324 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">16 Nov 2023</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><rect x="6.5" width="3" height="12" fill="#D21034"/><rect y="4.5" width="18" height="3" fill="#D21034"/><rect x="7.3" width="1.6" height="12" fill="#0058A8"/><rect y="5.2" width="18" height="1.6" fill="#0058A8"/></svg></div>
+ </div>
+ <div class="match-opp">vs Faroe Islands (H) &middot; 2&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Sub, on for the 2nd half &middot; no goal &mdash; injured his ankle during the match</div>
+ </div>
+ <div class="match-card is-missed season-2324 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">19 Nov 2023</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#0065BD"/><line x1="0" y1="0" x2="18" y2="12" stroke="#fff" stroke-width="2.4"/><line x1="18" y1="0" x2="0" y2="12" stroke="#fff" stroke-width="2.4"/></svg></div>
+ </div>
+ <div class="match-opp">vs Scotland (A) &middot; 3&ndash;3</div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Not in the squad &middot; ankle injury from the Faroe Islands friendly &mdash; Norway finished 3rd in the group, eliminated from Euro 2024</div>
+ </div>
+<div class="match-card season-2324 comp-pl" style="--opp-c1:#6C1D45">
  <div class="match-comp pl">PL</div>
  <div class="match-date">31 Jan 2024</div>
  <div class="match-badges">
@@ -2628,7 +3129,31 @@ function render(vals) {
  <div class="match-status played">Played &middot; comeback as a substitute (71&#39;) after 56 days out with a foot injury, no goal</div>
  </div>
 
- <div class="match-card season-2324 comp-cl" style="--opp-c1:#2c2c54">
+  <div class="match-card season-2324 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">22 Mar 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="6" fill="#fff"/><rect y="6" width="18" height="6" fill="#D7141A"/><polygon points="0,0 0,12 8,6" fill="#11457E"/></svg></div>
+ </div>
+ <div class="match-opp">vs Czechia (H) &middot; 1&ndash;2</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Played, subbed off (75&prime;) &middot; no goal</div>
+ </div>
+ <div class="match-card season-2324 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">26 Mar 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#fff"/><rect y="4" width="18" height="4" fill="#0B4EA2"/><rect y="8" width="18" height="4" fill="#EE1C25"/></svg></div>
+ </div>
+ <div class="match-opp">vs Slovakia (H) &middot; 1&ndash;1</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Sub, on (62&prime;) &middot; no goal &mdash; missed a penalty</div>
+ </div>
+<div class="match-card season-2324 comp-cl" style="--opp-c1:#2c2c54">
  <div class="match-comp cl">CL</div>
  <div class="match-date">17 Apr 2024</div>
  <div class="match-badges">
@@ -2659,7 +3184,37 @@ function render(vals) {
  <div class="match-status played">Played &middot; 4 goals (2 penalties + a header hat-trick before the break, 4th goal in the 2nd half)</div>
  </div>
 
- <div class="match-card season-2425 comp-friendly" style="--opp-c1:#018749">
+  <div class="match-card season-2324 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">5 Jun 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#244AA5"/><circle cx="6" cy="4" r="0.5" fill="#fff"/><circle cx="8" cy="3" r="0.5" fill="#fff"/><circle cx="10" cy="3" r="0.5" fill="#fff"/><circle cx="12" cy="4" r="0.5" fill="#fff"/><circle cx="9" cy="5.5" r="0.5" fill="#fff"/><circle cx="7" cy="6" r="0.5" fill="#fff"/></svg></div>
+ </div>
+ <div class="match-opp">vs Kosovo (H) &middot; 3&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; hat-trick (15&prime;, header, 70&prime; and 73&prime;)</div>
+ </div>
+ <div class="match-card season-2324 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">8 Jun 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#C60C30"/><rect x="6" width="2" height="12" fill="#fff"/><rect y="5" width="18" height="2" fill="#fff"/></svg></div>
+ </div>
+ <div class="match-opp">vs Denmark (A) &middot; 3&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 1 goal (72&prime;)</div>
+ </div>
+<div class="match-card season-2425 comp-friendly" style="--opp-c1:#018749">
  <div class="match-comp friendly">FRIENDLY</div>
  <div class="match-date">24 Jul 2024</div>
  <div class="match-badges">
@@ -2781,7 +3336,33 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played &middot; hat-trick &mdash; two straight trebles, 11th City hat-trick in 102 games</div>
  </div>
 
- <div class="match-card season-2425 comp-pl" style="--opp-c1:#E30613">
+  <div class="match-card season-2425 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">6 Sep 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#00AFCA"/><circle cx="9" cy="6" r="2.2" fill="#FEC50C"/></svg></div>
+ </div>
+ <div class="match-opp">vs Kazakhstan (A) &middot; 0&ndash;0</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Played &middot; no goal (hit the post)</div>
+ </div>
+ <div class="match-card season-2425 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">9 Sep 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#ED2939"/><rect y="4" width="18" height="4" fill="#fff"/></svg></div>
+ </div>
+ <div class="match-opp">vs Austria (H) &middot; 2&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 1 goal (80&prime;)</div>
+ </div>
+<div class="match-card season-2425 comp-pl" style="--opp-c1:#E30613">
  <div class="match-comp pl">PL</div>
  <div class="match-date">14 Sep 2024</div>
  <div class="match-badges">
@@ -2879,7 +3460,34 @@ function render(vals) {
  <div class="match-status played">Played &middot; no goal — Kovacic (2) and Doku scored</div>
  </div>
 
- <div class="match-card season-2425 comp-pl" style="--opp-c1:#FDB913">
+  <div class="match-card is-record season-2425 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">10 Oct 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#fff"/><rect y="4" width="18" height="4" fill="#005DA4"/><rect y="8" width="18" height="4" fill="#ED1C24"/></svg></div>
+ </div>
+ <div class="match-opp">vs Slovenia (H) &middot; 3&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played, captain &middot; 2 goals (7&prime; and 62&prime;) &mdash; became Norway&rsquo;s all-time leading international goalscorer, overtaking J&oslash;rgen Juve&rsquo;s 87-year-old record</div>
+ </div>
+ <div class="match-card season-2425 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">13 Oct 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#ED2939"/><rect y="4" width="18" height="4" fill="#fff"/></svg></div>
+ </div>
+ <div class="match-opp">vs Austria (A) &middot; 1&ndash;5</div>
+ <div class="match-icons"></div>
+ <div class="match-status played">Played &middot; no goal (hit the post)</div>
+ </div>
+<div class="match-card season-2425 comp-pl" style="--opp-c1:#FDB913">
  <div class="match-comp pl">PL</div>
  <div class="match-date">20 Oct 2024</div>
  <div class="match-badges">
@@ -2977,7 +3585,38 @@ function render(vals) {
  <div class="match-status played">Played &middot; 1 goal (23')</div>
  </div>
 
- <div class="match-card season-2425 comp-pl" style="--opp-c1:#132257">
+  <div class="match-card season-2425 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">14 Nov 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#fff"/><rect y="4" width="18" height="4" fill="#005DA4"/><rect y="8" width="18" height="4" fill="#ED1C24"/></svg></div>
+ </div>
+ <div class="match-opp">vs Slovenia (A) &middot; 4&ndash;1</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ <span class="icon-chip icon-boot"><svg viewBox="0 0 24 24" width="39" height="39"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="url(#bootGold)" stroke="#6b4d0f" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="url(#bootGold)" stroke="#6b4d0f" stroke-width="0.6"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#6b4d0f" stroke-width="1" stroke-linecap="round"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; 1 goal (45&prime;) + 1 assist (79&prime;)</div>
+ </div>
+ <div class="match-card season-2425 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">17 Nov 2024</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#00AFCA"/><circle cx="9" cy="6" r="2.2" fill="#FEC50C"/></svg></div>
+ </div>
+ <div class="match-opp">vs Kazakhstan (H) &middot; 5&ndash;0</div>
+ <div class="match-icons">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div>
+ <div class="match-status played">Played &middot; hat-trick (23&prime;, 37&prime; and 71&prime;) &mdash; sealed top spot in the Nations League group and promotion to League A</div>
+ </div>
+<div class="match-card season-2425 comp-pl" style="--opp-c1:#132257">
  <div class="match-comp pl">PL</div>
  <div class="match-date">23 Nov 2024</div>
  <div class="match-badges">
@@ -5231,7 +5870,7 @@ function render(vals) {
  </div>
  <div class="lane-fact">
  <span class="lane-fact-label">Official record</span>
- <span class="lane-fact-value">Norway's all-time top scorer &mdash; 62 goals in 55 caps, 05.09.2019&ndash;11.07.2026.</span>
+ <span class="lane-fact-value">Norway's all-time top scorer &mdash; 61 goals in 52 caps, 05.09.2019&ndash;11.07.2026.</span>
  </div>
  </div>
 
@@ -5244,7 +5883,7 @@ function render(vals) {
  </div>
  <div class="merit-chip">
  <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M12 2.5l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6 .8z" fill="#fff"/></svg></span>
- <div class="merit-text"><b>Norway&rsquo;s all-time top scorer</b><span class="sub">62 goals in 55 games, 05.09.2019&ndash;11.07.2026</span></div>
+ <div class="merit-text"><b>Norway&rsquo;s all-time top scorer</b><span class="sub">61 goals in 52 games, 05.09.2019&ndash;11.07.2026</span></div>
  </div>
  <div class="merit-chip">
  <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#fff"/></svg></span>
@@ -5350,7 +5989,7 @@ function render(vals) {
  </div>
  `).join('')}
  </div>
- <span class="chart-caption">62 international goals in 55 caps (05.09.2019&ndash;11.07.2026) &mdash; Norway&#39;s all-time top scorer, ahead of J&oslash;rgen Juve and Alexander S&oslash;rloth.</span>
+ <span class="chart-caption">61 international goals in 52 caps (05.09.2019&ndash;11.07.2026) &mdash; Norway&#39;s all-time top scorer, ahead of J&oslash;rgen Juve and Alexander S&oslash;rloth.</span>
 
  <div class="chip-select">
  <button class="${vals.chart.nat.norwayClass}" data-bind="chart.nat.setNorway">Best in Norway</button>
