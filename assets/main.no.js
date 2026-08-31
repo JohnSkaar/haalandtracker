@@ -14,6 +14,10 @@ class App extends Site {
       if (typeof fn === 'function') fn();
     });
     this.mount();
+    requestAnimationFrame(() => {
+      const scroller = this.root.querySelector('.timeline-scroll');
+      if (scroller) scroller.scrollLeft = scroller.scrollWidth;
+    });
   }
   setState(partial) {
     this.state = Object.assign({}, this.state, partial);
