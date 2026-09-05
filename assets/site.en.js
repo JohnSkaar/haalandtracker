@@ -5348,6 +5348,19 @@ function render(vals) {
  <div class="match-status played">Played &middot; 1 goal (26', header, assisted by Semenyo) &mdash; third goal in three Premier League games this season</div>
  </div>
 
+ <div class="match-card is-planned season-2627 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">13 Sep 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
+ </div>
+ <div class="match-opp">vs Man United (A) &middot; 16:30 kickoff</div>
+ <div class="match-icons"></div>
+ <div class="match-status planned">Scheduled &middot; Old Trafford</div>
+ </div>
+
  <div class="now-marker"><span>NOW</span></div>
  </div>
 
