@@ -127,15 +127,36 @@
     .score-note { font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text); }
 
     .match-icons { display: flex; flex-wrap: nowrap; min-height: 38px; align-items: center; justify-content: center; }
+    .icons-cluster { display: flex; align-items: center; flex: none; }
     .icon-chip { width: 51px; height: 51px; margin-left: 4px; flex: none; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #fff6d8 0%, #f3d372 24%, #d9a92f 55%, #a3771a 82%, #7a5a12 100%); border: 1px solid #6b4d0f; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(20,23,28,0.18), inset 0 1px 2px rgba(255,255,255,0.55); }
     .icon-chip:first-child { margin-left: 0; }
     .icon-chip svg { display: block; }
     .icon-chip.icon-boot { background: none; border: none; box-shadow: none; }
     .icon-chip.icon-boot svg { filter: drop-shadow(0 2px 2px rgba(20,23,28,0.3)); }
-    .match-icons.icons-3 .icon-chip { margin-left: -6px; }
-    .match-icons.icons-4 .icon-chip { margin-left: -21px; }
-    .match-icons.icons-5 .icon-chip { margin-left: -29px; }
-    .match-icons .icon-chip:first-child { margin-left: 0; }
+    /* overlapping clusters (3-5 icons) use absolute positioning: negative
+       margins inside a shrink-to-fit flex box do not center reliably */
+    .match-icons.icons-3 .icons-cluster,
+    .match-icons.icons-4 .icons-cluster,
+    .match-icons.icons-5 .icons-cluster {
+      display: block; position: relative; height: 51px; margin: 0;
+    }
+    .match-icons.icons-3 .icons-cluster { width: 141px; }
+    .match-icons.icons-4 .icons-cluster { width: 141px; }
+    .match-icons.icons-5 .icons-cluster { width: 139px; }
+    .match-icons.icons-3 .icons-cluster .icon-chip,
+    .match-icons.icons-4 .icons-cluster .icon-chip,
+    .match-icons.icons-5 .icons-cluster .icon-chip {
+      position: absolute; top: 0; left: 0; margin-left: 0;
+    }
+    .match-icons.icons-3 .icons-cluster .icon-chip:nth-child(2) { left: 45px; }
+    .match-icons.icons-3 .icons-cluster .icon-chip:nth-child(3) { left: 90px; }
+    .match-icons.icons-4 .icons-cluster .icon-chip:nth-child(2) { left: 30px; }
+    .match-icons.icons-4 .icons-cluster .icon-chip:nth-child(3) { left: 60px; }
+    .match-icons.icons-4 .icons-cluster .icon-chip:nth-child(4) { left: 90px; }
+    .match-icons.icons-5 .icons-cluster .icon-chip:nth-child(2) { left: 22px; }
+    .match-icons.icons-5 .icons-cluster .icon-chip:nth-child(3) { left: 44px; }
+    .match-icons.icons-5 .icons-cluster .icon-chip:nth-child(4) { left: 66px; }
+    .match-icons.icons-5 .icons-cluster .icon-chip:nth-child(5) { left: 88px; }
     .match-status { font-size: 10px; line-height: 1.32; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; color: var(--text-faint); text-align: center; }
     .match-status .status-label { display: block; }
     .match-status .status-desc { display: block; margin-top: 2px; font-weight: 600; letter-spacing: 0.02em; }
@@ -341,9 +362,21 @@
       .icon-chip svg { width: 29px; height: 29px; }
       .match-score { font-size: 34px; }
       .score-note { font-size: 10px; }
-      .match-icons.icons-3 .icon-chip { margin-left: -2px; }
-      .match-icons.icons-4 .icon-chip { margin-left: -14px; }
-      .match-icons.icons-5 .icon-chip { margin-left: -20px; }
+      .match-icons.icons-3 .icons-cluster,
+      .match-icons.icons-4 .icons-cluster,
+      .match-icons.icons-5 .icons-cluster { height: 37px; }
+      .match-icons.icons-3 .icons-cluster { width: 107px; }
+      .match-icons.icons-4 .icons-cluster { width: 106px; }
+      .match-icons.icons-5 .icons-cluster { width: 105px; }
+      .match-icons.icons-3 .icons-cluster .icon-chip:nth-child(2) { left: 35px; }
+      .match-icons.icons-3 .icons-cluster .icon-chip:nth-child(3) { left: 70px; }
+      .match-icons.icons-4 .icons-cluster .icon-chip:nth-child(2) { left: 23px; }
+      .match-icons.icons-4 .icons-cluster .icon-chip:nth-child(3) { left: 46px; }
+      .match-icons.icons-4 .icons-cluster .icon-chip:nth-child(4) { left: 69px; }
+      .match-icons.icons-5 .icons-cluster .icon-chip:nth-child(2) { left: 17px; }
+      .match-icons.icons-5 .icons-cluster .icon-chip:nth-child(3) { left: 34px; }
+      .match-icons.icons-5 .icons-cluster .icon-chip:nth-child(4) { left: 51px; }
+      .match-icons.icons-5 .icons-cluster .icon-chip:nth-child(5) { left: 68px; }
       .chip-select button { font-size: 10px; padding: 6px 8px; }
       .bar-row { grid-template-columns: 56px 1fr 26px; }
       .modal-panel { padding: 20px 14px 22px; }
