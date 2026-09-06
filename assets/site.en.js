@@ -1747,11 +1747,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#0047AB;color:#fff">MAT</div>
  </div>
- <div class="match-opp">vs Mattersburg (H) &middot; 4&ndash;1</div>
+ <div class="match-opp">vs Mattersburg&nbsp;(H)<span class="match-score">4&ndash;1</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (37', penalty)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (37', penalty)</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#6E1E78">
@@ -1762,11 +1762,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#6E1E78;color:#fff">WAC</div>
  </div>
- <div class="match-opp">vs Wolfsberger AC (H) &middot; 5&ndash;2</div>
+ <div class="match-opp">vs Wolfsberger AC&nbsp;(H)<span class="match-score">5&ndash;2</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; hat-trick (22', 65' and 89')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">hat-trick (22', 65' and 89')</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1A1A1A">
@@ -1777,11 +1777,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1A1A1A;color:#fff">SKN</div>
  </div>
- <div class="match-opp">vs SKN St. P&ouml;lten (A) &middot; 0&ndash;6</div>
+ <div class="match-opp">vs SKN St. P&ouml;lten&nbsp;(A)<span class="match-score">0&ndash;6</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (30' and 49')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (30' and 49')</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#003DA5">
@@ -1792,11 +1792,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#003DA5;color:#fff">ADM</div>
  </div>
- <div class="match-opp">vs Admira Wacker (H) &middot; 5&ndash;0</div>
+ <div class="match-opp">vs Admira Wacker&nbsp;(H)<span class="match-score">5&ndash;0</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (28')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (28')</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1B7A3D">
@@ -1807,11 +1807,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1B7A3D;color:#fff">WSG</div>
  </div>
- <div class="match-opp">vs WSG Tirol (A) &middot; 1&ndash;5</div>
+ <div class="match-opp">vs WSG Tirol&nbsp;(A)<span class="match-score">1&ndash;5</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (9')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (9')</span></div>
  </div>
 
  <div class="match-card season-early comp-nor">
@@ -1822,9 +1822,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="6" fill="#fff"/><rect y="6" width="18" height="6" fill="#CF142B"/></svg></div>
  </div>
- <div class="match-opp">vs Malta (H) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Malta&nbsp;(H)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; senior national team debut, no goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">senior national team debut, no goal</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1C2B54">
@@ -1835,11 +1835,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1C2B54;color:#fff">TSV</div>
  </div>
- <div class="match-opp">vs TSV Hartberg (H) &middot; 7&ndash;2</div>
+ <div class="match-opp">vs TSV Hartberg&nbsp;(H)<span class="match-score">7&ndash;2</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; hat-trick (52', 86' and 90')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">hat-trick (52', 86' and 90')</span></div>
  </div>
 
   <div class="match-card is-missed season-early comp-nor">
@@ -1850,7 +1850,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#AA151B"/><rect y="3" width="18" height="6" fill="#F1BF00"/></svg></div>
  </div>
- <div class="match-opp">vs Spain (H) &middot; 1&ndash;1</div>
+ <div class="match-opp">vs Spain&nbsp;(H)<span class="match-score">1&ndash;1</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; injury</div>
  </div>
@@ -1862,7 +1862,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="6" height="12" fill="#002B7F"/><rect x="6" width="6" height="12" fill="#FCD116"/><rect x="12" width="6" height="12" fill="#CE1126"/></svg></div>
  </div>
- <div class="match-opp">vs Romania (A) &middot; 1&ndash;1</div>
+ <div class="match-opp">vs Romania&nbsp;(A)<span class="match-score">1&ndash;1</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; injury</div>
  </div>
@@ -1874,11 +1874,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#046A38;color:#fff">RAP</div>
  </div>
- <div class="match-opp">vs Rapid Wien (H) &middot; 3&ndash;2</div>
+ <div class="match-opp">vs Rapid Wien&nbsp;(H)<span class="match-score">3&ndash;2</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (38')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (38')</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#6E1E78">
@@ -1889,11 +1889,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#6E1E78;color:#fff">WAC</div>
  </div>
- <div class="match-opp">vs Wolfsberger AC (A) &middot; 0&ndash;3</div>
+ <div class="match-opp">vs Wolfsberger AC&nbsp;(A)<span class="match-score">0&ndash;3</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; hat-trick (4', 76' and 88')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">hat-trick (4', 76' and 88')</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1B7A3D">
@@ -1904,11 +1904,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1B7A3D;color:#fff">WSG</div>
  </div>
- <div class="match-opp">vs WSG Tirol (H) &middot; 5&ndash;1</div>
+ <div class="match-opp">vs WSG Tirol&nbsp;(H)<span class="match-score">5&ndash;1</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (9')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (9')</span></div>
  </div>
 
  <div class="match-card card-divider season-early comp-bundesliga">
@@ -1934,11 +1934,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#BA3733;color:#fff">FCA</div>
  </div>
- <div class="match-opp">vs Augsburg (A) &middot; 3&ndash;5</div>
+ <div class="match-opp">vs Augsburg&nbsp;(A)<span class="match-score">3&ndash;5</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played &middot; hat-trick in 23 minutes (59', 71' and 79') &mdash; off the bench on his Dortmund debut, the fastest Bundesliga hat-trick on debut</div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-label">Played</span><span class="status-desc">23-min. hat-trick off the bench</span></div>
  </div>
 
  <div class="match-card is-record season-early comp-bundesliga" style="--opp-c1:#E2001A">
@@ -1949,11 +1949,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#E2001A;color:#fff">KOE</div>
  </div>
- <div class="match-opp">vs FC K&ouml;ln (H) &middot; 5&ndash;1</div>
+ <div class="match-opp">vs FC K&ouml;ln&nbsp;(H)<span class="match-score">5&ndash;1</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played &middot; 2 goals (77' and 87') &mdash; the first player ever with 5 goals in his first two Bundesliga games</div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-label">Played</span><span class="status-desc">2 goals (77' and 87') &mdash; the first player ever with 5 goals in his first two Bundesliga games</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#FFD100">
@@ -1964,11 +1964,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#FFD100;color:#14171c">FCU</div>
  </div>
- <div class="match-opp">vs Union Berlin (H) &middot; 5&ndash;0</div>
+ <div class="match-opp">vs Union Berlin&nbsp;(H)<span class="match-score">5&ndash;0</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (18' and 71')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (18' and 71')</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#E1000F">
@@ -1979,11 +1979,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#E1000F;color:#fff">SGE</div>
  </div>
- <div class="match-opp">vs Eintracht Frankfurt (H) &middot; 4&ndash;0</div>
+ <div class="match-opp">vs Eintracht Frankfurt&nbsp;(H)<span class="match-score">4&ndash;0</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (54')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (54')</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#009036">
@@ -1994,11 +1994,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#009036;color:#fff">SVW</div>
  </div>
- <div class="match-opp">vs Werder Bremen (A) &middot; 0&ndash;2</div>
+ <div class="match-opp">vs Werder Bremen&nbsp;(A)<span class="match-score">0&ndash;2</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (66')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (66')</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#004D9D">
@@ -2009,11 +2009,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#004D9D;color:#fff">S04</div>
  </div>
- <div class="match-opp">vs Schalke 04 (H) &middot; 4&ndash;0</div>
+ <div class="match-opp">vs Schalke 04&nbsp;(H)<span class="match-score">4&ndash;0</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (29') &mdash; Ruhr derby</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (29') &mdash; Ruhr derby</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#C8102E">
@@ -2024,11 +2024,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#C8102E;color:#fff">F95</div>
  </div>
- <div class="match-opp">vs Fortuna D&uuml;sseldorf (A) &middot; 0&ndash;1</div>
+ <div class="match-opp">vs Fortuna D&uuml;sseldorf&nbsp;(A)<span class="match-score">0&ndash;1</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (90+5', header in stoppage time)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (90+5', header in stoppage time)</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#DD0741">
@@ -2039,11 +2039,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DD0741;color:#fff">RBL</div>
  </div>
- <div class="match-opp">vs RB Leipzig (H) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs RB Leipzig&nbsp;(H)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (30' and 90+3')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (30' and 90+3')</span></div>
  </div>
 
   <div class="match-card season-early comp-nor">
@@ -2054,11 +2054,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#ED2939"/><rect y="4" width="18" height="4" fill="#fff"/></svg></div>
  </div>
- <div class="match-opp">vs Austria (H) &middot; 1&ndash;2</div>
+ <div class="match-opp">vs Austria&nbsp;(H)<span class="match-score">1&ndash;2</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (66&prime;) &mdash; his first international goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (66&prime;) &mdash; his first international goal</span></div>
  </div>
  <div class="match-card season-early comp-nor">
  <div class="match-comp nor">NT</div>
@@ -2068,12 +2068,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><rect x="8" width="2" height="12" fill="#D00C27"/><rect y="5" width="18" height="2" fill="#D00C27"/></svg></div>
  </div>
- <div class="match-opp">vs Northern Ireland (A) &middot; 5&ndash;1</div>
+ <div class="match-opp">vs Northern Ireland&nbsp;(A)<span class="match-score">5&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals</span></div>
  </div>
 <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1D1D1B">
  <div class="match-comp bundesliga">BL</div>
@@ -2083,11 +2083,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1D1D1B;color:#fff">BMG</div>
  </div>
- <div class="match-opp">vs Gladbach (H) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Gladbach&nbsp;(H)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (54', penalty, and 77') &mdash; season opener</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (54', penalty, and 77') &mdash; season opener</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#000000">
@@ -2098,11 +2098,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#000000;color:#fff">SCF</div>
  </div>
- <div class="match-opp">vs Freiburg (H) &middot; 4&ndash;0</div>
+ <div class="match-opp">vs Freiburg&nbsp;(H)<span class="match-score">4&ndash;0</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (31' and 66')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (31' and 66')</span></div>
  </div>
 
   <div class="match-card season-early comp-nor">
@@ -2113,9 +2113,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#C6363C"/><rect y="4" width="18" height="4" fill="#0C4076"/><rect y="8" width="18" height="4" fill="#fff"/></svg></div>
  </div>
- <div class="match-opp">vs Serbia (H) &middot; 1&ndash;2</div>
+ <div class="match-opp">vs Serbia&nbsp;(H)<span class="match-score">1&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; lost in extra time, eliminated from Euro 2020 play-offs</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; lost in extra time, eliminated from Euro 2020 play-offs</span></div>
  </div>
  <div class="match-card season-early comp-nor">
  <div class="match-comp nor">NT</div>
@@ -2125,13 +2125,13 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="6" height="12" fill="#002B7F"/><rect x="6" width="6" height="12" fill="#FCD116"/><rect x="12" width="6" height="12" fill="#CE1126"/></svg></div>
  </div>
- <div class="match-opp">vs Romania (H) &middot; 4&ndash;0</div>
+ <div class="match-opp">vs Romania&nbsp;(H)<span class="match-score">4&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; hat-trick (13&prime;, 64&prime; and 74&prime;) &mdash; his first senior hat-trick, both assisted by &Oslash;degaard</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">hat-trick (13&prime;, 64&prime;, 74&prime;) &mdash; his first senior hat-trick</span></div>
  </div>
  <div class="match-card season-early comp-nor">
  <div class="match-comp nor">NT</div>
@@ -2141,9 +2141,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><rect x="8" width="2" height="12" fill="#D00C27"/><rect y="5" width="18" height="2" fill="#D00C27"/></svg></div>
  </div>
- <div class="match-opp">vs Northern Ireland (H) &middot; 1&ndash;0</div>
+ <div class="match-opp">vs Northern Ireland&nbsp;(H)<span class="match-score">1&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal</span></div>
  </div>
 <div class="match-card season-early comp-bundesliga" style="--opp-c1:#004D9D">
  <div class="match-comp bundesliga">BL</div>
@@ -2153,11 +2153,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#004D9D;color:#fff">S04</div>
  </div>
- <div class="match-opp">vs Schalke 04 (H) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Schalke 04&nbsp;(H)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (61') &mdash; Ruhr derby</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (61') &mdash; Ruhr derby</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#DC052D">
@@ -2168,11 +2168,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DC052D;color:#fff">FCB</div>
  </div>
- <div class="match-opp">vs Bayern Munich (H) &middot; 2&ndash;3</div>
+ <div class="match-opp">vs Bayern Munich&nbsp;(H)<span class="match-score">2&ndash;3</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (83')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (83')</span></div>
  </div>
 
   <div class="match-card season-early comp-nor">
@@ -2183,9 +2183,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#ED2939"/><rect y="4" width="18" height="4" fill="#fff"/></svg></div>
  </div>
- <div class="match-opp">vs Austria (A) &middot; 1&ndash;1</div>
+ <div class="match-opp">vs Austria&nbsp;(A)<span class="match-score">1&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; finished as the Nations League B top scorer with 6 goals</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; finished as the Nations League B top scorer with 6 goals</span></div>
  </div>
 <div class="match-card is-record season-early comp-bundesliga" style="--opp-c1:#005CA9">
  <div class="match-comp bundesliga">BL</div>
@@ -2195,11 +2195,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#005CA9;color:#fff">BSC</div>
  </div>
- <div class="match-opp">vs Hertha Berlin (A) &middot; 2&ndash;5</div>
+ <div class="match-opp">vs Hertha Berlin&nbsp;(A)<span class="match-score">2&ndash;5</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played &middot; 4 goals (47', 49', 62' and 79')</div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-label">Played</span><span class="status-desc">4 goals (47', 49', 62', 79')</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#DD0741">
@@ -2210,11 +2210,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DD0741;color:#fff">RBL</div>
  </div>
- <div class="match-opp">vs RB Leipzig (A) &middot; 1&ndash;3</div>
+ <div class="match-opp">vs RB Leipzig&nbsp;(A)<span class="match-score">1&ndash;3</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (72' and 84')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (72' and 84')</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1D1D1B">
@@ -2225,11 +2225,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1D1D1B;color:#fff">BMG</div>
  </div>
- <div class="match-opp">vs Gladbach (A) &middot; 4&ndash;2</div>
+ <div class="match-opp">vs Gladbach&nbsp;(A)<span class="match-score">4&ndash;2</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (23' and 29')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (23' and 29')</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1961B5">
@@ -2240,11 +2240,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1961B5;color:#fff">TSG</div>
  </div>
- <div class="match-opp">vs Hoffenheim (H) &middot; 2&ndash;2</div>
+ <div class="match-opp">vs Hoffenheim&nbsp;(H)<span class="match-score">2&ndash;2</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (81', rescued a draw)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (81', rescued a draw)</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#004D9D">
@@ -2255,11 +2255,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#004D9D;color:#fff">S04</div>
  </div>
- <div class="match-opp">vs Schalke 04 (A) &middot; 0&ndash;4</div>
+ <div class="match-opp">vs Schalke 04&nbsp;(A)<span class="match-score">0&ndash;4</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (45' and 78') &mdash; Ruhr derby</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (45' and 78') &mdash; Ruhr derby</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#DC052D">
@@ -2270,11 +2270,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DC052D;color:#fff">FCB</div>
  </div>
- <div class="match-opp">vs Bayern Munich (A) &middot; 4&ndash;2</div>
+ <div class="match-opp">vs Bayern Munich&nbsp;(A)<span class="match-score">4&ndash;2</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (2' and 9') &mdash; Der Klassiker</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (2' and 9') &mdash; Der Klassiker</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#E2001A">
@@ -2285,11 +2285,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#E2001A;color:#fff">KOE</div>
  </div>
- <div class="match-opp">vs FC K&ouml;ln (A) &middot; 2&ndash;2</div>
+ <div class="match-opp">vs FC K&ouml;ln&nbsp;(A)<span class="match-score">2&ndash;2</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (3' and 90')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (3' and 90')</span></div>
  </div>
 
   <div class="match-card season-early comp-nor">
@@ -2300,9 +2300,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="8" fill="#fff"/><rect y="8" width="18" height="4" fill="#D00C27"/></svg></div>
  </div>
- <div class="match-opp">vs Gibraltar (A) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Gibraltar&nbsp;(A)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal</span></div>
  </div>
  <div class="match-card season-early comp-nor">
  <div class="match-comp nor">NT</div>
@@ -2312,9 +2312,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#E30A17"/><circle cx="8" cy="6" r="2.4" fill="#fff"/><circle cx="8.8" cy="6" r="2" fill="#E30A17"/><polygon points="10.8,6 9.6,5.6 9.9,6.6 9.3,5.8 10.2,5.5" fill="#fff"/></svg></div>
  </div>
- <div class="match-opp">vs Turkey (H) &middot; 0&ndash;3</div>
+ <div class="match-opp">vs Turkey&nbsp;(H)<span class="match-score">0&ndash;3</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; had one ruled out for offside</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; had one ruled out for offside</span></div>
  </div>
  <div class="match-card season-early comp-nor">
  <div class="match-comp nor">NT</div>
@@ -2324,9 +2324,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#C40308"/><rect x="0.6" y="0.6" width="16.8" height="10.8" fill="none" stroke="#D4AF37" stroke-width="0.6"/></svg></div>
  </div>
- <div class="match-opp">vs Montenegro (A) &middot; 1&ndash;0</div>
+ <div class="match-opp">vs Montenegro&nbsp;(A)<span class="match-score">1&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal</span></div>
  </div>
 <div class="match-card season-early comp-bundesliga" style="--opp-c1:#009036">
  <div class="match-comp bundesliga">BL</div>
@@ -2336,11 +2336,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#009036;color:#fff">SVW</div>
  </div>
- <div class="match-opp">vs Werder Bremen (H) &middot; 4&ndash;1</div>
+ <div class="match-opp">vs Werder Bremen&nbsp;(H)<span class="match-score">4&ndash;1</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (34', penalty, and 38')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (34', penalty, and 38')</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#65B32E">
@@ -2351,11 +2351,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#65B32E;color:#14171c">WOB</div>
  </div>
- <div class="match-opp">vs Wolfsburg (A) &middot; 0&ndash;2</div>
+ <div class="match-opp">vs Wolfsburg&nbsp;(A)<span class="match-score">0&ndash;2</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (12' and 68')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (12' and 68')</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#E32221">
@@ -2366,11 +2366,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#E32221;color:#fff">B04</div>
  </div>
- <div class="match-opp">vs Bayer Leverkusen (H) &middot; 3&ndash;1</div>
+ <div class="match-opp">vs Bayer Leverkusen&nbsp;(H)<span class="match-score">3&ndash;1</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (5' and 84')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (5' and 84')</span></div>
  </div>
 
   <div class="match-card season-early comp-nor">
@@ -2381,11 +2381,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#ED2939"/><rect y="4" width="18" height="4" fill="#fff"/><rect y="8" width="18" height="4" fill="#00A1DE"/></svg></div>
  </div>
- <div class="match-opp">vs Luxembourg (N) &middot; 1&ndash;0</div>
+ <div class="match-opp">vs Luxembourg&nbsp;(N)<span class="match-score">1&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (90&plus;2&prime;)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (90&plus;2&prime;)</span></div>
  </div>
  <div class="match-card season-early comp-nor">
  <div class="match-comp nor">NT</div>
@@ -2395,9 +2395,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><rect y="0" width="18" height="1.5" fill="#0D5EAF"/><rect y="3" width="18" height="1.5" fill="#0D5EAF"/><rect y="6" width="18" height="1.5" fill="#0D5EAF"/><rect y="9" width="18" height="1.5" fill="#0D5EAF"/><rect width="7" height="7" fill="#0D5EAF"/><rect x="2.5" width="2" height="7" fill="#fff"/><rect y="2.5" width="7" height="2" fill="#fff"/></svg></div>
  </div>
- <div class="match-opp">vs Greece (N) &middot; 1&ndash;2</div>
+ <div class="match-opp">vs Greece&nbsp;(N)<span class="match-score">1&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal</span></div>
  </div>
 <div class="match-card season-early comp-bundesliga" style="--opp-c1:#E1000F">
  <div class="match-comp bundesliga">BL</div>
@@ -2407,11 +2407,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#E1000F;color:#fff">SGE</div>
  </div>
- <div class="match-opp">vs Eintracht Frankfurt (H) &middot; 5&ndash;2</div>
+ <div class="match-opp">vs Eintracht Frankfurt&nbsp;(H)<span class="match-score">5&ndash;2</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (34' and 70') &mdash; season opener</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (34' and 70') &mdash; season opener</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1961B5">
@@ -2422,11 +2422,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1961B5;color:#fff">TSG</div>
  </div>
- <div class="match-opp">vs Hoffenheim (H) &middot; 3&ndash;2</div>
+ <div class="match-opp">vs Hoffenheim&nbsp;(H)<span class="match-score">3&ndash;2</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (90+1', match-winner in stoppage time)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (90+1', match-winner in stoppage time)</span></div>
  </div>
 
   <div class="match-card season-early comp-nor">
@@ -2437,11 +2437,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#AE1C28"/><rect y="4" width="18" height="4" fill="#fff"/><rect y="8" width="18" height="4" fill="#21468B"/></svg></div>
  </div>
- <div class="match-opp">vs Netherlands (H) &middot; 1&ndash;1</div>
+ <div class="match-opp">vs Netherlands&nbsp;(H)<span class="match-score">1&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (20&prime;)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (20&prime;)</span></div>
  </div>
  <div class="match-card season-early comp-nor">
  <div class="match-comp nor">NT</div>
@@ -2451,11 +2451,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#9E3039"/><rect y="5" width="18" height="2" fill="#fff"/></svg></div>
  </div>
- <div class="match-opp">vs Latvia (A) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Latvia&nbsp;(A)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (20&prime;, penalty)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (20&prime;, penalty)</span></div>
  </div>
  <div class="match-card season-early comp-nor">
  <div class="match-comp nor">NT</div>
@@ -2465,13 +2465,13 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="8" fill="#fff"/><rect y="8" width="18" height="4" fill="#D00C27"/></svg></div>
  </div>
- <div class="match-opp">vs Gibraltar (H) &middot; 5&ndash;1</div>
+ <div class="match-opp">vs Gibraltar&nbsp;(H)<span class="match-score">5&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; hat-trick (27&prime;, 39&prime; and 90&plus;1&prime;)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">hat-trick (27&prime;, 39&prime; and 90&plus;1&prime;)</span></div>
  </div>
 <div class="match-card season-early comp-bundesliga" style="--opp-c1:#E32221">
  <div class="match-comp bundesliga">BL</div>
@@ -2481,11 +2481,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#E32221;color:#fff">B04</div>
  </div>
- <div class="match-opp">vs Bayer Leverkusen (A) &middot; 3&ndash;4</div>
+ <div class="match-opp">vs Bayer Leverkusen&nbsp;(A)<span class="match-score">3&ndash;4</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (37', header, and 77', penalty) &mdash; turned a 0&ndash;3 deficit into a win</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (37', header, and 77', penalty) &mdash; turned a 0&ndash;3 deficit into a win</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#FFD100">
@@ -2496,11 +2496,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#FFD100;color:#14171c">FCU</div>
  </div>
- <div class="match-opp">vs Union Berlin (H) &middot; 4&ndash;2</div>
+ <div class="match-opp">vs Union Berlin&nbsp;(H)<span class="match-score">4&ndash;2</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (24', header, and 83')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (24', header, and 83')</span></div>
  </div>
 
   <div class="match-card is-missed season-early comp-nor">
@@ -2511,7 +2511,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#E30A17"/><circle cx="8" cy="6" r="2.4" fill="#fff"/><circle cx="8.8" cy="6" r="2" fill="#E30A17"/><polygon points="10.8,6 9.6,5.6 9.9,6.6 9.3,5.8 10.2,5.5" fill="#fff"/></svg></div>
  </div>
- <div class="match-opp">vs Turkey (A) &middot; 1&ndash;1</div>
+ <div class="match-opp">vs Turkey&nbsp;(A)<span class="match-score">1&ndash;1</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; injury</div>
  </div>
@@ -2523,7 +2523,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#C40308"/><rect x="0.6" y="0.6" width="16.8" height="10.8" fill="none" stroke="#D4AF37" stroke-width="0.6"/></svg></div>
  </div>
- <div class="match-opp">vs Montenegro (H) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Montenegro&nbsp;(H)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; injury</div>
  </div>
@@ -2535,11 +2535,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#C4122E;color:#fff">M05</div>
  </div>
- <div class="match-opp">vs Mainz 05 (H) &middot; 3&ndash;1</div>
+ <div class="match-opp">vs Mainz 05&nbsp;(H)<span class="match-score">3&ndash;1</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (54', penalty, and 90+4')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (54', penalty, and 90+4')</span></div>
  </div>
 
   <div class="match-card is-missed season-early comp-nor">
@@ -2550,7 +2550,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#9E3039"/><rect y="5" width="18" height="2" fill="#fff"/></svg></div>
  </div>
- <div class="match-opp">vs Latvia (H) &middot; 0&ndash;0</div>
+ <div class="match-opp">vs Latvia&nbsp;(H)<span class="match-score">0&ndash;0</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; injury</div>
  </div>
@@ -2562,7 +2562,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#AE1C28"/><rect y="4" width="18" height="4" fill="#fff"/><rect y="8" width="18" height="4" fill="#21468B"/></svg></div>
  </div>
- <div class="match-opp">vs Netherlands (A) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Netherlands&nbsp;(A)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; injury &mdash; Norway finished 3rd in the group, eliminated from the 2022 World Cup</div>
  </div>
@@ -2574,11 +2574,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#65B32E;color:#14171c">WOB</div>
  </div>
- <div class="match-opp">vs Wolfsburg (A) &middot; 1&ndash;3</div>
+ <div class="match-opp">vs Wolfsburg&nbsp;(A)<span class="match-score">1&ndash;3</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (80') &mdash; comeback from injury</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (80') &mdash; comeback from injury</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#DC052D">
@@ -2589,11 +2589,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DC052D;color:#fff">FCB</div>
  </div>
- <div class="match-opp">vs Bayern Munich (H) &middot; 2&ndash;3</div>
+ <div class="match-opp">vs Bayern Munich&nbsp;(H)<span class="match-score">2&ndash;3</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (48')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (48')</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#00643C">
@@ -2604,11 +2604,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#00643C;color:#fff">SGF</div>
  </div>
- <div class="match-opp">vs Greuther F&uuml;rth (H) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Greuther F&uuml;rth&nbsp;(H)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (33', penalty, and 82')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (33', penalty, and 82')</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#000000">
@@ -2619,11 +2619,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#000000;color:#fff">SCF</div>
  </div>
- <div class="match-opp">vs Freiburg (H) &middot; 5&ndash;1</div>
+ <div class="match-opp">vs Freiburg&nbsp;(H)<span class="match-score">5&ndash;1</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (45+1' and 75')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (45+1' and 75')</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#1961B5">
@@ -2634,11 +2634,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1961B5;color:#fff">TSG</div>
  </div>
- <div class="match-opp">vs Hoffenheim (A) &middot; 2&ndash;3</div>
+ <div class="match-opp">vs Hoffenheim&nbsp;(A)<span class="match-score">2&ndash;3</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (6')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (6')</span></div>
  </div>
 
   <div class="match-card season-early comp-nor">
@@ -2649,11 +2649,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#fff"/><rect y="4" width="18" height="4" fill="#0B4EA2"/><rect y="8" width="18" height="4" fill="#EE1C25"/></svg></div>
  </div>
- <div class="match-opp">vs Slovakia (H) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Slovakia&nbsp;(H)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (77&prime;)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (77&prime;)</span></div>
  </div>
  <div class="match-card season-early comp-nor">
  <div class="match-comp nor">NT</div>
@@ -2663,12 +2663,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#D90012"/><rect y="4" width="18" height="4" fill="#0033A0"/><rect y="8" width="18" height="4" fill="#F2A800"/></svg></div>
  </div>
- <div class="match-opp">vs Armenia (H) &middot; 9&ndash;0</div>
+ <div class="match-opp">vs Armenia&nbsp;(H)<span class="match-score">9&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (24&prime; and 45&plus;1&prime;)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (24&prime; and 45&plus;1&prime;)</span></div>
  </div>
 <div class="match-card season-early comp-bundesliga" style="--opp-c1:#65B32E">
  <div class="match-comp bundesliga">BL</div>
@@ -2678,11 +2678,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#65B32E;color:#14171c">WOB</div>
  </div>
- <div class="match-opp">vs Wolfsburg (H) &middot; 6&ndash;1</div>
+ <div class="match-opp">vs Wolfsburg&nbsp;(H)<span class="match-score">6&ndash;1</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (38' and 54') &mdash; first goals since January</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (38' and 54') &mdash; first goals since January</span></div>
  </div>
 
  <div class="match-card is-record season-early comp-bundesliga" style="--opp-c1:#1C3F94">
@@ -2693,11 +2693,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1C3F94;color:#fff">BOC</div>
  </div>
- <div class="match-opp">vs Bochum (A) &middot; 4&ndash;3</div>
+ <div class="match-opp">vs Bochum&nbsp;(A)<span class="match-score">4&ndash;3</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played &middot; hat-trick (18' and 30' from the penalty spot, 62' from open play)</div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-label">Played</span><span class="status-desc">hat-trick (18', 30' pens., 62' open play)</span></div>
  </div>
 
  <div class="match-card season-early comp-bundesliga" style="--opp-c1:#005CA9">
@@ -2708,11 +2708,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#005CA9;color:#fff">BSC</div>
  </div>
- <div class="match-opp">vs Hertha Berlin (H) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Hertha Berlin&nbsp;(H)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons">
 <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (68', penalty) &mdash; final game for Dortmund</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (68', penalty) &mdash; final game for Dortmund</span></div>
  </div>
 
   <div class="match-card season-early comp-nor">
@@ -2723,11 +2723,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#C6363C"/><rect y="4" width="18" height="4" fill="#0C4076"/><rect y="8" width="18" height="4" fill="#fff"/></svg></div>
  </div>
- <div class="match-opp">vs Serbia (A) &middot; 1&ndash;0</div>
+ <div class="match-opp">vs Serbia&nbsp;(A)<span class="match-score">1&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (26&prime;)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (26&prime;)</span></div>
  </div>
  <div class="match-card season-early comp-nor">
  <div class="match-comp nor">NT</div>
@@ -2737,12 +2737,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#006AA7"/><rect x="6" width="2" height="12" fill="#FECC00"/><rect y="5" width="18" height="2" fill="#FECC00"/></svg></div>
  </div>
- <div class="match-opp">vs Sweden (A) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Sweden&nbsp;(A)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (20&prime;, penalty, and 69&prime;)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (20&prime;, penalty, and 69&prime;)</span></div>
  </div>
  <div class="match-card season-early comp-nor">
  <div class="match-comp nor">NT</div>
@@ -2752,9 +2752,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#fff"/><rect y="4" width="18" height="4" fill="#005DA4"/><rect y="8" width="18" height="4" fill="#ED1C24"/></svg></div>
  </div>
- <div class="match-opp">vs Slovenia (H) &middot; 0&ndash;0</div>
+ <div class="match-opp">vs Slovenia&nbsp;(H)<span class="match-score">0&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal</span></div>
  </div>
  <div class="match-card season-early comp-nor">
  <div class="match-comp nor">NT</div>
@@ -2764,13 +2764,13 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#006AA7"/><rect x="6" width="2" height="12" fill="#FECC00"/><rect y="5" width="18" height="2" fill="#FECC00"/></svg></div>
  </div>
- <div class="match-opp">vs Sweden (H) &middot; 3&ndash;2</div>
+ <div class="match-opp">vs Sweden&nbsp;(H)<span class="match-score">3&ndash;2</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip icon-boot"><svg viewBox="0 0 24 24" width="39" height="39"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="url(#bootGold)" stroke="#6b4d0f" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="url(#bootGold)" stroke="#6b4d0f" stroke-width="0.6"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#6b4d0f" stroke-width="1" stroke-linecap="round"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (10&prime;, header, and 54&prime;, penalty) + 1 assist (77&prime;)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (10&prime; header, 54&prime; pen.) + 1 assist (77&prime;)</span></div>
  </div>
 <div class="match-card season-2223 comp-pl" style="--opp-c1:#7A263A">
  <div class="match-comp pl">PL</div>
@@ -2780,12 +2780,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
  </div>
- <div class="match-opp">vs West Ham (A) &middot; 0&ndash;2</div>
+ <div class="match-opp">vs West Ham&nbsp;(A)<span class="match-score">0&ndash;2</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (penalty + from open play) &mdash; City debut</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (penalty + from open play) &mdash; City debut</span></div>
  </div>
 
  <div class="match-card season-2223 comp-pl" style="--opp-c1:#B50E12">
@@ -2796,11 +2796,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
  </div>
- <div class="match-opp">vs Bournemouth (H) &middot; 4&ndash;0</div>
+ <div class="match-opp">vs Bournemouth&nbsp;(H)<span class="match-score">4&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip icon-boot"><svg viewBox="0 0 24 24" width="39" height="39"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="url(#bootGold)" stroke="#6b4d0f" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="url(#bootGold)" stroke="#6b4d0f" stroke-width="0.6"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#6b4d0f" stroke-width="1" stroke-linecap="round"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 assist, no goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 assist, no goal</span></div>
  </div>
 
  <div class="match-card season-2223 comp-pl" style="--opp-c1:#241F20">
@@ -2811,11 +2811,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
  </div>
- <div class="match-opp">vs Newcastle (A) &middot; 3&ndash;3</div>
+ <div class="match-opp">vs Newcastle&nbsp;(A)<span class="match-score">3&ndash;3</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (rescued a point after going 0&ndash;2 down)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (rescued a point after going 0&ndash;2 down)</span></div>
  </div>
 
  <div class="match-card is-record season-2223 comp-pl" style="--opp-c1:#1B458F">
@@ -2826,13 +2826,13 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
  </div>
- <div class="match-opp">vs Crystal Palace (H) &middot; 4&ndash;2</div>
+ <div class="match-opp">vs Crystal Palace&nbsp;(H)<span class="match-score">4&ndash;2</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played &middot; hat-trick (19 min., turned a 0&ndash;2 deficit into a win) &mdash; first City hat-trick</div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-label">Played</span><span class="status-desc">hat-trick in 19 min., turned 0&ndash;2 into a win</span></div>
  </div>
 
  <div class="match-card is-record season-2223 comp-pl" style="--opp-c1:#DD0000">
@@ -2843,13 +2843,13 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
  </div>
- <div class="match-opp">vs Nottingham Forest (H) &middot; 6&ndash;0</div>
+ <div class="match-opp">vs Nottingham Forest&nbsp;(H)<span class="match-score">6&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played &middot; hat-trick in 38 min. &mdash; 9 goals in 5 games, PL record for the start of a club career</div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-label">Played</span><span class="status-desc">hat-trick in 38 minutes</span></div>
  </div>
 
   <div class="match-card season-2223 comp-nor">
@@ -2860,11 +2860,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#fff"/><rect y="4" width="18" height="4" fill="#005DA4"/><rect y="8" width="18" height="4" fill="#ED1C24"/></svg></div>
  </div>
- <div class="match-opp">vs Slovenia (A) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Slovenia&nbsp;(A)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (47&prime;)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (47&prime;)</span></div>
  </div>
  <div class="match-card season-2223 comp-nor">
  <div class="match-comp nor">NT</div>
@@ -2874,9 +2874,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#C6363C"/><rect y="4" width="18" height="4" fill="#0C4076"/><rect y="8" width="18" height="4" fill="#fff"/></svg></div>
  </div>
- <div class="match-opp">vs Serbia (H) &middot; 0&ndash;2</div>
+ <div class="match-opp">vs Serbia&nbsp;(H)<span class="match-score">0&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal</span></div>
  </div>
 <div class="match-card season-2223 comp-pl" style="--opp-c1:#DA020E">
  <div class="match-comp pl">PL</div>
@@ -2886,13 +2886,13 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
  </div>
- <div class="match-opp">vs Man United (H) &middot; 6&ndash;3</div>
+ <div class="match-opp">vs Man United&nbsp;(H)<span class="match-score">6&ndash;3</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; hat-trick in the derby &mdash; the first PL hat-trick in a Manchester derby since 1970</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">hat-trick in the derby &mdash; first PL hat-trick in a Man. derby</span></div>
  </div>
 
   <div class="match-card is-missed season-2223 comp-nor">
@@ -2903,7 +2903,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="6" height="12" fill="#169B62"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#FF883E"/></svg></div>
  </div>
- <div class="match-opp">vs Republic of Ireland (A) &middot; 1&ndash;2</div>
+ <div class="match-opp">vs Republic of Ireland&nbsp;(A)<span class="match-score">1&ndash;2</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; injury</div>
  </div>
@@ -2915,15 +2915,15 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DD0741;color:#fff">RBL</div>
  </div>
- <div class="match-opp">vs RB Leipzig (H) &middot; 7&ndash;0</div>
- <div class="match-icons">
+ <div class="match-opp">vs RB Leipzig&nbsp;(H)<span class="match-score">7&ndash;0</span></div>
+ <div class="match-icons icon-stack">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played &middot; 5 goals (CL round of 16, 2nd leg) &mdash; matches Messi's record for most goals in a single CL match</div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-label">Played</span><span class="status-desc">5 goals (CL round of 16, 2nd leg) &mdash; matches Messi's record for most goals in a single CL match</span></div>
  </div>
 
   <div class="match-card is-missed season-2223 comp-nor">
@@ -2934,7 +2934,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#AA151B"/><rect y="3" width="18" height="6" fill="#F1BF00"/></svg></div>
  </div>
- <div class="match-opp">vs Spain (A) &middot; 0&ndash;3</div>
+ <div class="match-opp">vs Spain&nbsp;(A)<span class="match-score">0&ndash;3</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; injury</div>
  </div>
@@ -2946,7 +2946,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><rect x="7.5" width="3" height="12" fill="#FF0000"/><rect y="5" width="18" height="2" fill="#FF0000"/></svg></div>
  </div>
- <div class="match-opp">vs Georgia (A) &middot; 1&ndash;1</div>
+ <div class="match-opp">vs Georgia&nbsp;(A)<span class="match-score">1&ndash;1</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; injury</div>
  </div>
@@ -2958,9 +2958,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
  </div>
- <div class="match-opp">vs Man United (N) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Man United&nbsp;(N)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; the FA Cup won at Wembley, the second leg of the 2022/23 treble</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; the FA Cup won at Wembley, the second leg of the 2022/23 treble</span></div>
  </div>
 
  <div class="match-card season-2223 comp-cl" style="--opp-c1:#010E80">
@@ -2971,9 +2971,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#010E80;color:#fff">INT</div>
  </div>
- <div class="match-opp">vs Inter Milan (N) &middot; 1&ndash;0</div>
+ <div class="match-opp">vs Inter Milan&nbsp;(N)<span class="match-score">1&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Champions League won in Istanbul (Rodri settled it), the treble completed &mdash; season&#39;s top scorer with 12 CL goals</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Champions League won in Istanbul (Rodri settled it), the treble completed &mdash; season&#39;s top scorer with 12 CL goals</span></div>
  </div>
 
   <div class="match-card season-2223 comp-nor">
@@ -2984,11 +2984,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#0065BD"/><line x1="0" y1="0" x2="18" y2="12" stroke="#fff" stroke-width="2.4"/><line x1="18" y1="0" x2="0" y2="12" stroke="#fff" stroke-width="2.4"/></svg></div>
  </div>
- <div class="match-opp">vs Scotland (H) &middot; 1&ndash;2</div>
+ <div class="match-opp">vs Scotland&nbsp;(H)<span class="match-score">1&ndash;2</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (61&prime;, penalty)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (61&prime;, penalty)</span></div>
  </div>
  <div class="match-card season-2223 comp-nor">
  <div class="match-comp nor">NT</div>
@@ -2998,12 +2998,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><ellipse cx="9" cy="6.5" rx="4" ry="1.8" fill="#D57800"/></svg></div>
  </div>
- <div class="match-opp">vs Cyprus (H) &middot; 3&ndash;1</div>
+ <div class="match-opp">vs Cyprus&nbsp;(H)<span class="match-score">3&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (56&prime; and 60&prime;, both penalties)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (56&prime; and 60&prime;, both penalties)</span></div>
  </div>
 <div class="match-card season-2324 comp-pl" style="--opp-c1:#6C1D45">
  <div class="match-comp pl">PL</div>
@@ -3013,12 +3013,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#6C1D45;color:#fff">BUR</div>
  </div>
- <div class="match-opp">vs Burnley (A) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Burnley&nbsp;(A)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (4&#39; and 36&#39;) &mdash; season opener</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (4&#39; and 36&#39;) &mdash; season opener</span></div>
  </div>
 
  <div class="match-card season-2324 comp-pl" style="--opp-c1:#2b2f36">
@@ -3029,13 +3029,13 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
  </div>
- <div class="match-opp">vs Fulham (H) &middot; 5&ndash;1</div>
+ <div class="match-opp">vs Fulham&nbsp;(H)<span class="match-score">5&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; hat-trick in the 2nd half</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">hat-trick in the 2nd half</span></div>
  </div>
 
   <div class="match-card season-2324 comp-nor">
@@ -3046,11 +3046,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><rect x="7.5" width="3" height="12" fill="#FF0000"/><rect y="5" width="18" height="2" fill="#FF0000"/></svg></div>
  </div>
- <div class="match-opp">vs Georgia (H) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Georgia&nbsp;(H)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (25&prime;)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (25&prime;)</span></div>
  </div>
  <div class="match-card season-2324 comp-nor">
  <div class="match-comp nor">NT</div>
@@ -3060,12 +3060,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><ellipse cx="9" cy="6.5" rx="4" ry="1.8" fill="#D57800"/></svg></div>
  </div>
- <div class="match-opp">vs Cyprus (A) &middot; 0&ndash;4</div>
+ <div class="match-opp">vs Cyprus&nbsp;(A)<span class="match-score">0&ndash;4</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (65&prime; and 72&prime;, header) &mdash; his 27th international goal, on his 27th cap</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (65&prime; and 72&prime;, header) &mdash; his 27th international goal, on his 27th cap</span></div>
  </div>
  <div class="match-card season-2324 comp-nor">
  <div class="match-comp nor">NT</div>
@@ -3075,9 +3075,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#AA151B"/><rect y="3" width="18" height="6" fill="#F1BF00"/></svg></div>
  </div>
- <div class="match-opp">vs Spain (H) &middot; 0&ndash;1</div>
+ <div class="match-opp">vs Spain&nbsp;(H)<span class="match-score">0&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal</span></div>
  </div>
 <div class="match-card season-2324 comp-pl" style="--opp-c1:#DA020E">
  <div class="match-comp pl">PL</div>
@@ -3087,13 +3087,13 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
  </div>
- <div class="match-opp">vs Man United (A) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Man United&nbsp;(A)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip icon-boot"><svg viewBox="0 0 24 24" width="39" height="39"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="url(#bootGold)" stroke="#6b4d0f" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="url(#bootGold)" stroke="#6b4d0f" stroke-width="0.6"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#6b4d0f" stroke-width="1" stroke-linecap="round"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (penalty + header) + 1 assist &mdash; derby win at Old Trafford</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals + 1 assist &mdash; derby win at Old Trafford</span></div>
  </div>
 
   <div class="match-card season-2324 comp-nor">
@@ -3104,7 +3104,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><rect x="6.5" width="3" height="12" fill="#D21034"/><rect y="4.5" width="18" height="3" fill="#D21034"/><rect x="7.3" width="1.6" height="12" fill="#0058A8"/><rect y="5.2" width="18" height="1.6" fill="#0058A8"/></svg></div>
  </div>
- <div class="match-opp">vs Faroe Islands (H) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Faroe Islands&nbsp;(H)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons"></div>
  <div class="match-status played">Sub, on for the 2nd half &middot; no goal &mdash; injured his ankle during the match</div>
  </div>
@@ -3116,7 +3116,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#0065BD"/><line x1="0" y1="0" x2="18" y2="12" stroke="#fff" stroke-width="2.4"/><line x1="18" y1="0" x2="0" y2="12" stroke="#fff" stroke-width="2.4"/></svg></div>
  </div>
- <div class="match-opp">vs Scotland (A) &middot; 3&ndash;3</div>
+ <div class="match-opp">vs Scotland&nbsp;(A)<span class="match-score">3&ndash;3</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; ankle injury from the Faroe Islands friendly &mdash; Norway finished 3rd in the group, eliminated from Euro 2024</div>
  </div>
@@ -3128,9 +3128,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#6C1D45;color:#fff">BUR</div>
  </div>
- <div class="match-opp">vs Burnley (H) &middot; 3&ndash;1</div>
+ <div class="match-opp">vs Burnley&nbsp;(H)<span class="match-score">3&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; comeback as a substitute (71&#39;) after 56 days out with a foot injury, no goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">comeback as a substitute (71&#39;) after 56 days out with a foot injury, no goal</span></div>
  </div>
 
   <div class="match-card season-2324 comp-nor">
@@ -3141,7 +3141,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="6" fill="#fff"/><rect y="6" width="18" height="6" fill="#D7141A"/><polygon points="0,0 0,12 8,6" fill="#11457E"/></svg></div>
  </div>
- <div class="match-opp">vs Czechia (H) &middot; 1&ndash;2</div>
+ <div class="match-opp">vs Czechia&nbsp;(H)<span class="match-score">1&ndash;2</span></div>
  <div class="match-icons"></div>
  <div class="match-status played">Played, subbed off (75&prime;) &middot; no goal</div>
  </div>
@@ -3153,7 +3153,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#fff"/><rect y="4" width="18" height="4" fill="#0B4EA2"/><rect y="8" width="18" height="4" fill="#EE1C25"/></svg></div>
  </div>
- <div class="match-opp">vs Slovakia (H) &middot; 1&ndash;1</div>
+ <div class="match-opp">vs Slovakia&nbsp;(H)<span class="match-score">1&ndash;1</span></div>
  <div class="match-icons"></div>
  <div class="match-status played">Sub, on (62&prime;) &middot; no goal &mdash; missed a penalty</div>
  </div>
@@ -3165,9 +3165,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
  </div>
- <div class="match-opp">vs Real Madrid (H) &middot; 1&ndash;1 AET</div>
+ <div class="match-opp">vs Real Madrid&nbsp;(H)<span class="match-score">1&ndash;1 AET</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal (hit the crossbar) &mdash; City were knocked out on penalties (3&ndash;4) after 4&ndash;4 on aggregate, CL round of 16</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal, hit the crossbar &mdash; out on penalties (3&ndash;4) after 4&ndash;4 agg., CL last 16</span></div>
  </div>
 
  <div class="match-card season-2324 comp-pl" style="--opp-c1:#FDB913">
@@ -3178,14 +3178,14 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
  </div>
- <div class="match-opp">vs Wolves (H) &middot; 5&ndash;1</div>
+ <div class="match-opp">vs Wolves&nbsp;(H)<span class="match-score">5&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 4 goals (2 penalties + a header hat-trick before the break, 4th goal in the 2nd half)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">4 goals &mdash; 2 pens. + header hat-trick before the break</span></div>
  </div>
 
   <div class="match-card season-2324 comp-nor">
@@ -3196,13 +3196,13 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#244AA5"/><circle cx="6" cy="4" r="0.5" fill="#fff"/><circle cx="8" cy="3" r="0.5" fill="#fff"/><circle cx="10" cy="3" r="0.5" fill="#fff"/><circle cx="12" cy="4" r="0.5" fill="#fff"/><circle cx="9" cy="5.5" r="0.5" fill="#fff"/><circle cx="7" cy="6" r="0.5" fill="#fff"/></svg></div>
  </div>
- <div class="match-opp">vs Kosovo (H) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Kosovo&nbsp;(H)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; hat-trick (15&prime;, header, 70&prime; and 73&prime;)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">hat-trick (15&prime;, header, 70&prime; and 73&prime;)</span></div>
  </div>
  <div class="match-card season-2324 comp-nor">
  <div class="match-comp nor">NT</div>
@@ -3212,11 +3212,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#C60C30"/><rect x="6" width="2" height="12" fill="#fff"/><rect y="5" width="18" height="2" fill="#fff"/></svg></div>
  </div>
- <div class="match-opp">vs Denmark (A) &middot; 3&ndash;1</div>
+ <div class="match-opp">vs Denmark&nbsp;(A)<span class="match-score">3&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (72&prime;)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (72&prime;)</span></div>
  </div>
 <div class="match-card season-2425 comp-friendly" style="--opp-c1:#018749">
  <div class="match-comp friendly">FRIENDLY</div>
@@ -3226,11 +3226,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#018749;color:#fff">CEL</div>
  </div>
- <div class="match-opp">vs Celtic (N) &middot; 3&ndash;4</div>
+ <div class="match-opp">vs Celtic&nbsp;(N)<span class="match-score">3&ndash;4</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (57', header)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (57', header)</span></div>
  </div>
 
  <div class="match-card season-2425 comp-friendly" style="--opp-c1:#FB090B">
@@ -3241,11 +3241,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#FB090B;color:#fff">MIL</div>
  </div>
- <div class="match-opp">vs AC Milan (N) &middot; 2&ndash;3</div>
+ <div class="match-opp">vs AC Milan&nbsp;(N)<span class="match-score">2&ndash;3</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (19')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (19')</span></div>
  </div>
 
  <div class="match-card season-2425 comp-friendly" style="--opp-c1:#A50044">
@@ -3256,9 +3256,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#A50044;color:#fff">BAR</div>
  </div>
- <div class="match-opp">vs Barcelona (N) &middot; 2&ndash;2</div>
+ <div class="match-opp">vs Barcelona&nbsp;(N)<span class="match-score">2&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — substituted at half-time</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — substituted at half-time</span></div>
  </div>
 
  <div class="match-card season-2425 comp-friendly" style="--opp-c1:#034694">
@@ -3269,13 +3269,13 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
  </div>
- <div class="match-opp">vs Chelsea (N) &middot; 4&ndash;2</div>
+ <div class="match-opp">vs Chelsea&nbsp;(N)<span class="match-score">4&ndash;2</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; hat-trick (4', penalty, 5' and 56')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">hat-trick (4', penalty, 5' and 56')</span></div>
  </div>
 
  <div class="match-card season-2425 comp-shield" style="--opp-c1:#DA020E">
@@ -3286,9 +3286,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
  </div>
- <div class="match-opp">vs Man United (N) &middot; 1&ndash;1</div>
+ <div class="match-opp">vs Man United&nbsp;(N)<span class="match-score">1&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — City won on penalties, Community Shield</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — City won on penalties, Community Shield</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#034694">
@@ -3299,11 +3299,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
  </div>
- <div class="match-opp">vs Chelsea (A) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Chelsea&nbsp;(A)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (18') — season opener</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (18') — season opener</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#0044A9">
@@ -3314,13 +3314,13 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#0044A9;color:#fff">IPS</div>
  </div>
- <div class="match-opp">vs Ipswich (H) &middot; 4&ndash;1</div>
+ <div class="match-opp">vs Ipswich&nbsp;(H)<span class="match-score">4&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; hat-trick</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">hat-trick</span></div>
  </div>
 
  <div class="match-card is-record season-2425 comp-pl" style="--opp-c1:#7A263A">
@@ -3331,13 +3331,13 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
  </div>
- <div class="match-opp">vs West Ham (A) &middot; 3&ndash;1</div>
+ <div class="match-opp">vs West Ham&nbsp;(A)<span class="match-score">3&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played &middot; hat-trick &mdash; two straight trebles, 11th City hat-trick in 102 games</div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-label">Played</span><span class="status-desc">hat-trick &mdash; back-to-back trebles</span></div>
  </div>
 
   <div class="match-card season-2425 comp-nor">
@@ -3348,9 +3348,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#00AFCA"/><circle cx="9" cy="6" r="2.2" fill="#FEC50C"/></svg></div>
  </div>
- <div class="match-opp">vs Kazakhstan (A) &middot; 0&ndash;0</div>
+ <div class="match-opp">vs Kazakhstan&nbsp;(A)<span class="match-score">0&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal (hit the post)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal (hit the post)</span></div>
  </div>
  <div class="match-card season-2425 comp-nor">
  <div class="match-comp nor">NT</div>
@@ -3360,11 +3360,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#ED2939"/><rect y="4" width="18" height="4" fill="#fff"/></svg></div>
  </div>
- <div class="match-opp">vs Austria (H) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Austria&nbsp;(H)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (80&prime;)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (80&prime;)</span></div>
  </div>
 <div class="match-card season-2425 comp-pl" style="--opp-c1:#E30613">
  <div class="match-comp pl">PL</div>
@@ -3374,12 +3374,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
  </div>
- <div class="match-opp">vs Brentford (H) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Brentford&nbsp;(H)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (19' and 32')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (19' and 32')</span></div>
  </div>
 
  <div class="match-card season-2425 comp-cl" style="--opp-c1:#010E80">
@@ -3390,9 +3390,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#010E80;color:#fff">INT</div>
  </div>
- <div class="match-opp">vs Inter (H) &middot; 0&ndash;0</div>
+ <div class="match-opp">vs Inter&nbsp;(H)<span class="match-score">0&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#EF0107">
@@ -3403,11 +3403,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
  </div>
- <div class="match-opp">vs Arsenal (H) &middot; 2&ndash;2</div>
+ <div class="match-opp">vs Arsenal&nbsp;(H)<span class="match-score">2&ndash;2</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (9')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (9')</span></div>
  </div>
 
  <div class="match-card is-missed season-2425 comp-efl" style="--opp-c1:#FBEE23">
@@ -3418,7 +3418,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#FBEE23;color:#14171c">WAT</div>
  </div>
- <div class="match-opp">vs Watford (H) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Watford&nbsp;(H)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; rotated out</div>
  </div>
@@ -3431,9 +3431,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
  </div>
- <div class="match-opp">vs Newcastle (A) &middot; 1&ndash;1</div>
+ <div class="match-opp">vs Newcastle&nbsp;(A)<span class="match-score">1&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — headed effort off target</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — headed effort off target</span></div>
  </div>
 
  <div class="match-card season-2425 comp-cl" style="--opp-c1:#005BAC">
@@ -3444,11 +3444,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#005BAC;color:#fff">SLO</div>
  </div>
- <div class="match-opp">vs Slovan Bratislava (A) &middot; 4&ndash;0</div>
+ <div class="match-opp">vs Slovan Bratislava&nbsp;(A)<span class="match-score">4&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (58')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (58')</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#2b2f36">
@@ -3459,9 +3459,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
  </div>
- <div class="match-opp">vs Fulham (H) &middot; 3&ndash;2</div>
+ <div class="match-opp">vs Fulham&nbsp;(H)<span class="match-score">3&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — Kovacic (2) and Doku scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — Kovacic (2) and Doku scored</span></div>
  </div>
 
   <div class="match-card is-record season-2425 comp-nor">
@@ -3472,12 +3472,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#fff"/><rect y="4" width="18" height="4" fill="#005DA4"/><rect y="8" width="18" height="4" fill="#ED1C24"/></svg></div>
  </div>
- <div class="match-opp">vs Slovenia (H) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Slovenia&nbsp;(H)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played, captain &middot; 2 goals (7&prime; and 62&prime;) &mdash; became Norway&rsquo;s all-time leading international goalscorer, overtaking J&oslash;rgen Juve&rsquo;s 87-year-old record</div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played, captain &middot; 2 goals (7&prime;, 62&prime;) &mdash; Norway&rsquo;s all-time top scorer, past J&oslash;rgen Juve&rsquo;s 87-year record</div>
  </div>
  <div class="match-card season-2425 comp-nor">
  <div class="match-comp nor">NT</div>
@@ -3487,9 +3487,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#ED2939"/><rect y="4" width="18" height="4" fill="#fff"/></svg></div>
  </div>
- <div class="match-opp">vs Austria (A) &middot; 1&ndash;5</div>
+ <div class="match-opp">vs Austria&nbsp;(A)<span class="match-score">1&ndash;5</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal (hit the post)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal (hit the post)</span></div>
  </div>
 <div class="match-card season-2425 comp-pl" style="--opp-c1:#FDB913">
  <div class="match-comp pl">PL</div>
@@ -3499,9 +3499,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
  </div>
- <div class="match-opp">vs Wolves (A) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Wolves&nbsp;(A)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — Gvardiol and Stones scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — Gvardiol and Stones scored</span></div>
  </div>
 
  <div class="match-card season-2425 comp-cl" style="--opp-c1:#A6192E">
@@ -3512,12 +3512,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#A6192E;color:#fff">SPA</div>
  </div>
- <div class="match-opp">vs AC Sparta Prague (H) &middot; 5&ndash;0</div>
+ <div class="match-opp">vs AC Sparta Prague&nbsp;(H)<span class="match-score">5&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (58', backheel, and 68')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (58', backheel, and 68')</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#D71920">
@@ -3528,11 +3528,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#D71920;color:#fff">SOU</div>
  </div>
- <div class="match-opp">vs Southampton (H) &middot; 1&ndash;0</div>
+ <div class="match-opp">vs Southampton&nbsp;(H)<span class="match-score">1&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (5')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (5')</span></div>
  </div>
 
  <div class="match-card is-missed season-2425 comp-efl" style="--opp-c1:#132257">
@@ -3543,7 +3543,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
  </div>
- <div class="match-opp">vs Tottenham (A) &middot; 1&ndash;2</div>
+ <div class="match-opp">vs Tottenham&nbsp;(A)<span class="match-score">1&ndash;2</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; unused substitute — an entire match on the bench</div>
  </div>
@@ -3556,9 +3556,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
  </div>
- <div class="match-opp">vs Bournemouth (A) &middot; 1&ndash;2</div>
+ <div class="match-opp">vs Bournemouth&nbsp;(A)<span class="match-score">1&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal</span></div>
  </div>
 
  <div class="match-card season-2425 comp-cl" style="--opp-c1:#007A3D">
@@ -3569,9 +3569,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#007A3D;color:#fff">SCP</div>
  </div>
- <div class="match-opp">vs Sporting CP (A) &middot; 1&ndash;4</div>
+ <div class="match-opp">vs Sporting CP&nbsp;(A)<span class="match-score">1&ndash;4</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — missed a penalty (69'), hit the crossbar</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — missed a penalty (69'), hit the crossbar</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#0057B8">
@@ -3582,11 +3582,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
  </div>
- <div class="match-opp">vs Brighton (A) &middot; 1&ndash;2</div>
+ <div class="match-opp">vs Brighton&nbsp;(A)<span class="match-score">1&ndash;2</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (23')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (23')</span></div>
  </div>
 
   <div class="match-card season-2425 comp-nor">
@@ -3597,12 +3597,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#fff"/><rect y="4" width="18" height="4" fill="#005DA4"/><rect y="8" width="18" height="4" fill="#ED1C24"/></svg></div>
  </div>
- <div class="match-opp">vs Slovenia (A) &middot; 4&ndash;1</div>
+ <div class="match-opp">vs Slovenia&nbsp;(A)<span class="match-score">4&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip icon-boot"><svg viewBox="0 0 24 24" width="39" height="39"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="url(#bootGold)" stroke="#6b4d0f" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="url(#bootGold)" stroke="#6b4d0f" stroke-width="0.6"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#6b4d0f" stroke-width="1" stroke-linecap="round"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (45&prime;) + 1 assist (79&prime;)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (45&prime;) + 1 assist (79&prime;)</span></div>
  </div>
  <div class="match-card season-2425 comp-nor">
  <div class="match-comp nor">NT</div>
@@ -3612,13 +3612,13 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#00AFCA"/><circle cx="9" cy="6" r="2.2" fill="#FEC50C"/></svg></div>
  </div>
- <div class="match-opp">vs Kazakhstan (H) &middot; 5&ndash;0</div>
+ <div class="match-opp">vs Kazakhstan&nbsp;(H)<span class="match-score">5&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; hat-trick (23&prime;, 37&prime; and 71&prime;) &mdash; sealed top spot in the Nations League group and promotion to League A</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">hat-trick (23&prime;, 37&prime;, 71&prime;) &mdash; sealed promotion to League A</span></div>
  </div>
 <div class="match-card season-2425 comp-pl" style="--opp-c1:#132257">
  <div class="match-comp pl">PL</div>
@@ -3628,9 +3628,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
  </div>
- <div class="match-opp">vs Tottenham (H) &middot; 0&ndash;4</div>
+ <div class="match-opp">vs Tottenham&nbsp;(H)<span class="match-score">0&ndash;4</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — Maddison (2), Porro and Johnson scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — Maddison (2), Porro and Johnson scored</span></div>
  </div>
 
  <div class="match-card season-2425 comp-cl" style="--opp-c1:#E2000F">
@@ -3641,12 +3641,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#E2000F;color:#fff">FEY</div>
  </div>
- <div class="match-opp">vs Feyenoord (H) &middot; 3&ndash;3</div>
+ <div class="match-opp">vs Feyenoord&nbsp;(H)<span class="match-score">3&ndash;3</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (45', penalty, and 48')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (45', penalty, and 48')</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#C8102E">
@@ -3657,9 +3657,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
  </div>
- <div class="match-opp">vs Liverpool (A) &middot; 0&ndash;2</div>
+ <div class="match-opp">vs Liverpool&nbsp;(A)<span class="match-score">0&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#DD0000">
@@ -3670,9 +3670,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
  </div>
- <div class="match-opp">vs Nottingham Forest (H) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Nottingham Forest&nbsp;(H)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — involved in the build-up to Doku's goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — involved in the build-up to Doku's goal</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#1B458F">
@@ -3683,11 +3683,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
  </div>
- <div class="match-opp">vs Crystal Palace (A) &middot; 2&ndash;2</div>
+ <div class="match-opp">vs Crystal Palace&nbsp;(A)<span class="match-score">2&ndash;2</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (30', header)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (30', header)</span></div>
  </div>
 
  <div class="match-card season-2425 comp-cl" style="--opp-c1:#000000">
@@ -3698,9 +3698,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#000000;color:#fff">JUV</div>
  </div>
- <div class="match-opp">vs Juventus (A) &middot; 0&ndash;2</div>
+ <div class="match-opp">vs Juventus&nbsp;(A)<span class="match-score">0&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — Vlahovic and McKennie scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — Vlahovic and McKennie scored</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#DA020E">
@@ -3711,9 +3711,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
  </div>
- <div class="match-opp">vs Man United (H) &middot; 1&ndash;2</div>
+ <div class="match-opp">vs Man United&nbsp;(H)<span class="match-score">1&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — Gvardiol scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — Gvardiol scored</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#670E36">
@@ -3724,9 +3724,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
  </div>
- <div class="match-opp">vs Aston Villa (A) &middot; 1&ndash;2</div>
+ <div class="match-opp">vs Aston Villa&nbsp;(A)<span class="match-score">1&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#003399">
@@ -3737,9 +3737,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#003399;color:#fff">EVE</div>
  </div>
- <div class="match-opp">vs Everton (H) &middot; 1&ndash;1</div>
+ <div class="match-opp">vs Everton&nbsp;(H)<span class="match-score">1&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — penalty saved</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — penalty saved</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#003090">
@@ -3750,11 +3750,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#003090;color:#fff">LEI</div>
  </div>
- <div class="match-opp">vs Leicester City (A) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Leicester City&nbsp;(A)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (74', header, assisted by Savinho)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (74', header, assisted by Savinho)</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#7A263A">
@@ -3765,12 +3765,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
  </div>
- <div class="match-opp">vs West Ham (H) &middot; 4&ndash;1</div>
+ <div class="match-opp">vs West Ham&nbsp;(H)<span class="match-score">4&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (42' and 55', both assisted by Savinho)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (42' and 55', both assisted by Savinho)</span></div>
  </div>
 
  <div class="match-card is-missed season-2425 comp-cup" style="--opp-c1:#FF6900">
@@ -3781,7 +3781,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#FF6900;color:#fff">SAL</div>
  </div>
- <div class="match-opp">vs Salford City (H) &middot; 8&ndash;0</div>
+ <div class="match-opp">vs Salford City&nbsp;(H)<span class="match-score">8&ndash;0</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; unused substitute</div>
  </div>
@@ -3794,9 +3794,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
  </div>
- <div class="match-opp">vs Brentford (A) &middot; 2&ndash;2</div>
+ <div class="match-opp">vs Brentford&nbsp;(A)<span class="match-score">2&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — Foden scored twice</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — Foden scored twice</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#0044A9">
@@ -3807,11 +3807,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#0044A9;color:#fff">IPS</div>
  </div>
- <div class="match-opp">vs Ipswich Town (A) &middot; 6&ndash;0</div>
+ <div class="match-opp">vs Ipswich Town&nbsp;(A)<span class="match-score">6&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (57')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (57')</span></div>
  </div>
 
  <div class="match-card season-2425 comp-cl" style="--opp-c1:#004170">
@@ -3822,11 +3822,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#004170;color:#fff">PSG</div>
  </div>
- <div class="match-opp">vs PSG (A) &middot; 2&ndash;4</div>
+ <div class="match-opp">vs PSG&nbsp;(A)<span class="match-score">2&ndash;4</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (53')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (53')</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#034694">
@@ -3837,11 +3837,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
  </div>
- <div class="match-opp">vs Chelsea (H) &middot; 3&ndash;1</div>
+ <div class="match-opp">vs Chelsea&nbsp;(H)<span class="match-score">3&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (68', chip) — assisted Foden's 87th-minute goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (68', chip) — assisted Foden's 87th-minute goal</span></div>
  </div>
 
  <div class="match-card season-2425 comp-cl" style="--opp-c1:#0E3A6D">
@@ -3852,9 +3852,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#0E3A6D;color:#fff">BRU</div>
  </div>
- <div class="match-opp">vs Club Brugge (H) &middot; 3&ndash;1</div>
+ <div class="match-opp">vs Club Brugge&nbsp;(H)<span class="match-score">3&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — shot saved</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — shot saved</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#EF0107">
@@ -3865,11 +3865,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
  </div>
- <div class="match-opp">vs Arsenal (A) &middot; 1&ndash;5</div>
+ <div class="match-opp">vs Arsenal&nbsp;(A)<span class="match-score">1&ndash;5</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (55', header) — his 250th career goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (55', header) — his 250th career goal</span></div>
  </div>
 
  <div class="match-card is-missed season-2425 comp-cup" style="--opp-c1:#D2122E">
@@ -3880,7 +3880,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#D2122E;color:#fff">ORI</div>
  </div>
- <div class="match-opp">vs Leyton Orient (A) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Leyton Orient&nbsp;(A)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad</div>
  </div>
@@ -3893,12 +3893,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
  </div>
- <div class="match-opp">vs Real Madrid (H) &middot; 2&ndash;3</div>
+ <div class="match-opp">vs Real Madrid&nbsp;(H)<span class="match-score">2&ndash;3</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (knockout play-off, 1st round)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (knockout play-off, 1st round)</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#241F20">
@@ -3909,9 +3909,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
  </div>
- <div class="match-opp">vs Newcastle (H) &middot; 4&ndash;0</div>
+ <div class="match-opp">vs Newcastle&nbsp;(H)<span class="match-score">4&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — substituted 87' with a knock, Marmoush scored a hat-trick</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — substituted 87' with a knock, Marmoush scored a hat-trick</span></div>
  </div>
 
  <div class="match-card is-missed season-2425 comp-cl" style="--opp-c1:#2c2c54">
@@ -3922,7 +3922,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
  </div>
- <div class="match-opp">vs Real Madrid (A) &middot; 1&ndash;3</div>
+ <div class="match-opp">vs Real Madrid&nbsp;(A)<span class="match-score">1&ndash;3</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; knee injury</div>
  </div>
@@ -3935,9 +3935,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
  </div>
- <div class="match-opp">vs Liverpool (H) &middot; 0&ndash;2</div>
+ <div class="match-opp">vs Liverpool&nbsp;(H)<span class="match-score">0&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#132257">
@@ -3948,11 +3948,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
  </div>
- <div class="match-opp">vs Tottenham (A) &middot; 1&ndash;0</div>
+ <div class="match-opp">vs Tottenham&nbsp;(A)<span class="match-score">1&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (12')</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (12')</span></div>
  </div>
 
  <div class="match-card season-2425 comp-cup" style="--opp-c1:#005C36">
@@ -3963,9 +3963,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#005C36;color:#fff">PLY</div>
  </div>
- <div class="match-opp">vs Plymouth Argyle (H) &middot; 3&ndash;1</div>
+ <div class="match-opp">vs Plymouth Argyle&nbsp;(H)<span class="match-score">3&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — assisted De Bruyne's 90th-minute goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — assisted De Bruyne's 90th-minute goal</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#DD0000">
@@ -3976,9 +3976,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
  </div>
- <div class="match-opp">vs Nottingham Forest (A) &middot; 0&ndash;1</div>
+ <div class="match-opp">vs Nottingham Forest&nbsp;(A)<span class="match-score">0&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — Hudson-Odoi scored the only goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — Hudson-Odoi scored the only goal</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#0057B8">
@@ -3989,11 +3989,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
  </div>
- <div class="match-opp">vs Brighton (H) &middot; 2&ndash;2</div>
+ <div class="match-opp">vs Brighton&nbsp;(H)<span class="match-score">2&ndash;2</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (11', penalty)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (11', penalty)</span></div>
  </div>
  <div class="match-card season-2425 comp-cup" style="--opp-c1:#B50E12">
  <div class="match-comp cup">CUP</div>
@@ -4003,11 +4003,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
  </div>
- <div class="match-opp">vs Bournemouth (A) &middot; 1&ndash;2</div>
+ <div class="match-opp">vs Bournemouth&nbsp;(A)<span class="match-score">1&ndash;2</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (49', equalizer) &mdash; missed a penalty (14'), injured and substituted after scoring, FA Cup quarter-final</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (49', equalizer) &mdash; missed a penalty (14'), injured and substituted after scoring, FA Cup quarter-final</span></div>
  </div>
 
  <div class="match-card season-2425 comp-nor">
@@ -4018,11 +4018,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="6" height="12" fill="#0033A0"/><rect x="6" width="6" height="12" fill="#FFD200"/><rect x="12" width="6" height="12" fill="#CC092F"/></svg></div>
  </div>
- <div class="match-opp">vs Moldova (A) &middot; 0&ndash;5</div>
+ <div class="match-opp">vs Moldova&nbsp;(A)<span class="match-score">0&ndash;5</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (World Cup qualifying opener)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (World Cup qualifying opener)</span></div>
  </div>
 
  <div class="match-card season-2425 comp-nor">
@@ -4033,11 +4033,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 22 16" width="77" height="55"><rect width="22" height="16" fill="#fff"/><rect y="2" width="22" height="2" fill="#0038b8"/><rect y="12" width="22" height="2" fill="#0038b8"/><polygon points="11,5 13.3,9 8.7,9" fill="none" stroke="#0038b8" stroke-width="0.6"/><polygon points="11,10.5 8.7,6.5 13.3,6.5" fill="none" stroke="#0038b8" stroke-width="0.6"/></svg></div>
  </div>
- <div class="match-opp">vs Israel (A) &middot; 2&ndash;4</div>
+ <div class="match-opp">vs Israel&nbsp;(A)<span class="match-score">2&ndash;4</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal</span></div>
  </div>
 
  <div class="match-card season-2425 comp-cup" style="--opp-c1:#B50E12">
@@ -4048,11 +4048,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
  </div>
- <div class="match-opp">vs Bournemouth (A) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Bournemouth&nbsp;(A)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (equalizer, 49&#39;, missed a penalty before the break) &mdash; ankle injury, substituted 60&#39;, FA Cup quarter-final</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (equalizer, 49&#39;, missed a penalty before the break) &mdash; ankle injury, substituted 60&#39;, FA Cup quarter-final</span></div>
  </div>
 
  <div class="match-card is-missed season-2425 comp-pl" style="--opp-c1:#003090">
@@ -4063,7 +4063,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#003090;color:#fff">LEI</div>
  </div>
- <div class="match-opp">vs Leicester City (H) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Leicester City&nbsp;(H)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; ankle injury from the FA Cup</div>
  </div>
@@ -4076,7 +4076,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
  </div>
- <div class="match-opp">vs Man United (A) &middot; 0&ndash;0</div>
+ <div class="match-opp">vs Man United&nbsp;(A)<span class="match-score">0&ndash;0</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; injured, derby</div>
  </div>
@@ -4089,7 +4089,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
  </div>
- <div class="match-opp">vs Crystal Palace (H) &middot; 5&ndash;2</div>
+ <div class="match-opp">vs Crystal Palace&nbsp;(H)<span class="match-score">5&ndash;2</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; injured</div>
  </div>
@@ -4102,7 +4102,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#003399;color:#fff">EVE</div>
  </div>
- <div class="match-opp">vs Everton (A) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Everton&nbsp;(A)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; injured</div>
  </div>
@@ -4115,7 +4115,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
  </div>
- <div class="match-opp">vs Aston Villa (H) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Aston Villa&nbsp;(H)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; injured</div>
  </div>
@@ -4128,7 +4128,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
  </div>
- <div class="match-opp">vs Nottingham Forest (N) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Nottingham Forest&nbsp;(N)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; injured, FA Cup semi-final</div>
  </div>
@@ -4141,7 +4141,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
  </div>
- <div class="match-opp">vs Wolves (H) &middot; 1&ndash;0</div>
+ <div class="match-opp">vs Wolves&nbsp;(H)<span class="match-score">1&ndash;0</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; unused substitute — first match back in the squad after injury</div>
  </div>
@@ -4154,9 +4154,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#D71920;color:#fff">SOU</div>
  </div>
- <div class="match-opp">vs Southampton (A) &middot; 0&ndash;0</div>
+ <div class="match-opp">vs Southampton&nbsp;(A)<span class="match-score">0&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — first start back from injury, headed effort saved</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — first start back from injury, headed effort saved</span></div>
  </div>
 
  <div class="match-card season-2425 comp-cup" style="--opp-c1:#1B458F">
@@ -4167,9 +4167,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
  </div>
- <div class="match-opp">vs Crystal Palace (N) &middot; 0&ndash;1</div>
+ <div class="match-opp">vs Crystal Palace&nbsp;(N)<span class="match-score">0&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; hit the woodwork and had a shot cleared off the line twice, the FA Cup final</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; hit the woodwork and had a shot cleared off the line twice, the FA Cup final</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#B50E12">
@@ -4180,9 +4180,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
  </div>
- <div class="match-opp">vs Bournemouth (H) &middot; 3&ndash;1</div>
+ <div class="match-opp">vs Bournemouth&nbsp;(H)<span class="match-score">3&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal — Marmoush, Bernardo Silva and Nico González scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal — Marmoush, Bernardo Silva and Nico González scored</span></div>
  </div>
 
  <div class="match-card season-2425 comp-pl" style="--opp-c1:#2b2f36">
@@ -4193,11 +4193,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
  </div>
- <div class="match-opp">vs Fulham (A) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Fulham&nbsp;(A)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (72&#39;, penalty) &mdash; G&uuml;ndogan scored the first</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (72&#39;, penalty) &mdash; G&uuml;ndogan scored the first</span></div>
  </div>
 
  <div class="match-card season-2425 comp-nor">
@@ -4208,11 +4208,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="6" height="12" fill="#009246"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#CE2B37"/></svg></div>
  </div>
- <div class="match-opp">vs Italy (H) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Italy&nbsp;(H)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (first win over Italy in 25 years)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (first win over Italy in 25 years)</span></div>
  </div>
 
  <div class="match-card season-2425 comp-nor">
@@ -4223,11 +4223,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 11" width="77" height="47"><rect width="18" height="11" fill="#4891D9"/><rect y="3.67" width="18" height="3.66" fill="#000"/><rect y="7.33" width="18" height="3.67" fill="#fff"/></svg></div>
  </div>
- <div class="match-opp">vs Estonia (A) &middot; 0&ndash;1</div>
+ <div class="match-opp">vs Estonia&nbsp;(A)<span class="match-score">0&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (match-winner)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (match-winner)</span></div>
  </div>
 
  <div class="match-card season-2425 comp-cwc" style="--opp-c1:#EE1C25">
@@ -4238,9 +4238,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#EE1C25;color:#fff">WYD</div>
  </div>
- <div class="match-opp">vs Wydad AC (H) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Wydad AC&nbsp;(H)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Foden and Doku scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Foden and Doku scored</span></div>
  </div>
 
  <div class="match-card season-2425 comp-cwc" style="--opp-c1:#F7A81B">
@@ -4251,11 +4251,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#F7A81B;color:#14171c">ALA</div>
  </div>
- <div class="match-opp">vs Al Ain FC (H) &middot; 6&ndash;0</div>
+ <div class="match-opp">vs Al Ain FC&nbsp;(H)<span class="match-score">6&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (45&#39;+5, penalty) &mdash; G&uuml;ndogan (2), Echeverri, Bobb and Cherki also scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (45&#39;+5, penalty) &mdash; G&uuml;ndogan (2), Echeverri, Bobb and Cherki also scored</span></div>
  </div>
 
  <div class="match-card season-2425 comp-cwc" style="--opp-c1:#000000">
@@ -4266,11 +4266,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#000000;color:#fff">JUV</div>
  </div>
- <div class="match-opp">vs Juventus (A) &middot; 5&ndash;2</div>
+ <div class="match-opp">vs Juventus&nbsp;(A)<span class="match-score">5&ndash;2</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (52&#39;) &mdash; Doku, Foden and Savinho also scored, plus an own goal by Kalulu</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (52&#39;) &mdash; Doku, Foden and Savinho also scored, plus an own goal by Kalulu</span></div>
  </div>
 
  <div class="match-card season-2425 comp-cwc" style="--opp-c1:#003DA5">
@@ -4281,11 +4281,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#003DA5;color:#fff">HIL</div>
  </div>
- <div class="match-opp">vs Al-Hilal (H) &middot; 3&ndash;4</div>
+ <div class="match-opp">vs Al-Hilal&nbsp;(H)<span class="match-score">3&ndash;4</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (55&#39;) &mdash; Bernardo Silva and Foden also scored, lost after extra time</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (55&#39;) &mdash; Bernardo Silva and Foden also scored, lost after extra time</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#FDB913">
@@ -4296,12 +4296,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
  </div>
- <div class="match-opp">vs Wolves (A) &middot; 4&ndash;0</div>
+ <div class="match-opp">vs Wolves&nbsp;(A)<span class="match-score">4&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (season opener, Molineux)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (season opener, Molineux)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#132257">
@@ -4312,9 +4312,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
  </div>
- <div class="match-opp">vs Tottenham (H) &middot; 0&ndash;2</div>
+ <div class="match-opp">vs Tottenham&nbsp;(H)<span class="match-score">0&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; season's first defeat</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; season's first defeat</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#0057B8">
@@ -4325,11 +4325,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
  </div>
- <div class="match-opp">vs Brighton (A) &middot; 1&ndash;2</div>
+ <div class="match-opp">vs Brighton&nbsp;(A)<span class="match-score">1&ndash;2</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (34th min.)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (34th min.)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-nor">
@@ -4340,15 +4340,15 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="6" height="12" fill="#0033A0"/><rect x="6" width="6" height="12" fill="#FFD200"/><rect x="12" width="6" height="12" fill="#CC092F"/></svg></div>
  </div>
- <div class="match-opp">vs Moldova (H) &middot; 11&ndash;1</div>
- <div class="match-icons">
+ <div class="match-opp">vs Moldova&nbsp;(H)<span class="match-score">11&ndash;1</span></div>
+ <div class="match-icons icon-stack">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 5 goals (hat-trick before half-time + 2)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">5 goals (hat-trick before half-time + 2)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#DA020E">
@@ -4359,12 +4359,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
  </div>
- <div class="match-opp">vs Man United (H) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Man United&nbsp;(H)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (derby)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (derby)</span></div>
  </div>
 
  <div class="match-card is-record season-2526 comp-cl" style="--opp-c1:#087bd1">
@@ -4375,11 +4375,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#087bd1;color:#fff">NAP</div>
  </div>
- <div class="match-opp">vs Napoli (H) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Napoli&nbsp;(H)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played &middot; 1 goal &mdash; 50th CL goal, in his 49th game (record)</div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-label">Played</span><span class="status-desc">1 goal &mdash; 50th CL goal, in his 49th game (record)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#EF0107">
@@ -4390,11 +4390,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
  </div>
- <div class="match-opp">vs Arsenal (A) &middot; 1&ndash;1</div>
+ <div class="match-opp">vs Arsenal&nbsp;(A)<span class="match-score">1&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (9th min.)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (9th min.)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-efl" style="--opp-c1:#0E63AD">
@@ -4405,9 +4405,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#0E63AD;color:#fff">HUD</div>
  </div>
- <div class="match-opp">vs Huddersfield Town (A) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Huddersfield Town&nbsp;(A)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Foden and Savinho scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Foden and Savinho scored</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#6C1D45">
@@ -4418,12 +4418,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#6C1D45;color:#fff">BUR</div>
  </div>
- <div class="match-opp">vs Burnley (H) &middot; 5&ndash;1</div>
+ <div class="match-opp">vs Burnley&nbsp;(H)<span class="match-score">5&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals</span></div>
  </div>
 
  <div class="match-card season-2526 comp-cl" style="--opp-c1:#CE1126">
@@ -4434,12 +4434,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#CE1126;color:#fff">MON</div>
  </div>
- <div class="match-opp">vs Monaco (A) &middot; 2&ndash;2</div>
+ <div class="match-opp">vs Monaco&nbsp;(A)<span class="match-score">2&ndash;2</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#E30613">
@@ -4450,11 +4450,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
  </div>
- <div class="match-opp">vs Brentford (A) &middot; 1&ndash;0</div>
+ <div class="match-opp">vs Brentford&nbsp;(A)<span class="match-score">1&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (9th min.) &mdash; the only goal of the match</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (9th min.) &mdash; the only goal of the match</span></div>
  </div>
 
  <div class="match-card is-record season-2526 comp-nor">
@@ -4465,13 +4465,13 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 22 16" width="77" height="55"><rect width="22" height="16" fill="#fff"/><rect y="2" width="22" height="2" fill="#0038b8"/><rect y="12" width="22" height="2" fill="#0038b8"/><polygon points="11,5 13.3,9 8.7,9" fill="none" stroke="#0038b8" stroke-width="0.6"/><polygon points="11,10.5 8.7,6.5 13.3,6.5" fill="none" stroke="#0038b8" stroke-width="0.6"/></svg></div>
  </div>
- <div class="match-opp">vs Israel (H) &middot; 5&ndash;0</div>
+ <div class="match-opp">vs Israel&nbsp;(H)<span class="match-score">5&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played &middot; hat-trick (3 goals, reached 50th international goal)</div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-label">Played</span><span class="status-desc">hat-trick &mdash; his 50th international goal</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#003399">
@@ -4482,12 +4482,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#003399;color:#fff">EVE</div>
  </div>
- <div class="match-opp">vs Everton (H) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Everton&nbsp;(H)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (58th and 63rd min.) &mdash; both City goals</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (58th and 63rd min.) &mdash; both City goals</span></div>
  </div>
 
  <div class="match-card season-2526 comp-cl" style="--opp-c1:#FFE667">
@@ -4498,11 +4498,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#FFE667;color:#14171c">VIL</div>
  </div>
- <div class="match-opp">vs Villarreal (A) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Villarreal&nbsp;(A)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#670E36">
@@ -4513,9 +4513,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
  </div>
- <div class="match-opp">vs Aston Villa (A) &middot; 0&ndash;1</div>
+ <div class="match-opp">vs Aston Villa&nbsp;(A)<span class="match-score">0&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal (team didn't score)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal (team didn't score)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-efl" style="--opp-c1:#000000">
@@ -4526,9 +4526,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#000000;color:#fff">SWA</div>
  </div>
- <div class="match-opp">vs Swansea City (A) &middot; 1&ndash;3</div>
+ <div class="match-opp">vs Swansea City&nbsp;(A)<span class="match-score">1&ndash;3</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Doku, Marmoush and Cherki scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Doku, Marmoush and Cherki scored</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#B50E12">
@@ -4539,12 +4539,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
  </div>
- <div class="match-opp">vs Bournemouth (H) &middot; 3&ndash;1</div>
+ <div class="match-opp">vs Bournemouth&nbsp;(H)<span class="match-score">3&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (17th and 33rd min.) &mdash; Nico O'Reilly also scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (17th and 33rd min.) &mdash; Nico O'Reilly also scored</span></div>
  </div>
 
  <div class="match-card season-2526 comp-cl" style="--opp-c1:#FDE100">
@@ -4555,11 +4555,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#FDE100;color:#14171c">BVB</div>
  </div>
- <div class="match-opp">vs Dortmund (H) &middot; 4&ndash;1</div>
+ <div class="match-opp">vs Dortmund&nbsp;(H)<span class="match-score">4&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (against his former club)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (against his former club)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#C8102E">
@@ -4570,11 +4570,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
  </div>
- <div class="match-opp">vs Liverpool (H) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Liverpool&nbsp;(H)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (29th min.) &mdash; Nico O'Reilly and Doku also scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (29th min.) &mdash; Nico O'Reilly and Doku also scored</span></div>
  </div>
 
  <div class="match-card season-2526 comp-nor">
@@ -4585,12 +4585,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 11" width="77" height="47"><rect width="18" height="11" fill="#4891D9"/><rect y="3.67" width="18" height="3.66" fill="#000"/><rect y="7.33" width="18" height="3.67" fill="#fff"/></svg></div>
  </div>
- <div class="match-opp">vs Estonia (H) &middot; 4&ndash;1</div>
+ <div class="match-opp">vs Estonia&nbsp;(H)<span class="match-score">4&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals</span></div>
  </div>
 
  <div class="match-card season-2526 comp-nor">
@@ -4601,12 +4601,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="6" height="12" fill="#009246"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#CE2B37"/></svg></div>
  </div>
- <div class="match-opp">vs Italy (A) &middot; 1&ndash;4</div>
+ <div class="match-opp">vs Italy&nbsp;(A)<span class="match-score">1&ndash;4</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals &mdash; sealed World Cup qualification at San Siro</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals &mdash; sealed World Cup qualification at San Siro</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#241F20">
@@ -4617,9 +4617,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
  </div>
- <div class="match-opp">vs Newcastle (A) &middot; 1&ndash;2</div>
+ <div class="match-opp">vs Newcastle&nbsp;(A)<span class="match-score">1&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; R&uacute;ben Dias scored City's goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; R&uacute;ben Dias scored City's goal</span></div>
  </div>
 
  <div class="match-card season-2526 comp-cl" style="--opp-c1:#E32219">
@@ -4630,9 +4630,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#E32219;color:#fff">B04</div>
  </div>
- <div class="match-opp">vs Bayer Leverkusen (H) &middot; 0&ndash;2</div>
+ <div class="match-opp">vs Bayer Leverkusen&nbsp;(H)<span class="match-score">0&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal (substitute, City's first CL defeat of the season)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal (substitute, City's first CL defeat of the season)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#1D428A">
@@ -4643,9 +4643,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1D428A;color:#fff">LEE</div>
  </div>
- <div class="match-opp">vs Leeds (H) &middot; 3&ndash;2</div>
+ <div class="match-opp">vs Leeds&nbsp;(H)<span class="match-score">3&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Foden (2) and Gvardiol scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Foden (2) and Gvardiol scored</span></div>
  </div>
 
  <div class="match-card is-record season-2526 comp-pl" style="--opp-c1:#2b2f36">
@@ -4656,11 +4656,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
  </div>
- <div class="match-opp">vs Fulham (A) &middot; 5&ndash;4</div>
+ <div class="match-opp">vs Fulham&nbsp;(A)<span class="match-score">5&ndash;4</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played &middot; 1 goal &mdash; 100th PL goal, in his 111th game (GWR)</div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-label">Played</span><span class="status-desc">1 goal &mdash; 100th PL goal, in his 111th game (GWR)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#EB172B">
@@ -4671,9 +4671,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#EB172B;color:#fff">SUN</div>
  </div>
- <div class="match-opp">vs Sunderland (H) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Sunderland&nbsp;(H)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Dias, Gvardiol and Foden scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Dias, Gvardiol and Foden scored</span></div>
  </div>
 
  <div class="match-card season-2526 comp-cl" style="--opp-c1:#2c2c54">
@@ -4684,11 +4684,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
  </div>
- <div class="match-opp">vs Real Madrid (A) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Real Madrid&nbsp;(A)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (43rd min., penalty) &mdash; Nico O'Reilly scored the first, away win over Real Madrid</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (43rd min., penalty) &mdash; Nico O'Reilly scored the first, away win over Real Madrid</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#1B458F">
@@ -4699,12 +4699,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
  </div>
- <div class="match-opp">vs Crystal Palace (A) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Crystal Palace&nbsp;(A)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (header + penalty)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (header + penalty)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-efl" style="--opp-c1:#E30613">
@@ -4715,9 +4715,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
  </div>
- <div class="match-opp">vs Brentford (H) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Brentford&nbsp;(H)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Cherki and Savinho scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Cherki and Savinho scored</span></div>
  </div>
 
  <div class="match-card is-record season-2526 comp-pl" style="--opp-c1:#7A263A">
@@ -4728,13 +4728,13 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
  </div>
- <div class="match-opp">vs West Ham (H) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs West Ham&nbsp;(H)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip icon-boot"><svg viewBox="0 0 24 24" width="39" height="39"><path d="M4 16.8V9.6c0-.7.5-1.3 1.1-1.5l5-1.7c.5-.2 1-.1 1.4.2l2.9 1.9c.3.2.7.3 1.1.2l3-.7c1.1-.3 2.2.5 2.3 1.6l.3 3c.1 1-.6 1.9-1.6 2.1l-1.7.4" fill="url(#bootGold)" stroke="#6b4d0f" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 16.8c0 1.3 1 2.3 2.3 2.3h13c1.3 0 2.4-.8 2.4-1.9 0-.6-.4-1.1-1-1.3l-4-1.5" fill="url(#bootGold)" stroke="#6b4d0f" stroke-width="0.6"/><path d="M7.3 12.4l2.1 2.1M9.9 10.8l2.1 2.1" stroke="#6b4d0f" stroke-width="1" stroke-linecap="round"/></svg></span>
  </div>
- <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played &middot; 2 goals + 1 assist &mdash; passed 200 goal contributions in Europe's top five leagues</div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-label">Played</span><span class="status-desc">2 goals, 1 assist &mdash; 200 in Europe</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#DD0000">
@@ -4745,9 +4745,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
  </div>
- <div class="match-opp">vs Nottingham Forest (A) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Nottingham Forest&nbsp;(A)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Reijnders and Cherki scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Reijnders and Cherki scored</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#EB172B">
@@ -4758,9 +4758,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#EB172B;color:#fff">SUN</div>
  </div>
- <div class="match-opp">vs Sunderland (A) &middot; 0&ndash;0</div>
+ <div class="match-opp">vs Sunderland&nbsp;(A)<span class="match-score">0&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal (team didn't score)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal (team didn't score)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#034694">
@@ -4771,9 +4771,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
  </div>
- <div class="match-opp">vs Chelsea (H) &middot; 1&ndash;1</div>
+ <div class="match-opp">vs Chelsea&nbsp;(H)<span class="match-score">1&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Reijnders scored City's goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Reijnders scored City's goal</span></div>
  </div>
 
  <div class="match-card is-record season-2526 comp-pl" style="--opp-c1:#0057B8">
@@ -4784,11 +4784,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
  </div>
- <div class="match-opp">vs Brighton (H) &middot; 1&ndash;1</div>
+ <div class="match-opp">vs Brighton&nbsp;(H)<span class="match-score">1&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played &middot; 1 goal (41st min., penalty) &mdash; 150th club goal for City, in his 173rd game &mdash; only two behind joint-fifth (Joe Hayes/Billy Meredith, 152), Colin Bell tops the list with 153</div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-label">Played</span><span class="status-desc">1 goal (41&prime; pen.) &mdash; 150th City goal in his 173rd game, closing in on Colin Bell&#39;s club record of 153</span></div>
  </div>
 
  <div class="match-card season-2526 comp-cup" style="--opp-c1:#DA291C">
@@ -4799,9 +4799,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DA291C;color:#fff">EXE</div>
  </div>
- <div class="match-opp">vs Exeter City (H) &middot; 10&ndash;1</div>
+ <div class="match-opp">vs Exeter City&nbsp;(H)<span class="match-score">10&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; rotated squad, goals spread across 8 different scorers, Haaland not among them</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; rotated squad, goals spread across 8 different scorers, Haaland not among them</span></div>
  </div>
 
  <div class="match-card season-2526 comp-efl" style="--opp-c1:#241F20">
@@ -4812,9 +4812,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
  </div>
- <div class="match-opp">vs Newcastle (A) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Newcastle&nbsp;(A)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Semenyo and Cherki scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Semenyo and Cherki scored</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#DA020E">
@@ -4825,9 +4825,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
  </div>
- <div class="match-opp">vs Man United (A) &middot; 0&ndash;2</div>
+ <div class="match-opp">vs Man United&nbsp;(A)<span class="match-score">0&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal (team didn't score)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal (team didn't score)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-cl" style="--opp-c1:#FFF200">
@@ -4838,9 +4838,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#FFF200;color:#14171c">BOD</div>
  </div>
- <div class="match-opp">vs Bod&oslash;/Glimt (A) &middot; 1&ndash;3</div>
+ <div class="match-opp">vs Bod&oslash;/Glimt&nbsp;(A)<span class="match-score">1&ndash;3</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Cherki scored City's goal, lost to Bod&oslash;/Glimt</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Cherki scored City's goal, lost to Bod&oslash;/Glimt</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#FDB913">
@@ -4851,9 +4851,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#FDB913;color:#14171c">WOL</div>
  </div>
- <div class="match-opp">vs Wolves (H) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Wolves&nbsp;(H)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Marmoush scored, plus an own goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Marmoush scored, plus an own goal</span></div>
  </div>
 
  <div class="match-card season-2526 comp-cl" style="--opp-c1:#A90432">
@@ -4864,11 +4864,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#A90432;color:#fff">GAL</div>
  </div>
- <div class="match-opp">vs Galatasaray (H) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Galatasaray&nbsp;(H)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#132257">
@@ -4879,9 +4879,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#132257;color:#fff">TOT</div>
  </div>
- <div class="match-opp">vs Tottenham (A) &middot; 2&ndash;2</div>
+ <div class="match-opp">vs Tottenham&nbsp;(A)<span class="match-score">2&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Cherki and Semenyo scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Cherki and Semenyo scored</span></div>
  </div>
 
  <div class="match-card season-2526 comp-efl" style="--opp-c1:#241F20">
@@ -4892,9 +4892,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
  </div>
- <div class="match-opp">vs Newcastle (H) &middot; 3&ndash;1</div>
+ <div class="match-opp">vs Newcastle&nbsp;(H)<span class="match-score">3&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Marmoush (2) and Reijnders scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Marmoush (2) and Reijnders scored</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#C8102E">
@@ -4905,11 +4905,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
  </div>
- <div class="match-opp">vs Liverpool (A) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Liverpool&nbsp;(A)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (90+3, penalty, winning goal) &mdash; Bernardo Silva also scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (90+3, penalty, winning goal) &mdash; Bernardo Silva also scored</span></div>
  </div>
 
  <div class="match-card is-record season-2526 comp-pl" style="--opp-c1:#2b2f36">
@@ -4920,11 +4920,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
  </div>
- <div class="match-opp">vs Fulham (H) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Fulham&nbsp;(H)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg>Played &middot; 1 goal (39th min.) &mdash; 153rd club goal, level with Colin Bell &mdash; Semenyo and Nico O'Reilly also scored</div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-label">Played</span><span class="status-desc">1 goal (39th min.) &mdash; 153rd club goal, level with Colin Bell &mdash; Semenyo and Nico O'Reilly also scored</span></div>
  </div>
 
  <div class="match-card season-2526 comp-cup" style="--opp-c1:#FF6900">
@@ -4935,9 +4935,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#FF6900;color:#fff">SAL</div>
  </div>
- <div class="match-opp">vs Salford City (H) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Salford City&nbsp;(H)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; own goal from Alfie Dorrington and a goal from Marc Gu&eacute;hi</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; own goal from Alfie Dorrington and a goal from Marc Gu&eacute;hi</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#241F20">
@@ -4948,9 +4948,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
  </div>
- <div class="match-opp">vs Newcastle (H) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Newcastle&nbsp;(H)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Nico O'Reilly scored both</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Nico O'Reilly scored both</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#1D428A">
@@ -4961,9 +4961,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1D428A;color:#fff">LEE</div>
  </div>
- <div class="match-opp">vs Leeds (A) &middot; 1&ndash;0</div>
+ <div class="match-opp">vs Leeds&nbsp;(A)<span class="match-score">1&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Semenyo scored the only goal of the match</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Semenyo scored the only goal of the match</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#DD0000">
@@ -4974,9 +4974,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
  </div>
- <div class="match-opp">vs Nottingham Forest (H) &middot; 2&ndash;2</div>
+ <div class="match-opp">vs Nottingham Forest&nbsp;(H)<span class="match-score">2&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Semenyo and Rodrigo scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Semenyo and Rodrigo scored</span></div>
  </div>
 
  <div class="match-card season-2526 comp-cup" style="--opp-c1:#241F20">
@@ -4987,9 +4987,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#241F20;color:#fff">NEW</div>
  </div>
- <div class="match-opp">vs Newcastle (A) &middot; 3&ndash;1</div>
+ <div class="match-opp">vs Newcastle&nbsp;(A)<span class="match-score">3&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Savinho and Marmoush (2) scored, FA Cup</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Savinho and Marmoush (2) scored, FA Cup</span></div>
  </div>
 
  <div class="match-card season-2526 comp-cl" style="--opp-c1:#2c2c54">
@@ -5000,9 +5000,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
  </div>
- <div class="match-opp">vs Real Madrid (A) &middot; 0&ndash;3</div>
+ <div class="match-opp">vs Real Madrid&nbsp;(A)<span class="match-score">0&ndash;3</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal (Valverde hat-trick, CL round of 16, 1st leg)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal (Valverde hat-trick, CL round of 16, 1st leg)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#7A263A">
@@ -5013,9 +5013,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#7A263A;color:#fff">WHU</div>
  </div>
- <div class="match-opp">vs West Ham (A) &middot; 1&ndash;1</div>
+ <div class="match-opp">vs West Ham&nbsp;(A)<span class="match-score">1&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Bernardo Silva scored City's goal</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Bernardo Silva scored City's goal</span></div>
  </div>
 
  <div class="match-card season-2526 comp-cl" style="--opp-c1:#2c2c54">
@@ -5026,11 +5026,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#2c2c54;color:#fff">RMA</div>
  </div>
- <div class="match-opp">vs Real Madrid (H) &middot; 1&ndash;2</div>
+ <div class="match-opp">vs Real Madrid&nbsp;(H)<span class="match-score">1&ndash;2</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal &mdash; City won 1&ndash;5 on aggregate (CL round of 16, 2nd leg)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal &mdash; City won 1&ndash;5 on aggregate (CL round of 16, 2nd leg)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-efl" style="--opp-c1:#EF0107">
@@ -5041,9 +5041,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
  </div>
- <div class="match-opp">vs Arsenal (N) &middot; 2&ndash;0</div>
+ <div class="match-opp">vs Arsenal&nbsp;(N)<span class="match-score">2&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; League Cup won at Wembley (goals from Nico O'Reilly x2)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; League Cup won at Wembley (goals from Nico O'Reilly x2)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-cup" style="--opp-c1:#C8102E">
@@ -5054,13 +5054,13 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
  </div>
- <div class="match-opp">vs Liverpool (H) &middot; 4&ndash;0</div>
+ <div class="match-opp">vs Liverpool&nbsp;(H)<span class="match-score">4&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; hat-trick (FA Cup quarter-final)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">hat-trick (FA Cup quarter-final)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#034694">
@@ -5071,9 +5071,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
  </div>
- <div class="match-opp">vs Chelsea (A) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Chelsea&nbsp;(A)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Nico O'Reilly and Doku scored, plus an own goal from Marc Gu&eacute;hi</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Nico O'Reilly and Doku scored, plus an own goal from Marc Gu&eacute;hi</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#EF0107">
@@ -5084,11 +5084,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
  </div>
- <div class="match-opp">vs Arsenal (H) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Arsenal&nbsp;(H)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (66th min.) &mdash; Cherki scored the first</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (66th min.) &mdash; Cherki scored the first</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#6C1D45">
@@ -5099,11 +5099,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#6C1D45;color:#fff">BUR</div>
  </div>
- <div class="match-opp">vs Burnley (A) &middot; 1&ndash;0</div>
+ <div class="match-opp">vs Burnley&nbsp;(A)<span class="match-score">1&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (6th min.) &mdash; the only goal of the match</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (6th min.) &mdash; the only goal of the match</span></div>
  </div>
 
  <div class="match-card season-2526 comp-cup" style="--opp-c1:#D71920">
@@ -5114,9 +5114,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#D71920;color:#fff">SOU</div>
  </div>
- <div class="match-opp">vs Southampton (H) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Southampton&nbsp;(H)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal (FA Cup semi-final)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal (FA Cup semi-final)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#003399">
@@ -5127,11 +5127,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#003399;color:#fff">EVE</div>
  </div>
- <div class="match-opp">vs Everton (A) &middot; 3&ndash;3</div>
+ <div class="match-opp">vs Everton&nbsp;(A)<span class="match-score">3&ndash;3</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (83rd min., equaliser) &mdash; Doku scored twice (43', 90+7)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (83rd min., equaliser) &mdash; Doku scored twice (43', 90+7)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#E30613">
@@ -5142,11 +5142,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#E30613;color:#fff">BRE</div>
  </div>
- <div class="match-opp">vs Brentford (H) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Brentford&nbsp;(H)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (76th min.) &mdash; Doku and Marmoush also scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (76th min.) &mdash; Doku and Marmoush also scored</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#1B458F">
@@ -5157,9 +5157,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
  </div>
- <div class="match-opp">vs Crystal Palace (H) &middot; 3&ndash;0</div>
+ <div class="match-opp">vs Crystal Palace&nbsp;(H)<span class="match-score">3&ndash;0</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Semenyo, Marmoush and Savinho scored</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Semenyo, Marmoush and Savinho scored</span></div>
  </div>
 
  <div class="match-card season-2526 comp-cup" style="--opp-c1:#034694">
@@ -5170,9 +5170,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#034694;color:#fff">CHE</div>
  </div>
- <div class="match-opp">vs Chelsea (A) &middot; 0&ndash;1</div>
+ <div class="match-opp">vs Chelsea&nbsp;(A)<span class="match-score">0&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Semenyo settled it (72nd min.), FA Cup won</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Semenyo settled it (72nd min.), FA Cup won</span></div>
  </div>
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#B50E12">
  <div class="match-comp pl">PL</div>
@@ -5182,11 +5182,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
  </div>
- <div class="match-opp">vs Bournemouth (A) &middot; 1&ndash;1</div>
+ <div class="match-opp">vs Bournemouth&nbsp;(A)<span class="match-score">1&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (90+5, late equaliser)</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (90+5, late equaliser)</span></div>
  </div>
 
  <div class="match-card season-2526 comp-pl" style="--opp-c1:#670E36">
@@ -5197,9 +5197,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
  </div>
- <div class="match-opp">vs Aston Villa (H) &middot; 1&ndash;2</div>
+ <div class="match-opp">vs Aston Villa&nbsp;(H)<span class="match-score">1&ndash;2</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; Semenyo scored City's goal, Watkins settled it with two</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Semenyo scored City's goal, Watkins settled it with two</span></div>
  </div>
 
  <div class="match-card season-2526 comp-nor">
@@ -5210,12 +5210,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="4" fill="#CE1126"/><rect y="4" width="18" height="4" fill="#fff"/><rect y="8" width="18" height="4" fill="#000"/></svg></div>
  </div>
- <div class="match-opp">vs Iraq (N) &middot; 4&ndash;1</div>
+ <div class="match-opp">vs Iraq&nbsp;(N)<span class="match-score">4&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals &mdash; World Cup debut, Norway's first World Cup match since 1998</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals &mdash; World Cup debut, Norway's first World Cup match since 1998</span></div>
  </div>
 
  <div class="match-card season-2526 comp-nor">
@@ -5226,12 +5226,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="6" height="12" fill="#00853F"/><rect x="6" width="6" height="12" fill="#FDEF42"/><rect x="12" width="6" height="12" fill="#E31B23"/></svg></div>
  </div>
- <div class="match-opp">vs Senegal (N) &middot; 3&ndash;2</div>
+ <div class="match-opp">vs Senegal&nbsp;(N)<span class="match-score">3&ndash;2</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals &mdash; sealed knockout-stage progression with a game to spare</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals &mdash; sealed knockout-stage progression with a game to spare</span></div>
  </div>
 
  <div class="match-card is-missed season-2526 comp-nor">
@@ -5242,7 +5242,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="6" height="12" fill="#0055A4"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#EF4135"/></svg></div>
  </div>
- <div class="match-opp">vs France (N) &middot; 1&ndash;4</div>
+ <div class="match-opp">vs France&nbsp;(N)<span class="match-score">1&ndash;4</span></div>
  <div class="match-icons"></div>
  <div class="match-status missed">Not in the squad &middot; unused substitute — an entire match on the bench &mdash; Norway finished 2nd in Group I</div>
  </div>
@@ -5255,11 +5255,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="6" height="12" fill="#F77F00"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#009E60"/></svg></div>
  </div>
- <div class="match-opp">vs Ivory Coast (N) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Ivory Coast&nbsp;(N)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (86th min., winner) &mdash; Norway's first-ever World Cup finals win</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (86th min., winner) &mdash; Norway's first-ever World Cup finals win</span></div>
  </div>
 
  <div class="match-card season-2526 comp-nor">
@@ -5270,12 +5270,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#009C3B"/><polygon points="9,1.5 16.5,6 9,10.5 1.5,6" fill="#FFDF00"/><circle cx="9" cy="6" r="2.6" fill="#002776"/></svg></div>
  </div>
- <div class="match-opp">vs Brazil (N) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Brazil&nbsp;(N)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (79th min. + a long-range strike) &mdash; Norway to the quarter-final for the first time</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (79th min. + a long-range strike) &mdash; Norway to the quarter-final for the first time</span></div>
  </div>
 
  <div class="match-card season-2526 comp-nor">
@@ -5286,9 +5286,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><rect x="7" width="4" height="12" fill="#CE1124"/><rect y="4" width="18" height="4" fill="#CE1124"/></svg></div>
  </div>
- <div class="match-opp">vs England (N) &middot; 1&ndash;2 AET</div>
+ <div class="match-opp">vs England&nbsp;(N)<span class="match-score">1&ndash;2 AET</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; World Cup run ended in the quarter-final</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; World Cup run ended in the quarter-final</span></div>
  </div>
 
  <div class="match-card season-2627 comp-shield" style="--opp-c1:#EF0107">
@@ -5299,9 +5299,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#EF0107;color:#fff">ARS</div>
  </div>
- <div class="match-opp">vs Arsenal (N) &middot; 0&ndash;3</div>
+ <div class="match-opp">vs Arsenal&nbsp;(N)<span class="match-score">0&ndash;3</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal (team didn't score) &mdash; Community Shield</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal (team didn't score) &mdash; Community Shield</span></div>
  </div>
 
  <div class="match-card season-2627 comp-pl" style="--opp-c1:#B50E12">
@@ -5312,9 +5312,9 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#B50E12;color:#fff">BOU</div>
  </div>
- <div class="match-opp">vs Bournemouth (H) &middot; 2&ndash;1</div>
+ <div class="match-opp">vs Bournemouth&nbsp;(H)<span class="match-score">2&ndash;1</span></div>
  <div class="match-icons"></div>
- <div class="match-status played">Played &middot; no goal &mdash; season opener, Gvardiol won it in stoppage time</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; season opener, Gvardiol won it in stoppage time</span></div>
  </div>
 
  <div class="match-card season-2627 comp-pl" style="--opp-c1:#1B458F">
@@ -5325,12 +5325,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#1B458F;color:#fff">CRY</div>
  </div>
- <div class="match-opp">vs Crystal Palace (A) &middot; 4&ndash;1</div>
+ <div class="match-opp">vs Crystal Palace&nbsp;(A)<span class="match-score">4&ndash;1</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 2 goals (17' and 84') &mdash; first goals of the season</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">2 goals (17' and 84') &mdash; first goals of the season</span></div>
  </div>
 
  <div class="match-card season-2627 comp-pl" style="--opp-c1:#059DD9">
@@ -5341,11 +5341,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#059DD9;color:#fff">COV</div>
  </div>
- <div class="match-opp">vs Coventry City (H) &middot; 1&ndash;0</div>
+ <div class="match-opp">vs Coventry City&nbsp;(H)<span class="match-score">1&ndash;0</span></div>
  <div class="match-icons">
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div>
- <div class="match-status played">Played &middot; 1 goal (26', header, assisted by Semenyo) &mdash; third goal in three Premier League games this season</div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">1 goal (26', header, assisted by Semenyo) &mdash; third goal in three Premier League games this season</span></div>
  </div>
 
  <div class="match-card is-planned season-2627 comp-pl">
@@ -5356,7 +5356,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
  </div>
- <div class="match-opp">vs Man United (A) &middot; 16:30 kickoff</div>
+ <div class="match-opp">vs Man United&nbsp;(A)<span class="match-score">16:30 kickoff</span></div>
  <div class="match-icons"></div>
  <div class="match-status planned">Scheduled &middot; Old Trafford</div>
  </div>
