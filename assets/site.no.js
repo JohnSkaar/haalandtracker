@@ -1478,9 +1478,16 @@ class Site {
     };
 
     const NAT_NORWAY = [
-      { name: 'E. Haaland', value: 61, color: '#c1352b', isH: true },
-      { name: 'J. Juve (tidl. rekord)', value: 33, color: '#a8791a', isH: false },
-      { name: 'A. Sørloth', value: 26, color: '#2f5aa8', isH: false },
+      { rank: 1, name: 'E. Haaland', value: 61, color: '#c1352b', isH: true },
+      { rank: 2, name: 'J. Juve (tidl. rekord)', value: 33, color: '#a8791a', isH: false },
+      { rank: 3, name: 'E. Gundersen', value: 26, color: '#5a5f73', isH: false },
+      { rank: 3, name: 'A. Sørloth', value: 26, color: '#2f5aa8', isH: false },
+      { rank: 5, name: 'H. Hennum', value: 25, color: '#7c5a3f', isH: false },
+      { rank: 6, name: 'J. Carew', value: 24, color: '#1f6f78', isH: false },
+      { rank: 7, name: 'O.G. Solskjær', value: 23, color: '#8a1538', isH: false },
+      { rank: 7, name: 'T.A. Flo', value: 23, color: '#0f4c81', isH: false },
+      { rank: 9, name: 'G. Thoresen', value: 22, color: '#6a3fa0', isH: false },
+      { rank: 10, name: 'S. Iversen', value: 21, color: '#0e6b3a', isH: false },
     ];
     const NAT_WORLD = [
       { name: 'C. Ronaldo', value: 146, color: '#2f5aa8', isH: false, active: true, europe: true },
@@ -1509,7 +1516,7 @@ class Site {
     let natBars = [],
       natCaption = '';
     if (cnat.active === 'norway') {
-      natBars = NAT_NORWAY.map((t) => bar(t.name, t.value, 65, t.color, t.isH));
+      natBars = NAT_NORWAY.map((t) => bar(t.rank + '. ' + t.name, t.value, 65, t.color, t.isH));
       natCaption = 'Norges målkonger gjennom tidene — 61 mål på 52 kamper, 05.09.2019–11.07.2026.';
     } else if (cnat.active === 'europe') {
       natBars = europeOnly.map((t, i) => bar(i + 1 + '. ' + t.name + (t.active ? '*' : ''), t.value, 150, t.color, t.isH));
@@ -1525,7 +1532,7 @@ class Site {
     }
 
     const chartNat = {
-      entryBars: [bar('E. Haaland', 61, 65, '#c1352b', true), bar('J. Juve (tidl. rekord)', 33, 65, '#a8791a', false), bar('A. Sørloth', 26, 65, '#2f5aa8', false)],
+      entryBars: [bar('1. E. Haaland', 61, 65, '#c1352b', true), bar('2. J. Juve (tidl. rekord)', 33, 65, '#a8791a', false), bar('3. A. Sørloth', 26, 65, '#2f5aa8', false)],
       norwayClass: flag(cnat.active === 'norway'),
       setNorway: () => this.setNatActive('norway'),
       europeClass: flag(cnat.active === 'europe'),

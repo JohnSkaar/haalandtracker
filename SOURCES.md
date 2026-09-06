@@ -735,3 +735,10 @@ Sports, LatestLY, TSN, beIN Sports, The Analyst, Outlook, manutd.com, Irish Time
 Fullstendige kilde-lister med URL-er finnes i sesjonens agent-transkripsjoner
 (ikke lagret i repoet), men fakta er verifisert mot minst én, i de fleste tilfeller
 flere, uavhengige kilder før publisering.
+
+**Norges landslag — topp 10 målscorere gjennom tidene (utvidet fra 3 til 10 navn):**
+Jørgen Juve (33), Einar Gundersen (26), Alexander Sørloth (26), Harald Hennum (25),
+John Carew (24), Ole Gunnar Solskjær (23), Tore André Flo (23), Gunnar Thoresen (22),
+Steffen Iversen (21) — RSSSF (rsssf.org/rsssf.no), kryssjekket mot 11v11.com. Haalands
+eget tall (61) er hentet fra sidens egen løpende kamp-for-kamp-total, ikke fra RSSSF
+(som pr. søketidspunkt viste et eldre, ikke-oppdatert Haaland-tall).
