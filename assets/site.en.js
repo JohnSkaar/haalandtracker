@@ -1470,7 +1470,7 @@ class Site {
     }
 
     const chartCl = {
-      entryBars: [bar('E. Haaland', 57, 70, '#c1352b', true), bar('C. Ronaldo*', 42, 70, '#2f5aa8', false), bar('L. Messi*', 28, 70, '#6a3fa0', false)],
+      entryBars: [bar('1. E. Haaland', 57, 70, '#c1352b', true), bar('2. C. Ronaldo*', 42, 70, '#2f5aa8', false), bar('3. L. Messi*', 28, 70, '#6a3fa0', false)],
       m50Class: flag(ccl.active === 'm50'),
       setM50: () => this.setClActive('m50'),
       m100Class: flag(ccl.active === 'm100'),
