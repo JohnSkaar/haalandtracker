@@ -122,7 +122,9 @@
     .badge-flag { overflow: hidden; padding: 0; border: 1px solid var(--line-strong); }
     .badge-vs { font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 700; font-size: 11px; color: var(--text-faint); }
     .match-opp { font-size: 12.5px; font-weight: 600; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 5px; }
-    .match-score { font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 800; font-size: 44px; line-height: 1; letter-spacing: 0.01em; color: var(--text); font-variant-numeric: tabular-nums; }
+    .match-score-line { display: flex; flex-direction: column; align-items: center; gap: 1px; }
+    .match-score { font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 800; font-size: 44px; line-height: 1; letter-spacing: 0.01em; color: var(--text); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .score-note { font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text); }
 
     .match-icons { display: flex; flex-wrap: wrap; gap: 4px; min-height: 38px; align-items: center; justify-content: center; }
     .icon-chip { width: 51px; height: 51px; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #fff6d8 0%, #f3d372 24%, #d9a92f 55%, #a3771a 82%, #7a5a12 100%); border: 1px solid #6b4d0f; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(20,23,28,0.18), inset 0 1px 2px rgba(255,255,255,0.55); }
@@ -336,6 +338,7 @@
       .icon-chip { width: 37px; height: 37px; }
       .icon-chip svg { width: 29px; height: 29px; }
       .match-score { font-size: 34px; }
+      .score-note { font-size: 10px; }
       .match-icons.icon-stack .icon-chip { margin-left: -20px; }
       .chip-select button { font-size: 10px; padding: 6px 8px; }
       .bar-row { grid-template-columns: 56px 1fr 26px; }
