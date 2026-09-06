@@ -85,7 +85,7 @@
     .timeline-scroll.nor-solo .match-card:not(.comp-nor):not(.card-divider) { display: none; }
     .comp-toggle-row { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 10px; }
     .match-card {
-      flex: 0 0 206px; height: 432px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 1px 0 rgba(20,23,28,0.03);
+      flex: 0 0 206px; height: 389px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 1px 0 rgba(20,23,28,0.03);
       padding: 12px 18px 13px 24px; display: flex; flex-direction: column; gap: 9px;
       transition: box-shadow 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
       position: relative; overflow: hidden; border-radius: 14px;
@@ -94,8 +94,9 @@
     }
     .match-card:not(.comp-nor):not(.comp-bundesliga) { --own-c1: #6cabdd; --own-c2: #1c2c5b; }
     .match-card.comp-nor { --own-c1: #ba0c2f; --own-c2: #00205b; }
-    .match-card:not(.is-planned):not(.card-divider)::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 18px; background: linear-gradient(180deg, var(--own-c1) 50%, var(--own-c2) 50%); }
-    .match-card:not(.is-planned):not(.card-divider)::after { content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: 18px; background: var(--opp-c1); }
+    .match-card:not(.is-planned):not(.card-divider)::before { content: ""; position: absolute; z-index: 0; left: 0; top: 0; bottom: 0; width: 20px; background: linear-gradient(180deg, var(--own-c1) 50%, var(--own-c2) 50%); }
+    .match-card:not(.is-planned):not(.card-divider)::after { content: ""; position: absolute; z-index: 0; right: 0; top: 0; bottom: 0; width: 20px; background: var(--opp-c1); }
+    .match-card > * { position: relative; z-index: 1; }
     .match-card:not(.is-missed):not(.is-planned):not(.card-divider):hover { border-color: var(--line-strong); box-shadow: 0 4px 10px rgba(20,23,28,0.08); transform: translateY(-1px); }
     .match-card.is-missed { opacity: 0.5; border-style: dashed; box-shadow: none; }
     .match-card.is-record { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset, 0 1px 0 rgba(20,23,28,0.03); }
@@ -209,7 +210,7 @@
     .toggle-chip { font: 600 11.5px 'Manrope', sans-serif; padding: 7px 11px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--text-dim); cursor: pointer; transition: border-color 0.15s ease, color 0.15s ease; }
     .toggle-chip:not(.active):hover { border-color: var(--text-dim); color: var(--text); }
     .toggle-chip.active { background: var(--text); color: #fff; border-color: var(--text); }
-    .toggle-chip.chip-blurred { opacity: 0.4; filter: blur(1.1px); }
+    .toggle-chip.chip-blurred { opacity: 0.4; }
     .toggle-allnone { display: flex; gap: 12px; margin-top: -6px; }
     .link-btn { background: none; border: none; padding: 0; font: 700 11px 'Manrope', sans-serif; color: var(--red); text-decoration: underline; cursor: pointer; }
 
@@ -322,8 +323,8 @@
       .brand-name { font-size: 16px; }
       .brand-mark { width: 30px; height: 30px; font-size: 12px; }
       .topbar-meta { font-size: 10.5px; padding: 5px 9px; }
-      .match-card { flex-basis: 154px; height: 428px; padding: 9px 13px 10px 17px; }
-      .match-card::before, .match-card::after { width: 12px; }
+      .match-card { flex-basis: 154px; height: 385px; padding: 9px 13px 10px 17px; }
+      .match-card::before, .match-card::after { width: 14px; }
       .match-badges { gap: 5px; }
       .badge { width: 50px; height: 50px; font-size: 17px; }
       .icon-chip { width: 37px; height: 37px; }
