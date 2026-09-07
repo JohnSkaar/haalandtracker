@@ -41,7 +41,7 @@ class Site {
       },
       modal: null,
       timelineSeason: 'all',
-      timelineComp: { nor: true, pl: true, cl: true, cup: true, efl: true, bundesliga: true },
+      timelineComp: { nor: true, pl: true, cl: true, cup: true, efl: true, bundesliga: true, friendly: true, shield: true, cwc: true },
     };
   }
 
@@ -1573,18 +1573,19 @@ class Site {
 
     const filterRecords = (list, recordsOnly) => (recordsOnly ? list.filter((i) => i.record) : list);
 
+    const ALL_COMP_KEYS = ['nor', 'pl', 'cl', 'cup', 'efl', 'bundesliga', 'friendly', 'shield', 'cwc'];
     const SEASON_COMP_HAS = {
-      2627: { nor: false, pl: true, cl: false, cup: false, efl: false, bundesliga: false },
-      2526: { nor: true, pl: true, cl: true, cup: true, efl: true, bundesliga: false },
-      2425: { nor: true, pl: true, cl: true, cup: true, efl: true, bundesliga: false },
-      2324: { nor: false, pl: true, cl: true, cup: false, efl: false, bundesliga: false },
-      2223: { nor: false, pl: true, cl: true, cup: true, efl: false, bundesliga: false },
-      early: { nor: true, pl: false, cl: false, cup: false, efl: false, bundesliga: true },
+      2627: { nor: false, pl: true, cl: false, cup: false, efl: false, bundesliga: false, friendly: false, shield: true, cwc: false },
+      2526: { nor: true, pl: true, cl: true, cup: true, efl: true, bundesliga: false, friendly: false, shield: false, cwc: false },
+      2425: { nor: true, pl: true, cl: true, cup: true, efl: true, bundesliga: false, friendly: true, shield: true, cwc: true },
+      2324: { nor: false, pl: true, cl: true, cup: false, efl: false, bundesliga: false, friendly: false, shield: false, cwc: false },
+      2223: { nor: false, pl: true, cl: true, cup: true, efl: false, bundesliga: false, friendly: false, shield: false, cwc: false },
+      early: { nor: true, pl: false, cl: false, cup: false, efl: false, bundesliga: true, friendly: false, shield: false, cwc: false },
     };
     const seasonHasCards = (seasonKey) => {
       if (seasonKey === 'all') return true;
       const row = SEASON_COMP_HAS[seasonKey];
-      return ['nor', 'pl', 'cl', 'cup', 'efl', 'bundesliga'].some((c) => s.timelineComp[c] && row[c]);
+      return ALL_COMP_KEYS.some((c) => s.timelineComp[c] && row[c]);
     };
     const compHasCards = (compKey) => {
       if (s.timelineSeason === 'all') return Object.keys(SEASON_COMP_HAS).some((sk) => SEASON_COMP_HAS[sk][compKey]);
@@ -1607,14 +1608,10 @@ class Site {
       onClick: () => this.setTimelineSeason(f.key),
     }));
 
-    const compHideClass = ['nor', 'pl', 'cl', 'cup', 'efl', 'bundesliga']
-      .filter((k) => !s.timelineComp[k])
+    const compHideClass = ALL_COMP_KEYS.filter((k) => !s.timelineComp[k])
       .map((k) => 'hide-' + k)
       .join(' ');
-    const norOnlyClass =
-      s.timelineComp.nor && !s.timelineComp.pl && !s.timelineComp.cl && !s.timelineComp.cup && !s.timelineComp.efl && !s.timelineComp.bundesliga
-        ? 'nor-solo'
-        : '';
+    const norOnlyClass = ALL_COMP_KEYS.filter((k) => k !== 'nor').every((k) => !s.timelineComp[k]) && s.timelineComp.nor ? 'nor-solo' : '';
     const compFilters = [
       { key: 'nor', label: 'National team' },
       { key: 'pl', label: 'Premier League' },
@@ -1622,6 +1619,9 @@ class Site {
       { key: 'cup', label: 'FA Cup' },
       { key: 'efl', label: 'EFL Cup' },
       { key: 'bundesliga', label: 'Bundesliga' },
+      { key: 'friendly', label: 'Friendly' },
+      { key: 'shield', label: 'Community Shield' },
+      { key: 'cwc', label: 'Club World Cup' },
     ].map((f) => ({
       label: f.label,
       cls: chipClassBlur(s.timelineComp[f.key], !compHasCards(f.key)),
