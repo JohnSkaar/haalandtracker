@@ -335,10 +335,10 @@ class Site {
     const clAchievable = withWidth([
       {
         title: 'Forbig&aring; Robert Lewandowski (101 CL-m&aring;l)',
-        desc: 'St&aring;r p&aring; 57 CL-m&aring;l s&aring; langt, allerede forbi Raúl, van Nistelrooy og Mbapp&eacute; p&aring; totallisten.',
-        progress: 56,
+        desc: 'St&aring;r p&aring; 59 CL-m&aring;l s&aring; langt, allerede forbi Raúl, van Nistelrooy og Mbapp&eacute; p&aring; totallisten.',
+        progress: 58,
       },
-      { title: 'Ronaldos og Messis totalrekorder', desc: 'Langt fram til historiens to &oslash;verste (140 og 129 CL-m&aring;l). St&aring;r p&aring; 57 s&aring; langt.', progress: 41 },
+      { title: 'Ronaldos og Messis totalrekorder', desc: 'Langt fram til historiens to &oslash;verste (140 og 129 CL-m&aring;l). St&aring;r p&aring; 59 s&aring; langt.', progress: 42 },
       {
         title: 'Flest hattrick i Champions League (8)',
         desc: 'Rekorden deles av Messi og Ronaldo med 8 hattrick hver. Haaland har &eacute;n hittil &mdash; 5-m&aring;lskampen mot RB Leipzig, mars 2023.',
@@ -1421,7 +1421,7 @@ class Site {
       { name: 'K. Benzema', value: 90, color: '#1f2937', isH: false, active: false },
       { name: 'Raúl', value: 71, color: '#7c3f8f', isH: false, active: false },
       { name: 'K. Mbappé', value: 68, color: '#2f8f5f', isH: false, active: true },
-      { name: 'E. Haaland', value: 57, color: '#c1352b', isH: true, active: true },
+      { name: 'E. Haaland', value: 59, color: '#c1352b', isH: true, active: true },
       { name: 'R. van Nistelrooy', value: 56, color: '#5a5f73', isH: false, active: false },
       { name: 'T. Müller', value: 53, color: '#1f6f78', isH: false, active: false },
       { name: 'T. Henry', value: 50, color: '#8a1538', isH: false, active: false },
@@ -1449,7 +1449,7 @@ class Site {
     }
 
     const chartCl = {
-      entryBars: [bar('1. E. Haaland', 57, 70, '#c1352b', true), bar('2. C. Ronaldo*', 42, 70, '#2f5aa8', false), bar('3. L. Messi*', 28, 70, '#6a3fa0', false)],
+      entryBars: [bar('1. E. Haaland', 59, 70, '#c1352b', true), bar('2. C. Ronaldo*', 42, 70, '#2f5aa8', false), bar('3. L. Messi*', 28, 70, '#6a3fa0', false)],
       m50Class: flag(ccl.active === 'm50'),
       setM50: () => this.setClActive('m50'),
       m100Class: flag(ccl.active === 'm100'),
@@ -1472,7 +1472,7 @@ class Site {
       setTopFilterActive: () => this.setClTopFilter('active'),
       topFilterInactiveClass: flag(ccl.topFilter === 'inactive'),
       setTopFilterInactive: () => this.setClTopFilter('inactive'),
-      topRankLabel: 'Haalands plassering: #' + (CL_TOP.findIndex((t) => t.isH) + 1) + ' blant Champions League-toppscorere gjennom tidene, med 57 mål.',
+      topRankLabel: 'Haalands plassering: #' + (CL_TOP.findIndex((t) => t.isH) + 1) + ' blant Champions League-toppscorere gjennom tidene, med 59 mål.',
       openModal: () => this.openModal('cl'),
       ...(clDetail || emptyDetail),
     };
@@ -5520,11 +5520,11 @@ function render(vals) {
  <div class="stat-mini">
  <span class="stat-mini-title">Manchester City &mdash; n&oslash;kkeltall (klubb)</span>
  <div class="stat-mini-row">
- <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">201</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">165</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">203</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">167</span></div>
  <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,82</span></div>
  </div>
- <span class="stat-mini-note">Alle turneringer, t.o.m. 202. City-kamp, 5. sep. 2026.</span>
+ <span class="stat-mini-note">Alle turneringer, t.o.m. 203. City-kamp, 8. sep. 2026.</span>
  </div>
 
  <div class="col-section">
@@ -5779,9 +5779,9 @@ function render(vals) {
  <div class="stat-mini">
  <span class="stat-mini-title">Manchester City &mdash; n&oslash;kkeltall (CL)</span>
  <div class="stat-mini-row">
- <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">39</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">34</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,87</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">40</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">36</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,90</span></div>
  </div>
  <span class="stat-mini-note">Alle Champions League-kamper for Manchester City.</span>
  </div>
@@ -5791,9 +5791,9 @@ function render(vals) {
  <div class="stat-mini-row">
  <div class="stat-mini-item"><span class="stat-mini-label">Salzburg</span><span class="stat-mini-value">8</span></div>
  <div class="stat-mini-item"><span class="stat-mini-label">Dortmund</span><span class="stat-mini-value">15</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">Man City</span><span class="stat-mini-value">34</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Man City</span><span class="stat-mini-value">36</span></div>
  </div>
- <span class="stat-mini-note">57 CL-m&aring;l totalt s&aring; langt &mdash; topp 10 gjennom tidene, blant kun ti spillere med 50+ CL-m&aring;l.</span>
+ <span class="stat-mini-note">59 CL-m&aring;l totalt s&aring; langt &mdash; topp 10 gjennom tidene, blant kun ti spillere med 50+ CL-m&aring;l.</span>
  </div>
 
  <div class="col-section">

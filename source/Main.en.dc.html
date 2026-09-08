@@ -4227,11 +4227,11 @@
  <div class="stat-mini">
  <span class="stat-mini-title">Manchester City &mdash; key stats (club)</span>
  <div class="stat-mini-row">
- <div class="stat-mini-item"><span class="stat-mini-label">Games</span><span class="stat-mini-value">201</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">Goals</span><span class="stat-mini-value">165</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Games</span><span class="stat-mini-value">203</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Goals</span><span class="stat-mini-value">167</span></div>
  <div class="stat-mini-item"><span class="stat-mini-label">Average</span><span class="stat-mini-value stat-avg">0.82</span></div>
  </div>
- <span class="stat-mini-note">All competitions, through City game 202, 5 Sep 2026.</span>
+ <span class="stat-mini-note">All competitions, through City game 203, 8 Sep 2026.</span>
  </div>
 
  <div class="col-section">
@@ -4486,9 +4486,9 @@
  <div class="stat-mini">
  <span class="stat-mini-title">Manchester City &mdash; key stats (CL)</span>
  <div class="stat-mini-row">
- <div class="stat-mini-item"><span class="stat-mini-label">Games</span><span class="stat-mini-value">39</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">Goals</span><span class="stat-mini-value">34</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">Average</span><span class="stat-mini-value stat-avg">0.87</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Games</span><span class="stat-mini-value">40</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Goals</span><span class="stat-mini-value">36</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Average</span><span class="stat-mini-value stat-avg">0.90</span></div>
  </div>
  <span class="stat-mini-note">All Champions League games for Manchester City.</span>
  </div>
@@ -4498,9 +4498,9 @@
  <div class="stat-mini-row">
  <div class="stat-mini-item"><span class="stat-mini-label">Salzburg</span><span class="stat-mini-value">8</span></div>
  <div class="stat-mini-item"><span class="stat-mini-label">Dortmund</span><span class="stat-mini-value">15</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">Man City</span><span class="stat-mini-value">34</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Man City</span><span class="stat-mini-value">36</span></div>
  </div>
- <span class="stat-mini-note">57 CL goals in total so far &mdash; top 10 all-time, one of only ten players with 50+ CL goals.</span>
+ <span class="stat-mini-note">59 CL goals in total so far &mdash; top 10 all-time, one of only ten players with 50+ CL goals.</span>
  </div>
 
  <div class="col-section">
@@ -5445,8 +5445,8 @@ class Component extends DCLogic {
       },
     ];
     const clAchievable = withWidth([
-      { title: 'Overtake Robert Lewandowski (101 CL goals)', desc: 'Stands at 57 CL goals so far, already past Ra&uacute;l, van Nistelrooy and Mbapp&eacute; on the all-time list.', progress: 56 },
-      { title: 'Ronaldo and Messi&#39;s all-time records', desc: 'A long way from the two leaders in history (140 and 129 CL goals). Stands at 57 so far.', progress: 41 },
+      { title: 'Overtake Robert Lewandowski (101 CL goals)', desc: 'Stands at 59 CL goals so far, already past Ra&uacute;l, van Nistelrooy and Mbapp&eacute; on the all-time list.', progress: 58 },
+      { title: 'Ronaldo and Messi&#39;s all-time records', desc: 'A long way from the two leaders in history (140 and 129 CL goals). Stands at 59 so far.', progress: 42 },
       {
         title: 'Most hat-tricks in the Champions League (8)',
         desc: 'The record is shared by Messi and Ronaldo with 8 hat-tricks each. Haaland has one so far &mdash; the 5-goal match vs RB Leipzig, March 2023.',
@@ -6539,7 +6539,7 @@ class Component extends DCLogic {
       { name: 'K. Benzema', value: 90, color: '#1f2937', isH: false, active: false },
       { name: 'Raúl', value: 71, color: '#7c3f8f', isH: false, active: false },
       { name: 'K. Mbappé', value: 68, color: '#2f8f5f', isH: false, active: true },
-      { name: 'E. Haaland', value: 57, color: '#c1352b', isH: true, active: true },
+      { name: 'E. Haaland', value: 59, color: '#c1352b', isH: true, active: true },
       { name: 'R. van Nistelrooy', value: 56, color: '#5a5f73', isH: false, active: false },
       { name: 'T. Müller', value: 53, color: '#1f6f78', isH: false, active: false },
       { name: 'T. Henry', value: 50, color: '#8a1538', isH: false, active: false },
@@ -6567,7 +6567,7 @@ class Component extends DCLogic {
     }
 
     const chartCl = {
-      entryBars: [bar('1. E. Haaland', 57, 70, '#c1352b', true), bar('2. C. Ronaldo*', 42, 70, '#2f5aa8', false), bar('3. L. Messi*', 28, 70, '#6a3fa0', false)],
+      entryBars: [bar('1. E. Haaland', 59, 70, '#c1352b', true), bar('2. C. Ronaldo*', 42, 70, '#2f5aa8', false), bar('3. L. Messi*', 28, 70, '#6a3fa0', false)],
       m50Class: flag(ccl.active === 'm50'),
       setM50: () => this.setClActive('m50'),
       m100Class: flag(ccl.active === 'm100'),
@@ -6590,7 +6590,7 @@ class Component extends DCLogic {
       setTopFilterActive: () => this.setClTopFilter('active'),
       topFilterInactiveClass: flag(ccl.topFilter === 'inactive'),
       setTopFilterInactive: () => this.setClTopFilter('inactive'),
-      topRankLabel: 'Haaland&#39;s ranking: #' + (CL_TOP.findIndex((t) => t.isH) + 1) + ' among all-time Champions League top scorers, with 57 goals.',
+      topRankLabel: 'Haaland&#39;s ranking: #' + (CL_TOP.findIndex((t) => t.isH) + 1) + ' among all-time Champions League top scorers, with 59 goals.',
       openModal: () => this.openModal('cl'),
       ...(clDetail || emptyDetail),
     };
