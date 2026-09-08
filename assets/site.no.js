@@ -5342,7 +5342,7 @@ function render(vals) {
 
  <div class="now-marker"><span>N&Aring;</span></div>
 
- <div class="match-card is-planned season-2627 comp-cl" style="--opp-c1:#003399">
+ <div class="match-card season-2627 comp-cl" style="--opp-c1:#003399">
  <div class="match-comp cl">CL</div>
  <div class="match-date">8. sep. 2026</div>
  <div class="match-badges">
@@ -5350,9 +5350,11 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#003399;color:#fff">POR</div>
  </div>
- <div class="match-opp">vs FC Porto&nbsp;(B)<span class="match-score-line"><span class="score-note">avspark 20:00</span></span></div>
- <div class="match-icons"></div>
- <div class="match-status planned">Planlagt &middot; Est&aacute;dio do Drag&atilde;o</div>
+ <div class="match-opp">vs FC Porto&nbsp;(B)<span class="match-score-line"><span class="match-score">0&ndash;2</span></span></div>
+ <div class="match-icons"><div class="icons-cluster">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span><span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div></div>
+ <div class="match-status played"><span class="status-desc">2 m&aring;l (47. og 90.+1. min.)</span></div>
  </div>
 
  <div class="match-card is-planned season-2627 comp-pl">
