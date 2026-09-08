@@ -736,6 +736,15 @@ Fullstendige kilde-lister med URL-er finnes i sesjonens agent-transkripsjoner
 (ikke lagret i repoet), men fakta er verifisert mot minst én, i de fleste tilfeller
 flere, uavhengige kilder før publisering.
 
+**Kommende kamper lagt til (planlagt-kort), sesongen 2026/27:** FC Porto&ndash;Man City
+(CL, 8. sep., Est&aacute;dio do Drag&atilde;o, borte), Man City&ndash;Norwich City (Ligacup 3.
+runde, 17. sep., Etihad, hjemme), Man City&ndash;Sunderland (PL, flyttet til 20. sep. pga.
+ligacup-kampen, Etihad, hjemme), Norge&ndash;Danmark og Norge&ndash;Portugal (UEFA Nations
+League, 24. og 27. sep., begge p&aring; Ullev&aring;l) &mdash; mancity.com (offisielle
+kampdatoer/klokkeslett), ESPN, Sofascore, Sky Sports, UEFA.com, beIN Sports, Premier
+League offisiell (Sunderland-flyttingen). Man Utd&ndash;Man City-kortet (13. sep.) var
+allerede i data fra tidligere.
+
 **Norges landslag — topp 10 målscorere gjennom tidene (utvidet fra 3 til 10 navn):**
 Jørgen Juve (33), Einar Gundersen (26), Alexander Sørloth (26), Harald Hennum (25),
 John Carew (24), Ole Gunnar Solskjær (23), Tore André Flo (23), Gunnar Thoresen (22),

@@ -1554,7 +1554,7 @@ class Site {
 
     const ALL_COMP_KEYS = ['nor', 'pl', 'cl', 'cup', 'efl', 'bundesliga', 'friendly', 'shield', 'cwc'];
     const SEASON_COMP_HAS = {
-      2627: { nor: false, pl: true, cl: false, cup: false, efl: false, bundesliga: false, friendly: false, shield: true, cwc: false },
+      2627: { nor: true, pl: true, cl: true, cup: false, efl: true, bundesliga: false, friendly: false, shield: true, cwc: false },
       2526: { nor: true, pl: true, cl: true, cup: true, efl: true, bundesliga: false, friendly: false, shield: false, cwc: false },
       2425: { nor: true, pl: true, cl: true, cup: true, efl: true, bundesliga: false, friendly: true, shield: true, cwc: true },
       2324: { nor: false, pl: true, cl: true, cup: false, efl: false, bundesliga: false, friendly: false, shield: false, cwc: false },
@@ -5340,6 +5340,21 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-desc">1 m&aring;l (26. min., heading, assist fra Semenyo) &mdash; hans 300. klubbm&aring;l i karrieren</span></div>
  </div>
 
+ <div class="now-marker"><span>N&Aring;</span></div>
+
+ <div class="match-card is-planned season-2627 comp-cl" style="--opp-c1:#003399">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">8. sep. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#003399;color:#fff">POR</div>
+ </div>
+ <div class="match-opp">vs FC Porto&nbsp;(B)<span class="match-score-line"><span class="score-note">avspark 20:00</span></span></div>
+ <div class="match-icons"></div>
+ <div class="match-status planned">Planlagt &middot; Est&aacute;dio do Drag&atilde;o</div>
+ </div>
+
  <div class="match-card is-planned season-2627 comp-pl">
  <div class="match-comp pl">PL</div>
  <div class="match-date">13. sep. 2026</div>
@@ -5353,7 +5368,57 @@ function render(vals) {
  <div class="match-status planned">Planlagt &middot; Old Trafford</div>
  </div>
 
- <div class="now-marker"><span>N&Aring;</span></div>
+ <div class="match-card is-planned season-2627 comp-efl" style="--opp-c1:#FFF200">
+ <div class="match-comp efl">LIGACUP</div>
+ <div class="match-date">17. sep. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#FFF200;color:#111">NOR</div>
+ </div>
+ <div class="match-opp">vs Norwich City&nbsp;(H)<span class="match-score-line"><span class="score-note">avspark 19:30</span></span></div>
+ <div class="match-icons"></div>
+ <div class="match-status planned">Planlagt &middot; Etihad Stadium</div>
+ </div>
+
+ <div class="match-card is-planned season-2627 comp-pl" style="--opp-c1:#EB172B">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">20. sep. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#EB172B;color:#fff">SUN</div>
+ </div>
+ <div class="match-opp">vs Sunderland&nbsp;(H)<span class="match-score-line"><span class="score-note">avspark 14:00</span></span></div>
+ <div class="match-icons"></div>
+ <div class="match-status planned">Planlagt &middot; Etihad Stadium</div>
+ </div>
+
+ <div class="match-card is-planned season-2627 comp-nor">
+ <div class="match-comp nor">LAND</div>
+ <div class="match-date">24. sep. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#C60C30"/><rect x="6" width="2" height="12" fill="#fff"/><rect y="5" width="18" height="2" fill="#fff"/></svg></div>
+ </div>
+ <div class="match-opp">vs Danmark&nbsp;(H)<span class="match-score-line"><span class="score-note">avspark 19:45</span></span></div>
+ <div class="match-icons"></div>
+ <div class="match-status planned">Planlagt &middot; Ullev&aring;l Stadion &mdash; UEFA Nations League</div>
+ </div>
+
+ <div class="match-card is-planned season-2627 comp-nor">
+ <div class="match-comp nor">LAND</div>
+ <div class="match-date">27. sep. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#FF0000"/><rect width="7" height="12" fill="#006600"/></svg></div>
+ </div>
+ <div class="match-opp">vs Portugal&nbsp;(H)<span class="match-score-line"><span class="score-note">avspark 19:45</span></span></div>
+ <div class="match-icons"></div>
+ <div class="match-status planned">Planlagt &middot; Ullev&aring;l Stadion &mdash; UEFA Nations League</div>
+ </div>
  </div>
 
  <div class="timeline-legend">
