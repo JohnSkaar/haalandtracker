@@ -5352,8 +5352,6 @@ function render(vals) {
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-desc">1 m&aring;l (26. min., heading, assist fra Semenyo) &mdash; hans 300. klubbm&aring;l i karrieren</span></div>
  </div>
 
- <div class="now-marker"><span>N&Aring;</span></div>
-
  <div class="match-card season-2627 comp-cl" style="--opp-c1:#003399">
  <div class="match-comp cl">CL</div>
  <div class="match-date">8. sep. 2026</div>
@@ -5369,7 +5367,7 @@ function render(vals) {
  <div class="match-status played"><span class="status-desc">2 m&aring;l (47. og 90.+1. min.)</span></div>
  </div>
 
- <div class="match-card is-planned season-2627 comp-pl">
+ <div class="match-card season-2627 comp-pl" style="--opp-c1:#DA020E">
  <div class="match-comp pl">PL</div>
  <div class="match-date">13. sep. 2026</div>
  <div class="match-badges">
@@ -5377,10 +5375,14 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DA020E;color:#fff">MUN</div>
  </div>
- <div class="match-opp">vs Man United&nbsp;(B)<span class="match-score-line"><span class="score-note">avspark 16:30</span></span></div>
- <div class="match-icons"></div>
- <div class="match-status planned">Planlagt &middot; Old Trafford</div>
+ <div class="match-opp">vs Man United&nbsp;(B)<span class="match-score-line"><span class="match-score">1&ndash;0</span></span></div>
+ <div class="match-icons"><div class="icons-cluster">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div></div>
+ <div class="match-status played"><span class="status-desc">1 m&aring;l (60. min., stod etter lang VAR-sjekk for offside) &mdash; borteseier med ti mann etter at Foden ble utvist (22. min.), hans niende m&aring;l i Manchester-derbyer (kilde: BBC)</span></div>
  </div>
+
+ <div class="now-marker"><span>N&Aring;</span></div>
 
  <div class="match-card is-planned season-2627 comp-efl" style="--opp-c1:#FFF200">
  <div class="match-comp efl">LIGACUP</div>
@@ -5532,11 +5534,11 @@ function render(vals) {
  <div class="stat-mini">
  <span class="stat-mini-title">Manchester City &mdash; n&oslash;kkeltall (klubb)</span>
  <div class="stat-mini-row">
- <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">203</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">167</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">204</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">168</span></div>
  <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,82</span></div>
  </div>
- <span class="stat-mini-note">Alle turneringer, t.o.m. 203. City-kamp, 8. sep. 2026.</span>
+ <span class="stat-mini-note">Alle turneringer, t.o.m. 204. City-kamp, 13. sep. 2026.</span>
  </div>
 
  <div class="col-section">
