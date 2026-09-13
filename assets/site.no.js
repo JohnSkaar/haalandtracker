@@ -15,7 +15,7 @@ class Site {
           league: null,
           view: 'totalt',
           milestone: 100,
-          seasonsOn: { '2022/23': true, '2023/24': true, '2024/25': true, '2025/26': true },
+          seasonsOn: { '2022/23': true, '2023/24': true, '2024/25': true, '2025/26': true, '2026/27': true },
           seasonRivals: { salah: true, shearer: true, cole: true },
           bundesligaView: 'race',
           bundesligaTopFilter: 'all',
@@ -880,6 +880,17 @@ class Site {
           [38, 27],
         ],
       },
+      '2026/27': {
+        total: 3,
+        apps: 3,
+        done: false,
+        solid: [
+          [0, 0],
+          [1, 0],
+          [2, 2],
+          [3, 3],
+        ],
+      },
     };
     const PL_SEASON_STATS = {
       '2022/23': {
@@ -950,6 +961,7 @@ class Site {
       '2023/24': '#1f6f78',
       '2024/25': '#5a5f73',
       '2025/26': '#0e6b3a',
+      '2026/27': '#e0821f',
     };
     const PL_SEASON_RIVALS = [
       {
@@ -6096,7 +6108,7 @@ function render(vals) {
  <button class="${vals.chart.nat.worldFilterEuropeClass}" data-bind="chart.nat.setWorldFilterEurope">Europa</button>
  </div>
  ` : ''}
- <div class="entry-bars">
+ <div class="entry-bars nat-detail-bars">
  ${(vals.chart.nat.bars||[]).map((b,__i0) => `
  <div class="bar-row">
  <span class="${b.labelClass}">${b.name}</span>
@@ -6358,7 +6370,7 @@ ${(vals.modal.nat) ? `
  <button class="${vals.chart.nat.worldFilterEuropeClass}" data-bind="chart.nat.setWorldFilterEurope">Europa</button>
  </div>
  ` : ''}
- <div class="entry-bars">
+ <div class="entry-bars nat-detail-bars">
  ${(vals.chart.nat.bars||[]).map((b,__i0) => `
  <div class="bar-row">
  <span class="${b.labelClass}">${b.name}</span>

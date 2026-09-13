@@ -251,6 +251,7 @@
 
  .entry-bars { display: flex; flex-direction: column; gap: 8px; }
  .bar-row { display: grid; grid-template-columns: 78px 1fr 30px; align-items: center; gap: 8px; }
+ .nat-detail-bars .bar-row { grid-template-columns: 150px 1fr 30px; }
  .bar-label { font-size: 11px; font-weight: 700; color: var(--text-dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
  .bar-label.is-haaland { color: var(--red); }
  .bar-track { height: 10px; background: var(--surface-alt); border: 1px solid var(--line); position: relative; }
@@ -321,6 +322,7 @@
  .brand-sub { display: none; }
  .match-card { flex-basis: 152px; }
  .bar-row { grid-template-columns: 68px 1fr 30px; gap: 6px; }
+ .nat-detail-bars .bar-row { grid-template-columns: 130px 1fr 30px; }
  .bar-label, .bar-label.is-haaland { font-size: 10px; }
  .modal-overlay { padding: 20px 12px; }
  .modal-panel { padding: 26px 20px 28px; max-width: 100%; }
@@ -347,6 +349,7 @@
  .icon-chip svg { width: 29px; height: 29px; }
  .chip-select button { font-size: 10px; padding: 6px 8px; }
  .bar-row { grid-template-columns: 56px 1fr 26px; }
+ .nat-detail-bars .bar-row { grid-template-columns: 108px 1fr 26px; }
  .modal-panel { padding: 20px 14px 22px; }
  .modal-title { font-size: 17px; padding-right: 34px; }
  }
@@ -4803,7 +4806,7 @@
  <button class="{{chart.nat.worldFilterEuropeClass}}" onClick="{{chart.nat.setWorldFilterEurope}}">Europe</button>
  </div>
  </sc-if>
- <div class="entry-bars">
+ <div class="entry-bars nat-detail-bars">
  <sc-for list="{{chart.nat.bars}}" as="b" hint-placeholder-count="3">
  <div class="bar-row">
  <span class="{{b.labelClass}}">{{b.name}}</span>
@@ -5065,7 +5068,7 @@
  <button class="{{chart.nat.worldFilterEuropeClass}}" onClick="{{chart.nat.setWorldFilterEurope}}">Europe</button>
  </div>
  </sc-if>
- <div class="entry-bars">
+ <div class="entry-bars nat-detail-bars">
  <sc-for list="{{chart.nat.bars}}" as="b" hint-placeholder-count="3">
  <div class="bar-row">
  <span class="{{b.labelClass}}">{{b.name}}</span>
@@ -5112,7 +5115,7 @@ class Component extends DCLogic {
           league: null,
           view: 'totalt',
           milestone: 100,
-          seasonsOn: { '2022/23': true, '2023/24': true, '2024/25': true, '2025/26': true },
+          seasonsOn: { '2022/23': true, '2023/24': true, '2024/25': true, '2025/26': true, '2026/27': true },
           seasonRivals: { salah: true, shearer: true, cole: true },
           bundesligaView: 'race',
           bundesligaTopFilter: 'all',
@@ -5998,6 +6001,17 @@ class Component extends DCLogic {
           [38, 27],
         ],
       },
+      '2026/27': {
+        total: 3,
+        apps: 3,
+        done: false,
+        solid: [
+          [0, 0],
+          [1, 0],
+          [2, 2],
+          [3, 3],
+        ],
+      },
     };
     const PL_SEASON_STATS = {
       '2022/23': {
@@ -6068,6 +6082,7 @@ class Component extends DCLogic {
       '2023/24': '#1f6f78',
       '2024/25': '#5a5f73',
       '2025/26': '#0e6b3a',
+      '2026/27': '#e0821f',
     };
     const PL_SEASON_RIVALS = [
       {

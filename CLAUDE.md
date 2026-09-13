@@ -91,14 +91,28 @@ note ("All competitions, through City game N, DD Mon YYYY" /
   reached, not a live counter. Only add a brand-new dated History entry
   like it when Haaland crosses a genuinely new, notable milestone.
 
-**d) Premier League match — do NOT touch** the "150 Premier League
-goals" / "Alan Shearer's all-time record" achievable-chase entries or the
-PL race-chart caption (the ones citing "112 goals in 132 games" /
-"2022/23–2025/26 seasons"). These are deliberately frozen as of the end
-of the last completed season by design — the chart's dashed line already
-projects the in-progress season. Leave them alone unless Haaland crosses
-a big round-number milestone worth a new History log entry, or a season
-has just actually ended.
+**d) Premier League match:**
+- DO update the live in-progress season entry in `PL_SEASONS` (search
+  `const PL_SEASONS`): the current season's key (e.g. `'2026/27'`, added
+  8 Sep 2026) has `done: false` and a `solid` array of
+  `[matchweek, cumulativeGoals]` points instead of a final `points` array
+  — append a new `[matchweek, newCumulativeTotal]` point after every PL
+  match (whether or not Haaland scored), and bump `total`/`apps`. This
+  feeds the "Record chart — club level" per-season comparison graph
+  (`PER SEASON` tab) directly — it has no separate stat-mini tile of its
+  own. Give it a `PL_SEASON_COLORS` entry (already set) and make sure its
+  key is in the `seasonsOn` default-state object so it's shown by
+  default. When the season actually ends, flip `done` to `true` and
+  replace `solid` with a final smoothed `points` array in the same style
+  as the completed seasons above it.
+- Do NOT touch the "150 Premier League goals" / "Alan Shearer's all-time
+  record" achievable-chase entries or the PL milestone-race caption (the
+  ones citing "112 goals in 132 games" / "2022/23–2025/26 seasons") for
+  every match. Those are deliberately frozen as of the end of the last
+  completed season by design — a separate chart (`chart.club`, `TOTAL`
+  tab) already projects the in-progress season with its own dashed line.
+  Leave them alone unless Haaland crosses a big round-number milestone
+  worth a new History log entry, or a season has just actually ended.
 
 **e) FA Cup / EFL Cup / Community Shield / Club World Cup match** — only
 (a) applies; there's no separate per-competition breakdown for these like
