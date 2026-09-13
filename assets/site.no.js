@@ -881,14 +881,15 @@ class Site {
         ],
       },
       '2026/27': {
-        total: 3,
-        apps: 3,
+        total: 4,
+        apps: 4,
         done: false,
         solid: [
           [0, 0],
           [1, 0],
           [2, 2],
           [3, 3],
+          [4, 4],
         ],
       },
     };
