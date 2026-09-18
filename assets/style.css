@@ -101,7 +101,9 @@
     .match-card:not(.is-planned):not(.card-divider)::after { content: ""; position: absolute; z-index: 0; right: 0; top: 0; bottom: 0; width: 20px; background: var(--opp-c1); }
     .match-card > * { position: relative; z-index: 1; }
     .match-card:not(.is-missed):not(.is-planned):not(.card-divider):hover { border-color: var(--line-strong); box-shadow: 0 4px 10px rgba(20,23,28,0.08); transform: translateY(-1px); }
-    .match-card.is-missed { opacity: 0.5; border-style: dashed; box-shadow: none; }
+    .match-card.is-missed { border-style: dashed; box-shadow: none; }
+    .match-card.is-missed::before, .match-card.is-missed::after { opacity: 0.5; }
+    .match-card.is-missed .match-badges, .match-card.is-missed .match-icons { opacity: 0.5; }
     .match-card.is-record { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset, 0 1px 0 rgba(20,23,28,0.03); }
     .match-card.is-record .match-status { color: var(--gold); font-weight: 700; }
     .record-star { display: inline-block; vertical-align: -1px; margin-right: 3px; }
