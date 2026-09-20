@@ -1671,7 +1671,6 @@ function render(vals) {
  <span class="brand-sub">Erling Braut Haaland &middot; prestasjoner &amp; trof&aelig;er</span>
  </div>
  </div>
- <div class="topbar-meta">Sist oppdatert: aug. 2026</div>
 </header>
 
 <section class="hero">
@@ -6399,6 +6398,7 @@ ${(vals.modal.nat) ? `
  <b>Interaksjon:</b> hver kolonne har egne av/p&aring;-brytere for historikk, tapte muligheter og fortsatt oppn&aring;elig. Rekordgrafen st&oslash;tter to milep&aelig;ler (100/150 m&aring;l), totalt/per sesong-visning, og av/p&aring;-bryter per konkurrent eller per sesong.
  </div>
 </footer>
+<div class="foot-updated-row"><div class="topbar-meta">Sist oppdatert: 17. sep. 2026</div></div>
 
 </div>
 </div>`;

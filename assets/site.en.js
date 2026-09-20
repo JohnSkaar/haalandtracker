@@ -1692,7 +1692,6 @@ function render(vals) {
  <span class="brand-sub">Erling Braut Haaland &middot; achievements &amp; trophies</span>
  </div>
  </div>
- <div class="topbar-meta">Last updated: Aug 2026</div>
 </header>
 
 <section class="hero">
@@ -6420,6 +6419,7 @@ ${(vals.modal.nat) ? `
  <b>Interaction:</b> each column has its own on/off toggles for history, missed chances and still achievable. The record chart supports two milestones (100/150 goals), a total/per-season view, and an on/off toggle per rival or per season.
  </div>
 </footer>
+<div class="foot-updated-row"><div class="topbar-meta">Last updated: 17 Sep 2026</div></div>
 
 </div>
 </div>`;

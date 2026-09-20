@@ -53,6 +53,16 @@ time (don't trust line numbers — the file grows); make every change in
 BOTH `source/Main.en.dc.html` and `source/Main.no.dc.html`, mirroring the
 exact existing wording/format at each spot.
 
+**Always: the "Last updated" footer badge.** In the footer (search
+`foot-updated-row`), a `.topbar-meta`-styled badge reads e.g.
+"Last updated: 17 Sep 2026" (EN) / "Sist oppdatert: 17. sep. 2026" (NO).
+Whenever you add or correct a played match card (any competition), set
+this to that match's own date, in the same "D Mon YYYY" / "D. mnd. YYYY"
+format used on match cards — not today's real-world date, the date of
+the most recently confirmed match. It moved out of the header into the
+footer on 20 Sep 2026 at the owner's request (it was a stale hardcoded
+"Aug 2026" that nothing kept in sync); don't move it back.
+
 Progress-percentage formula for any "still achievable" records-chase
 entry: `progress = Math.round(currentGoals / targetGoals * 100)`, where
 `targetGoals` is the milestone number named in that entry's own title/desc
