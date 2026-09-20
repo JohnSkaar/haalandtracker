@@ -751,3 +751,10 @@ John Carew (24), Ole Gunnar Solskjær (23), Tore André Flo (23), Gunnar Thorese
 Steffen Iversen (21) — RSSSF (rsssf.org/rsssf.no), kryssjekket mot 11v11.com. Haalands
 eget tall (61) er hentet fra sidens egen løpende kamp-for-kamp-total, ikke fra RSSSF
 (som pr. søketidspunkt viste et eldre, ikke-oppdatert Haaland-tall).
+
+**Man City 5&ndash;3 Sunderland (PL, 20. sep. 2026):** m&aring;lscorere Enzo Fern&aacute;ndez
+(9.), Rayan Cherki (29.), Antoine Semenyo (43. og 57.), Erling Haaland (81.) for City;
+Brian Brobbey (12., 33. og 59., hattrick) for Sunderland. Haalands m&aring;l betydde at
+han n&aring; har scoret mot samtlige 25 Premier League-lag han har m&oslash;tt for City &mdash;
+Sunderland var tidligere det eneste unntaket &mdash; kryssjekket mot Sky Sports, ESPN,
+101greatgoals og AllFootball.
