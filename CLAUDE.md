@@ -37,11 +37,21 @@ colored side ribbon.
 ## Existing automation — check before adding more
 
 A recurring Routine ("Weekly HaalandTracker stats update", Mondays) plus a
-fixture-aware one-shot follow-up ("Haaland match result check", fires ~140
-min after the next known kickoff and retries every 30 min up to 12 times)
-already handle finding new results, adding match cards, and pushing to
-`main`. Don't create a second, competing scheduled check for the same
-thing — extend or read this file instead.
+fixture-aware one-shot follow-up ("Haaland match result check", retries
+every 30 min up to 12 times) already handle finding new results, adding
+match cards, and pushing to `main`. Don't create a second, competing
+scheduled check for the same thing — extend or read this file instead.
+
+**Timing override (21 Sep 2026):** the first "Haaland match result check"
+attempt after a kickoff should fire at kickoff + 120 minutes (2 hours),
+not the kickoff + 140 minutes described in that Routine's own stored
+prompt — the owner asked for the earlier check. This file's instruction
+takes precedence over that stored wording; this session could not edit
+the Routine's prompt directly (only the conversation that owns it can),
+so use 120 minutes when you (re)create or update that one-shot follow-up
+from step 7 of the weekly Routine, and update the Routine's own prompt to
+match if you're ever in a position to (e.g. asked to from its own
+conversation).
 
 ## Stats cascade — updating hardcoded derived stats after a match
 
