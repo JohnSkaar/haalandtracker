@@ -5417,8 +5417,6 @@ function render(vals) {
  <div class="match-status missed"><span class="status-desc">Not in the squad &middot; rested, rotated out (source: ESPN) &mdash; Samba (2), Cherki, Elias and McAidoo scored</span></div>
  </div>
 
- <div class="now-marker"><span>NOW</span></div>
-
  <div class="match-card is-record season-2627 comp-pl" style="--opp-c1:#EB172B">
  <div class="match-comp pl">PL</div>
  <div class="match-date">20 Sep 2026</div>
@@ -5433,6 +5431,8 @@ function render(vals) {
  </div></div>
  <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-desc">1 goal (81') &mdash; has now scored against every PL club he&#39;s faced for City, Sunderland the last one (source: ESPN)</span></div>
  </div>
+
+ <div class="now-marker"><span>NOW</span></div>
 
  <div class="match-card is-planned season-2627 comp-nor">
  <div class="match-comp nor">NT</div>
