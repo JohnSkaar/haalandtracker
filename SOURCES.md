@@ -758,3 +758,15 @@ Brian Brobbey (12., 33. og 59., hattrick) for Sunderland. Haalands m&aring;l bet
 han n&aring; har scoret mot samtlige 25 Premier League-lag han har m&oslash;tt for City &mdash;
 Sunderland var tidligere det eneste unntaket &mdash; kryssjekket mot Sky Sports, ESPN,
 101greatgoals og AllFootball.
+
+**Landslag &mdash; to rekordoppdateringer i "History"/"Records only"-listen (24. sep.
+2026):** (1) "Raskest til 50 landslagsm&aring;l" rettet fra 45 til 46 kamper (kampen var
+11. okt. 2025, hattrick mot Israel 5&ndash;0 i VM-kvalifiseringen, m&aring;l nr. 50 i det 63.
+minutt) &mdash; kryssjekket mot mancity.com, Sports Mole, MSN og SI, som alle oppgir 46
+kamper/opptredener (den gamle "45" i datasettet var etter alt &aring; d&oslash;mme feil). (2)
+"Avgj&oslash;rende m&aring;l mot Elfenbenskysten" (30. jun. 2026) utvidet til &aring; nevne at m&aring;let
+ogs&aring; var hans 60. landslagsm&aring;l &mdash; raskest noensinne i moderne tid til 60
+landslagsm&aring;l, p&aring; 53 kamper, kryssjekket mot TNT Sports, The Canary og YSscores (alle
+enige om 53 kamper; historisk sett er Gerd M&uuml;llers 48-kampers rekord fra 1973 fortsatt
+raskest gjennom tidene, s&aring; teksten er formulert som "raskest i moderne tid"/"raskere enn
+Messi og Ronaldo" for å v&aelig;re presis).
