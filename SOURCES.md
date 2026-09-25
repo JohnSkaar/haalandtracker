@@ -807,3 +807,11 @@ v&aelig;re internt konsistent med det rekonstruerte kampdatasettet &mdash; de ek
 "53 opptredener", men etter tillegget av Sveits-kampen gir sidens egen (n&aring; fullstendige)
 kamplogg 52; differansen p&aring; &eacute;n kamp er ikke fullt oppklart og kan v&aelig;re verdt en ny
 gjennomgang senere.
+
+**Nye "is-planned"-kort lagt til (25. sep. 2026), for &aring; alltid ha neste kamp synlig
+i PL og CL:** Man City&ndash;Liverpool (PL, 11. okt. 2026, Anfield, borte, avspark 16:30
+lokal tid) og Man City&ndash;PSG (CL, gruppespill runde 2, 14. okt. 2026, Etihad, hjemme,
+avspark 21:00 lokal tid) &mdash; kryssjekket mot ESPN, Sofascore, mancity.com (offisiell
+kampliste og billettside for PSG-kampen) og UEFA.com (CL-runde-datoer). Landslagets
+neste kamp (Portugal, 27. sep.) l&aring; allerede inne fra tidligere. Se CLAUDE.md, "Always
+keep the next fixture visible", for den l&oslash;pende regelen dette nå f&oslash;lger av.

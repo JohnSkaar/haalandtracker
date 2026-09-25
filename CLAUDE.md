@@ -89,6 +89,51 @@ from step 7 of the weekly Routine, and update the Routine's own prompt to
 match if you're ever in a position to (e.g. asked to from its own
 conversation).
 
+## Always keep the next fixture visible (25 Sep 2026, owner request)
+
+At any point in time there should be an `is-planned` card for the next
+known Manchester City Premier League match, the next known Man City
+Champions League match (while City are still involved that season — see
+below), and the next known Norway match — not just whichever fixture
+happened to be added last. This is an ongoing rule, not a one-time fix:
+after every match result update, check whether the competition(s) that
+match belongs to still have an upcoming `is-planned` card, and if not,
+add the next confirmed fixture for it (WebSearch the club's or
+federation's official fixture list — don't guess a date).
+
+- **Premier League**: always keep one `is-planned` comp-pl card for
+  City's next PL match, all season. Keep doing this until the season
+  actually ends (no PL card to add over the summer break) or Haaland is
+  transferred away from Manchester City — if that happens, ask the owner
+  how they want the site's scope to change rather than guessing.
+- **Champions League**: same, but only "if possible/qualified" — i.e.
+  only while Man City are still active in that season's Champions League
+  (through the league phase, and however far the knockout rounds take
+  them). If City are eliminated or don't qualify for a season, there's
+  nothing to add — don't invent a fixture, and don't add a Europa League
+  or Conference League one instead unless asked.
+- **National team**: same idea for Norway's next confirmed match (World
+  Cup/Euro qualifying, Nations League, or a confirmed friendly window) —
+  keep exactly one upcoming `is-planned` comp-nor card lined up, the same
+  way Portugal (27 Sep 2026) was already being kept as "next up" before
+  this rule was written down.
+- Match cards are chronological — insert the new `is-planned` card in
+  date order among the existing cards (after the current last card in
+  that timeline, before `</div>` that closes the timeline / before
+  `<div class="timeline-legend">` if it's the very last card overall),
+  in BOTH `source/Main.en.dc.html` and `source/Main.no.dc.html`, and only
+  fill in kickoff time/venue once it's confirmed (use the existing
+  `<span class="score-note">HH:MM kickoff</span>` / `avspark HH:MM`
+  pattern; a "TBC" fixture without a confirmed kickoff can be added with
+  just the date and `Scheduled · <venue>` if the venue is known, kickoff
+  time omitted, like the earlier `is-planned` cards this session added
+  did before their kickoff times were confirmed).
+- This is on top of, not instead of, converting an existing `is-planned`
+  card to a played result once that match has happened (see "Verifying a
+  match result" above) — a newly-confirmed match should both close out
+  the old placeholder AND get its own new `is-planned` placeholder added
+  for whatever comes after it in that same competition.
+
 ## Stats cascade — updating hardcoded derived stats after a match
 
 Match cards are added/edited directly, but several other numbers on the
