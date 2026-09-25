@@ -770,3 +770,40 @@ landslagsm&aring;l, p&aring; 53 kamper, kryssjekket mot TNT Sports, The Canary o
 enige om 53 kamper; historisk sett er Gerd M&uuml;llers 48-kampers rekord fra 1973 fortsatt
 raskest gjennom tidene, s&aring; teksten er formulert som "raskest i moderne tid"/"raskere enn
 Messi og Ronaldo" for å v&aelig;re presis).
+
+**ALVORLIG FEIL RETTET (25. sep. 2026) &mdash; Norge&ndash;Danmark 24. sep. og to hull i
+landslags-historikken:** Eieren p&aring;pekte at kampresultatet mot Danmark var feil. Den
+forrige (automatiserte) oppdateringen hadde registrert 2&ndash;1 med &eacute;t Haaland-m&aring;l,
+sitert bare VAVEL &mdash; sannsynligvis en momentan (ikke sluttf&oslash;rt) live-tekst-status
+fanget midtveis i kampen. Det korrekte resultatet er Norge 3&ndash;2 Danmark
+(UEFA Nations League, Ullev&aring;l): Bobb &aring;pnet (14. min.), Haaland scoret to ganger
+(18. min., assist Nusa; 74. min., seiersm&aring;let via en &Oslash;degaard&ndash;Nusa-hj&oslash;rnespark),
+Damsgaard (25. min.) og H&oslash;jlund (60. min.) utlignet for Danmark, M&oslash;ller Wolfe fikk sitt
+andre gule kort p&aring; overtid &mdash; kryssjekket mot Sofascore, Fotmob, beIN Sports,
+AllFootball, dailywaadaa og thesportsencounter (alle enige om 3&ndash;2 og Haaland-dobbel).
+
+For &aring; finne riktig ny landslagstotal ble hele Norge-kamphistorikken p&aring; siden
+reg­net etter for h&aring;nd og kryssjekket mot flere uavhengige "milep&aelig;l"-artikler
+(39 m&aring;l/40 kamper etter Moldova 22. mar. 2025; 40. m&aring;l mot Israel 25. mar. 2025;
+50. m&aring;l = kampens 2. m&aring;l i Israel-hattricket 11. okt. 2025 i spillerens 46. landskamp;
+57 m&aring;l etter Irak 17. jun. 2026; 60. m&aring;l mot Elfenbenskysten 30. jun. 2026). Dette
+avdekket at to hele landslagskamper manglet helt fra datasettet, uavhengig av
+Danmark-feilen:
+- **Norge&ndash;Finland 1&ndash;0 (vennskapskamp, Ullev&aring;l, 4. sep. 2025)** &mdash; Haaland scoret
+  vinnermålet p&aring; straffe (etter at Keskinen felte Schjelderup), hans 43. landslagsm&aring;l
+  i sin 44. landskamp &mdash; kryssjekket mot TribalFootball, footboom1.com og ESPN.
+- **Norge&ndash;Sveits 0&ndash;0 (vennskapskamp, Ullev&aring;l, 31. mar. 2026)** &mdash; Haaland spilte
+  (byttet ut i det 63. min.), ingen m&aring;l i kampen &mdash; kryssjekket mot ESPN, Sofascore,
+  FOX Sports og VAVEL. Samtidig lagt til (for fullstendighetens skyld, uten
+  betydning for m&aring;l/kamp-tallet) **Nederland&ndash;Norge 2&ndash;1 (vennskapskamp, 27. mar.
+  2026)** som et "ikke i troppen"-kort &mdash; Haaland ble hvilt &mdash; kryssjekket mot
+  beIN Sports og ESPN.
+
+Ny, fullt kryssjekket landslagstotal etter Danmark-kampen: **64 m&aring;l p&aring; 55 kamper**
+(oppdatert i n&oslash;kkeltall-boksen, m&aring;l-per-alder-grafen, verdens-/Europa-toppscorer­listene,
+"Status"-loggf&oslash;ringen og "70 landslagsm&aring;l"-fremdriften). &Eacute;n gjenst&aring;ende liten
+usikkerhet: "raskest til 60 m&aring;l"-teksten justert fra "53 kamper" til "52 kamper" for &aring;
+v&aelig;re internt konsistent med det rekonstruerte kampdatasettet &mdash; de eksterne kildene sa
+"53 opptredener", men etter tillegget av Sveits-kampen gir sidens egen (n&aring; fullstendige)
+kamplogg 52; differansen p&aring; &eacute;n kamp er ikke fullt oppklart og kan v&aelig;re verdt en ny
+gjennomgang senere.

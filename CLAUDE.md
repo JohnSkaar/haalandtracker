@@ -5,6 +5,42 @@ record for Manchester City, the Champions League and Norway. Live at
 haalandtracker.com / haalandtracker.no. Work directly on `main` — this repo
 pushes straight to main, no PRs, per the owner's preference.
 
+## Verifying a match result — do this before writing anything
+
+A real incident (25 Sep 2026): a match card was published showing Norway 2-1
+Denmark with 1 Haaland goal, citing a single source (VAVEL). The actual final
+score was Norway 3-2 Denmark with a Haaland brace — the cited source had
+almost certainly been captured mid-match (a live-blog snapshot), not at full
+time. The owner had to report this as a live, public-facing error.
+
+To prevent this:
+- Never write a score/goal count from a single source. Cross-check against at
+  least two independent outlets (e.g. two of: ESPN, Sky Sports, Sofascore,
+  beIN Sports, official club/federation sites, BBC).
+- Prefer sources and phrasing that clearly describe a **finished** match
+  ("full-time", "FT", a match report published after the final whistle) over
+  a live-score page or a headline that could be a snapshot taken during play.
+  A live-blog URL in particular ("live score", "live commentary") is a signal
+  to re-search for the post-match report instead of trusting its cited number
+  directly.
+- If you find dedicated "his Nth international/career goal" milestone
+  articles, treat them as a strong cross-check on cumulative totals, not just
+  color for that one match — they're usually precisely fact-checked and catch
+  a wrong goal count that a plain scoreline search would miss.
+- Before publishing a new running total (caps/goals), sanity-check it against
+  the site's OWN match-card history: count icon-chip goal icons (NOT
+  `icon-boot` assist icons — the card markup uses `class="icon-chip"` for a
+  goal and `class="icon-chip icon-boot"` for an assist, and both live inside
+  `.match-icons`) across all played (non-`is-missed`, non-`is-planned`)
+  `comp-nor` cards, and see that it lands on the number you're about to
+  write. A mismatch usually means either the new match's goal count is wrong,
+  or — as happened here twice (a Norway-Finland friendly on 4 Sep 2025 and a
+  Norway-Switzerland friendly on 31 Mar 2026 were both completely missing) —
+  an earlier friendly was never added at all. Friendlies are easy to miss
+  because they don't show up in "World Cup qualifying" / "Nations League"
+  style searches; search explicitly for Norway's fixture list for the window
+  in question, not just the headline competitive matches.
+
 ## Build
 
 Source of truth is `source/Main.en.dc.html` and `source/Main.no.dc.html`
