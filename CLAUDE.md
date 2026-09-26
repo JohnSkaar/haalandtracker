@@ -33,13 +33,21 @@ To prevent this:
   goal and `class="icon-chip icon-boot"` for an assist, and both live inside
   `.match-icons`) across all played (non-`is-missed`, non-`is-planned`)
   `comp-nor` cards, and see that it lands on the number you're about to
-  write. A mismatch usually means either the new match's goal count is wrong,
-  or — as happened here twice (a Norway-Finland friendly on 4 Sep 2025 and a
-  Norway-Switzerland friendly on 31 Mar 2026 were both completely missing) —
-  an earlier friendly was never added at all. Friendlies are easy to miss
-  because they don't show up in "World Cup qualifying" / "Nations League"
-  style searches; search explicitly for Norway's fixture list for the window
-  in question, not just the headline competitive matches.
+  write. Do the same for the CAPS count, not just goals: count every played
+  `comp-nor` card where Haaland was actually in the squad (i.e. NOT
+  `is-missed`) — an externally-reported "Nth goal in game M" milestone is a
+  check on both numbers at once, and a mismatch on either is a real signal,
+  not noise.
+  A mismatch usually means either the new match's goal count is wrong, or an
+  earlier friendly was never added at all — this has now happened THREE
+  times: Norway-Finland on 4 Sep 2025, Norway-Switzerland on 31 Mar 2026, and
+  Norway-Sweden + Norway-Morocco (both pre-World Cup friendlies, 1 Jun and 7
+  Jun 2026) were all completely missing from the site until caught this way.
+  Friendlies are easy to miss because they don't show up in "World Cup
+  qualifying" / "Nations League" style searches; search explicitly for
+  Norway's fixture list for the window in question, not just the headline
+  competitive matches — this is a recurring gap, not a one-off, so always do
+  this check, not just when something already looks off.
 
 ## Build
 

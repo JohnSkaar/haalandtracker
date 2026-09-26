@@ -383,7 +383,7 @@ class Site {
       {
         period: '30. jun. 2026',
         title: 'Avgjørende mål mot Elfenbenskysten',
-        desc: 'Scoret vinnermålet i det 86. minutt (2–1) i Dallas — Norges aller første seier i en VM-sluttspillskamp, og hans 60. landslagsmål: raskeste noensinne til 60 mål i moderne tid, på 52 kamper, raskere enn Messi og Ronaldo på samme stadium.',
+        desc: 'Scoret vinnermålet i det 86. minutt (2–1) i Dallas — Norges aller første seier i en VM-sluttspillskamp, og hans 60. landslagsmål: raskeste noensinne til 60 mål i moderne tid, på 53 kamper, raskere enn Messi og Ronaldo på samme stadium.',
         record: true,
       },
       {
@@ -404,7 +404,8 @@ class Site {
         desc: 'Tapte 1–2 mot England etter ekstraomganger i Miami (Bellingham-dobbel). Haalands hodestøt ble reddet av Pickford, og et Norge-mål ble annullert etter en Haaland-takling. Lengste VM-løp i Norges historie.',
         record: false,
       },
-      { period: '24. sep. 2026', title: 'Status: 64 landslagsmål', desc: '64 mål på 55 kamper siden debuten 05.09.2019.', record: true },
+      { period: '24. sep. 2026', title: 'Toppscorer gjennom tidene blant nordiske land', desc: 'Mål nummer 63 og 64 (18. og 74. minutt, seiersmålet) tok ham forbi Zlatan Ibrahimović (Sverige, 62 mål) som tidenes toppscorer blant nordiske landslag.', record: true },
+      { period: '24. sep. 2026', title: 'Status: 64 landslagsmål', desc: '64 mål på 56 kamper siden debuten 05.09.2019.', record: true },
       {
         period: 'Sommer 2026',
         title: 'St&oslash;rste klatrer i FIFA-rankingen',
@@ -1526,7 +1527,7 @@ class Site {
       { name: 'R. Keane', value: 68, caps: 146, color: '#2f5aa8', isH: false, active: false, europe: true },
       { name: 'K. Mbappé', value: 67, caps: 107, color: '#6a3fa0', isH: false, active: true, europe: true },
       { name: 'A. Mitrović', value: 64, caps: 106, color: '#a8791a', isH: false, active: true, europe: true },
-      { name: 'E. Haaland', value: 64, caps: 55, color: '#c1352b', isH: true, active: true, europe: true },
+      { name: 'E. Haaland', value: 64, caps: 56, color: '#c1352b', isH: true, active: true, europe: true },
       { name: 'Z. Ibrahimović', value: 62, caps: 122, color: '#1f2937', isH: false, active: false, europe: true },
       { name: 'I. Schlosser', value: 59, caps: 68, color: '#7c3f8f', isH: false, active: false, europe: true },
     ];
@@ -1535,12 +1536,12 @@ class Site {
     const europeCaption = (rank) =>
       'Offisiell liste over europeiske toppscorere for herrelandslag gjennom tidene — tallet i parentes er totalt antall landskamper. Haalands plassering: #' +
       rank +
-      ', med 64 mål på 55 kamper. Andre spilleres tall sist verifisert 26. sep. 2026.';
+      ', med 64 mål på 56 kamper. Andre spilleres tall sist verifisert 26. sep. 2026.';
     let natBars = [],
       natCaption = '';
     if (cnat.active === 'norway') {
       natBars = NAT_NORWAY.map((t) => bar(t.rank + '. ' + t.name, t.value, 65, t.color, t.isH));
-      natCaption = 'Norges målkonger gjennom tidene — 64 mål på 55 kamper, 05.09.2019–24.09.2026.';
+      natCaption = 'Norges målkonger gjennom tidene — 64 mål på 56 kamper, 05.09.2019–24.09.2026.';
     } else if (cnat.active === 'europe') {
       natBars = europeOnly.map((t, i) => withCaps(bar(i + 1 + '. ' + t.name + (t.active ? '*' : ''), t.value, 150, t.color, t.isH), t));
       natCaption = europeCaption(europeOnly.findIndex((t) => t.isH) + 1);
@@ -1553,7 +1554,7 @@ class Site {
         ? europeCaption(haalandRank)
         : 'Toppscorere for herrelandslag gjennom tidene, i verden — tallet i parentes er totalt antall landskamper. Haalands plassering: #' +
           haalandRank +
-          ', med 64 mål på 55 kamper. Andre spilleres tall sist verifisert 26. sep. 2026.';
+          ', med 64 mål på 56 kamper. Andre spilleres tall sist verifisert 26. sep. 2026.';
     }
 
     const chartNat = {
@@ -5259,6 +5260,32 @@ function render(vals) {
  <div class="match-status played"><span class="status-label">Spilt</span><span class="status-desc">ingen m&aring;l &mdash; Semenyo scoret City-m&aring;let, Watkins avgjorde med to</span></div>
  </div>
 
+ <div class="match-card is-missed season-2526 comp-nor">
+ <div class="match-comp nor">LAND</div>
+ <div class="match-date">1. jun. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#006AA7"/><rect x="6" width="2" height="12" fill="#FECC02"/><rect y="5" width="18" height="2" fill="#FECC02"/></svg></div>
+ </div>
+ <div class="match-opp">vs Sverige&nbsp;(H)<span class="match-score-line"><span class="match-score">3&ndash;1</span></span></div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Ikke i troppen &middot; hvilt, vennskapskamp f&oslash;r VM &mdash; Strand Larsen scoret to (kilde: beIN Sports)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-nor">
+ <div class="match-comp nor">LAND</div>
+ <div class="match-date">7. jun. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#C1272D"/><polygon points="9,3 9.76,4.95 11.85,5.07 10.24,6.4 10.76,8.43 9,7.3 7.24,8.43 7.76,6.4 6.15,5.07 8.24,4.95" fill="#006233"/></svg></div>
+ </div>
+ <div class="match-opp">vs Marokko&nbsp;(N)<span class="match-score-line"><span class="match-score">1&ndash;1</span></span></div>
+ <div class="match-icons"></div>
+ <div class="match-status played"><span class="status-label">Spilt</span><span class="status-desc">ingen m&aring;l &mdash; vennskapskamp f&oslash;r VM i New Jersey, &Oslash;degaard utlignet (kilde: ESPN)</span></div>
+ </div>
+
  <div class="match-card season-2526 comp-nor">
  <div class="match-comp nor">VM</div>
  <div class="match-date">17. jun. 2026</div>
@@ -5476,7 +5503,7 @@ function render(vals) {
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div></div>
- <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-desc">2 m&aring;l (18. og 74. min., seiersm&aring;let) &mdash; forbi Ronaldo og Ibrahimovi&#263;s 62 landslagsm&aring;l i en 3&ndash;2-thriller (kilde: Sofascore)</span></div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-desc">2 m&aring;l (18. og 74. min., seiersm&aring;let) &mdash; forbi Zlatan Ibrahimovi&#263;s nordiske rekord p&aring; 62 landslagsm&aring;l i en 3&ndash;2-thriller (kilde: Sofascore)</span></div>
  </div>
 
  <div class="now-marker"><span>N&Aring;</span></div>
@@ -6059,7 +6086,7 @@ function render(vals) {
  </div>
  <div class="lane-fact">
  <span class="lane-fact-label">Offisiell rekord</span>
- <span class="lane-fact-value">Norges toppscorer gjennom tidene &mdash; 64 m&aring;l p&aring; 55 landskamper, periode 05.09.2019&ndash;24.09.2026.</span>
+ <span class="lane-fact-value">Norges toppscorer gjennom tidene &mdash; 64 m&aring;l p&aring; 56 landskamper, periode 05.09.2019&ndash;24.09.2026.</span>
  </div>
  </div>
 
@@ -6072,7 +6099,11 @@ function render(vals) {
  </div>
  <div class="merit-chip">
  <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M12 2.5l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6 .8z" fill="#fff"/></svg></span>
- <div class="merit-text"><b>Norges toppscorer gjennom tidene</b><span class="sub">64 m&aring;l p&aring; 55 kamper, 05.09.2019&ndash;24.09.2026</span></div>
+ <div class="merit-text"><b>Norges toppscorer gjennom tidene</b><span class="sub">64 m&aring;l p&aring; 56 kamper, 05.09.2019&ndash;24.09.2026</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M12 2.5l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6 .8z" fill="#fff"/></svg></span>
+ <div class="merit-text"><b>Toppscorer gjennom tidene blant nordiske land</b><span class="sub">Forbi Zlatan Ibrahimovi&#263;s 62 m&aring;l for Sverige, 24. sep. 2026</span></div>
  </div>
  <div class="merit-chip">
  <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#fff"/></svg></span>
@@ -6096,9 +6127,9 @@ function render(vals) {
  <div class="stat-mini">
  <span class="stat-mini-title">Landslaget &mdash; n&oslash;kkeltall</span>
  <div class="stat-mini-row">
- <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">55</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">56</span></div>
  <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">64</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">1,16</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">1,14</span></div>
  </div>
  <span class="stat-mini-note">Hele landslagskarrieren, 05.09.2019&ndash;24.09.2026.</span>
  </div>
@@ -6178,7 +6209,7 @@ function render(vals) {
  </div>
  `).join('')}
  </div>
- <span class="chart-caption">64 landslagsm&aring;l p&aring; 55 kamper (05.09.2019&ndash;24.09.2026) &mdash; Norges toppscorer gjennom tidene, foran J&oslash;rgen Juve og Alexander S&oslash;rloth.</span>
+ <span class="chart-caption">64 landslagsm&aring;l p&aring; 56 kamper (05.09.2019&ndash;24.09.2026) &mdash; Norges toppscorer gjennom tidene, foran J&oslash;rgen Juve og Alexander S&oslash;rloth.</span>
 
  <div class="chip-select">
  <button class="${vals.chart.nat.norwayClass}" data-bind="chart.nat.setNorway">Best i Norge</button>

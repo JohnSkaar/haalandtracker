@@ -853,3 +853,35 @@ Keane 146, Mbapp&eacute; 107 (67 m&aring;l, oppdatert etter Frankrikes 1&ndash;0
 25. sep. 2026 i Nations League &mdash; hans m&aring;l var det avgj&oslash;rende, kilde: Flashscore,
 Get French Football News), Mitrovi&#263; 106, Haaland 55 (fra sidens egen data),
 Ibrahimovi&#263; 122, Schlosser 68.
+
+**Ny nordisk rekord + to helt manglende landskamper funnet og lagt til (26. sep.
+2026), etter eierens melding om "Med Haalands 63. og 64. m&aring;l i kamp 56 er han
+tidenes landslagstoppscorer i Norden":** Flere kilder (VG.no, Flashscore, SABC,
+players.bio, Telecomasia, ARY News) omtalte samstemt Danmark-kampen (24. sep.
+2026) som Haalands "64 m&aring;l p&aring; 56 landskamper", mens siden p&aring; det tidspunktet sto
+oppf&oslash;rt med 55 kamper &mdash; ett avvik. Gjennomgang av sidens egen komplette
+landslagshistorikk (comp-nor-kort) avdekket at to vennskapskamper f&oslash;r VM 2026
+manglet helt: Norge&ndash;Sverige 3&ndash;1 (1. jun. 2026, Ullevaal &mdash; Haaland ikke i
+troppen/hvilt, Strand Larsen scoret to, kilde: beIN Sports) og Norge&ndash;Marokko 1&ndash;1
+(7. jun. 2026, New Jersey, n&oslash;ytral bane &mdash; Haaland spilte 75 min., ingen m&aring;l,
+&Oslash;degaard utlignet, kilder: ESPN, Outlook India, Newsweek, Sky Sports, Sofascore).
+Siden Haaland faktisk spilte Marokko-kampen (men ikke Sverige-kampen), &oslash;ker dette
+antall landskamper med n&oslash;yaktig 1 (55&rarr;56) &mdash; i tr&aring;d med de eksterne kildene.
+Dette l&oslash;ste ogs&aring; et tidligere uavklart avvik: "Raskest til 60 landslagsm&aring;l"-oppf&oslash;ringen
+(30. jun. 2026, mot Elfenbenskysten) sto med "52 kamper" i sidens egen
+rekonstruksjon, mot "53 kamper" i eksterne kilder &mdash; Marokko-kampen (7. jun., f&oslash;r
+30. jun.) er nettopp den manglende kampen som lukker dette avviket. Rettet til 53.
+
+Lagt til ny rekordoppf&oslash;ring i landslagshistorikken: "Toppscorer gjennom tidene blant
+nordiske land" (24. sep. 2026) &mdash; m&aring;l #63 og #64 (18. og 74. min., seiersm&aring;let) tok
+Haaland forbi Zlatan Ibrahimovi&#263;s (Sverige) nordiske rekord p&aring; 62 landslagsm&aring;l.
+Samtidig rettet en feilaktig formulering i Danmark-kampens statustekst som
+urikitg n&aelig;vnte "Ronaldo og Ibrahimovi&#263;s 62 m&aring;l" (Ronaldo har 146 landslagsm&aring;l
+per NAT_WORLD &mdash; feilen stammet fra en tidligere runde) til kun &aring; vise til
+Ibrahimovi&#263;s nordiske rekord. Alle kaskaderende 55&rarr;56-tall oppdatert i b&aring;de EN- og
+NO-filen: "National team &mdash; key stats"-boksen (Games/Kamper + snitt 1,16&rarr;1,14),
+lane-fact/merit-tekstene, chart-caption, `NAT_WORLD`s Haaland-`caps`, og
+verden/Europa-hjelpetekstene. Dette er fjerde gang i denne &oslash;kten en helt manglende
+vennskapskamp (etter Finland 4. sep. 2025 og Sveits 31. mar. 2026) har blitt
+avdekket via akkurat denne metoden &mdash; kryssjekk av eksternt rapporterte
+kamp-/m&aring;ltall mot sidens egen rekonstruerte l&oslash;pende sum.

@@ -404,7 +404,7 @@ class Site {
       {
         period: '30 Jun 2026',
         title: 'Decisive goal vs Ivory Coast',
-        desc: 'Scored the winner in the 86th minute (2&ndash;1) in Dallas &mdash; Norway&#39;s first-ever win in a World Cup finals match, and his 60th international goal: the fastest anyone has reached 60 in the modern game, in 52 appearances, quicker than Messi and Ronaldo at the same stage.',
+        desc: 'Scored the winner in the 86th minute (2&ndash;1) in Dallas &mdash; Norway&#39;s first-ever win in a World Cup finals match, and his 60th international goal: the fastest anyone has reached 60 in the modern game, in 53 appearances, quicker than Messi and Ronaldo at the same stage.',
         record: true,
       },
       {
@@ -425,7 +425,8 @@ class Site {
         desc: 'Lost 1&ndash;2 to England after extra time in Miami (a Bellingham brace). Haaland&#39;s header was saved by Pickford, and a Norway goal was ruled out after a Haaland challenge. Norway&#39;s longest-ever World Cup run.',
         record: false,
       },
-      { period: '24 Sep 2026', title: 'Status: 64 international goals', desc: '64 goals in 55 caps since his debut on 05.09.2019.', record: true },
+      { period: '24 Sep 2026', title: 'All-time top scorer among Nordic nations', desc: 'Goals #63 and #64 (18th and 74th minute, the winner) moved him past Zlatan Ibrahimovi&#263; (Sweden, 62 goals) as the all-time top international scorer among Nordic countries.', record: true },
+      { period: '24 Sep 2026', title: 'Status: 64 international goals', desc: '64 goals in 56 caps since his debut on 05.09.2019.', record: true },
       {
         period: 'Summer 2026',
         title: 'Biggest climber in the FIFA rankings',
@@ -1547,7 +1548,7 @@ class Site {
       { name: 'R. Keane', value: 68, caps: 146, color: '#2f5aa8', isH: false, active: false, europe: true },
       { name: 'K. Mbappé', value: 67, caps: 107, color: '#6a3fa0', isH: false, active: true, europe: true },
       { name: 'A. Mitrović', value: 64, caps: 106, color: '#a8791a', isH: false, active: true, europe: true },
-      { name: 'E. Haaland', value: 64, caps: 55, color: '#c1352b', isH: true, active: true, europe: true },
+      { name: 'E. Haaland', value: 64, caps: 56, color: '#c1352b', isH: true, active: true, europe: true },
       { name: 'Z. Ibrahimović', value: 62, caps: 122, color: '#1f2937', isH: false, active: false, europe: true },
       { name: 'I. Schlosser', value: 59, caps: 68, color: '#7c3f8f', isH: false, active: false, europe: true },
     ];
@@ -1556,12 +1557,12 @@ class Site {
     const europeCaption = (rank) =>
       'Official list of all-time top European scorers for men&#39;s national teams &mdash; the number in parentheses is total caps (appearances). Haaland&#39;s ranking: #' +
       rank +
-      ', with 64 goals in 55 games. Other players&#39; totals last verified 26 Sep 2026.';
+      ', with 64 goals in 56 games. Other players&#39; totals last verified 26 Sep 2026.';
     let natBars = [],
       natCaption = '';
     if (cnat.active === 'norway') {
       natBars = NAT_NORWAY.map((t) => bar(t.rank + '. ' + t.name, t.value, 65, t.color, t.isH));
-      natCaption = 'Norway&#39;s all-time top scorers &mdash; 64 goals in 55 games, 05.09.2019&ndash;24.09.2026.';
+      natCaption = 'Norway&#39;s all-time top scorers &mdash; 64 goals in 56 games, 05.09.2019&ndash;24.09.2026.';
     } else if (cnat.active === 'europe') {
       natBars = europeOnly.map((t, i) => withCaps(bar(i + 1 + '. ' + t.name + (t.active ? '*' : ''), t.value, 150, t.color, t.isH), t));
       natCaption = europeCaption(europeOnly.findIndex((t) => t.isH) + 1);
@@ -1574,7 +1575,7 @@ class Site {
         ? europeCaption(haalandRank)
         : 'All-time top scorers for men&#39;s national teams, worldwide &mdash; the number in parentheses is total caps (appearances). Haaland&#39;s ranking: #' +
           haalandRank +
-          ', with 64 goals in 55 games. Other players&#39; totals last verified 26 Sep 2026.';
+          ', with 64 goals in 56 games. Other players&#39; totals last verified 26 Sep 2026.';
     }
 
     const chartNat = {
@@ -5280,6 +5281,32 @@ function render(vals) {
  <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; Semenyo scored City's goal, Watkins settled it with two</span></div>
  </div>
 
+ <div class="match-card is-missed season-2526 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">1 Jun 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#006AA7"/><rect x="6" width="2" height="12" fill="#FECC02"/><rect y="5" width="18" height="2" fill="#FECC02"/></svg></div>
+ </div>
+ <div class="match-opp">vs Sweden&nbsp;(H)<span class="match-score-line"><span class="match-score">3&ndash;1</span></span></div>
+ <div class="match-icons"></div>
+ <div class="match-status missed">Not in the squad &middot; rested, pre-World Cup friendly &mdash; Strand Larsen scored twice (source: beIN Sports)</div>
+ </div>
+
+ <div class="match-card season-2526 comp-nor">
+ <div class="match-comp nor">NT</div>
+ <div class="match-date">7 Jun 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#C1272D"/><polygon points="9,3 9.76,4.95 11.85,5.07 10.24,6.4 10.76,8.43 9,7.3 7.24,8.43 7.76,6.4 6.15,5.07 8.24,4.95" fill="#006233"/></svg></div>
+ </div>
+ <div class="match-opp">vs Morocco&nbsp;(N)<span class="match-score-line"><span class="match-score">1&ndash;1</span></span></div>
+ <div class="match-icons"></div>
+ <div class="match-status played"><span class="status-label">Played</span><span class="status-desc">no goal &mdash; pre-World Cup friendly in New Jersey, &Oslash;degaard equalised (source: ESPN)</span></div>
+ </div>
+
  <div class="match-card season-2526 comp-nor">
  <div class="match-comp nor">WC</div>
  <div class="match-date">17 Jun 2026</div>
@@ -5497,7 +5524,7 @@ function render(vals) {
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
  </div></div>
- <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-desc">2 goals (18' and 74', the winner) &mdash; passed Ronaldo and Ibrahimovi&#263;'s 62 international goals in a 3&ndash;2 thriller (source: Sofascore)</span></div>
+ <div class="match-status played"><svg class="record-star" viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6z" fill="#d9a92f" stroke="#6b4d0f" stroke-width="0.6"/></svg><span class="status-desc">2 goals (18' and 74', the winner) &mdash; passed Ibrahimovi&#263;'s Nordic record of 62 goals in a 3&ndash;2 thriller (source: Sofascore)</span></div>
  </div>
 
  <div class="now-marker"><span>NOW</span></div>
@@ -6080,7 +6107,7 @@ function render(vals) {
  </div>
  <div class="lane-fact">
  <span class="lane-fact-label">Official record</span>
- <span class="lane-fact-value">Norway's all-time top scorer &mdash; 64 goals in 55 caps, 05.09.2019&ndash;24.09.2026.</span>
+ <span class="lane-fact-value">Norway's all-time top scorer &mdash; 64 goals in 56 caps, 05.09.2019&ndash;24.09.2026.</span>
  </div>
  </div>
 
@@ -6093,7 +6120,11 @@ function render(vals) {
  </div>
  <div class="merit-chip">
  <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M12 2.5l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6 .8z" fill="#fff"/></svg></span>
- <div class="merit-text"><b>Norway&rsquo;s all-time top scorer</b><span class="sub">64 goals in 55 games, 05.09.2019&ndash;24.09.2026</span></div>
+ <div class="merit-text"><b>Norway&rsquo;s all-time top scorer</b><span class="sub">64 goals in 56 games, 05.09.2019&ndash;24.09.2026</span></div>
+ </div>
+ <div class="merit-chip">
+ <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M12 2.5l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6 .8z" fill="#fff"/></svg></span>
+ <div class="merit-text"><b>All-time top scorer among Nordic nations</b><span class="sub">Passed Zlatan Ibrahimovi&#263;'s 62 goals for Sweden, 24 Sep 2026</span></div>
  </div>
  <div class="merit-chip">
  <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.5"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="#fff"/></svg></span>
@@ -6117,9 +6148,9 @@ function render(vals) {
  <div class="stat-mini">
  <span class="stat-mini-title">National team &mdash; key stats</span>
  <div class="stat-mini-row">
- <div class="stat-mini-item"><span class="stat-mini-label">Games</span><span class="stat-mini-value">55</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Games</span><span class="stat-mini-value">56</span></div>
  <div class="stat-mini-item"><span class="stat-mini-label">Goals</span><span class="stat-mini-value">64</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">Average</span><span class="stat-mini-value stat-avg">1.16</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Average</span><span class="stat-mini-value stat-avg">1.14</span></div>
  </div>
  <span class="stat-mini-note">Entire national team career, 05.09.2019&ndash;24.09.2026.</span>
  </div>
@@ -6199,7 +6230,7 @@ function render(vals) {
  </div>
  `).join('')}
  </div>
- <span class="chart-caption">64 international goals in 55 caps (05.09.2019&ndash;24.09.2026) &mdash; Norway&#39;s all-time top scorer, ahead of J&oslash;rgen Juve and Alexander S&oslash;rloth.</span>
+ <span class="chart-caption">64 international goals in 56 caps (05.09.2019&ndash;24.09.2026) &mdash; Norway&#39;s all-time top scorer, ahead of J&oslash;rgen Juve and Alexander S&oslash;rloth.</span>
 
  <div class="chip-select">
  <button class="${vals.chart.nat.norwayClass}" data-bind="chart.nat.setNorway">Best in Norway</button>
