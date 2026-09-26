@@ -191,6 +191,31 @@ note ("All competitions, through City game N, DD Mon YYYY" /
   international goals" — that's a snapshot of when a past milestone was
   reached, not a live counter. Only add a brand-new dated History entry
   like it when Haaland crosses a genuinely new, notable milestone.
+- **Only if Haaland scored** (this is what moves his own position in the
+  world/Europe all-time scorer chart, `const NAT_WORLD`, search for it):
+  also refresh every OTHER player in that array marked `active: true` —
+  Ronaldo, Chhetri, Lukaku, Lewandowski, Mabkhout, Kane, Džeko, Mbappé,
+  Mitrović and any others currently flagged active. Check each one's
+  current international goal total against a steady source — Wikipedia's
+  "List of men's footballers with 50 or more international goals" is the
+  best single reference (comprehensive, continuously maintained, covers
+  this whole list); cross-check anyone who looks like they moved with one
+  more source (UEFA.com's "Europe's top international scorers" piece, or
+  a plain WebSearch for "<player> international goals total <month
+  year>"). Update `value` for whoever's changed, and flip `active` to
+  `false` for anyone confirmed retired from international duty (e.g.
+  Messi retired from Argentina on 31 Aug 2026 — his entry is now
+  `active: false` even though his `value` of 125 didn't change; the `*`
+  suffix on chart labels is driven by `active`, so this is what removes
+  it). Don't reorder the array unless someone's new value actually
+  crosses a neighbour's. Only do this pass when Haaland's own goal count
+  just changed — not on every national-team match (e.g. skip it if he
+  played but didn't score) and never as a standalone scheduled check.
+  Update the "last verified" date in both `europeCaption` and the
+  `'world'` branch's caption string (search `Other players' totals last
+  verified` / `Andre spilleres tall sist verifisert`) to the date you did
+  this pass — that date is allowed to differ from the "Last updated"
+  footer badge above, since it covers players other than Haaland.
 
 **d) Premier League match:**
 - DO update the live in-progress season entry in `PL_SEASONS` (search

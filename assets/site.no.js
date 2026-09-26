@@ -1510,7 +1510,7 @@ class Site {
     ];
     const NAT_WORLD = [
       { name: 'C. Ronaldo', value: 146, color: '#2f5aa8', isH: false, active: true, europe: true },
-      { name: 'L. Messi', value: 125, color: '#6a3fa0', isH: false, active: true, europe: false },
+      { name: 'L. Messi', value: 125, color: '#6a3fa0', isH: false, active: false, europe: false },
       { name: 'Ali Daei', value: 108, color: '#a8791a', isH: false, active: false, europe: false },
       { name: 'S. Chhetri', value: 95, color: '#1f2937', isH: false, active: true, europe: false },
       { name: 'R. Lukaku', value: 93, color: '#7c3f8f', isH: false, active: true, europe: true },
@@ -1524,14 +1524,17 @@ class Site {
       { name: 'M. Klose', value: 71, color: '#0f4c81', isH: false, active: false, europe: true },
       { name: 'G. Müller', value: 68, color: '#7c5a3f', isH: false, active: false, europe: true },
       { name: 'R. Keane', value: 68, color: '#2f5aa8', isH: false, active: false, europe: true },
-      { name: 'K. Mbappé', value: 66, color: '#6a3fa0', isH: false, active: true, europe: true },
+      { name: 'K. Mbappé', value: 67, color: '#6a3fa0', isH: false, active: true, europe: true },
       { name: 'A. Mitrović', value: 64, color: '#a8791a', isH: false, active: true, europe: true },
       { name: 'E. Haaland', value: 64, color: '#c1352b', isH: true, active: true, europe: true },
       { name: 'Z. Ibrahimović', value: 62, color: '#1f2937', isH: false, active: false, europe: true },
       { name: 'I. Schlosser', value: 59, color: '#7c3f8f', isH: false, active: false, europe: true },
     ];
     const europeOnly = NAT_WORLD.filter((t) => t.europe);
-    const europeCaption = (rank) => 'Offisiell liste over europeiske toppscorere for herrelandslag gjennom tidene. Haalands plassering: #' + rank + ', med 64 mål på 55 kamper.';
+    const europeCaption = (rank) =>
+      'Offisiell liste over europeiske toppscorere for herrelandslag gjennom tidene. Haalands plassering: #' +
+      rank +
+      ', med 64 mål på 55 kamper. Andre spilleres tall sist verifisert 26. sep. 2026.';
     let natBars = [],
       natCaption = '';
     if (cnat.active === 'norway') {
@@ -1547,7 +1550,9 @@ class Site {
       const haalandRank = worldFiltered.findIndex((t) => t.isH) + 1;
       natCaption = isEuropeFilter
         ? europeCaption(haalandRank)
-        : 'Toppscorere for herrelandslag gjennom tidene, i verden. Haalands plassering: #' + haalandRank + ', med 64 mål på 55 kamper.';
+        : 'Toppscorere for herrelandslag gjennom tidene, i verden. Haalands plassering: #' +
+          haalandRank +
+          ', med 64 mål på 55 kamper. Andre spilleres tall sist verifisert 26. sep. 2026.';
     }
 
     const chartNat = {
@@ -6476,7 +6481,7 @@ ${(vals.modal.nat) ? `
  <b>Interaksjon:</b> hver kolonne har egne av/p&aring;-brytere for historikk, tapte muligheter og fortsatt oppn&aring;elig. Rekordgrafen st&oslash;tter to milep&aelig;ler (100/150 m&aring;l), totalt/per sesong-visning, og av/p&aring;-bryter per konkurrent eller per sesong.
  </div>
 </footer>
-<div class="foot-updated-row"><div class="topbar-meta">Sist oppdatert: 20. sep. 2026</div></div>
+<div class="foot-updated-row"><div class="topbar-meta">Sist oppdatert: 24. sep. 2026</div></div>
 
 </div>
 </div>`;

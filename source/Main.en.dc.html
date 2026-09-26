@@ -5218,7 +5218,7 @@
  <b>Interaction:</b> each column has its own on/off toggles for history, missed chances and still achievable. The record chart supports two milestones (100/150 goals), a total/per-season view, and an on/off toggle per rival or per season.
  </div>
 </footer>
-<div class="foot-updated-row"><div class="topbar-meta">Last updated: 20 Sep 2026</div></div>
+<div class="foot-updated-row"><div class="topbar-meta">Last updated: 24 Sep 2026</div></div>
 
 </div>
 </div>
@@ -6756,7 +6756,7 @@ class Component extends DCLogic {
     ];
     const NAT_WORLD = [
       { name: 'C. Ronaldo', value: 146, color: '#2f5aa8', isH: false, active: true, europe: true },
-      { name: 'L. Messi', value: 125, color: '#6a3fa0', isH: false, active: true, europe: false },
+      { name: 'L. Messi', value: 125, color: '#6a3fa0', isH: false, active: false, europe: false },
       { name: 'Ali Daei', value: 108, color: '#a8791a', isH: false, active: false, europe: false },
       { name: 'S. Chhetri', value: 95, color: '#1f2937', isH: false, active: true, europe: false },
       { name: 'R. Lukaku', value: 93, color: '#7c3f8f', isH: false, active: true, europe: true },
@@ -6770,14 +6770,17 @@ class Component extends DCLogic {
       { name: 'M. Klose', value: 71, color: '#0f4c81', isH: false, active: false, europe: true },
       { name: 'G. Müller', value: 68, color: '#7c5a3f', isH: false, active: false, europe: true },
       { name: 'R. Keane', value: 68, color: '#2f5aa8', isH: false, active: false, europe: true },
-      { name: 'K. Mbappé', value: 66, color: '#6a3fa0', isH: false, active: true, europe: true },
+      { name: 'K. Mbappé', value: 67, color: '#6a3fa0', isH: false, active: true, europe: true },
       { name: 'A. Mitrović', value: 64, color: '#a8791a', isH: false, active: true, europe: true },
       { name: 'E. Haaland', value: 64, color: '#c1352b', isH: true, active: true, europe: true },
       { name: 'Z. Ibrahimović', value: 62, color: '#1f2937', isH: false, active: false, europe: true },
       { name: 'I. Schlosser', value: 59, color: '#7c3f8f', isH: false, active: false, europe: true },
     ];
     const europeOnly = NAT_WORLD.filter((t) => t.europe);
-    const europeCaption = (rank) => 'Official list of all-time top European scorers for men&#39;s national teams. Haaland&#39;s ranking: #' + rank + ', with 64 goals in 55 games.';
+    const europeCaption = (rank) =>
+      'Official list of all-time top European scorers for men&#39;s national teams. Haaland&#39;s ranking: #' +
+      rank +
+      ', with 64 goals in 55 games. Other players&#39; totals last verified 26 Sep 2026.';
     let natBars = [],
       natCaption = '';
     if (cnat.active === 'norway') {
@@ -6793,7 +6796,9 @@ class Component extends DCLogic {
       const haalandRank = worldFiltered.findIndex((t) => t.isH) + 1;
       natCaption = isEuropeFilter
         ? europeCaption(haalandRank)
-        : 'All-time top scorers for men&#39;s national teams, worldwide. Haaland&#39;s ranking: #' + haalandRank + ', with 64 goals in 55 games.';
+        : 'All-time top scorers for men&#39;s national teams, worldwide. Haaland&#39;s ranking: #' +
+          haalandRank +
+          ', with 64 goals in 55 games. Other players&#39; totals last verified 26 Sep 2026.';
     }
 
     const chartNat = {

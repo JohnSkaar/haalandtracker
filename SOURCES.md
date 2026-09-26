@@ -815,3 +815,17 @@ avspark 21:00 lokal tid) &mdash; kryssjekket mot ESPN, Sofascore, mancity.com (o
 kampliste og billettside for PSG-kampen) og UEFA.com (CL-runde-datoer). Landslagets
 neste kamp (Portugal, 27. sep.) l&aring; allerede inne fra tidligere. Se CLAUDE.md, "Always
 keep the next fixture visible", for den l&oslash;pende regelen dette nå f&oslash;lger av.
+
+**Verdens-/Europa-toppscorer-grafen (NAT_WORLD) oppdatert (26. sep. 2026), etter
+Haalands Danmark-mål:** Mbapp&eacute; rettet fra 66 til 67 m&aring;l &mdash; scoret for Frankrike
+mot T&yuml;rkia i UEFA Nations League 25. sep. 2026 (kilde: Flashscore, Get French
+Football News, Yahoo Sports). Messi endret fra "active" til "pensjonert" (verdien
+125 er uendret, men "*"-merket i grafen fjernet) &mdash; offisielt annonserte sin avgang
+fra det argentinske landslaget 31. aug. 2026, per CNN, NBC News, FIFA.com m.fl.
+Ronaldo, Lukaku, Lewandowski og Kane sjekket og bekreftet uendret (146/93/89/85)
+mot UEFA.coms "Europe's top international scorers" og Wikipedia-artikkelen "List
+of men's footballers with 50 or more international goals" &mdash; sistnevnte er valgt
+som den faste, l&oslash;pende referansekilden for denne grafens "andre spillere" fremover
+(kontinuerlig vedlikeholdt, dekker hele lista). Se CLAUDE.md, punkt (c) under
+"Stats cascade", for den l&oslash;pende regelen: denne sjekken gj&oslash;res kun n&aring;r Haalands
+eget m&aring;ltall endres (dvs. n&aring;r han scorer for Norge), ikke p&aring; hver landskamp.
