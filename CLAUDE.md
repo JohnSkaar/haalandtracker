@@ -194,23 +194,37 @@ note ("All competitions, through City game N, DD Mon YYYY" /
 - **Only if Haaland scored** (this is what moves his own position in the
   world/Europe all-time scorer chart, `const NAT_WORLD`, search for it):
   also refresh every OTHER player in that array marked `active: true` —
-  Ronaldo, Chhetri, Lukaku, Lewandowski, Mabkhout, Kane, Džeko, Mbappé,
-  Mitrović and any others currently flagged active. Check each one's
-  current international goal total against a steady source — Wikipedia's
-  "List of men's footballers with 50 or more international goals" is the
-  best single reference (comprehensive, continuously maintained, covers
-  this whole list); cross-check anyone who looks like they moved with one
-  more source (UEFA.com's "Europe's top international scorers" piece, or
-  a plain WebSearch for "<player> international goals total <month
-  year>"). Update `value` for whoever's changed, and flip `active` to
-  `false` for anyone confirmed retired from international duty (e.g.
-  Messi retired from Argentina on 31 Aug 2026 — his entry is now
-  `active: false` even though his `value` of 125 didn't change; the `*`
-  suffix on chart labels is driven by `active`, so this is what removes
-  it). Don't reorder the array unless someone's new value actually
+  Ronaldo, Messi, Lukaku, Lewandowski, Mabkhout, Kane, Džeko, Mbappé,
+  Mitrović and any others currently flagged active (NOT Chhetri or Ali
+  Daei/Dahari/Puskás/Kocsis/Klose/Müller/Keane/Ibrahimović/Schlosser —
+  those are retired, their numbers are frozen forever). Each entry has a
+  `value` (goals) and a `caps` (appearances) field, both displayed as
+  "value (caps)" on the chart — update both, not just goals, when either
+  changes. Check against a steady source — Wikipedia's "List of men's
+  footballers with 50 or more international goals" is the best single
+  reference (comprehensive, continuously maintained, covers this whole
+  list); cross-check anyone who looks like they moved with one more
+  source (UEFA.com's "Europe's top international scorers" piece, or a
+  plain WebSearch for "<player> international goals/caps total <month
+  year>"). Don't reorder the array unless someone's new value actually
   crosses a neighbour's. Only do this pass when Haaland's own goal count
   just changed — not on every national-team match (e.g. skip it if he
   played but didn't score) and never as a standalone scheduled check.
+  Update the "last verified" date in `europeCaption` and the `'world'`
+  branch's caption string (search `Other players' totals last verified` /
+  `Andre spilleres tall sist verifisert`) to the date you did this pass.
+- **The `active` flag is an "on/off" switch tied to a player's actual
+  LAST match, not to a retirement announcement.** A player who has
+  announced retirement often still has one more official appearance to
+  play (a farewell/testimonial match) — don't flip `active` to `false`
+  until that match has actually been played. Example: Messi announced
+  his retirement from Argentina on 31 Aug 2026 but was still `active`
+  with a farewell match confirmed for 6 Oct 2026 vs Benin (his 208th and
+  final cap) — a scheduled reminder exists to update his entry (`caps`
+  to 208, `active` to `false`) once that specific match is confirmed
+  played; don't jump the gun and flip a player inactive on an
+  announcement alone, the way this file's own earlier guidance briefly
+  did before the owner corrected it.
   Update the "last verified" date in both `europeCaption` and the
   `'world'` branch's caption string (search `Other players' totals last
   verified` / `Andre spilleres tall sist verifisert`) to the date you did

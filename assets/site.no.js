@@ -1509,30 +1509,31 @@ class Site {
       { rank: 10, name: 'S. Iversen', value: 21, color: '#0e6b3a', isH: false },
     ];
     const NAT_WORLD = [
-      { name: 'C. Ronaldo', value: 146, color: '#2f5aa8', isH: false, active: true, europe: true },
-      { name: 'L. Messi', value: 125, color: '#6a3fa0', isH: false, active: false, europe: false },
-      { name: 'Ali Daei', value: 108, color: '#a8791a', isH: false, active: false, europe: false },
-      { name: 'S. Chhetri', value: 95, color: '#1f2937', isH: false, active: true, europe: false },
-      { name: 'R. Lukaku', value: 93, color: '#7c3f8f', isH: false, active: true, europe: true },
-      { name: 'M. Dahari', value: 89, color: '#2f8f5f', isH: false, active: false, europe: false },
-      { name: 'R. Lewandowski', value: 89, color: '#5a5f73', isH: false, active: true, europe: true },
-      { name: 'A. Mabkhout', value: 85, color: '#1f6f78', isH: false, active: true, europe: false },
-      { name: 'H. Kane', value: 85, color: '#8a1538', isH: false, active: true, europe: true },
-      { name: 'F. Puskás', value: 84, color: '#b5484f', isH: false, active: false, europe: true },
-      { name: 'S. Kocsis', value: 75, color: '#0e6b3a', isH: false, active: false, europe: true },
-      { name: 'E. Džeko', value: 73, color: '#DC052D', isH: false, active: true, europe: true },
-      { name: 'M. Klose', value: 71, color: '#0f4c81', isH: false, active: false, europe: true },
-      { name: 'G. Müller', value: 68, color: '#7c5a3f', isH: false, active: false, europe: true },
-      { name: 'R. Keane', value: 68, color: '#2f5aa8', isH: false, active: false, europe: true },
-      { name: 'K. Mbappé', value: 67, color: '#6a3fa0', isH: false, active: true, europe: true },
-      { name: 'A. Mitrović', value: 64, color: '#a8791a', isH: false, active: true, europe: true },
-      { name: 'E. Haaland', value: 64, color: '#c1352b', isH: true, active: true, europe: true },
-      { name: 'Z. Ibrahimović', value: 62, color: '#1f2937', isH: false, active: false, europe: true },
-      { name: 'I. Schlosser', value: 59, color: '#7c3f8f', isH: false, active: false, europe: true },
+      { name: 'C. Ronaldo', value: 146, caps: 233, color: '#2f5aa8', isH: false, active: true, europe: true },
+      { name: 'L. Messi', value: 125, caps: 207, color: '#6a3fa0', isH: false, active: true, europe: false },
+      { name: 'Ali Daei', value: 108, caps: 148, color: '#a8791a', isH: false, active: false, europe: false },
+      { name: 'S. Chhetri', value: 95, caps: 157, color: '#1f2937', isH: false, active: false, europe: false },
+      { name: 'R. Lukaku', value: 93, caps: 132, color: '#7c3f8f', isH: false, active: true, europe: true },
+      { name: 'M. Dahari', value: 89, caps: 142, color: '#2f8f5f', isH: false, active: false, europe: false },
+      { name: 'R. Lewandowski', value: 89, caps: 167, color: '#5a5f73', isH: false, active: true, europe: true },
+      { name: 'A. Mabkhout', value: 85, caps: 115, color: '#1f6f78', isH: false, active: true, europe: false },
+      { name: 'H. Kane', value: 85, caps: 121, color: '#8a1538', isH: false, active: true, europe: true },
+      { name: 'F. Puskás', value: 84, caps: 85, color: '#b5484f', isH: false, active: false, europe: true },
+      { name: 'S. Kocsis', value: 75, caps: 68, color: '#0e6b3a', isH: false, active: false, europe: true },
+      { name: 'E. Džeko', value: 73, caps: 148, color: '#DC052D', isH: false, active: true, europe: true },
+      { name: 'M. Klose', value: 71, caps: 137, color: '#0f4c81', isH: false, active: false, europe: true },
+      { name: 'G. Müller', value: 68, caps: 62, color: '#7c5a3f', isH: false, active: false, europe: true },
+      { name: 'R. Keane', value: 68, caps: 146, color: '#2f5aa8', isH: false, active: false, europe: true },
+      { name: 'K. Mbappé', value: 67, caps: 107, color: '#6a3fa0', isH: false, active: true, europe: true },
+      { name: 'A. Mitrović', value: 64, caps: 106, color: '#a8791a', isH: false, active: true, europe: true },
+      { name: 'E. Haaland', value: 64, caps: 55, color: '#c1352b', isH: true, active: true, europe: true },
+      { name: 'Z. Ibrahimović', value: 62, caps: 122, color: '#1f2937', isH: false, active: false, europe: true },
+      { name: 'I. Schlosser', value: 59, caps: 68, color: '#7c3f8f', isH: false, active: false, europe: true },
     ];
     const europeOnly = NAT_WORLD.filter((t) => t.europe);
+    const withCaps = (b, t) => ({ ...b, value: t.value + ' (' + t.caps + ')' });
     const europeCaption = (rank) =>
-      'Offisiell liste over europeiske toppscorere for herrelandslag gjennom tidene. Haalands plassering: #' +
+      'Offisiell liste over europeiske toppscorere for herrelandslag gjennom tidene — tallet i parentes er totalt antall landskamper. Haalands plassering: #' +
       rank +
       ', med 64 mål på 55 kamper. Andre spilleres tall sist verifisert 26. sep. 2026.';
     let natBars = [],
@@ -1541,16 +1542,16 @@ class Site {
       natBars = NAT_NORWAY.map((t) => bar(t.rank + '. ' + t.name, t.value, 65, t.color, t.isH));
       natCaption = 'Norges målkonger gjennom tidene — 64 mål på 55 kamper, 05.09.2019–24.09.2026.';
     } else if (cnat.active === 'europe') {
-      natBars = europeOnly.map((t, i) => bar(i + 1 + '. ' + t.name + (t.active ? '*' : ''), t.value, 150, t.color, t.isH));
+      natBars = europeOnly.map((t, i) => withCaps(bar(i + 1 + '. ' + t.name + (t.active ? '*' : ''), t.value, 150, t.color, t.isH), t));
       natCaption = europeCaption(europeOnly.findIndex((t) => t.isH) + 1);
     } else if (cnat.active === 'world') {
       const isEuropeFilter = cnat.worldFilter === 'europe';
       const worldFiltered = isEuropeFilter ? europeOnly : NAT_WORLD;
-      natBars = worldFiltered.map((t, i) => bar(i + 1 + '. ' + t.name + (t.active ? '*' : ''), t.value, 150, t.color, t.isH));
+      natBars = worldFiltered.map((t, i) => withCaps(bar(i + 1 + '. ' + t.name + (t.active ? '*' : ''), t.value, 150, t.color, t.isH), t));
       const haalandRank = worldFiltered.findIndex((t) => t.isH) + 1;
       natCaption = isEuropeFilter
         ? europeCaption(haalandRank)
-        : 'Toppscorere for herrelandslag gjennom tidene, i verden. Haalands plassering: #' +
+        : 'Toppscorere for herrelandslag gjennom tidene, i verden — tallet i parentes er totalt antall landskamper. Haalands plassering: #' +
           haalandRank +
           ', med 64 mål på 55 kamper. Andre spilleres tall sist verifisert 26. sep. 2026.';
     }

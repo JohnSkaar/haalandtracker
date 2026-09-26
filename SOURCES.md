@@ -829,3 +829,27 @@ som den faste, l&oslash;pende referansekilden for denne grafens "andre spillere"
 (kontinuerlig vedlikeholdt, dekker hele lista). Se CLAUDE.md, punkt (c) under
 "Stats cascade", for den l&oslash;pende regelen: denne sjekken gj&oslash;res kun n&aring;r Haalands
 eget m&aring;ltall endres (dvs. n&aring;r han scorer for Norge), ikke p&aring; hver landskamp.
+
+**Rettelse og utvidelse av verdens-/Europa-grafen (26. sep. 2026), etter tilbakemelding
+fra eieren:** Messi er IKKE pensjonert enn&aring; &mdash; annonserte sin avgang fra
+Argentina 31. aug., men har en avskjedskamp mot Benin 6. okt. 2026 p&aring; Estadio
+Monumental (hans 208. og siste landskamp) igjen &aring; spille, per Yahoo Sports, Al
+Jazeera og FIFA.com. Rettet tilbake til "active: true" (var feilaktig satt til
+pensjonert forrige runde), caps satt til 207 (n&aring;v&aelig;rende, f&oslash;r avskjedskampen). En
+p&aring;minnelse er lagt inn (send_later, trig_01UyCPb19DDke49jPRuaLVe3, fyrer 7. okt.
+2026) for &aring; verifisere at Benin-kampen faktisk ble spilt og oppdatere caps til 208 +
+"active: false" da, ikke f&oslash;r. Fant ogs&aring; at Sunil Chhetri (India) faktisk pensjonerte
+seg for andre gang i november 2025 etter et kort comeback tidligere i 2025 &mdash;
+"active" satt til false for ham (m&aring;l/caps uendret: 95/157), per Olympics.com og
+sportsboardindia.com.
+
+**Nytt felt lagt til for alle 20 spillere i NAT_WORLD: `caps` (landskamper), vist som
+"m&aring;l (caps)" p&aring; grafen, med forklaring i hjelpeteksten.** Kilder for hver spiller
+(kryssjekket mot minst to av: Wikipedia "List of men's footballers with 50 or more
+international goals", UEFA.com, RSSSF, offisielle forbundssider): C. Ronaldo 233,
+Messi 207, Ali Daei 148, Chhetri 157, Lukaku 132, Dahari 142, Lewandowski 167,
+Mabkhout 115, Kane 121, Pusk&aacute;s 85, Kocsis 68, D&#382;eko 148, Klose 137, M&uuml;ller 62,
+Keane 146, Mbapp&eacute; 107 (67 m&aring;l, oppdatert etter Frankrikes 1&ndash;0-seier over T&yuml;rkia
+25. sep. 2026 i Nations League &mdash; hans m&aring;l var det avgj&oslash;rende, kilde: Flashscore,
+Get French Football News), Mitrovi&#263; 106, Haaland 55 (fra sidens egen data),
+Ibrahimovi&#263; 122, Schlosser 68.
