@@ -885,3 +885,44 @@ verden/Europa-hjelpetekstene. Dette er fjerde gang i denne &oslash;kten en helt 
 vennskapskamp (etter Finland 4. sep. 2025 og Sveits 31. mar. 2026) har blitt
 avdekket via akkurat denne metoden &mdash; kryssjekk av eksternt rapporterte
 kamp-/m&aring;ltall mot sidens egen rekonstruerte l&oslash;pende sum.
+
+**Norge 1&ndash;2 Portugal (27. sep. 2026, UEFA Nations League) lagt til (28. sep.
+2026), etter at eieren sp&oslash;rte hvorfor siden ikke hadde oppdatert seg selv:**
+Sluttresultat og Haalands m&aring;l bekreftet mot minst to uavhengige,
+kamp-etter-slutt-kilder (ESPN, FOX Sports, mancity.com, Yahoo Sports,
+Goal.com, OneFootball) &mdash; VAVELs live-blogg om samme kamp ble bevisst IKKE
+brukt som kilde, jf. regelen i CLAUDE.md om at VAVEL var kilden til den
+tidligere Danmark-feilen. Jo&atilde;o F&eacute;lix scoret for Portugal i 17. minutt,
+Haaland utlignet i 51. minutt (innskudd etter Patrick Bergs hodeavlegg,
+hans 22. m&aring;l i UEFA Nations League &mdash; forlenger hans egen rekord som
+turneringens toppscorer gjennom tidene), Gon&ccedil;alo Ramos avgjorde for
+Portugal i 54. minutt etter en feil av keeper &Oslash;rjan Nyland. Cristiano
+Ronaldo satt p&aring; benken (spilte ikke), caps oppdatert 233&rarr;234 i tr&aring;d med
+"146 m&aring;l p&aring; 234 landskamper per sent september 2026" (Athlon Sports/Yahoo
+Sports). Samtidig oppdaget at Ali Mabkhout (Emiratene) feilaktig sto som
+"active: true" i NAT_WORLD &mdash; han avsluttet faktisk landslagskarrieren i
+2024 (Wikipedia, bekreftet med "internasjonal karriere 2009&ndash;2024"), rettet
+til "active: false" (m&aring;l/caps uendret: 85/115). Lukaku (93/132), Lewandowski
+(89/167), Kane (85/121) og Mitrovi&#263; (64/106) sjekket og bekreftet uendret mot
+UEFA.com. D&#382;eko sjekket, men kildene spriker (150/151/155 landskamper
+avhengig av kilde og dato) &mdash; latt un&oslash;rt per "usikker p&aring; riktig tall,
+la det st&aring;"-regelen i CLAUDE.md.
+
+Haalands landslagstall etter kampen: 65 m&aring;l p&aring; 57 landskamper (opp fra 64/56)
+&mdash; kryssjekket direkte mot "65 goals from 57 games" i mancity.com/Yahoo
+Sports' kamprapport, som bekrefter at 56-tallet fra forrige runde var
+riktig f&oslash;r denne kampen. Alle kaskaderende 56&rarr;57/64&rarr;65-tall oppdatert i
+begge spr&aring;kfiler, inkl. at Haaland n&aring; passerer A. Mitrovi&#263; (64) i
+verden/Europa-grafen og m&aring; flyttes opp én plass (fra rangering #18 til #17).
+Neste bekreftede landskamp (Wales, 1. okt. 2026, Cardiff City Stadium,
+19:45 BST) lagt til som ny is-planned-kort (TVGuide.co.uk, flere
+billettsider) &mdash; erstatter Portugal-kortet som n&aring; "next up".
+
+**Automatisering: sjekk-timing endret til 60 minutter + selv-kjedende
+oppf&oslash;lging (28. sep. 2026, eiers &oslash;nske):** se CLAUDE.md, "Existing
+automation", for detaljene &mdash; den fixture-bevisste engangssjekken skal na
+fyre av 60 minutter etter avspark (ikke 120), og skal umiddelbart sette opp
+neste sjekk for f&oslash;lgende kamp selv, i stedet for &aring; vente p&aring; mandagens
+ukentlige gjennomgang. En ny slik trigger (trig_018Mo9Pa5zCYuxe1jeBap4uE)
+er opprettet for Wales-kampen 1. okt. 2026 kl. 19:45 UTC (kickoff 18:45 UTC
++ 60 min).
