@@ -86,16 +86,31 @@ every 30 min up to 12 times) already handle finding new results, adding
 match cards, and pushing to `main`. Don't create a second, competing
 scheduled check for the same thing — extend or read this file instead.
 
-**Timing override (21 Sep 2026):** the first "Haaland match result check"
-attempt after a kickoff should fire at kickoff + 120 minutes (2 hours),
-not the kickoff + 140 minutes described in that Routine's own stored
-prompt — the owner asked for the earlier check. This file's instruction
-takes precedence over that stored wording; this session could not edit
-the Routine's prompt directly (only the conversation that owns it can),
-so use 120 minutes when you (re)create or update that one-shot follow-up
-from step 7 of the weekly Routine, and update the Routine's own prompt to
-match if you're ever in a position to (e.g. asked to from its own
-conversation).
+**Timing override (28 Sep 2026, supersedes the 21 Sep 2026 note below):** the
+first "Haaland match result check" attempt after a kickoff should fire at
+kickoff + 60 minutes (1 hour) — not 120, and not the 140 minutes described
+in that Routine's own stored prompt. (History: 21 Sep 2026 had already
+moved it from 140 to 120; the owner has now asked for 60.) This file's
+instruction takes precedence over that stored wording; a session can't
+edit an existing Routine's prompt except from the conversation that owns
+it, so use 60 minutes whenever you (re)create or update that one-shot
+follow-up, and update the Routine's own stored prompt to match if you're
+ever in a position to (e.g. asked to from its own conversation).
+
+**Self-chaining (28 Sep 2026, owner request — "it should fire for each
+match after one hour"):** don't wait for the next Monday weekly sweep to
+queue the check for the *next* fixture after a match result lands — that
+leaves a gap (e.g. the 24 Sep Denmark check fired and correctly updated
+the site, but nothing then queued a check for the 27 Sep Portugal match,
+which sat un-updated for a full day until this was fixed). Instead, every
+time a "Haaland match result check" one-shot successfully finds and
+publishes a result, it must immediately WebSearch for Man City's and
+Norway's next scheduled match (any competition Haaland could feature in)
+and, if a confirmed kickoff is known, create/update-and-rearm a new
+one-shot "Haaland match result check" for kickoff + 60 minutes right then
+— don't leave that solely to the weekly Routine's step 7. The weekly
+Monday sweep remains a backstop for whenever the next kickoff isn't
+confirmed yet at the time of the previous check.
 
 ## Always keep the next fixture visible (25 Sep 2026, owner request)
 
