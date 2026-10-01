@@ -5531,7 +5531,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#fff"/><rect y="6" width="18" height="6" fill="#00AB39"/></svg></div>
  </div>
- <div class="match-opp">vs Wales&nbsp;(B)<span class="match-score-line"><span class="score-note">avspark 19:45</span></span></div>
+ <div class="match-opp">vs Wales&nbsp;(B)<span class="match-score-line"><span class="score-note">avspark 20:45</span></span></div>
  <div class="match-icons"></div>
  <div class="match-status planned">Planlagt &middot; Cardiff City Stadium &mdash; UEFA Nations League</div>
  </div>
@@ -5544,7 +5544,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
  </div>
- <div class="match-opp">vs Liverpool&nbsp;(B)<span class="match-score-line"><span class="score-note">avspark 16:30</span></span></div>
+ <div class="match-opp">vs Liverpool&nbsp;(B)<span class="match-score-line"><span class="score-note">avspark 17:30</span></span></div>
  <div class="match-icons"></div>
  <div class="match-status planned">Planlagt &middot; Anfield</div>
  </div>
@@ -5557,7 +5557,7 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#004170;color:#fff">PSG</div>
  </div>
- <div class="match-opp">vs Paris Saint-Germain&nbsp;(H)<span class="match-score-line"><span class="score-note">avspark 21:00</span></span></div>
+ <div class="match-opp">vs Paris Saint-Germain&nbsp;(H)<span class="match-score-line"><span class="score-note">avspark 22:00</span></span></div>
  <div class="match-icons"></div>
  <div class="match-status planned">Planlagt &middot; Etihad Stadium</div>
  </div>

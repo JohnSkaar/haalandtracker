@@ -156,6 +156,26 @@ federation's official fixture list — don't guess a date).
   match result" above) — a newly-confirmed match should both close out
   the old placeholder AND get its own new `is-planned` placeholder added
   for whatever comes after it in that same competition.
+- **Kickoff time zone (1 Oct 2026, owner request): the EN site shows the
+  venue's own local kickoff time; the NO site shows Norwegian local
+  time instead.** E.g. Wales–Norway at Cardiff City Stadium kicks off at
+  19:45 UK time (BST) — `Main.en.dc.html` shows `19:45 kickoff`, but
+  `Main.no.dc.html` shows `avspark 20:45` (Norway, CEST, is 1 hour ahead
+  of the UK while both observe DST on the same late-March/late-October
+  schedule, which has held for every match added so far). Convert the
+  confirmed venue-local kickoff to Norwegian local time whenever you add
+  or update an `is-planned` card's kickoff time in the NO file — do not
+  just copy the EN file's number across. This applies to EVERY
+  competition, not just an away national-team match: Man City's own
+  Etihad Stadium is in England too, so a UK-hosted Man City or Champions
+  League home fixture needs the same +1-hour conversion in the NO file
+  (e.g. the PSG home card: `21:00 kickoff` in EN, `avspark 22:00` in NO).
+  A match actually played in continental Europe (most of France,
+  Germany, Spain, etc.) is already in Norway's own time zone, so no
+  conversion is needed there — only UK/Ireland-hosted matches currently
+  need the +1h adjustment; double-check the offset if a fixture ever
+  lands somewhere else (North America, the rest of the world) rather
+  than assuming it's always +1h.
 
 ## Stats cascade — updating hardcoded derived stats after a match
 
