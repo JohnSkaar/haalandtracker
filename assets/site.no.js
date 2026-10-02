@@ -5536,6 +5536,19 @@ function render(vals) {
 
  <div class="now-marker"><span>N&Aring;</span></div>
 
+ <div class="match-card is-planned season-2627 comp-nor">
+ <div class="match-comp nor">LAND</div>
+ <div class="match-date">4. okt. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own badge-flag"><svg viewBox="0 0 22 16" width="85" height="85" style="margin-left:-19px"><rect width="22" height="16" fill="#BA0C2F"/><rect x="7" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="8" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp badge-flag"><svg viewBox="0 0 18 12" width="77" height="51"><rect width="18" height="12" fill="#FF0000"/><rect width="7" height="12" fill="#006600"/></svg></div>
+ </div>
+ <div class="match-opp">vs Portugal&nbsp;(B)<span class="match-score-line"><span class="score-note">avspark 20:45</span></span></div>
+ <div class="match-icons"></div>
+ <div class="match-status planned">Planlagt &middot; Est&aacute;dio do Drag&atilde;o &mdash; UEFA Nations League</div>
+ </div>
+
  <div class="match-card is-planned season-2627 comp-pl">
  <div class="match-comp pl">PL</div>
  <div class="match-date">11. okt. 2026</div>
