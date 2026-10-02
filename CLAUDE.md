@@ -112,6 +112,20 @@ one-shot "Haaland match result check" for kickoff + 60 minutes right then
 Monday sweep remains a backstop for whenever the next kickoff isn't
 confirmed yet at the time of the previous check.
 
+**Don't skip an intermediate fixture when chaining (2 Oct 2026):** this
+already went wrong once — after the 1 Oct Wales result, the chained
+WebSearch for "Norway's next match" landed on the 14 Nov Wales *rematch*
+and skipped the actual next match, Norway away at Portugal on 4 Oct 2026,
+entirely (it sat missing from the site until the owner caught it:
+"portugal norge 4.oktober er ikke med"). A generic "next fixture" search
+can easily surface a result for a fixture further out while missing the
+truly next one, especially around a Nations League window with two legs
+close together. Before trusting a fresh WebSearch for "what's next",
+check the site's own `is-planned` cards already in `source/Main.no.dc.html`
+in date order first — if one of those is chronologically sooner than what
+the search returned, that one is the real "next" fixture, not the search
+result.
+
 ## Always keep the next fixture visible (25 Sep 2026, owner request)
 
 At any point in time there should be an `is-planned` card for the next

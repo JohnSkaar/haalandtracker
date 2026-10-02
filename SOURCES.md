@@ -926,3 +926,21 @@ neste sjekk for f&oslash;lgende kamp selv, i stedet for &aring; vente p&aring; m
 ukentlige gjennomgang. En ny slik trigger (trig_018Mo9Pa5zCYuxe1jeBap4uE)
 er opprettet for Wales-kampen 1. okt. 2026 kl. 19:45 UTC (kickoff 18:45 UTC
 + 60 min).
+
+**Manglende kamp oppdaget og rettet (2. okt. 2026), etter eierens melding
+"portugal norge 4.oktober er ikke med, den m&aring; opp p&aring; kampprogrammet":**
+automatikkens selv-kjedende s&oslash;k etter Wales-resultatet (1. okt.) hoppet
+direkte til Wales-returkampen 14. nov. og oversatte den faktiske neste
+kampen helt &mdash; Norge borte mot Portugal, returoppgj&oslash;ret i UEFA Nations
+League, 4. okt. 2026. Bekreftet dato/tidspunkt/bane mot flere uavhengige
+kilder (SuperSport, Sofascore, tapmad.com, footballcritic.com, Wikipedia)
+&mdash; 18:45 UTC (19:45 lokal tid i Porto, WEST), Est&aacute;dio do Drag&atilde;o. Ett
+enkeltst&aring;ende kilde (weekendgoals.com) oppga feilaktig "Est&aacute;dio Nacional"
+som bane &mdash; forkastet som avvikende mot flertallet. Lagt til som ny
+is-planned-kort i riktig kronologisk rekkef&oslash;lge (mellom Wales-resultatet og
+Liverpool-kortet) i begge spr&aring;kfiler, med norsk lokal avsparktid (20:45,
++1t fra portugisisk WEST per tidssone-konvensjonen). Den gamle
+feil-kjedede triggeren (trig_018Mo9Pa5zCYuxe1jeBap4uE, som siktet mot
+Liverpool 11. okt.) slettet og erstattet med en ny (trig_01SMnYDmPY8NT5RNmUysAdK5)
+som f&oslash;rst sjekker Portugal-resultatet (4. okt. kl. 19:45 UTC) f&oslash;r den
+kjeder videre til Liverpool.
