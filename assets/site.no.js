@@ -5631,6 +5631,12 @@ function render(vals) {
  </div>
 </section>
 
+<section class="promo-banner">
+ <a href="https://haalandtracker.com/" class="promo-banner-link" aria-label="Bes&oslash;k HaalandTracker.com &mdash; ogs&aring; p&aring; engelsk">
+ <img class="promo-banner-img" src="/assets/banner-promo-no.webp" alt="Ogs&aring; p&aring; engelsk &mdash; bes&oslash;k HaalandTracker.com" width="2000" height="848">
+ </a>
+</section>
+
 <section class="lanes">
  <p class="section-label">Klubb &middot; Champions League &middot; Landslag</p>
  <div class="lane-grid">
