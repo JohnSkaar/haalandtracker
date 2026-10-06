@@ -6303,7 +6303,7 @@ function render(vals) {
  </div>
  </div>
 
- <div class="col-card">
+ <div class="col-card col-card-fun">
  <span class="col-title">Fun facts</span>
  <div class="fun-card">
  <div class="fun-item">
@@ -6330,6 +6330,12 @@ function render(vals) {
  <span class="fun-item-sub">Nominated for &laquo;Song of the Year&raquo; at Spellemannprisen 2026, as the winner for July.</span>
  </div>
  </div>
+ </div>
+
+ <div class="lane-promo">
+ <a href="https://haalandtracker.no/" class="lane-promo-link" aria-label="Visit HaalandTracker.no &mdash; also in Norwegian">
+ <img class="lane-promo-img" src="/assets/banner-promo-en.webp" alt="Also in Norwegian &mdash; visit HaalandTracker.no" width="2000" height="848">
+ </a>
  </div>
 
  </div>
