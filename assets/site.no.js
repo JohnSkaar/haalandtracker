@@ -1511,7 +1511,7 @@ class Site {
     ];
     const NAT_WORLD = [
       { name: 'C. Ronaldo', value: 146, caps: 234, color: '#2f5aa8', isH: false, active: true, europe: true },
-      { name: 'L. Messi', value: 125, caps: 207, color: '#6a3fa0', isH: false, active: true, europe: false },
+      { name: 'L. Messi', value: 126, caps: 208, color: '#6a3fa0', isH: false, active: false, europe: false },
       { name: 'Ali Daei', value: 108, caps: 148, color: '#a8791a', isH: false, active: false, europe: false },
       { name: 'S. Chhetri', value: 95, caps: 157, color: '#1f2937', isH: false, active: false, europe: false },
       { name: 'R. Lukaku', value: 93, caps: 132, color: '#7c3f8f', isH: false, active: true, europe: true },
@@ -1526,7 +1526,7 @@ class Site {
       { name: 'G. Müller', value: 68, caps: 62, color: '#7c5a3f', isH: false, active: false, europe: true },
       { name: 'R. Keane', value: 68, caps: 146, color: '#2f5aa8', isH: false, active: false, europe: true },
       { name: 'K. Mbappé', value: 67, caps: 107, color: '#6a3fa0', isH: false, active: true, europe: true },
-      { name: 'E. Haaland', value: 65, caps: 57, color: '#c1352b', isH: true, active: true, europe: true },
+      { name: 'E. Haaland', value: 65, caps: 59, color: '#c1352b', isH: true, active: true, europe: true },
       { name: 'A. Mitrović', value: 64, caps: 106, color: '#a8791a', isH: false, active: true, europe: true },
       { name: 'Z. Ibrahimović', value: 62, caps: 122, color: '#1f2937', isH: false, active: false, europe: true },
       { name: 'I. Schlosser', value: 59, caps: 68, color: '#7c3f8f', isH: false, active: false, europe: true },
@@ -1536,12 +1536,12 @@ class Site {
     const europeCaption = (rank) =>
       'Offisiell liste over europeiske toppscorere for herrelandslag gjennom tidene — tallet i parentes er totalt antall landskamper. Haalands plassering: #' +
       rank +
-      ', med 65 mål på 57 kamper. Andre spilleres tall sist verifisert 28. sep. 2026.';
+      ', med 65 mål på 59 kamper. Andre spilleres tall sist verifisert 7. okt. 2026.';
     let natBars = [],
       natCaption = '';
     if (cnat.active === 'norway') {
       natBars = NAT_NORWAY.map((t) => bar(t.rank + '. ' + t.name, t.value, 65, t.color, t.isH));
-      natCaption = 'Norges målkonger gjennom tidene — 65 mål på 57 kamper, 05.09.2019–27.09.2026.';
+      natCaption = 'Norges målkonger gjennom tidene — 65 mål på 59 kamper, 05.09.2019–04.10.2026.';
     } else if (cnat.active === 'europe') {
       natBars = europeOnly.map((t, i) => withCaps(bar(i + 1 + '. ' + t.name + (t.active ? '*' : ''), t.value, 150, t.color, t.isH), t));
       natCaption = europeCaption(europeOnly.findIndex((t) => t.isH) + 1);
@@ -1554,7 +1554,7 @@ class Site {
         ? europeCaption(haalandRank)
         : 'Toppscorere for herrelandslag gjennom tidene, i verden — tallet i parentes er totalt antall landskamper. Haalands plassering: #' +
           haalandRank +
-          ', med 65 mål på 57 kamper. Andre spilleres tall sist verifisert 28. sep. 2026.';
+          ', med 65 mål på 59 kamper. Andre spilleres tall sist verifisert 7. okt. 2026.';
     }
 
     const chartNat = {
@@ -6127,7 +6127,7 @@ function render(vals) {
  </div>
  <div class="lane-fact">
  <span class="lane-fact-label">Offisiell rekord</span>
- <span class="lane-fact-value">Norges toppscorer gjennom tidene &mdash; 65 m&aring;l p&aring; 57 landskamper, periode 05.09.2019&ndash;27.09.2026.</span>
+ <span class="lane-fact-value">Norges toppscorer gjennom tidene &mdash; 65 m&aring;l p&aring; 59 landskamper, periode 05.09.2019&ndash;04.10.2026.</span>
  </div>
  </div>
 
@@ -6140,7 +6140,7 @@ function render(vals) {
  </div>
  <div class="merit-chip">
  <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M12 2.5l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6 .8z" fill="#fff"/></svg></span>
- <div class="merit-text"><b>Norges toppscorer gjennom tidene</b><span class="sub">65 m&aring;l p&aring; 57 kamper, 05.09.2019&ndash;27.09.2026</span></div>
+ <div class="merit-text"><b>Norges toppscorer gjennom tidene</b><span class="sub">65 m&aring;l p&aring; 59 kamper, 05.09.2019&ndash;04.10.2026</span></div>
  </div>
  <div class="merit-chip">
  <span class="merit-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M12 2.5l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6 .8z" fill="#fff"/></svg></span>
@@ -6250,7 +6250,7 @@ function render(vals) {
  </div>
  `).join('')}
  </div>
- <span class="chart-caption">65 landslagsm&aring;l p&aring; 57 kamper (05.09.2019&ndash;27.09.2026) &mdash; Norges toppscorer gjennom tidene, foran J&oslash;rgen Juve og Alexander S&oslash;rloth.</span>
+ <span class="chart-caption">65 landslagsm&aring;l p&aring; 59 kamper (05.09.2019&ndash;04.10.2026) &mdash; Norges toppscorer gjennom tidene, foran J&oslash;rgen Juve og Alexander S&oslash;rloth.</span>
 
  <div class="chip-select">
  <button class="${vals.chart.nat.norwayClass}" data-bind="chart.nat.setNorway">Best i Norge</button>

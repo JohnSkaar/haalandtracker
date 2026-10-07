@@ -242,6 +242,18 @@ note ("All competitions, through City game N, DD Mon YYYY" /
 - "National team — key stats" tile (Games/Goals/Average + dated note), if
   Haaland played.
 - `NAT_NORWAY`'s Haaland entry `value` (search `const NAT_NORWAY`).
+- **His own caps count, everywhere else it's quoted — even if he didn't
+  score.** This tripped the automation once already (7 Oct 2026): after
+  Wales (1 Oct) and Portugal (4 Oct), the "National team — key stats"
+  tile correctly moved to 59 games, but the lane-fact line, the merit
+  chip, the record-chart caption, and `NAT_WORLD`'s own Haaland `caps`
+  field were all left at the old 57 — because those only get touched by
+  the "only if he scored" refresh pass below, which correctly skipped
+  both matches (no goals), but his own caps/date text isn't gated by
+  that rule and still needs bumping on every match he plays, scoreless
+  or not. Search for every occurrence of his current caps number (not
+  just the ones named above) and update them together, so they can't
+  drift out of sync with each other like this again.
 - The next round-number milestone's achievable entry (e.g. "70
   international goals") — `desc` and `progress` per the formula above.
 - Do NOT edit a frozen historical record-log entry like "Status: 61

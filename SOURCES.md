@@ -944,3 +944,26 @@ feil-kjedede triggeren (trig_018Mo9Pa5zCYuxe1jeBap4uE, som siktet mot
 Liverpool 11. okt.) slettet og erstattet med en ny (trig_01SMnYDmPY8NT5RNmUysAdK5)
 som f&oslash;rst sjekker Portugal-resultatet (4. okt. kl. 19:45 UTC) f&oslash;r den
 kjeder videre til Liverpool.
+
+**Messi avslutningskamp bekreftet og NAT_WORLD oppdatert (7. okt. 2026),
+etter planlagt p&aring;minnelse (trig_01UyCPb19DDke49jPRuaLVe3, fyrte 7. okt.
+10:00 UTC):** Argentina slo Benin 3&ndash;0 p&aring; Est&aacute;dio Monumental i Buenos
+Aires 6. okt. 2026, Messis offisielt siste landskamp (208. cap). Bekreftet
+mot flere uavhengige kamp-etter-slutt-rapporter (ABC News, The Score, The
+Daily Star, Sunday Guardian, Outlook India, ESPN for selve resultatet)
+&mdash; Messi scoret p&aring; straffe (71. min., sitt 126. og siste landslagsm&aring;l)
+og serverte to målgivende (Otamendi 48. min., Nico Paz 61. min.). Messis
+NAT_WORLD-oppf&oslash;ring oppdatert: `value` 125&rarr;126, `caps` 207&rarr;208,
+`active` true&rarr;false. Ingen omrokkering i rekkef&oslash;lgen n&oslash;dvendig (fortsatt
+klart mellom C. Ronaldo og Ali Daei).
+
+Samtidig oppdaget og rettet et eget etterslep: Haalands egne kamper i
+NAT_WORLD/toppscorer-grafene (`caps`-feltet, chart-caption, lane-fact og
+merit-tekst) hadde ikke blitt oppdatert etter Wales (1. okt.) og Portugal
+(4. okt.) &mdash; disse kampene var korrekt hoppet over for selve
+spiller-oppdaterings-runden (Haaland scoret ikke i noen av dem, s&aring; regelen
+"kun n&aring;r Haalands eget m&aring;ltall endres" gjaldt riktig), men kamptallet
+"57" i disse spesifikke tekstene var likevel blitt st&aring;ende feil mens
+"National team &mdash; key stats"-boksen riktig viste 59. Rettet til 59 kamper
+(65 m&aring;l uendret) og datoer til 04.10.2026 i begge spr&aring;kfiler, slik at alle
+visninger av Haalands kamptall n&aring; stemmer overens.
