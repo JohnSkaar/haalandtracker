@@ -4,17 +4,18 @@ Internal notes for AI-generated social-media video content promoting
 HaalandTracker (separate from the website's own code — nothing here ships
 to haalandtracker.com/.no). Generated via Higgsfield (model `seedance_2_5`).
 
-## Standard ending clip (adopted 8 Oct 2026, owner request)
+## Standard ending clip (adopted 8 Oct 2026, updated same day — owner request)
 
 Every "record" video generated from now on should end with this exact clip
-(or a fresh render of the same prompt if the job expires): a football flies
-into the net dead-on from behind the goal, with "HaalandTracker.com" printed
-on a fixed spot on the ball, minimal spin so the text stays legible, filling
-the whole frame at the very end.
+(or a fresh render of the same prompt if the job expires): a modern white
+football flies into the net dead-on from behind the goal, clipping the
+underside of the crossbar and picking up a light spin on the way in, with
+"HaalandTracker.com" printed on a fixed spot on the ball, text settling
+centered and legible in the final frame which fills the whole screen.
 
-- Job id: `e5e51492-abbc-45e4-b1e7-2448c35d6107`
-- URL (while live): `https://d8j0ntlcm91z4.cloudfront.net/user_3Ipc1bcrZt27tWpXOoyuXF8Mztc/hf_20261008_150028_e5e51492-abbc-45e4-b1e7-2448c35d6107.mp4`
-- Model: `seedance_2_5`, 16:9, 6s, 1080p
+- **Job id: `7dcf7a22-e1c1-4699-965f-8ed21dc8c36f`**
+- URL (while live): `https://d8j0ntlcm91z4.cloudfront.net/user_3Ipc1bcrZt27tWpXOoyuXF8Mztc/hf_20261008_195916_7dcf7a22-e1c1-4699-965f-8ed21dc8c36f.mp4`
+- Model: `seedance_2_5`, 16:9, 6s (6.08s actual), 1080p
 - Exact prompt used:
 
   > Extreme close-up sports broadcast shot filmed from a camera mounted
@@ -22,32 +23,46 @@ the whole frame at the very end.
   > looking out over the pitch. A massive, brilliantly floodlit stadium of
   > the highest international quality fills the background — a packed,
   > roaring crowd, pristine green pitch, dazzling stadium lights cutting
-  > through the night sky, broadcast-quality cinematic realism. The
-  > football has the words "HaalandTracker.com" printed in bold clean white
-  > sans-serif text on one fixed panel of its surface, like a sponsor logo
-  > on a match ball — the text stays printed at that single spot on the
-  > ball's surface the entire time, it does not move to a different part
-  > of the ball. The ball is struck from distance and rockets directly
-  > toward the camera at tremendous velocity, flying in an almost perfectly
-  > straight, knuckleball-like line with very little rotation or spin — the
-  > way a very hard, fast-struck shot naturally flies with minimal spin —
-  > so the "HaalandTracker.com" text stays facing the camera and stays
-  > legible throughout the flight, never spinning out of view. The ball
-  > grows larger and larger as it approaches. The ball rises and smashes
-  > into the net just underneath the crossbar, right beside the camera. As
-  > it strikes, the net violently stretches and balloons toward the camera,
-  > strands snapping taut. In the final instant the ball itself fills the
-  > entire frame, with the "HaalandTracker.com" text centered in the middle
-  > of the frame, large, crisp, and clearly readable, right as the shot
-  > ends. The shooter and other players are barely glimpsed, tiny and
-  > distant on the pitch far below — the shot stays focused on the goal,
-  > the net and the stadium atmosphere, never on people. Dynamic
+  > through the night sky, broadcast-quality cinematic realism. The football
+  > is a modern, sleek, pure white match ball with a smooth contemporary
+  > aerodynamic panel design (clean minimal curved panel lines, no sponsor
+  > marks other than the one logo described below) — it looks like a
+  > current-generation professional match ball, not an old-style
+  > black-and-white pentagon ball. The ball has the words
+  > "HaalandTracker.com" printed in bold clean black sans-serif text on one
+  > fixed panel of its white surface, like a sponsor logo on a match ball —
+  > the text stays printed at that single spot on the ball's surface the
+  > entire time, it does not move to a different part of the ball. The ball
+  > is struck from distance and rockets directly toward the camera at very
+  > high velocity, noticeably fast, flying in an almost perfectly straight
+  > line with very little rotation at first — the way a very hard,
+  > fast-struck shot naturally flies with minimal spin early on. As the ball
+  > arrives at the goal it clips the underside of the crossbar, and from
+  > that contact onward it picks up a light spin and tumble — not fast or
+  > wild, just a subtle rotation — as it continues into the net right
+  > beside the camera. The ball grows larger and larger as it approaches,
+  > now moving even faster in this final stretch. The ball smashes into the
+  > net just underneath the crossbar. As it strikes, the net violently
+  > stretches and balloons toward the camera, strands snapping taut. In the
+  > final instant the ball itself fills the entire frame, and despite the
+  > spin picked up after clipping the crossbar, its rotation settles
+  > exactly so the "HaalandTracker.com" text is facing the camera, centered
+  > in the middle of the frame, large, crisp, perfectly legible, right as
+  > the shot ends. The shooter and other players are barely glimpsed, tiny
+  > and distant on the pitch far below — the shot stays focused on the
+  > goal, the net and the stadium atmosphere, never on people. Dynamic
   > sports-broadcast camera work, slight lens flare from the floodlights,
   > crisp high-detail 1080p realism, dramatic crowd roar building as the
   > ball connects.
 
-An earlier version without the printed logo (job `b668fa32-cd69-4bb0-8a22-7a715e601a45`)
-exists but is superseded — use the one above.
+**Superseded — do not use:**
+- Job `b668fa32-cd69-4bb0-8a22-7a715e601a45` — earlier version without the printed logo.
+- Job `e5e51492-abbc-45e4-b1e7-2448c35d6107` — had the logo but a
+  black-and-white pentagon ball flying nearly spin-free the whole way, no
+  crossbar contact. Replaced per owner request (8 Oct 2026): ball should be
+  a modern white design, fly a bit faster, and pick up a light spin
+  specifically after clipping the crossbar, while still settling on the
+  centered logo in the final frame.
 
 ## Assembling a record-presentation video
 
@@ -109,18 +124,23 @@ CLAUDE.md / SOURCES.md for the sourcing on the underlying record itself).
   subtitle — deliberately simplified to short, plain, common words with no
   diacritics, after the first attempt (below) rendered misspelled text.
 - **Final assembled video (intro + 4s hold + standard ending + 2s hold):**
-  media_id `f14bd2a3-9bf5-4dc1-9d4b-cd5bd720393a`,
-  `https://d2ol7oe51mr4n9.cloudfront.net/user_3Ipc1bcrZt27tWpXOoyuXF8Mztc/f14bd2a3-9bf5-4dc1-9d4b-cd5bd720393a.mp4`
-  (19.15s, 1920x1080, h264/aac). **Use this one.**
+  media_id `f47a4178-576a-49ba-96bd-cd5369eaa185`,
+  `https://d2ol7oe51mr4n9.cloudfront.net/user_3Ipc1bcrZt27tWpXOoyuXF8Mztc/f47a4178-576a-49ba-96bd-cd5369eaa185.mp4`
+  (19.15s, 1920x1080, h264/aac). **Use this one.** Built with the
+  updated standard ending clip above (white ball, crossbar-clip spin).
 
-**Superseded — do not use:** intro clip job `05364a16-d282-4301-8118-c24e541ac93e`
-and assembled video media_id `2b270811-33de-4d35-aeac-812490c3f997`. The
-on-screen subtitle text was misspelled ("Haeland" instead of "Haaland",
-"Ibabuıovic" instead of "Ibrahimović" — caught by extracting and visually
-inspecting the clip's last frame before shipping). That earlier version
-also predates the 4s/2s hold rules above. Lesson: always extract and view
-the last frame of a generated clip with on-screen text before using it —
-see "Text-rendering risk" note below.
+**Superseded — do not use:**
+- Assembled video media_id `f14bd2a3-9bf5-4dc1-9d4b-cd5bd720393a` — same
+  intro, but built with the old pentagon-ball standard ending before it was
+  updated (8 Oct 2026) to the white-ball/crossbar-spin version above.
+- Intro clip job `05364a16-d282-4301-8118-c24e541ac93e` and assembled video
+  media_id `2b270811-33de-4d35-aeac-812490c3f997`. The on-screen subtitle
+  text was misspelled ("Haeland" instead of "Haaland", "Ibabuıovic" instead
+  of "Ibrahimović" — caught by extracting and visually inspecting the
+  clip's last frame before shipping). That earlier version also predates
+  the 4s/2s hold rules above. Lesson: always extract and view the last
+  frame of a generated clip with on-screen text before using it — see
+  "Text-rendering risk" note below.
 
 **Text-rendering risk:** printed/on-screen text in AI-generated video is
 unreliable, especially longer words and names with diacritics. Mitigate by
