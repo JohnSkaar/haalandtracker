@@ -137,27 +137,53 @@ tally.
   video **does not rely on the AI to render the player-name comparison or
   the Swedish number at all** — see "Guaranteed-correct text overlay"
   below, the fix adopted for this and all future intros.
-- **Both numbers now glitch/flicker before settling** (owner request, 9 Oct
-  2026: "the numbers should be changing on both sides as the first version
-  did... test if both can go randomly and glitch... end a bit further on
-  the left side (Zlatan) and then on the right side (Haaland)"). Per the
-  guaranteed-overlay policy below, this is entirely self-authored in
-  ffmpeg, not AI-generated: starting at t=1.3s both number boxes flicker
-  through random 2-digit values every 0.09s; the left (Zlatan/Sweden) box
-  stops and settles on the correct `62` at t=4.2s while the right
-  (Haaland/Norway) box keeps flickering until it settles on the correct
-  `64` at t=5.2s. The bottom caption bar's reveal is synced to t=5.2s so it
-  appears once both numbers are final.
-- **Final assembled video (intro + 4s hold + standard ending + 2s hold):**
-  media_id `28c154bf-40a1-4c12-8640-cf324825025f`,
-  `https://d2ol7oe51mr4n9.cloudfront.net/user_3Ipc1bcrZt27tWpXOoyuXF8Mztc/28c154bf-40a1-4c12-8640-cf324825025f.mp4`
-  (19.11s, 1920x1080, h264/aac). **Use this one.**
+- **A self-authored "glitch" flicker animation for both numbers was tried
+  and reverted the same day (9 Oct 2026).** Per owner feedback: "Videoen
+  nå ble rot og dårligere enn utgangspunktet. Tallene står over flaggene
+  og det er en mye mindre kul telling" (the video became messy and worse
+  than the starting point — the numbers sat on top of the flags and the
+  counting looked much less cool than the AI's own original animation).
+  **Reverted to the AI's native ticking-counter animation** from job
+  `babe4254-c6fb-41d8-955e-52979541377a` (numbers properly positioned next
+  to their flags, as originally generated) — only the single static
+  "62" patch and the bottom caption bar (both described above, needed
+  because the AI corrupts those two specific things) are still overlaid.
+  No more per-frame flicker/glitch filters. If a future request wants a
+  ticking/counting effect again, prefer a lighter touch: either trust the
+  AI's own native counter (it looked good here) or, if it must be
+  engineered, keep the box position exactly aligned with the flag so
+  nothing appears to float independently.
+- **Audio smoothed across the whole video (9 Oct 2026, owner request:
+  "sørg for at det ikke hoppes for mye i lydbildet, la det få mer
+  jevnhet")** — the hard cut from the near-silent 4s hold into the ending
+  clip's crowd roar was jarring. Fixed two ways:
+  1. The 4-second hold no longer pads with flat silence (`apad`). Instead
+     the intro's own last 1 second of audio is looped 4× and appended
+     (`asplit` the full intro audio, `atrim` the last 1s from a copy,
+     `asplit` *that* into 4 identical copies, `concat` main+4 copies), then
+     an `afade=t=out:start_time=<introDur>:duration=4` fades it down
+     smoothly across the hold instead of looping at full volume.
+  2. The cut from intro+hold into the standard ending clip uses
+     `acrossfade=d=0.5:c1=tri:c2=tri` instead of a hard `concat` on the
+     audio track (video still hard-cuts via `concat`, which reads fine —
+     only the audio needed smoothing). `acrossfade` shortens the combined
+     audio by the crossfade duration, so follow it with
+     `apad=pad_dur=0.5` to restore exact sync with the un-crossfaded video
+     track.
+- **Final assembled video (intro + 4s hold + standard ending + 2s hold,
+  smoothed audio):** media_id `90d0b36a-c993-4a07-ac63-6c73a2d015a6`,
+  `https://d2ol7oe51mr4n9.cloudfront.net/user_3Ipc1bcrZt27tWpXOoyuXF8Mztc/90d0b36a-c993-4a07-ac63-6c73a2d015a6.mp4`
+  (19.07s, 1920x1080, h264/aac). **Use this one.**
 
 **Superseded — do not use:**
+- Assembled video media_id `28c154bf-40a1-4c12-8640-cf324825025f` — the
+  self-authored glitch-flicker version; reverted per owner feedback above
+  (numbers floated over the flags, looked worse than the AI's native
+  animation). Its audio also still had the hard silence→crowd-roar cut.
 - Assembled video media_id `8535ecd6-a1cf-44de-83e6-6241f9a090b8` — same
-  intro and correct final numbers, but used the AI's native (untrusted)
-  ticking animation during the reveal instead of the self-authored glitch
-  effect above; predates the "both sides glitch, left settles first" request.
+  intro and correct final numbers as the current version, but predates the
+  audio-smoothing fix (plain `apad` silence during the hold, hard `concat`
+  cut into the ending clip's audio).
 - Intro clip job `42ad6259-1061-4198-b06c-b59e6fb14f61` — first attempt at
   the Norway-vs-Sweden framing; rendered "IBRAHIMOVIC" as "IBRAHAMOVIC"
   throughout (both the mid-clip label and the final headline).
@@ -213,39 +239,31 @@ don't rely on the AI model to render it at all. Instead:
    `tpad` clones the already-overlaid last frame).
 
 This video's bottom-caption bar ("HAALAND SURPASSES IBRAHIMOVIC" /
-"24 SEP 2026") and both stat numbers are done this way.
+"24 SEP 2026") and the single "62" patch are done this way — the counter
+animation itself (both numbers ticking up) is left as the AI generated it;
+see the "reverted" note above for why a self-authored flicker replacement
+was tried and abandoned.
 
-**Self-authored "glitch" number reveal (adopted 9 Oct 2026):** beyond just
-covering AI mistakes, this is now also the standard way to show *any*
-ticking/counting number animation, since the AI's own counter animation
-can't be trusted to time correctly or land on the right value. Generate it
-with a small Python script (run inside the same `sandbox_exec` command,
-before the `ffmpeg` call) that:
-1. Defines a `drawbox` (solid patch, color sampled from the background near
-   that spot, e.g. `0x202e4e@0.95`) for each number's region, enabled for
-   the whole glitch+settle+hold window.
-2. Loops from a start time to that number's settle time in small steps
-   (~0.09s), emitting one `drawtext=...:enable='between(t,t0,t1)'` filter
-   per step showing a random value — this is the flicker.
-3. Emits one final `drawtext` holding the real, correct value from the
-   settle time through the end of the clip.
-4. Writes the whole filter chain (can be 50-100+ filters) to a file
-   (`filter.txt`) rather than inlining it in the shell command — avoids the
-   `sandbox_exec` command-length limit — then runs
-   `ffmpeg -vf "$(cat filter.txt)" ...`.
-5. Give each side its own settle time to control which one "locks in"
-   first (e.g. left/earlier record holder settles first, the new
-   record-holder's side keeps glitching a bit longer before landing on the
-   real number) — purely a timing parameter in the script, no extra
-   complexity.
-
-This fully replaces any reliance on the AI's own counter/ticking animation
-for the number reveal — the AI clip is only used for the static background
-(stadium glow, flags, headline text that has rendered reliably), while
-every number, name, and date that must be exactly right is self-authored.
+**Audio-smoothing technique (adopted 9 Oct 2026)** — use this any time two
+clips are concatenated and the cut between them (e.g. a quiet hold into a
+loud ambience) sounds jarring:
+- Don't fill an engineered hold with plain `apad` silence if the clip has
+  its own ambient audio — instead loop a short tail of that clip's real
+  audio (`asplit` a copy, `atrim` the last ~1s, `asplit` that into N
+  copies, `concat` them after the main audio) and `afade` it down across
+  the hold, so there's a natural decay instead of a sudden drop to dead air.
+- Join the two clips' audio with `acrossfade=d=0.5:c1=tri:c2=tri` instead
+  of plain `concat`, even if the video track still hard-cuts via `concat`
+  — a video can cut cleanly on a scene change while the audio benefits
+  from a short overlap/blend. Because `acrossfade` shortens the combined
+  audio by the crossfade duration, add `apad=pad_dur=<that duration>`
+  right after it to keep the audio and (uncrossfaded) video the same total
+  length.
 
 Next time: reuse the standard ending clip as-is, generate a new ~6-8s intro
 for whichever record is being featured (keeping player names/dates/record
-numbers as guaranteed overlays with the self-authored glitch-reveal pattern
-above, never AI-rendered text or AI-timed counters), and follow the same
-sandbox_exec concat recipe above (including the 4s/2s hold filters).
+numbers that must be exactly right as guaranteed overlays, never trusting
+AI-rendered text for those specifically — but letting the AI's own
+animation/counter play out otherwise, per the reverted-glitch note above),
+and follow the same sandbox_exec concat recipe including the 4s/2s hold
+filters and the audio-smoothing technique above.
