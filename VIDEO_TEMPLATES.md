@@ -109,48 +109,100 @@ between calls), then `media_confirm`.
   ending clip may not be exactly 6.05s).
 - Total runtime = intro duration + 4s + ending duration + 2s.
 
-### First presentation (8 Oct 2026)
+### First presentation (8 Oct 2026, revised 9 Oct 2026)
 
 Topic: Haaland's all-time top international scorer record among Nordic
 nations (passed Zlatan Ibrahimović's 62 goals, vs Denmark 24 Sep 2026 — see
 CLAUDE.md / SOURCES.md for the sourcing on the underlying record itself).
 
-- **Intro clip job id: `693f664d-0282-4590-80e1-96449562d465`** (7.05s,
-  stat-reveal motion graphic, 62→63→64 counter, Norway/Sweden flag icons,
-  no real people/faces/club crests — abstract broadcast-graphics style
-  only, to stay consistent with the site's own policy of not using real
-  club/competition logos or player photos). On-screen text: "ALL-TIME TOP
-  SCORER" / "NORDIC NATIONS" (two lines) + "64 INTERNATIONAL GOALS"
-  subtitle — deliberately simplified to short, plain, common words with no
-  diacritics, after the first attempt (below) rendered misspelled text.
+Revised per owner request (9 Oct 2026, "make it be a bit more clear that it
+is a record between the best topscorer from the two countries and that
+Haaland just (date) surpassed Ibrahimovich") to explicitly show Norway vs
+Sweden and the Ibrahimović comparison with the date, not just Haaland's own
+tally.
+
+- **Intro clip job id: `babe4254-c6fb-41d8-955e-52979541377a`** (7.04s,
+  stat-reveal motion graphic: Norway vs Sweden flags, "NORDIC NATIONS / TOP
+  SCORER RECORD" headline, Sweden "62 / PREVIOUS RECORD" vs Norway
+  "HAALAND" counter ticking 62→63→64, overtake animation, final screen
+  "NEW ALL-TIME RECORD" with both tallies side by side. No real
+  people/faces/club crests — abstract broadcast-graphics style only.
+- **The AI model's own rendering of "IBRAHIMOVIC" and "HAALAND" is not used
+  — do not trust it.** Across three separate generations in this session,
+  the model misspelled "Ibrahimovic" twice ("Ibabuıovic", "Ibrahamovic")
+  and "Haaland" once ("Haeland") in dynamic/counter-adjacent text, and in
+  this take the Swedish "previous record" number itself incorrectly
+  animated from 62 up to 64 in the final held frame (factually wrong — it
+  must stay fixed at 62). Because of this track record, the final
+  video **does not rely on the AI to render the player-name comparison or
+  the Swedish number at all** — see "Guaranteed-correct text overlay"
+  below, the fix adopted for this and all future intros.
 - **Final assembled video (intro + 4s hold + standard ending + 2s hold):**
-  media_id `f47a4178-576a-49ba-96bd-cd5369eaa185`,
-  `https://d2ol7oe51mr4n9.cloudfront.net/user_3Ipc1bcrZt27tWpXOoyuXF8Mztc/f47a4178-576a-49ba-96bd-cd5369eaa185.mp4`
-  (19.15s, 1920x1080, h264/aac). **Use this one.** Built with the
-  updated standard ending clip above (white ball, crossbar-clip spin).
+  media_id `8535ecd6-a1cf-44de-83e6-6241f9a090b8`,
+  `https://d2ol7oe51mr4n9.cloudfront.net/user_3Ipc1bcrZt27tWpXOoyuXF8Mztc/8535ecd6-a1cf-44de-83e6-6241f9a090b8.mp4`
+  (19.11s, 1920x1080, h264/aac). **Use this one.**
 
 **Superseded — do not use:**
+- Intro clip job `42ad6259-1061-4198-b06c-b59e6fb14f61` — first attempt at
+  the Norway-vs-Sweden framing; rendered "IBRAHIMOVIC" as "IBRAHAMOVIC"
+  throughout (both the mid-clip label and the final headline).
+- Assembled video media_id `f47a4178-576a-49ba-96bd-cd5369eaa185` and intro
+  clip job `693f664d-0282-4590-80e1-96449562d465` — good spelling, but
+  didn't name Ibrahimović or the date on-screen at all (only "64
+  INTERNATIONAL GOALS" / "NORDIC NATIONS ALL-TIME TOP SCORER"), which the
+  owner asked to make clearer.
 - Assembled video media_id `f14bd2a3-9bf5-4dc1-9d4b-cd5bd720393a` — same
-  intro, but built with the old pentagon-ball standard ending before it was
+  intro, built with the old pentagon-ball standard ending before it was
   updated (8 Oct 2026) to the white-ball/crossbar-spin version above.
 - Intro clip job `05364a16-d282-4301-8118-c24e541ac93e` and assembled video
   media_id `2b270811-33de-4d35-aeac-812490c3f997`. The on-screen subtitle
   text was misspelled ("Haeland" instead of "Haaland", "Ibabuıovic" instead
-  of "Ibrahimović" — caught by extracting and visually inspecting the
-  clip's last frame before shipping). That earlier version also predates
-  the 4s/2s hold rules above. Lesson: always extract and view the last
-  frame of a generated clip with on-screen text before using it — see
-  "Text-rendering risk" note below.
+  of "Ibrahimović"). Predates the 4s/2s hold rules above.
 
-**Text-rendering risk:** printed/on-screen text in AI-generated video is
-unreliable, especially longer words and names with diacritics. Mitigate by
-keeping on-screen text short and plain (push detail like "Ibrahimović" into
-the social caption instead of baking it into the video), explicitly
-instructing "perfect, correctly spelled, no misspellings" in the prompt,
-and always verifying by extracting the last frame
-(`ffmpeg -y -sseof -0.2 -i clip.mp4 -frames:v 1 -update 1 -q:v 2 out.jpg`,
-viewed via `sandbox_exec`'s `image_paths`) before shipping.
+**Text-rendering risk — escalated policy (9 Oct 2026):** printed/on-screen
+text in AI-generated video is unreliable, especially longer words and names
+with diacritics — and this has now failed on *both* "Ibrahimović" (twice)
+and "Haaland" (once) across this session's generations, including a case
+where the AI also silently corrupted a *static* number (62→64) that the
+prompt explicitly said should not change. Simplifying the prompt wording is
+no longer treated as a sufficient fix on its own for anything load-bearing
+(a name, a date, a number that must stay fixed) — those now go through the
+guaranteed-correct overlay below instead. Still always verify by extracting
+frames (`ffmpeg -y -ss <t> -i clip.mp4 -frames:v 1 -update 1 -q:v 2
+out.jpg`, viewed via `sandbox_exec`'s `image_paths`) before shipping —
+check several timestamps through the clip, not just the last frame, since a
+AI numeric/text glitch can appear mid-clip and "fix itself" by the end (or
+vice versa, as happened here).
+
+**Guaranteed-correct text overlay (adopted 9 Oct 2026):** for any text that
+must be factually exact — a player name, a date, a score/record number —
+don't rely on the AI model to render it at all. Instead:
+1. In the generation prompt, either omit that text entirely or have the
+   model render only safe generic placeholders/labels (e.g. ask for just
+   the flag + number + "PREVIOUS RECORD", no player name).
+2. In `sandbox_exec`, burn in the exact correct text afterward with
+   ffmpeg's `drawtext` filter (font: `/usr/share/fonts/truetype/higgsfield/
+   Montserrat-ExtraBold.ttf`), gated to appear only once the AI's own
+   reveal animation has settled (check several frames to find when
+   transition animations finish — in this clip the "overtake" ring
+   animation needed until t≈4.9s to clear).
+3. If the AI also rendered an element wrong that must be covered (not just
+   added), sample the local background color first (Python/PIL
+   `im.getpixel((x,y))` on an extracted frame) and draw a `drawbox` patch
+   in that color *before* drawing the correct text on top — size the patch
+   generously (include the glow/halo around bold digits, not just the
+   glyph bounding box) to avoid a visible ghost of the wrong content
+   peeking out from under the patch.
+4. This overlay must be applied to the intro clip *before* the 4-second
+   `tpad` hold, so the held freeze-frame also carries it (it does, since
+   `tpad` clones the already-overlaid last frame).
+
+This video's bottom-caption bar ("HAALAND SURPASSES IBRAHIMOVIC" /
+"24 SEP 2026", enabled from t≥4.9s) and the "62" patch over the Swedish
+number are both done this way — see the ffmpeg command used for this
+presentation for the exact filter graph if replicating the pattern.
 
 Next time: reuse the standard ending clip as-is, generate a new ~6-8s intro
-for whichever record is being featured, and follow the same sandbox_exec
-concat recipe above (including the 4s/2s hold filters).
+for whichever record is being featured (keeping player names/dates/record
+numbers as guaranteed overlays, never AI-rendered text), and follow the
+same sandbox_exec concat recipe above (including the 4s/2s hold filters).
