@@ -4,6 +4,13 @@ Internal notes for AI-generated social-media video content promoting
 HaalandTracker (separate from the website's own code — nothing here ships
 to haalandtracker.com/.no). Generated via Higgsfield (model `seedance_2_5`).
 
+**Record-reveal videos (10 Oct 2026):** the reveal/intro portion is now
+built as a verified Nano Banana still + guaranteed ffmpeg text overlay,
+not AI video — see `.claude/skills/record-video/SKILL.md` for the full,
+on-demand procedure ("make a record video" / `/record-video`). The
+standard ending clip below is unchanged and still used as-is for every
+presentation, reveal method notwithstanding.
+
 ## Standard ending clip (adopted 8 Oct 2026, updated same day — owner request)
 
 Every "record" video generated from now on should end with this exact clip
