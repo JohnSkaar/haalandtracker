@@ -64,37 +64,63 @@ If a record involves a name not on this list, add it to this table (with a
 source) before using it — don't guess spelling, and don't trust it just
 because a search result or a model output used some spelling.
 
-## Step 1 — Pick a record (always read live data, never hardcode a number)
+## Step 1 — Pick a record (prefer durable achievements over his live tally)
 
 Every number used anywhere in this skill's output must be read fresh from
 `source/Main.en.dc.html` (or `source/Main.no.dc.html` if making the Norwegian
 variant) at run time — numbers in this skill file's prose, if any appear in
 examples below, are illustrations only and will be stale.
 
-Candidate pool (grep the live file for each, pick one — randomly if the
-user said "random", or as specified):
+**Prioritize fixed, already-settled achievements over anything tied to his
+current cumulative goal/game count** (owner request, 11 Oct 2026: "try to
+prioritize records that doesn't include his current goal level, they are
+short lived. His next CL is coming up soon and then this video might
+already be old. Use his achievements"). A live tally — CL ranking, club/
+national key-stats, an in-progress PL season total — can go stale within
+days, sometimes before the video even finishes rendering. A durable
+achievement (a Guinness World Record, a completed season's final tally, a
+dated historical milestone, a trophy/award count) is true indefinitely and
+won't need re-checking before every post.
 
-- **Club key stats**: search `Manchester City — key stats (club)` area /
-  the `club.*` stat-mini tile — current Games/Goals/Average.
-- **CL key stats + ranking**: search `const CL_TOP` for the full all-time
-  CL scorer list and Haaland's current `value`; search `topRankLabel:` for
-  his current ranking sentence (already has the exact phrasing and number
-  combined).
-- **National team key stats**: search `const NAT_NORWAY` for his current
-  caps/goals; search `const NAT_WORLD` for how he compares to the world/
-  Europe all-time list (only use an entry flagged `active: true` for a
-  "still active, could still move" framing, or any entry for a historical
-  comparison).
-- **"Still achievable" record-chase entries** (forward-looking, not yet
-  crossed — frame as "on pace for X" not "beat X"): search `clubAchievable`,
-  `clAchievable`, `natAchievable` — each is an array of
-  `{ title, desc, progress }`. `desc` already contains the precise current
-  number and comparison; `progress` is the percent-of-the-way-there.
-- **PL season arc**: search `const PL_SEASONS` for the current in-progress
-  season's cumulative total/apps.
-- **A genuinely new milestone** freshly crossed by the latest match update
-  (check the "Last updated" footer badge date against today — if a record
-  was just crossed, that's usually the most shareable pick).
+**Preferred pool — durable, prefer these first:**
+- **Official records / GWRs**: search `Official record` and `GWR:` — e.g.
+  "Most goals in a single Premier League season: 36 (2022/23) — Guinness
+  World Record" and "GWR: fastest to 100 PL goals" (111 games). These are
+  closed historical facts (the season/game count can never change) and are
+  his most prestigious, shareable achievements — the strongest default pick
+  when nothing more specific is requested.
+- **Merit chips**: search `merit-chip` / `merit-text` for more of the same
+  — Golden Boot count ("×3, as of the 2025/26 season" — note the count
+  itself only changes if a *new, completed* season adds one, not match by
+  match), "Fastest to 50 PL goals" (fixed games count), "Most hat-tricks
+  for Norway" (a count of a genuinely rare event, not his routine scoring
+  tally — far more durable in practice than a goals total), "U20 World Cup
+  Golden Boot".
+- **Dated History log entries**: search `const clubHistory`, `const
+  clHistory`, `const natHistory` for entries with `record: true` — each is
+  a frozen, dated milestone ("CL debut with a hat-trick... 3rd youngest to
+  score a CL hat-trick", "5 goals vs RB Leipzig... matches the record for
+  most goals in a single CL match... fastest to 30 CL goals", "Borussia
+  Dortmund, total: 62 goals in 67 Bundesliga games — youngest and fastest
+  player ever to 50 Bundesliga goals"). Never edit or "update" these —
+  CLAUDE.md is explicit that they're snapshots of when a past milestone was
+  reached, which is exactly what makes them safe to use here.
+- **Completed PL seasons**: search `const PL_SEASONS` for an entry with
+  `done: true` (not the current in-progress one) — a final, closed season
+  tally, e.g. a specific season's total goals/games.
+
+**Use sparingly, only when specifically asked for "latest"/"current" framing
+or a genuinely fresh milestone:**
+- CL/club/national live key-stats and ranking (`const CL_TOP`,
+  `topRankLabel:`, `const NAT_NORWAY`, club `.key stats` tiles) — goes
+  stale with his very next appearance, sometimes same week.
+- "Still achievable" entries (`clubAchievable`, `clAchievable`,
+  `natAchievable`) — these are explicitly forward-looking progress toward
+  a target, inherently tied to his current tally.
+- The current in-progress `PL_SEASONS` entry.
+- A milestone freshly crossed by the latest match update (check the "Last
+  updated" footer badge date) — fine for a one-off "just happened" post,
+  but don't default to it for a general-purpose record video.
 
 Record the exact source line(s) you read, in case they're needed later for
 a caption or for `VIDEO_TEMPLATES.md`.
