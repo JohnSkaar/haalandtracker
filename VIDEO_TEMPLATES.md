@@ -274,3 +274,59 @@ AI-rendered text for those specifically — but letting the AI's own
 animation/counter play out otherwise, per the reverted-glitch note above),
 and follow the same sandbox_exec concat recipe including the 4s/2s hold
 filters and the audio-smoothing technique above.
+
+## Still-image record videos (10-11 Oct 2026 — `.claude/skills/record-video/SKILL.md`)
+
+A separate, simpler pattern for one-off record/stat videos: a verified
+Nano Banana Pro still (not AI video) for the reveal, a brief Ken Burns
+zoom-in, an exact **3-second static hold**, then the standard ending clip
+above. Full procedure in the skill file; this section only logs results
+and corrects the skill's own guidance where reality differed from the plan.
+
+### First run (11 Oct 2026)
+
+Topic: Haaland's Champions League all-time scorer ranking — **#7 all-time,
+59 goals** (from `CL_TOP` in `source/Main.en.dc.html`: index 6, zero-based,
+behind Ronaldo/Messi/Lewandowski/Benzema/Raúl/Mbappé; matches the hardcoded
+"59 goals" in `topRankLabel`). Picked because it needed no risky names in
+the on-screen text at all — a deliberately easy first test of the new
+pipeline.
+
+- **Nano Banana Pro got it 100% correct on the first attempt** — all four
+  locked text lines ("CHAMPIONS LEAGUE" / "ALL-TIME TOP SCORERS" / "59" /
+  "HAALAND · #7 ALL-TIME"), perfectly spelled, first try, no retries
+  needed. `openart_generate_image`, model `nano-banana-pro`, mode
+  `text2image`, `aspectRatio: "16:9"`, `resolution: "2K"`.
+- **Correction to the skill's Step 6 ("always overlay, no exceptions"):**
+  tested applying the guaranteed ffmpeg/ImageMagick patch-and-redraw on
+  this already-correct still, and it **visibly degraded the image** — flat
+  rectangle patches didn't blend with the gradient/glow background, and
+  the patch clipped part of the "59" digits' own glow, looking worse than
+  before despite the text underneath being identical. Shipped the
+  **unpatched** raw still instead. Updated understanding: a still image
+  has no temporal-drift failure mode the way video does (a verified-correct
+  frame can't silently become wrong later, since it's a static file) — so
+  Step 5's verification is sufficient on its own when it finds no error.
+  Step 6's overlay is for *correcting* a verified error, not a mandatory
+  blind step. The skill file's wording should be loosened accordingly next
+  time it's edited.
+- **Reveal source still**: generated via OpenArt, downloaded through
+  Higgsfield's `sandbox_exec` (same CDN-access-blocked-from-this-session
+  pattern as the Higgsfield video CDN — `cdn.openart.ai` also isn't
+  reachable from this session's own `curl`/`WebFetch`, confirmed again
+  here; always route through `sandbox_exec`).
+- **Animation**: 1.5s Ken Burns zoom (`zoompan=z='min(zoom+0.0015,1.05)'`)
+  + fade-in, then `tpad=stop_mode=clone:stop_duration=3` for the exact 3s
+  hold — worked as documented in the skill, 4.5s reveal segment total.
+- **Audio**: reveal segment given a silent track (`anullsrc`) rather than
+  anything looped (nothing to loop for a still-based clip), then joined to
+  the ending clip's audio with the same `acrossfade=d=0.5` + `apad=0.5`
+  technique as the video-intro pattern above — reads as a clean "quiet
+  reveal → crowd roar" beat, no jump.
+- **Video join**: plain hard-cut `concat` (no video crossfade), matching
+  the existing pattern — scene change reads fine on a cut.
+- **Final assembled video**: media_id `9e939b8a-bc99-4d2a-96d7-306a3b407d6d`,
+  `https://d2ol7oe51mr4n9.cloudfront.net/user_3Ipc1bcrZt27tWpXOoyuXF8Mztc/9e939b8a-bc99-4d2a-96d7-306a3b407d6d.mp4`
+  (12.58s, 1920x1080, h264/aac). Verified by extracting frames from the
+  motion phase, the hold, right after the cut, and the ending's final held
+  frame — all correct.

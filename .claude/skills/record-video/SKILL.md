@@ -170,24 +170,34 @@ graphics) rather than just misspelled, it's worth one regeneration with a
 refined prompt; don't loop more than 2-3 times chasing perfect AI spelling
 — Step 6 makes that unnecessary.
 
-## Step 6 — Guaranteed ffmpeg text overlay (always do this, no exceptions)
+## Step 6 — Correct the still ONLY if Step 5 actually found an error
 
-Regardless of Step 5's outcome, burn Step 3's locked, exact text onto the
-still with ImageMagick or ffmpeg before it's used in any video, the same
-way `VIDEO_TEMPLATES.md` documents for video frames:
+**Revised 11 Oct 2026 after the first real run.** The original version of
+this step said to patch-and-redraw unconditionally, "no exceptions." That
+was tested on a still Nano Banana Pro had already rendered perfectly, and
+the patch made it *worse* — flat rectangle fills don't blend with a
+gradient/glow background, and a patch over the big number clipped its own
+glow, visibly degrading an image that didn't need fixing. The reasoning
+behind "always guarantee it" came from video, where text can silently
+drift wrong partway through a clip even after looking right elsewhere —
+**a still image has no such failure mode.** One correctly-verified frame
+stays correct forever; it's a static file, not 170 frames of temporal
+coherence. So:
 
-1. If the AI's own text is legible and correctly placed but you want to
-   guarantee it, or if it's wrong: sample the local background color near
-   each text region (Python/PIL `im.getpixel((x,y))`) and draw a solid
-   patch in that color over the AI's text first.
-2. Draw the locked text on top in
-   `/usr/share/fonts/truetype/higgsfield/Montserrat-ExtraBold.ttf` (bold,
-   white, sized to roughly match the AI's original layout scale).
-3. Save as a new PNG (`reveal_final.png`) — this file, not the raw AI
-   output, is what every later step uses.
+- **If Step 5 finds the still already matches Step 3's locked text
+  exactly: ship it unpatched.** Don't patch something that isn't broken.
+- **If Step 5 finds an actual error** (wrong word, wrong number, garbled
+  character): patch it. Sample the local background color near the error
+  (Python/PIL `im.getpixel((x,y))`), draw a solid patch in that color over
+  just the wrong text, then draw the correct text on top in
+  `/usr/share/fonts/truetype/higgsfield/Montserrat-ExtraBold.ttf` (bold,
+  white, sized to roughly match the surrounding layout). Save as a new PNG
+  (`reveal_final.png`) and use that, not the raw output, for every later
+  step. Expect the patch to be visually imperfect (flat fill vs. a
+  gradient background) — acceptable because it's fixing a real error, but
+  still worth a quick regeneration attempt first if the only problem is a
+  single wrong word and a clean re-roll is cheap.
 
-This can be done with ImageMagick `convert` directly on the still (simpler
-than video since there's only one frame, no timing/enable windows needed):
 ```
 convert reveal_raw.png \
   -fill "#202e4eE8" -draw "rectangle <x1>,<y1> <x2>,<y2>" \
@@ -195,7 +205,8 @@ convert reveal_raw.png \
   -pointsize <n> -fill white -gravity West -annotate +<x>+<y> "<exact text>" \
   reveal_final.png
 ```
-(repeat the fill+annotate pair per line/region that needs a guarantee).
+(repeat the fill+annotate pair per line/region that was actually wrong —
+never for a region that was already correct.)
 
 ## Step 7 — Animate the reveal: brief motion, then an exact 3-second hold
 
