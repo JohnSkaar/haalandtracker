@@ -887,8 +887,8 @@ class Site {
         ],
       },
       '2026/27': {
-        total: 5,
-        apps: 5,
+        total: 6,
+        apps: 6,
         done: false,
         solid: [
           [0, 0],
@@ -897,6 +897,7 @@ class Site {
           [3, 3],
           [4, 4],
           [5, 5],
+          [6, 6],
         ],
       },
     };
@@ -5547,9 +5548,7 @@ function render(vals) {
  <div class="match-status played"><span class="status-desc">Ingen m&aring;l &mdash; Ajer ga Norge ledelsen (36. min.), men Cancelo utlignet (38. min.), og Ramos avgjorde for Portugal i 2. omgang (kilde: VAVEL)</span></div>
  </div>
 
- <div class="now-marker"><span>N&Aring;</span></div>
-
- <div class="match-card is-planned season-2627 comp-pl">
+ <div class="match-card season-2627 comp-pl">
  <div class="match-comp pl">PL</div>
  <div class="match-date">11. okt. 2026</div>
  <div class="match-badges">
@@ -5557,10 +5556,14 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#C8102E;color:#fff">LIV</div>
  </div>
- <div class="match-opp">vs Liverpool&nbsp;(B)<span class="match-score-line"><span class="score-note">avspark 17:30</span></span></div>
- <div class="match-icons"></div>
- <div class="match-status planned">Planlagt &middot; Anfield</div>
+ <div class="match-opp">vs Liverpool&nbsp;(B)<span class="match-score-line"><span class="match-score">3&ndash;0</span></span></div>
+ <div class="match-icons"><div class="icons-cluster">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div></div>
+ <div class="match-status played"><span class="status-desc">1 m&aring;l (65. min.) &mdash; kom rett etter at Gravenberch ble utvist for en takling p&aring; Doku (62. min.); Doku (68. min.) og Cherki (78. min.) fullf&oslash;rte 3&ndash;0-seieren borte (kilde: Sofascore)</span></div>
  </div>
+
+ <div class="now-marker"><span>N&Aring;</span></div>
 
  <div class="match-card is-planned season-2627 comp-cl">
  <div class="match-comp cl">CL</div>
@@ -5571,6 +5574,19 @@ function render(vals) {
  <div class="badge badge-opp" style="background:#004170;color:#fff">PSG</div>
  </div>
  <div class="match-opp">vs Paris Saint-Germain&nbsp;(H)<span class="match-score-line"><span class="score-note">avspark 22:00</span></span></div>
+ <div class="match-icons"></div>
+ <div class="match-status planned">Planlagt &middot; Etihad Stadium</div>
+ </div>
+
+ <div class="match-card is-planned season-2627 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">17. okt. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#0044A9;color:#fff">IPS</div>
+ </div>
+ <div class="match-opp">vs Ipswich Town&nbsp;(H)<span class="match-score-line"><span class="score-note">avspark 16:00</span></span></div>
  <div class="match-icons"></div>
  <div class="match-status planned">Planlagt &middot; Etihad Stadium</div>
  </div>
@@ -5686,11 +5702,11 @@ function render(vals) {
  <div class="stat-mini">
  <span class="stat-mini-title">Manchester City &mdash; n&oslash;kkeltall (klubb)</span>
  <div class="stat-mini-row">
- <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">205</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">169</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,82</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">206</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">170</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,83</span></div>
  </div>
- <span class="stat-mini-note">Alle turneringer, t.o.m. 205. City-kamp, 20. sep. 2026.</span>
+ <span class="stat-mini-note">Alle turneringer, t.o.m. 206. City-kamp, 11. okt. 2026.</span>
  </div>
 
  <div class="col-section">
@@ -6560,7 +6576,7 @@ ${(vals.modal.nat) ? `
  <b>Interaksjon:</b> hver kolonne har egne av/p&aring;-brytere for historikk, tapte muligheter og fortsatt oppn&aring;elig. Rekordgrafen st&oslash;tter to milep&aelig;ler (100/150 m&aring;l), totalt/per sesong-visning, og av/p&aring;-bryter per konkurrent eller per sesong.
  </div>
 </footer>
-<div class="foot-updated-row"><div class="topbar-meta">Sist oppdatert: 4. okt. 2026</div></div>
+<div class="foot-updated-row"><div class="topbar-meta">Sist oppdatert: 11. okt. 2026</div></div>
 
 </div>
 </div>`;
