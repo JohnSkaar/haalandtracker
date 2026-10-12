@@ -330,3 +330,40 @@ pipeline.
   (12.58s, 1920x1080, h264/aac). Verified by extracting frames from the
   motion phase, the hold, right after the cut, and the ending's final held
   frame — all correct.
+- **Superseded same day**: this topic (his live CL scorer ranking/tally)
+  was exactly the kind of record the owner asked to move away from in the
+  very next request — see below.
+
+### Second run (11-12 Oct 2026) — switched to a durable achievement
+
+Owner feedback right after the first run: "try to prioritize records that
+does not include his current goal level, they are short lived. His next CL
+is coming up soon and then this video might already be old. Use his
+achievements." Revised Step 1's candidate pool in the skill (see its own
+commit) to prefer fixed, already-settled achievements — official records,
+merit-chip awards, dated History log entries, completed seasons — over any
+live cumulative tally. Documented at length in the skill file; not
+repeated here.
+
+Topic picked under the new criteria: Haaland's **Premier League single-
+season scoring record — 36 goals, 2022/23 — an official Guinness World
+Record** (`source/Main.en.dc.html`: "Official record" lane-fact line and
+the "GWR: most goals in a single PL season" merit chip). Completely fixed
+— that season ended years ago, the number can never change, and it's
+arguably his single most famous achievement. Exactly the kind of pick the
+skill should default to now.
+
+- **Nano Banana Pro again got it 100% correct on the first attempt** — all
+  four locked lines ("PREMIER LEAGUE" / "GUINNESS WORLD RECORD" / "36" /
+  "HAALAND · 2022/23 SEASON"), plus added a tasteful small trophy emoji and
+  gold underline unprompted detail that read well. Per the revised Step 6,
+  shipped unpatched — no correction needed, so none applied.
+- Same animation/audio/join recipe as the first run (1.5s Ken Burns zoom +
+  exact 3s `tpad` hold, silent reveal audio crossfaded into the ending
+  clip's audio, hard-cut video).
+- **Final assembled video**: media_id `3cde3a72-0e8a-48b9-9d54-07b00cceb436`,
+  `https://d2ol7oe51mr4n9.cloudfront.net/user_3Ipc1bcrZt27tWpXOoyuXF8Mztc/3cde3a72-0e8a-48b9-9d54-07b00cceb436.mp4`
+  (12.58s, 1920x1080, h264/aac). Verified by extracting frames from the
+  motion phase, the hold, right after the cut, and the ending's final held
+  frame — all correct. **This is the current recommended example — durable,
+  won't go stale before the next match.**
