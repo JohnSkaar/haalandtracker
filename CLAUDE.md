@@ -237,6 +237,30 @@ note ("All competitions, through City game N, DD Mon YYYY" /
   Lewandowski"/"Forbigå Robert Lewandowski" and "Ronaldo and Messi's
   all-time records"/"Ronaldos og Messis totalrekorder"): update each
   `desc`'s goal count and its `progress` per the formula above.
+- **The "Record chart — Champions League" race-to-milestone datasets**
+  (search `const CL_50`, `const CL_100`, `const CL_150`, in both
+  `source/Main.en.dc.html` and `source/Main.no.dc.html`). This was missed
+  entirely until 14 Oct 2026, when `CL_100`'s Haaland trajectory (a
+  flat `haaland: [...]` array ending at `[95, 100]`) silently drifted out
+  of sync with reality — it depicted Haaland as having *already* scored
+  100 CL goals (dot sitting on the 100 line) when his real total was 61,
+  because nothing had ever updated it since it was first written. `CL_50`
+  is low-risk (Haaland genuinely passed 50 CL goals already, so a flat
+  solid-only `haaland: [...]` array ending at his real `[games, 50]` stays
+  true forever — leave its shape alone). `CL_100` and `CL_150`, by
+  contrast, track a milestone Haaland has **not yet reached**, so each
+  one's Haaland line MUST use the two-part `haalandSolid`/`haalandDashed`
+  split (not a single flat `haaland` array): `haalandSolid`'s last point
+  is `[gamesPlayedSoFar, CL_TOP's current Haaland value]` — i.e. it has to
+  match `CL_TOP` exactly, since that's the one number this file already
+  keeps accurate — and `haalandDashed` starts at that same point and
+  projects on to the milestone (100 or 150) using his current scoring
+  pace, clearly still a projection, never already-achieved. Update
+  `CL_CAPTIONS.m100`/`m150`'s text too if the projection's shape changes
+  enough to be worth re-describing (both already say "Haaland's dashed
+  line is a projection..."). Do this every time `CL_TOP`'s Haaland value
+  changes, the same way every other entry in this list does — don't wait
+  for someone to notice the chart looks wrong.
 
 **c) Norway national-team match — additionally:**
 - "National team — key stats" tile (Games/Goals/Average + dated note), if

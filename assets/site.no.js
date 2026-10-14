@@ -1318,15 +1318,17 @@ class Site {
     const CL_100 = {
       maxGames: 140,
       maxGoals: 100,
-      haaland: [
+      haalandSolid: [
         [0, 0],
         [15, 10],
         [30, 22],
-        [45, 36],
-        [60, 52],
-        [75, 70],
-        [85, 85],
-        [95, 100],
+        [44, 50],
+        [50, 52],
+        [60, 61],
+      ],
+      haalandDashed: [
+        [60, 61],
+        [108, 100],
       ],
       rivals: [
         {
@@ -1402,13 +1404,13 @@ class Site {
         [0, 0],
         [15, 10],
         [30, 22],
-        [45, 36],
-        [60, 52],
-        [62, 64],
+        [44, 50],
+        [50, 52],
+        [60, 61],
       ],
       haalandDashed: [
-        [62, 64],
-        [150, 150],
+        [60, 61],
+        [160, 150],
       ],
       rivals: [
         {
@@ -1432,7 +1434,7 @@ class Site {
     };
     const CL_CAPTIONS = {
       m50: 'Kappløpet til 50 Champions League-mål.',
-      m100: 'Kappløpet til 100 Champions League-mål.',
+      m100: 'Kappløpet til 100 Champions League-mål. Haalands stiplede linje er en fremskrivning basert på nåværende målsnitt.',
       m150: 'Kun Ronaldo har nådd 150 CL-mål. Haalands stiplede linje er en fremskrivning.',
     };
     const CL_TOP = [
