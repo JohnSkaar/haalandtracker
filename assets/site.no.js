@@ -335,7 +335,7 @@ class Site {
     const clAchievable = withWidth([
       {
         title: 'Forbig&aring; Robert Lewandowski (101 CL-m&aring;l)',
-        desc: 'St&aring;r p&aring; 61 CL-m&aring;l s&aring; langt, allerede forbi Raúl, van Nistelrooy og Mbapp&eacute; p&aring; totallisten.',
+        desc: 'St&aring;r p&aring; 61 CL-m&aring;l s&aring; langt, allerede forbi Henry, Salah og van Nistelrooy p&aring; totallisten.',
         progress: 60,
       },
       { title: 'Ronaldos og Messis totalrekorder', desc: 'Langt fram til historiens to &oslash;verste (140 og 129 CL-m&aring;l). St&aring;r p&aring; 61 s&aring; langt.', progress: 44 },
@@ -1391,14 +1391,13 @@ class Site {
             [45, 29],
             [60, 43],
             [75, 60],
-            [95, 82],
-            [125, 100],
+            [99, 71],
           ],
         },
       ],
     };
     const CL_150 = {
-      maxGames: 170,
+      maxGames: 190,
       maxGoals: 150,
       haalandSolid: [
         [0, 0],
@@ -1427,7 +1426,7 @@ class Site {
             [100, 80],
             [120, 102],
             [140, 125],
-            [160, 150],
+            [183, 140],
           ],
         },
       ],
@@ -1435,7 +1434,7 @@ class Site {
     const CL_CAPTIONS = {
       m50: 'Kappløpet til 50 Champions League-mål.',
       m100: 'Kappløpet til 100 Champions League-mål. Haalands stiplede linje er en fremskrivning basert på nåværende målsnitt.',
-      m150: 'Kun Ronaldo har nådd 150 CL-mål. Haalands stiplede linje er en fremskrivning.',
+      m150: 'Ingen spiller har nådd 150 Champions League-mål ennå &mdash; Ronaldo er nærmest, med 140 på 183 kamper (nå pensjonert fra turneringen). Haalands stiplede linje er en fremskrivning.',
     };
     const CL_TOP = [
       { name: 'C. Ronaldo', value: 140, color: '#2f5aa8', isH: false, active: false },
@@ -1443,7 +1442,7 @@ class Site {
       { name: 'R. Lewandowski', value: 101, color: '#a8791a', isH: false, active: true },
       { name: 'K. Benzema', value: 90, color: '#1f2937', isH: false, active: false },
       { name: 'Raúl', value: 71, color: '#7c3f8f', isH: false, active: false },
-      { name: 'K. Mbappé', value: 68, color: '#2f8f5f', isH: false, active: true },
+      { name: 'K. Mbappé', value: 71, color: '#2f8f5f', isH: false, active: true },
       { name: 'E. Haaland', value: 61, color: '#c1352b', isH: true, active: true },
       { name: 'R. van Nistelrooy', value: 56, color: '#5a5f73', isH: false, active: false },
       { name: 'T. Müller', value: 53, color: '#1f6f78', isH: false, active: false },

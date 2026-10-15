@@ -261,6 +261,28 @@ note ("All competitions, through City game N, DD Mon YYYY" /
   line is a projection..."). Do this every time `CL_TOP`'s Haaland value
   changes, the same way every other entry in this list does — don't wait
   for someone to notice the chart looks wrong.
+  **The same check applies to every *rival*'s `points` array in these
+  three charts, not just Haaland's own line** — found 15 Oct 2026, one
+  day after the above fix, when the owner noticed Mbappé's `CL_100` line
+  also sat on the 100 line (ending at a fabricated `[125, 100]`) despite
+  `CL_TOP` already correctly showing him on 68 (stale itself — the real
+  figure, cross-checked across multiple outlets, was 71 in 99 games) —
+  and Ronaldo's `CL_150` line and its caption claimed he'd "reached 150"
+  at a fabricated `[160, 150]`, when he's permanently frozen on 140 (183
+  games, Guinness World Record, retired — `active: false` in `CL_TOP`).
+  Rivals have no dashed-projection field (only a flat `points` array), so
+  a rival who hasn't reached that chart's milestone needs their `points`
+  array truncated to end exactly at their own real current tally (pull it
+  from `CL_TOP`, or re-verify if `CL_TOP`'s own entry for that player
+  looks like it was never updated either — `CL_TOP`'s non-Haaland rows
+  aren't covered by any other rule in this file, so don't assume they're
+  current just because Haaland's is) — never left overshooting to the
+  milestone itself. A rival who HAS genuinely passed the milestone (e.g.
+  Ronaldo/Messi/Lewandowski in `CL_100`) legitimately ends exactly at it;
+  that's correct and not the bug. If a milestone caption (like the old
+  `m150` text) asserts someone "has reached" it, double-check that
+  against the rival's real total before trusting it, the same as any
+  other hardcoded claim on this site.
 
 **c) Norway national-team match — additionally:**
 - "National team — key stats" tile (Games/Goals/Average + dated note), if
