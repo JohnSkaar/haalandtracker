@@ -5597,9 +5597,7 @@ function render(vals) {
  <div class="match-status played"><span class="status-desc">2 m&aring;l (34. og 69. min.) &mdash; et tredje ble annullert sent; City vant 7 strake &aring;pningskamper (kilde: VAVEL)</span></div>
  </div>
 
- <div class="now-marker"><span>N&Aring;</span></div>
-
- <div class="match-card is-planned season-2627 comp-cl">
+ <div class="match-card is-missed season-2627 comp-cl">
  <div class="match-comp cl">CL</div>
  <div class="match-date">20. okt. 2026</div>
  <div class="match-badges">
@@ -5607,10 +5605,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#FFD200;color:#000">AEK</div>
  </div>
- <div class="match-opp">vs AEK Athen&nbsp;(H)<span class="match-score-line"><span class="score-note">avspark 21:00</span></span></div>
+ <div class="match-opp">vs AEK Athen&nbsp;(H)<span class="match-score-line"><span class="match-score">5&ndash;1</span></span></div>
  <div class="match-icons"></div>
- <div class="match-status planned">Planlagt &middot; Etihad Stadium</div>
+ <div class="match-status missed"><span class="status-desc">Ikke i troppen &middot; ikke benyttet, nurset etter en skade mot Ipswich (kilde: Brit Brief) &mdash; Foden-hattrick i 5&ndash;1-seieren</span></div>
  </div>
+
+ <div class="now-marker"><span>N&Aring;</span></div>
 
  <div class="match-card is-planned season-2627 comp-pl">
  <div class="match-comp pl">PL</div>
@@ -5623,6 +5623,19 @@ function render(vals) {
  <div class="match-opp">vs Aston Villa&nbsp;(B)<span class="match-score-line"><span class="score-note">avspark 13:30</span></span></div>
  <div class="match-icons"></div>
  <div class="match-status planned">Planlagt &middot; Villa Park</div>
+ </div>
+
+ <div class="match-card is-planned season-2627 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">4. nov. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DD0741;color:#fff">RBL</div>
+ </div>
+ <div class="match-opp">vs RB Leipzig&nbsp;(B)<span class="match-score-line"><span class="score-note">avspark 21:00</span></span></div>
+ <div class="match-icons"></div>
+ <div class="match-status planned">Planlagt &middot; Red Bull Arena</div>
  </div>
 
  <div class="match-card is-planned season-2627 comp-nor">
@@ -6610,7 +6623,7 @@ ${(vals.modal.nat) ? `
  <b>Interaksjon:</b> hver kolonne har egne av/p&aring;-brytere for historikk, tapte muligheter og fortsatt oppn&aring;elig. Rekordgrafen st&oslash;tter to milep&aelig;ler (100/150 m&aring;l), totalt/per sesong-visning, og av/p&aring;-bryter per konkurrent eller per sesong.
  </div>
 </footer>
-<div class="foot-updated-row"><div class="topbar-meta">Sist oppdatert: 17. okt. 2026</div></div>
+<div class="foot-updated-row"><div class="topbar-meta">Sist oppdatert: 20. okt. 2026</div></div>
 
 </div>
 </div>`;
