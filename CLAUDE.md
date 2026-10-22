@@ -86,6 +86,32 @@ every 30 min up to 12 times) already handle finding new results, adding
 match cards, and pushing to `main`. Don't create a second, competing
 scheduled check for the same thing — extend or read this file instead.
 
+**Deploy pipeline is separate from this repo and can silently stop (22 Oct
+2026 incident).** Hosting is Cloudflare Workers, connected via Cloudflare's
+own GitHub git-integration (configured in the Cloudflare dashboard, not
+visible from any session working in this repo). A push reaching `main` on
+GitHub does NOT guarantee it reaches haalandtracker.com/.no — the
+GitHub→Cloudflare webhook trigger silently stopped firing for new pushes
+sometime around the 17 Oct "Add Man City 3-2 Ipswich" commit: every commit
+after it (including the 20 Oct AEK Athens update) built nothing at all on
+Cloudflare's side — not even a failed build — while Cloudflare's own
+dashboard "Retry build" button still worked fine, proving the break was in
+the webhook delivery, not the build itself. Separately, even a successful
+build does not automatically become the live "Active deployment" at 100%
+traffic — that's a manual "Rollback" action (Cloudflare's confusingly-named
+button for "make this version active," regardless of whether it's older or
+newer than what's currently live) on each deployment's "..." menu in the
+Cloudflare dashboard. Fixed this occurrence by disconnecting and
+reconnecting the Git repository under Cloudflare → Settings → "Git
+repository", which re-registers the webhook. If the owner ever reports the
+site looking stale again despite recent commits on `main`, this whole
+class of problem — silently-stopped webhook, or a build that succeeded but
+was never promoted to 100% traffic — is the first thing to suspect, and a
+session working in this repo has no way to detect or fix it alone: it
+needs the owner to check the Cloudflare dashboard (Settings for the
+webhook, Deployments for whether recent commits even attempted a build and
+whether the latest one is the active 100%-traffic version).
+
 **Timing override (28 Sep 2026, supersedes the 21 Sep 2026 note below):** the
 first "Haaland match result check" attempt after a kickoff should fire at
 kickoff + 60 minutes (1 hour) — not 120, and not the 140 minutes described
