@@ -908,8 +908,8 @@ class Site {
         ],
       },
       '2026/27': {
-        total: 8,
-        apps: 7,
+        total: 9,
+        apps: 8,
         done: false,
         solid: [
           [0, 0],
@@ -920,6 +920,7 @@ class Site {
           [5, 5],
           [6, 6],
           [7, 8],
+          [8, 9],
         ],
       },
     };
@@ -5631,9 +5632,7 @@ function render(vals) {
  <div class="match-status missed"><span class="status-desc">Not in the squad &middot; unused, managed after a knock vs Ipswich (source: Brit Brief) &mdash; Foden hat-trick in the 5-1 win</span></div>
  </div>
 
- <div class="now-marker"><span>NOW</span></div>
-
- <div class="match-card is-planned season-2627 comp-pl">
+ <div class="match-card season-2627 comp-pl">
  <div class="match-comp pl">PL</div>
  <div class="match-date">24 Oct 2026</div>
  <div class="match-badges">
@@ -5641,9 +5640,26 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
  </div>
- <div class="match-opp">vs Aston Villa&nbsp;(A)<span class="match-score-line"><span class="score-note">12:30 kickoff</span></span></div>
+ <div class="match-opp">vs Aston Villa&nbsp;(A)<span class="match-score-line"><span class="match-score">1&ndash;2</span></span></div>
+ <div class="match-icons"><div class="icons-cluster">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div></div>
+ <div class="match-status played"><span class="status-desc">1 goal (52', header from a set piece) &mdash; Jackson (2) sealed it for Villa, ending City's winning run (source: Sky Sports)</span></div>
+ </div>
+
+ <div class="now-marker"><span>NOW</span></div>
+
+ <div class="match-card is-planned season-2627 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">31 Oct 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
+ </div>
+ <div class="match-opp">vs Brighton&nbsp;(H)<span class="match-score-line"><span class="score-note">15:00 kickoff</span></span></div>
  <div class="match-icons"></div>
- <div class="match-status planned">Scheduled &middot; Villa Park</div>
+ <div class="match-status planned">Scheduled &middot; Etihad Stadium</div>
  </div>
 
  <div class="match-card is-planned season-2627 comp-cl">
@@ -5770,11 +5786,11 @@ function render(vals) {
  <div class="stat-mini">
  <span class="stat-mini-title">Manchester City &mdash; key stats (club)</span>
  <div class="stat-mini-row">
- <div class="stat-mini-item"><span class="stat-mini-label">Games</span><span class="stat-mini-value">208</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">Goals</span><span class="stat-mini-value">174</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Games</span><span class="stat-mini-value">209</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Goals</span><span class="stat-mini-value">175</span></div>
  <div class="stat-mini-item"><span class="stat-mini-label">Average</span><span class="stat-mini-value stat-avg">0.84</span></div>
  </div>
- <span class="stat-mini-note">All competitions, through City game 208, 17 Oct 2026.</span>
+ <span class="stat-mini-note">All competitions, through City game 209, 24 Oct 2026.</span>
  </div>
 
  <div class="col-section">
@@ -6644,7 +6660,7 @@ ${(vals.modal.nat) ? `
  <b>Interaction:</b> each column has its own on/off toggles for history, missed chances and still achievable. The record chart supports two milestones (100/150 goals), a total/per-season view, and an on/off toggle per rival or per season.
  </div>
 </footer>
-<div class="foot-updated-row"><div class="topbar-meta">Last updated: 20 Oct 2026</div></div>
+<div class="foot-updated-row"><div class="topbar-meta">Last updated: 24 Oct 2026</div></div>
 
 </div>
 </div>`;

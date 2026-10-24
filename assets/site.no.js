@@ -887,8 +887,8 @@ class Site {
         ],
       },
       '2026/27': {
-        total: 8,
-        apps: 7,
+        total: 9,
+        apps: 8,
         done: false,
         solid: [
           [0, 0],
@@ -899,6 +899,7 @@ class Site {
           [5, 5],
           [6, 6],
           [7, 8],
+          [8, 9],
         ],
       },
     };
@@ -5610,9 +5611,7 @@ function render(vals) {
  <div class="match-status missed"><span class="status-desc">Ikke i troppen &middot; ikke benyttet, nurset etter en skade mot Ipswich (kilde: Brit Brief) &mdash; Foden-hattrick i 5&ndash;1-seieren</span></div>
  </div>
 
- <div class="now-marker"><span>N&Aring;</span></div>
-
- <div class="match-card is-planned season-2627 comp-pl">
+ <div class="match-card season-2627 comp-pl">
  <div class="match-comp pl">PL</div>
  <div class="match-date">24. okt. 2026</div>
  <div class="match-badges">
@@ -5620,9 +5619,26 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#670E36;color:#fff">AVL</div>
  </div>
- <div class="match-opp">vs Aston Villa&nbsp;(B)<span class="match-score-line"><span class="score-note">avspark 13:30</span></span></div>
+ <div class="match-opp">vs Aston Villa&nbsp;(B)<span class="match-score-line"><span class="match-score">1&ndash;2</span></span></div>
+ <div class="match-icons"><div class="icons-cluster">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div></div>
+ <div class="match-status played"><span class="status-desc">1 m&aring;l (52. min., heading p&aring; d&oslash;dball) &mdash; Jackson (2) sikret seieren for Villa, Citys seiersrekke over (kilde: Sky Sports)</span></div>
+ </div>
+
+ <div class="now-marker"><span>N&Aring;</span></div>
+
+ <div class="match-card is-planned season-2627 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">31. okt. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
+ </div>
+ <div class="match-opp">vs Brighton&nbsp;(H)<span class="match-score-line"><span class="score-note">avspark 16:00</span></span></div>
  <div class="match-icons"></div>
- <div class="match-status planned">Planlagt &middot; Villa Park</div>
+ <div class="match-status planned">Planlagt &middot; Etihad Stadium</div>
  </div>
 
  <div class="match-card is-planned season-2627 comp-cl">
@@ -5749,11 +5765,11 @@ function render(vals) {
  <div class="stat-mini">
  <span class="stat-mini-title">Manchester City &mdash; n&oslash;kkeltall (klubb)</span>
  <div class="stat-mini-row">
- <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">208</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">174</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">209</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">175</span></div>
  <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,84</span></div>
  </div>
- <span class="stat-mini-note">Alle turneringer, t.o.m. 208. City-kamp, 17. okt. 2026.</span>
+ <span class="stat-mini-note">Alle turneringer, t.o.m. 209. City-kamp, 24. okt. 2026.</span>
  </div>
 
  <div class="col-section">
@@ -6623,7 +6639,7 @@ ${(vals.modal.nat) ? `
  <b>Interaksjon:</b> hver kolonne har egne av/p&aring;-brytere for historikk, tapte muligheter og fortsatt oppn&aring;elig. Rekordgrafen st&oslash;tter to milep&aelig;ler (100/150 m&aring;l), totalt/per sesong-visning, og av/p&aring;-bryter per konkurrent eller per sesong.
  </div>
 </footer>
-<div class="foot-updated-row"><div class="topbar-meta">Sist oppdatert: 20. okt. 2026</div></div>
+<div class="foot-updated-row"><div class="topbar-meta">Sist oppdatert: 24. okt. 2026</div></div>
 
 </div>
 </div>`;
