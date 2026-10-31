@@ -5639,9 +5639,7 @@ function render(vals) {
  <div class="match-status missed"><span class="status-desc">Ikke i troppen &middot; hvilt &mdash; City vant 4&ndash;3 p&aring; straffer etter 2&ndash;2 (kilde: Sky Sports)</span></div>
  </div>
 
- <div class="now-marker"><span>N&Aring;</span></div>
-
- <div class="match-card is-planned season-2627 comp-pl">
+ <div class="match-card season-2627 comp-pl">
  <div class="match-comp pl">PL</div>
  <div class="match-date">31. okt. 2026</div>
  <div class="match-badges">
@@ -5649,10 +5647,12 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#0057B8;color:#fff">BHA</div>
  </div>
- <div class="match-opp">vs Brighton&nbsp;(H)<span class="match-score-line"><span class="score-note">avspark 16:00</span></span></div>
+ <div class="match-opp">vs Brighton&nbsp;(H)<span class="match-score-line"><span class="match-score">0&ndash;1</span></span></div>
  <div class="match-icons"></div>
- <div class="match-status planned">Planlagt &middot; Etihad Stadium</div>
+ <div class="match-status played"><span class="status-desc">Ingen m&aring;l &mdash; Ayaris scoring (11. min.) holdt, City tapte hjemme (kilde: Sportsdunia)</span></div>
  </div>
+
+ <div class="now-marker"><span>N&Aring;</span></div>
 
  <div class="match-card is-planned season-2627 comp-cl">
  <div class="match-comp cl">CL</div>
