@@ -348,8 +348,8 @@ class Site {
       },
     ];
     const clAchievable = withWidth([
-      { title: 'Overtake Robert Lewandowski (101 CL goals)', desc: 'Stands at 61 CL goals so far, already past Henry, Salah and van Nistelrooy on the all-time list.', progress: 60 },
-      { title: 'Ronaldo and Messi&#39;s all-time records', desc: 'A long way from the two leaders in history (140 and 129 CL goals). Stands at 61 so far.', progress: 44 },
+      { title: 'Overtake Robert Lewandowski (101 CL goals)', desc: 'Stands at 62 CL goals so far, already past Henry, Salah and van Nistelrooy on the all-time list.', progress: 61 },
+      { title: 'Ronaldo and Messi&#39;s all-time records', desc: 'A long way from the two leaders in history (140 and 129 CL goals). Stands at 62 so far.', progress: 44 },
       {
         title: 'Most hat-tricks in the Champions League (8)',
         desc: 'The record is shared by Messi and Ronaldo with 8 hat-tricks each. Haaland has one so far &mdash; the 5-goal match vs RB Leipzig, March 2023.',
@@ -1348,9 +1348,10 @@ class Site {
         [44, 50],
         [50, 52],
         [60, 61],
+        [61, 62],
       ],
       haalandDashed: [
-        [60, 61],
+        [61, 62],
         [108, 100],
       ],
       rivals: [
@@ -1429,9 +1430,10 @@ class Site {
         [44, 50],
         [50, 52],
         [60, 61],
+        [61, 62],
       ],
       haalandDashed: [
-        [60, 61],
+        [61, 62],
         [160, 150],
       ],
       rivals: [
@@ -1466,7 +1468,7 @@ class Site {
       { name: 'K. Benzema', value: 90, color: '#1f2937', isH: false, active: false },
       { name: 'Raúl', value: 71, color: '#7c3f8f', isH: false, active: false },
       { name: 'K. Mbappé', value: 71, color: '#2f8f5f', isH: false, active: true },
-      { name: 'E. Haaland', value: 61, color: '#c1352b', isH: true, active: true },
+      { name: 'E. Haaland', value: 62, color: '#c1352b', isH: true, active: true },
       { name: 'R. van Nistelrooy', value: 56, color: '#5a5f73', isH: false, active: false },
       { name: 'T. Müller', value: 53, color: '#1f6f78', isH: false, active: false },
       { name: 'T. Henry', value: 50, color: '#8a1538', isH: false, active: false },
@@ -1494,7 +1496,7 @@ class Site {
     }
 
     const chartCl = {
-      entryBars: [bar('1. E. Haaland', 61, 70, '#c1352b', true), bar('2. C. Ronaldo*', 42, 70, '#2f5aa8', false), bar('3. L. Messi*', 28, 70, '#6a3fa0', false)],
+      entryBars: [bar('1. E. Haaland', 62, 70, '#c1352b', true), bar('2. C. Ronaldo*', 42, 70, '#2f5aa8', false), bar('3. L. Messi*', 28, 70, '#6a3fa0', false)],
       m50Class: flag(ccl.active === 'm50'),
       setM50: () => this.setClActive('m50'),
       m100Class: flag(ccl.active === 'm100'),
@@ -1517,7 +1519,7 @@ class Site {
       setTopFilterActive: () => this.setClTopFilter('active'),
       topFilterInactiveClass: flag(ccl.topFilter === 'inactive'),
       setTopFilterInactive: () => this.setClTopFilter('inactive'),
-      topRankLabel: 'Haaland&#39;s ranking: #' + (CL_TOP.findIndex((t) => t.isH) + 1) + ' among all-time Champions League top scorers, with 61 goals.',
+      topRankLabel: 'Haaland&#39;s ranking: #' + (CL_TOP.findIndex((t) => t.isH) + 1) + ' among all-time Champions League top scorers, with 62 goals.',
       openModal: () => this.openModal('cl'),
       ...(clDetail || emptyDetail),
     };
@@ -5673,9 +5675,7 @@ function render(vals) {
  <div class="match-status played"><span class="status-desc">No goal &mdash; Ayari's strike (11') stood, City lost at home (source: Sportsdunia)</span></div>
  </div>
 
- <div class="now-marker"><span>NOW</span></div>
-
- <div class="match-card is-planned season-2627 comp-cl">
+ <div class="match-card season-2627 comp-cl">
  <div class="match-comp cl">CL</div>
  <div class="match-date">4 Nov 2026</div>
  <div class="match-badges">
@@ -5683,10 +5683,14 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DD0741;color:#fff">RBL</div>
  </div>
- <div class="match-opp">vs RB Leipzig&nbsp;(A)<span class="match-score-line"><span class="score-note">20:00 kickoff</span></span></div>
- <div class="match-icons"></div>
- <div class="match-status planned">Scheduled &middot; Red Bull Arena</div>
+ <div class="match-opp">vs RB Leipzig&nbsp;(A)<span class="match-score-line"><span class="match-score">3&ndash;2</span></span></div>
+ <div class="match-icons"><div class="icons-cluster">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div></div>
+ <div class="match-status played"><span class="status-desc">1 goal (78', winner) &mdash; wild game, 2&ndash;2 leveled before Haaland's winner (source: VAVEL, Bundesliga.com)</span></div>
  </div>
+
+ <div class="now-marker"><span>NOW</span></div>
 
  <div class="match-card is-planned season-2627 comp-nor">
  <div class="match-comp nor">NT</div>
@@ -5799,11 +5803,11 @@ function render(vals) {
  <div class="stat-mini">
  <span class="stat-mini-title">Manchester City &mdash; key stats (club)</span>
  <div class="stat-mini-row">
- <div class="stat-mini-item"><span class="stat-mini-label">Games</span><span class="stat-mini-value">209</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">Goals</span><span class="stat-mini-value">175</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">Average</span><span class="stat-mini-value stat-avg">0.84</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Games</span><span class="stat-mini-value">211</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Goals</span><span class="stat-mini-value">176</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Average</span><span class="stat-mini-value stat-avg">0.83</span></div>
  </div>
- <span class="stat-mini-note">All competitions, through City game 209, 24 Oct 2026.</span>
+ <span class="stat-mini-note">All competitions, through City game 211, 4 Nov 2026.</span>
  </div>
 
  <div class="col-section">
@@ -6058,8 +6062,8 @@ function render(vals) {
  <div class="stat-mini">
  <span class="stat-mini-title">Manchester City &mdash; key stats (CL)</span>
  <div class="stat-mini-row">
- <div class="stat-mini-item"><span class="stat-mini-label">Games</span><span class="stat-mini-value">41</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">Goals</span><span class="stat-mini-value">38</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Games</span><span class="stat-mini-value">42</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Goals</span><span class="stat-mini-value">39</span></div>
  <div class="stat-mini-item"><span class="stat-mini-label">Average</span><span class="stat-mini-value stat-avg">0.93</span></div>
  </div>
  <span class="stat-mini-note">All Champions League games for Manchester City.</span>
@@ -6070,9 +6074,9 @@ function render(vals) {
  <div class="stat-mini-row">
  <div class="stat-mini-item"><span class="stat-mini-label">Salzburg</span><span class="stat-mini-value">8</span></div>
  <div class="stat-mini-item"><span class="stat-mini-label">Dortmund</span><span class="stat-mini-value">15</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">Man City</span><span class="stat-mini-value">38</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Man City</span><span class="stat-mini-value">39</span></div>
  </div>
- <span class="stat-mini-note">61 CL goals in total so far &mdash; top 10 all-time, one of only ten players with 50+ CL goals.</span>
+ <span class="stat-mini-note">62 CL goals in total so far &mdash; top 10 all-time, one of only ten players with 50+ CL goals.</span>
  </div>
 
  <div class="col-section">
@@ -6673,7 +6677,7 @@ ${(vals.modal.nat) ? `
  <b>Interaction:</b> each column has its own on/off toggles for history, missed chances and still achievable. The record chart supports two milestones (100/150 goals), a total/per-season view, and an on/off toggle per rival or per season.
  </div>
 </footer>
-<div class="foot-updated-row"><div class="topbar-meta">Last updated: 31 Oct 2026</div></div>
+<div class="foot-updated-row"><div class="topbar-meta">Last updated: 4 Nov 2026</div></div>
 
 </div>
 </div>`;

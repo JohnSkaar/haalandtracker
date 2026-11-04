@@ -335,10 +335,10 @@ class Site {
     const clAchievable = withWidth([
       {
         title: 'Forbig&aring; Robert Lewandowski (101 CL-m&aring;l)',
-        desc: 'St&aring;r p&aring; 61 CL-m&aring;l s&aring; langt, allerede forbi Henry, Salah og van Nistelrooy p&aring; totallisten.',
-        progress: 60,
+        desc: 'St&aring;r p&aring; 62 CL-m&aring;l s&aring; langt, allerede forbi Henry, Salah og van Nistelrooy p&aring; totallisten.',
+        progress: 61,
       },
-      { title: 'Ronaldos og Messis totalrekorder', desc: 'Langt fram til historiens to &oslash;verste (140 og 129 CL-m&aring;l). St&aring;r p&aring; 61 s&aring; langt.', progress: 44 },
+      { title: 'Ronaldos og Messis totalrekorder', desc: 'Langt fram til historiens to &oslash;verste (140 og 129 CL-m&aring;l). St&aring;r p&aring; 62 s&aring; langt.', progress: 44 },
       {
         title: 'Flest hattrick i Champions League (8)',
         desc: 'Rekorden deles av Messi og Ronaldo med 8 hattrick hver. Haaland har &eacute;n hittil &mdash; 5-m&aring;lskampen mot RB Leipzig, mars 2023.',
@@ -1327,9 +1327,10 @@ class Site {
         [44, 50],
         [50, 52],
         [60, 61],
+        [61, 62],
       ],
       haalandDashed: [
-        [60, 61],
+        [61, 62],
         [108, 100],
       ],
       rivals: [
@@ -1408,9 +1409,10 @@ class Site {
         [44, 50],
         [50, 52],
         [60, 61],
+        [61, 62],
       ],
       haalandDashed: [
-        [60, 61],
+        [61, 62],
         [160, 150],
       ],
       rivals: [
@@ -1445,7 +1447,7 @@ class Site {
       { name: 'K. Benzema', value: 90, color: '#1f2937', isH: false, active: false },
       { name: 'Raúl', value: 71, color: '#7c3f8f', isH: false, active: false },
       { name: 'K. Mbappé', value: 71, color: '#2f8f5f', isH: false, active: true },
-      { name: 'E. Haaland', value: 61, color: '#c1352b', isH: true, active: true },
+      { name: 'E. Haaland', value: 62, color: '#c1352b', isH: true, active: true },
       { name: 'R. van Nistelrooy', value: 56, color: '#5a5f73', isH: false, active: false },
       { name: 'T. Müller', value: 53, color: '#1f6f78', isH: false, active: false },
       { name: 'T. Henry', value: 50, color: '#8a1538', isH: false, active: false },
@@ -1473,7 +1475,7 @@ class Site {
     }
 
     const chartCl = {
-      entryBars: [bar('1. E. Haaland', 61, 70, '#c1352b', true), bar('2. C. Ronaldo*', 42, 70, '#2f5aa8', false), bar('3. L. Messi*', 28, 70, '#6a3fa0', false)],
+      entryBars: [bar('1. E. Haaland', 62, 70, '#c1352b', true), bar('2. C. Ronaldo*', 42, 70, '#2f5aa8', false), bar('3. L. Messi*', 28, 70, '#6a3fa0', false)],
       m50Class: flag(ccl.active === 'm50'),
       setM50: () => this.setClActive('m50'),
       m100Class: flag(ccl.active === 'm100'),
@@ -1496,7 +1498,7 @@ class Site {
       setTopFilterActive: () => this.setClTopFilter('active'),
       topFilterInactiveClass: flag(ccl.topFilter === 'inactive'),
       setTopFilterInactive: () => this.setClTopFilter('inactive'),
-      topRankLabel: 'Haalands plassering: #' + (CL_TOP.findIndex((t) => t.isH) + 1) + ' blant Champions League-toppscorere gjennom tidene, med 61 mål.',
+      topRankLabel: 'Haalands plassering: #' + (CL_TOP.findIndex((t) => t.isH) + 1) + ' blant Champions League-toppscorere gjennom tidene, med 62 mål.',
       openModal: () => this.openModal('cl'),
       ...(clDetail || emptyDetail),
     };
@@ -5652,9 +5654,7 @@ function render(vals) {
  <div class="match-status played"><span class="status-desc">Ingen m&aring;l &mdash; Ayaris scoring (11. min.) holdt, City tapte hjemme (kilde: Sportsdunia)</span></div>
  </div>
 
- <div class="now-marker"><span>N&Aring;</span></div>
-
- <div class="match-card is-planned season-2627 comp-cl">
+ <div class="match-card season-2627 comp-cl">
  <div class="match-comp cl">CL</div>
  <div class="match-date">4. nov. 2026</div>
  <div class="match-badges">
@@ -5662,10 +5662,14 @@ function render(vals) {
  <span class="badge-vs">&ndash;</span>
  <div class="badge badge-opp" style="background:#DD0741;color:#fff">RBL</div>
  </div>
- <div class="match-opp">vs RB Leipzig&nbsp;(B)<span class="match-score-line"><span class="score-note">avspark 21:00</span></span></div>
- <div class="match-icons"></div>
- <div class="match-status planned">Planlagt &middot; Red Bull Arena</div>
+ <div class="match-opp">vs RB Leipzig&nbsp;(B)<span class="match-score-line"><span class="match-score">3&ndash;2</span></span></div>
+ <div class="match-icons"><div class="icons-cluster">
+ <span class="icon-chip"><svg viewBox="0 0 24 24" width="39" height="39"><circle cx="12" cy="12" r="10" fill="none" stroke="#5c4210" stroke-width="1.1"/><path d="M12 5.6l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" fill="none" stroke="#5c4210" stroke-width="1.1" stroke-linejoin="round"/><path d="M12 5.6V3M15.6 8.2l3.2-1.8M14.2 12.4l1.9 3.2M9.8 12.4l-1.9 3.2M8.4 8.2 5.2 6.4" stroke="#5c4210" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="9" cy="8" rx="2.6" ry="1.5" fill="#ffffff" opacity="0.5" transform="rotate(-25 9 8)"/></svg></span>
+ </div></div>
+ <div class="match-status played"><span class="status-desc">1 m&aring;l (78. min., avgj&oslash;rende) &mdash; vill kamp, 2&ndash;2 utlignet f&oslash;r Haalands vinnermål (kilde: VAVEL, Bundesliga.com)</span></div>
  </div>
+
+ <div class="now-marker"><span>N&Aring;</span></div>
 
  <div class="match-card is-planned season-2627 comp-nor">
  <div class="match-comp nor">LAND</div>
@@ -5778,11 +5782,11 @@ function render(vals) {
  <div class="stat-mini">
  <span class="stat-mini-title">Manchester City &mdash; n&oslash;kkeltall (klubb)</span>
  <div class="stat-mini-row">
- <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">209</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">175</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,84</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">211</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">176</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,83</span></div>
  </div>
- <span class="stat-mini-note">Alle turneringer, t.o.m. 209. City-kamp, 24. okt. 2026.</span>
+ <span class="stat-mini-note">Alle turneringer, t.o.m. 211. City-kamp, 4. nov. 2026.</span>
  </div>
 
  <div class="col-section">
@@ -6037,8 +6041,8 @@ function render(vals) {
  <div class="stat-mini">
  <span class="stat-mini-title">Manchester City &mdash; n&oslash;kkeltall (CL)</span>
  <div class="stat-mini-row">
- <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">41</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">38</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">42</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">39</span></div>
  <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,93</span></div>
  </div>
  <span class="stat-mini-note">Alle Champions League-kamper for Manchester City.</span>
@@ -6049,9 +6053,9 @@ function render(vals) {
  <div class="stat-mini-row">
  <div class="stat-mini-item"><span class="stat-mini-label">Salzburg</span><span class="stat-mini-value">8</span></div>
  <div class="stat-mini-item"><span class="stat-mini-label">Dortmund</span><span class="stat-mini-value">15</span></div>
- <div class="stat-mini-item"><span class="stat-mini-label">Man City</span><span class="stat-mini-value">38</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Man City</span><span class="stat-mini-value">39</span></div>
  </div>
- <span class="stat-mini-note">61 CL-m&aring;l totalt s&aring; langt &mdash; topp 10 gjennom tidene, blant kun ti spillere med 50+ CL-m&aring;l.</span>
+ <span class="stat-mini-note">62 CL-m&aring;l totalt s&aring; langt &mdash; topp 10 gjennom tidene, blant kun ti spillere med 50+ CL-m&aring;l.</span>
  </div>
 
  <div class="col-section">
@@ -6652,7 +6656,7 @@ ${(vals.modal.nat) ? `
  <b>Interaksjon:</b> hver kolonne har egne av/p&aring;-brytere for historikk, tapte muligheter og fortsatt oppn&aring;elig. Rekordgrafen st&oslash;tter to milep&aelig;ler (100/150 m&aring;l), totalt/per sesong-visning, og av/p&aring;-bryter per konkurrent eller per sesong.
  </div>
 </footer>
-<div class="foot-updated-row"><div class="topbar-meta">Sist oppdatert: 31. okt. 2026</div></div>
+<div class="foot-updated-row"><div class="topbar-meta">Sist oppdatert: 4. nov. 2026</div></div>
 
 </div>
 </div>`;
