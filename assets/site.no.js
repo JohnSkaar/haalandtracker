@@ -5669,6 +5669,19 @@ function render(vals) {
  <div class="match-status played"><span class="status-desc">1 m&aring;l (78. min., avgj&oslash;rende) &mdash; vill kamp, 2&ndash;2 utlignet f&oslash;r Haalands vinnermål (kilde: VAVEL, Bundesliga.com)</span></div>
  </div>
 
+ <div class="match-card season-2627 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">7. nov. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#DD0000;color:#fff">NFO</div>
+ </div>
+ <div class="match-opp">vs Nottingham Forest&nbsp;(B)<span class="match-score-line"><span class="match-score">1&ndash;3</span></span></div>
+ <div class="match-icons"></div>
+ <div class="match-status played"><span class="status-desc">Ingen m&aring;l &mdash; Cunha og Delap (2) scoret for Forest, Cherkis m&aring;l ikke nok; Citys tredje strake tap (kilde: VAVEL, beIN Sports)</span></div>
+ </div>
+
  <div class="now-marker"><span>N&Aring;</span></div>
 
  <div class="match-card is-planned season-2627 comp-nor">
@@ -5682,6 +5695,32 @@ function render(vals) {
  <div class="match-opp">vs Wales&nbsp;(H)<span class="match-score-line"><span class="score-note">avspark 18:00</span></span></div>
  <div class="match-icons"></div>
  <div class="match-status planned">Planlagt &middot; Ullev&aring;l Stadion &mdash; UEFA Nations League</div>
+ </div>
+
+ <div class="match-card is-planned season-2627 comp-pl">
+ <div class="match-comp pl">PL</div>
+ <div class="match-date">21. nov. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#2b2f36;color:#fff">FUL</div>
+ </div>
+ <div class="match-opp">vs Fulham&nbsp;(H)<span class="match-score-line"><span class="score-note">avspark 13:30</span></span></div>
+ <div class="match-icons"></div>
+ <div class="match-status planned">Planlagt &middot; Etihad Stadium</div>
+ </div>
+
+ <div class="match-card is-planned season-2627 comp-cl">
+ <div class="match-comp cl">CL</div>
+ <div class="match-date">24. nov. 2026</div>
+ <div class="match-badges">
+ <div class="badge badge-own">MCI</div>
+ <span class="badge-vs">&ndash;</span>
+ <div class="badge badge-opp" style="background:#087bd1;color:#fff">NAP</div>
+ </div>
+ <div class="match-opp">vs Napoli&nbsp;(H)<span class="match-score-line"><span class="score-note">avspark 21:00</span></span></div>
+ <div class="match-icons"></div>
+ <div class="match-status planned">Planlagt &middot; Etihad Stadium</div>
  </div>
  </div>
 
@@ -5782,11 +5821,11 @@ function render(vals) {
  <div class="stat-mini">
  <span class="stat-mini-title">Manchester City &mdash; n&oslash;kkeltall (klubb)</span>
  <div class="stat-mini-row">
- <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">211</span></div>
+ <div class="stat-mini-item"><span class="stat-mini-label">Kamper</span><span class="stat-mini-value">212</span></div>
  <div class="stat-mini-item"><span class="stat-mini-label">M&aring;l</span><span class="stat-mini-value">176</span></div>
  <div class="stat-mini-item"><span class="stat-mini-label">Snitt</span><span class="stat-mini-value stat-avg">0,83</span></div>
  </div>
- <span class="stat-mini-note">Alle turneringer, t.o.m. 211. City-kamp, 4. nov. 2026.</span>
+ <span class="stat-mini-note">Alle turneringer, t.o.m. 212. City-kamp, 7. nov. 2026.</span>
  </div>
 
  <div class="col-section">
@@ -6656,7 +6695,7 @@ ${(vals.modal.nat) ? `
  <b>Interaksjon:</b> hver kolonne har egne av/p&aring;-brytere for historikk, tapte muligheter og fortsatt oppn&aring;elig. Rekordgrafen st&oslash;tter to milep&aelig;ler (100/150 m&aring;l), totalt/per sesong-visning, og av/p&aring;-bryter per konkurrent eller per sesong.
  </div>
 </footer>
-<div class="foot-updated-row"><div class="topbar-meta">Sist oppdatert: 4. nov. 2026</div></div>
+<div class="foot-updated-row"><div class="topbar-meta">Sist oppdatert: 7. nov. 2026</div></div>
 
 </div>
 </div>`;
